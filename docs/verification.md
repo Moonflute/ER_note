@@ -34,3 +34,14 @@
 | 브라우저 console | 검사 중 error·warn 없음 |
 
 `node --check app.js`도 통과했습니다. 임상 내용의 최신성 검증은 이 검사 범위에 포함하지 않습니다.
+
+## 공개 배포 확인
+
+2026-09-26 [GitHub Pages 베타](https://moonflute.github.io/ER_note/)를 실제 브라우저에서 확인했습니다.
+
+- 주요 카드 8개, 전체 CC 75개 정상 로딩
+- `/ER_note/` 경로에서 CSS·JavaScript·CC JSON·출처 JSON 정상 로딩
+- CP 검색 결과 흉통 1개, 상세 문진 7항목 확인
+- 원문 출처에서 원본 파일 이름·문단 64·`onset:` 일치 확인
+- 모바일 화면 가로 넘침 없음, console error·warn 없음
+- [배포 실행](https://github.com/Moonflute/ER_note/actions/runs/36239432218)의 검증·build·upload·deploy 모두 성공

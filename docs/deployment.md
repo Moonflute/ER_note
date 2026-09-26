@@ -1,8 +1,10 @@
 # GitHub Pages 배포
 
 - 저장소: https://github.com/Moonflute/ER_note
-- 예정 주소: https://moonflute.github.io/ER_note/
+- 배포 주소: https://moonflute.github.io/ER_note/
 - 배포 대상: `index.html`, `styles.css`, `app.js`, `.nojekyll`, `data/chief-complaints.json`, `data/content-provenance.json`
+
+2026-09-26 최초 베타 배포 완료. [배포 실행](https://github.com/Moonflute/ER_note/actions/runs/36239432218)에서 검증·build·deploy 성공을 확인했고 공개 사이트의 검색과 원문 출처 보기까지 브라우저에서 확인했다.
 
 ## 최초 설정
 
