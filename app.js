@@ -27,8 +27,16 @@
     return badges.join("");
   }
 
+  function complaintCardSpan(name) {
+    const compactLength = Array.from(String(name).replace(/\s/g, "")).length;
+    if (compactLength <= 4) return 1;
+    if (compactLength <= 10) return 2;
+    return 3;
+  }
+
   function complaintCard(complaint) {
-    return `<a class="cc-card" href="${ccUrl(complaint.id)}"><span><span class="cc-name">${escape(complaint.name)}</span><span class="cc-meta">${complaintBadges(complaint, false)}</span></span></a>`;
+    const span = complaintCardSpan(complaint.name);
+    return `<a class="cc-card span-${span}" href="${ccUrl(complaint.id)}"><span><span class="cc-name">${escape(complaint.name)}</span><span class="cc-meta">${complaintBadges(complaint, false)}</span></span></a>`;
   }
 
   function renderHome() {
