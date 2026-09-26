@@ -966,6 +966,93 @@ curated_layouts = {
                 ]},
             ]},
         ]
+    },
+    "psychiatry-interview": {
+        "sections": [
+            {"id": "psychiatry-view-history", "title": "Hx", "kind": "history", "groups": [
+                {"title": "Chief complaint · Present illness", "items": [
+                    view_item("psychiatry-hx-cc", "Chief complaint", ["i-93bec4f5a11f", "i-783f0ccc8ad0"]),
+                    view_item("psychiatry-hx-onset", "Onset: #1 / #2", ["i-a3f32e80a086", "i-1cfcd0419c4d", "i-48e0d543b3fc"]),
+                    view_item("psychiatry-hx-current", "초진 당시 증상 유무", ["i-b6b3279a5fe5"]),
+                    view_item("psychiatry-hx-stress", "Present illness / 최근 stress factor", ["i-504770b9ef6c", "i-326344007df5"]),
+                ]},
+                {"title": "Past psychiatric · Family history", "items": [
+                    view_item("psychiatry-hx-past", "Past psychiatric Hx / Family Hx", ["i-fd017583932e", "i-f97606906869"]),
+                    view_item("psychiatry-hx-compliance", "Medication compliance", ["i-37fe40251ce9"], "정신과적 과거력이 있는 경우"),
+                    view_item("psychiatry-hx-discharge", "마지막 퇴원 이후 경과", ["i-0813ce0b8951"], "입퇴원력이 있는 경우"),
+                    view_item("psychiatry-hx-first", "이전에도 같은 증상이 있었는지 / First episode인지", ["i-946e076984ba"], "정신과적 과거력이 없는 경우"),
+                ]},
+                {"title": "Social history", "items": [
+                    view_item("psychiatry-hx-household", "동거인 / Genogram", ["i-7da5c539aa44", "i-5c3a50bc1ae3", "i-b5075a04bd96"]),
+                    view_item("psychiatry-hx-job", "Occupation", ["i-1cf9af4b7bfa"]),
+                    view_item("psychiatry-hx-sleep", "Sleep / Fragmentation", ["i-f089d42d65bc", "i-5010d4f57ede", "i-24ee16959511"]),
+                    view_item("psychiatry-hx-appetite", "Appetite", ["i-29695720395d", "i-b2c9fb17e5b3"]),
+                    view_item("psychiatry-hx-smoking", "Smoking", ["i-fb406c1d6afc"], "필수 항목 아님"),
+                    view_item("psychiatry-hx-alcohol", "Alcohol", ["i-351476d46859"], "필수 항목 아님"),
+                    view_item("psychiatry-hx-caffeine", "Caffeine", ["i-13ed46f5c82e"], "불안·두근거림이 있는 경우"),
+                ]},
+                {"title": "Perceptual disturbance", "items": [
+                    view_item("psychiatry-hx-hallucination", "A-H / V-H", ["i-90dad06721fb", "i-a5f32442cb55", "i-836f2bdf14e8"], "헛것이 보이거나 주변에 아무도 없는데 소리가 들리는지"),
+                    view_item("psychiatry-hx-illusion", "Illusion", ["i-2211a268632f"]),
+                    view_item("psychiatry-hx-derealization", "Derealization / Depersonalization", ["i-afcdf3f62fec"]),
+                ]},
+                {"title": "Thought · Mood", "items": [
+                    view_item("psychiatry-hx-drive", "Loss of will / Energy / Pleasure", ["i-5425c2d47801", "i-aad1c5cd2aa6", "i-368fa3cdb991"], "의욕·기운·즐거움 확인"),
+                    view_item("psychiatry-hx-suicide", "Suicidal idea / Plan / Attempt", ["i-04e13c90aa27", "i-3931bf6f6de2"], "죽고 싶은지, 계획을 세운 적이 있는지, 자해·자살 시도 여부"),
+                ]},
+            ]},
+            {"id": "psychiatry-view-reference", "title": "참고사항", "kind": "note", "groups": [
+                {"title": "초진·보고", "items": [
+                    view_item("psychiatry-ref-consent", "정신과 진료 동의 여부", ["i-2f6c9dc4a7c1"], "젊은 환자는 진료 기록이 남을 수 있음을 설명"),
+                    view_item("psychiatry-ref-conversation", "현재 대화 가능 여부", ["i-00bfc259bdbd"], "Drowsy 상태이면 alert해졌을 때 notify"),
+                    view_item("psychiatry-ref-firstline", "첫 줄: 정신과 진료 동의 / 협조적 / 원활한 대화 가능 여부", ["np-pdf-firstline"]),
+                    view_item("psychiatry-ref-summary", "확인 항목 요약: C.C / Onset / Past Hx / 동거인 / 직업 / 내원 당시 증상 / 최근 stress factor / Compliance / Sleep / Appetite / Suicidal idea·plan·attempt", ["np-pdf-summary"]),
+                    view_item("psychiatry-ref-safety", "위험해 보이는 상황에서는 무리하지 말고 정신과 전공의 등 주변 의료진과 상의", ["i-45ca9b877fa0", "i-35a8bcbc9c0f"]),
+                ]},
+                {"title": "응답 예시 · Sleep / Appetite", "items": [
+                    view_item("psychiatry-ref-sleep-response", "Sleep: Good / Fair / Poor · Total sleep time 7 hr (00:00–07:00) · Fragmented or not", ["i-0f2e94f4bc55", "i-f93d7de309a1", "i-45c8918b7306"]),
+                    view_item("psychiatry-ref-appetite-response", "Appetite: Good / Fair / Poor · Increased / Decreased", ["i-28df4eae0b81", "i-d6beec8a9b9f"]),
+                ]},
+                {"title": "응답 예시 · Smoking / Alcohol / Caffeine", "items": [
+                    view_item("psychiatry-ref-smoking-response", "Smoking: None / 이틀에 한 갑 / 음주 시 3개비", ["i-c4d2366055e8", "i-6cfb97fc22f3", "i-d9282e1eb585"]),
+                    view_item("psychiatry-ref-alcohol-response", "Alcohol: None / 주 3회 소주 2병 / 잦은 폭음", ["i-ae2fd3f70acf", "i-28ebb7b0feac", "i-d85ca4d343e2"]),
+                    view_item("psychiatry-ref-caffeine-response", "Caffeine: 하루 커피 한 잔 / 아침에", ["i-fe13f3dd3046", "i-1fef2a3ac3c7"]),
+                ]},
+                {"title": "문구 예시 · Chief complaint / Onset", "items": [
+                    view_item("psychiatry-ref-cc-example", "죽고 싶음·자해 충동·난폭 행동 / 약물 복용·손목 자해·목맴·고층 이동 / 우울·불안·두근거림·죽을 것 같은 느낌·걱정 / 불면·잦은 각성", ["i-74e1eb994f0a", "i-16dbbc960cbe", "i-51288bb4ad2d", "i-22a95beabd75"]),
+                    view_item("psychiatry-ref-onset-example", "Onset: 내원 당일 / 내원 ○일·주·개월 전", ["i-8342aa0da8a7", "i-6bc117ddb0ea"]),
+                ]},
+                {"title": "문구 예시 · Past / Social history", "items": [
+                    view_item("psychiatry-ref-past-example", "정신과적 과거력 없음 / MDD 본원 OPD 추적 / Bipolar I disorder 본원 4회 입퇴원 / Panic disorder local NP 추적", ["i-3b9cfbbfdbfa", "i-65fcc167ba99", "i-513d80e67c17", "i-6c92388e8ac5"]),
+                    view_item("psychiatry-ref-household-example", "혼자 거주 / 부모·남동생과 거주 / 연인과 거주", ["i-12b76fb6de85", "i-45f7cd0316a3", "i-77250d5facdd"]),
+                    view_item("psychiatry-ref-job-example", "초등학교 교사 / 교통공사 직원 / 대학원생 / 택시 운전기사", ["i-860601a21c51", "i-dbd9b553ee8b", "i-70df43f0dd32", "i-ccd84f3b4e90"]),
+                ]},
+                {"title": "차팅 양식", "items": [
+                    view_item("psychiatry-ref-template-intro", "정신과 진료 동의. 협조적이며 원활한 대화 가능.", ["np-pdf-template-label", "i-98d304c7e190"]),
+                    view_item("psychiatry-ref-template-pi", "#. Chief complaint / Onset: 내원 ○일 전 / 초진 시 증상 호전 또는 심한 증상 호소", ["i-a19ddea45be3", "i-488d1459bc8e"]),
+                    view_item("psychiatry-ref-template-social", "Sleep: Good·Fair·Poor / TST / Fragmentation · Appetite: Good·Fair·Poor", ["i-f98792661760", "i-33b92a80ee67"]),
+                    view_item("psychiatry-ref-template-mse", "A-H/V-H / Loss of will·energy·pleasure / Suicidal idea·plan·attempt", ["i-8c67144fc367", "i-269938b69699", "i-5a5857592f63"]),
+                ]},
+                {"title": "차팅 예시 1 · Anxiety / Palpitation", "items": [
+                    view_item("psychiatry-ref-ex1-intro", "F/34. 정신과 진료 동의, 협조적이며 대화 가능. C.C: 가슴이 두근거리고 죽을 것 같음. Onset: 내원 당일.", ["i-f5e712dd832d", "i-fdfecce4683c", "i-7044aaea42f4"]),
+                    view_item("psychiatry-ref-ex1-pi", "정신과적 과거력 없음. 남편과 사는 초등학교 교사. 당일 학생이 던진 물건에 맞은 뒤 증상 발생. 초진 시 다소 호전됐으나 불안감 남음.", ["i-8aafc55fe932", "i-a94a020f822d", "i-2a7a9a6fff35"]),
+                    view_item("psychiatry-ref-ex1-social", "Sleep poor, TST 5 hr, fragmented / Appetite fair / Caffeine 하루 한 잔", ["i-17274170fed3", "i-84e4255b71bd"]),
+                    view_item("psychiatry-ref-ex1-mse", "A-H/V-H -/- / Loss of will·energy·pleasure -/-/- / Suicidal idea·plan·attempt -/-/-", ["i-eb71bb2d876c", "i-f77662ef8001", "i-6cd83d1495c0"]),
+                ]},
+                {"title": "차팅 예시 2 · Bipolar disorder", "items": [
+                    view_item("psychiatry-ref-ex2-intro", "M/26. 정신과 진료 동의. 말이 빠르고 자주 맥락을 벗어나지만 비교적 협조적이며 대화 가능. C.C: 밤새 춤춤. Onset: 내원 전날.", ["i-d9c09183994b", "i-ccb0df1a0249", "i-947914bb7b25"]),
+                    view_item("psychiatry-ref-ex2-pi", "Bipolar I disorder로 본원 NP 10회 입퇴원한 사진작가. 3개월 전 마지막 퇴원, 1개월 전 장염으로 약 복용 불량, 1주 전부터 기분 상승·과소비, 3일 전부터 불면 후 밤새 클럽에 있었고 부모 권유로 내원. 초진 시 들뜬 기분과 병실을 나가려는 모습.", ["i-ab8771b6db1e", "i-5507a856743d", "i-0b6a1bec4127"]),
+                    view_item("psychiatry-ref-ex2-social", "Sleep poor, 최근 3일간 수면 없음 / Appetite fair, 2주 전부터 decreased", ["i-6aa778153f43", "i-32a0ee60491b"]),
+                    view_item("psychiatry-ref-ex2-mse", "A-H/V-H +/-: 귀에서 노랫소리가 들림 / Loss of will·energy·pleasure -/-/- / Suicidal idea·plan·attempt -/-/-", ["i-da3e1e44effd", "i-d3778330e6ce", "i-a8bd8780859e"]),
+                ]},
+                {"title": "차팅 예시 3 · Depression / Suicidal idea", "items": [
+                    view_item("psychiatry-ref-ex3-intro", "M/76. 정신과 진료 동의. 말이 느리고 종종 멈추지만 협조적이며 대화 가능. C.C: 죽고 싶음. Onset: 내원 1년 전.", ["i-fd1983798474", "i-5f0c119d7e35", "i-54a542d8bade"]),
+                    view_item("psychiatry-ref-ex3-pi", "MDD로 local NP 추적 중이며 혼자 사는 무직. 20년 전 사별 후 우울감으로 medication 시작. 1년 전 다친 뒤 외출이 어려워지며 우울감과 자살사고 악화. 금일 다리에서 뛰어내리려다 행인 신고로 내원. 초진 시 눈을 감고 누워 무뚝뚝하게 답함.", ["i-350bc3689e2c", "i-d78d139a5482", "i-80ecea7215b5"]),
+                    view_item("psychiatry-ref-ex3-social", "Sleep poor, TST 4 hr, fragmented / Appetite poor", ["i-27dbed1e2f21", "i-5fb72d5416f8"]),
+                    view_item("psychiatry-ref-ex3-mse", "A-H/V-H -/+: 천장에 저승사자가 보임 / Loss of will·energy·pleasure -/+/+ / Suicidal idea·plan·attempt +/-/-", ["i-5807cca5f5e0", "i-9c05f6d645a1", "i-f9fe431ca32a"]),
+                ]},
+            ]},
+        ]
     }
 }
 
@@ -1093,7 +1180,7 @@ for cid, records in catalog.items():
             item["layout"] = curated_layouts[iid]
         complaints.append(item)
 
-data = {"schemaVersion": 1, "contentVersion": "2026-09-26-beta.7", "categories": categories,
+data = {"schemaVersion": 1, "contentVersion": "2026-09-26-beta.8", "categories": categories,
         "sections": list(groups.values()), "complaints": complaints,
         "referenceSections": ["routine-history","routine-exam","handover-general"]}
 (DATA / "chief-complaints.json").write_text(json.dumps(data, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
