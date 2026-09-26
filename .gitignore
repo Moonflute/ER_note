@@ -1,0 +1,25 @@
+# Source documents remain local. Only curated app data is published.
+/문진항목 정리/
+/working/
+*.docx
+*.doc
+*.pdf
+~$*
+
+# Local tools and generated output
+node_modules/
+__pycache__/
+*.pyc
+/_site/
+/dist/
+/artifacts/
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+
+# Tool workspace settings
+/.agents/
+/.codex/

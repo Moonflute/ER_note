@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#173747">
+    <meta name="description" content="응급실 초진을 위한 증상별 문진·신체진찰 Quick Reference">
+    <title>ER 초진 · Quick Reference</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 이동</a>
+    <main id="main" tabindex="-1">
+      <div class="loading" role="status">문진 자료를 불러오는 중…</div>
+    </main>
+    <noscript><p class="loading">이 앱을 사용하려면 JavaScript를 켜 주세요.</p></noscript>
+    <dialog id="source-dialog" aria-labelledby="source-dialog-title">
+      <div class="dialog-header">
+        <h2 id="source-dialog-title">원문 출처</h2>
+        <button type="button" class="icon-button" id="close-source" aria-label="출처 닫기">×</button>
+      </div>
+      <div id="source-content"></div>
+    </dialog>
+  </body>
+</html>

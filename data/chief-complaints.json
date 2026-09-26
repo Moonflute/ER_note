@@ -1,0 +1,3670 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026-09-26-beta.1",
+  "categories": [
+    {
+      "id": "00",
+      "name": "입원관리",
+      "order": 11,
+      "secondary": true
+    },
+    {
+      "id": "01",
+      "name": "소화기",
+      "order": 1,
+      "secondary": false
+    },
+    {
+      "id": "02",
+      "name": "순환기",
+      "order": 2,
+      "secondary": false
+    },
+    {
+      "id": "03",
+      "name": "호흡기",
+      "order": 3,
+      "secondary": false
+    },
+    {
+      "id": "04",
+      "name": "신장/비뇨기",
+      "order": 4,
+      "secondary": false
+    },
+    {
+      "id": "05",
+      "name": "전신증상",
+      "order": 5,
+      "secondary": false
+    },
+    {
+      "id": "06",
+      "name": "근골격/피부",
+      "order": 6,
+      "secondary": false
+    },
+    {
+      "id": "07",
+      "name": "신경정신",
+      "order": 7,
+      "secondary": false
+    },
+    {
+      "id": "08",
+      "name": "산부",
+      "order": 8,
+      "secondary": false
+    },
+    {
+      "id": "09",
+      "name": "소아",
+      "order": 9,
+      "secondary": false
+    },
+    {
+      "id": "10",
+      "name": "눈/이비인후",
+      "order": 10,
+      "secondary": false
+    },
+    {
+      "id": "11",
+      "name": "상담",
+      "order": 12,
+      "secondary": true
+    }
+  ],
+  "sections": [
+    {
+      "id": "routine-history",
+      "title": "공통 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-a0dbc0b8eaec",
+          "text": "Op.Hx/Medication Hx/Underlying disease"
+        },
+        {
+          "id": "i-473758685a66",
+          "text": "ROS) F/C/C/S/R(-/-/-/-/-) A/N/V/D/C(-/-/-/-/-)"
+        },
+        {
+          "id": "i-23c56e483dfc",
+          "text": "NPO time (수술시)"
+        }
+      ]
+    },
+    {
+      "id": "routine-exam",
+      "title": "공통 진찰",
+      "kind": "exam",
+      "items": [
+        {
+          "id": "i-a40910290557",
+          "text": "Normoactive bowel sound, Td/rTd/muscle guarding( )"
+        },
+        {
+          "id": "i-e8c7079dbc3e",
+          "text": "Throat injection/tonsil enlargement () Clear lung sound"
+        }
+      ]
+    },
+    {
+      "id": "nr-history",
+      "title": "신경과 공통 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-0ed008b89dee",
+          "text": "[ NR ER Intern note ] S/A ( / ) V/S) ℃ - - - /"
+        },
+        {
+          "id": "i-ee4e51907a91",
+          "text": "C/C) o/s)"
+        },
+        {
+          "id": "i-295d2b8c0877",
+          "text": "P/I)"
+        },
+        {
+          "id": "i-f9672a36bab3",
+          "text": "Op & Adm (ㅡ/ㅡ) :"
+        },
+        {
+          "id": "i-090b46250227",
+          "text": "HTN/DM/Hepatitis/Tbc (ㅡ/ㅡ/ㅡ/ㅡ)"
+        },
+        {
+          "id": "i-3789fe7ad282",
+          "text": "Smoking/Alcohol(ㅡ/ㅡ) : PYS current smoker( )/"
+        },
+        {
+          "id": "i-18572f0f6fd3",
+          "text": "Medication :"
+        },
+        {
+          "id": "i-f1940c9b999a",
+          "text": "ROS) F/C/C/S/R (ㅡ/ㅡ/ㅡ/ㅡ/ㅡ) A/N/V/C/D (ㅡ/ㅡ/ㅡ/ㅡ/ㅡ) HA/dizz(ㅡ/ㅡ)"
+        }
+      ]
+    },
+    {
+      "id": "peds-history",
+      "title": "소아 공통 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-88fe282cb4fe",
+          "text": "1. Vital sign : T : P : R : BP: / 신생아 - wt: kg / week / (V/D or C/S)"
+        },
+        {
+          "id": "i-52e3c96499b8",
+          "text": "2. F/C/C/S/R( ᅳ/ᅳ/ᅳ/ᅳ/ᅳ) nasal obstruction(ᅳ) 현재wt. kg 출생시 asphyxia (ᅳ)"
+        },
+        {
+          "id": "i-0ed4387ab7a9",
+          "text": "3. A/N/V/C/D (ᅳ/ᅳ/ᅳ/ᅳ/ᅳ) headache (ᅳ) irritability (ᅳ) 산모는 문제없는지"
+        },
+        {
+          "id": "i-915a1e9fb598",
+          "text": "4. Feeding( ) Activity( ) Urination( ) Sleeping( ) : (Fair / Poor)"
+        },
+        {
+          "id": "i-2565eaefaa14",
+          "text": "5. appearance (well / ill) 보채는양상( ) 쳐지는양상( )"
+        }
+      ]
+    },
+    {
+      "id": "peds-exam",
+      "title": "소아 공통 진찰",
+      "kind": "exam",
+      "items": [
+        {
+          "id": "i-f563840a36c8",
+          "text": "6. Throat injection / Tonsilar enlargemente( / )"
+        },
+        {
+          "id": "i-b65cf64b5492",
+          "text": "7. dehydrated tongue( )"
+        },
+        {
+          "id": "i-795bc09a858d",
+          "text": "8. Neck stiffness/Nuchal rigidity( / )"
+        },
+        {
+          "id": "i-afddfcfacdfb",
+          "text": "9. Lung sound ; ( clear / coarse / wheezing / stridor / crackle )"
+        },
+        {
+          "id": "i-aed40d3bdf5b",
+          "text": "10. bowel sound : ( normoactive / increased / decreased ) palpation : ( soft / hard ) ( flat /distended )"
+        },
+        {
+          "id": "i-adc3e02089cf",
+          "text": "11. Heart beat ( with / without ) murmur"
+        },
+        {
+          "id": "i-711f3514742f",
+          "text": "6. Throat injection / Tonsilar enlargement( / )"
+        }
+      ]
+    },
+    {
+      "id": "np-history",
+      "title": "정신과 공통 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-93bec4f5a11f",
+          "text": "C.C"
+        },
+        {
+          "id": "i-a3f32e80a086",
+          "text": "Onset"
+        },
+        {
+          "id": "i-fd017583932e",
+          "text": "과거력"
+        },
+        {
+          "id": "i-7da5c539aa44",
+          "text": "누구와 함께 사는지"
+        },
+        {
+          "id": "i-1cf9af4b7bfa",
+          "text": "직업"
+        },
+        {
+          "id": "i-b6b3279a5fe5",
+          "text": "초진 당시 증상 유무"
+        },
+        {
+          "id": "i-504770b9ef6c",
+          "text": "C.C의 최근 stress factor"
+        },
+        {
+          "id": "i-f089d42d65bc",
+          "text": "Sleep"
+        },
+        {
+          "id": "i-29695720395d",
+          "text": "Appetite"
+        },
+        {
+          "id": "i-fb406c1d6afc",
+          "text": "Smoking (필수x)"
+        },
+        {
+          "id": "i-351476d46859",
+          "text": "Alcohol (필수x)"
+        },
+        {
+          "id": "i-13ed46f5c82e",
+          "text": "Caffeine (불안, 두근거림)"
+        },
+        {
+          "id": "i-a5f32442cb55",
+          "text": "A-H/V-H ( / ) : 헛것이 보이거나 주변에 아무도 없는데 소리가 들리진 않으세요?"
+        },
+        {
+          "id": "i-aad1c5cd2aa6",
+          "text": "Loss of will/energy/pleasure ( / / ) : 의욕 / 기운 / 즐거움 있는지"
+        },
+        {
+          "id": "i-04e13c90aa27",
+          "text": "Suicidal idea/plan/attempt ( / / ) 죽고싶은지/계획 세워본 적 있는지/ 자해 및 자살시도 해봤는지"
+        },
+        {
+          "id": "i-37fe40251ce9",
+          "text": "약 잘 먹는지 (compliance)",
+          "condition": "정신과적 과거력 있는 분"
+        },
+        {
+          "id": "i-0813ce0b8951",
+          "text": "(입퇴원력 있다면) 마지막 퇴원 시점 이후로 어떻게 지냈는지 위주로",
+          "condition": "정신과적 과거력 있는 분"
+        },
+        {
+          "id": "i-946e076984ba",
+          "text": "이전에 이런 적 있는지/처음인지",
+          "condition": "정신과적 과거력 없는 분"
+        },
+        {
+          "id": "i-24ee16959511",
+          "text": "(자주 깨는지 여부)",
+          "condition": "Sleep"
+        },
+        {
+          "id": "i-f97606906869",
+          "text": "◈Past NP Hx 및 가족력 ( / )"
+        },
+        {
+          "id": "i-783f0ccc8ad0",
+          "text": "◈ Chief complaint"
+        },
+        {
+          "id": "i-1cfcd0419c4d",
+          "text": "#1. o/s"
+        },
+        {
+          "id": "i-48e0d543b3fc",
+          "text": "#2. o/s"
+        },
+        {
+          "id": "i-326344007df5",
+          "text": "◈ Present illness (이번 응급실에 오게 된 최근 stress factor 확인할 것!!)"
+        },
+        {
+          "id": "i-5c3a50bc1ae3",
+          "text": "◈ social fx"
+        },
+        {
+          "id": "i-5010d4f57ede",
+          "text": "sleep"
+        },
+        {
+          "id": "i-b2c9fb17e5b3",
+          "text": "appetite"
+        },
+        {
+          "id": "i-b5075a04bd96",
+          "text": "가계도(같이사는 사람 표시)"
+        },
+        {
+          "id": "i-90dad06721fb",
+          "text": "◈ Perceptual disturbance"
+        },
+        {
+          "id": "i-836f2bdf14e8",
+          "text": "A-H/V-H ( / )"
+        },
+        {
+          "id": "i-2211a268632f",
+          "text": "illusion ( )"
+        },
+        {
+          "id": "i-afcdf3f62fec",
+          "text": "derealization/depersonalzation ( / )"
+        },
+        {
+          "id": "i-5425c2d47801",
+          "text": "◈ Thought"
+        },
+        {
+          "id": "i-368fa3cdb991",
+          "text": "Loss of will/energy/pleasure ( / / )"
+        },
+        {
+          "id": "i-3931bf6f6de2",
+          "text": "Suicidal idea/plan/attempt ( / / )"
+        }
+      ]
+    },
+    {
+      "id": "np-response",
+      "title": "정신과 수면·생활력 응답 예시",
+      "kind": "example",
+      "items": [
+        {
+          "id": "i-0f2e94f4bc55",
+          "text": "Good / fair/ poor",
+          "condition": "Sleep"
+        },
+        {
+          "id": "i-f93d7de309a1",
+          "text": "TST(total sleep time): 7 hrs (12am~7am)",
+          "condition": "Sleep"
+        },
+        {
+          "id": "i-45c8918b7306",
+          "text": "(Not) fragmented",
+          "condition": "Sleep"
+        },
+        {
+          "id": "i-28df4eae0b81",
+          "text": "Good / fair / poor",
+          "condition": "Appetite"
+        },
+        {
+          "id": "i-d6beec8a9b9f",
+          "text": "Increased / Decreased",
+          "condition": "Appetite"
+        },
+        {
+          "id": "i-c4d2366055e8",
+          "text": "None",
+          "condition": "Smoking (필수x)"
+        },
+        {
+          "id": "i-6cfb97fc22f3",
+          "text": "이틀에 한갑",
+          "condition": "Smoking (필수x)"
+        },
+        {
+          "id": "i-d9282e1eb585",
+          "text": "술 마실 때 3개피",
+          "condition": "Smoking (필수x)"
+        },
+        {
+          "id": "i-ae2fd3f70acf",
+          "text": "None",
+          "condition": "Alcohol (필수x)"
+        },
+        {
+          "id": "i-28ebb7b0feac",
+          "text": "주 3회 소주 2병",
+          "condition": "Alcohol (필수x)"
+        },
+        {
+          "id": "i-d85ca4d343e2",
+          "text": "폭음 잦음",
+          "condition": "Alcohol (필수x)"
+        },
+        {
+          "id": "i-fe13f3dd3046",
+          "text": "하루에 커피 한잔",
+          "condition": "Caffeine (불안, 두근거림)"
+        },
+        {
+          "id": "i-1fef2a3ac3c7",
+          "text": "아침에",
+          "condition": "Caffeine (불안, 두근거림)"
+        }
+      ]
+    },
+    {
+      "id": "np-note",
+      "title": "정신과 인계 메모",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-2f6c9dc4a7c1",
+          "text": "◈정신과 진료 받을 것인지 여부 ( 젊은 사람일 경우 기록에 남을 수 있음을 알릴 것) ( Y/N )"
+        },
+        {
+          "id": "i-00bfc259bdbd",
+          "text": "◈현재 대화 가능한지 여부 ( Y/N ) (drowsy 하면 alert 할 때 노티 하세요)"
+        },
+        {
+          "id": "i-45ca9b877fa0",
+          "text": "인턴 선생님들의 노고에 항상 감사드립니다. 초진 양식에 맞추어 작성해주신다면 저희 과 응급실 진료에 큰 도움이 될 것 같습니다. 무엇보다 선생님들의 안전이 중요하오니, 위험해 보이는 상황이 발생할 시 무리하지 마시고 언제든지 저희를 비롯한 주변 의료진들과 상의하시길 바랍니다. 일년간 무탈하시고, 원하시는 결과 이를 수 있기를 바랍니다. 감사합니다"
+        },
+        {
+          "id": "i-35a8bcbc9c0f",
+          "text": "정신과 전공의 일동"
+        },
+        {
+          "id": "np-pdf-summary",
+          "text": "가서 물어볼 것들: C.C, o/s, 과거력, 누구와 함께 사는지, 직업, 내원 당시 증상, 최근 stress factor, compliance, sleep/appetite, suicidal idea/plan/attempt"
+        },
+        {
+          "id": "np-pdf-firstline",
+          "text": "맨 앞줄 : 정신과 진료 동의하고, 협조적이며 원활한 대화가능함."
+        },
+        {
+          "id": "np-pdf-template-label",
+          "text": "복붙와꾸"
+        }
+      ]
+    },
+    {
+      "id": "np-example",
+      "title": "정신과 응답 예시",
+      "kind": "example",
+      "items": [
+        {
+          "id": "i-74e1eb994f0a",
+          "text": "#. 죽고 싶어요 / 자해 충동이 있어요/ 난폭한 행동을 해요"
+        },
+        {
+          "id": "i-16dbbc960cbe",
+          "text": "#. 죽고 싶어서 약 00알 먹었어요/ 손목 그었어요/ 목 매달았어요 / 높은 곳 올라갔어요"
+        },
+        {
+          "id": "i-51288bb4ad2d",
+          "text": "#. 우울해요 / 불안해요 / 가슴이 두근거리고 죽을 것 같아요 / 걱정돼요"
+        },
+        {
+          "id": "i-22a95beabd75",
+          "text": "#. 잠이 안와요 / 잠이 자주 깨요"
+        },
+        {
+          "id": "i-8342aa0da8a7",
+          "text": "내원 당일"
+        },
+        {
+          "id": "i-6bc117ddb0ea",
+          "text": "내원 ~일/주/개월 전"
+        },
+        {
+          "id": "i-3b9cfbbfdbfa",
+          "text": "정신과적 과거력 없는"
+        },
+        {
+          "id": "i-65fcc167ba99",
+          "text": "MDD로 본원 opd f/u 하는"
+        },
+        {
+          "id": "i-513d80e67c17",
+          "text": "Bipolar I disorder로 본원 4차례 입퇴원력 있는"
+        },
+        {
+          "id": "i-6c92388e8ac5",
+          "text": "Panic disorder로 local NP f/u 하는"
+        },
+        {
+          "id": "i-12b76fb6de85",
+          "text": "혼자 사는"
+        },
+        {
+          "id": "i-45f7cd0316a3",
+          "text": "엄마, 아빠, 남동생과 사는"
+        },
+        {
+          "id": "i-77250d5facdd",
+          "text": "애인과 둘이 사는"
+        },
+        {
+          "id": "i-860601a21c51",
+          "text": "초등학교 선생님"
+        },
+        {
+          "id": "i-dbd9b553ee8b",
+          "text": "교통공사 직원"
+        },
+        {
+          "id": "i-70df43f0dd32",
+          "text": "한양대 대학원생"
+        },
+        {
+          "id": "i-ccd84f3b4e90",
+          "text": "택시 운전기사"
+        }
+      ]
+    },
+    {
+      "id": "np-ex1",
+      "title": "정신과 차팅 예시 1",
+      "kind": "example",
+      "items": [
+        {
+          "id": "i-f5e712dd832d",
+          "text": "Ex1) (F/34)"
+        },
+        {
+          "id": "i-fdfecce4683c",
+          "text": "정신과 진료 동의하고, 협조적이며 원활한 대화가능함"
+        },
+        {
+          "id": "i-7044aaea42f4",
+          "text": "#. 가슴이 두근거리고 죽을 것 같아요 o) 내원 당일"
+        },
+        {
+          "id": "i-8aafc55fe932",
+          "text": "정신과적 과거력 없는 남편과 사는 초등학교 선생님으로"
+        },
+        {
+          "id": "i-a94a020f822d",
+          "text": "이전에 이런 적 없었으나 내원 당일 학생이 던진 물건 맞은 뒤로 상기증상 있어 응급실 내원함."
+        },
+        {
+          "id": "i-2a7a9a6fff35",
+          "text": "초진 시 증상 다소 호전되었으나 불안감 남아있음."
+        },
+        {
+          "id": "i-17274170fed3",
+          "text": "Sleep: poor, TST 5 hrs, fragmented"
+        },
+        {
+          "id": "i-84e4255b71bd",
+          "text": "Appetite: fair , Caffeine: 하루 한잔,"
+        },
+        {
+          "id": "i-eb71bb2d876c",
+          "text": "A-H/V-H (-/-)"
+        },
+        {
+          "id": "i-f77662ef8001",
+          "text": "Loss of will/energy/pleasure (-/-/-)"
+        },
+        {
+          "id": "i-6cd83d1495c0",
+          "text": "Suicidal idea/plan/attempt (-/-/-)"
+        }
+      ]
+    },
+    {
+      "id": "np-template",
+      "title": "정신과 차팅 양식",
+      "kind": "example",
+      "items": [
+        {
+          "id": "i-98d304c7e190",
+          "text": "정신과 진료 동의하고, 협조적이며 원활한 대화가능함"
+        },
+        {
+          "id": "i-a19ddea45be3",
+          "text": "#. CC o) 내원 일 전"
+        },
+        {
+          "id": "i-488d1459bc8e",
+          "text": "초진 시 증상 다소 호전되었음/ 심한 호소함"
+        },
+        {
+          "id": "i-f98792661760",
+          "text": "Sleep: good / fair / poor , TST hrs , not fragmented"
+        },
+        {
+          "id": "i-33b92a80ee67",
+          "text": "Appetite: good / fair/ poor"
+        },
+        {
+          "id": "i-8c67144fc367",
+          "text": "A-H/V-H (-/-)"
+        },
+        {
+          "id": "i-269938b69699",
+          "text": "Loss of will/energy/pleasure (-/-/-)"
+        },
+        {
+          "id": "i-5a5857592f63",
+          "text": "Suicidal idea/plan/attempt (-/-/-)"
+        }
+      ]
+    },
+    {
+      "id": "np-ex2",
+      "title": "정신과 차팅 예시 2",
+      "kind": "example",
+      "items": [
+        {
+          "id": "i-d9c09183994b",
+          "text": "Ex2) (M/26)"
+        },
+        {
+          "id": "i-ccb0df1a0249",
+          "text": "정신과 진료 동의하고, 말 속도가 빠르고 맥락을 벗어난 얘기를 자주 하나 비교적 협조적이며 대화가능함"
+        },
+        {
+          "id": "i-947914bb7b25",
+          "text": "#. 밤 새고 춤췄어요 o) 내원 전날"
+        },
+        {
+          "id": "i-ab8771b6db1e",
+          "text": "Bipolar I disorder 로 본원 NP 10차례 입퇴원력 있는 사진작가로"
+        },
+        {
+          "id": "i-5507a856743d",
+          "text": "내원 3달 전 마지막 퇴원 후 내원 한달 전 장염 걸려 약 잘 못먹었고 내원 1주 전부터 들뜨는 기분 있고 과소비했음. 내원 3일 전부터 잠 오지 않아 밤새 클럽에서 놀았고 부모님 권유로 응급실 내원함"
+        },
+        {
+          "id": "i-0b6a1bec4127",
+          "text": "초진 시 기분 들떠있고, 방에서 자꾸 나가려는 모습"
+        },
+        {
+          "id": "i-6aa778153f43",
+          "text": "Sleep: poor , 최근 3일간 안잠"
+        },
+        {
+          "id": "i-32a0ee60491b",
+          "text": "Appetite: fair , 내원 2주 전 decreased"
+        },
+        {
+          "id": "i-da3e1e44effd",
+          "text": "A-H/V-H (+/-) 귀에서 노래소리가 들려요"
+        },
+        {
+          "id": "i-d3778330e6ce",
+          "text": "Loss of will/energy/pleasure (-/-/-)"
+        },
+        {
+          "id": "i-a8bd8780859e",
+          "text": "Suicidal idea/plan/attempt (-/-/-)"
+        }
+      ]
+    },
+    {
+      "id": "np-ex3",
+      "title": "정신과 차팅 예시 3",
+      "kind": "example",
+      "items": [
+        {
+          "id": "i-fd1983798474",
+          "text": "Ex3) (M/76)"
+        },
+        {
+          "id": "i-5f0c119d7e35",
+          "text": "정신과 진료 동의하고, 말 속도가 느리고 멈추는 경우 종종 있으나 협조적이며 대화가능함."
+        },
+        {
+          "id": "i-54a542d8bade",
+          "text": "#. 죽고싶어요 o) 내원 1년 전"
+        },
+        {
+          "id": "i-350bc3689e2c",
+          "text": "MDD로 local NP f/u 하는 혼자 사는 무직인 분으로"
+        },
+        {
+          "id": "i-d78d139a5482",
+          "text": "내원 20년 전 사별한 후로 혼자 지내며 우울감 있어 local NP 에서 MDD 진단받고 medication 시작했고, 내원 1년 전 다리 다친 후로 집에서 나가기 힘들어졌고 이후 우울감 및 자살사고 악화됨. 금일 다리에서 뛰어내리려던 중 행인이 신고해 응급실 내원함."
+        },
+        {
+          "id": "i-80ecea7215b5",
+          "text": "초진 시 눈 감고 침대에 누워 무뚝뚝하게 대답함."
+        },
+        {
+          "id": "i-27dbed1e2f21",
+          "text": "Sleep: poor , TST 4 hrs, fragmented"
+        },
+        {
+          "id": "i-5fb72d5416f8",
+          "text": "Appetite: poor"
+        },
+        {
+          "id": "i-5807cca5f5e0",
+          "text": "A-H/V-H (-/+) 천장에 저승사자가 있어요"
+        },
+        {
+          "id": "i-9c05f6d645a1",
+          "text": "Loss of will/energy/pleasure (-/+/+)"
+        },
+        {
+          "id": "i-f9fe431ca32a",
+          "text": "Suicidal idea/plan/attempt (+/-/-)"
+        }
+      ]
+    },
+    {
+      "id": "abd-history",
+      "title": "복통 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-39ebda833786",
+          "text": "GI symptom (vomiting/diarrhea) 유무"
+        },
+        {
+          "id": "i-eb4aa9826a2d",
+          "text": "복부 수술력"
+        },
+        {
+          "id": "i-f26b6ccefee9",
+          "text": "젊은 여성의 경우 Mens/Last coitus/보호자 관계 파악"
+        },
+        {
+          "id": "i-ecedeb1e4880",
+          "text": "복부수술력 (꼭 물어보세요)"
+        },
+        {
+          "id": "i-a5938abb78b4",
+          "text": "FCCSR -----"
+        },
+        {
+          "id": "i-c4bf0295923d",
+          "text": "ANVCD -----"
+        },
+        {
+          "id": "i-a7cf0271f916",
+          "text": "FUND HIS ---- ---"
+        },
+        {
+          "id": "i-9a089b00c222",
+          "text": "여성: 임신 가능성/LMP"
+        },
+        {
+          "id": "i-99dd425247e3",
+          "text": "가임기 여성의 하복부 통증 -> 눈치껏 coitus hx 물어보기"
+        }
+      ]
+    },
+    {
+      "id": "abd-exam",
+      "title": "복통 진찰",
+      "kind": "exam",
+      "items": [
+        {
+          "id": "i-48f8724d8595",
+          "text": "CVAT 반드시 확인"
+        },
+        {
+          "id": "i-2983d5754b6e",
+          "text": "CVAT -/-"
+        },
+        {
+          "id": "i-4e56e4043370",
+          "text": "Ab Td/rTd -/- (rTd 가 어려우면 손가락으로 두드려봐서 percussion Td 확인하기)"
+        },
+        {
+          "id": "i-99e95de58023",
+          "text": "환자가 아프다하면 Td 있는게 아니라 만지는 본인이 판단해서 적고 전공의한테 알려주세요"
+        }
+      ]
+    },
+    {
+      "id": "abd-note",
+      "title": "복통 인계 메모",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-89db9271b34f",
+          "text": "처방-ER세트-Full lab (검사) & 05.AGE & 08. Pain control (증상조절)"
+        },
+        {
+          "id": "i-c1c68308f8e7",
+          "text": "Main fluid(n/s, plasmalyte...) + 검사 + 증상조절"
+        },
+        {
+          "id": "i-dd44c1460346",
+          "text": "Surgical abd. 의심 시 바로 ED R. notify"
+        },
+        {
+          "id": "i-f06512502fff",
+          "text": "처방내림 전 ED R. confirm 받기"
+        },
+        {
+          "id": "i-e4595c2448c4",
+          "text": "CBC, CRP, E', bil./OT/PT/ALT/GGT, pancreatic enz. 포함"
+        },
+        {
+          "id": "i-184aeba1bd67",
+          "text": "상복부 통증 호소 시 cardiac marker, EKG 포함"
+        },
+        {
+          "id": "i-1edb8093df4b",
+          "text": "발열 시 procalcitonin 포함"
+        },
+        {
+          "id": "i-15284a8890fb",
+          "text": "서지 못할 것 같으면 XR은 AP 오더"
+        },
+        {
+          "id": "i-9d3c23dc7dbf",
+          "text": "구토-Macperan"
+        },
+        {
+          "id": "i-cdbbe5c24a89",
+          "text": "설사-Bropium"
+        },
+        {
+          "id": "i-34350a9e270a",
+          "text": "발열-Acetphen"
+        },
+        {
+          "id": "i-e02c1f387b36",
+          "text": "쓰림-Nexium"
+        },
+        {
+          "id": "i-a3b5fe662812",
+          "text": "통증-Tridol,Acetphen-Kerasyn 순으로 투여 고려,"
+        },
+        {
+          "id": "i-80802f501f80",
+          "text": "CT 무조건 찍을 것 같을 땐 Kerasyn initial 부터 가능"
+        },
+        {
+          "id": "i-d05fceff2212",
+          "text": "Abdominal pain 환자일 경우 상병명 Gastrointestinal disease로 넣기"
+        }
+      ]
+    },
+    {
+      "id": "constipation-history",
+      "title": "변비 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-2b7af5302516",
+          "text": "Last defecation"
+        },
+        {
+          "id": "i-017c756636f4",
+          "text": "Last gas"
+        },
+        {
+          "id": "i-96a78e8d87e7",
+          "text": "Last CFS, GFS 물어보기 -> 오래된 환자에서 배변습관 변화 있을 경우 r/o malignancy, w/u 필요성 설명"
+        }
+      ]
+    },
+    {
+      "id": "peds-abd-history",
+      "title": "소아 복통 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-26e3ede4229f",
+          "text": "양상( ) Location( ) (Intermittent/steady) Duration( ) Relieving Time( )"
+        }
+      ]
+    },
+    {
+      "id": "peds-abd-mixed",
+      "title": "소아 복통 문진과 진찰",
+      "kind": "exam",
+      "items": [
+        {
+          "id": "i-2e8d142d81a5",
+          "text": "last defecation( ) NPO time( ); Surgical abdomen? RLQ Td/RTd ( / )"
+        },
+        {
+          "id": "i-e1aa94a6069a",
+          "text": "Rovsing sign( ) Obturator sign ( ) Psoas sign ( )"
+        }
+      ]
+    },
+    {
+      "id": "peds-vomit",
+      "title": "소아 구토 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-0cb004905b21",
+          "text": "vomiting횟수/ 양상(regurgitation/vomiting/projectile);; 토사물 색깔/ 양상(음식같이나옴/물같은성상)"
+        }
+      ]
+    },
+    {
+      "id": "peds-diarrhea",
+      "title": "소아 설사 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-9b0fd04b87dd",
+          "text": "횟수 ( ) 양상/색깔 ( ) last defecation time( ) NPO time( )"
+        },
+        {
+          "id": "i-d8c672ae10ca",
+          "text": "뭐먹고 지내는지(밥/미음/모유/분유)"
+        }
+      ]
+    },
+    {
+      "id": "chest-history",
+      "title": "흉통 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-cc1f243d2ac8",
+          "text": "onset:"
+        },
+        {
+          "id": "i-8c8fcfe105b3",
+          "text": "Character:"
+        },
+        {
+          "id": "i-490fd8e4dda3",
+          "text": "duration:"
+        },
+        {
+          "id": "i-c13032d51230",
+          "text": "radiation:"
+        },
+        {
+          "id": "i-bf595e446444",
+          "text": "agg.: alle:"
+        },
+        {
+          "id": "i-ae5de500815f",
+          "text": "associated sx:"
+        },
+        {
+          "id": "i-bdecab5aa049",
+          "text": "PHx)Op.Hx/Medication Hx/Underlying disease(-/-/-/-)"
+        }
+      ]
+    },
+    {
+      "id": "syncope-history",
+      "title": "실신 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-74e665c4ee32",
+          "text": "LOC(Loss of conciousness) Blackout( ) HTN med( )"
+        },
+        {
+          "id": "i-cd65d5c1c19d",
+          "text": "전조증상 : 눈앞 캄캄? 어지럼? 식은땀? 구역감 ? 흉통? 호흡곤란 등등"
+        },
+        {
+          "id": "i-dc2c688b1dbb",
+          "text": "실신당시 증상과 응급실 와서 증상 비교 (현재 호전되었는지 등)"
+        },
+        {
+          "id": "i-5662f55888f8",
+          "text": "과거 비슷한 증상이 있었는지.."
+        },
+        {
+          "id": "i-be7d7e3c523b",
+          "text": "식사나 수면, 스트레스 여부 확인"
+        }
+      ]
+    },
+    {
+      "id": "syncope-mixed",
+      "title": "실신 문진과 진찰",
+      "kind": "exam",
+      "items": [
+        {
+          "id": "i-0395d2464d8f",
+          "text": "LOC( ) Blackout( ) HTN med( ) 누워서혈압( / ) 앉아서혈압( / ) 선혈압( / )"
+        }
+      ]
+    },
+    {
+      "id": "syncope-note",
+      "title": "실신 인계 메모",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-f858019a30f5",
+          "text": "< Syncope > 실신의 정의는 LOC 가 있다 라는 겁니다. LOC 없는 syncope 은 말이안됨"
+        }
+      ]
+    },
+    {
+      "id": "headache-history",
+      "title": "두통 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-9fc7e16784c7",
+          "text": "Location, duration, character, mode of onset, aura, analgesic effect"
+        },
+        {
+          "id": "i-9cfdc43f0e0f",
+          "text": "< Headache > 양상: 위치: 지속시간:"
+        },
+        {
+          "id": "i-29b81de03b58",
+          "text": "갑자기/서서히, 전구증상( ), 오전/오후, 진통제효과( ), N/V/Dizz/etc (ㅡ/ㅡ/ㅡ/ )"
+        },
+        {
+          "id": "i-79bdeb7f9c37",
+          "text": "유발요인: Trauma ( ), 가족력( ), Sleep disturbance ( ), Td point ( )"
+        },
+        {
+          "id": "i-29e1606c5666",
+          "text": "양상:"
+        },
+        {
+          "id": "i-ffc390c13501",
+          "text": "위치:"
+        },
+        {
+          "id": "i-e70103d43042",
+          "text": "지속시간:"
+        },
+        {
+          "id": "i-3bd2beb9a620",
+          "text": "갑자기/서서히"
+        },
+        {
+          "id": "i-74fa33af7ce3",
+          "text": "전구증상( )"
+        },
+        {
+          "id": "i-a4eafc7a2e27",
+          "text": "오전/오후"
+        },
+        {
+          "id": "i-9d87bd973952",
+          "text": "진통제효과( )"
+        },
+        {
+          "id": "i-9de2e117b6a9",
+          "text": "N/V/Dizz/etc (ㅡ/ㅡ/ㅡ/ )"
+        },
+        {
+          "id": "i-4d8fc6f58f75",
+          "text": "pulsatile -"
+        }
+      ]
+    },
+    {
+      "id": "headache-exam",
+      "title": "두통 진찰",
+      "kind": "exam",
+      "items": [
+        {
+          "id": "i-05a884b2bfd5",
+          "text": "nuchal Td -"
+        },
+        {
+          "id": "i-ba842357a8d8",
+          "text": "neurologic deficit -"
+        }
+      ]
+    },
+    {
+      "id": "dizziness-history",
+      "title": "어지럼 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-6ad27ea2b2e4",
+          "text": "어지럼의 양상 파악 (Vertigo ? presyncope ? lightheadness ? disequilibrium ?)"
+        },
+        {
+          "id": "i-2e37d0e92ac5",
+          "text": "(빙빙도는지, 쓰러질것 같은지 , 기운이 없는 건지, 걸음걸이가 이상한건지 등등)"
+        },
+        {
+          "id": "i-cdb419f99f24",
+          "text": "TRS( ) *true rotating sensation 여부 확인 (vertigo 감별 용)"
+        },
+        {
+          "id": "i-98a27e5fe646",
+          "text": "지속시간: dizz attack 이 있을경우 얼마만에 다시 좋아지나요?"
+        },
+        {
+          "id": "i-af4103b19fb5",
+          "text": "Ear Sx (Tinnitus/Otalgia/Ear fullness/Hearing difficulty) (ㅡ/ㅡ/ㅡ/ㅡ)"
+        },
+        {
+          "id": "i-ab8e235e7ce3",
+          "text": "Ear Sx (Tinnitus/Otalgia/Ear fullness/Hearing difficulty) (ㅡ/ㅡ/ㅡ/ㅡ) URI Hx ( )"
+        },
+        {
+          "id": "i-6caa8883d154",
+          "text": "TRS 양상, Hearing loss/Tinnitus/Earfullness 확인"
+        },
+        {
+          "id": "i-4796b70d2f28",
+          "text": "동반된 신경학적 결손을 시사하는 증상이 있는 지 확인하고 필히 차팅"
+        }
+      ]
+    },
+    {
+      "id": "dizziness-exam",
+      "title": "어지럼 진찰",
+      "kind": "exam",
+      "items": [
+        {
+          "id": "i-6a49a5ad9c82",
+          "text": "< Dizziness > TRS( ) 지속시간: Nystagmus(ㅡ)"
+        },
+        {
+          "id": "i-69a715c63b8a",
+          "text": "Gait: Falling tendency (유/무) Tandem gait( ) Romberg test( )"
+        },
+        {
+          "id": "i-b06a29883b36",
+          "text": "Cbll Fx test: F to F( / ) F to N( / ) H to S( / ) RAM( / ) Positional dependency( )"
+        },
+        {
+          "id": "i-547582678bb0",
+          "text": "Nystagmus : 가만히 있을 때 안진이 있는지, 고개돌릴때 발생하는지 등등.."
+        },
+        {
+          "id": "i-83754277e4c2",
+          "text": "Gait: Falling tendency (유/무),"
+        },
+        {
+          "id": "i-a26c38ea1eef",
+          "text": "PEx. 시 spontaneous nys./gaze evoked nys. -> positive 시 HINTS test, negative 시 ED R. noti"
+        },
+        {
+          "id": "i-f1f1b078d1f6",
+          "text": "> negative 시 Dix-Hallpike test, Head-roll test 시행"
+        }
+      ]
+    },
+    {
+      "id": "dizziness-note",
+      "title": "어지럼 인계 메모",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-11e18a0af92f",
+          "text": "🡪 안진여부는 보다보면 전공의들이 보는법 알려주심"
+        },
+        {
+          "id": "i-eba126edda0c",
+          "text": "Cbll Fx test: 굳이 안해도될 듯 (전공의피셜)"
+        },
+        {
+          "id": "i-627951e268db",
+          "text": "처방-ER세트-신경과 Dizziness"
+        },
+        {
+          "id": "i-53a627e34512",
+          "text": "Cardiac panel 적극 활용, EKG 포함"
+        },
+        {
+          "id": "i-b59d9bb13f2d",
+          "text": "초진 시 비급여로 MR 시행 예정임을 미리 고지, 거절 시 acute stroke 배제할 수 없음 설명"
+        },
+        {
+          "id": "i-8be062564911",
+          "text": "IV Macperan/IV Zofran"
+        }
+      ]
+    },
+    {
+      "id": "dizziness-example",
+      "title": "어지럼 차팅 예시",
+      "kind": "example",
+      "items": [
+        {
+          "id": "i-cb9a91e85adf",
+          "text": "<메니에르/BPPV>"
+        },
+        {
+          "id": "i-bebd5c3b1a65",
+          "text": "이전 메니에르로 우측 이명 등 증상 있음"
+        },
+        {
+          "id": "i-d7a740d21171",
+          "text": "금일 TRS + dizziness 발생하여 내원함 이전 메니에르 때와 비슷한 양상"
+        },
+        {
+          "id": "i-d3e1f226fbb1",
+          "text": "우측으로 고개 돌릴 시 발생"
+        },
+        {
+          "id": "i-206f7882d71f",
+          "text": "spont nyst +"
+        },
+        {
+          "id": "i-ef762d070f24",
+          "text": "Rt torsional"
+        },
+        {
+          "id": "i-87070a99c108",
+          "text": "catch up saccade +"
+        },
+        {
+          "id": "i-566d5c453205",
+          "text": "no other lat/loc sign"
+        },
+        {
+          "id": "i-64463269cabf",
+          "text": "EX)"
+        },
+        {
+          "id": "i-83e315881da7",
+          "text": "기저질환 HTN, Moyamoya disease로 본원 NR, 분당서울대병원 f/u하는 분. TRS 양상으로 계속해서 dizziness 있으며 자세 변화에 따라서 aggravation 된다고 함"
+        },
+        {
+          "id": "i-870ebd4a3f0c",
+          "text": "Vomiting 수차례 하였음"
+        },
+        {
+          "id": "i-6db3db44bec6",
+          "text": "저명한 신경학적 이상증상 없음"
+        },
+        {
+          "id": "i-067c395ba43f",
+          "text": "O.S) 내원 이틀전"
+        },
+        {
+          "id": "i-454f9219d6e6",
+          "text": "TRS(+) Vertigo(+)"
+        },
+        {
+          "id": "i-e90b2a672f24",
+          "text": "Duration : 계속"
+        },
+        {
+          "id": "i-094174c96cb6",
+          "text": "spontaneousNystagmus(-), Positional dependency(+); 고개를 돌릴때"
+        },
+        {
+          "id": "i-04abbfca2684",
+          "text": "Roll test (Rt>Lt) Ageotrophic nyst +"
+        },
+        {
+          "id": "i-1334c34cfd7c",
+          "text": "Headache (-) Nausea/vomiting(+/+)"
+        }
+      ]
+    },
+    {
+      "id": "stroke-history",
+      "title": "뇌졸중 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-eddf689b48ac",
+          "text": "Last normal ( / , 시 분) First abnormal time : ( / , 시 분)"
+        }
+      ]
+    },
+    {
+      "id": "stroke-exam",
+      "title": "신경학적 진찰 원문",
+      "kind": "exam",
+      "items": [
+        {
+          "id": "i-c9dceb3fed3a",
+          "text": "Mentation : Alert/Drowsy(말하면반응)/Stupor(자극시반응)/Semicoma(LR(+))/Coma"
+        },
+        {
+          "id": "i-e998b4dd9427",
+          "text": "오늘이 몇월? ( ) 지금 나이? ( ) 눈 감았다 떠보세요 ( ) 손 잡았다 풀어보세요( )"
+        },
+        {
+          "id": "i-68765d3a2beb",
+          "text": "눈동자 좌우로 되나 ( ) 잘 보여요? ( ) 얼굴 마비 유무 (이마주름만되면, central) ( )"
+        },
+        {
+          "id": "i-2146beb834c1",
+          "text": "팔 다리 근력 : 10초 버팀5 / 떨어지는 양상4 / 약간 들다 떨굼3 / 못들고 좌우만2 / 못움직임1"
+        },
+        {
+          "id": "i-9d85b6c7f674",
+          "text": "Rt. U/Ex( ) / Lt. U/Ex( ) / Rt. L/Ex( ) / Lt. L/Ex( )"
+        },
+        {
+          "id": "i-f4d9158beb62",
+          "text": "Finger to finger ( ) / Heel to shin ( ) Sensory change ( )"
+        },
+        {
+          "id": "i-fe7269b0f02e",
+          "text": "말이 꼬이는 것 같음( ) / 이치에 안맞는 말이나 못 알아듣는 양상 ( )"
+        }
+      ]
+    },
+    {
+      "id": "stroke-note",
+      "title": "뇌졸중 인계 메모",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-2bace8d99e96",
+          "text": "< Stroke > 3시간 이내(hyperacute)시 주증상만 보고 바로! 전화주세요"
+        }
+      ]
+    },
+    {
+      "id": "seizure-history",
+      "title": "성인 경련 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-5b74d90d649a",
+          "text": "Type: GTC/Partial"
+        },
+        {
+          "id": "i-0c9edd42be8b",
+          "text": "부위:"
+        },
+        {
+          "id": "i-64f5b3d5fed6",
+          "text": "지속시간: First attack(ㅡ)"
+        },
+        {
+          "id": "i-26f686a03c4b",
+          "text": "Aura(ㅡ)"
+        },
+        {
+          "id": "i-f0b47426e7f9",
+          "text": "Eyeball deviation(ㅡ)"
+        },
+        {
+          "id": "i-75c5995c9d79",
+          "text": "Foamy salvation(ㅡ)"
+        },
+        {
+          "id": "i-b2313f955111",
+          "text": "Cyanosis(ㅡ)"
+        },
+        {
+          "id": "i-83e4105cd93b",
+          "text": "Tongue bite(ㅡ)"
+        },
+        {
+          "id": "i-dfa4b6f07ef6",
+          "text": "Postictal sx.(Sleep/Confusion/Urination/Defecation)"
+        },
+        {
+          "id": "i-aa2f3fa3f103",
+          "text": "가족력/개인력(ㅡ/ㅡ)"
+        },
+        {
+          "id": "i-c181139b0f70",
+          "text": "영양상태:"
+        },
+        {
+          "id": "i-9fe7bc643a6a",
+          "text": "항경련제 복용(ㅡ) 마지막복용시간:"
+        },
+        {
+          "id": "i-5ae8a078122d",
+          "text": "Last alcohol intake time:"
+        },
+        {
+          "id": "i-821430aff642",
+          "text": "수면: 시간/일"
+        },
+        {
+          "id": "i-ae89dd865504",
+          "text": "< Seizure > Type: GTC/Partial 부위: 지속시간: First attack(ㅡ)"
+        },
+        {
+          "id": "i-f42db10ce4f7",
+          "text": "Aura(ㅡ) Eyeball deviation(ㅡ) Foamy salivation(ㅡ) Cyanosis(ㅡ) Tongue bite(ㅡ)"
+        },
+        {
+          "id": "i-a892e9cfe5c3",
+          "text": "Postictal sx.(Sleep/Confusion/Urination/Defecation) 가족력/개인력(ㅡ/ㅡ) 영양상태:"
+        },
+        {
+          "id": "i-60884bae711f",
+          "text": "항경련제 복용(ㅡ)마지막복용시간: , Last alcohol intake time: , 수면: 시간/일"
+        }
+      ]
+    },
+    {
+      "id": "mental-exam",
+      "title": "의식장애 진찰",
+      "kind": "exam",
+      "items": [
+        {
+          "id": "i-5880a2a9aa60",
+          "text": "< Mental change > Mental(Stroke참조): ( ) 호흡: 불규칙적/규칙적 / 깊게/얕게"
+        },
+        {
+          "id": "i-fe4bc183cc47",
+          "text": "동공: 크다/보통/작다 - 양쪽크기 같다/다르다 Light reflex ( / ) 휴지로 눈살짝 건드리고 반응 ( / )"
+        },
+        {
+          "id": "i-485924cb448e",
+          "text": "양쪽 팔/다리 꼬집고 반응: 오른쪽 상지( ) 왼쪽 상지( ) 오른쪽 하지( ) 왼쪽 하지( )"
+        },
+        {
+          "id": "i-f9d2ad838f38",
+          "text": "바빈스키 반사(우측 /좌측 )"
+        },
+        {
+          "id": "i-7605224c4f7e",
+          "text": "Mental(Stroke참조): ( )"
+        },
+        {
+          "id": "i-bf300566329e",
+          "text": "호흡: 불규칙적/규칙적 / 깊게/얕게"
+        },
+        {
+          "id": "i-593abf312fe2",
+          "text": "동공: 크다/보통/작다 - 양쪽크기 같다/다르다"
+        },
+        {
+          "id": "i-2c0ef8400763",
+          "text": "Light reflex ( / )"
+        },
+        {
+          "id": "i-9e1ef0fb5a14",
+          "text": "휴지로 눈살짝 건드리고 반응 ( / )"
+        }
+      ]
+    },
+    {
+      "id": "peds-cough",
+      "title": "소아 기침 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-3368440da93b",
+          "text": "기침소리(컹컹대는지/기침인지); 누웠을때 심해지는지( ) Hoarseness( ) 아토피 천식 과거력/가족력 ( / )"
+        }
+      ]
+    },
+    {
+      "id": "peds-fever",
+      "title": "소아 발열 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-ca2d5f59c88c",
+          "text": "activity (last activity time)"
+        },
+        {
+          "id": "i-f67d6676b11b",
+          "text": "F/C/C/S/R ( ) Feeding/activity/urination/sleeping"
+        },
+        {
+          "id": "i-09f9f960f4d3",
+          "text": "집에서 재봤을때 최고체온( ) 내원시 체온 ( ); 해열제 마지막복용 ( ) 해열제 복용 횟수( ) 해열제 종류( )"
+        },
+        {
+          "id": "i-d410e445b7d6",
+          "text": "복용 간격 ( ) 해열제 복용시 반응( )"
+        },
+        {
+          "id": "i-d6027d327579",
+          "text": "집에서 재봤을때 최고체온( ) 내원시 체온 ( );"
+        },
+        {
+          "id": "i-d054632e1182",
+          "text": "해열제 마지막복용 ( ) 해열제 복용 횟수( ) 해열제 종류( )"
+        }
+      ]
+    },
+    {
+      "id": "peds-fever-exam",
+      "title": "소아 발열 진찰",
+      "kind": "exam",
+      "items": [
+        {
+          "id": "i-88be3820287a",
+          "text": "Throat injection/tonsil enlargement ( )"
+        },
+        {
+          "id": "i-c1abfc2296d2",
+          "text": "uvular deviation( ), white patch( )"
+        },
+        {
+          "id": "i-89b8406e0d1a",
+          "text": "Lung Sound (normal/coarse, both/L/R)"
+        },
+        {
+          "id": "i-92df79d13f9d",
+          "text": "chest retraction (-)"
+        },
+        {
+          "id": "i-85e00579f43c",
+          "text": "Bowel Sound"
+        },
+        {
+          "id": "i-1ba15ce64ef8",
+          "text": "ear tympanic redness"
+        },
+        {
+          "id": "i-78f591a013bf",
+          "text": "Nuchal rigidity(-) TM injection(-)"
+        }
+      ]
+    },
+    {
+      "id": "peds-fever-example",
+      "title": "소아 발열 차팅 예시",
+      "kind": "example",
+      "items": [
+        {
+          "id": "i-f70eebcacd56",
+          "text": "상기환아 내원 당일 오후 2시부터 fever있어서 내원함. 집에서 쟀을때 38.0도까지 올라갔다고하며 내원당시 39.5도임. 해열제는 오후2시 한번 복용하였고 떨어지는 양상이었으나 오후5시에 다시올라감.내원전일 저녁부터 기침있어 당일아침local 의원방문하여 medication함."
+        }
+      ]
+    },
+    {
+      "id": "urinary-history",
+      "title": "배뇨증상 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-bda12e23e084",
+          "text": "residual sensation( ), Frequency( ), Urgency( ), hesitancy( ), Dysuria( ), Hematuria( ), Terminal dribbling( ), Nocturia( ), incontinence( ), Narrow urine stream( )"
+        }
+      ]
+    },
+    {
+      "id": "flank-note",
+      "title": "옆구리 통증 인계 메모",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-9c83c71a6e33",
+          "text": "처방-ER세트-요로결석"
+        },
+        {
+          "id": "i-eb78ffa7f6c4",
+          "text": "Old age 시 EKG 추가, D-dimer (renal infarction 간혹 있음)"
+        },
+        {
+          "id": "i-e4ebc9e04362",
+          "text": "CT는 RUA 검사 결과 확인 후 시행이 원칙"
+        },
+        {
+          "id": "i-899326191deb",
+          "text": "주로 Kerasyn, 심할 경우 Morphine으로 control, 구역감 동반 시 Macperan"
+        },
+        {
+          "id": "i-956f2c0d1e98",
+          "text": "※Macperan의 경우 Parkinsonism 있는 환자는 투여하면 안됨"
+        }
+      ]
+    },
+    {
+      "id": "msk-exam",
+      "title": "근골격 진찰",
+      "kind": "exam",
+      "items": [
+        {
+          "id": "i-f87ca1e6cd9b",
+          "text": "LOM(), M/S change(), tenderness point, External wound Swelling"
+        }
+      ]
+    },
+    {
+      "id": "trauma-history",
+      "title": "외상 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-688a6f65c1d7",
+          "text": "몇시에 생긴 상처?"
+        },
+        {
+          "id": "i-de73026cd548",
+          "text": "어떻게 다친 상처?"
+        },
+        {
+          "id": "i-e1195a72d9d0",
+          "text": "무엇에 맞았는지,"
+        },
+        {
+          "id": "i-9ebb530af606",
+          "text": "어느정도 세기로 부딪혔는지"
+        },
+        {
+          "id": "i-d721e9eae930",
+          "text": "파상풍 예방접종 유무 (5년 내로)"
+        },
+        {
+          "id": "i-a0f0117152c7",
+          "text": "LOC"
+        },
+        {
+          "id": "i-386ee59bf53f",
+          "text": "Abd pain, Flank pain"
+        },
+        {
+          "id": "i-b2bb84357bb1",
+          "text": "Chest wall pain"
+        },
+        {
+          "id": "i-be27568ef195",
+          "text": "Pain control 원하는 지 여부를 확인 (complaint 빈번함)"
+        },
+        {
+          "id": "i-0cc7a621fc77",
+          "text": "파상풍 접종력 확인"
+        },
+        {
+          "id": "i-b84e19f8e78e",
+          "text": "3세 미만 laceration의 경우 line 확보 및 sedative drug 사용 위해 NPO check (3hrs), 몸무게 확인",
+          "condition": "3세 미만 열상"
+        },
+        {
+          "id": "i-de147cc79d31",
+          "text": "초진 시 수상기전, 속도, 탑승위치(운전석/조수석 등), 보호구 착용 여부, 의식소실 여부, 에어백 터짐 여부 등 확인",
+          "condition": "교통사고"
+        },
+        {
+          "id": "i-fcd19e2e6a55",
+          "text": "초진 시 수상기전(주먹, 칼 등), 수상부위, 수상정도(몇 대) 등 확인",
+          "condition": "상해"
+        }
+      ]
+    },
+    {
+      "id": "trauma-exam",
+      "title": "외상 진찰",
+      "kind": "exam",
+      "items": [
+        {
+          "id": "i-04d6f8b0a8a2",
+          "text": "!!까서 눈으로 직접보기!!"
+        },
+        {
+          "id": "i-2d07e2abd35d",
+          "text": "foreign body 유무"
+        },
+        {
+          "id": "i-3066cfdb3509",
+          "text": "사이즈, 범위(이마 or 두피) Lip laceration일 경우 -> 안에 까뒤집어서 Oral cavity 내 병변 확인할 것!"
+        },
+        {
+          "id": "i-fce3d24d05a6",
+          "text": "Active bleeding"
+        },
+        {
+          "id": "i-996a841fe07e",
+          "text": "depth (deep or superficial or 관통상)"
+        },
+        {
+          "id": "i-45dcc449d3cd",
+          "text": "margin (regular or irregular) ex. P/E) chin 2cm superficial linear irregular margin laceration"
+        },
+        {
+          "id": "i-33c45fd3619a",
+          "text": "Face일 경우 Td 확인"
+        },
+        {
+          "id": "i-ade2395cb1b7",
+          "text": "structure 유무 (아무것도 안보임, dermis만 보임, tendon, ligament, nerve, subQ 등)"
+        },
+        {
+          "id": "i-03c04767e1cf",
+          "text": "근처 sensory, motor P/E"
+        },
+        {
+          "id": "i-800b30ed4c7d",
+          "text": "Td LOM deformity"
+        },
+        {
+          "id": "i-440ea8d2c491",
+          "text": "Sensory/motor"
+        },
+        {
+          "id": "i-108544b6342b",
+          "text": "Pelvis, C-spine에 Td 있는지 확인"
+        },
+        {
+          "id": "i-226da3ed64be",
+          "text": "irregular; superficial/deep; ____ cm"
+        },
+        {
+          "id": "i-deb36614d74a",
+          "text": "motor/sensory change"
+        },
+        {
+          "id": "i-a169f4388074",
+          "text": "bleeding"
+        },
+        {
+          "id": "i-92155cfad7fe",
+          "text": "통증 호소 부위 위주로 PEx. 하나, Head-Thorax-Abd.-Lower back-Pelvis-Ext. 모두 확인",
+          "condition": "교통사고"
+        }
+      ]
+    },
+    {
+      "id": "trauma-note",
+      "title": "외상 인계 메모",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-cc9fb9ec6dff",
+          "text": "처방-ER세트-정형외과 Routine & 성형외과 Routine & 신경외과 Routine & 07Suture..."
+        },
+        {
+          "id": "i-f374b9394b7f",
+          "text": "XR 각 관절의 여러가지 view들은 모두 포함하여 시행"
+        },
+        {
+          "id": "i-ce1c89e77931",
+          "text": "소아는 비교하기 위해 양 쪽 다 찍음 (ossification, growth plate 등)"
+        },
+        {
+          "id": "i-423e0fce3748",
+          "text": "처방내림 전 ED R. confirm 받기"
+        },
+        {
+          "id": "i-189594487b6f",
+          "text": "초진 시 Gauze+생리식염수+픽스몰"
+        },
+        {
+          "id": "i-4d81c93f9549",
+          "text": "해당 부위에 맞게 영상 오더 (comment에 4th finger 같이 정확한 부위 입력 해야 함)"
+        },
+        {
+          "id": "i-883574d75347",
+          "text": "07Suture... 에서 ABx. (개or고양이or사람 물림-> Tiramox, 이외엔 cefazoline), TD, Hyper TET"
+        },
+        {
+          "id": "i-a47c1d8faf33",
+          "text": "보통 simple lac.은 ED R. suture, deep lac. 및 Fx. 동반 wound의 경우 OS/PS 등에서 manage"
+        },
+        {
+          "id": "i-e8c9278bf2dc",
+          "text": "Tenderness 있는 위, 아래 뼈를 모두 찍어야 함 (ex. ankle pain 시 tibia~foot)",
+          "condition": "교통사고"
+        },
+        {
+          "id": "i-a3ca85a94775",
+          "text": "챠팅 시 반드시 \"~~ 진술 상\" comment 포함할 것 (ex.119 현장구급대원 진술 상, 환자 본인 진술 상 등)",
+          "condition": "교통사고"
+        },
+        {
+          "id": "i-5e267dc38824",
+          "text": "챠팅 시 반드시 \"~~ 진술 상\" comment 포함할 것",
+          "condition": "상해"
+        },
+        {
+          "id": "i-74813088c816",
+          "text": "진단서, 상해진단서 등 발급을 원할 시 ED R.에게 알림",
+          "condition": "상해"
+        },
+        {
+          "id": "i-21694bf54bf1",
+          "text": "Trauma (열상 등 open wound 초진보러 갈시 wet gauze + 픽스몰 챙겨가세요)"
+        },
+        {
+          "id": "i-203a4da1266c",
+          "text": "Wet dressing 주로 구조사 선생님 잡이긴 한데, 바쁠때 늦어지는 경우 많음"
+        }
+      ]
+    },
+    {
+      "id": "trauma-example",
+      "title": "외상 차팅 예시",
+      "kind": "example",
+      "items": [
+        {
+          "id": "i-5735897496c9",
+          "text": "차팅예시"
+        },
+        {
+          "id": "i-612377d2b84a",
+          "text": "Alert mentation"
+        },
+        {
+          "id": "i-aec507acc5c5",
+          "text": "Pupil(0.3/0.3)"
+        },
+        {
+          "id": "i-09934c95f014",
+          "text": "EOM: OK"
+        },
+        {
+          "id": "i-ae266c3ddb7d",
+          "text": "Visual disturbance(-)"
+        },
+        {
+          "id": "i-0aca2be86e56",
+          "text": "Nuchal midline td(-), LOM(-)"
+        },
+        {
+          "id": "i-218af66eb411",
+          "text": "Motor : U (G5/G5) L (G5/G5)"
+        },
+        {
+          "id": "i-438f9d760f95",
+          "text": "Senosry change(-)"
+        },
+        {
+          "id": "i-276cecfacc29",
+          "text": "Gait: ok"
+        },
+        {
+          "id": "i-233de0814bca",
+          "text": "No ext. wound on chest, abdomen & back"
+        }
+      ]
+    },
+    {
+      "id": "headtrauma-history",
+      "title": "두부외상 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-3ef205c69344",
+          "text": "LOC ( ), headache/nausea/vomit( )"
+        }
+      ]
+    },
+    {
+      "id": "headtrauma-exam",
+      "title": "두부외상 진찰",
+      "kind": "exam",
+      "items": [
+        {
+          "id": "i-5d548532fd14",
+          "text": "Pupil reflex"
+        }
+      ]
+    },
+    {
+      "id": "back-mixed",
+      "title": "비외상성 등·허리 통증 문진과 진찰",
+      "kind": "exam",
+      "items": [
+        {
+          "id": "i-4adbb353ba50",
+          "text": "초진 시 시술/침 등 침습적 치료 여부 확인, Neurologic exam 충실히 시행"
+        }
+      ]
+    },
+    {
+      "id": "back-note",
+      "title": "비외상성 등·허리 통증 인계 메모",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-887efc4db26b",
+          "text": "주로 XR w/u하나, 이는 골절을 감별하기 위한 검사임을 교육, 디스크, 협착증, 근육통 등은 감별에 제한 있음을 초진 시 설명"
+        },
+        {
+          "id": "i-115754ffda99",
+          "text": "Pain control에 반응이 더디거나, 거의 효과 없을 수 있음을 미리 설명 (complaint 빈번함)"
+        }
+      ]
+    },
+    {
+      "id": "rash-note",
+      "title": "피부 발진 인계 메모",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-0e0ec0f4baeb",
+          "text": "처방-ER세트-Allergy & angioedema routine"
+        },
+        {
+          "id": "i-3dc12c53eebc",
+          "text": "IM peniramine 투여 후 귀가 plan인 경우가 많음"
+        },
+        {
+          "id": "i-6fe69f063abd",
+          "text": "Angioedema 동반 시 IV fluid Tx.요하여 ED noti"
+        },
+        {
+          "id": "i-92ef6181190b",
+          "text": "초진 시행 후 일단 가려움증 낮추는 주사를 투여할 plan임을 설명"
+        },
+        {
+          "id": "i-1fa2d9cbf8e4",
+          "text": "이후 ED 설명 후 귀가 형식으로 진료 진행"
+        },
+        {
+          "id": "i-3b9babba9fdf",
+          "text": "약물 복용하고 있는 상태에도 호전이 없는 경우, DM consult"
+        }
+      ]
+    },
+    {
+      "id": "ob-history",
+      "title": "산부인과 공통 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-1109f9f55fe5",
+          "text": "와꾸: 부인과 진료경험, TPAL, 결혼여부, NPO time (필요하면 보호자 내보내고 혼자있을때 물어보기)"
+        },
+        {
+          "id": "i-6ea8e54d6744",
+          "text": "생리관련: LMP, 생리주기, 생리기간, 생리량, 생리통여부"
+        },
+        {
+          "id": "i-68d84b1f6aac",
+          "text": "성경험: last coitus, 성교통,"
+        },
+        {
+          "id": "i-49c213f030fe",
+          "text": "Vaginal bleeding/Vaginal discharge(-/-)"
+        },
+        {
+          "id": "i-ccbca1cd1f76",
+          "text": "이상질출혈, 냉변화, 질 출혈이면 양이 어느정도인지,"
+        }
+      ]
+    },
+    {
+      "id": "pregnancy-history",
+      "title": "산모 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-5e79003059b9",
+          "text": "T-P-A-L 0-0-0-0"
+        },
+        {
+          "id": "i-10e0162d3aee",
+          "text": "IUP(몇주 몇일 정확히!), OT"
+        },
+        {
+          "id": "i-c75d69226429",
+          "text": "진통여부(배뭉침, 주기, 지속시간)"
+        },
+        {
+          "id": "i-0138e8dfa9af",
+          "text": "LMP"
+        },
+        {
+          "id": "i-57925bf76ebf",
+          "text": "예정일(EDC)"
+        },
+        {
+          "id": "i-0c081eadaa0e",
+          "text": "NPO"
+        },
+        {
+          "id": "i-ff7aec9585a2",
+          "text": "Op hx."
+        }
+      ]
+    },
+    {
+      "id": "ob-note",
+      "title": "산부인과 인계 메모",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-a81efe90df85",
+          "text": "OBGY 인계 :"
+        },
+        {
+          "id": "i-057ab3fb8640",
+          "text": "# preterm labor"
+        },
+        {
+          "id": "i-754621b3148d",
+          "text": "# hemoperitoneum"
+        },
+        {
+          "id": "i-1517462b6cc6",
+          "text": "# vaginal bleeding,..."
+        },
+        {
+          "id": "i-301803998d87",
+          "text": "보통 본원 OBGY f/u 하시는 분들이 많아서 EMR에 있는 내용 붙여넣기 하면 좋아용.."
+        }
+      ]
+    },
+    {
+      "id": "peds-seizure-history",
+      "title": "소아 경련 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-be829747b960",
+          "text": "LOC ( )"
+        },
+        {
+          "id": "i-d953400df2c6",
+          "text": "eyeball deviation ( )"
+        },
+        {
+          "id": "i-597bebc96605",
+          "text": "urination ( ) a"
+        },
+        {
+          "id": "i-8ce09ee87474",
+          "text": "foamy salvation ( )"
+        },
+        {
+          "id": "i-837190c5a23c",
+          "text": "경련 과거력 (-)"
+        }
+      ]
+    },
+    {
+      "id": "peds-seizure-example",
+      "title": "소아 경련 차팅 예시",
+      "kind": "example",
+      "items": [
+        {
+          "id": "i-23456d42c6fc",
+          "text": "00시 경련 (30분 지속) 04시 경련 (5분 이내) 경련 상황 기억한"
+        },
+        {
+          "id": "i-bad96a5b387f",
+          "text": "[ictal]"
+        },
+        {
+          "id": "i-fb689eb0618a",
+          "text": "duration: ~5min"
+        },
+        {
+          "id": "i-dc69f0bb12ba",
+          "text": "type: 사지 부르르 떠는 모습 관찰됨"
+        },
+        {
+          "id": "i-fc2673bb7748",
+          "text": "upper EBD (+)"
+        },
+        {
+          "id": "i-4d3b5103a30a",
+          "text": "perioral cyanosis (+-)"
+        },
+        {
+          "id": "i-2c96ef85afac",
+          "text": "[post ictal]"
+        },
+        {
+          "id": "i-8b9a8c640bce",
+          "text": "힘이 축 빠졌고 그 외 특이소견 못봤다고 함"
+        },
+        {
+          "id": "i-2f3dc6ac0206",
+          "text": "family hx of epilepsy (-)"
+        },
+        {
+          "id": "i-29448cbaaa9e",
+          "text": "과거 경련 hx 없음"
+        },
+        {
+          "id": "i-73dd027c822c",
+          "text": "development: 달리기 가능. 문장 유창."
+        },
+        {
+          "id": "i-a1dac288ec72",
+          "text": "FCCSR +/+/-/-/-"
+        },
+        {
+          "id": "i-44d3ed573ae1",
+          "text": "ANVCD -/-/-/-/- (1주일전 변비로 복통 호소 있었음.현재는 없음)"
+        },
+        {
+          "id": "i-3fbf66a97202",
+          "text": "TE/TI -/-"
+        },
+        {
+          "id": "i-f0282fe3cfb0",
+          "text": "nomal LS"
+        },
+        {
+          "id": "i-5a2cbc0475fb",
+          "text": "general condition; moderate > 아버님 말로는 경련 이외에는 평소와 같이 운동,식사 잘"
+        },
+        {
+          "id": "i-f147200e243f",
+          "text": "하고 컨디션 좋아 보였다고 함. general condition으로 생각됨."
+        },
+        {
+          "id": "i-bc032a1ed254",
+          "text": "NEx : mental alert"
+        },
+        {
+          "id": "i-2b956438347f",
+          "text": "gait: normal > not unbalanced"
+        },
+        {
+          "id": "i-6fddc51fc43b",
+          "text": "ankle clonus (-/-)"
+        },
+        {
+          "id": "i-075fdb65c37b",
+          "text": "knee reflex"
+        },
+        {
+          "id": "i-7691f22e2a0e",
+          "text": "power: normotonia"
+        },
+        {
+          "id": "i-cba13eb9d26f",
+          "text": "upper/lower G4 G4 / G4 G4"
+        },
+        {
+          "id": "i-2cfe9b4c15cf",
+          "text": "language > 의사소통 잘 됨"
+        },
+        {
+          "id": "i-ac579761ba69",
+          "text": "(경련 예시)"
+        },
+        {
+          "id": "i-edca7648132c",
+          "text": "상기 환아 12mo경 열성경련 hx한차례 있었던 환아로 내원 2일전 local에서 목이 부었다는 이야기를 들었고 내원 1일전 6pm경부터 fever up to 39.8있으며 내원 약 30분전 4:15am경 약 1~2분 정도 경련 있었다고 하며 응급실로 내원함."
+        },
+        {
+          "id": "i-406b815fb2d3",
+          "text": "[pre ictal]"
+        },
+        {
+          "id": "i-6c17ef340c59",
+          "text": "꺠어있었고 미온수 마사지 하며 보호자(모) 안고 있는 중에"
+        },
+        {
+          "id": "i-742cc0b30316",
+          "text": "[ictal]"
+        },
+        {
+          "id": "i-f80f91d75429",
+          "text": "EBD : 뚜렷하지 않음. 눈에 초점이 없어보였다."
+        },
+        {
+          "id": "i-89049e8df4f3",
+          "text": "LOC (+) : 불러도 대답이 없고 의사소통 되지 않음"
+        },
+        {
+          "id": "i-c911a5fb9aba",
+          "text": "character : 양측 팔다리 뻣뻣해지는 양상"
+        },
+        {
+          "id": "i-3bb8a497989d",
+          "text": "duration : 1~2min"
+        },
+        {
+          "id": "i-34a4ab26187c",
+          "text": "associated sx : cyanosis(+), drooling (-), foamy salivation (-), post ictal urination/defecation -/-"
+        },
+        {
+          "id": "i-0679481a0b8e",
+          "text": "[post ictal]"
+        },
+        {
+          "id": "i-4cad4a81bc53",
+          "text": "뻣뻣해짐 멈추며 의식 명료하게 돌아오고 의사소통 됨."
+        },
+        {
+          "id": "i-a00556823521",
+          "text": "past convulsion hx(-)"
+        },
+        {
+          "id": "i-e54f06313209",
+          "text": "부모/형제 convulsion hx(-)"
+        }
+      ]
+    },
+    {
+      "id": "ear-history",
+      "title": "귀 증상 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-5a33dba2ab00",
+          "text": "URI Sx, 최근에 귀에 물 들어간적(ex수영장)"
+        },
+        {
+          "id": "i-9ed2447b8d64",
+          "text": "redness / swelling / ear fullness( )"
+        },
+        {
+          "id": "i-00f4e17f31db",
+          "text": "Dizziness / hearing loss ( )"
+        },
+        {
+          "id": "i-7eda19f1989e",
+          "text": "EAR sx(tinnitus/otalgia/ear fullness/hearing difficulty)"
+        },
+        {
+          "id": "i-fdd513cc18af",
+          "text": "otalgia(-/-) tinnitus(-/-)"
+        },
+        {
+          "id": "i-87611c37fa0b",
+          "text": "hearing difficulty/trauma/최근에 귀에 물 들어간 적 있는지(ex.수영장)/URI Sx."
+        }
+      ]
+    },
+    {
+      "id": "ear-example",
+      "title": "귀 증상 차팅 예시",
+      "kind": "example",
+      "items": [
+        {
+          "id": "i-c58066a39b79",
+          "text": "ex."
+        },
+        {
+          "id": "i-4f8534ce0b1a",
+          "text": "<r/o AOM, CC 귀먹먹함>"
+        },
+        {
+          "id": "i-0d4397058996",
+          "text": "16시부터 귀가 물속에 있거나 비행기 타고 있는 것 처럼 먹먹하게 잘 안들린다고 하여 응급"
+        },
+        {
+          "id": "i-87ad0ab613de",
+          "text": "실 내원함. 좌측 귀보다 우측 귀가 더 안들린다고 함."
+        },
+        {
+          "id": "i-46fe29a75c9a",
+          "text": "Underlying none"
+        },
+        {
+          "id": "i-7443589aa977",
+          "text": "16시부터 우측 청력저하 있어 내원우측 귀 좌측에 비해 5~60%밖에 안들린다 함"
+        },
+        {
+          "id": "i-7cb201e1e2fd",
+          "text": "tinnitus 약하게 동반"
+        },
+        {
+          "id": "i-8ee23d3a8187",
+          "text": "FCCSR +-+-+ (열은 응급실 도착 후에 알았다)"
+        },
+        {
+          "id": "i-1a66fc8ad5f8",
+          "text": "ANVCD -----"
+        },
+        {
+          "id": "i-c9b17d933458",
+          "text": "FUND HIS ---- ---"
+        },
+        {
+          "id": "i-88c5ef8c7891",
+          "text": "lung sound clear"
+        },
+        {
+          "id": "i-ce05ec24f986",
+          "text": "no focal abd Td"
+        },
+        {
+          "id": "i-63a0c00c9b37",
+          "text": "CVAT -/-"
+        },
+        {
+          "id": "i-ab1f37c078d6",
+          "text": "Rt TM r/o intact (귀지 심해 정확한 관찰불가)"
+        },
+        {
+          "id": "i-79549d9c1f3c",
+          "text": "Lt TM intact"
+        },
+        {
+          "id": "i-5a54890e1070",
+          "text": "수영장 간 적 없음"
+        }
+      ]
+    },
+    {
+      "id": "epistaxis-mixed",
+      "title": "코피 문진과 진찰",
+      "kind": "exam",
+      "items": [
+        {
+          "id": "i-4a6311b2bab7",
+          "text": "출혈양/시작시간/현재 active bleeding인지(목 안을 꼭 확인)"
+        },
+        {
+          "id": "i-ca15bdb71320",
+          "text": "약물복용력 + 기저질환 HTN 유무/BP"
+        }
+      ]
+    },
+    {
+      "id": "epistaxis-note",
+      "title": "코피 인계 메모",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-ed62a7868ff4",
+          "text": "Active bleeding 있는 경우 merocel"
+        }
+      ]
+    },
+    {
+      "id": "eye-history",
+      "title": "눈 증상 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-28ecfc7fcdda",
+          "text": "ocular pain -/-"
+        },
+        {
+          "id": "i-e20bddff3b1d",
+          "text": "foreign body sensation -/-"
+        },
+        {
+          "id": "i-d16c7ea78bb3",
+          "text": "conjunctival injection -/-"
+        },
+        {
+          "id": "i-4f259c29f187",
+          "text": "discharge -/-"
+        },
+        {
+          "id": "i-d0723942eb28",
+          "text": "blurred vision -/-"
+        },
+        {
+          "id": "i-cec96462eb1a",
+          "text": "diplopia -/-"
+        },
+        {
+          "id": "i-18279ab2c20f",
+          "text": "원래 시력: 시력이 바뀌었는지 확인"
+        },
+        {
+          "id": "i-f7aed3e8baa4",
+          "text": "+ 안과적 과거력"
+        }
+      ]
+    },
+    {
+      "id": "eye-exam",
+      "title": "눈 증상 진찰",
+      "kind": "exam",
+      "items": [
+        {
+          "id": "i-b5dbf567b8b4",
+          "text": "light reflex intact"
+        },
+        {
+          "id": "i-3354730896e4",
+          "text": "EOM intact"
+        }
+      ]
+    },
+    {
+      "id": "eye-note",
+      "title": "눈 증상 인계 메모",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-12d19359ec2c",
+          "text": "+ 눈에 뭐가 들어가서 온 환자의 경우 (특히 화학물질) 노티 빨리 하고 irrigation하라고 하면 suture방에서 eye irrigation을 하면 됩니다."
+        }
+      ]
+    },
+    {
+      "id": "handover-general",
+      "title": "B구역 인계 메모",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-55253743d8e4",
+          "text": "B 구역은 인턴 초진/오더/노티/차팅 순으로 진료 진행함 (Procedure board가 밀리지 않는 선에서)"
+        },
+        {
+          "id": "i-77902610b87d",
+          "text": "Notify: \"~~환자 ~~주소로 내원한 r/o ~~~환자입니다.\""
+        },
+        {
+          "id": "i-cf7e2efd2775",
+          "text": "모르겠으면 ED R.에게 질문하면 친절하게 알려줄 것임"
+        }
+      ]
+    }
+  ],
+  "complaints": [
+    {
+      "id": "acute-condition",
+      "name": "급성상태",
+      "categoryId": "00",
+      "aliases": [],
+      "order": 0,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "abnormal-lab",
+      "name": "수치이상",
+      "categoryId": "00",
+      "aliases": [],
+      "order": 1,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "prescription",
+      "name": "처방체액",
+      "categoryId": "00",
+      "aliases": [],
+      "order": 2,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "device",
+      "name": "기구문제",
+      "categoryId": "00",
+      "aliases": [],
+      "order": 3,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "ward-event",
+      "name": "병동사건",
+      "categoryId": "00",
+      "aliases": [],
+      "order": 4,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "abdominal-pain",
+      "name": "복통",
+      "categoryId": "01",
+      "aliases": [
+        "복부 통증",
+        "급성복통",
+        "abdominal pain",
+        "abd pain",
+        "AP"
+      ],
+      "order": 0,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "routine-history",
+        "routine-exam"
+      ],
+      "sectionIds": [
+        "abd-history",
+        "abd-exam",
+        "peds-abd-history",
+        "peds-abd-mixed",
+        "abd-note"
+      ]
+    },
+    {
+      "id": "dyspepsia",
+      "name": "소화불량 / 만성 복통",
+      "categoryId": "01",
+      "aliases": [
+        "dyspepsia"
+      ],
+      "order": 1,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "hematemesis",
+      "name": "토혈",
+      "categoryId": "01",
+      "aliases": [
+        "hematemesis"
+      ],
+      "order": 2,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "bloody-stool",
+      "name": "혈변",
+      "categoryId": "01",
+      "aliases": [
+        "hematochezia",
+        "melena"
+      ],
+      "order": 3,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "vomiting",
+      "name": "오심 / 구토",
+      "categoryId": "01",
+      "aliases": [
+        "구역",
+        "nausea",
+        "vomiting",
+        "N/V",
+        "emesis"
+      ],
+      "order": 4,
+      "scope": "pediatric",
+      "status": "available",
+      "sharedSectionIds": [
+        "peds-history",
+        "peds-exam"
+      ],
+      "sectionIds": [
+        "peds-vomit"
+      ]
+    },
+    {
+      "id": "constipation",
+      "name": "변비",
+      "categoryId": "01",
+      "aliases": [
+        "constipation"
+      ],
+      "order": 5,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "routine-history"
+      ],
+      "sectionIds": [
+        "constipation-history"
+      ]
+    },
+    {
+      "id": "diarrhea",
+      "name": "설사",
+      "categoryId": "01",
+      "aliases": [
+        "diarrhea"
+      ],
+      "order": 6,
+      "scope": "pediatric",
+      "status": "available",
+      "sharedSectionIds": [
+        "peds-history",
+        "peds-exam"
+      ],
+      "sectionIds": [
+        "peds-diarrhea"
+      ]
+    },
+    {
+      "id": "jaundice",
+      "name": "황달",
+      "categoryId": "01",
+      "aliases": [
+        "jaundice"
+      ],
+      "order": 7,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "chest-pain",
+      "name": "흉통",
+      "categoryId": "02",
+      "aliases": [
+        "가슴통증",
+        "가슴 통증",
+        "chest pain",
+        "CP"
+      ],
+      "order": 0,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [],
+      "sectionIds": [
+        "chest-history"
+      ]
+    },
+    {
+      "id": "syncope",
+      "name": "실신",
+      "categoryId": "02",
+      "aliases": [
+        "syncope",
+        "LOC",
+        "blackout"
+      ],
+      "order": 1,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "nr-history"
+      ],
+      "sectionIds": [
+        "syncope-history",
+        "syncope-mixed",
+        "syncope-note"
+      ]
+    },
+    {
+      "id": "palpitation",
+      "name": "두근거림",
+      "categoryId": "02",
+      "aliases": [
+        "palpitation",
+        "palpitations"
+      ],
+      "order": 2,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "hypertension",
+      "name": "고혈압",
+      "categoryId": "02",
+      "aliases": [
+        "hypertension",
+        "HTN"
+      ],
+      "order": 3,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "dyslipidemia",
+      "name": "이상지질혈증",
+      "categoryId": "02",
+      "aliases": [
+        "dyslipidemia"
+      ],
+      "order": 4,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "cough",
+      "name": "기침",
+      "categoryId": "03",
+      "aliases": [
+        "cough"
+      ],
+      "order": 0,
+      "scope": "pediatric",
+      "status": "available",
+      "sharedSectionIds": [
+        "peds-history",
+        "peds-exam"
+      ],
+      "sectionIds": [
+        "peds-cough"
+      ]
+    },
+    {
+      "id": "rhinorrhea",
+      "name": "콧물 / 코막힘",
+      "categoryId": "03",
+      "aliases": [
+        "rhinorrhea",
+        "nasal obstruction"
+      ],
+      "order": 1,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "hemoptysis",
+      "name": "객혈",
+      "categoryId": "03",
+      "aliases": [
+        "hemoptysis"
+      ],
+      "order": 2,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "dyspnea",
+      "name": "호흡곤란",
+      "categoryId": "03",
+      "aliases": [
+        "숨참",
+        "숨차",
+        "dyspnea",
+        "dyspnoea",
+        "SOB",
+        "shortness of breath"
+      ],
+      "order": 3,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "polyuria",
+      "name": "다뇨",
+      "categoryId": "04",
+      "aliases": [
+        "polyuria"
+      ],
+      "order": 0,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "oliguria",
+      "name": "핍뇨",
+      "categoryId": "04",
+      "aliases": [
+        "oliguria"
+      ],
+      "order": 1,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "hematuria",
+      "name": "혈뇨",
+      "categoryId": "04",
+      "aliases": [
+        "hematuria"
+      ],
+      "order": 2,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [],
+      "sectionIds": [
+        "urinary-history"
+      ]
+    },
+    {
+      "id": "urinary-symptoms",
+      "name": "배뇨이상 / 빈뇨",
+      "categoryId": "04",
+      "aliases": [
+        "배뇨장애",
+        "빈뇨",
+        "배뇨통",
+        "dysuria",
+        "frequency",
+        "urinary symptoms"
+      ],
+      "order": 3,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [],
+      "sectionIds": [
+        "urinary-history"
+      ]
+    },
+    {
+      "id": "incontinence",
+      "name": "요실금",
+      "categoryId": "04",
+      "aliases": [
+        "incontinence"
+      ],
+      "order": 4,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [],
+      "sectionIds": [
+        "urinary-history"
+      ]
+    },
+    {
+      "id": "flank-pain",
+      "name": "옆구리 통증",
+      "categoryId": "04",
+      "aliases": [
+        "flank pain",
+        "renal colic"
+      ],
+      "order": 5,
+      "scope": "general",
+      "status": "notesOnly",
+      "sharedSectionIds": [],
+      "sectionIds": [
+        "flank-note"
+      ]
+    },
+    {
+      "id": "fever",
+      "name": "발열",
+      "categoryId": "05",
+      "aliases": [
+        "열",
+        "fever",
+        "pyrexia"
+      ],
+      "order": 0,
+      "scope": "pediatric",
+      "status": "available",
+      "sharedSectionIds": [
+        "peds-history",
+        "peds-exam"
+      ],
+      "sectionIds": [
+        "peds-fever",
+        "peds-fever-exam",
+        "peds-fever-example"
+      ]
+    },
+    {
+      "id": "bruising",
+      "name": "멍",
+      "categoryId": "05",
+      "aliases": [
+        "bruise"
+      ],
+      "order": 1,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "fatigue",
+      "name": "피로",
+      "categoryId": "05",
+      "aliases": [
+        "fatigue"
+      ],
+      "order": 2,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "weight-loss",
+      "name": "체중감소",
+      "categoryId": "05",
+      "aliases": [
+        "weight loss"
+      ],
+      "order": 3,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "weight-gain",
+      "name": "체중증가",
+      "categoryId": "05",
+      "aliases": [
+        "weight gain"
+      ],
+      "order": 4,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "poisoning",
+      "name": "중독 / 과량복용",
+      "categoryId": "05",
+      "aliases": [
+        "약물 과다복용",
+        "poisoning",
+        "overdose",
+        "intoxication"
+      ],
+      "order": 5,
+      "scope": "psychiatric",
+      "status": "available",
+      "sharedSectionIds": [
+        "np-history"
+      ],
+      "sectionIds": [
+        "np-note",
+        "np-response",
+        "np-example",
+        "np-ex1",
+        "np-template",
+        "np-ex2",
+        "np-ex3"
+      ]
+    },
+    {
+      "id": "joint-pain",
+      "name": "관절 통증 / 붓기",
+      "categoryId": "06",
+      "aliases": [
+        "arthralgia",
+        "joint pain"
+      ],
+      "order": 0,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [],
+      "sectionIds": [
+        "msk-exam"
+      ]
+    },
+    {
+      "id": "neck-pain",
+      "name": "목 통증",
+      "categoryId": "06",
+      "aliases": [
+        "neck pain"
+      ],
+      "order": 1,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "back-pain",
+      "name": "허리 통증",
+      "categoryId": "06",
+      "aliases": [
+        "요통",
+        "등 통증",
+        "back pain",
+        "LBP"
+      ],
+      "order": 2,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [],
+      "sectionIds": [
+        "back-mixed",
+        "back-note"
+      ]
+    },
+    {
+      "id": "rash",
+      "name": "피부 발진",
+      "categoryId": "06",
+      "aliases": [
+        "rash",
+        "skin rash"
+      ],
+      "order": 3,
+      "scope": "general",
+      "status": "notesOnly",
+      "sharedSectionIds": [],
+      "sectionIds": [
+        "rash-note"
+      ]
+    },
+    {
+      "id": "trauma",
+      "name": "상처 / 외상",
+      "categoryId": "06",
+      "aliases": [
+        "열상",
+        "교통사고",
+        "상해",
+        "trauma",
+        "laceration",
+        "lac",
+        "TA",
+        "wound"
+      ],
+      "order": 4,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "msk-exam"
+      ],
+      "sectionIds": [
+        "trauma-history",
+        "trauma-exam",
+        "trauma-note",
+        "trauma-example"
+      ]
+    },
+    {
+      "id": "head-trauma",
+      "name": "두부외상",
+      "categoryId": "06",
+      "aliases": [
+        "머리 외상",
+        "head trauma",
+        "head injury"
+      ],
+      "order": 5,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [],
+      "sectionIds": [
+        "headtrauma-history",
+        "headtrauma-exam"
+      ]
+    },
+    {
+      "id": "mood",
+      "name": "기분변화",
+      "categoryId": "07",
+      "aliases": [
+        "우울",
+        "mood",
+        "depression"
+      ],
+      "order": 0,
+      "scope": "psychiatric",
+      "status": "available",
+      "sharedSectionIds": [
+        "np-history"
+      ],
+      "sectionIds": [
+        "np-note",
+        "np-response",
+        "np-example",
+        "np-ex1",
+        "np-template",
+        "np-ex2",
+        "np-ex3"
+      ]
+    },
+    {
+      "id": "anxiety",
+      "name": "불안",
+      "categoryId": "07",
+      "aliases": [
+        "anxiety",
+        "panic"
+      ],
+      "order": 1,
+      "scope": "psychiatric",
+      "status": "available",
+      "sharedSectionIds": [
+        "np-history"
+      ],
+      "sectionIds": [
+        "np-note",
+        "np-response",
+        "np-example",
+        "np-ex1",
+        "np-template",
+        "np-ex2",
+        "np-ex3"
+      ]
+    },
+    {
+      "id": "sleep",
+      "name": "수면장애",
+      "categoryId": "07",
+      "aliases": [
+        "불면",
+        "insomnia",
+        "sleep"
+      ],
+      "order": 2,
+      "scope": "psychiatric",
+      "status": "available",
+      "sharedSectionIds": [
+        "np-history"
+      ],
+      "sectionIds": [
+        "np-note",
+        "np-response",
+        "np-example",
+        "np-ex1",
+        "np-template",
+        "np-ex2",
+        "np-ex3"
+      ]
+    },
+    {
+      "id": "memory",
+      "name": "기억력 저하",
+      "categoryId": "07",
+      "aliases": [
+        "memory loss"
+      ],
+      "order": 3,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "dizziness",
+      "name": "어지럼",
+      "categoryId": "07",
+      "aliases": [
+        "어지럼증",
+        "어지러움",
+        "dizziness",
+        "dizzy",
+        "vertigo",
+        "TRS"
+      ],
+      "order": 4,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "nr-history"
+      ],
+      "sectionIds": [
+        "dizziness-history",
+        "dizziness-exam",
+        "dizziness-note",
+        "dizziness-example"
+      ]
+    },
+    {
+      "id": "headache",
+      "name": "두통",
+      "categoryId": "07",
+      "aliases": [
+        "headache",
+        "HA"
+      ],
+      "order": 5,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "nr-history"
+      ],
+      "sectionIds": [
+        "headache-history",
+        "headache-exam"
+      ]
+    },
+    {
+      "id": "peds-seizure",
+      "name": "경련 (소아)",
+      "categoryId": "07",
+      "aliases": [
+        "소아 경련",
+        "열성경련",
+        "pediatric seizure",
+        "febrile seizure"
+      ],
+      "order": 6,
+      "scope": "pediatric",
+      "status": "available",
+      "sharedSectionIds": [
+        "peds-history",
+        "peds-exam"
+      ],
+      "sectionIds": [
+        "peds-seizure-history",
+        "peds-seizure-example"
+      ]
+    },
+    {
+      "id": "seizure",
+      "name": "경련 (성인)",
+      "categoryId": "07",
+      "aliases": [
+        "성인 경련",
+        "seizure",
+        "convulsion",
+        "GTC"
+      ],
+      "order": 7,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "nr-history"
+      ],
+      "sectionIds": [
+        "seizure-history"
+      ]
+    },
+    {
+      "id": "weakness",
+      "name": "근력 / 감각이상",
+      "categoryId": "07",
+      "aliases": [
+        "weakness",
+        "sensory change"
+      ],
+      "order": 8,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "mental-change",
+      "name": "의식장애",
+      "categoryId": "07",
+      "aliases": [
+        "의식저하",
+        "mental change",
+        "AMS",
+        "altered mental status"
+      ],
+      "order": 9,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "nr-history"
+      ],
+      "sectionIds": [
+        "mental-exam"
+      ]
+    },
+    {
+      "id": "movement",
+      "name": "떨림 / 운동이상",
+      "categoryId": "07",
+      "aliases": [
+        "tremor"
+      ],
+      "order": 10,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "stroke",
+      "name": "뇌졸중 의심",
+      "categoryId": "07",
+      "aliases": [
+        "stroke",
+        "CVA"
+      ],
+      "order": 11,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "nr-history"
+      ],
+      "sectionIds": [
+        "stroke-history",
+        "stroke-exam",
+        "stroke-note"
+      ]
+    },
+    {
+      "id": "breast-pain",
+      "name": "유방통",
+      "categoryId": "08",
+      "aliases": [
+        "mastalgia"
+      ],
+      "order": 0,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "breast-mass",
+      "name": "유방덩이",
+      "categoryId": "08",
+      "aliases": [
+        "breast mass"
+      ],
+      "order": 1,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "vaginal-discharge",
+      "name": "질분비물",
+      "categoryId": "08",
+      "aliases": [
+        "vaginal discharge"
+      ],
+      "order": 2,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "ob-history"
+      ],
+      "sectionIds": [
+        "ob-note"
+      ]
+    },
+    {
+      "id": "vaginal-bleeding",
+      "name": "질출혈",
+      "categoryId": "08",
+      "aliases": [
+        "vaginal bleeding"
+      ],
+      "order": 3,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "ob-history"
+      ],
+      "sectionIds": [
+        "ob-note"
+      ]
+    },
+    {
+      "id": "menstrual",
+      "name": "월경이상 (무월경)",
+      "categoryId": "08",
+      "aliases": [
+        "amenorrhea"
+      ],
+      "order": 4,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "ob-history"
+      ],
+      "sectionIds": [
+        "ob-note"
+      ]
+    },
+    {
+      "id": "dysmenorrhea",
+      "name": "월경통 (월경과다)",
+      "categoryId": "08",
+      "aliases": [
+        "dysmenorrhea",
+        "menorrhagia"
+      ],
+      "order": 5,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "ob-history"
+      ],
+      "sectionIds": [
+        "ob-note"
+      ]
+    },
+    {
+      "id": "pregnancy",
+      "name": "산전 진찰",
+      "categoryId": "08",
+      "aliases": [
+        "산모",
+        "임신",
+        "pregnancy",
+        "preterm labor",
+        "IUP"
+      ],
+      "order": 6,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "ob-history"
+      ],
+      "sectionIds": [
+        "pregnancy-history",
+        "ob-note"
+      ]
+    },
+    {
+      "id": "pelvic-pain",
+      "name": "골반통",
+      "categoryId": "08",
+      "aliases": [
+        "pelvic pain"
+      ],
+      "order": 7,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "ob-history"
+      ],
+      "sectionIds": [
+        "ob-note"
+      ]
+    },
+    {
+      "id": "growth",
+      "name": "성장 지연",
+      "categoryId": "09",
+      "aliases": [
+        "growth delay"
+      ],
+      "order": 0,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "development",
+      "name": "발달 지연",
+      "categoryId": "09",
+      "aliases": [
+        "developmental delay"
+      ],
+      "order": 1,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "vaccination",
+      "name": "예방접종",
+      "categoryId": "09",
+      "aliases": [
+        "vaccination"
+      ],
+      "order": 2,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "peds-common",
+      "name": "소아 공통",
+      "categoryId": "09",
+      "aliases": [
+        "소아",
+        "pediatrics",
+        "PD"
+      ],
+      "order": 3,
+      "scope": "pediatric",
+      "status": "available",
+      "sharedSectionIds": [
+        "peds-history",
+        "peds-exam"
+      ],
+      "sectionIds": []
+    },
+    {
+      "id": "eye",
+      "name": "눈 통증 / 시력저하",
+      "categoryId": "10",
+      "aliases": [
+        "안통",
+        "시력저하",
+        "eye pain",
+        "ocular pain",
+        "blurred vision"
+      ],
+      "order": 0,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [],
+      "sectionIds": [
+        "eye-history",
+        "eye-exam",
+        "eye-note"
+      ]
+    },
+    {
+      "id": "throat",
+      "name": "인후통 / 연하곤란",
+      "categoryId": "10",
+      "aliases": [
+        "sore throat",
+        "dysphagia"
+      ],
+      "order": 1,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "ear",
+      "name": "귀 통증 / 청력저하",
+      "categoryId": "10",
+      "aliases": [
+        "귀먹먹함",
+        "otalgia",
+        "hearing loss",
+        "tinnitus"
+      ],
+      "order": 2,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [],
+      "sectionIds": [
+        "ear-history",
+        "ear-example"
+      ]
+    },
+    {
+      "id": "epistaxis",
+      "name": "코피",
+      "categoryId": "10",
+      "aliases": [
+        "비출혈",
+        "epistaxis"
+      ],
+      "order": 3,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [],
+      "sectionIds": [
+        "epistaxis-mixed",
+        "epistaxis-note"
+      ]
+    },
+    {
+      "id": "alcohol-counsel",
+      "name": "음주 상담",
+      "categoryId": "11",
+      "aliases": [
+        "alcohol"
+      ],
+      "order": 0,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "smoking-counsel",
+      "name": "흡연 상담",
+      "categoryId": "11",
+      "aliases": [
+        "smoking"
+      ],
+      "order": 1,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "substance",
+      "name": "물질 오남용",
+      "categoryId": "11",
+      "aliases": [
+        "substance abuse"
+      ],
+      "order": 2,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "bad-news",
+      "name": "나쁜 소식 전하기",
+      "categoryId": "11",
+      "aliases": [],
+      "order": 3,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "domestic-violence",
+      "name": "가정폭력",
+      "categoryId": "11",
+      "aliases": [],
+      "order": 4,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "sexual-violence",
+      "name": "성폭력",
+      "categoryId": "11",
+      "aliases": [],
+      "order": 5,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "suicide",
+      "name": "자살 / 자해",
+      "categoryId": "11",
+      "aliases": [
+        "자살사고",
+        "자해충동",
+        "suicide",
+        "suicidal",
+        "self harm"
+      ],
+      "order": 6,
+      "scope": "psychiatric",
+      "status": "available",
+      "sharedSectionIds": [
+        "np-history"
+      ],
+      "sectionIds": [
+        "np-note",
+        "np-response",
+        "np-example",
+        "np-ex1",
+        "np-template",
+        "np-ex2",
+        "np-ex3"
+      ]
+    }
+  ],
+  "referenceSections": [
+    "routine-history",
+    "routine-exam",
+    "nr-history",
+    "peds-history",
+    "peds-exam",
+    "np-history",
+    "np-note",
+    "np-response",
+    "np-example",
+    "np-ex1",
+    "np-template",
+    "np-ex2",
+    "np-ex3",
+    "handover-general"
+  ]
+}

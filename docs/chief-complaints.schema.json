@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ER chief complaint reference data",
+  "type": "object",
+  "required": ["schemaVersion", "contentVersion", "categories", "sections", "complaints", "referenceSections"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "contentVersion": { "type": "string" },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "order", "secondary"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[0-9]{2}$" },
+          "name": { "type": "string" },
+          "order": { "type": "integer" },
+          "secondary": { "type": "boolean" }
+        }
+      }
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "kind", "items"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "kind": { "enum": ["history", "exam", "note", "example"] },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "text"],
+              "additionalProperties": false,
+              "properties": {
+                "id": { "type": "string" },
+                "text": { "type": "string" },
+                "condition": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "complaints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "categoryId", "aliases", "order", "scope", "status", "sharedSectionIds", "sectionIds"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "categoryId": { "type": "string" },
+          "aliases": { "$ref": "#/$defs/strings" },
+          "order": { "type": "integer" },
+          "scope": { "enum": ["general", "pediatric", "psychiatric"] },
+          "status": { "enum": ["available", "missing", "notesOnly"] },
+          "sharedSectionIds": { "$ref": "#/$defs/strings" },
+          "sectionIds": { "$ref": "#/$defs/strings" }
+        }
+      }
+    },
+    "referenceSections": { "$ref": "#/$defs/strings" }
+  },
+  "$defs": {
+    "strings": { "type": "array", "items": { "type": "string" } }
+  }
+}
