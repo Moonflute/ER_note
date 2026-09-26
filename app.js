@@ -2,8 +2,6 @@
 
 (() => {
   const main = document.querySelector("#main");
-  const sourceDialog = document.querySelector("#source-dialog");
-  const sourceContent = document.querySelector("#source-content");
   const legacyRoutes = {
     mood: "psychiatry-interview", anxiety: "psychiatry-interview", sleep: "psychiatry-interview", suicide: "psychiatry-interview", poisoning: "psychiatry-interview",
     "vaginal-discharge": "obgyn-interview", "vaginal-bleeding": "obgyn-interview", menstrual: "obgyn-interview", dysmenorrhea: "obgyn-interview", "pelvic-pain": "obgyn-interview"
@@ -12,10 +10,9 @@
     search: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
     back: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m14 5-7 7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
   };
-  const state = { data: null, query: "", homeScroll: 0, route: null, currentItems: [], checked: new Map(), showSources: false, provenance: null };
+  const state = { data: null, query: "", homeScroll: 0, route: null, currentItems: [], checked: new Map() };
   let sections;
   let complaints;
-  let provenancePromise;
 
   const escape = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
   const normalize = (value) => String(value).normalize("NFKC").toLocaleLowerCase().replace(/[^\p{L}\p{N}]/gu, "");
@@ -29,7 +26,6 @@
     const badges = [];
     if (includeScope && complaint.scope === "pediatric" && !complaint.name.includes("소아")) badges.push(badge("소아"));
     if (includeScope && complaint.scope === "psychiatric") badges.push(badge("정신과"));
-    if (complaint.status === "notesOnly") badges.push(badge("참고", true));
     return badges.join("");
   }
 
@@ -79,11 +75,10 @@
   }
 
   function itemMarkup(item, checkable) {
-    const sourceButton = `<button class="source-button" type="button" data-source-item="${escape(item.id)}" aria-label="이 항목의 원문 출처" ${state.showSources ? "" : "hidden"}>출처</button>`;
     const text = `${item.condition ? `<span class="condition">${escape(item.condition)}</span>` : ""}<span class="item-text">${escape(item.text)}</span>`;
-    if (!checkable) return `<div class="item-row"><div class="reference-item">${text}</div>${sourceButton}</div>`;
+    if (!checkable) return `<div class="item-row"><div class="reference-item">${text}</div></div>`;
     const checked = state.checked.get(state.route)?.has(item.id) ?? false;
-    return `<div class="item-row"><label class="check-item"><input type="checkbox" data-check-item="${escape(item.id)}" ${checked ? "checked" : ""}><span>${text}</span></label>${sourceButton}</div>`;
+    return `<div class="item-row"><label class="check-item"><input type="checkbox" data-check-item="${escape(item.id)}" ${checked ? "checked" : ""}><span>${text}</span></label></div>`;
   }
 
   function sectionMarkup(section) {
@@ -105,7 +100,7 @@
     document.title = `${name} · ER 초진`;
     main.innerHTML = `<div class="shell detail-shell"><nav class="detail-toolbar" aria-label="증상 목록으로 이동"><a class="back-link" href="#">${icons.back}목록</a><span class="toolbar-label">${escape(name)}</span></nav>
       <header class="detail-heading"><p class="eyebrow">${category ? escape(category.name) : "공통"}</p><h1>${escape(name)}</h1><div class="cc-meta">${common ? "" : complaintBadges(complaint)}</div></header>
-      <div class="detail-actions"><span class="progress" id="check-progress" aria-live="polite"></span><button class="text-button" type="button" id="reset-checks" hidden>초기화</button><button class="text-button" type="button" id="toggle-sources" aria-label="원문 출처 표시" aria-pressed="${state.showSources}">출처</button>${references.length && primary.length ? '<button class="text-button" type="button" id="jump-references">참고</button>' : ""}</div>
+      <div class="detail-actions"><span class="progress" id="check-progress" aria-live="polite"></span><button class="text-button" type="button" id="reset-checks" hidden>초기화</button></div>
       <div id="primary-content">${primary.map(sectionMarkup).join("")}</div>
       ${references.length ? `<section id="reference-content" aria-labelledby="reference-title"><header class="reference-heading"><h2 id="reference-title">참고</h2></header>${references.map(referenceMarkup).join("")}</section>` : ""}
       <nav class="mobile-dock" aria-label="빠른 이동"><a class="back-link" href="#">${icons.back}목록</a><button class="text-button" type="button" data-scroll-top>위로</button></nav></div>`;
@@ -127,7 +122,6 @@
     const hash = window.location.hash;
     const previousRoute = state.route;
     if (previousRoute === "home") state.homeScroll = window.scrollY;
-    if (sourceDialog.open) sourceDialog.close();
     if (hash.startsWith("#cc/")) {
       let id;
       try { id = decodeURIComponent(hash.slice(4)); } catch { id = ""; }
@@ -158,51 +152,12 @@
     if (previousRoute && previousRoute !== state.route) main.focus({ preventScroll: true });
   }
 
-  async function loadProvenance() {
-    if (!provenancePromise) provenancePromise = fetch("./data/content-provenance.json").then((response) => {
-      if (!response.ok) throw new Error("출처 자료를 불러오지 못했습니다.");
-      return response.json();
-    }).then((data) => {
-      state.provenance = data;
-      return data;
-    }).catch((error) => {
-      provenancePromise = null;
-      throw error;
-    });
-    return provenancePromise;
-  }
-
-  async function showSource(itemId) {
-    sourceContent.innerHTML = '<p role="status">출처를 불러오는 중…</p>';
-    sourceDialog.showModal();
-    try {
-      const data = await loadProvenance();
-      const blockIds = new Set(Object.entries(data.assignments).filter(([, mappings]) => mappings.some((mapping) => mapping.itemId === itemId)).map(([blockId]) => blockId));
-      const entries = data.sources.flatMap((source) => source.blocks.filter((block) => blockIds.has(block.id)).map((block) => ({ source, block })));
-      const additions = (data.pdfAdditions ?? []).filter(([id]) => id === itemId);
-      const markup = entries.map(({ source, block }) => `<section class="source-entry"><p class="source-file">${escape(source.file)}</p><p class="source-location">${block.paragraph ? `문단 ${escape(block.paragraph)}` : escape(block.id)}</p><div class="source-original">${escape(block.text)}</div></section>`).join("");
-      const additionMarkup = additions.map(([, text, blockId]) => `<section class="source-entry"><p class="source-file">PDF 추가 원문</p><p class="source-location">${escape(blockId)}</p><div class="source-original">${escape(text)}</div></section>`).join("");
-      sourceContent.innerHTML = markup + additionMarkup || "<p>이 항목의 출처를 찾을 수 없습니다.</p>";
-    } catch (error) {
-      sourceContent.innerHTML = `<p>${escape(error.message)}</p>`;
-    }
-  }
-
   main.addEventListener("click", (event) => {
-    const source = event.target.closest("[data-source-item]");
-    if (source) void showSource(source.dataset.sourceItem);
-    if (event.target.closest("#toggle-sources")) {
-      state.showSources = !state.showSources;
-      document.querySelectorAll(".source-button").forEach((button) => { button.hidden = !state.showSources; });
-      const button = document.querySelector("#toggle-sources");
-      button.setAttribute("aria-pressed", String(state.showSources));
-    }
     if (event.target.closest("#reset-checks")) {
       state.checked.delete(state.route);
       document.querySelectorAll("[data-check-item]").forEach((checkbox) => { checkbox.checked = false; });
       updateProgress();
     }
-    if (event.target.closest("#jump-references")) document.querySelector("#reference-content")?.scrollIntoView({ block: "start" });
     if (event.target.closest("[data-scroll-top]")) window.scrollTo(0, 0);
   });
 
@@ -215,7 +170,6 @@
     updateProgress();
   });
 
-  document.querySelector("#close-source").addEventListener("click", () => sourceDialog.close());
   document.querySelector(".skip-link").addEventListener("click", (event) => {
     event.preventDefault();
     main.focus({ preventScroll: true });

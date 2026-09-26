@@ -30,7 +30,7 @@ jobs:
           set -eu
           mkdir -p _site/data _site/assets/icons
           cp index.html styles.css app.js .nojekyll manifest.webmanifest _site/
-          cp data/chief-complaints.json data/content-provenance.json _site/data/
+          cp data/chief-complaints.json _site/data/
           cp assets/icons/er-icon-32.png assets/icons/er-icon-180.png assets/icons/er-icon-192.png assets/icons/er-icon-512.png _site/assets/icons/
 
       - name: Upload Pages artifact
