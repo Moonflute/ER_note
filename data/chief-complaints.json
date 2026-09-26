@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-09-26-beta.5",
+  "contentVersion": "2026-09-26-beta.6",
   "categories": [
     {
       "id": "00",
@@ -2853,7 +2853,77 @@
       "sharedSectionIds": [],
       "sectionIds": [
         "chest-history"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "chest-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Present illness",
+                "items": [
+                  {
+                    "id": "chest-hx-onset",
+                    "text": "Onset",
+                    "sourceItemIds": [
+                      "i-cc1f243d2ac8"
+                    ]
+                  },
+                  {
+                    "id": "chest-hx-character",
+                    "text": "Character",
+                    "sourceItemIds": [
+                      "i-8c8fcfe105b3"
+                    ]
+                  },
+                  {
+                    "id": "chest-hx-duration",
+                    "text": "Duration",
+                    "sourceItemIds": [
+                      "i-490fd8e4dda3"
+                    ]
+                  },
+                  {
+                    "id": "chest-hx-radiation",
+                    "text": "Radiation",
+                    "sourceItemIds": [
+                      "i-c13032d51230"
+                    ]
+                  },
+                  {
+                    "id": "chest-hx-factor",
+                    "text": "Aggravating / Alleviating factors",
+                    "sourceItemIds": [
+                      "i-bf595e446444"
+                    ]
+                  },
+                  {
+                    "id": "chest-hx-associated",
+                    "text": "Associated symptoms",
+                    "sourceItemIds": [
+                      "i-ae5de500815f"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Past · Drug history",
+                "items": [
+                  {
+                    "id": "chest-hx-past",
+                    "text": "Operation Hx / Medication Hx / Underlying disease",
+                    "sourceItemIds": [
+                      "i-bdecab5aa049"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "syncope",
@@ -3001,7 +3071,30 @@
       "sharedSectionIds": [],
       "sectionIds": [
         "urinary-history"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "hematuria-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Urinary symptoms",
+                "items": [
+                  {
+                    "id": "hematuria-hx-urinary",
+                    "text": "Residual sensation / Frequency / Urgency / Hesitancy / Dysuria / Hematuria / Terminal dribbling / Nocturia / Incontinence / Narrow urine stream",
+                    "sourceItemIds": [
+                      "i-bda12e23e084"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "urinary-symptoms",
@@ -3021,7 +3114,30 @@
       "sharedSectionIds": [],
       "sectionIds": [
         "urinary-history"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "urinary-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Urinary symptoms",
+                "items": [
+                  {
+                    "id": "urinary-hx-symptoms",
+                    "text": "Residual sensation / Frequency / Urgency / Hesitancy / Dysuria / Hematuria / Terminal dribbling / Nocturia / Incontinence / Narrow urine stream",
+                    "sourceItemIds": [
+                      "i-bda12e23e084"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "incontinence",
@@ -3036,7 +3152,30 @@
       "sharedSectionIds": [],
       "sectionIds": [
         "urinary-history"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "incontinence-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Urinary symptoms",
+                "items": [
+                  {
+                    "id": "incontinence-hx-urinary",
+                    "text": "Residual sensation / Frequency / Urgency / Hesitancy / Dysuria / Hematuria / Terminal dribbling / Nocturia / Incontinence / Narrow urine stream",
+                    "sourceItemIds": [
+                      "i-bda12e23e084"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "flank-pain",
@@ -3178,7 +3317,30 @@
       "sharedSectionIds": [],
       "sectionIds": [
         "msk-exam"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "joint-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "Musculoskeletal",
+                "items": [
+                  {
+                    "id": "joint-pe-msk",
+                    "text": "LOM / M·S change / Tenderness point / External wound / Swelling",
+                    "sourceItemIds": [
+                      "i-f87ca1e6cd9b"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "neck-pain",
@@ -3740,7 +3902,49 @@
       "sectionIds": [
         "headtrauma-history",
         "headtrauma-exam"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "head-trauma-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Present illness",
+                "items": [
+                  {
+                    "id": "head-trauma-hx",
+                    "text": "LOC / Headache / Nausea / Vomiting",
+                    "sourceItemIds": [
+                      "i-3ef205c69344"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "head-trauma-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "Neurologic",
+                "items": [
+                  {
+                    "id": "head-trauma-pe-pupil",
+                    "text": "Pupil reflex",
+                    "sourceItemIds": [
+                      "i-5d548532fd14"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "neurology-interview",
@@ -3758,7 +3962,83 @@
       "sharedSectionIds": [
         "nr-history"
       ],
-      "sectionIds": []
+      "sectionIds": [],
+      "layout": {
+        "sections": [
+          {
+            "id": "neurology-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Chief complaint · Present illness",
+                "items": [
+                  {
+                    "id": "neurology-hx-basic",
+                    "text": "S/A / V/S",
+                    "sourceItemIds": [
+                      "i-0ed008b89dee"
+                    ]
+                  },
+                  {
+                    "id": "neurology-hx-cc",
+                    "text": "Chief complaint / Onset",
+                    "sourceItemIds": [
+                      "i-ee4e51907a91"
+                    ]
+                  },
+                  {
+                    "id": "neurology-hx-pi",
+                    "text": "Present illness",
+                    "sourceItemIds": [
+                      "i-295d2b8c0877"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Past · Social · Drug history",
+                "items": [
+                  {
+                    "id": "neurology-hx-past",
+                    "text": "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis",
+                    "sourceItemIds": [
+                      "i-f9672a36bab3",
+                      "i-090b46250227"
+                    ]
+                  },
+                  {
+                    "id": "neurology-hx-social",
+                    "text": "Smoking / Alcohol / Pack-years / Current smoking",
+                    "sourceItemIds": [
+                      "i-3789fe7ad282"
+                    ]
+                  },
+                  {
+                    "id": "neurology-hx-medication",
+                    "text": "Medication",
+                    "sourceItemIds": [
+                      "i-18572f0f6fd3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Review of systems",
+                "items": [
+                  {
+                    "id": "neurology-hx-ros",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "psychiatry-interview",
@@ -4346,7 +4626,143 @@
         "peds-history",
         "peds-exam"
       ],
-      "sectionIds": []
+      "sectionIds": [],
+      "layout": {
+        "sections": [
+          {
+            "id": "peds-common-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "General · Birth history",
+                "items": [
+                  {
+                    "id": "peds-common-hx-vital",
+                    "text": "Vital signs: T / P / R / BP",
+                    "sourceItemIds": [
+                      "i-88fe282cb4fe"
+                    ]
+                  },
+                  {
+                    "id": "peds-common-hx-neonate",
+                    "text": "Neonate: Current weight / Gestational week / Vaginal delivery or C-section / Birth asphyxia",
+                    "sourceItemIds": [
+                      "i-88fe282cb4fe",
+                      "i-52e3c96499b8"
+                    ]
+                  },
+                  {
+                    "id": "peds-common-hx-mother",
+                    "text": "Maternal problem",
+                    "sourceItemIds": [
+                      "i-0ed4387ab7a9"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Review of systems",
+                "items": [
+                  {
+                    "id": "peds-common-hx-fccsr",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea / Nasal obstruction",
+                    "sourceItemIds": [
+                      "i-52e3c96499b8"
+                    ]
+                  },
+                  {
+                    "id": "peds-common-hx-anvcd",
+                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea / Headache / Irritability",
+                    "sourceItemIds": [
+                      "i-0ed4387ab7a9"
+                    ]
+                  },
+                  {
+                    "id": "peds-common-hx-daily",
+                    "text": "Feeding / Activity / Urination / Sleeping: Fair or Poor",
+                    "sourceItemIds": [
+                      "i-915a1e9fb598"
+                    ]
+                  },
+                  {
+                    "id": "peds-common-hx-appearance",
+                    "text": "Appearance: Well or Ill / Irritable / Lethargic",
+                    "sourceItemIds": [
+                      "i-2565eaefaa14"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "peds-common-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "HEENT · Neck",
+                "items": [
+                  {
+                    "id": "peds-common-pe-throat",
+                    "text": "Throat injection / Tonsillar enlargement",
+                    "sourceItemIds": [
+                      "i-f563840a36c8",
+                      "i-711f3514742f"
+                    ]
+                  },
+                  {
+                    "id": "peds-common-pe-tongue",
+                    "text": "Dehydrated tongue",
+                    "sourceItemIds": [
+                      "i-b65cf64b5492"
+                    ]
+                  },
+                  {
+                    "id": "peds-common-pe-neck",
+                    "text": "Neck stiffness / Nuchal rigidity",
+                    "sourceItemIds": [
+                      "i-795bc09a858d"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Chest",
+                "items": [
+                  {
+                    "id": "peds-common-pe-lung",
+                    "text": "Lung sound: Clear / Coarse / Wheezing / Stridor / Crackle",
+                    "sourceItemIds": [
+                      "i-afddfcfacdfb"
+                    ]
+                  },
+                  {
+                    "id": "peds-common-pe-heart",
+                    "text": "Heart murmur",
+                    "sourceItemIds": [
+                      "i-adc3e02089cf"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Abdomen",
+                "items": [
+                  {
+                    "id": "peds-common-pe-abd",
+                    "text": "Bowel sound: Normoactive / Increased / Decreased · Palpation: Soft / Hard · Flat / Distended",
+                    "sourceItemIds": [
+                      "i-aed40d3bdf5b"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "fever",

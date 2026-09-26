@@ -426,6 +426,123 @@ curated_layouts = {
                 ]},
             ]},
         ]
+    },
+    "chest-pain": {
+        "sections": [
+            {"id": "chest-view-history", "title": "Hx", "kind": "history", "groups": [
+                {"title": "Present illness", "items": [
+                    view_item("chest-hx-onset", "Onset", ["i-cc1f243d2ac8"]),
+                    view_item("chest-hx-character", "Character", ["i-8c8fcfe105b3"]),
+                    view_item("chest-hx-duration", "Duration", ["i-490fd8e4dda3"]),
+                    view_item("chest-hx-radiation", "Radiation", ["i-c13032d51230"]),
+                    view_item("chest-hx-factor", "Aggravating / Alleviating factors", ["i-bf595e446444"]),
+                    view_item("chest-hx-associated", "Associated symptoms", ["i-ae5de500815f"]),
+                ]},
+                {"title": "Past · Drug history", "items": [
+                    view_item("chest-hx-past", "Operation Hx / Medication Hx / Underlying disease", ["i-bdecab5aa049"]),
+                ]},
+            ]},
+        ]
+    },
+    "hematuria": {
+        "sections": [
+            {"id": "hematuria-view-history", "title": "Hx", "kind": "history", "groups": [
+                {"title": "Urinary symptoms", "items": [
+                    view_item("hematuria-hx-urinary", "Residual sensation / Frequency / Urgency / Hesitancy / Dysuria / Hematuria / Terminal dribbling / Nocturia / Incontinence / Narrow urine stream", ["i-bda12e23e084"]),
+                ]},
+            ]},
+        ]
+    },
+    "urinary-symptoms": {
+        "sections": [
+            {"id": "urinary-view-history", "title": "Hx", "kind": "history", "groups": [
+                {"title": "Urinary symptoms", "items": [
+                    view_item("urinary-hx-symptoms", "Residual sensation / Frequency / Urgency / Hesitancy / Dysuria / Hematuria / Terminal dribbling / Nocturia / Incontinence / Narrow urine stream", ["i-bda12e23e084"]),
+                ]},
+            ]},
+        ]
+    },
+    "incontinence": {
+        "sections": [
+            {"id": "incontinence-view-history", "title": "Hx", "kind": "history", "groups": [
+                {"title": "Urinary symptoms", "items": [
+                    view_item("incontinence-hx-urinary", "Residual sensation / Frequency / Urgency / Hesitancy / Dysuria / Hematuria / Terminal dribbling / Nocturia / Incontinence / Narrow urine stream", ["i-bda12e23e084"]),
+                ]},
+            ]},
+        ]
+    },
+    "joint-pain": {
+        "sections": [
+            {"id": "joint-view-exam", "title": "PEx", "kind": "exam", "groups": [
+                {"title": "Musculoskeletal", "items": [
+                    view_item("joint-pe-msk", "LOM / M·S change / Tenderness point / External wound / Swelling", ["i-f87ca1e6cd9b"]),
+                ]},
+            ]},
+        ]
+    },
+    "head-trauma": {
+        "sections": [
+            {"id": "head-trauma-view-history", "title": "Hx", "kind": "history", "groups": [
+                {"title": "Present illness", "items": [
+                    view_item("head-trauma-hx", "LOC / Headache / Nausea / Vomiting", ["i-3ef205c69344"]),
+                ]},
+            ]},
+            {"id": "head-trauma-view-exam", "title": "PEx", "kind": "exam", "groups": [
+                {"title": "Neurologic", "items": [
+                    view_item("head-trauma-pe-pupil", "Pupil reflex", ["i-5d548532fd14"]),
+                ]},
+            ]},
+        ]
+    },
+    "neurology-interview": {
+        "sections": [
+            {"id": "neurology-view-history", "title": "Hx", "kind": "history", "groups": [
+                {"title": "Chief complaint · Present illness", "items": [
+                    view_item("neurology-hx-basic", "S/A / V/S", ["i-0ed008b89dee"]),
+                    view_item("neurology-hx-cc", "Chief complaint / Onset", ["i-ee4e51907a91"]),
+                    view_item("neurology-hx-pi", "Present illness", ["i-295d2b8c0877"]),
+                ]},
+                {"title": "Past · Social · Drug history", "items": [
+                    view_item("neurology-hx-past", "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis", ["i-f9672a36bab3", "i-090b46250227"]),
+                    view_item("neurology-hx-social", "Smoking / Alcohol / Pack-years / Current smoking", ["i-3789fe7ad282"]),
+                    view_item("neurology-hx-medication", "Medication", ["i-18572f0f6fd3"]),
+                ]},
+                {"title": "Review of systems", "items": [
+                    view_item("neurology-hx-ros", "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness", ["i-f1940c9b999a"]),
+                ]},
+            ]},
+        ]
+    },
+    "peds-common": {
+        "sections": [
+            {"id": "peds-common-view-history", "title": "Hx", "kind": "history", "groups": [
+                {"title": "General · Birth history", "items": [
+                    view_item("peds-common-hx-vital", "Vital signs: T / P / R / BP", ["i-88fe282cb4fe"]),
+                    view_item("peds-common-hx-neonate", "Neonate: Current weight / Gestational week / Vaginal delivery or C-section / Birth asphyxia", ["i-88fe282cb4fe", "i-52e3c96499b8"]),
+                    view_item("peds-common-hx-mother", "Maternal problem", ["i-0ed4387ab7a9"]),
+                ]},
+                {"title": "Review of systems", "items": [
+                    view_item("peds-common-hx-fccsr", "Fever / Chill / Cough / Sputum / Rhinorrhea / Nasal obstruction", ["i-52e3c96499b8"]),
+                    view_item("peds-common-hx-anvcd", "Anorexia / Nausea / Vomiting / Constipation / Diarrhea / Headache / Irritability", ["i-0ed4387ab7a9"]),
+                    view_item("peds-common-hx-daily", "Feeding / Activity / Urination / Sleeping: Fair or Poor", ["i-915a1e9fb598"]),
+                    view_item("peds-common-hx-appearance", "Appearance: Well or Ill / Irritable / Lethargic", ["i-2565eaefaa14"]),
+                ]},
+            ]},
+            {"id": "peds-common-view-exam", "title": "PEx", "kind": "exam", "groups": [
+                {"title": "HEENT · Neck", "items": [
+                    view_item("peds-common-pe-throat", "Throat injection / Tonsillar enlargement", ["i-f563840a36c8", "i-711f3514742f"]),
+                    view_item("peds-common-pe-tongue", "Dehydrated tongue", ["i-b65cf64b5492"]),
+                    view_item("peds-common-pe-neck", "Neck stiffness / Nuchal rigidity", ["i-795bc09a858d"]),
+                ]},
+                {"title": "Chest", "items": [
+                    view_item("peds-common-pe-lung", "Lung sound: Clear / Coarse / Wheezing / Stridor / Crackle", ["i-afddfcfacdfb"]),
+                    view_item("peds-common-pe-heart", "Heart murmur", ["i-adc3e02089cf"]),
+                ]},
+                {"title": "Abdomen", "items": [
+                    view_item("peds-common-pe-abd", "Bowel sound: Normoactive / Increased / Decreased · Palpation: Soft / Hard · Flat / Distended", ["i-aed40d3bdf5b"]),
+                ]},
+            ]},
+        ]
     }
 }
 
@@ -553,7 +670,7 @@ for cid, records in catalog.items():
             item["layout"] = curated_layouts[iid]
         complaints.append(item)
 
-data = {"schemaVersion": 1, "contentVersion": "2026-09-26-beta.5", "categories": categories,
+data = {"schemaVersion": 1, "contentVersion": "2026-09-26-beta.6", "categories": categories,
         "sections": list(groups.values()), "complaints": complaints,
         "referenceSections": ["routine-history","routine-exam","handover-general"]}
 (DATA / "chief-complaints.json").write_text(json.dumps(data, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
