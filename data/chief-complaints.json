@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-09-26-beta.8",
+  "contentVersion": "2026-09-27-beta.9",
   "categories": [
     {
       "id": "00",
@@ -3323,9 +3323,10 @@
     },
     {
       "id": "urinary-symptoms",
-      "name": "배뇨이상 / 빈뇨",
+      "name": "배뇨이상",
       "categoryId": "04",
       "aliases": [
+        "배뇨이상 / 빈뇨",
         "배뇨장애",
         "빈뇨",
         "배뇨통",
@@ -3404,9 +3405,10 @@
     },
     {
       "id": "flank-pain",
-      "name": "옆구리 통증",
+      "name": "옆구리 통",
       "categoryId": "04",
       "aliases": [
+        "옆구리 통증",
         "flank pain",
         "renal colic"
       ],
@@ -3530,9 +3532,12 @@
     },
     {
       "id": "joint-pain",
-      "name": "관절 통증 / 붓기",
+      "name": "관절 문제",
       "categoryId": "06",
       "aliases": [
+        "관절 통증 / 붓기",
+        "관절 통증",
+        "붓기",
         "arthralgia",
         "joint pain"
       ],
@@ -3743,9 +3748,10 @@
     },
     {
       "id": "trauma",
-      "name": "상처 / 외상",
+      "name": "상처 외상",
       "categoryId": "06",
       "aliases": [
+        "상처 / 외상",
         "열상",
         "교통사고",
         "상해",
@@ -5363,9 +5369,10 @@
     },
     {
       "id": "seizure",
-      "name": "경련 (성인)",
+      "name": "경련",
       "categoryId": "07",
       "aliases": [
+        "경련 (성인)",
         "성인 경련",
         "seizure",
         "convulsion",
@@ -5776,9 +5783,10 @@
     },
     {
       "id": "stroke",
-      "name": "뇌졸중 의심",
+      "name": "뇌졸중",
       "categoryId": "07",
       "aliases": [
+        "뇌졸중 의심",
         "stroke",
         "CVA"
       ],
@@ -6658,9 +6666,10 @@
     },
     {
       "id": "vomiting",
-      "name": "오심 / 구토",
+      "name": "오심 구토",
       "categoryId": "09",
       "aliases": [
+        "오심 / 구토",
         "구역",
         "nausea",
         "vomiting",
@@ -7759,9 +7768,10 @@
     },
     {
       "id": "eye",
-      "name": "눈 통증 / 시력저하",
+      "name": "눈 이상",
       "categoryId": "10",
       "aliases": [
+        "눈 통증 / 시력저하",
         "안통",
         "시력저하",
         "eye pain",
@@ -7886,9 +7896,10 @@
     },
     {
       "id": "ear",
-      "name": "귀 통증 / 청력저하",
+      "name": "귀 이상",
       "categoryId": "10",
       "aliases": [
+        "귀 통증 / 청력저하",
         "귀먹먹함",
         "otalgia",
         "hearing loss",
@@ -7998,9 +8009,10 @@
     },
     {
       "id": "epistaxis",
-      "name": "코피",
+      "name": "코 이상",
       "categoryId": "10",
       "aliases": [
+        "코피",
         "비출혈",
         "epistaxis"
       ],

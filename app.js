@@ -27,16 +27,8 @@
     return badges.join("");
   }
 
-  function complaintCardSpan(name) {
-    const compactLength = Array.from(String(name).replace(/\s/g, "")).length;
-    if (compactLength <= 4) return 1;
-    if (compactLength <= 10) return 2;
-    return 3;
-  }
-
   function complaintCard(complaint) {
-    const span = complaintCardSpan(complaint.name);
-    return `<a class="cc-card span-${span}" href="${ccUrl(complaint.id)}"><span><span class="cc-name">${escape(complaint.name)}</span><span class="cc-meta">${complaintBadges(complaint, false)}</span></span></a>`;
+    return `<a class="cc-card" href="${ccUrl(complaint.id)}"><span><span class="cc-name">${escape(complaint.name)}</span><span class="cc-meta">${complaintBadges(complaint, false)}</span></span></a>`;
   }
 
   function renderHome() {
@@ -182,7 +174,7 @@
 
   async function start() {
     try {
-      const response = await fetch("./data/chief-complaints.json?v=8");
+      const response = await fetch("./data/chief-complaints.json?v=9");
       if (!response.ok) throw new Error("문진 자료를 불러오지 못했습니다.");
       state.data = await response.json();
       sections = new Map(state.data.sections.map((section) => [section.id, section]));
