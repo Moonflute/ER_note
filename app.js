@@ -226,7 +226,7 @@
 
   async function start() {
     try {
-      const response = await fetch("./data/chief-complaints.json?v=2");
+      const response = await fetch("./data/chief-complaints.json?v=3");
       if (!response.ok) throw new Error("문진 자료를 불러오지 못했습니다.");
       state.data = await response.json();
       sections = new Map(state.data.sections.map((section) => [section.id, section]));

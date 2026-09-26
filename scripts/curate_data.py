@@ -283,7 +283,9 @@ bindings = {
 for name in ["hematuria","incontinence"]:
     bindings[name] = ([], ["urinary-history"])
 complaints = []
+specialty_ids = {"neurology-interview", "psychiatry-interview", "obgyn-interview", "peds-common"}
 for cid, records in catalog.items():
+    records.sort(key=lambda record: record[0] not in specialty_ids)
     for order, (iid, name, aliases) in enumerate(records):
         shared, section_ids = bindings.get(iid, ([], []))
         scope = "general"
@@ -298,7 +300,7 @@ for cid, records in catalog.items():
             item["status"] = "notesOnly"
         complaints.append(item)
 
-data = {"schemaVersion": 1, "contentVersion": "2026-09-26-beta.2", "categories": categories,
+data = {"schemaVersion": 1, "contentVersion": "2026-09-26-beta.3", "categories": categories,
         "sections": list(groups.values()), "complaints": complaints,
         "referenceSections": ["routine-history","routine-exam","handover-general"]}
 (DATA / "chief-complaints.json").write_text(json.dumps(data, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")

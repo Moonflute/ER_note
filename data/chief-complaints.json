@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-09-26-beta.2",
+  "contentVersion": "2026-09-26-beta.3",
   "categories": [
     {
       "id": "00",
@@ -2942,150 +2942,6 @@
       ]
     },
     {
-      "id": "memory",
-      "name": "기억력 저하",
-      "categoryId": "07",
-      "aliases": [
-        "memory loss"
-      ],
-      "order": 0,
-      "scope": "general",
-      "status": "missing",
-      "sharedSectionIds": [],
-      "sectionIds": []
-    },
-    {
-      "id": "dizziness",
-      "name": "어지럼",
-      "categoryId": "07",
-      "aliases": [
-        "어지럼증",
-        "어지러움",
-        "dizziness",
-        "dizzy",
-        "vertigo",
-        "TRS"
-      ],
-      "order": 1,
-      "scope": "general",
-      "status": "available",
-      "sharedSectionIds": [
-        "nr-history"
-      ],
-      "sectionIds": [
-        "dizziness-history",
-        "dizziness-exam",
-        "dizziness-note",
-        "dizziness-example"
-      ]
-    },
-    {
-      "id": "headache",
-      "name": "두통",
-      "categoryId": "07",
-      "aliases": [
-        "headache",
-        "HA"
-      ],
-      "order": 2,
-      "scope": "general",
-      "status": "available",
-      "sharedSectionIds": [
-        "nr-history"
-      ],
-      "sectionIds": [
-        "headache-history",
-        "headache-exam"
-      ]
-    },
-    {
-      "id": "seizure",
-      "name": "경련 (성인)",
-      "categoryId": "07",
-      "aliases": [
-        "성인 경련",
-        "seizure",
-        "convulsion",
-        "GTC"
-      ],
-      "order": 3,
-      "scope": "general",
-      "status": "available",
-      "sharedSectionIds": [
-        "nr-history"
-      ],
-      "sectionIds": [
-        "seizure-history"
-      ]
-    },
-    {
-      "id": "weakness",
-      "name": "근력 / 감각이상",
-      "categoryId": "07",
-      "aliases": [
-        "weakness",
-        "sensory change"
-      ],
-      "order": 4,
-      "scope": "general",
-      "status": "missing",
-      "sharedSectionIds": [],
-      "sectionIds": []
-    },
-    {
-      "id": "mental-change",
-      "name": "의식장애",
-      "categoryId": "07",
-      "aliases": [
-        "의식저하",
-        "mental change",
-        "AMS",
-        "altered mental status"
-      ],
-      "order": 5,
-      "scope": "general",
-      "status": "available",
-      "sharedSectionIds": [
-        "nr-history"
-      ],
-      "sectionIds": [
-        "mental-exam"
-      ]
-    },
-    {
-      "id": "movement",
-      "name": "떨림 / 운동이상",
-      "categoryId": "07",
-      "aliases": [
-        "tremor"
-      ],
-      "order": 6,
-      "scope": "general",
-      "status": "missing",
-      "sharedSectionIds": [],
-      "sectionIds": []
-    },
-    {
-      "id": "stroke",
-      "name": "뇌졸중 의심",
-      "categoryId": "07",
-      "aliases": [
-        "stroke",
-        "CVA"
-      ],
-      "order": 7,
-      "scope": "general",
-      "status": "available",
-      "sharedSectionIds": [
-        "nr-history"
-      ],
-      "sectionIds": [
-        "stroke-history",
-        "stroke-exam",
-        "stroke-note"
-      ]
-    },
-    {
       "id": "neurology-interview",
       "name": "신경과 문진",
       "categoryId": "07",
@@ -3095,7 +2951,7 @@
         "NR",
         "신경과 공통"
       ],
-      "order": 8,
+      "order": 0,
       "scope": "general",
       "status": "available",
       "sharedSectionIds": [
@@ -3135,7 +2991,7 @@
         "suicidal",
         "self harm"
       ],
-      "order": 9,
+      "order": 1,
       "scope": "psychiatric",
       "status": "available",
       "sharedSectionIds": [
@@ -3149,6 +3005,150 @@
         "np-template",
         "np-ex2",
         "np-ex3"
+      ]
+    },
+    {
+      "id": "memory",
+      "name": "기억력 저하",
+      "categoryId": "07",
+      "aliases": [
+        "memory loss"
+      ],
+      "order": 2,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "dizziness",
+      "name": "어지럼",
+      "categoryId": "07",
+      "aliases": [
+        "어지럼증",
+        "어지러움",
+        "dizziness",
+        "dizzy",
+        "vertigo",
+        "TRS"
+      ],
+      "order": 3,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "nr-history"
+      ],
+      "sectionIds": [
+        "dizziness-history",
+        "dizziness-exam",
+        "dizziness-note",
+        "dizziness-example"
+      ]
+    },
+    {
+      "id": "headache",
+      "name": "두통",
+      "categoryId": "07",
+      "aliases": [
+        "headache",
+        "HA"
+      ],
+      "order": 4,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "nr-history"
+      ],
+      "sectionIds": [
+        "headache-history",
+        "headache-exam"
+      ]
+    },
+    {
+      "id": "seizure",
+      "name": "경련 (성인)",
+      "categoryId": "07",
+      "aliases": [
+        "성인 경련",
+        "seizure",
+        "convulsion",
+        "GTC"
+      ],
+      "order": 5,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "nr-history"
+      ],
+      "sectionIds": [
+        "seizure-history"
+      ]
+    },
+    {
+      "id": "weakness",
+      "name": "근력 / 감각이상",
+      "categoryId": "07",
+      "aliases": [
+        "weakness",
+        "sensory change"
+      ],
+      "order": 6,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "mental-change",
+      "name": "의식장애",
+      "categoryId": "07",
+      "aliases": [
+        "의식저하",
+        "mental change",
+        "AMS",
+        "altered mental status"
+      ],
+      "order": 7,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "nr-history"
+      ],
+      "sectionIds": [
+        "mental-exam"
+      ]
+    },
+    {
+      "id": "movement",
+      "name": "떨림 / 운동이상",
+      "categoryId": "07",
+      "aliases": [
+        "tremor"
+      ],
+      "order": 8,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "stroke",
+      "name": "뇌졸중 의심",
+      "categoryId": "07",
+      "aliases": [
+        "stroke",
+        "CVA"
+      ],
+      "order": 9,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "nr-history"
+      ],
+      "sectionIds": [
+        "stroke-history",
+        "stroke-exam",
+        "stroke-note"
       ]
     },
     {

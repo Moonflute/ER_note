@@ -43,25 +43,26 @@ svg { display: block; flex: 0 0 auto; }
 .icon-button { display: inline-flex; align-items: center; justify-content: center; border: 0; background: transparent; min-width: 48px; min-height: 48px; font-size: 26px; line-height: 1; border-radius: 6px; }
 .section-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
 .section-heading .count { color: var(--muted); font-size: 12px; font-weight: 500; white-space: nowrap; }
-.cc-card { display: flex; align-items: center; min-height: 40px; padding: 7px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--paper); gap: 7px; }
+.cc-card { display: flex; align-items: center; min-height: 32px; padding: 4px 7px; border: 1px solid var(--line); border-radius: 5px; background: var(--paper); gap: 5px; }
 .cc-card:hover { border-color: #bcbcbc; background: #f7f7f7; }
 .cc-name { display: block; font-weight: 600; font-size: 14px; line-height: 1.4; overflow-wrap: anywhere; }
 .cc-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 5px; }
 .cc-meta:empty { display: none; }
 .badge { display: inline-flex; align-items: center; padding: 1px 6px; border-radius: 4px; background: var(--soft); color: #9f1f29; font-size: 11px; line-height: 1.6; font-weight: 600; }
 .badge.muted { background: #f3f3f3; color: var(--muted); }
-.common-shortcut { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 6px 12px; border: 1px solid #cccccc; border-radius: 6px; color: var(--accent); font-size: 13px; font-weight: 650; }
+.common-shortcut { display: inline-flex; align-items: center; justify-content: center; min-height: 32px; padding: 4px 8px; border: 1px solid #cccccc; border-radius: 5px; color: var(--accent); font-size: 12px; font-weight: 650; }
 .catalog-heading { margin-bottom: 10px; }
 .catalog-tools { display: flex; align-items: center; gap: 12px; }
 .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 520px), 1fr)); column-gap: 28px; }
-.category { display: grid; grid-template-columns: 112px minmax(0, 1fr); align-items: start; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--line); }
-.category-title { padding-top: 9px; }
+.category { display: grid; grid-template-columns: 112px minmax(0, 1fr); align-items: start; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--line); }
+.category-title { padding-top: 6px; }
 .category-title h3 { font-size: 14px; font-weight: 650; }
-.category-cards { display: flex; flex-wrap: wrap; gap: 6px; }
-.category .cc-card { min-height: 40px; padding: 7px 11px; }
+.category-cards { display: flex; flex-wrap: wrap; gap: 4px; min-width: 0; }
+.category .cc-card { min-height: 32px; padding: 4px 7px; max-width: 100%; }
 .category .cc-name { font-size: 14px; }
 .home-shell .cc-card > span { display: flex; align-items: center; gap: 6px; }
 .home-shell .cc-meta { margin-top: 0; }
+.home-shell .cc-name { white-space: nowrap; }
 .empty-state { padding: 32px 20px; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; }
 .empty-state p { margin-top: 7px; color: var(--muted); font-size: 14px; }
 .detail-shell { max-width: 820px; padding-top: 0; }
@@ -117,12 +118,12 @@ dialog::backdrop { background: #00000066; }
   .shell { padding: 12px 14px 22px; }
   h1 { font-size: 27px; }
   .search-panel { padding: 4px 0 10px; }
-  .cc-card { min-height: 44px; padding: 8px 11px; }
-  .cc-name { font-size: 14px; }
+  .cc-name { font-size: 13px; }
   .cc-meta { gap: 4px; margin-top: 4px; }
-  .category { display: block; padding: 12px 0; }
-  .category-title { padding: 0 0 8px; }
-  .category .cc-card { min-height: 44px; }
+  .category { grid-template-columns: 76px minmax(0, 1fr); gap: 8px; padding: 9px 0; }
+  .category-title { padding-top: 6px; }
+  .category-title h3 { font-size: 12px; white-space: nowrap; }
+  .category .cc-name { font-size: 13px; }
   .detail-shell { padding-top: 0; padding-bottom: calc(95px + env(safe-area-inset-bottom)); }
   .detail-toolbar { margin: 0 -14px; padding: 7px 14px; }
   .toolbar-label { max-width: 54%; }
