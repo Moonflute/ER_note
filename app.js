@@ -12,7 +12,7 @@
     search: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
     back: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m14 5-7 7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
   };
-  const state = { data: null, query: "", categoryId: "all", homeScroll: 0, route: null, currentItems: [], checked: new Map(), showSources: false, provenance: null };
+  const state = { data: null, query: "", homeScroll: 0, route: null, currentItems: [], checked: new Map(), showSources: false, provenance: null };
   let sections;
   let complaints;
   let provenancePromise;
@@ -47,7 +47,6 @@
     const input = document.querySelector("#cc-search");
     input.addEventListener("input", () => {
       state.query = input.value;
-      state.categoryId = "all";
       document.querySelector("#clear-search").hidden = !state.query;
       renderHomeResults();
     });
@@ -66,18 +65,17 @@
     const indexed = state.data.complaints.filter(hasContent).map((complaint) => ({ complaint, terms: [complaint.name, ...complaint.aliases].map(normalize) }));
     const shortLatin = /^[a-z0-9]{1,4}$/.test(query);
     const hasExactMatch = shortLatin && indexed.some(({ terms }) => terms.includes(query));
-    const matching = indexed.filter(({ complaint, terms }) => {
+    const matching = indexed.filter(({ terms }) => {
       const matchesQuery = !query || terms.some((term) => shortLatin ? (hasExactMatch ? term === query : term.startsWith(query)) : term.includes(query));
-      return matchesQuery && (state.categoryId === "all" || complaint.categoryId === state.categoryId);
+      return matchesQuery;
     }).map(({ complaint }) => complaint);
     const categories = orderedCategories().filter((category) => indexed.some(({complaint}) => complaint.categoryId === category.id));
-    const categoryButtons = [{ id: "all", name: "전체" }, ...categories].map((category) => `<button class="filter" type="button" data-category="${escape(category.id)}" aria-pressed="${category.id === state.categoryId}">${escape(category.name)}</button>`).join("");
     const categoryCards = categories.map((category) => {
       const items = matching.filter((complaint) => complaint.categoryId === category.id).sort((a, b) => a.order - b.order);
       if (!items.length) return "";
       return `<section class="category${category.secondary ? " secondary" : ""}${category.id === "09" ? " pediatric" : ""}" aria-labelledby="category-${escape(category.id)}"><div class="category-title"><h3 id="category-${escape(category.id)}">${escape(category.name)}</h3></div><div class="category-cards">${items.map(complaintCard).join("")}</div></section>`;
     }).join("");
-    document.querySelector("#home-results").innerHTML = `<section aria-labelledby="catalog-title"><div class="section-heading catalog-heading"><h2 id="catalog-title">${query ? "검색 결과" : "분류"}</h2><div class="catalog-tools"><a class="common-shortcut" href="#common">공통 문진·진찰</a><span class="count" role="status" aria-live="polite">${matching.length}</span></div></div><div class="filter-list" role="group" aria-label="증상 분류">${categoryButtons}</div>${matching.length ? `<div class="category-grid">${categoryCards}</div>` : '<div class="empty-state"><p>검색 결과 없음</p></div>'}</section>`;
+    document.querySelector("#home-results").innerHTML = `<section aria-labelledby="catalog-title"><div class="section-heading catalog-heading"><h2 id="catalog-title">${query ? "검색 결과" : "분류"}</h2><div class="catalog-tools"><a class="common-shortcut" href="#common">공통 문진·진찰</a><span class="count" role="status" aria-live="polite">${matching.length}</span></div></div>${matching.length ? `<div class="category-grid">${categoryCards}</div>` : '<div class="empty-state"><p>검색 결과 없음</p></div>'}</section>`;
   }
 
   function itemMarkup(item, checkable) {
@@ -191,14 +189,6 @@
   }
 
   main.addEventListener("click", (event) => {
-    const filter = event.target.closest("[data-category]");
-    if (filter) {
-      state.categoryId = filter.dataset.category;
-      renderHomeResults();
-      const selected = document.querySelector(`[data-category="${state.categoryId}"]`);
-      selected?.focus({ preventScroll: true });
-      selected?.scrollIntoView({ block: "nearest", inline: "nearest" });
-    }
     const source = event.target.closest("[data-source-item]");
     if (source) void showSource(source.dataset.sourceItem);
     if (event.target.closest("#toggle-sources")) {

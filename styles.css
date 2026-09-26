@@ -53,9 +53,6 @@ svg { display: block; flex: 0 0 auto; }
 .common-shortcut { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 6px 12px; border: 1px solid #cccccc; border-radius: 6px; color: var(--accent); font-size: 13px; font-weight: 650; }
 .catalog-heading { margin-bottom: 10px; }
 .catalog-tools { display: flex; align-items: center; gap: 12px; }
-.filter-list { display: flex; flex-wrap: wrap; gap: 6px; padding: 2px 0 12px; }
-.filter { border: 1px solid var(--line); border-radius: 5px; min-height: 34px; padding: 5px 10px; background: var(--paper); white-space: nowrap; font-size: 13px; }
-.filter[aria-pressed="true"] { color: white; border-color: var(--accent-strong); background: var(--accent-strong); font-weight: 650; }
 .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 520px), 1fr)); column-gap: 28px; }
 .category { display: grid; grid-template-columns: 112px minmax(0, 1fr); align-items: start; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--line); }
 .category-title { padding-top: 9px; }
@@ -126,7 +123,6 @@ dialog::backdrop { background: #00000066; }
   .category { display: block; padding: 12px 0; }
   .category-title { padding: 0 0 8px; }
   .category .cc-card { min-height: 44px; }
-  .filter { min-height: 40px; }
   .detail-shell { padding-top: 0; padding-bottom: calc(95px + env(safe-area-inset-bottom)); }
   .detail-toolbar { margin: 0 -14px; padding: 7px 14px; }
   .toolbar-label { max-width: 54%; }
