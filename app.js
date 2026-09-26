@@ -77,7 +77,7 @@
     const categoryCards = categories.map((category) => {
       const items = matching.filter((complaint) => complaint.categoryId === category.id).sort((a, b) => a.order - b.order);
       if (!items.length) return "";
-      return `<section class="category${category.secondary ? " secondary" : ""}${category.id === "09" ? " pediatric" : ""}" aria-labelledby="category-${escape(category.id)}"><div class="category-title"><span class="category-number">${escape(category.id)}</span><h3 id="category-${escape(category.id)}">${escape(category.name)}</h3></div><div class="category-cards">${items.map(complaintCard).join("")}</div></section>`;
+      return `<section class="category${category.secondary ? " secondary" : ""}${category.id === "09" ? " pediatric" : ""}" aria-labelledby="category-${escape(category.id)}"><div class="category-title"><h3 id="category-${escape(category.id)}">${escape(category.name)}</h3></div><div class="category-cards">${items.map(complaintCard).join("")}</div></section>`;
     }).join("");
     document.querySelector("#home-results").innerHTML = `${prominent}<section aria-labelledby="catalog-title"><div class="section-heading catalog-heading"><h2 id="catalog-title">${query ? "검색 결과" : "분류"}</h2><span class="count" role="status" aria-live="polite">${matching.length}</span></div><div class="filter-list" role="group" aria-label="증상 분류">${categoryButtons}</div>${matching.length ? `<div class="category-grid">${categoryCards}</div>` : '<div class="empty-state"><p>검색 결과 없음</p></div>'}</section>`;
   }
@@ -108,7 +108,7 @@
     state.currentItems = [...new Set(primary.flatMap((section) => section.items.map((item) => item.id)))];
     document.title = `${name} · ER 초진`;
     main.innerHTML = `<div class="shell detail-shell"><nav class="detail-toolbar" aria-label="증상 목록으로 이동"><a class="back-link" href="#">${icons.back}목록</a><span class="toolbar-label">${escape(name)}</span></nav>
-      <header class="detail-heading"><p class="eyebrow">${category ? `${escape(category.id)} ${escape(category.name)}` : "공통"}</p><h1>${escape(name)}</h1><div class="cc-meta">${common ? "" : complaintBadges(complaint)}</div></header>
+      <header class="detail-heading"><p class="eyebrow">${category ? escape(category.name) : "공통"}</p><h1>${escape(name)}</h1><div class="cc-meta">${common ? "" : complaintBadges(complaint)}</div></header>
       <div class="detail-actions"><span class="progress" id="check-progress" aria-live="polite"></span><button class="text-button" type="button" id="reset-checks" hidden>초기화</button><button class="text-button" type="button" id="toggle-sources" aria-label="원문 출처 표시" aria-pressed="${state.showSources}">출처</button>${references.length && primary.length ? '<button class="text-button" type="button" id="jump-references">참고</button>' : ""}</div>
       <div id="primary-content">${primary.map(sectionMarkup).join("")}</div>
       ${references.length ? `<section id="reference-content" aria-labelledby="reference-title"><header class="reference-heading"><h2 id="reference-title">참고</h2></header>${references.map(referenceMarkup).join("")}</section>` : ""}
