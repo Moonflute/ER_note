@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-09-26-beta.1",
+  "contentVersion": "2026-09-26-beta.2",
   "categories": [
     {
       "id": "00",
@@ -2490,8 +2490,6 @@
       "sectionIds": [
         "abd-history",
         "abd-exam",
-        "peds-abd-history",
-        "peds-abd-mixed",
         "abd-note"
       ]
     },
@@ -2536,35 +2534,13 @@
       "sectionIds": []
     },
     {
-      "id": "vomiting",
-      "name": "오심 / 구토",
-      "categoryId": "01",
-      "aliases": [
-        "구역",
-        "nausea",
-        "vomiting",
-        "N/V",
-        "emesis"
-      ],
-      "order": 4,
-      "scope": "pediatric",
-      "status": "available",
-      "sharedSectionIds": [
-        "peds-history",
-        "peds-exam"
-      ],
-      "sectionIds": [
-        "peds-vomit"
-      ]
-    },
-    {
       "id": "constipation",
       "name": "변비",
       "categoryId": "01",
       "aliases": [
         "constipation"
       ],
-      "order": 5,
+      "order": 4,
       "scope": "general",
       "status": "available",
       "sharedSectionIds": [
@@ -2575,31 +2551,13 @@
       ]
     },
     {
-      "id": "diarrhea",
-      "name": "설사",
-      "categoryId": "01",
-      "aliases": [
-        "diarrhea"
-      ],
-      "order": 6,
-      "scope": "pediatric",
-      "status": "available",
-      "sharedSectionIds": [
-        "peds-history",
-        "peds-exam"
-      ],
-      "sectionIds": [
-        "peds-diarrhea"
-      ]
-    },
-    {
       "id": "jaundice",
       "name": "황달",
       "categoryId": "01",
       "aliases": [
         "jaundice"
       ],
-      "order": 7,
+      "order": 5,
       "scope": "general",
       "status": "missing",
       "sharedSectionIds": [],
@@ -2686,24 +2644,6 @@
       "sectionIds": []
     },
     {
-      "id": "cough",
-      "name": "기침",
-      "categoryId": "03",
-      "aliases": [
-        "cough"
-      ],
-      "order": 0,
-      "scope": "pediatric",
-      "status": "available",
-      "sharedSectionIds": [
-        "peds-history",
-        "peds-exam"
-      ],
-      "sectionIds": [
-        "peds-cough"
-      ]
-    },
-    {
       "id": "rhinorrhea",
       "name": "콧물 / 코막힘",
       "categoryId": "03",
@@ -2711,7 +2651,7 @@
         "rhinorrhea",
         "nasal obstruction"
       ],
-      "order": 1,
+      "order": 0,
       "scope": "general",
       "status": "missing",
       "sharedSectionIds": [],
@@ -2724,7 +2664,7 @@
       "aliases": [
         "hemoptysis"
       ],
-      "order": 2,
+      "order": 1,
       "scope": "general",
       "status": "missing",
       "sharedSectionIds": [],
@@ -2742,7 +2682,7 @@
         "SOB",
         "shortness of breath"
       ],
-      "order": 3,
+      "order": 2,
       "scope": "general",
       "status": "missing",
       "sharedSectionIds": [],
@@ -2841,35 +2781,13 @@
       ]
     },
     {
-      "id": "fever",
-      "name": "발열",
-      "categoryId": "05",
-      "aliases": [
-        "열",
-        "fever",
-        "pyrexia"
-      ],
-      "order": 0,
-      "scope": "pediatric",
-      "status": "available",
-      "sharedSectionIds": [
-        "peds-history",
-        "peds-exam"
-      ],
-      "sectionIds": [
-        "peds-fever",
-        "peds-fever-exam",
-        "peds-fever-example"
-      ]
-    },
-    {
       "id": "bruising",
       "name": "멍",
       "categoryId": "05",
       "aliases": [
         "bruise"
       ],
-      "order": 1,
+      "order": 0,
       "scope": "general",
       "status": "missing",
       "sharedSectionIds": [],
@@ -2882,7 +2800,7 @@
       "aliases": [
         "fatigue"
       ],
-      "order": 2,
+      "order": 1,
       "scope": "general",
       "status": "missing",
       "sharedSectionIds": [],
@@ -2895,7 +2813,7 @@
       "aliases": [
         "weight loss"
       ],
-      "order": 3,
+      "order": 2,
       "scope": "general",
       "status": "missing",
       "sharedSectionIds": [],
@@ -2908,37 +2826,11 @@
       "aliases": [
         "weight gain"
       ],
-      "order": 4,
+      "order": 3,
       "scope": "general",
       "status": "missing",
       "sharedSectionIds": [],
       "sectionIds": []
-    },
-    {
-      "id": "poisoning",
-      "name": "중독 / 과량복용",
-      "categoryId": "05",
-      "aliases": [
-        "약물 과다복용",
-        "poisoning",
-        "overdose",
-        "intoxication"
-      ],
-      "order": 5,
-      "scope": "psychiatric",
-      "status": "available",
-      "sharedSectionIds": [
-        "np-history"
-      ],
-      "sectionIds": [
-        "np-note",
-        "np-response",
-        "np-example",
-        "np-ex1",
-        "np-template",
-        "np-ex2",
-        "np-ex3"
-      ]
     },
     {
       "id": "joint-pain",
@@ -3050,87 +2942,13 @@
       ]
     },
     {
-      "id": "mood",
-      "name": "기분변화",
-      "categoryId": "07",
-      "aliases": [
-        "우울",
-        "mood",
-        "depression"
-      ],
-      "order": 0,
-      "scope": "psychiatric",
-      "status": "available",
-      "sharedSectionIds": [
-        "np-history"
-      ],
-      "sectionIds": [
-        "np-note",
-        "np-response",
-        "np-example",
-        "np-ex1",
-        "np-template",
-        "np-ex2",
-        "np-ex3"
-      ]
-    },
-    {
-      "id": "anxiety",
-      "name": "불안",
-      "categoryId": "07",
-      "aliases": [
-        "anxiety",
-        "panic"
-      ],
-      "order": 1,
-      "scope": "psychiatric",
-      "status": "available",
-      "sharedSectionIds": [
-        "np-history"
-      ],
-      "sectionIds": [
-        "np-note",
-        "np-response",
-        "np-example",
-        "np-ex1",
-        "np-template",
-        "np-ex2",
-        "np-ex3"
-      ]
-    },
-    {
-      "id": "sleep",
-      "name": "수면장애",
-      "categoryId": "07",
-      "aliases": [
-        "불면",
-        "insomnia",
-        "sleep"
-      ],
-      "order": 2,
-      "scope": "psychiatric",
-      "status": "available",
-      "sharedSectionIds": [
-        "np-history"
-      ],
-      "sectionIds": [
-        "np-note",
-        "np-response",
-        "np-example",
-        "np-ex1",
-        "np-template",
-        "np-ex2",
-        "np-ex3"
-      ]
-    },
-    {
       "id": "memory",
       "name": "기억력 저하",
       "categoryId": "07",
       "aliases": [
         "memory loss"
       ],
-      "order": 3,
+      "order": 0,
       "scope": "general",
       "status": "missing",
       "sharedSectionIds": [],
@@ -3148,7 +2966,7 @@
         "vertigo",
         "TRS"
       ],
-      "order": 4,
+      "order": 1,
       "scope": "general",
       "status": "available",
       "sharedSectionIds": [
@@ -3169,7 +2987,7 @@
         "headache",
         "HA"
       ],
-      "order": 5,
+      "order": 2,
       "scope": "general",
       "status": "available",
       "sharedSectionIds": [
@@ -3178,28 +2996,6 @@
       "sectionIds": [
         "headache-history",
         "headache-exam"
-      ]
-    },
-    {
-      "id": "peds-seizure",
-      "name": "경련 (소아)",
-      "categoryId": "07",
-      "aliases": [
-        "소아 경련",
-        "열성경련",
-        "pediatric seizure",
-        "febrile seizure"
-      ],
-      "order": 6,
-      "scope": "pediatric",
-      "status": "available",
-      "sharedSectionIds": [
-        "peds-history",
-        "peds-exam"
-      ],
-      "sectionIds": [
-        "peds-seizure-history",
-        "peds-seizure-example"
       ]
     },
     {
@@ -3212,7 +3008,7 @@
         "convulsion",
         "GTC"
       ],
-      "order": 7,
+      "order": 3,
       "scope": "general",
       "status": "available",
       "sharedSectionIds": [
@@ -3230,7 +3026,7 @@
         "weakness",
         "sensory change"
       ],
-      "order": 8,
+      "order": 4,
       "scope": "general",
       "status": "missing",
       "sharedSectionIds": [],
@@ -3246,7 +3042,7 @@
         "AMS",
         "altered mental status"
       ],
-      "order": 9,
+      "order": 5,
       "scope": "general",
       "status": "available",
       "sharedSectionIds": [
@@ -3263,7 +3059,7 @@
       "aliases": [
         "tremor"
       ],
-      "order": 10,
+      "order": 6,
       "scope": "general",
       "status": "missing",
       "sharedSectionIds": [],
@@ -3277,7 +3073,7 @@
         "stroke",
         "CVA"
       ],
-      "order": 11,
+      "order": 7,
       "scope": "general",
       "status": "available",
       "sharedSectionIds": [
@@ -3290,13 +3086,111 @@
       ]
     },
     {
+      "id": "neurology-interview",
+      "name": "신경과 문진",
+      "categoryId": "07",
+      "aliases": [
+        "신경과",
+        "neurology",
+        "NR",
+        "신경과 공통"
+      ],
+      "order": 8,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "nr-history"
+      ],
+      "sectionIds": []
+    },
+    {
+      "id": "psychiatry-interview",
+      "name": "정신과 문진",
+      "categoryId": "07",
+      "aliases": [
+        "정신과",
+        "psychiatry",
+        "NP",
+        "정신과 공통",
+        "불안",
+        "anxiety",
+        "panic",
+        "기분변화",
+        "우울",
+        "mood",
+        "depression",
+        "중독 / 과량복용",
+        "약물 과다복용",
+        "poisoning",
+        "overdose",
+        "intoxication",
+        "수면장애",
+        "불면",
+        "insomnia",
+        "sleep",
+        "자살 / 자해",
+        "자살사고",
+        "자해충동",
+        "suicide",
+        "suicidal",
+        "self harm"
+      ],
+      "order": 9,
+      "scope": "psychiatric",
+      "status": "available",
+      "sharedSectionIds": [
+        "np-history"
+      ],
+      "sectionIds": [
+        "np-note",
+        "np-response",
+        "np-example",
+        "np-ex1",
+        "np-template",
+        "np-ex2",
+        "np-ex3"
+      ]
+    },
+    {
+      "id": "obgyn-interview",
+      "name": "산부인과 문진",
+      "categoryId": "08",
+      "aliases": [
+        "산부인과",
+        "OBGY",
+        "OBGYN",
+        "gynecology",
+        "산부인과 공통",
+        "월경통 (월경과다)",
+        "dysmenorrhea",
+        "menorrhagia",
+        "월경이상 (무월경)",
+        "amenorrhea",
+        "골반통",
+        "pelvic pain",
+        "질출혈",
+        "vaginal bleeding",
+        "질분비물",
+        "vaginal discharge"
+      ],
+      "order": 0,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "ob-history"
+      ],
+      "sectionIds": [
+        "ob-note"
+      ]
+    },
+    {
       "id": "breast-pain",
       "name": "유방통",
       "categoryId": "08",
       "aliases": [
         "mastalgia"
       ],
-      "order": 0,
+      "order": 1,
       "scope": "general",
       "status": "missing",
       "sharedSectionIds": [],
@@ -3309,80 +3203,11 @@
       "aliases": [
         "breast mass"
       ],
-      "order": 1,
+      "order": 2,
       "scope": "general",
       "status": "missing",
       "sharedSectionIds": [],
       "sectionIds": []
-    },
-    {
-      "id": "vaginal-discharge",
-      "name": "질분비물",
-      "categoryId": "08",
-      "aliases": [
-        "vaginal discharge"
-      ],
-      "order": 2,
-      "scope": "general",
-      "status": "available",
-      "sharedSectionIds": [
-        "ob-history"
-      ],
-      "sectionIds": [
-        "ob-note"
-      ]
-    },
-    {
-      "id": "vaginal-bleeding",
-      "name": "질출혈",
-      "categoryId": "08",
-      "aliases": [
-        "vaginal bleeding"
-      ],
-      "order": 3,
-      "scope": "general",
-      "status": "available",
-      "sharedSectionIds": [
-        "ob-history"
-      ],
-      "sectionIds": [
-        "ob-note"
-      ]
-    },
-    {
-      "id": "menstrual",
-      "name": "월경이상 (무월경)",
-      "categoryId": "08",
-      "aliases": [
-        "amenorrhea"
-      ],
-      "order": 4,
-      "scope": "general",
-      "status": "available",
-      "sharedSectionIds": [
-        "ob-history"
-      ],
-      "sectionIds": [
-        "ob-note"
-      ]
-    },
-    {
-      "id": "dysmenorrhea",
-      "name": "월경통 (월경과다)",
-      "categoryId": "08",
-      "aliases": [
-        "dysmenorrhea",
-        "menorrhagia"
-      ],
-      "order": 5,
-      "scope": "general",
-      "status": "available",
-      "sharedSectionIds": [
-        "ob-history"
-      ],
-      "sectionIds": [
-        "ob-note"
-      ]
     },
     {
       "id": "pregnancy",
@@ -3395,7 +3220,7 @@
         "preterm labor",
         "IUP"
       ],
-      "order": 6,
+      "order": 3,
       "scope": "general",
       "status": "available",
       "sharedSectionIds": [
@@ -3407,20 +3232,153 @@
       ]
     },
     {
-      "id": "pelvic-pain",
-      "name": "골반통",
-      "categoryId": "08",
+      "id": "peds-common",
+      "name": "소아과 문진",
+      "categoryId": "09",
       "aliases": [
-        "pelvic pain"
+        "소아",
+        "소아 공통",
+        "소아과",
+        "pediatrics",
+        "pediatric",
+        "PD"
       ],
-      "order": 7,
-      "scope": "general",
+      "order": 0,
+      "scope": "pediatric",
       "status": "available",
       "sharedSectionIds": [
-        "ob-history"
+        "peds-history",
+        "peds-exam"
+      ],
+      "sectionIds": []
+    },
+    {
+      "id": "fever",
+      "name": "발열",
+      "categoryId": "09",
+      "aliases": [
+        "열",
+        "fever",
+        "pyrexia"
+      ],
+      "order": 1,
+      "scope": "pediatric",
+      "status": "available",
+      "sharedSectionIds": [
+        "peds-history",
+        "peds-exam"
       ],
       "sectionIds": [
-        "ob-note"
+        "peds-fever",
+        "peds-fever-exam",
+        "peds-fever-example"
+      ]
+    },
+    {
+      "id": "vomiting",
+      "name": "오심 / 구토",
+      "categoryId": "09",
+      "aliases": [
+        "구역",
+        "nausea",
+        "vomiting",
+        "N/V",
+        "emesis"
+      ],
+      "order": 2,
+      "scope": "pediatric",
+      "status": "available",
+      "sharedSectionIds": [
+        "peds-history",
+        "peds-exam"
+      ],
+      "sectionIds": [
+        "peds-vomit"
+      ]
+    },
+    {
+      "id": "diarrhea",
+      "name": "설사",
+      "categoryId": "09",
+      "aliases": [
+        "diarrhea"
+      ],
+      "order": 3,
+      "scope": "pediatric",
+      "status": "available",
+      "sharedSectionIds": [
+        "peds-history",
+        "peds-exam"
+      ],
+      "sectionIds": [
+        "peds-diarrhea"
+      ]
+    },
+    {
+      "id": "cough",
+      "name": "기침",
+      "categoryId": "09",
+      "aliases": [
+        "cough"
+      ],
+      "order": 4,
+      "scope": "pediatric",
+      "status": "available",
+      "sharedSectionIds": [
+        "peds-history",
+        "peds-exam"
+      ],
+      "sectionIds": [
+        "peds-cough"
+      ]
+    },
+    {
+      "id": "peds-abdominal-pain",
+      "name": "복통",
+      "categoryId": "09",
+      "aliases": [
+        "소아 복통",
+        "소아 복부 통증",
+        "pediatric abdominal pain",
+        "abdominal pain",
+        "abd pain",
+        "AP"
+      ],
+      "order": 5,
+      "scope": "pediatric",
+      "status": "available",
+      "sharedSectionIds": [
+        "peds-history",
+        "peds-exam"
+      ],
+      "sectionIds": [
+        "peds-abd-history",
+        "peds-abd-mixed"
+      ]
+    },
+    {
+      "id": "peds-seizure",
+      "name": "경련",
+      "categoryId": "09",
+      "aliases": [
+        "소아 경련",
+        "열성경련",
+        "pediatric seizure",
+        "febrile seizure",
+        "경련",
+        "seizure",
+        "convulsion"
+      ],
+      "order": 6,
+      "scope": "pediatric",
+      "status": "available",
+      "sharedSectionIds": [
+        "peds-history",
+        "peds-exam"
+      ],
+      "sectionIds": [
+        "peds-seizure-history",
+        "peds-seizure-example"
       ]
     },
     {
@@ -3430,7 +3388,7 @@
       "aliases": [
         "growth delay"
       ],
-      "order": 0,
+      "order": 7,
       "scope": "general",
       "status": "missing",
       "sharedSectionIds": [],
@@ -3443,7 +3401,7 @@
       "aliases": [
         "developmental delay"
       ],
-      "order": 1,
+      "order": 8,
       "scope": "general",
       "status": "missing",
       "sharedSectionIds": [],
@@ -3456,28 +3414,10 @@
       "aliases": [
         "vaccination"
       ],
-      "order": 2,
+      "order": 9,
       "scope": "general",
       "status": "missing",
       "sharedSectionIds": [],
-      "sectionIds": []
-    },
-    {
-      "id": "peds-common",
-      "name": "소아 공통",
-      "categoryId": "09",
-      "aliases": [
-        "소아",
-        "pediatrics",
-        "PD"
-      ],
-      "order": 3,
-      "scope": "pediatric",
-      "status": "available",
-      "sharedSectionIds": [
-        "peds-history",
-        "peds-exam"
-      ],
       "sectionIds": []
     },
     {
@@ -3622,49 +3562,11 @@
       "status": "missing",
       "sharedSectionIds": [],
       "sectionIds": []
-    },
-    {
-      "id": "suicide",
-      "name": "자살 / 자해",
-      "categoryId": "11",
-      "aliases": [
-        "자살사고",
-        "자해충동",
-        "suicide",
-        "suicidal",
-        "self harm"
-      ],
-      "order": 6,
-      "scope": "psychiatric",
-      "status": "available",
-      "sharedSectionIds": [
-        "np-history"
-      ],
-      "sectionIds": [
-        "np-note",
-        "np-response",
-        "np-example",
-        "np-ex1",
-        "np-template",
-        "np-ex2",
-        "np-ex3"
-      ]
     }
   ],
   "referenceSections": [
     "routine-history",
     "routine-exam",
-    "nr-history",
-    "peds-history",
-    "peds-exam",
-    "np-history",
-    "np-note",
-    "np-response",
-    "np-example",
-    "np-ex1",
-    "np-template",
-    "np-ex2",
-    "np-ex3",
     "handover-general"
   ]
 }

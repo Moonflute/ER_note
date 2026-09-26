@@ -4,7 +4,11 @@
   const main = document.querySelector("#main");
   const sourceDialog = document.querySelector("#source-dialog");
   const sourceContent = document.querySelector("#source-content");
-  const frequentIds = ["chest-pain", "abdominal-pain", "fever", "headache", "dizziness", "syncope", "vomiting", "trauma"];
+  const frequentIds = ["chest-pain", "abdominal-pain", "headache", "dizziness", "syncope", "trauma", "seizure", "head-trauma"];
+  const legacyRoutes = {
+    mood: "psychiatry-interview", anxiety: "psychiatry-interview", sleep: "psychiatry-interview", suicide: "psychiatry-interview", poisoning: "psychiatry-interview",
+    "vaginal-discharge": "obgyn-interview", "vaginal-bleeding": "obgyn-interview", menstrual: "obgyn-interview", dysmenorrhea: "obgyn-interview", "pelvic-pain": "obgyn-interview"
+  };
   const icons = {
     search: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
     back: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m14 5-7 7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
@@ -22,16 +26,16 @@
   const badge = (text, muted = false) => `<span class="badge${muted ? " muted" : ""}">${escape(text)}</span>`;
   const hasContent = (complaint) => complaint.status !== "missing" && [...complaint.sectionIds, ...complaint.sharedSectionIds].some((id) => sections.get(id)?.items.length);
 
-  function complaintBadges(complaint) {
+  function complaintBadges(complaint, includeScope = true) {
     const badges = [];
-    if (complaint.scope === "pediatric" && !complaint.name.includes("소아")) badges.push(badge("소아"));
-    if (complaint.scope === "psychiatric") badges.push(badge("정신과"));
-    if (complaint.status === "notesOnly") badges.push(badge("인계", true));
+    if (includeScope && complaint.scope === "pediatric" && !complaint.name.includes("소아")) badges.push(badge("소아"));
+    if (includeScope && complaint.scope === "psychiatric") badges.push(badge("정신과"));
+    if (complaint.status === "notesOnly") badges.push(badge("참고", true));
     return badges.join("");
   }
 
   function complaintCard(complaint) {
-    return `<a class="cc-card" href="${ccUrl(complaint.id)}"><span><span class="cc-name">${escape(complaint.name)}</span><span class="cc-meta">${complaintBadges(complaint)}</span></span></a>`;
+    return `<a class="cc-card" href="${ccUrl(complaint.id)}"><span><span class="cc-name">${escape(complaint.name)}</span><span class="cc-meta">${complaintBadges(complaint, false)}</span></span></a>`;
   }
 
   function renderHome() {
@@ -73,7 +77,7 @@
     const categoryCards = categories.map((category) => {
       const items = matching.filter((complaint) => complaint.categoryId === category.id).sort((a, b) => a.order - b.order);
       if (!items.length) return "";
-      return `<section class="category${category.secondary ? " secondary" : ""}" aria-labelledby="category-${escape(category.id)}"><div class="category-title"><span class="category-number">${escape(category.id)}</span><h3 id="category-${escape(category.id)}">${escape(category.name)}</h3></div><div class="category-cards">${items.map(complaintCard).join("")}</div></section>`;
+      return `<section class="category${category.secondary ? " secondary" : ""}${category.id === "09" ? " pediatric" : ""}" aria-labelledby="category-${escape(category.id)}"><div class="category-title"><span class="category-number">${escape(category.id)}</span><h3 id="category-${escape(category.id)}">${escape(category.name)}</h3></div><div class="category-cards">${items.map(complaintCard).join("")}</div></section>`;
     }).join("");
     document.querySelector("#home-results").innerHTML = `${prominent}<section aria-labelledby="catalog-title"><div class="section-heading catalog-heading"><h2 id="catalog-title">${query ? "검색 결과" : "분류"}</h2><span class="count" role="status" aria-live="polite">${matching.length}</span></div><div class="filter-list" role="group" aria-label="증상 분류">${categoryButtons}</div>${matching.length ? `<div class="category-grid">${categoryCards}</div>` : '<div class="empty-state"><p>검색 결과 없음</p></div>'}</section>`;
   }
@@ -131,6 +135,10 @@
     if (hash.startsWith("#cc/")) {
       let id;
       try { id = decodeURIComponent(hash.slice(4)); } catch { id = ""; }
+      if (legacyRoutes[id] && complaints.has(legacyRoutes[id])) {
+        id = legacyRoutes[id];
+        history.replaceState(null, "", window.location.pathname + window.location.search + ccUrl(id));
+      }
       const complaint = complaints.get(id);
       if (complaint && hasContent(complaint)) {
         state.route = complaint.id;
@@ -230,7 +238,7 @@
 
   async function start() {
     try {
-      const response = await fetch("./data/chief-complaints.json");
+      const response = await fetch("./data/chief-complaints.json?v=2");
       if (!response.ok) throw new Error("문진 자료를 불러오지 못했습니다.");
       state.data = await response.json();
       sections = new Map(state.data.sections.map((section) => [section.id, section]));

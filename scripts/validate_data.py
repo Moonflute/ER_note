@@ -61,7 +61,19 @@ for cc in data["complaints"]:
     require(set(refs) <= set(sections), f"Broken complaint section: {cc['id']}")
     require(bool(refs) == (cc["status"] != "missing"), f"Wrong material status: {cc['id']}")
     require(cc["scope"] in ("general", "pediatric", "psychiatric"), f"Unknown scope: {cc['id']}")
+    pediatric_refs = [sid for sid in refs if sid.startswith("peds-")]
+    if cc["scope"] == "pediatric":
+        require(cc["categoryId"] == "09", f"Pediatric entry outside pediatric category: {cc['id']}")
+        require(len(pediatric_refs) == len(refs), f"Adult material mixed into pediatric entry: {cc['id']}")
+    else:
+        require(not pediatric_refs, f"Pediatric material mixed into adult entry: {cc['id']}")
+    if cc["categoryId"] == "09" and refs:
+        require(cc["scope"] == "pediatric", f"Pediatric category has wrong scope: {cc['id']}")
 require(used == set(sections), "Sections are unreachable")
+require(not any(sid.startswith("peds-") or sid.startswith("np-") for sid in data["referenceSections"]), "Specialty material mixed into general common reference")
+for specialty_id, shared_id in (("neurology-interview", "nr-history"), ("psychiatry-interview", "np-history"), ("obgyn-interview", "ob-history"), ("peds-common", "peds-history")):
+    specialty = next((cc for cc in data["complaints"] if cc["id"] == specialty_id), None)
+    require(specialty is not None and shared_id in specialty["sharedSectionIds"], f"Missing specialty interview entry: {specialty_id}")
 for sid in ("np-ex1", "np-template", "np-ex2", "np-ex3", "np-response"):
     require(sections[sid]["kind"] == "example", f"Example placed in main checklist: {sid}")
 for source in sources.values():
@@ -70,6 +82,8 @@ for source in sources.values():
         require(hashlib.sha256(path.read_bytes()).hexdigest() == source["sha256"], f"Original source changed: {source['id']}")
 require(audit["sourceBlocks"] == len(blocks) and audit["unassignedSourceBlocks"] == [], "Stale completeness audit")
 require(audit["items"] == len(items), "Stale item audit")
+require(audit["complaints"] == len(data["complaints"]), "Stale catalog audit")
+require(audit["complaintsWithSourceMaterial"] == sum(cc["status"] != "missing" for cc in data["complaints"]), "Stale available entry audit")
 if errors:
     print("FAIL\n" + "\n".join(errors))
     sys.exit(1)

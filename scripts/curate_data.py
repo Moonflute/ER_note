@@ -219,8 +219,38 @@ catalog = {
  "10": [("eye","눈 통증 / 시력저하",["안통","시력저하","eye pain","ocular pain","blurred vision"]),("throat","인후통 / 연하곤란",["sore throat","dysphagia"]),("ear","귀 통증 / 청력저하",["귀먹먹함","otalgia","hearing loss","tinnitus"]),("epistaxis","코피",["비출혈","epistaxis"])],
  "11": [("alcohol-counsel","음주 상담",["alcohol"]),("smoking-counsel","흡연 상담",["smoking"]),("substance","물질 오남용",["substance abuse"]),("bad-news","나쁜 소식 전하기",[]),("domestic-violence","가정폭력",[]),("sexual-violence","성폭력",[]),("suicide","자살 / 자해",["자살사고","자해충동","suicide","suicidal","self harm"])],
 }
+# The supplied CC catalog is a classification reference. Keep source-backed
+# specialty templates as one entry and pediatric material in its own category.
+psychiatric_ids = {"mood", "anxiety", "sleep", "suicide", "poisoning"}
+obgyn_ids = {"vaginal-discharge", "vaginal-bleeding", "menstrual", "dysmenorrhea", "pelvic-pain"}
+pediatric_ids = {"vomiting", "diarrhea", "cough", "fever", "peds-seizure", "peds-common", "peds-abdominal-pain"}
+records_by_id = {record[0]: record for records in catalog.values() for record in records}
+
+def specialty_aliases(ids, extras):
+    aliases = list(extras)
+    for iid in sorted(ids):
+        _, name, terms = records_by_id[iid]
+        aliases.extend([name, *terms])
+    return list(dict.fromkeys(aliases))
+
+for cid, records in catalog.items():
+    catalog[cid] = [record for record in records if record[0] not in psychiatric_ids | obgyn_ids | pediatric_ids]
+catalog["07"].extend([
+    ("neurology-interview", "신경과 문진", ["신경과", "neurology", "NR", "신경과 공통"]),
+    ("psychiatry-interview", "정신과 문진", specialty_aliases(psychiatric_ids, ["정신과", "psychiatry", "NP", "정신과 공통"])),
+])
+catalog["08"].insert(0, ("obgyn-interview", "산부인과 문진", specialty_aliases(obgyn_ids, ["산부인과", "OBGY", "OBGYN", "gynecology", "산부인과 공통"])))
+catalog["09"] = [
+    ("peds-common", "소아과 문진", ["소아", "소아 공통", "소아과", "pediatrics", "pediatric", "PD"]),
+    records_by_id["fever"], records_by_id["vomiting"], records_by_id["diarrhea"], records_by_id["cough"],
+    ("peds-abdominal-pain", "복통", ["소아 복통", "소아 복부 통증", "pediatric abdominal pain", "abdominal pain", "abd pain", "AP"]),
+    ("peds-seizure", "경련", records_by_id["peds-seizure"][2] + ["경련", "seizure", "convulsion"]),
+    *catalog["09"],
+]
+
 bindings = {
- "abdominal-pain": (["routine-history","routine-exam"], ["abd-history","abd-exam","peds-abd-history","peds-abd-mixed","abd-note"]),
+ "abdominal-pain": (["routine-history","routine-exam"], ["abd-history","abd-exam","abd-note"]),
+ "peds-abdominal-pain": (["peds-history","peds-exam"], ["peds-abd-history","peds-abd-mixed"]),
  "constipation": (["routine-history"], ["constipation-history"]),
  "vomiting": (["peds-history","peds-exam"], ["peds-vomit"]),
  "diarrhea": (["peds-history","peds-exam"], ["peds-diarrhea"]),
@@ -230,7 +260,9 @@ bindings = {
  "urinary-symptoms": ([], ["urinary-history"]),
  "flank-pain": ([], ["flank-note"]),
  "fever": (["peds-history","peds-exam"], ["peds-fever","peds-fever-exam","peds-fever-example"]),
- "poisoning": (["np-history"], ["np-note","np-response","np-example","np-ex1","np-template","np-ex2","np-ex3"]),
+ "psychiatry-interview": (["np-history"], ["np-note","np-response","np-example","np-ex1","np-template","np-ex2","np-ex3"]),
+ "neurology-interview": (["nr-history"], []),
+ "obgyn-interview": (["ob-history"], ["ob-note"]),
  "joint-pain": ([], ["msk-exam"]),
  "back-pain": ([], ["back-mixed","back-note"]),
  "rash": ([], ["rash-note"]),
@@ -248,20 +280,16 @@ bindings = {
  "ear": ([], ["ear-history","ear-example"]),
  "epistaxis": ([], ["epistaxis-mixed","epistaxis-note"]),
 }
-for name in ["mood","anxiety","sleep","suicide"]:
-    bindings[name] = (["np-history"], ["np-note","np-response","np-example","np-ex1","np-template","np-ex2","np-ex3"])
 for name in ["hematuria","incontinence"]:
     bindings[name] = ([], ["urinary-history"])
-for name in ["vaginal-discharge","vaginal-bleeding","menstrual","dysmenorrhea","pelvic-pain"]:
-    bindings[name] = (["ob-history"], ["ob-note"])
 complaints = []
 for cid, records in catalog.items():
     for order, (iid, name, aliases) in enumerate(records):
         shared, section_ids = bindings.get(iid, ([], []))
         scope = "general"
-        if iid in ("vomiting","diarrhea","cough","fever","peds-seizure","peds-common"):
+        if iid in pediatric_ids:
             scope = "pediatric"
-        if iid in ("mood","anxiety","sleep","suicide","poisoning"):
+        if iid == "psychiatry-interview":
             scope = "psychiatric"
         item = {"id": iid, "name": name, "categoryId": cid, "aliases": aliases,
                 "order": order, "scope": scope, "status": "available" if shared or section_ids else "missing",
@@ -270,9 +298,9 @@ for cid, records in catalog.items():
             item["status"] = "notesOnly"
         complaints.append(item)
 
-data = {"schemaVersion": 1, "contentVersion": "2026-09-26-beta.1", "categories": categories,
+data = {"schemaVersion": 1, "contentVersion": "2026-09-26-beta.2", "categories": categories,
         "sections": list(groups.values()), "complaints": complaints,
-        "referenceSections": ["routine-history","routine-exam","nr-history","peds-history","peds-exam","np-history","np-note","np-response","np-example","np-ex1","np-template","np-ex2","np-ex3","handover-general"]}
+        "referenceSections": ["routine-history","routine-exam","handover-general"]}
 (DATA / "chief-complaints.json").write_text(json.dumps(data, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
 provenance = {"schemaVersion": 1, "sources": archive["sources"],
               "assignments": dict(assignments), "pdfAdditions": pdf_additions,
@@ -293,12 +321,16 @@ report = {"sourceFiles": len(archive["sources"]), "sourceBlocks": source_count,
  "items": item_count, "itemSourceBlocks": linked_blocks,
  "exactDuplicateOccurrencesMerged": linked_blocks - (item_count - len(pdf_additions)),
  "complaints": len(complaints), "complaintsWithSourceMaterial": sum(c["status"]!="missing" for c in complaints),
+ "pediatricEntries": [c["name"] for c in complaints if c["scope"]=="pediatric"],
+ "specialtyEntries": [c["name"] for c in complaints if c["id"] in ("neurology-interview", "psychiatry-interview", "obgyn-interview", "peds-common")],
  "missingComplaints": [c["name"] for c in complaints if c["status"]=="missing"],
  "method": "의미를 추정한 병합 없음. 동일 구획의 공백·앞쪽 bullet 차이만 있는 원문만 통합. 복합 항목과 조건 보존."}
 (DOCS / "content-audit.json").write_text(json.dumps(report, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
 
 lines = ["# ER 초진 자료 정리본", "", "원문 문진·진찰·인계 메모·차팅 예시를 구분한 베타 자료입니다. 의학 내용을 추가하거나 임상 지침으로 검증하지 않았습니다.", "",
- f"- 원본 {len(archive['sources'])}개 / 텍스트 블록 {source_count}개 / 미분류 0개", f"- 정리된 항목 {item_count}개 / CC {len(complaints)}개 중 자료 보유 {report['complaintsWithSourceMaterial']}개", "",
+ f"- 원본 {len(archive['sources'])}개 / 텍스트 블록 {source_count}개 / 미분류 0개", f"- 정리된 항목 {item_count}개 / 분류 항목 {len(complaints)}개 중 자료 보유 {report['complaintsWithSourceMaterial']}개", "",
+ "- 분과 공통 양식은 신경과·정신과·산부인과·소아과 문진으로 연결합니다. 소아 증상 자료는 모두 09 소아에 별도로 배치합니다.",
+ "- 항목 수는 원문 묶음 기준입니다. 한 문장에 여러 질문이 들어 있어도 원문 그대로 보존하며, 인계 메모와 차팅 예시를 질문으로 바꾸지 않습니다.", "",
  "## 공통 자료", ""]
 rendered = set()
 def render_section(sid):
@@ -327,7 +359,9 @@ for cat in sorted(categories, key=lambda x:x["order"]):
             lines.extend(["범위: 정신과 원문 공통 자료.", ""])
         if complaint["sharedSectionIds"]:
             lines.extend(["공통 자료: " + ", ".join(groups[s]["title"] for s in complaint["sharedSectionIds"]), ""])
-        for sid in complaint["sectionIds"]:
+        primary_ids = [sid for sid in complaint["sectionIds"] + complaint["sharedSectionIds"] if groups[sid]["kind"] in ("history", "exam")]
+        reference_ids = [sid for sid in complaint["sectionIds"] + complaint["sharedSectionIds"] if groups[sid]["kind"] in ("note", "example")]
+        for sid in dict.fromkeys(primary_ids + reference_ids):
             if sid in rendered:
                 lines.extend([f"공통 참조: {groups[sid]['title']}", ""])
             else:

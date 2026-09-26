@@ -7,8 +7,23 @@
   "items": 464,
   "itemSourceBlocks": 499,
   "exactDuplicateOccurrencesMerged": 38,
-  "complaints": 75,
-  "complaintsWithSourceMaterial": 38,
+  "complaints": 69,
+  "complaintsWithSourceMaterial": 32,
+  "pediatricEntries": [
+    "소아과 문진",
+    "발열",
+    "오심 / 구토",
+    "설사",
+    "기침",
+    "복통",
+    "경련"
+  ],
+  "specialtyEntries": [
+    "신경과 문진",
+    "정신과 문진",
+    "산부인과 문진",
+    "소아과 문진"
+  ],
   "missingComplaints": [
     "급성상태",
     "수치이상",
