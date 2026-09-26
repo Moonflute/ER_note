@@ -7,15 +7,13 @@
     "vaginal-discharge": "obgyn-interview", "vaginal-bleeding": "obgyn-interview", menstrual: "obgyn-interview", dysmenorrhea: "obgyn-interview", "pelvic-pain": "obgyn-interview"
   };
   const icons = {
-    search: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
     back: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m14 5-7 7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
   };
-  const state = { data: null, query: "", homeScroll: 0, route: null, currentItems: [], checked: new Map() };
+  const state = { data: null, homeScroll: 0, route: null, currentItems: [], checked: new Map() };
   let sections;
   let complaints;
 
   const escape = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
-  const normalize = (value) => String(value).normalize("NFKC").toLocaleLowerCase().replace(/[^\p{L}\p{N}]/gu, "");
   const orderedCategories = () => [...state.data.categories].sort((a, b) => Number(a.secondary) - Number(b.secondary) || a.order - b.order);
   const categoryOf = (id) => state.data.categories.find((category) => category.id === id);
   const ccUrl = (id) => `#cc/${encodeURIComponent(id)}`;
@@ -37,41 +35,20 @@
     document.title = "ER 초진 · Quick Reference";
     main.innerHTML = `<div class="shell home-shell">
       <h1 class="sr-only">ER Quick Reference</h1>
-      <div class="search-panel"><label class="search-box">${icons.search}<input id="cc-search" type="search" inputmode="search" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="증상 검색" placeholder="증상 / CC 검색" value="${escape(state.query)}"><button class="icon-button" type="button" id="clear-search" aria-label="검색어 지우기" ${state.query ? "" : "hidden"}>×</button></label></div>
       <div id="home-results"></div>
     </div>`;
-    const input = document.querySelector("#cc-search");
-    input.addEventListener("input", () => {
-      state.query = input.value;
-      document.querySelector("#clear-search").hidden = !state.query;
-      renderHomeResults();
-    });
-    document.querySelector("#clear-search").addEventListener("click", () => {
-      state.query = "";
-      input.value = "";
-      document.querySelector("#clear-search").hidden = true;
-      renderHomeResults();
-      input.focus();
-    });
     renderHomeResults();
   }
 
   function renderHomeResults() {
-    const query = normalize(state.query);
-    const indexed = state.data.complaints.filter(hasContent).map((complaint) => ({ complaint, terms: [complaint.name, ...complaint.aliases].map(normalize) }));
-    const shortLatin = /^[a-z0-9]{1,4}$/.test(query);
-    const hasExactMatch = shortLatin && indexed.some(({ terms }) => terms.includes(query));
-    const matching = indexed.filter(({ terms }) => {
-      const matchesQuery = !query || terms.some((term) => shortLatin ? (hasExactMatch ? term === query : term.startsWith(query)) : term.includes(query));
-      return matchesQuery;
-    }).map(({ complaint }) => complaint);
-    const categories = orderedCategories().filter((category) => indexed.some(({complaint}) => complaint.categoryId === category.id));
+    const matching = state.data.complaints.filter(hasContent);
+    const categories = orderedCategories().filter((category) => matching.some((complaint) => complaint.categoryId === category.id));
     const categoryCards = categories.map((category) => {
       const items = matching.filter((complaint) => complaint.categoryId === category.id).sort((a, b) => a.order - b.order);
       if (!items.length) return "";
       return `<section class="category${category.secondary ? " secondary" : ""}${category.id === "09" ? " pediatric" : ""}" aria-labelledby="category-${escape(category.id)}"><div class="category-title"><h3 id="category-${escape(category.id)}">${escape(category.name)}</h3></div><div class="category-cards">${items.map(complaintCard).join("")}</div></section>`;
     }).join("");
-    document.querySelector("#home-results").innerHTML = `<section aria-labelledby="catalog-title"><div class="section-heading catalog-heading"><h2 id="catalog-title">${query ? "검색 결과" : "분류"}</h2><div class="catalog-tools"><a class="common-shortcut" href="#common">공통 문진·진찰</a><span class="count" role="status" aria-live="polite">${matching.length}</span></div></div>${matching.length ? `<div class="category-grid">${categoryCards}</div>` : '<div class="empty-state"><p>검색 결과 없음</p></div>'}</section>`;
+    document.querySelector("#home-results").innerHTML = `<section aria-labelledby="catalog-title"><div class="section-heading catalog-heading"><h2 id="catalog-title">분류</h2><div class="catalog-tools"><a class="common-shortcut" href="#common">공통 문진·진찰</a><span class="count">${matching.length}</span></div></div><div class="category-grid">${categoryCards}</div></section>`;
   }
 
   function itemMarkup(item, checkable) {
