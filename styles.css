@@ -43,8 +43,6 @@ svg { display: block; flex: 0 0 auto; }
 .icon-button { display: inline-flex; align-items: center; justify-content: center; border: 0; background: transparent; min-width: 48px; min-height: 48px; font-size: 26px; line-height: 1; border-radius: 6px; }
 .section-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
 .section-heading .count { color: var(--muted); font-size: 12px; font-weight: 500; white-space: nowrap; }
-.frequent { margin: 0 0 18px; }
-.frequent-grid { display: flex; flex-wrap: wrap; gap: 6px; }
 .cc-card { display: flex; align-items: center; min-height: 40px; padding: 7px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--paper); gap: 7px; }
 .cc-card:hover { border-color: #bcbcbc; background: #f7f7f7; }
 .cc-name { display: block; font-weight: 600; font-size: 14px; line-height: 1.4; overflow-wrap: anywhere; }
@@ -54,6 +52,7 @@ svg { display: block; flex: 0 0 auto; }
 .badge.muted { background: #f3f3f3; color: var(--muted); }
 .common-shortcut { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 6px 12px; border: 1px solid #cccccc; border-radius: 6px; color: var(--accent); font-size: 13px; font-weight: 650; }
 .catalog-heading { margin-bottom: 10px; }
+.catalog-tools { display: flex; align-items: center; gap: 12px; }
 .filter-list { display: flex; flex-wrap: wrap; gap: 6px; padding: 2px 0 12px; }
 .filter { border: 1px solid var(--line); border-radius: 5px; min-height: 34px; padding: 5px 10px; background: var(--paper); white-space: nowrap; font-size: 13px; }
 .filter[aria-pressed="true"] { color: white; border-color: var(--accent-strong); background: var(--accent-strong); font-weight: 650; }
@@ -121,8 +120,6 @@ dialog::backdrop { background: #00000066; }
   .shell { padding: 12px 14px 22px; }
   h1 { font-size: 27px; }
   .search-panel { padding: 4px 0 10px; }
-  .frequent { margin-top: 0; margin-bottom: 16px; }
-  .frequent-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
   .cc-card { min-height: 44px; padding: 8px 11px; }
   .cc-name { font-size: 14px; }
   .cc-meta { gap: 4px; margin-top: 4px; }

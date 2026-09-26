@@ -4,7 +4,6 @@
   const main = document.querySelector("#main");
   const sourceDialog = document.querySelector("#source-dialog");
   const sourceContent = document.querySelector("#source-content");
-  const frequentIds = ["chest-pain", "abdominal-pain", "headache", "dizziness", "syncope", "trauma", "seizure", "head-trauma"];
   const legacyRoutes = {
     mood: "psychiatry-interview", anxiety: "psychiatry-interview", sleep: "psychiatry-interview", suicide: "psychiatry-interview", poisoning: "psychiatry-interview",
     "vaginal-discharge": "obgyn-interview", "vaginal-bleeding": "obgyn-interview", menstrual: "obgyn-interview", dysmenorrhea: "obgyn-interview", "pelvic-pain": "obgyn-interview"
@@ -72,14 +71,13 @@
       return matchesQuery && (state.categoryId === "all" || complaint.categoryId === state.categoryId);
     }).map(({ complaint }) => complaint);
     const categories = orderedCategories().filter((category) => indexed.some(({complaint}) => complaint.categoryId === category.id));
-    const prominent = !query && state.categoryId === "all" ? `<section class="frequent" aria-labelledby="frequent-title"><div class="section-heading"><h2 id="frequent-title">주요 증상</h2><a class="common-shortcut" href="#common" aria-label="공통 문진·진찰">공통</a></div><div class="frequent-grid">${frequentIds.map((id) => complaints.get(id)).filter((complaint) => complaint && hasContent(complaint)).map(complaintCard).join("")}</div></section>` : "";
     const categoryButtons = [{ id: "all", name: "전체" }, ...categories].map((category) => `<button class="filter" type="button" data-category="${escape(category.id)}" aria-pressed="${category.id === state.categoryId}">${escape(category.name)}</button>`).join("");
     const categoryCards = categories.map((category) => {
       const items = matching.filter((complaint) => complaint.categoryId === category.id).sort((a, b) => a.order - b.order);
       if (!items.length) return "";
       return `<section class="category${category.secondary ? " secondary" : ""}${category.id === "09" ? " pediatric" : ""}" aria-labelledby="category-${escape(category.id)}"><div class="category-title"><h3 id="category-${escape(category.id)}">${escape(category.name)}</h3></div><div class="category-cards">${items.map(complaintCard).join("")}</div></section>`;
     }).join("");
-    document.querySelector("#home-results").innerHTML = `${prominent}<section aria-labelledby="catalog-title"><div class="section-heading catalog-heading"><h2 id="catalog-title">${query ? "검색 결과" : "분류"}</h2><span class="count" role="status" aria-live="polite">${matching.length}</span></div><div class="filter-list" role="group" aria-label="증상 분류">${categoryButtons}</div>${matching.length ? `<div class="category-grid">${categoryCards}</div>` : '<div class="empty-state"><p>검색 결과 없음</p></div>'}</section>`;
+    document.querySelector("#home-results").innerHTML = `<section aria-labelledby="catalog-title"><div class="section-heading catalog-heading"><h2 id="catalog-title">${query ? "검색 결과" : "분류"}</h2><div class="catalog-tools"><a class="common-shortcut" href="#common">공통 문진·진찰</a><span class="count" role="status" aria-live="polite">${matching.length}</span></div></div><div class="filter-list" role="group" aria-label="증상 분류">${categoryButtons}</div>${matching.length ? `<div class="category-grid">${categoryCards}</div>` : '<div class="empty-state"><p>검색 결과 없음</p></div>'}</section>`;
   }
 
   function itemMarkup(item, checkable) {
