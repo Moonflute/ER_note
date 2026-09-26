@@ -196,6 +196,54 @@ def view_item(iid, text, source_item_ids, note=None):
         item["note"] = note
     return item
 
+def neuro_history_groups(prefix):
+    return [
+        {"title": "Chief complaint · Present illness", "items": [
+            view_item(f"{prefix}-hx-basic", "S/A / V/S", ["i-0ed008b89dee"]),
+            view_item(f"{prefix}-hx-cc", "Chief complaint / Onset", ["i-ee4e51907a91"]),
+            view_item(f"{prefix}-hx-pi", "Present illness", ["i-295d2b8c0877"]),
+        ]},
+        {"title": "Past · Social · Drug history", "items": [
+            view_item(f"{prefix}-hx-past", "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis", ["i-f9672a36bab3", "i-090b46250227"]),
+            view_item(f"{prefix}-hx-social", "Smoking / Alcohol / Pack-years / Current smoking", ["i-3789fe7ad282"]),
+            view_item(f"{prefix}-hx-medication", "Medication", ["i-18572f0f6fd3"]),
+        ]},
+        {"title": "Review of systems", "items": [
+            view_item(f"{prefix}-hx-ros", "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness", ["i-f1940c9b999a"]),
+        ]},
+    ]
+
+def peds_history_groups(prefix, fccsr_sources=(), daily_sources=()):
+    return [
+        {"title": "General · Birth history", "items": [
+            view_item(f"{prefix}-hx-vital", "Vital signs: T / P / R / BP", ["i-88fe282cb4fe"]),
+            view_item(f"{prefix}-hx-neonate", "Neonate: Current weight / Gestational week / Vaginal delivery or C-section / Birth asphyxia", ["i-88fe282cb4fe", "i-52e3c96499b8"]),
+            view_item(f"{prefix}-hx-mother", "Maternal problem", ["i-0ed4387ab7a9"]),
+        ]},
+        {"title": "Review of systems", "items": [
+            view_item(f"{prefix}-hx-fccsr", "Fever / Chill / Cough / Sputum / Rhinorrhea / Nasal obstruction", ["i-52e3c96499b8", *fccsr_sources]),
+            view_item(f"{prefix}-hx-anvcd", "Anorexia / Nausea / Vomiting / Constipation / Diarrhea / Headache / Irritability", ["i-0ed4387ab7a9"]),
+            view_item(f"{prefix}-hx-daily", "Feeding / Activity / Urination / Sleeping: Fair or Poor", ["i-915a1e9fb598", *daily_sources]),
+            view_item(f"{prefix}-hx-appearance", "Appearance: Well or Ill / Irritable / Lethargic", ["i-2565eaefaa14"]),
+        ]},
+    ]
+
+def peds_exam_groups(prefix, throat_sources=(), neck_sources=(), lung_sources=(), bowel_sources=()):
+    return [
+        {"title": "HEENT · Neck", "items": [
+            view_item(f"{prefix}-pe-throat", "Throat injection / Tonsillar enlargement", ["i-f563840a36c8", "i-711f3514742f", *throat_sources]),
+            view_item(f"{prefix}-pe-tongue", "Dehydrated tongue", ["i-b65cf64b5492"]),
+            view_item(f"{prefix}-pe-neck", "Neck stiffness / Nuchal rigidity", ["i-795bc09a858d", *neck_sources]),
+        ]},
+        {"title": "Chest", "items": [
+            view_item(f"{prefix}-pe-lung", "Lung sound: Clear / Coarse / Wheezing / Stridor / Crackle", ["i-afddfcfacdfb", *lung_sources]),
+            view_item(f"{prefix}-pe-heart", "Heart murmur", ["i-adc3e02089cf"]),
+        ]},
+        {"title": "Abdomen", "items": [
+            view_item(f"{prefix}-pe-abd", "Bowel sound: Normoactive / Increased / Decreased · Palpation: Soft / Hard · Flat / Distended", ["i-aed40d3bdf5b", *bowel_sources]),
+        ]},
+    ]
+
 curated_layouts = {
     "abdominal-pain": {
         "sections": [
@@ -543,6 +591,381 @@ curated_layouts = {
                 ]},
             ]},
         ]
+    },
+    "constipation": {
+        "sections": [
+            {"id": "constipation-view-history", "title": "Hx", "kind": "history", "groups": [
+                {"title": "Past · Drug history", "items": [
+                    view_item("constipation-hx-past", "Operation Hx / Medication Hx / Underlying disease", ["i-a0dbc0b8eaec"]),
+                ]},
+                {"title": "Review of systems", "items": [
+                    view_item("constipation-hx-ros", "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea", ["i-473758685a66"]),
+                    view_item("constipation-hx-npo", "NPO time", ["i-23c56e483dfc"], "수술 가능성이 있는 경우"),
+                ]},
+                {"title": "Bowel habit", "items": [
+                    view_item("constipation-hx-defecation", "Last defecation", ["i-2b7af5302516"]),
+                    view_item("constipation-hx-gas", "Last flatus", ["i-017c756636f4"]),
+                    view_item("constipation-hx-scope", "Last colonoscopy / Gastroscopy", ["i-96a78e8d87e7"], "고령 환자의 배변 습관 변화 시 malignancy 감별과 work-up 필요성 설명"),
+                ]},
+            ]},
+        ]
+    },
+    "syncope": {
+        "sections": [
+            {"id": "syncope-view-history", "title": "Hx", "kind": "history", "groups": [
+                *neuro_history_groups("syncope"),
+                {"title": "Syncope", "items": [
+                    view_item("syncope-hx-loc", "LOC / Blackout / HTN medication", ["i-74e665c4ee32", "i-0395d2464d8f"]),
+                    view_item("syncope-hx-prodrome", "Prodrome: 시야가 캄캄함 / Dizziness / Sweating / Nausea / Chest pain / Dyspnea", ["i-cd65d5c1c19d"]),
+                    view_item("syncope-hx-change", "실신 당시 증상과 현재 증상 비교 / 호전 여부", ["i-dc2c688b1dbb"]),
+                    view_item("syncope-hx-prior", "Previous similar episode", ["i-5662f55888f8"]),
+                    view_item("syncope-hx-context", "Meal / Sleep / Stress", ["i-be7d7e3c523b"]),
+                ]},
+            ]},
+            {"id": "syncope-view-exam", "title": "PEx", "kind": "exam", "groups": [
+                {"title": "Orthostatic blood pressure", "items": [
+                    view_item("syncope-pe-bp", "Supine / Sitting / Standing BP", ["i-0395d2464d8f"]),
+                ]},
+            ]},
+            {"id": "syncope-view-reference", "title": "참고사항", "kind": "note", "groups": [
+                {"title": "원문 메모", "items": [
+                    view_item("syncope-ref-definition", "Syncope는 LOC가 있었던 경우로 기록", ["i-f858019a30f5"]),
+                ]},
+            ]},
+        ]
+    },
+    "headache": {
+        "sections": [
+            {"id": "headache-view-history", "title": "Hx", "kind": "history", "groups": [
+                *neuro_history_groups("headache"),
+                {"title": "Headache", "items": [
+                    view_item("headache-hx-character", "Character / Pulsatile", ["i-9fc7e16784c7", "i-9cfdc43f0e0f", "i-29e1606c5666", "i-4d8fc6f58f75"]),
+                    view_item("headache-hx-location", "Location", ["i-9fc7e16784c7", "i-9cfdc43f0e0f", "i-ffc390c13501"]),
+                    view_item("headache-hx-onset", "Mode of onset: Sudden / Gradual · AM / PM", ["i-9fc7e16784c7", "i-29b81de03b58", "i-3bd2beb9a620", "i-a4eafc7a2e27"]),
+                    view_item("headache-hx-duration", "Duration", ["i-9fc7e16784c7", "i-9cfdc43f0e0f", "i-e70103d43042"]),
+                    view_item("headache-hx-aura", "Aura / Prodrome", ["i-9fc7e16784c7", "i-29b81de03b58", "i-74fa33af7ce3"]),
+                    view_item("headache-hx-analgesic", "Analgesic effect", ["i-9fc7e16784c7", "i-29b81de03b58", "i-9d87bd973952"]),
+                    view_item("headache-hx-associated", "Nausea / Vomiting / Dizziness / Other associated symptoms", ["i-29b81de03b58", "i-9de2e117b6a9"]),
+                    view_item("headache-hx-factor", "Trauma / Family Hx / Sleep disturbance / Tenderness point", ["i-79bdeb7f9c37"]),
+                ]},
+            ]},
+            {"id": "headache-view-exam", "title": "PEx", "kind": "exam", "groups": [
+                {"title": "Neurologic", "items": [
+                    view_item("headache-pe-nuchal", "Nuchal tenderness", ["i-05a884b2bfd5"]),
+                    view_item("headache-pe-deficit", "Neurologic deficit", ["i-ba842357a8d8"]),
+                ]},
+            ]},
+        ]
+    },
+    "seizure": {
+        "sections": [
+            {"id": "seizure-view-history", "title": "Hx", "kind": "history", "groups": [
+                *neuro_history_groups("seizure-common"),
+                {"title": "Ictal", "items": [
+                    view_item("seizure-hx-type", "Type: GTC / Partial", ["i-5b74d90d649a", "i-ae89dd865504"]),
+                    view_item("seizure-hx-site", "Involved body part", ["i-0c9edd42be8b", "i-ae89dd865504"]),
+                    view_item("seizure-hx-duration", "Duration / First attack", ["i-64f5b3d5fed6", "i-ae89dd865504"]),
+                    view_item("seizure-hx-aura", "Aura", ["i-26f686a03c4b", "i-f42db10ce4f7"]),
+                    view_item("seizure-hx-eye", "Eyeball deviation", ["i-f0b47426e7f9", "i-f42db10ce4f7"]),
+                    view_item("seizure-hx-foamy", "Foamy salivation", ["i-75c5995c9d79", "i-f42db10ce4f7"]),
+                    view_item("seizure-hx-cyanosis", "Cyanosis", ["i-b2313f955111", "i-f42db10ce4f7"]),
+                    view_item("seizure-hx-bite", "Tongue bite", ["i-83e4105cd93b", "i-f42db10ce4f7"]),
+                ]},
+                {"title": "Postictal · Background", "items": [
+                    view_item("seizure-hx-postictal", "Postictal: Sleep / Confusion / Urination / Defecation", ["i-dfa4b6f07ef6", "i-a892e9cfe5c3"]),
+                    view_item("seizure-hx-family", "Family Hx / Personal Hx", ["i-aa2f3fa3f103", "i-a892e9cfe5c3"]),
+                    view_item("seizure-hx-nutrition", "Nutritional status", ["i-c181139b0f70", "i-a892e9cfe5c3"]),
+                    view_item("seizure-hx-medication", "Antiepileptic medication / Last dose time", ["i-9fe7bc643a6a", "i-60884bae711f"]),
+                    view_item("seizure-hx-alcohol", "Last alcohol intake time", ["i-5ae8a078122d", "i-60884bae711f"]),
+                    view_item("seizure-hx-sleep", "Sleep hours per day", ["i-821430aff642", "i-60884bae711f"]),
+                ]},
+            ]},
+        ]
+    },
+    "mental-change": {
+        "sections": [
+            {"id": "mental-view-history", "title": "Hx", "kind": "history", "groups": [
+                *neuro_history_groups("mental"),
+            ]},
+            {"id": "mental-view-exam", "title": "PEx", "kind": "exam", "groups": [
+                {"title": "Mental · Respiration", "items": [
+                    view_item("mental-pe-mental", "Mental status", ["i-5880a2a9aa60", "i-7605224c4f7e"], "Stroke 진찰 참고"),
+                    view_item("mental-pe-resp", "Respiration: Regular / Irregular · Deep / Shallow", ["i-5880a2a9aa60", "i-bf300566329e"]),
+                ]},
+                {"title": "Pupil · Response", "items": [
+                    view_item("mental-pe-pupil", "Pupil size / Symmetry", ["i-fe4bc183cc47", "i-593abf312fe2"]),
+                    view_item("mental-pe-light", "Light reflex", ["i-fe4bc183cc47", "i-2c0ef8400763"]),
+                    view_item("mental-pe-touch", "휴지로 눈을 살짝 건드렸을 때 반응", ["i-fe4bc183cc47", "i-9e1ef0fb5a14"]),
+                    view_item("mental-pe-pain", "Pain response: Right upper / Left upper / Right lower / Left lower extremity", ["i-485924cb448e"]),
+                    view_item("mental-pe-babinski", "Babinski reflex: Right / Left", ["i-f9d2ad838f38"]),
+                ]},
+            ]},
+        ]
+    },
+    "stroke": {
+        "sections": [
+            {"id": "stroke-view-history", "title": "Hx", "kind": "history", "groups": [
+                *neuro_history_groups("stroke"),
+                {"title": "Time", "items": [
+                    view_item("stroke-hx-time", "Last normal time / First abnormal time", ["i-eddf689b48ac"]),
+                ]},
+            ]},
+            {"id": "stroke-view-exam", "title": "PEx", "kind": "exam", "groups": [
+                {"title": "Mental · Commands", "items": [
+                    view_item("stroke-pe-mental", "Mentation: Alert / Drowsy / Stupor / Semicoma / Coma", ["i-c9dceb3fed3a"], "Drowsy: 말에 반응 · Stupor: 자극에 반응 · Semicoma: Light reflex (+)"),
+                    view_item("stroke-pe-command", "Month / Age / Eye open-close / Hand grip-release", ["i-e998b4dd9427"]),
+                ]},
+                {"title": "Cranial nerve · Language", "items": [
+                    view_item("stroke-pe-eye-face", "Horizontal eye movement / Vision / Facial palsy", ["i-68765d3a2beb"], "이마 주름만 가능하면 central pattern"),
+                    view_item("stroke-pe-language", "Dysarthria / Incoherent speech / Impaired comprehension", ["i-fe7269b0f02e"]),
+                ]},
+                {"title": "Motor · Sensory · Cerebellar", "items": [
+                    view_item("stroke-pe-power", "Motor grade: 5 유지 / 4 떨어짐 / 3 들었다 떨어짐 / 2 수평 이동 / 1 움직임 없음", ["i-2146beb834c1"]),
+                    view_item("stroke-pe-limb", "Right upper / Left upper / Right lower / Left lower extremity", ["i-9d85b6c7f674"]),
+                    view_item("stroke-pe-cerebellar", "Finger-to-finger / Heel-to-shin / Sensory change", ["i-f4d9158beb62"]),
+                ]},
+            ]},
+            {"id": "stroke-view-reference", "title": "참고사항", "kind": "note", "groups": [
+                {"title": "보고", "items": [
+                    view_item("stroke-ref-hyperacute", "증상 발생 3시간 이내인 경우 주증상 확인 후 즉시 연락", ["i-2bace8d99e96"], "원문 인계 기준"),
+                ]},
+            ]},
+        ]
+    },
+    "obgyn-interview": {
+        "sections": [
+            {"id": "ob-view-history", "title": "Hx", "kind": "history", "groups": [
+                {"title": "Gynecologic history", "items": [
+                    view_item("ob-hx-background", "Previous gynecologic care / TPAL / Marital status / NPO time", ["i-1109f9f55fe5"], "필요하면 보호자를 내보내고 환자와 단독으로 확인"),
+                    view_item("ob-hx-menstrual", "LMP / Menstrual cycle / Duration / Amount / Dysmenorrhea", ["i-6ea8e54d6744"]),
+                    view_item("ob-hx-sexual", "Last coitus / Dyspareunia", ["i-68d84b1f6aac"]),
+                ]},
+                {"title": "Symptoms", "items": [
+                    view_item("ob-hx-vaginal", "Vaginal bleeding / Vaginal discharge / Abnormal bleeding / Discharge change / Bleeding amount", ["i-49c213f030fe", "i-ccbca1cd1f76"]),
+                ]},
+            ]},
+            {"id": "ob-view-reference", "title": "참고사항", "kind": "note", "groups": [
+                {"title": "원문 인계 범위", "items": [
+                    view_item("ob-ref-scope", "OBGY: Preterm labor / Hemoperitoneum / Vaginal bleeding 등", ["i-a81efe90df85", "i-057ab3fb8640", "i-754621b3148d", "i-1517462b6cc6"]),
+                    view_item("ob-ref-emr", "본원 OBGY 추적 환자는 EMR 내용을 참고하여 차팅", ["i-301803998d87"]),
+                ]},
+            ]},
+        ]
+    },
+    "pregnancy": {
+        "sections": [
+            {"id": "pregnancy-view-history", "title": "Hx", "kind": "history", "groups": [
+                {"title": "Gynecologic history", "items": [
+                    view_item("pregnancy-hx-background", "Previous gynecologic care / Marital status", ["i-1109f9f55fe5"], "필요하면 보호자를 내보내고 환자와 단독으로 확인"),
+                    view_item("pregnancy-hx-menstrual", "LMP / Menstrual cycle / Duration / Amount / Dysmenorrhea", ["i-6ea8e54d6744"]),
+                    view_item("pregnancy-hx-sexual", "Last coitus / Dyspareunia", ["i-68d84b1f6aac"]),
+                    view_item("pregnancy-hx-vaginal", "Vaginal bleeding / Vaginal discharge / Abnormal bleeding / Discharge change / Bleeding amount", ["i-49c213f030fe", "i-ccbca1cd1f76"]),
+                ]},
+                {"title": "Obstetric history", "items": [
+                    view_item("pregnancy-hx-tpal", "TPAL", ["i-1109f9f55fe5", "i-5e79003059b9"]),
+                    view_item("pregnancy-hx-iup", "IUP: 정확한 gestational week and day / OT", ["i-10e0162d3aee"]),
+                    view_item("pregnancy-hx-labor", "진통·배뭉침 / 주기 / 지속시간", ["i-c75d69226429"]),
+                    view_item("pregnancy-hx-lmp", "LMP", ["i-0138e8dfa9af"]),
+                    view_item("pregnancy-hx-edc", "Estimated date of confinement (EDC)", ["i-57925bf76ebf"]),
+                    view_item("pregnancy-hx-npo", "NPO time", ["i-1109f9f55fe5", "i-0c081eadaa0e"]),
+                    view_item("pregnancy-hx-operation", "Operation Hx", ["i-ff7aec9585a2"]),
+                ]},
+            ]},
+            {"id": "pregnancy-view-reference", "title": "참고사항", "kind": "note", "groups": [
+                {"title": "원문 인계 범위", "items": [
+                    view_item("pregnancy-ref-scope", "OBGY: Preterm labor / Hemoperitoneum / Vaginal bleeding 등", ["i-a81efe90df85", "i-057ab3fb8640", "i-754621b3148d", "i-1517462b6cc6"]),
+                    view_item("pregnancy-ref-emr", "본원 OBGY 추적 환자는 EMR 내용을 참고하여 차팅", ["i-301803998d87"]),
+                ]},
+            ]},
+        ]
+    },
+    "fever": {
+        "sections": [
+            {"id": "fever-view-history", "title": "Hx", "kind": "history", "groups": [
+                *peds_history_groups("fever", fccsr_sources=("i-f67d6676b11b",), daily_sources=("i-ca2d5f59c88c", "i-f67d6676b11b")),
+                {"title": "Fever", "items": [
+                    view_item("fever-hx-temperature", "Maximum temperature at home / Temperature on arrival", ["i-09f9f960f4d3", "i-d6027d327579"]),
+                    view_item("fever-hx-antipyretic", "Antipyretic: Last dose / Number of doses / Type / Interval / Response", ["i-09f9f960f4d3", "i-d410e445b7d6", "i-d054632e1182"]),
+                ]},
+            ]},
+            {"id": "fever-view-exam", "title": "PEx", "kind": "exam", "groups": [
+                *peds_exam_groups("fever", throat_sources=("i-88be3820287a",), neck_sources=("i-78f591a013bf",), lung_sources=("i-89b8406e0d1a",), bowel_sources=("i-85e00579f43c",)),
+                {"title": "Additional", "items": [
+                    view_item("fever-pe-uvula", "Uvular deviation / White patch", ["i-c1abfc2296d2"]),
+                    view_item("fever-pe-retraction", "Chest retraction", ["i-92df79d13f9d"]),
+                    view_item("fever-pe-ear", "Tympanic redness / TM injection", ["i-1ba15ce64ef8", "i-78f591a013bf"]),
+                ]},
+            ]},
+            {"id": "fever-view-reference", "title": "참고사항", "kind": "example", "groups": [
+                {"title": "차팅 예시", "items": [
+                    view_item("fever-ref-example", "내원 당일 14시부터 fever. 가정 최고 38.0℃, 내원 시 39.5℃. 14시 해열제 복용 후 호전되었다가 17시 다시 상승. 전일 저녁부터 cough가 있어 당일 아침 local clinic 방문 후 medication.", ["i-f70eebcacd56"]),
+                ]},
+            ]},
+        ]
+    },
+    "vomiting": {
+        "sections": [
+            {"id": "vomiting-view-history", "title": "Hx", "kind": "history", "groups": [
+                *peds_history_groups("vomiting"),
+                {"title": "Vomiting", "items": [
+                    view_item("vomiting-hx-count", "Frequency / Pattern: Regurgitation / Vomiting / Projectile", ["i-0cb004905b21"]),
+                    view_item("vomiting-hx-content", "Emesis color / Character: Food content / Watery", ["i-0cb004905b21"]),
+                ]},
+            ]},
+            {"id": "vomiting-view-exam", "title": "PEx", "kind": "exam", "groups": [
+                *peds_exam_groups("vomiting"),
+            ]},
+        ]
+    },
+    "diarrhea": {
+        "sections": [
+            {"id": "diarrhea-view-history", "title": "Hx", "kind": "history", "groups": [
+                *peds_history_groups("diarrhea"),
+                {"title": "Diarrhea", "items": [
+                    view_item("diarrhea-hx-stool", "Frequency / Character / Color / Last defecation time", ["i-9b0fd04b87dd"]),
+                    view_item("diarrhea-hx-npo", "NPO time", ["i-9b0fd04b87dd"]),
+                    view_item("diarrhea-hx-diet", "Current diet: 밥 / 미음 / 모유 / 분유", ["i-d8c672ae10ca"]),
+                ]},
+            ]},
+            {"id": "diarrhea-view-exam", "title": "PEx", "kind": "exam", "groups": [
+                *peds_exam_groups("diarrhea"),
+            ]},
+        ]
+    },
+    "cough": {
+        "sections": [
+            {"id": "cough-view-history", "title": "Hx", "kind": "history", "groups": [
+                *peds_history_groups("cough"),
+                {"title": "Cough", "items": [
+                    view_item("cough-hx-sound", "Cough sound: Barking or usual cough", ["i-3368440da93b"]),
+                    view_item("cough-hx-position", "Worse when supine / Hoarseness", ["i-3368440da93b"]),
+                    view_item("cough-hx-atopy", "Atopy·Asthma personal Hx / Family Hx", ["i-3368440da93b"]),
+                ]},
+            ]},
+            {"id": "cough-view-exam", "title": "PEx", "kind": "exam", "groups": [
+                *peds_exam_groups("cough"),
+            ]},
+        ]
+    },
+    "peds-abdominal-pain": {
+        "sections": [
+            {"id": "peds-abd-view-history", "title": "Hx", "kind": "history", "groups": [
+                *peds_history_groups("peds-abd"),
+                {"title": "Abdominal pain", "items": [
+                    view_item("peds-abd-hx-pain", "Character / Location / Intermittent or Steady / Duration / Relieving time", ["i-26e3ede4229f"]),
+                    view_item("peds-abd-hx-bowel", "Last defecation / NPO time", ["i-2e8d142d81a5"]),
+                ]},
+            ]},
+            {"id": "peds-abd-view-exam", "title": "PEx", "kind": "exam", "groups": [
+                *peds_exam_groups("peds-abd"),
+                {"title": "Abdomen", "items": [
+                    view_item("peds-abd-pe-tenderness", "Surgical abdomen / RLQ tenderness / Rebound tenderness", ["i-2e8d142d81a5"]),
+                    view_item("peds-abd-pe-sign", "Rovsing sign / Obturator sign / Psoas sign", ["i-e1aa94a6069a"]),
+                ]},
+            ]},
+        ]
+    },
+    "peds-seizure": {
+        "sections": [
+            {"id": "peds-seizure-view-history", "title": "Hx", "kind": "history", "groups": [
+                *peds_history_groups("peds-seizure"),
+                {"title": "Seizure", "items": [
+                    view_item("peds-seizure-hx-loc", "LOC", ["i-be829747b960"]),
+                    view_item("peds-seizure-hx-eye", "Eyeball deviation", ["i-d953400df2c6"]),
+                    view_item("peds-seizure-hx-urine", "Urination", ["i-597bebc96605"]),
+                    view_item("peds-seizure-hx-foam", "Foamy salivation", ["i-8ce09ee87474"]),
+                    view_item("peds-seizure-hx-past", "Previous seizure Hx", ["i-837190c5a23c"]),
+                ]},
+            ]},
+            {"id": "peds-seizure-view-exam", "title": "PEx", "kind": "exam", "groups": [
+                *peds_exam_groups("peds-seizure"),
+            ]},
+            {"id": "peds-seizure-view-reference", "title": "참고사항", "kind": "example", "groups": [
+                {"title": "차팅 예시 · 간단 기록", "items": [
+                    view_item("peds-seizure-ref-brief", "00시 seizure 30분 지속 / 04시 seizure 5분 이내 / 경련 상황 기억함", ["i-23456d42c6fc"]),
+                ]},
+                {"title": "차팅 예시 1 · Ictal", "items": [
+                    view_item("peds-seizure-ref-ex1-ictal", "Duration 약 5분 / 사지가 떨리는 양상 / Upper EBD (+) / Perioral cyanosis (+/-)", ["i-bad96a5b387f", "i-fb689eb0618a", "i-dc69f0bb12ba", "i-fc2673bb7748", "i-4d3b5103a30a"]),
+                    view_item("peds-seizure-ref-ex1-post", "Postictal weakness. 다른 특이소견은 관찰되지 않음 / Family Hx of epilepsy (-) / Previous seizure Hx (-) / Development: 달리기 가능, 문장 유창", ["i-2c96ef85afac", "i-8b9a8c640bce", "i-2f3dc6ac0206", "i-29448cbaaa9e", "i-73dd027c822c"]),
+                    view_item("peds-seizure-ref-ex1-ros", "FCCSR +/+/-/-/- / ANVCD -/-/-/-/-; 1주 전 constipation으로 abdominal pain 있었으나 현재 없음 / TE·TI -/- / Normal lung sound", ["i-a1dac288ec72", "i-44d3ed573ae1", "i-3fbf66a97202", "i-f0282fe3cfb0"]),
+                    view_item("peds-seizure-ref-ex1-general", "General condition: Moderate. 보호자 진술상 seizure 외에는 평소처럼 운동·식사하고 상태가 좋아 보였음", ["i-5a2cbc0475fb", "i-f147200e243f"]),
+                    view_item("peds-seizure-ref-ex1-neuro", "Mental alert / Gait normal, no imbalance / Ankle clonus -/- / Knee reflex / Normotonia / Upper·Lower G4 G4 / G4 G4 / 의사소통 가능", ["i-bc032a1ed254", "i-2b956438347f", "i-6fddc51fc43b", "i-075fdb65c37b", "i-7691f22e2a0e", "i-cba13eb9d26f", "i-2cfe9b4c15cf"]),
+                ]},
+                {"title": "차팅 예시 2 · Febrile seizure", "items": [
+                    view_item("peds-seizure-ref-ex2-pi", "12개월경 febrile seizure Hx 1회. 내원 2일 전 local clinic에서 목이 부었다는 말을 들었고, 전일 18시부터 fever up to 39.8℃. 내원 약 30분 전 04:15경 1–2분 seizure 후 내원.", ["i-ac579761ba69", "i-edca7648132c"]),
+                    view_item("peds-seizure-ref-ex2-pre", "Preictal: 깨어 있었고 미온수 마사지 중 보호자가 안고 있었음", ["i-406b815fb2d3", "i-6c17ef340c59"]),
+                    view_item("peds-seizure-ref-ex2-ictal", "EBD 뚜렷하지 않고 눈에 초점 없어 보임 / LOC (+), 불러도 대답 없고 의사소통 불가 / 양측 팔다리가 뻣뻣해짐 / Duration 1–2분 / Cyanosis (+), Drooling (-), Foamy salivation (-), Postictal urination·defecation -/-", ["i-742cc0b30316", "i-f80f91d75429", "i-89049e8df4f3", "i-c911a5fb9aba", "i-3bb8a497989d", "i-34a4ab26187c"]),
+                    view_item("peds-seizure-ref-ex2-post", "Postictal: 뻣뻣함이 멈추며 의식이 명료하게 돌아오고 의사소통 가능", ["i-0679481a0b8e", "i-4cad4a81bc53"]),
+                    view_item("peds-seizure-ref-ex2-history", "Past convulsion Hx (-) / 부모·형제 convulsion Hx (-)", ["i-a00556823521", "i-e54f06313209"]),
+                ]},
+            ]},
+        ]
+    },
+    "eye": {
+        "sections": [
+            {"id": "eye-view-history", "title": "Hx", "kind": "history", "groups": [
+                {"title": "Symptoms", "items": [
+                    view_item("eye-hx-symptoms", "Ocular pain / Foreign body sensation / Conjunctival injection / Discharge", ["i-28ecfc7fcdda", "i-e20bddff3b1d", "i-d16c7ea78bb3", "i-4f259c29f187"]),
+                    view_item("eye-hx-vision", "Blurred vision / Diplopia / Baseline vision and change", ["i-d0723942eb28", "i-cec96462eb1a", "i-18279ab2c20f"]),
+                ]},
+                {"title": "Past history", "items": [
+                    view_item("eye-hx-past", "Ophthalmologic Hx", ["i-f7aed3e8baa4"]),
+                ]},
+            ]},
+            {"id": "eye-view-exam", "title": "PEx", "kind": "exam", "groups": [
+                {"title": "Eye", "items": [
+                    view_item("eye-pe-light", "Light reflex", ["i-b5dbf567b8b4"]),
+                    view_item("eye-pe-eom", "Extraocular movement", ["i-3354730896e4"]),
+                ]},
+            ]},
+            {"id": "eye-view-reference", "title": "참고사항", "kind": "note", "groups": [
+                {"title": "보고·처치", "items": [
+                    view_item("eye-ref-irrigation", "Foreign body, 특히 화학물질 노출은 즉시 보고; 지시 시 suture room에서 eye irrigation", ["i-12d19359ec2c"]),
+                ]},
+            ]},
+        ]
+    },
+    "ear": {
+        "sections": [
+            {"id": "ear-view-history", "title": "Hx", "kind": "history", "groups": [
+                {"title": "Symptoms · Exposure", "items": [
+                    view_item("ear-hx-symptoms", "Otalgia / Tinnitus / Ear fullness / Hearing difficulty or loss / Dizziness", ["i-9ed2447b8d64", "i-00f4e17f31db", "i-7eda19f1989e", "i-fdd513cc18af"]),
+                    view_item("ear-hx-local", "Redness / Swelling", ["i-9ed2447b8d64"]),
+                    view_item("ear-hx-exposure", "URI symptoms / Trauma / Recent water exposure", ["i-5a33dba2ab00", "i-87611c37fa0b"]),
+                ]},
+            ]},
+            {"id": "ear-view-reference", "title": "참고사항", "kind": "example", "groups": [
+                {"title": "차팅 예시 · Ear fullness / r/o AOM", "items": [
+                    view_item("ear-ref-pi", "16시부터 물속이나 비행기에 있는 듯 귀가 먹먹하고 잘 들리지 않아 내원. 우측이 좌측보다 심하며 우측 hearing은 좌측의 5–60% 정도라고 함. Mild tinnitus 동반. Underlying disease 없음.", ["i-c58066a39b79", "i-4f8534ce0b1a", "i-0d4397058996", "i-87ad0ab613de", "i-46fe29a75c9a", "i-7443589aa977", "i-7cb201e1e2fd"]),
+                    view_item("ear-ref-ros", "FCCSR +-+-+; fever는 ER 도착 후 인지 / ANVCD ----- / FUND HIS ---- ---", ["i-8ee23d3a8187", "i-1a66fc8ad5f8", "i-c9b17d933458"]),
+                    view_item("ear-ref-pe-general", "Lung sound clear / No focal abdominal tenderness / CVAT -/-", ["i-88c5ef8c7891", "i-ce05ec24f986", "i-63a0c00c9b37"]),
+                    view_item("ear-ref-pe-ear", "Right TM r/o intact; cerumen으로 정확한 관찰 어려움 / Left TM intact / 최근 수영장 노출 없음", ["i-ab1f37c078d6", "i-79549d9c1f3c", "i-5a54890e1070"]),
+                ]},
+            ]},
+        ]
+    },
+    "epistaxis": {
+        "sections": [
+            {"id": "epistaxis-view-history", "title": "Hx", "kind": "history", "groups": [
+                {"title": "Present illness", "items": [
+                    view_item("epistaxis-hx-bleeding", "Bleeding amount / Onset time / Current active bleeding", ["i-4a6311b2bab7"]),
+                ]},
+                {"title": "Past · Drug history", "items": [
+                    view_item("epistaxis-hx-background", "Medication / HTN Hx", ["i-ca15bdb71320"]),
+                ]},
+            ]},
+            {"id": "epistaxis-view-exam", "title": "PEx", "kind": "exam", "groups": [
+                {"title": "Bleeding", "items": [
+                    view_item("epistaxis-pe-throat", "Active bleeding / Oropharynx", ["i-4a6311b2bab7"], "목 안을 반드시 확인"),
+                    view_item("epistaxis-pe-bp", "Blood pressure", ["i-ca15bdb71320"]),
+                ]},
+            ]},
+            {"id": "epistaxis-view-reference", "title": "참고사항", "kind": "note", "groups": [
+                {"title": "처치", "items": [
+                    view_item("epistaxis-ref-merocel", "Active bleeding: Merocel", ["i-ed62a7868ff4"]),
+                ]},
+            ]},
+        ]
     }
 }
 
@@ -670,7 +1093,7 @@ for cid, records in catalog.items():
             item["layout"] = curated_layouts[iid]
         complaints.append(item)
 
-data = {"schemaVersion": 1, "contentVersion": "2026-09-26-beta.6", "categories": categories,
+data = {"schemaVersion": 1, "contentVersion": "2026-09-26-beta.7", "categories": categories,
         "sections": list(groups.values()), "complaints": complaints,
         "referenceSections": ["routine-history","routine-exam","handover-general"]}
 (DATA / "chief-complaints.json").write_text(json.dumps(data, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")

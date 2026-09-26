@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-09-26-beta.6",
+  "contentVersion": "2026-09-26-beta.7",
   "categories": [
     {
       "id": "00",
@@ -2822,7 +2822,77 @@
       ],
       "sectionIds": [
         "constipation-history"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "constipation-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Past · Drug history",
+                "items": [
+                  {
+                    "id": "constipation-hx-past",
+                    "text": "Operation Hx / Medication Hx / Underlying disease",
+                    "sourceItemIds": [
+                      "i-a0dbc0b8eaec"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Review of systems",
+                "items": [
+                  {
+                    "id": "constipation-hx-ros",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea",
+                    "sourceItemIds": [
+                      "i-473758685a66"
+                    ]
+                  },
+                  {
+                    "id": "constipation-hx-npo",
+                    "text": "NPO time",
+                    "sourceItemIds": [
+                      "i-23c56e483dfc"
+                    ],
+                    "note": "수술 가능성이 있는 경우"
+                  }
+                ]
+              },
+              {
+                "title": "Bowel habit",
+                "items": [
+                  {
+                    "id": "constipation-hx-defecation",
+                    "text": "Last defecation",
+                    "sourceItemIds": [
+                      "i-2b7af5302516"
+                    ]
+                  },
+                  {
+                    "id": "constipation-hx-gas",
+                    "text": "Last flatus",
+                    "sourceItemIds": [
+                      "i-017c756636f4"
+                    ]
+                  },
+                  {
+                    "id": "constipation-hx-scope",
+                    "text": "Last colonoscopy / Gastroscopy",
+                    "sourceItemIds": [
+                      "i-96a78e8d87e7"
+                    ],
+                    "note": "고령 환자의 배변 습관 변화 시 malignancy 감별과 work-up 필요성 설명"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "jaundice",
@@ -2944,7 +3014,162 @@
         "syncope-history",
         "syncope-mixed",
         "syncope-note"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "syncope-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Chief complaint · Present illness",
+                "items": [
+                  {
+                    "id": "syncope-hx-basic",
+                    "text": "S/A / V/S",
+                    "sourceItemIds": [
+                      "i-0ed008b89dee"
+                    ]
+                  },
+                  {
+                    "id": "syncope-hx-cc",
+                    "text": "Chief complaint / Onset",
+                    "sourceItemIds": [
+                      "i-ee4e51907a91"
+                    ]
+                  },
+                  {
+                    "id": "syncope-hx-pi",
+                    "text": "Present illness",
+                    "sourceItemIds": [
+                      "i-295d2b8c0877"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Past · Social · Drug history",
+                "items": [
+                  {
+                    "id": "syncope-hx-past",
+                    "text": "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis",
+                    "sourceItemIds": [
+                      "i-f9672a36bab3",
+                      "i-090b46250227"
+                    ]
+                  },
+                  {
+                    "id": "syncope-hx-social",
+                    "text": "Smoking / Alcohol / Pack-years / Current smoking",
+                    "sourceItemIds": [
+                      "i-3789fe7ad282"
+                    ]
+                  },
+                  {
+                    "id": "syncope-hx-medication",
+                    "text": "Medication",
+                    "sourceItemIds": [
+                      "i-18572f0f6fd3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Review of systems",
+                "items": [
+                  {
+                    "id": "syncope-hx-ros",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Syncope",
+                "items": [
+                  {
+                    "id": "syncope-hx-loc",
+                    "text": "LOC / Blackout / HTN medication",
+                    "sourceItemIds": [
+                      "i-74e665c4ee32",
+                      "i-0395d2464d8f"
+                    ]
+                  },
+                  {
+                    "id": "syncope-hx-prodrome",
+                    "text": "Prodrome: 시야가 캄캄함 / Dizziness / Sweating / Nausea / Chest pain / Dyspnea",
+                    "sourceItemIds": [
+                      "i-cd65d5c1c19d"
+                    ]
+                  },
+                  {
+                    "id": "syncope-hx-change",
+                    "text": "실신 당시 증상과 현재 증상 비교 / 호전 여부",
+                    "sourceItemIds": [
+                      "i-dc2c688b1dbb"
+                    ]
+                  },
+                  {
+                    "id": "syncope-hx-prior",
+                    "text": "Previous similar episode",
+                    "sourceItemIds": [
+                      "i-5662f55888f8"
+                    ]
+                  },
+                  {
+                    "id": "syncope-hx-context",
+                    "text": "Meal / Sleep / Stress",
+                    "sourceItemIds": [
+                      "i-be7d7e3c523b"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "syncope-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "Orthostatic blood pressure",
+                "items": [
+                  {
+                    "id": "syncope-pe-bp",
+                    "text": "Supine / Sitting / Standing BP",
+                    "sourceItemIds": [
+                      "i-0395d2464d8f"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "syncope-view-reference",
+            "title": "참고사항",
+            "kind": "note",
+            "groups": [
+              {
+                "title": "원문 메모",
+                "items": [
+                  {
+                    "id": "syncope-ref-definition",
+                    "text": "Syncope는 LOC가 있었던 경우로 기록",
+                    "sourceItemIds": [
+                      "i-f858019a30f5"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "palpitation",
@@ -4438,7 +4663,185 @@
       "sectionIds": [
         "headache-history",
         "headache-exam"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "headache-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Chief complaint · Present illness",
+                "items": [
+                  {
+                    "id": "headache-hx-basic",
+                    "text": "S/A / V/S",
+                    "sourceItemIds": [
+                      "i-0ed008b89dee"
+                    ]
+                  },
+                  {
+                    "id": "headache-hx-cc",
+                    "text": "Chief complaint / Onset",
+                    "sourceItemIds": [
+                      "i-ee4e51907a91"
+                    ]
+                  },
+                  {
+                    "id": "headache-hx-pi",
+                    "text": "Present illness",
+                    "sourceItemIds": [
+                      "i-295d2b8c0877"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Past · Social · Drug history",
+                "items": [
+                  {
+                    "id": "headache-hx-past",
+                    "text": "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis",
+                    "sourceItemIds": [
+                      "i-f9672a36bab3",
+                      "i-090b46250227"
+                    ]
+                  },
+                  {
+                    "id": "headache-hx-social",
+                    "text": "Smoking / Alcohol / Pack-years / Current smoking",
+                    "sourceItemIds": [
+                      "i-3789fe7ad282"
+                    ]
+                  },
+                  {
+                    "id": "headache-hx-medication",
+                    "text": "Medication",
+                    "sourceItemIds": [
+                      "i-18572f0f6fd3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Review of systems",
+                "items": [
+                  {
+                    "id": "headache-hx-ros",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Headache",
+                "items": [
+                  {
+                    "id": "headache-hx-character",
+                    "text": "Character / Pulsatile",
+                    "sourceItemIds": [
+                      "i-9fc7e16784c7",
+                      "i-9cfdc43f0e0f",
+                      "i-29e1606c5666",
+                      "i-4d8fc6f58f75"
+                    ]
+                  },
+                  {
+                    "id": "headache-hx-location",
+                    "text": "Location",
+                    "sourceItemIds": [
+                      "i-9fc7e16784c7",
+                      "i-9cfdc43f0e0f",
+                      "i-ffc390c13501"
+                    ]
+                  },
+                  {
+                    "id": "headache-hx-onset",
+                    "text": "Mode of onset: Sudden / Gradual · AM / PM",
+                    "sourceItemIds": [
+                      "i-9fc7e16784c7",
+                      "i-29b81de03b58",
+                      "i-3bd2beb9a620",
+                      "i-a4eafc7a2e27"
+                    ]
+                  },
+                  {
+                    "id": "headache-hx-duration",
+                    "text": "Duration",
+                    "sourceItemIds": [
+                      "i-9fc7e16784c7",
+                      "i-9cfdc43f0e0f",
+                      "i-e70103d43042"
+                    ]
+                  },
+                  {
+                    "id": "headache-hx-aura",
+                    "text": "Aura / Prodrome",
+                    "sourceItemIds": [
+                      "i-9fc7e16784c7",
+                      "i-29b81de03b58",
+                      "i-74fa33af7ce3"
+                    ]
+                  },
+                  {
+                    "id": "headache-hx-analgesic",
+                    "text": "Analgesic effect",
+                    "sourceItemIds": [
+                      "i-9fc7e16784c7",
+                      "i-29b81de03b58",
+                      "i-9d87bd973952"
+                    ]
+                  },
+                  {
+                    "id": "headache-hx-associated",
+                    "text": "Nausea / Vomiting / Dizziness / Other associated symptoms",
+                    "sourceItemIds": [
+                      "i-29b81de03b58",
+                      "i-9de2e117b6a9"
+                    ]
+                  },
+                  {
+                    "id": "headache-hx-factor",
+                    "text": "Trauma / Family Hx / Sleep disturbance / Tenderness point",
+                    "sourceItemIds": [
+                      "i-79bdeb7f9c37"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "headache-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "Neurologic",
+                "items": [
+                  {
+                    "id": "headache-pe-nuchal",
+                    "text": "Nuchal tenderness",
+                    "sourceItemIds": [
+                      "i-05a884b2bfd5"
+                    ]
+                  },
+                  {
+                    "id": "headache-pe-deficit",
+                    "text": "Neurologic deficit",
+                    "sourceItemIds": [
+                      "i-ba842357a8d8"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "seizure",
@@ -4458,7 +4861,205 @@
       ],
       "sectionIds": [
         "seizure-history"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "seizure-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Chief complaint · Present illness",
+                "items": [
+                  {
+                    "id": "seizure-common-hx-basic",
+                    "text": "S/A / V/S",
+                    "sourceItemIds": [
+                      "i-0ed008b89dee"
+                    ]
+                  },
+                  {
+                    "id": "seizure-common-hx-cc",
+                    "text": "Chief complaint / Onset",
+                    "sourceItemIds": [
+                      "i-ee4e51907a91"
+                    ]
+                  },
+                  {
+                    "id": "seizure-common-hx-pi",
+                    "text": "Present illness",
+                    "sourceItemIds": [
+                      "i-295d2b8c0877"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Past · Social · Drug history",
+                "items": [
+                  {
+                    "id": "seizure-common-hx-past",
+                    "text": "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis",
+                    "sourceItemIds": [
+                      "i-f9672a36bab3",
+                      "i-090b46250227"
+                    ]
+                  },
+                  {
+                    "id": "seizure-common-hx-social",
+                    "text": "Smoking / Alcohol / Pack-years / Current smoking",
+                    "sourceItemIds": [
+                      "i-3789fe7ad282"
+                    ]
+                  },
+                  {
+                    "id": "seizure-common-hx-medication",
+                    "text": "Medication",
+                    "sourceItemIds": [
+                      "i-18572f0f6fd3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Review of systems",
+                "items": [
+                  {
+                    "id": "seizure-common-hx-ros",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Ictal",
+                "items": [
+                  {
+                    "id": "seizure-hx-type",
+                    "text": "Type: GTC / Partial",
+                    "sourceItemIds": [
+                      "i-5b74d90d649a",
+                      "i-ae89dd865504"
+                    ]
+                  },
+                  {
+                    "id": "seizure-hx-site",
+                    "text": "Involved body part",
+                    "sourceItemIds": [
+                      "i-0c9edd42be8b",
+                      "i-ae89dd865504"
+                    ]
+                  },
+                  {
+                    "id": "seizure-hx-duration",
+                    "text": "Duration / First attack",
+                    "sourceItemIds": [
+                      "i-64f5b3d5fed6",
+                      "i-ae89dd865504"
+                    ]
+                  },
+                  {
+                    "id": "seizure-hx-aura",
+                    "text": "Aura",
+                    "sourceItemIds": [
+                      "i-26f686a03c4b",
+                      "i-f42db10ce4f7"
+                    ]
+                  },
+                  {
+                    "id": "seizure-hx-eye",
+                    "text": "Eyeball deviation",
+                    "sourceItemIds": [
+                      "i-f0b47426e7f9",
+                      "i-f42db10ce4f7"
+                    ]
+                  },
+                  {
+                    "id": "seizure-hx-foamy",
+                    "text": "Foamy salivation",
+                    "sourceItemIds": [
+                      "i-75c5995c9d79",
+                      "i-f42db10ce4f7"
+                    ]
+                  },
+                  {
+                    "id": "seizure-hx-cyanosis",
+                    "text": "Cyanosis",
+                    "sourceItemIds": [
+                      "i-b2313f955111",
+                      "i-f42db10ce4f7"
+                    ]
+                  },
+                  {
+                    "id": "seizure-hx-bite",
+                    "text": "Tongue bite",
+                    "sourceItemIds": [
+                      "i-83e4105cd93b",
+                      "i-f42db10ce4f7"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Postictal · Background",
+                "items": [
+                  {
+                    "id": "seizure-hx-postictal",
+                    "text": "Postictal: Sleep / Confusion / Urination / Defecation",
+                    "sourceItemIds": [
+                      "i-dfa4b6f07ef6",
+                      "i-a892e9cfe5c3"
+                    ]
+                  },
+                  {
+                    "id": "seizure-hx-family",
+                    "text": "Family Hx / Personal Hx",
+                    "sourceItemIds": [
+                      "i-aa2f3fa3f103",
+                      "i-a892e9cfe5c3"
+                    ]
+                  },
+                  {
+                    "id": "seizure-hx-nutrition",
+                    "text": "Nutritional status",
+                    "sourceItemIds": [
+                      "i-c181139b0f70",
+                      "i-a892e9cfe5c3"
+                    ]
+                  },
+                  {
+                    "id": "seizure-hx-medication",
+                    "text": "Antiepileptic medication / Last dose time",
+                    "sourceItemIds": [
+                      "i-9fe7bc643a6a",
+                      "i-60884bae711f"
+                    ]
+                  },
+                  {
+                    "id": "seizure-hx-alcohol",
+                    "text": "Last alcohol intake time",
+                    "sourceItemIds": [
+                      "i-5ae8a078122d",
+                      "i-60884bae711f"
+                    ]
+                  },
+                  {
+                    "id": "seizure-hx-sleep",
+                    "text": "Sleep hours per day",
+                    "sourceItemIds": [
+                      "i-821430aff642",
+                      "i-60884bae711f"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "weakness",
@@ -4492,7 +5093,155 @@
       ],
       "sectionIds": [
         "mental-exam"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "mental-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Chief complaint · Present illness",
+                "items": [
+                  {
+                    "id": "mental-hx-basic",
+                    "text": "S/A / V/S",
+                    "sourceItemIds": [
+                      "i-0ed008b89dee"
+                    ]
+                  },
+                  {
+                    "id": "mental-hx-cc",
+                    "text": "Chief complaint / Onset",
+                    "sourceItemIds": [
+                      "i-ee4e51907a91"
+                    ]
+                  },
+                  {
+                    "id": "mental-hx-pi",
+                    "text": "Present illness",
+                    "sourceItemIds": [
+                      "i-295d2b8c0877"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Past · Social · Drug history",
+                "items": [
+                  {
+                    "id": "mental-hx-past",
+                    "text": "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis",
+                    "sourceItemIds": [
+                      "i-f9672a36bab3",
+                      "i-090b46250227"
+                    ]
+                  },
+                  {
+                    "id": "mental-hx-social",
+                    "text": "Smoking / Alcohol / Pack-years / Current smoking",
+                    "sourceItemIds": [
+                      "i-3789fe7ad282"
+                    ]
+                  },
+                  {
+                    "id": "mental-hx-medication",
+                    "text": "Medication",
+                    "sourceItemIds": [
+                      "i-18572f0f6fd3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Review of systems",
+                "items": [
+                  {
+                    "id": "mental-hx-ros",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "mental-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "Mental · Respiration",
+                "items": [
+                  {
+                    "id": "mental-pe-mental",
+                    "text": "Mental status",
+                    "sourceItemIds": [
+                      "i-5880a2a9aa60",
+                      "i-7605224c4f7e"
+                    ],
+                    "note": "Stroke 진찰 참고"
+                  },
+                  {
+                    "id": "mental-pe-resp",
+                    "text": "Respiration: Regular / Irregular · Deep / Shallow",
+                    "sourceItemIds": [
+                      "i-5880a2a9aa60",
+                      "i-bf300566329e"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Pupil · Response",
+                "items": [
+                  {
+                    "id": "mental-pe-pupil",
+                    "text": "Pupil size / Symmetry",
+                    "sourceItemIds": [
+                      "i-fe4bc183cc47",
+                      "i-593abf312fe2"
+                    ]
+                  },
+                  {
+                    "id": "mental-pe-light",
+                    "text": "Light reflex",
+                    "sourceItemIds": [
+                      "i-fe4bc183cc47",
+                      "i-2c0ef8400763"
+                    ]
+                  },
+                  {
+                    "id": "mental-pe-touch",
+                    "text": "휴지로 눈을 살짝 건드렸을 때 반응",
+                    "sourceItemIds": [
+                      "i-fe4bc183cc47",
+                      "i-9e1ef0fb5a14"
+                    ]
+                  },
+                  {
+                    "id": "mental-pe-pain",
+                    "text": "Pain response: Right upper / Left upper / Right lower / Left lower extremity",
+                    "sourceItemIds": [
+                      "i-485924cb448e"
+                    ]
+                  },
+                  {
+                    "id": "mental-pe-babinski",
+                    "text": "Babinski reflex: Right / Left",
+                    "sourceItemIds": [
+                      "i-f9d2ad838f38"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "movement",
@@ -4525,7 +5274,188 @@
         "stroke-history",
         "stroke-exam",
         "stroke-note"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "stroke-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Chief complaint · Present illness",
+                "items": [
+                  {
+                    "id": "stroke-hx-basic",
+                    "text": "S/A / V/S",
+                    "sourceItemIds": [
+                      "i-0ed008b89dee"
+                    ]
+                  },
+                  {
+                    "id": "stroke-hx-cc",
+                    "text": "Chief complaint / Onset",
+                    "sourceItemIds": [
+                      "i-ee4e51907a91"
+                    ]
+                  },
+                  {
+                    "id": "stroke-hx-pi",
+                    "text": "Present illness",
+                    "sourceItemIds": [
+                      "i-295d2b8c0877"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Past · Social · Drug history",
+                "items": [
+                  {
+                    "id": "stroke-hx-past",
+                    "text": "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis",
+                    "sourceItemIds": [
+                      "i-f9672a36bab3",
+                      "i-090b46250227"
+                    ]
+                  },
+                  {
+                    "id": "stroke-hx-social",
+                    "text": "Smoking / Alcohol / Pack-years / Current smoking",
+                    "sourceItemIds": [
+                      "i-3789fe7ad282"
+                    ]
+                  },
+                  {
+                    "id": "stroke-hx-medication",
+                    "text": "Medication",
+                    "sourceItemIds": [
+                      "i-18572f0f6fd3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Review of systems",
+                "items": [
+                  {
+                    "id": "stroke-hx-ros",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Time",
+                "items": [
+                  {
+                    "id": "stroke-hx-time",
+                    "text": "Last normal time / First abnormal time",
+                    "sourceItemIds": [
+                      "i-eddf689b48ac"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "stroke-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "Mental · Commands",
+                "items": [
+                  {
+                    "id": "stroke-pe-mental",
+                    "text": "Mentation: Alert / Drowsy / Stupor / Semicoma / Coma",
+                    "sourceItemIds": [
+                      "i-c9dceb3fed3a"
+                    ],
+                    "note": "Drowsy: 말에 반응 · Stupor: 자극에 반응 · Semicoma: Light reflex (+)"
+                  },
+                  {
+                    "id": "stroke-pe-command",
+                    "text": "Month / Age / Eye open-close / Hand grip-release",
+                    "sourceItemIds": [
+                      "i-e998b4dd9427"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Cranial nerve · Language",
+                "items": [
+                  {
+                    "id": "stroke-pe-eye-face",
+                    "text": "Horizontal eye movement / Vision / Facial palsy",
+                    "sourceItemIds": [
+                      "i-68765d3a2beb"
+                    ],
+                    "note": "이마 주름만 가능하면 central pattern"
+                  },
+                  {
+                    "id": "stroke-pe-language",
+                    "text": "Dysarthria / Incoherent speech / Impaired comprehension",
+                    "sourceItemIds": [
+                      "i-fe7269b0f02e"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Motor · Sensory · Cerebellar",
+                "items": [
+                  {
+                    "id": "stroke-pe-power",
+                    "text": "Motor grade: 5 유지 / 4 떨어짐 / 3 들었다 떨어짐 / 2 수평 이동 / 1 움직임 없음",
+                    "sourceItemIds": [
+                      "i-2146beb834c1"
+                    ]
+                  },
+                  {
+                    "id": "stroke-pe-limb",
+                    "text": "Right upper / Left upper / Right lower / Left lower extremity",
+                    "sourceItemIds": [
+                      "i-9d85b6c7f674"
+                    ]
+                  },
+                  {
+                    "id": "stroke-pe-cerebellar",
+                    "text": "Finger-to-finger / Heel-to-shin / Sensory change",
+                    "sourceItemIds": [
+                      "i-f4d9158beb62"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "stroke-view-reference",
+            "title": "참고사항",
+            "kind": "note",
+            "groups": [
+              {
+                "title": "보고",
+                "items": [
+                  {
+                    "id": "stroke-ref-hyperacute",
+                    "text": "증상 발생 3시간 이내인 경우 주증상 확인 후 즉시 연락",
+                    "sourceItemIds": [
+                      "i-2bace8d99e96"
+                    ],
+                    "note": "원문 인계 기준"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "obgyn-interview",
@@ -4557,7 +5487,87 @@
       ],
       "sectionIds": [
         "ob-note"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "ob-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Gynecologic history",
+                "items": [
+                  {
+                    "id": "ob-hx-background",
+                    "text": "Previous gynecologic care / TPAL / Marital status / NPO time",
+                    "sourceItemIds": [
+                      "i-1109f9f55fe5"
+                    ],
+                    "note": "필요하면 보호자를 내보내고 환자와 단독으로 확인"
+                  },
+                  {
+                    "id": "ob-hx-menstrual",
+                    "text": "LMP / Menstrual cycle / Duration / Amount / Dysmenorrhea",
+                    "sourceItemIds": [
+                      "i-6ea8e54d6744"
+                    ]
+                  },
+                  {
+                    "id": "ob-hx-sexual",
+                    "text": "Last coitus / Dyspareunia",
+                    "sourceItemIds": [
+                      "i-68d84b1f6aac"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Symptoms",
+                "items": [
+                  {
+                    "id": "ob-hx-vaginal",
+                    "text": "Vaginal bleeding / Vaginal discharge / Abnormal bleeding / Discharge change / Bleeding amount",
+                    "sourceItemIds": [
+                      "i-49c213f030fe",
+                      "i-ccbca1cd1f76"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "ob-view-reference",
+            "title": "참고사항",
+            "kind": "note",
+            "groups": [
+              {
+                "title": "원문 인계 범위",
+                "items": [
+                  {
+                    "id": "ob-ref-scope",
+                    "text": "OBGY: Preterm labor / Hemoperitoneum / Vaginal bleeding 등",
+                    "sourceItemIds": [
+                      "i-a81efe90df85",
+                      "i-057ab3fb8640",
+                      "i-754621b3148d",
+                      "i-1517462b6cc6"
+                    ]
+                  },
+                  {
+                    "id": "ob-ref-emr",
+                    "text": "본원 OBGY 추적 환자는 EMR 내용을 참고하여 차팅",
+                    "sourceItemIds": [
+                      "i-301803998d87"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "breast-pain",
@@ -4605,7 +5615,138 @@
       "sectionIds": [
         "pregnancy-history",
         "ob-note"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "pregnancy-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Gynecologic history",
+                "items": [
+                  {
+                    "id": "pregnancy-hx-background",
+                    "text": "Previous gynecologic care / Marital status",
+                    "sourceItemIds": [
+                      "i-1109f9f55fe5"
+                    ],
+                    "note": "필요하면 보호자를 내보내고 환자와 단독으로 확인"
+                  },
+                  {
+                    "id": "pregnancy-hx-menstrual",
+                    "text": "LMP / Menstrual cycle / Duration / Amount / Dysmenorrhea",
+                    "sourceItemIds": [
+                      "i-6ea8e54d6744"
+                    ]
+                  },
+                  {
+                    "id": "pregnancy-hx-sexual",
+                    "text": "Last coitus / Dyspareunia",
+                    "sourceItemIds": [
+                      "i-68d84b1f6aac"
+                    ]
+                  },
+                  {
+                    "id": "pregnancy-hx-vaginal",
+                    "text": "Vaginal bleeding / Vaginal discharge / Abnormal bleeding / Discharge change / Bleeding amount",
+                    "sourceItemIds": [
+                      "i-49c213f030fe",
+                      "i-ccbca1cd1f76"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Obstetric history",
+                "items": [
+                  {
+                    "id": "pregnancy-hx-tpal",
+                    "text": "TPAL",
+                    "sourceItemIds": [
+                      "i-1109f9f55fe5",
+                      "i-5e79003059b9"
+                    ]
+                  },
+                  {
+                    "id": "pregnancy-hx-iup",
+                    "text": "IUP: 정확한 gestational week and day / OT",
+                    "sourceItemIds": [
+                      "i-10e0162d3aee"
+                    ]
+                  },
+                  {
+                    "id": "pregnancy-hx-labor",
+                    "text": "진통·배뭉침 / 주기 / 지속시간",
+                    "sourceItemIds": [
+                      "i-c75d69226429"
+                    ]
+                  },
+                  {
+                    "id": "pregnancy-hx-lmp",
+                    "text": "LMP",
+                    "sourceItemIds": [
+                      "i-0138e8dfa9af"
+                    ]
+                  },
+                  {
+                    "id": "pregnancy-hx-edc",
+                    "text": "Estimated date of confinement (EDC)",
+                    "sourceItemIds": [
+                      "i-57925bf76ebf"
+                    ]
+                  },
+                  {
+                    "id": "pregnancy-hx-npo",
+                    "text": "NPO time",
+                    "sourceItemIds": [
+                      "i-1109f9f55fe5",
+                      "i-0c081eadaa0e"
+                    ]
+                  },
+                  {
+                    "id": "pregnancy-hx-operation",
+                    "text": "Operation Hx",
+                    "sourceItemIds": [
+                      "i-ff7aec9585a2"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "pregnancy-view-reference",
+            "title": "참고사항",
+            "kind": "note",
+            "groups": [
+              {
+                "title": "원문 인계 범위",
+                "items": [
+                  {
+                    "id": "pregnancy-ref-scope",
+                    "text": "OBGY: Preterm labor / Hemoperitoneum / Vaginal bleeding 등",
+                    "sourceItemIds": [
+                      "i-a81efe90df85",
+                      "i-057ab3fb8640",
+                      "i-754621b3148d",
+                      "i-1517462b6cc6"
+                    ]
+                  },
+                  {
+                    "id": "pregnancy-ref-emr",
+                    "text": "본원 OBGY 추적 환자는 EMR 내용을 참고하여 차팅",
+                    "sourceItemIds": [
+                      "i-301803998d87"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "peds-common",
@@ -4784,7 +5925,218 @@
         "peds-fever",
         "peds-fever-exam",
         "peds-fever-example"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "fever-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "General · Birth history",
+                "items": [
+                  {
+                    "id": "fever-hx-vital",
+                    "text": "Vital signs: T / P / R / BP",
+                    "sourceItemIds": [
+                      "i-88fe282cb4fe"
+                    ]
+                  },
+                  {
+                    "id": "fever-hx-neonate",
+                    "text": "Neonate: Current weight / Gestational week / Vaginal delivery or C-section / Birth asphyxia",
+                    "sourceItemIds": [
+                      "i-88fe282cb4fe",
+                      "i-52e3c96499b8"
+                    ]
+                  },
+                  {
+                    "id": "fever-hx-mother",
+                    "text": "Maternal problem",
+                    "sourceItemIds": [
+                      "i-0ed4387ab7a9"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Review of systems",
+                "items": [
+                  {
+                    "id": "fever-hx-fccsr",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea / Nasal obstruction",
+                    "sourceItemIds": [
+                      "i-52e3c96499b8",
+                      "i-f67d6676b11b"
+                    ]
+                  },
+                  {
+                    "id": "fever-hx-anvcd",
+                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea / Headache / Irritability",
+                    "sourceItemIds": [
+                      "i-0ed4387ab7a9"
+                    ]
+                  },
+                  {
+                    "id": "fever-hx-daily",
+                    "text": "Feeding / Activity / Urination / Sleeping: Fair or Poor",
+                    "sourceItemIds": [
+                      "i-915a1e9fb598",
+                      "i-ca2d5f59c88c",
+                      "i-f67d6676b11b"
+                    ]
+                  },
+                  {
+                    "id": "fever-hx-appearance",
+                    "text": "Appearance: Well or Ill / Irritable / Lethargic",
+                    "sourceItemIds": [
+                      "i-2565eaefaa14"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Fever",
+                "items": [
+                  {
+                    "id": "fever-hx-temperature",
+                    "text": "Maximum temperature at home / Temperature on arrival",
+                    "sourceItemIds": [
+                      "i-09f9f960f4d3",
+                      "i-d6027d327579"
+                    ]
+                  },
+                  {
+                    "id": "fever-hx-antipyretic",
+                    "text": "Antipyretic: Last dose / Number of doses / Type / Interval / Response",
+                    "sourceItemIds": [
+                      "i-09f9f960f4d3",
+                      "i-d410e445b7d6",
+                      "i-d054632e1182"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "fever-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "HEENT · Neck",
+                "items": [
+                  {
+                    "id": "fever-pe-throat",
+                    "text": "Throat injection / Tonsillar enlargement",
+                    "sourceItemIds": [
+                      "i-f563840a36c8",
+                      "i-711f3514742f",
+                      "i-88be3820287a"
+                    ]
+                  },
+                  {
+                    "id": "fever-pe-tongue",
+                    "text": "Dehydrated tongue",
+                    "sourceItemIds": [
+                      "i-b65cf64b5492"
+                    ]
+                  },
+                  {
+                    "id": "fever-pe-neck",
+                    "text": "Neck stiffness / Nuchal rigidity",
+                    "sourceItemIds": [
+                      "i-795bc09a858d",
+                      "i-78f591a013bf"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Chest",
+                "items": [
+                  {
+                    "id": "fever-pe-lung",
+                    "text": "Lung sound: Clear / Coarse / Wheezing / Stridor / Crackle",
+                    "sourceItemIds": [
+                      "i-afddfcfacdfb",
+                      "i-89b8406e0d1a"
+                    ]
+                  },
+                  {
+                    "id": "fever-pe-heart",
+                    "text": "Heart murmur",
+                    "sourceItemIds": [
+                      "i-adc3e02089cf"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Abdomen",
+                "items": [
+                  {
+                    "id": "fever-pe-abd",
+                    "text": "Bowel sound: Normoactive / Increased / Decreased · Palpation: Soft / Hard · Flat / Distended",
+                    "sourceItemIds": [
+                      "i-aed40d3bdf5b",
+                      "i-85e00579f43c"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Additional",
+                "items": [
+                  {
+                    "id": "fever-pe-uvula",
+                    "text": "Uvular deviation / White patch",
+                    "sourceItemIds": [
+                      "i-c1abfc2296d2"
+                    ]
+                  },
+                  {
+                    "id": "fever-pe-retraction",
+                    "text": "Chest retraction",
+                    "sourceItemIds": [
+                      "i-92df79d13f9d"
+                    ]
+                  },
+                  {
+                    "id": "fever-pe-ear",
+                    "text": "Tympanic redness / TM injection",
+                    "sourceItemIds": [
+                      "i-1ba15ce64ef8",
+                      "i-78f591a013bf"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "fever-view-reference",
+            "title": "참고사항",
+            "kind": "example",
+            "groups": [
+              {
+                "title": "차팅 예시",
+                "items": [
+                  {
+                    "id": "fever-ref-example",
+                    "text": "내원 당일 14시부터 fever. 가정 최고 38.0℃, 내원 시 39.5℃. 14시 해열제 복용 후 호전되었다가 17시 다시 상승. 전일 저녁부터 cough가 있어 당일 아침 local clinic 방문 후 medication.",
+                    "sourceItemIds": [
+                      "i-f70eebcacd56"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "vomiting",
@@ -4806,7 +6158,162 @@
       ],
       "sectionIds": [
         "peds-vomit"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "vomiting-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "General · Birth history",
+                "items": [
+                  {
+                    "id": "vomiting-hx-vital",
+                    "text": "Vital signs: T / P / R / BP",
+                    "sourceItemIds": [
+                      "i-88fe282cb4fe"
+                    ]
+                  },
+                  {
+                    "id": "vomiting-hx-neonate",
+                    "text": "Neonate: Current weight / Gestational week / Vaginal delivery or C-section / Birth asphyxia",
+                    "sourceItemIds": [
+                      "i-88fe282cb4fe",
+                      "i-52e3c96499b8"
+                    ]
+                  },
+                  {
+                    "id": "vomiting-hx-mother",
+                    "text": "Maternal problem",
+                    "sourceItemIds": [
+                      "i-0ed4387ab7a9"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Review of systems",
+                "items": [
+                  {
+                    "id": "vomiting-hx-fccsr",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea / Nasal obstruction",
+                    "sourceItemIds": [
+                      "i-52e3c96499b8"
+                    ]
+                  },
+                  {
+                    "id": "vomiting-hx-anvcd",
+                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea / Headache / Irritability",
+                    "sourceItemIds": [
+                      "i-0ed4387ab7a9"
+                    ]
+                  },
+                  {
+                    "id": "vomiting-hx-daily",
+                    "text": "Feeding / Activity / Urination / Sleeping: Fair or Poor",
+                    "sourceItemIds": [
+                      "i-915a1e9fb598"
+                    ]
+                  },
+                  {
+                    "id": "vomiting-hx-appearance",
+                    "text": "Appearance: Well or Ill / Irritable / Lethargic",
+                    "sourceItemIds": [
+                      "i-2565eaefaa14"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Vomiting",
+                "items": [
+                  {
+                    "id": "vomiting-hx-count",
+                    "text": "Frequency / Pattern: Regurgitation / Vomiting / Projectile",
+                    "sourceItemIds": [
+                      "i-0cb004905b21"
+                    ]
+                  },
+                  {
+                    "id": "vomiting-hx-content",
+                    "text": "Emesis color / Character: Food content / Watery",
+                    "sourceItemIds": [
+                      "i-0cb004905b21"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "vomiting-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "HEENT · Neck",
+                "items": [
+                  {
+                    "id": "vomiting-pe-throat",
+                    "text": "Throat injection / Tonsillar enlargement",
+                    "sourceItemIds": [
+                      "i-f563840a36c8",
+                      "i-711f3514742f"
+                    ]
+                  },
+                  {
+                    "id": "vomiting-pe-tongue",
+                    "text": "Dehydrated tongue",
+                    "sourceItemIds": [
+                      "i-b65cf64b5492"
+                    ]
+                  },
+                  {
+                    "id": "vomiting-pe-neck",
+                    "text": "Neck stiffness / Nuchal rigidity",
+                    "sourceItemIds": [
+                      "i-795bc09a858d"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Chest",
+                "items": [
+                  {
+                    "id": "vomiting-pe-lung",
+                    "text": "Lung sound: Clear / Coarse / Wheezing / Stridor / Crackle",
+                    "sourceItemIds": [
+                      "i-afddfcfacdfb"
+                    ]
+                  },
+                  {
+                    "id": "vomiting-pe-heart",
+                    "text": "Heart murmur",
+                    "sourceItemIds": [
+                      "i-adc3e02089cf"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Abdomen",
+                "items": [
+                  {
+                    "id": "vomiting-pe-abd",
+                    "text": "Bowel sound: Normoactive / Increased / Decreased · Palpation: Soft / Hard · Flat / Distended",
+                    "sourceItemIds": [
+                      "i-aed40d3bdf5b"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "diarrhea",
@@ -4824,7 +6331,169 @@
       ],
       "sectionIds": [
         "peds-diarrhea"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "diarrhea-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "General · Birth history",
+                "items": [
+                  {
+                    "id": "diarrhea-hx-vital",
+                    "text": "Vital signs: T / P / R / BP",
+                    "sourceItemIds": [
+                      "i-88fe282cb4fe"
+                    ]
+                  },
+                  {
+                    "id": "diarrhea-hx-neonate",
+                    "text": "Neonate: Current weight / Gestational week / Vaginal delivery or C-section / Birth asphyxia",
+                    "sourceItemIds": [
+                      "i-88fe282cb4fe",
+                      "i-52e3c96499b8"
+                    ]
+                  },
+                  {
+                    "id": "diarrhea-hx-mother",
+                    "text": "Maternal problem",
+                    "sourceItemIds": [
+                      "i-0ed4387ab7a9"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Review of systems",
+                "items": [
+                  {
+                    "id": "diarrhea-hx-fccsr",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea / Nasal obstruction",
+                    "sourceItemIds": [
+                      "i-52e3c96499b8"
+                    ]
+                  },
+                  {
+                    "id": "diarrhea-hx-anvcd",
+                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea / Headache / Irritability",
+                    "sourceItemIds": [
+                      "i-0ed4387ab7a9"
+                    ]
+                  },
+                  {
+                    "id": "diarrhea-hx-daily",
+                    "text": "Feeding / Activity / Urination / Sleeping: Fair or Poor",
+                    "sourceItemIds": [
+                      "i-915a1e9fb598"
+                    ]
+                  },
+                  {
+                    "id": "diarrhea-hx-appearance",
+                    "text": "Appearance: Well or Ill / Irritable / Lethargic",
+                    "sourceItemIds": [
+                      "i-2565eaefaa14"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Diarrhea",
+                "items": [
+                  {
+                    "id": "diarrhea-hx-stool",
+                    "text": "Frequency / Character / Color / Last defecation time",
+                    "sourceItemIds": [
+                      "i-9b0fd04b87dd"
+                    ]
+                  },
+                  {
+                    "id": "diarrhea-hx-npo",
+                    "text": "NPO time",
+                    "sourceItemIds": [
+                      "i-9b0fd04b87dd"
+                    ]
+                  },
+                  {
+                    "id": "diarrhea-hx-diet",
+                    "text": "Current diet: 밥 / 미음 / 모유 / 분유",
+                    "sourceItemIds": [
+                      "i-d8c672ae10ca"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "diarrhea-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "HEENT · Neck",
+                "items": [
+                  {
+                    "id": "diarrhea-pe-throat",
+                    "text": "Throat injection / Tonsillar enlargement",
+                    "sourceItemIds": [
+                      "i-f563840a36c8",
+                      "i-711f3514742f"
+                    ]
+                  },
+                  {
+                    "id": "diarrhea-pe-tongue",
+                    "text": "Dehydrated tongue",
+                    "sourceItemIds": [
+                      "i-b65cf64b5492"
+                    ]
+                  },
+                  {
+                    "id": "diarrhea-pe-neck",
+                    "text": "Neck stiffness / Nuchal rigidity",
+                    "sourceItemIds": [
+                      "i-795bc09a858d"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Chest",
+                "items": [
+                  {
+                    "id": "diarrhea-pe-lung",
+                    "text": "Lung sound: Clear / Coarse / Wheezing / Stridor / Crackle",
+                    "sourceItemIds": [
+                      "i-afddfcfacdfb"
+                    ]
+                  },
+                  {
+                    "id": "diarrhea-pe-heart",
+                    "text": "Heart murmur",
+                    "sourceItemIds": [
+                      "i-adc3e02089cf"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Abdomen",
+                "items": [
+                  {
+                    "id": "diarrhea-pe-abd",
+                    "text": "Bowel sound: Normoactive / Increased / Decreased · Palpation: Soft / Hard · Flat / Distended",
+                    "sourceItemIds": [
+                      "i-aed40d3bdf5b"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "cough",
@@ -4842,7 +6511,169 @@
       ],
       "sectionIds": [
         "peds-cough"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "cough-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "General · Birth history",
+                "items": [
+                  {
+                    "id": "cough-hx-vital",
+                    "text": "Vital signs: T / P / R / BP",
+                    "sourceItemIds": [
+                      "i-88fe282cb4fe"
+                    ]
+                  },
+                  {
+                    "id": "cough-hx-neonate",
+                    "text": "Neonate: Current weight / Gestational week / Vaginal delivery or C-section / Birth asphyxia",
+                    "sourceItemIds": [
+                      "i-88fe282cb4fe",
+                      "i-52e3c96499b8"
+                    ]
+                  },
+                  {
+                    "id": "cough-hx-mother",
+                    "text": "Maternal problem",
+                    "sourceItemIds": [
+                      "i-0ed4387ab7a9"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Review of systems",
+                "items": [
+                  {
+                    "id": "cough-hx-fccsr",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea / Nasal obstruction",
+                    "sourceItemIds": [
+                      "i-52e3c96499b8"
+                    ]
+                  },
+                  {
+                    "id": "cough-hx-anvcd",
+                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea / Headache / Irritability",
+                    "sourceItemIds": [
+                      "i-0ed4387ab7a9"
+                    ]
+                  },
+                  {
+                    "id": "cough-hx-daily",
+                    "text": "Feeding / Activity / Urination / Sleeping: Fair or Poor",
+                    "sourceItemIds": [
+                      "i-915a1e9fb598"
+                    ]
+                  },
+                  {
+                    "id": "cough-hx-appearance",
+                    "text": "Appearance: Well or Ill / Irritable / Lethargic",
+                    "sourceItemIds": [
+                      "i-2565eaefaa14"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Cough",
+                "items": [
+                  {
+                    "id": "cough-hx-sound",
+                    "text": "Cough sound: Barking or usual cough",
+                    "sourceItemIds": [
+                      "i-3368440da93b"
+                    ]
+                  },
+                  {
+                    "id": "cough-hx-position",
+                    "text": "Worse when supine / Hoarseness",
+                    "sourceItemIds": [
+                      "i-3368440da93b"
+                    ]
+                  },
+                  {
+                    "id": "cough-hx-atopy",
+                    "text": "Atopy·Asthma personal Hx / Family Hx",
+                    "sourceItemIds": [
+                      "i-3368440da93b"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "cough-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "HEENT · Neck",
+                "items": [
+                  {
+                    "id": "cough-pe-throat",
+                    "text": "Throat injection / Tonsillar enlargement",
+                    "sourceItemIds": [
+                      "i-f563840a36c8",
+                      "i-711f3514742f"
+                    ]
+                  },
+                  {
+                    "id": "cough-pe-tongue",
+                    "text": "Dehydrated tongue",
+                    "sourceItemIds": [
+                      "i-b65cf64b5492"
+                    ]
+                  },
+                  {
+                    "id": "cough-pe-neck",
+                    "text": "Neck stiffness / Nuchal rigidity",
+                    "sourceItemIds": [
+                      "i-795bc09a858d"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Chest",
+                "items": [
+                  {
+                    "id": "cough-pe-lung",
+                    "text": "Lung sound: Clear / Coarse / Wheezing / Stridor / Crackle",
+                    "sourceItemIds": [
+                      "i-afddfcfacdfb"
+                    ]
+                  },
+                  {
+                    "id": "cough-pe-heart",
+                    "text": "Heart murmur",
+                    "sourceItemIds": [
+                      "i-adc3e02089cf"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Abdomen",
+                "items": [
+                  {
+                    "id": "cough-pe-abd",
+                    "text": "Bowel sound: Normoactive / Increased / Decreased · Palpation: Soft / Hard · Flat / Distended",
+                    "sourceItemIds": [
+                      "i-aed40d3bdf5b"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "peds-abdominal-pain",
@@ -4866,7 +6697,181 @@
       "sectionIds": [
         "peds-abd-history",
         "peds-abd-mixed"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "peds-abd-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "General · Birth history",
+                "items": [
+                  {
+                    "id": "peds-abd-hx-vital",
+                    "text": "Vital signs: T / P / R / BP",
+                    "sourceItemIds": [
+                      "i-88fe282cb4fe"
+                    ]
+                  },
+                  {
+                    "id": "peds-abd-hx-neonate",
+                    "text": "Neonate: Current weight / Gestational week / Vaginal delivery or C-section / Birth asphyxia",
+                    "sourceItemIds": [
+                      "i-88fe282cb4fe",
+                      "i-52e3c96499b8"
+                    ]
+                  },
+                  {
+                    "id": "peds-abd-hx-mother",
+                    "text": "Maternal problem",
+                    "sourceItemIds": [
+                      "i-0ed4387ab7a9"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Review of systems",
+                "items": [
+                  {
+                    "id": "peds-abd-hx-fccsr",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea / Nasal obstruction",
+                    "sourceItemIds": [
+                      "i-52e3c96499b8"
+                    ]
+                  },
+                  {
+                    "id": "peds-abd-hx-anvcd",
+                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea / Headache / Irritability",
+                    "sourceItemIds": [
+                      "i-0ed4387ab7a9"
+                    ]
+                  },
+                  {
+                    "id": "peds-abd-hx-daily",
+                    "text": "Feeding / Activity / Urination / Sleeping: Fair or Poor",
+                    "sourceItemIds": [
+                      "i-915a1e9fb598"
+                    ]
+                  },
+                  {
+                    "id": "peds-abd-hx-appearance",
+                    "text": "Appearance: Well or Ill / Irritable / Lethargic",
+                    "sourceItemIds": [
+                      "i-2565eaefaa14"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Abdominal pain",
+                "items": [
+                  {
+                    "id": "peds-abd-hx-pain",
+                    "text": "Character / Location / Intermittent or Steady / Duration / Relieving time",
+                    "sourceItemIds": [
+                      "i-26e3ede4229f"
+                    ]
+                  },
+                  {
+                    "id": "peds-abd-hx-bowel",
+                    "text": "Last defecation / NPO time",
+                    "sourceItemIds": [
+                      "i-2e8d142d81a5"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "peds-abd-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "HEENT · Neck",
+                "items": [
+                  {
+                    "id": "peds-abd-pe-throat",
+                    "text": "Throat injection / Tonsillar enlargement",
+                    "sourceItemIds": [
+                      "i-f563840a36c8",
+                      "i-711f3514742f"
+                    ]
+                  },
+                  {
+                    "id": "peds-abd-pe-tongue",
+                    "text": "Dehydrated tongue",
+                    "sourceItemIds": [
+                      "i-b65cf64b5492"
+                    ]
+                  },
+                  {
+                    "id": "peds-abd-pe-neck",
+                    "text": "Neck stiffness / Nuchal rigidity",
+                    "sourceItemIds": [
+                      "i-795bc09a858d"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Chest",
+                "items": [
+                  {
+                    "id": "peds-abd-pe-lung",
+                    "text": "Lung sound: Clear / Coarse / Wheezing / Stridor / Crackle",
+                    "sourceItemIds": [
+                      "i-afddfcfacdfb"
+                    ]
+                  },
+                  {
+                    "id": "peds-abd-pe-heart",
+                    "text": "Heart murmur",
+                    "sourceItemIds": [
+                      "i-adc3e02089cf"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Abdomen",
+                "items": [
+                  {
+                    "id": "peds-abd-pe-abd",
+                    "text": "Bowel sound: Normoactive / Increased / Decreased · Palpation: Soft / Hard · Flat / Distended",
+                    "sourceItemIds": [
+                      "i-aed40d3bdf5b"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Abdomen",
+                "items": [
+                  {
+                    "id": "peds-abd-pe-tenderness",
+                    "text": "Surgical abdomen / RLQ tenderness / Rebound tenderness",
+                    "sourceItemIds": [
+                      "i-2e8d142d81a5"
+                    ]
+                  },
+                  {
+                    "id": "peds-abd-pe-sign",
+                    "text": "Rovsing sign / Obturator sign / Psoas sign",
+                    "sourceItemIds": [
+                      "i-e1aa94a6069a"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "peds-seizure",
@@ -4891,7 +6896,309 @@
       "sectionIds": [
         "peds-seizure-history",
         "peds-seizure-example"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "peds-seizure-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "General · Birth history",
+                "items": [
+                  {
+                    "id": "peds-seizure-hx-vital",
+                    "text": "Vital signs: T / P / R / BP",
+                    "sourceItemIds": [
+                      "i-88fe282cb4fe"
+                    ]
+                  },
+                  {
+                    "id": "peds-seizure-hx-neonate",
+                    "text": "Neonate: Current weight / Gestational week / Vaginal delivery or C-section / Birth asphyxia",
+                    "sourceItemIds": [
+                      "i-88fe282cb4fe",
+                      "i-52e3c96499b8"
+                    ]
+                  },
+                  {
+                    "id": "peds-seizure-hx-mother",
+                    "text": "Maternal problem",
+                    "sourceItemIds": [
+                      "i-0ed4387ab7a9"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Review of systems",
+                "items": [
+                  {
+                    "id": "peds-seizure-hx-fccsr",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea / Nasal obstruction",
+                    "sourceItemIds": [
+                      "i-52e3c96499b8"
+                    ]
+                  },
+                  {
+                    "id": "peds-seizure-hx-anvcd",
+                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea / Headache / Irritability",
+                    "sourceItemIds": [
+                      "i-0ed4387ab7a9"
+                    ]
+                  },
+                  {
+                    "id": "peds-seizure-hx-daily",
+                    "text": "Feeding / Activity / Urination / Sleeping: Fair or Poor",
+                    "sourceItemIds": [
+                      "i-915a1e9fb598"
+                    ]
+                  },
+                  {
+                    "id": "peds-seizure-hx-appearance",
+                    "text": "Appearance: Well or Ill / Irritable / Lethargic",
+                    "sourceItemIds": [
+                      "i-2565eaefaa14"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Seizure",
+                "items": [
+                  {
+                    "id": "peds-seizure-hx-loc",
+                    "text": "LOC",
+                    "sourceItemIds": [
+                      "i-be829747b960"
+                    ]
+                  },
+                  {
+                    "id": "peds-seizure-hx-eye",
+                    "text": "Eyeball deviation",
+                    "sourceItemIds": [
+                      "i-d953400df2c6"
+                    ]
+                  },
+                  {
+                    "id": "peds-seizure-hx-urine",
+                    "text": "Urination",
+                    "sourceItemIds": [
+                      "i-597bebc96605"
+                    ]
+                  },
+                  {
+                    "id": "peds-seizure-hx-foam",
+                    "text": "Foamy salivation",
+                    "sourceItemIds": [
+                      "i-8ce09ee87474"
+                    ]
+                  },
+                  {
+                    "id": "peds-seizure-hx-past",
+                    "text": "Previous seizure Hx",
+                    "sourceItemIds": [
+                      "i-837190c5a23c"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "peds-seizure-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "HEENT · Neck",
+                "items": [
+                  {
+                    "id": "peds-seizure-pe-throat",
+                    "text": "Throat injection / Tonsillar enlargement",
+                    "sourceItemIds": [
+                      "i-f563840a36c8",
+                      "i-711f3514742f"
+                    ]
+                  },
+                  {
+                    "id": "peds-seizure-pe-tongue",
+                    "text": "Dehydrated tongue",
+                    "sourceItemIds": [
+                      "i-b65cf64b5492"
+                    ]
+                  },
+                  {
+                    "id": "peds-seizure-pe-neck",
+                    "text": "Neck stiffness / Nuchal rigidity",
+                    "sourceItemIds": [
+                      "i-795bc09a858d"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Chest",
+                "items": [
+                  {
+                    "id": "peds-seizure-pe-lung",
+                    "text": "Lung sound: Clear / Coarse / Wheezing / Stridor / Crackle",
+                    "sourceItemIds": [
+                      "i-afddfcfacdfb"
+                    ]
+                  },
+                  {
+                    "id": "peds-seizure-pe-heart",
+                    "text": "Heart murmur",
+                    "sourceItemIds": [
+                      "i-adc3e02089cf"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Abdomen",
+                "items": [
+                  {
+                    "id": "peds-seizure-pe-abd",
+                    "text": "Bowel sound: Normoactive / Increased / Decreased · Palpation: Soft / Hard · Flat / Distended",
+                    "sourceItemIds": [
+                      "i-aed40d3bdf5b"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "peds-seizure-view-reference",
+            "title": "참고사항",
+            "kind": "example",
+            "groups": [
+              {
+                "title": "차팅 예시 · 간단 기록",
+                "items": [
+                  {
+                    "id": "peds-seizure-ref-brief",
+                    "text": "00시 seizure 30분 지속 / 04시 seizure 5분 이내 / 경련 상황 기억함",
+                    "sourceItemIds": [
+                      "i-23456d42c6fc"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "차팅 예시 1 · Ictal",
+                "items": [
+                  {
+                    "id": "peds-seizure-ref-ex1-ictal",
+                    "text": "Duration 약 5분 / 사지가 떨리는 양상 / Upper EBD (+) / Perioral cyanosis (+/-)",
+                    "sourceItemIds": [
+                      "i-bad96a5b387f",
+                      "i-fb689eb0618a",
+                      "i-dc69f0bb12ba",
+                      "i-fc2673bb7748",
+                      "i-4d3b5103a30a"
+                    ]
+                  },
+                  {
+                    "id": "peds-seizure-ref-ex1-post",
+                    "text": "Postictal weakness. 다른 특이소견은 관찰되지 않음 / Family Hx of epilepsy (-) / Previous seizure Hx (-) / Development: 달리기 가능, 문장 유창",
+                    "sourceItemIds": [
+                      "i-2c96ef85afac",
+                      "i-8b9a8c640bce",
+                      "i-2f3dc6ac0206",
+                      "i-29448cbaaa9e",
+                      "i-73dd027c822c"
+                    ]
+                  },
+                  {
+                    "id": "peds-seizure-ref-ex1-ros",
+                    "text": "FCCSR +/+/-/-/- / ANVCD -/-/-/-/-; 1주 전 constipation으로 abdominal pain 있었으나 현재 없음 / TE·TI -/- / Normal lung sound",
+                    "sourceItemIds": [
+                      "i-a1dac288ec72",
+                      "i-44d3ed573ae1",
+                      "i-3fbf66a97202",
+                      "i-f0282fe3cfb0"
+                    ]
+                  },
+                  {
+                    "id": "peds-seizure-ref-ex1-general",
+                    "text": "General condition: Moderate. 보호자 진술상 seizure 외에는 평소처럼 운동·식사하고 상태가 좋아 보였음",
+                    "sourceItemIds": [
+                      "i-5a2cbc0475fb",
+                      "i-f147200e243f"
+                    ]
+                  },
+                  {
+                    "id": "peds-seizure-ref-ex1-neuro",
+                    "text": "Mental alert / Gait normal, no imbalance / Ankle clonus -/- / Knee reflex / Normotonia / Upper·Lower G4 G4 / G4 G4 / 의사소통 가능",
+                    "sourceItemIds": [
+                      "i-bc032a1ed254",
+                      "i-2b956438347f",
+                      "i-6fddc51fc43b",
+                      "i-075fdb65c37b",
+                      "i-7691f22e2a0e",
+                      "i-cba13eb9d26f",
+                      "i-2cfe9b4c15cf"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "차팅 예시 2 · Febrile seizure",
+                "items": [
+                  {
+                    "id": "peds-seizure-ref-ex2-pi",
+                    "text": "12개월경 febrile seizure Hx 1회. 내원 2일 전 local clinic에서 목이 부었다는 말을 들었고, 전일 18시부터 fever up to 39.8℃. 내원 약 30분 전 04:15경 1–2분 seizure 후 내원.",
+                    "sourceItemIds": [
+                      "i-ac579761ba69",
+                      "i-edca7648132c"
+                    ]
+                  },
+                  {
+                    "id": "peds-seizure-ref-ex2-pre",
+                    "text": "Preictal: 깨어 있었고 미온수 마사지 중 보호자가 안고 있었음",
+                    "sourceItemIds": [
+                      "i-406b815fb2d3",
+                      "i-6c17ef340c59"
+                    ]
+                  },
+                  {
+                    "id": "peds-seizure-ref-ex2-ictal",
+                    "text": "EBD 뚜렷하지 않고 눈에 초점 없어 보임 / LOC (+), 불러도 대답 없고 의사소통 불가 / 양측 팔다리가 뻣뻣해짐 / Duration 1–2분 / Cyanosis (+), Drooling (-), Foamy salivation (-), Postictal urination·defecation -/-",
+                    "sourceItemIds": [
+                      "i-742cc0b30316",
+                      "i-f80f91d75429",
+                      "i-89049e8df4f3",
+                      "i-c911a5fb9aba",
+                      "i-3bb8a497989d",
+                      "i-34a4ab26187c"
+                    ]
+                  },
+                  {
+                    "id": "peds-seizure-ref-ex2-post",
+                    "text": "Postictal: 뻣뻣함이 멈추며 의식이 명료하게 돌아오고 의사소통 가능",
+                    "sourceItemIds": [
+                      "i-0679481a0b8e",
+                      "i-4cad4a81bc53"
+                    ]
+                  },
+                  {
+                    "id": "peds-seizure-ref-ex2-history",
+                    "text": "Past convulsion Hx (-) / 부모·형제 convulsion Hx (-)",
+                    "sourceItemIds": [
+                      "i-a00556823521",
+                      "i-e54f06313209"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "growth",
@@ -4951,7 +7258,99 @@
         "eye-history",
         "eye-exam",
         "eye-note"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "eye-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Symptoms",
+                "items": [
+                  {
+                    "id": "eye-hx-symptoms",
+                    "text": "Ocular pain / Foreign body sensation / Conjunctival injection / Discharge",
+                    "sourceItemIds": [
+                      "i-28ecfc7fcdda",
+                      "i-e20bddff3b1d",
+                      "i-d16c7ea78bb3",
+                      "i-4f259c29f187"
+                    ]
+                  },
+                  {
+                    "id": "eye-hx-vision",
+                    "text": "Blurred vision / Diplopia / Baseline vision and change",
+                    "sourceItemIds": [
+                      "i-d0723942eb28",
+                      "i-cec96462eb1a",
+                      "i-18279ab2c20f"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Past history",
+                "items": [
+                  {
+                    "id": "eye-hx-past",
+                    "text": "Ophthalmologic Hx",
+                    "sourceItemIds": [
+                      "i-f7aed3e8baa4"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "eye-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "Eye",
+                "items": [
+                  {
+                    "id": "eye-pe-light",
+                    "text": "Light reflex",
+                    "sourceItemIds": [
+                      "i-b5dbf567b8b4"
+                    ]
+                  },
+                  {
+                    "id": "eye-pe-eom",
+                    "text": "Extraocular movement",
+                    "sourceItemIds": [
+                      "i-3354730896e4"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "eye-view-reference",
+            "title": "참고사항",
+            "kind": "note",
+            "groups": [
+              {
+                "title": "보고·처치",
+                "items": [
+                  {
+                    "id": "eye-ref-irrigation",
+                    "text": "Foreign body, 특히 화학물질 노출은 즉시 보고; 지시 시 suture room에서 eye irrigation",
+                    "sourceItemIds": [
+                      "i-12d19359ec2c"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "throat",
@@ -4984,7 +7383,100 @@
       "sectionIds": [
         "ear-history",
         "ear-example"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "ear-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Symptoms · Exposure",
+                "items": [
+                  {
+                    "id": "ear-hx-symptoms",
+                    "text": "Otalgia / Tinnitus / Ear fullness / Hearing difficulty or loss / Dizziness",
+                    "sourceItemIds": [
+                      "i-9ed2447b8d64",
+                      "i-00f4e17f31db",
+                      "i-7eda19f1989e",
+                      "i-fdd513cc18af"
+                    ]
+                  },
+                  {
+                    "id": "ear-hx-local",
+                    "text": "Redness / Swelling",
+                    "sourceItemIds": [
+                      "i-9ed2447b8d64"
+                    ]
+                  },
+                  {
+                    "id": "ear-hx-exposure",
+                    "text": "URI symptoms / Trauma / Recent water exposure",
+                    "sourceItemIds": [
+                      "i-5a33dba2ab00",
+                      "i-87611c37fa0b"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "ear-view-reference",
+            "title": "참고사항",
+            "kind": "example",
+            "groups": [
+              {
+                "title": "차팅 예시 · Ear fullness / r/o AOM",
+                "items": [
+                  {
+                    "id": "ear-ref-pi",
+                    "text": "16시부터 물속이나 비행기에 있는 듯 귀가 먹먹하고 잘 들리지 않아 내원. 우측이 좌측보다 심하며 우측 hearing은 좌측의 5–60% 정도라고 함. Mild tinnitus 동반. Underlying disease 없음.",
+                    "sourceItemIds": [
+                      "i-c58066a39b79",
+                      "i-4f8534ce0b1a",
+                      "i-0d4397058996",
+                      "i-87ad0ab613de",
+                      "i-46fe29a75c9a",
+                      "i-7443589aa977",
+                      "i-7cb201e1e2fd"
+                    ]
+                  },
+                  {
+                    "id": "ear-ref-ros",
+                    "text": "FCCSR +-+-+; fever는 ER 도착 후 인지 / ANVCD ----- / FUND HIS ---- ---",
+                    "sourceItemIds": [
+                      "i-8ee23d3a8187",
+                      "i-1a66fc8ad5f8",
+                      "i-c9b17d933458"
+                    ]
+                  },
+                  {
+                    "id": "ear-ref-pe-general",
+                    "text": "Lung sound clear / No focal abdominal tenderness / CVAT -/-",
+                    "sourceItemIds": [
+                      "i-88c5ef8c7891",
+                      "i-ce05ec24f986",
+                      "i-63a0c00c9b37"
+                    ]
+                  },
+                  {
+                    "id": "ear-ref-pe-ear",
+                    "text": "Right TM r/o intact; cerumen으로 정확한 관찰 어려움 / Left TM intact / 최근 수영장 노출 없음",
+                    "sourceItemIds": [
+                      "i-ab1f37c078d6",
+                      "i-79549d9c1f3c",
+                      "i-5a54890e1070"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "epistaxis",
@@ -5001,7 +7493,88 @@
       "sectionIds": [
         "epistaxis-mixed",
         "epistaxis-note"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "epistaxis-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Present illness",
+                "items": [
+                  {
+                    "id": "epistaxis-hx-bleeding",
+                    "text": "Bleeding amount / Onset time / Current active bleeding",
+                    "sourceItemIds": [
+                      "i-4a6311b2bab7"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Past · Drug history",
+                "items": [
+                  {
+                    "id": "epistaxis-hx-background",
+                    "text": "Medication / HTN Hx",
+                    "sourceItemIds": [
+                      "i-ca15bdb71320"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "epistaxis-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "Bleeding",
+                "items": [
+                  {
+                    "id": "epistaxis-pe-throat",
+                    "text": "Active bleeding / Oropharynx",
+                    "sourceItemIds": [
+                      "i-4a6311b2bab7"
+                    ],
+                    "note": "목 안을 반드시 확인"
+                  },
+                  {
+                    "id": "epistaxis-pe-bp",
+                    "text": "Blood pressure",
+                    "sourceItemIds": [
+                      "i-ca15bdb71320"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "epistaxis-view-reference",
+            "title": "참고사항",
+            "kind": "note",
+            "groups": [
+              {
+                "title": "처치",
+                "items": [
+                  {
+                    "id": "epistaxis-ref-merocel",
+                    "text": "Active bleeding: Merocel",
+                    "sourceItemIds": [
+                      "i-ed62a7868ff4"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "alcohol-counsel",
