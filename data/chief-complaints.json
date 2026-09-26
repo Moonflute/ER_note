@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-09-26-beta.3",
+  "contentVersion": "2026-09-26-beta.4",
   "categories": [
     {
       "id": "00",
@@ -2491,7 +2491,281 @@
         "abd-history",
         "abd-exam",
         "abd-note"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "abd-view-history",
+            "title": "문진",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "과거력·복용약",
+                "items": [
+                  {
+                    "id": "abd-hx-background",
+                    "text": "Underlying disease / Medication Hx / Operation Hx (　/　/　)",
+                    "sourceItemIds": [
+                      "i-a0dbc0b8eaec"
+                    ]
+                  },
+                  {
+                    "id": "abd-hx-operation",
+                    "text": "Abdominal operation Hx (　)",
+                    "sourceItemIds": [
+                      "i-eb4aa9826a2d",
+                      "i-ecedeb1e4880"
+                    ],
+                    "note": "반드시 확인"
+                  },
+                  {
+                    "id": "abd-hx-npo",
+                    "text": "NPO time (　　　　　　)",
+                    "sourceItemIds": [
+                      "i-23c56e483dfc"
+                    ],
+                    "note": "수술 가능성이 있는 경우"
+                  }
+                ]
+              },
+              {
+                "title": "Review of systems",
+                "items": [
+                  {
+                    "id": "abd-hx-fccsr",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea (　/　/　/　/　)",
+                    "sourceItemIds": [
+                      "i-473758685a66",
+                      "i-a5938abb78b4"
+                    ]
+                  },
+                  {
+                    "id": "abd-hx-anvcd",
+                    "text": "Anorexia / Nausea / Vomiting / Diarrhea / Constipation (　/　/　/　/　)",
+                    "sourceItemIds": [
+                      "i-473758685a66",
+                      "i-39ebda833786",
+                      "i-c4bf0295923d"
+                    ]
+                  },
+                  {
+                    "id": "abd-hx-fundhis",
+                    "text": "Frequency / Urgency / Nocturia / Dysuria / Hesitancy / Incomplete emptying / Straining (　/　/　/　/　/　/　)",
+                    "sourceItemIds": [
+                      "i-a7cf0271f916"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "여성 환자",
+                "items": [
+                  {
+                    "id": "abd-hx-pregnancy",
+                    "text": "임신 가능성 / LMP (　/　)",
+                    "sourceItemIds": [
+                      "i-9a089b00c222"
+                    ]
+                  },
+                  {
+                    "id": "abd-hx-female",
+                    "text": "Menstruation / Last coitus / 보호자 관계 (　/　/　)",
+                    "sourceItemIds": [
+                      "i-f26b6ccefee9",
+                      "i-99dd425247e3"
+                    ],
+                    "note": "가임기 여성의 하복부 통증에서는 보호자와의 관계를 고려하여 확인"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "abd-view-exam",
+            "title": "신체진찰",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "HEENT",
+                "items": [
+                  {
+                    "id": "abd-pe-heent",
+                    "text": "Throat injection / Tonsil enlargement (　/　)",
+                    "sourceItemIds": [
+                      "i-e8c7079dbc3e"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Chest",
+                "items": [
+                  {
+                    "id": "abd-pe-chest",
+                    "text": "Lung sound: Clear (　)",
+                    "sourceItemIds": [
+                      "i-e8c7079dbc3e"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Abdomen",
+                "items": [
+                  {
+                    "id": "abd-pe-bowel",
+                    "text": "Bowel sound: Normoactive (　)",
+                    "sourceItemIds": [
+                      "i-a40910290557"
+                    ]
+                  },
+                  {
+                    "id": "abd-pe-tenderness",
+                    "text": "Abdominal Td / rTd / Muscle guarding (　/　/　)",
+                    "sourceItemIds": [
+                      "i-a40910290557",
+                      "i-4e56e4043370",
+                      "i-99e95de58023"
+                    ],
+                    "note": "rTd 판단이 어려우면 percussion tenderness를 확인. 환자의 통증 호소만으로 기록하지 말고 진찰자가 판단하여 전공의에게 알림"
+                  },
+                  {
+                    "id": "abd-pe-cvat",
+                    "text": "CVAT (　/　)",
+                    "sourceItemIds": [
+                      "i-48f8724d8595",
+                      "i-2983d5754b6e"
+                    ],
+                    "note": "반드시 확인"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "abd-view-reference",
+            "title": "참고사항",
+            "kind": "note",
+            "groups": [
+              {
+                "title": "초기 처방·검사",
+                "items": [
+                  {
+                    "id": "abd-ref-orders",
+                    "text": "ER set: Full lab + 05.AGE + 08. Pain control / Main fluid: N/S, Plasma-Lyte 등",
+                    "sourceItemIds": [
+                      "i-89db9271b34f",
+                      "i-c1c68308f8e7"
+                    ],
+                    "note": "검사와 증상 조절을 함께 고려"
+                  },
+                  {
+                    "id": "abd-ref-lab",
+                    "text": "Full lab: CBC, CRP, E′, bil./OT/PT/ALT/GGT, pancreatic enzyme 포함",
+                    "sourceItemIds": [
+                      "i-e4595c2448c4"
+                    ]
+                  },
+                  {
+                    "id": "abd-ref-upper",
+                    "text": "상복부 통증: Cardiac marker / EKG 포함",
+                    "sourceItemIds": [
+                      "i-184aeba1bd67"
+                    ]
+                  },
+                  {
+                    "id": "abd-ref-fever",
+                    "text": "발열: Procalcitonin 포함",
+                    "sourceItemIds": [
+                      "i-1edb8093df4b"
+                    ]
+                  },
+                  {
+                    "id": "abd-ref-xray",
+                    "text": "서 있기 어려운 경우: X-ray AP 처방",
+                    "sourceItemIds": [
+                      "i-15284a8890fb"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "보고",
+                "items": [
+                  {
+                    "id": "abd-ref-notify",
+                    "text": "Surgical abdomen 의심 시 응급의학과 전공의에게 즉시 보고",
+                    "sourceItemIds": [
+                      "i-dd44c1460346"
+                    ]
+                  },
+                  {
+                    "id": "abd-ref-confirm",
+                    "text": "처방 입력 전 응급의학과 전공의 확인",
+                    "sourceItemIds": [
+                      "i-f06512502fff"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "증상 조절",
+                "items": [
+                  {
+                    "id": "abd-ref-vomiting",
+                    "text": "구토: Macperan",
+                    "sourceItemIds": [
+                      "i-9d3c23dc7dbf"
+                    ]
+                  },
+                  {
+                    "id": "abd-ref-diarrhea",
+                    "text": "설사: Bropium",
+                    "sourceItemIds": [
+                      "i-cdbbe5c24a89"
+                    ]
+                  },
+                  {
+                    "id": "abd-ref-antipyretic",
+                    "text": "발열: Acetphen",
+                    "sourceItemIds": [
+                      "i-34350a9e270a"
+                    ]
+                  },
+                  {
+                    "id": "abd-ref-heartburn",
+                    "text": "속쓰림: Nexium",
+                    "sourceItemIds": [
+                      "i-e02c1f387b36"
+                    ]
+                  },
+                  {
+                    "id": "abd-ref-pain",
+                    "text": "통증: Tridol → Acetphen–Kerasyn 순으로 고려",
+                    "sourceItemIds": [
+                      "i-a3b5fe662812",
+                      "i-80802f501f80"
+                    ],
+                    "note": "CT 촬영이 확실한 경우 Kerasyn을 처음부터 고려"
+                  }
+                ]
+              },
+              {
+                "title": "차팅",
+                "items": [
+                  {
+                    "id": "abd-ref-charting",
+                    "text": "상병명: Gastrointestinal disease",
+                    "sourceItemIds": [
+                      "i-d05fceff2212"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "dyspepsia",

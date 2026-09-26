@@ -187,6 +187,83 @@ for iid, text, bid in pdf_additions:
 for b in archive["sources"][2]["blocks"]:
     assignments[b["id"]].append({"type": "alternateRendition", "canonicalSourceId": "np-docx", "verification": "PDF 2페이지 시각 확인. 추가 요약·차팅 문구는 별도 보존."})
 
+# Curated layouts are presentation-ready views over the preserved source items.
+# They may merge duplicate wording, expand confirmed abbreviations and separate
+# instructions into notes without changing or discarding the source archive.
+def view_item(iid, text, source_item_ids, note=None):
+    item = {"id": iid, "text": text, "sourceItemIds": source_item_ids}
+    if note:
+        item["note"] = note
+    return item
+
+curated_layouts = {
+    "abdominal-pain": {
+        "sections": [
+            {"id": "abd-view-history", "title": "문진", "kind": "history", "groups": [
+                {"title": "과거력·복용약", "items": [
+                    view_item("abd-hx-background", "Underlying disease / Medication Hx / Operation Hx (　/　/　)", ["i-a0dbc0b8eaec"]),
+                    view_item("abd-hx-operation", "Abdominal operation Hx (　)", ["i-eb4aa9826a2d", "i-ecedeb1e4880"], "반드시 확인"),
+                    view_item("abd-hx-npo", "NPO time (　　　　　　)", ["i-23c56e483dfc"], "수술 가능성이 있는 경우"),
+                ]},
+                {"title": "Review of systems", "items": [
+                    view_item("abd-hx-fccsr", "Fever / Chill / Cough / Sputum / Rhinorrhea (　/　/　/　/　)", ["i-473758685a66", "i-a5938abb78b4"]),
+                    view_item("abd-hx-anvcd", "Anorexia / Nausea / Vomiting / Diarrhea / Constipation (　/　/　/　/　)", ["i-473758685a66", "i-39ebda833786", "i-c4bf0295923d"]),
+                    view_item("abd-hx-fundhis", "Frequency / Urgency / Nocturia / Dysuria / Hesitancy / Incomplete emptying / Straining (　/　/　/　/　/　/　)", ["i-a7cf0271f916"]),
+                ]},
+                {"title": "여성 환자", "items": [
+                    view_item("abd-hx-pregnancy", "임신 가능성 / LMP (　/　)", ["i-9a089b00c222"]),
+                    view_item("abd-hx-female", "Menstruation / Last coitus / 보호자 관계 (　/　/　)", ["i-f26b6ccefee9", "i-99dd425247e3"], "가임기 여성의 하복부 통증에서는 보호자와의 관계를 고려하여 확인"),
+                ]},
+            ]},
+            {"id": "abd-view-exam", "title": "신체진찰", "kind": "exam", "groups": [
+                {"title": "HEENT", "items": [
+                    view_item("abd-pe-heent", "Throat injection / Tonsil enlargement (　/　)", ["i-e8c7079dbc3e"]),
+                ]},
+                {"title": "Chest", "items": [
+                    view_item("abd-pe-chest", "Lung sound: Clear (　)", ["i-e8c7079dbc3e"]),
+                ]},
+                {"title": "Abdomen", "items": [
+                    view_item("abd-pe-bowel", "Bowel sound: Normoactive (　)", ["i-a40910290557"]),
+                    view_item("abd-pe-tenderness", "Abdominal Td / rTd / Muscle guarding (　/　/　)", ["i-a40910290557", "i-4e56e4043370", "i-99e95de58023"], "rTd 판단이 어려우면 percussion tenderness를 확인. 환자의 통증 호소만으로 기록하지 말고 진찰자가 판단하여 전공의에게 알림"),
+                    view_item("abd-pe-cvat", "CVAT (　/　)", ["i-48f8724d8595", "i-2983d5754b6e"], "반드시 확인"),
+                ]},
+            ]},
+            {"id": "abd-view-reference", "title": "참고사항", "kind": "note", "groups": [
+                {"title": "초기 처방·검사", "items": [
+                    view_item("abd-ref-orders", "ER set: Full lab + 05.AGE + 08. Pain control / Main fluid: N/S, Plasma-Lyte 등", ["i-89db9271b34f", "i-c1c68308f8e7"], "검사와 증상 조절을 함께 고려"),
+                    view_item("abd-ref-lab", "Full lab: CBC, CRP, E′, bil./OT/PT/ALT/GGT, pancreatic enzyme 포함", ["i-e4595c2448c4"]),
+                    view_item("abd-ref-upper", "상복부 통증: Cardiac marker / EKG 포함", ["i-184aeba1bd67"]),
+                    view_item("abd-ref-fever", "발열: Procalcitonin 포함", ["i-1edb8093df4b"]),
+                    view_item("abd-ref-xray", "서 있기 어려운 경우: X-ray AP 처방", ["i-15284a8890fb"]),
+                ]},
+                {"title": "보고", "items": [
+                    view_item("abd-ref-notify", "Surgical abdomen 의심 시 응급의학과 전공의에게 즉시 보고", ["i-dd44c1460346"]),
+                    view_item("abd-ref-confirm", "처방 입력 전 응급의학과 전공의 확인", ["i-f06512502fff"]),
+                ]},
+                {"title": "증상 조절", "items": [
+                    view_item("abd-ref-vomiting", "구토: Macperan", ["i-9d3c23dc7dbf"]),
+                    view_item("abd-ref-diarrhea", "설사: Bropium", ["i-cdbbe5c24a89"]),
+                    view_item("abd-ref-antipyretic", "발열: Acetphen", ["i-34350a9e270a"]),
+                    view_item("abd-ref-heartburn", "속쓰림: Nexium", ["i-e02c1f387b36"]),
+                    view_item("abd-ref-pain", "통증: Tridol → Acetphen–Kerasyn 순으로 고려", ["i-a3b5fe662812", "i-80802f501f80"], "CT 촬영이 확실한 경우 Kerasyn을 처음부터 고려"),
+                ]},
+                {"title": "차팅", "items": [
+                    view_item("abd-ref-charting", "상병명: Gastrointestinal disease", ["i-d05fceff2212"]),
+                ]},
+            ]},
+        ]
+    }
+}
+
+raw_item_ids = {item["id"] for section in groups.values() for item in section["items"]}
+for layout in curated_layouts.values():
+    for section in layout["sections"]:
+        for group in section["groups"]:
+            for item in group["items"]:
+                missing = set(item["sourceItemIds"]) - raw_item_ids
+                if missing:
+                    raise ValueError(f"Curated item has unknown source items: {item['id']} {sorted(missing)}")
+
 # All remaining DOCX blocks must be formatting / headings, never substantive omissions.
 structures = {
  "handover": "2,8,10,17,25,31,36,41,43,49,55,61,69,70,75,79,80,85,90,91,95,101,104",
@@ -298,9 +375,11 @@ for cid, records in catalog.items():
                 "sharedSectionIds": shared, "sectionIds": section_ids}
         if iid in ("rash","flank-pain"):
             item["status"] = "notesOnly"
+        if iid in curated_layouts:
+            item["layout"] = curated_layouts[iid]
         complaints.append(item)
 
-data = {"schemaVersion": 1, "contentVersion": "2026-09-26-beta.3", "categories": categories,
+data = {"schemaVersion": 1, "contentVersion": "2026-09-26-beta.4", "categories": categories,
         "sections": list(groups.values()), "complaints": complaints,
         "referenceSections": ["routine-history","routine-exam","handover-general"]}
 (DATA / "chief-complaints.json").write_text(json.dumps(data, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
@@ -309,7 +388,7 @@ provenance = {"schemaVersion": 1, "sources": archive["sources"],
               "reviewIssues": [
  {"id":"cerebellar-exam", "sectionIds":["dizziness-exam","dizziness-note"], "text":"소뇌기능검사: 한 문서는 검사 항목을 제시하고 다른 문서는 생략 가능 메모를 포함. 양쪽 원문 보존, 우선순위 미결정."},
  {"id":"stroke-timing", "sectionIds":["stroke-note"], "text":"원문의 3시간 기준 인계 메모를 그대로 보존. 현재 임상 기준으로 검증한 내용이 아님."},
- {"id":"abbreviations", "sectionIds":["abd-history","nr-history","peds-history"], "text":"FUND HIS, FCCSR, ANVCD 등은 원문 약어로 유지. 확실하지 않은 풀이는 추가하지 않음."},
+ {"id":"abbreviations", "sectionIds":["abd-history","nr-history","peds-history"], "text":"원문 약어는 보존. 복통 화면에서는 사용자 확인을 거친 FCCSR, ANVCD, FUND HIS를 풀어 표시함."},
  {"id":"seizure-examples", "sectionIds":["peds-seizure-example","np-example"], "text":"예시의 양성·음성 소견 및 수치는 실제 환자 정보나 질문의 기본 답으로 취급하지 않음."},
  {"id":"medication-notes", "sectionIds":["abd-note","flank-note","rash-note","trauma-note","dizziness-note"], "text":"약제·검사·병원 내부 오더 및 처치 내용은 인계 메모로 보존. 독립 문진 질문으로 바꾸지 않음."}
 ]}

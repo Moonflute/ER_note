@@ -9205,7 +9205,7 @@
         "nr-history",
         "peds-history"
       ],
-      "text": "FUND HIS, FCCSR, ANVCD 등은 원문 약어로 유지. 확실하지 않은 풀이는 추가하지 않음."
+      "text": "원문 약어는 보존. 복통 화면에서는 사용자 확인을 거친 FCCSR, ANVCD, FUND HIS를 풀어 표시함."
     },
     {
       "id": "seizure-examples",

@@ -51,37 +51,55 @@
     document.querySelector("#home-results").innerHTML = `<section aria-labelledby="catalog-title"><div class="section-heading catalog-heading"><h2 id="catalog-title">분류</h2><div class="catalog-tools"><a class="common-shortcut" href="#common">공통 문진·진찰</a><span class="count">${matching.length}</span></div></div><div class="category-grid">${categoryCards}</div></section>`;
   }
 
-  function itemMarkup(item, checkable) {
-    const text = `${item.condition ? `<span class="condition">${escape(item.condition)}</span>` : ""}<span class="item-text">${escape(item.text)}</span>`;
-    if (!checkable) return `<div class="item-row"><div class="reference-item">${text}</div></div>`;
+  function itemCopy(item) {
+    return `<span class="item-copy">${item.condition ? `<span class="condition">${escape(item.condition)}</span>` : ""}<span class="item-text">${escape(item.text)}</span>${item.note ? `<small class="item-note">* ${escape(item.note)}</small>` : ""}</span>`;
+  }
+
+  function itemMarkup(item) {
     const checked = state.checked.get(state.route)?.has(item.id) ?? false;
-    return `<div class="item-row"><label class="check-item"><input type="checkbox" data-check-item="${escape(item.id)}" ${checked ? "checked" : ""}><span>${text}</span></label></div>`;
+    return `<div class="item-row"><label class="check-item"><input type="checkbox" data-check-item="${escape(item.id)}" ${checked ? "checked" : ""}>${itemCopy(item)}</label></div>`;
   }
 
   function sectionMarkup(section) {
-    return `<section class="content-section" aria-labelledby="section-${escape(section.id)}"><header class="content-section-header"><h2 id="section-${escape(section.id)}">${escape(section.title)}</h2><span class="kind-label${section.kind === "exam" ? " exam" : ""}">${section.kind === "exam" ? "신체진찰" : "문진"}</span></header>${section.items.map((item) => itemMarkup(item, true)).join("")}</section>`;
+    return `<section class="content-section" aria-labelledby="section-${escape(section.id)}"><header class="content-section-header"><h2 id="section-${escape(section.id)}">${escape(section.title)}</h2><span class="kind-label${section.kind === "exam" ? " exam" : ""}">${section.kind === "exam" ? "신체진찰" : "문진"}</span></header>${section.items.map(itemMarkup).join("")}</section>`;
   }
 
-  function referenceMarkup(section) {
-    return `<details class="reference-section"><summary><span>${escape(section.title)}</span><span class="reference-kind">${section.kind === "note" ? "인계" : "차팅"}</span></summary>${section.items.map((item) => itemMarkup(item, false)).join("")}</details>`;
+  function layoutSectionMarkup(section) {
+    return `<section class="content-section" aria-labelledby="section-${escape(section.id)}"><header class="content-section-header"><h2 id="section-${escape(section.id)}">${escape(section.title)}</h2><span class="kind-label${section.kind === "exam" ? " exam" : ""}">${section.kind === "exam" ? "PEx" : "Hx"}</span></header>${section.groups.map((group) => `<section class="content-group"><h3>${escape(group.title)}</h3>${group.items.map(itemMarkup).join("")}</section>`).join("")}</section>`;
+  }
+
+  function referenceGroupMarkup(group) {
+    return `<section class="reference-group"><h3>${escape(group.title)}</h3><ul>${group.items.map((item) => `<li>${itemCopy(item)}</li>`).join("")}</ul></section>`;
+  }
+
+  function referenceSectionMarkup(section) {
+    return referenceGroupMarkup({ title: section.title, items: section.items });
   }
 
   function renderDetail(complaint, common = false) {
     const name = common ? "공통 문진·진찰" : complaint.name;
     const category = common ? null : categoryOf(complaint.categoryId);
-    const ids = common ? state.data.referenceSections : [...complaint.sectionIds, ...complaint.sharedSectionIds];
+    const ids = common ? state.data.referenceSections : [...complaint.sharedSectionIds, ...complaint.sectionIds];
     const detailSections = [...new Set(ids)].map((id) => sections.get(id)).filter(Boolean);
-    const primary = detailSections.filter((section) => ["history", "exam"].includes(section.kind));
+    const primary = ["history", "exam"].flatMap((kind) => detailSections.filter((section) => section.kind === kind));
     const references = detailSections.filter((section) => ["note", "example"].includes(section.kind));
-    state.currentItems = [...new Set(primary.flatMap((section) => section.items.map((item) => item.id)))];
+    const layoutSections = common ? [] : (complaint.layout?.sections ?? []);
+    const layoutPrimary = layoutSections.filter((section) => ["history", "exam"].includes(section.kind));
+    const layoutReferences = layoutSections.filter((section) => ["note", "example"].includes(section.kind));
+    const primaryMarkup = layoutPrimary.length ? layoutPrimary.map(layoutSectionMarkup).join("") : primary.map(sectionMarkup).join("");
+    const referenceMarkup = layoutReferences.length
+      ? layoutReferences.flatMap((section) => section.groups).map(referenceGroupMarkup).join("")
+      : references.map(referenceSectionMarkup).join("");
+    state.currentItems = [...new Set((layoutPrimary.length
+      ? layoutPrimary.flatMap((section) => section.groups.flatMap((group) => group.items.map((item) => item.id)))
+      : primary.flatMap((section) => section.items.map((item) => item.id))))];
     document.title = `${name} · ER 초진`;
     main.innerHTML = `<div class="shell detail-shell"><nav class="detail-toolbar" aria-label="증상 목록으로 이동"><a class="back-link" href="#">${icons.back}목록</a><span class="toolbar-label">${escape(name)}</span></nav>
       <header class="detail-heading"><p class="eyebrow">${category ? escape(category.name) : "공통"}</p><h1>${escape(name)}</h1><div class="cc-meta">${common ? "" : complaintBadges(complaint)}</div></header>
       <div class="detail-actions"><span class="progress" id="check-progress" aria-live="polite"></span><button class="text-button" type="button" id="reset-checks" hidden>초기화</button></div>
-      <div id="primary-content">${primary.map(sectionMarkup).join("")}</div>
-      ${references.length ? `<section id="reference-content" aria-labelledby="reference-title"><header class="reference-heading"><h2 id="reference-title">참고</h2></header>${references.map(referenceMarkup).join("")}</section>` : ""}
+      <div id="primary-content">${primaryMarkup}</div>
+      ${referenceMarkup ? `<section id="reference-content" aria-labelledby="reference-title"><header class="reference-heading"><h2 id="reference-title">참고사항</h2></header><div class="reference-board">${referenceMarkup}</div></section>` : ""}
       <nav class="mobile-dock" aria-label="빠른 이동"><a class="back-link" href="#">${icons.back}목록</a><button class="text-button" type="button" data-scroll-top>위로</button></nav></div>`;
-    if (!primary.length) document.querySelector(".reference-section")?.setAttribute("open", "");
     updateProgress();
   }
 
@@ -157,7 +175,7 @@
 
   async function start() {
     try {
-      const response = await fetch("./data/chief-complaints.json?v=3");
+      const response = await fetch("./data/chief-complaints.json?v=4");
       if (!response.ok) throw new Error("문진 자료를 불러오지 못했습니다.");
       state.data = await response.json();
       sections = new Map(state.data.sections.map((section) => [section.id, section]));

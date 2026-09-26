@@ -62,13 +62,53 @@
           "scope": { "enum": ["general", "pediatric", "psychiatric"] },
           "status": { "enum": ["available", "missing", "notesOnly"] },
           "sharedSectionIds": { "$ref": "#/$defs/strings" },
-          "sectionIds": { "$ref": "#/$defs/strings" }
+          "sectionIds": { "$ref": "#/$defs/strings" },
+          "layout": { "$ref": "#/$defs/layout" }
         }
       }
     },
     "referenceSections": { "$ref": "#/$defs/strings" }
   },
   "$defs": {
-    "strings": { "type": "array", "items": { "type": "string" } }
+    "strings": { "type": "array", "items": { "type": "string" } },
+    "layoutItem": {
+      "type": "object",
+      "required": ["id", "text", "sourceItemIds"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "text": { "type": "string" },
+        "note": { "type": "string" },
+        "sourceItemIds": { "$ref": "#/$defs/strings" }
+      }
+    },
+    "layoutGroup": {
+      "type": "object",
+      "required": ["title", "items"],
+      "additionalProperties": false,
+      "properties": {
+        "title": { "type": "string" },
+        "items": { "type": "array", "items": { "$ref": "#/$defs/layoutItem" } }
+      }
+    },
+    "layoutSection": {
+      "type": "object",
+      "required": ["id", "title", "kind", "groups"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "kind": { "enum": ["history", "exam", "note", "example"] },
+        "groups": { "type": "array", "items": { "$ref": "#/$defs/layoutGroup" } }
+      }
+    },
+    "layout": {
+      "type": "object",
+      "required": ["sections"],
+      "additionalProperties": false,
+      "properties": {
+        "sections": { "type": "array", "items": { "$ref": "#/$defs/layoutSection" } }
+      }
+    }
   }
 }

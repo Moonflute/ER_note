@@ -69,6 +69,20 @@ for cc in data["complaints"]:
         require(not pediatric_refs, f"Pediatric material mixed into adult entry: {cc['id']}")
     if cc["categoryId"] == "09" and refs:
         require(cc["scope"] == "pediatric", f"Pediatric category has wrong scope: {cc['id']}")
+    layout_item_ids = []
+    layout_source_ids = set()
+    for layout_section in cc.get("layout", {}).get("sections", []):
+        require(layout_section["kind"] in ("history", "exam", "note", "example"), f"Unknown layout section kind: {cc['id']}")
+        for group in layout_section["groups"]:
+            for layout_item in group["items"]:
+                layout_item_ids.append(layout_item["id"])
+                require(bool(layout_item["sourceItemIds"]), f"Layout item lacks source items: {layout_item['id']}")
+                require(set(layout_item["sourceItemIds"]) <= set(items), f"Layout item has unknown source items: {layout_item['id']}")
+                layout_source_ids.update(layout_item["sourceItemIds"])
+    require(len(layout_item_ids) == len(set(layout_item_ids)), f"Duplicate layout item IDs: {cc['id']}")
+    if layout_item_ids:
+        raw_complaint_item_ids = {item["id"] for sid in refs for item in sections[sid]["items"]}
+        require(layout_source_ids == raw_complaint_item_ids, f"Curated layout source coverage mismatch: {cc['id']}")
 require(used == set(sections), "Sections are unreachable")
 require(not any(sid.startswith("peds-") or sid.startswith("np-") for sid in data["referenceSections"]), "Specialty material mixed into general common reference")
 for specialty_id, shared_id in (("neurology-interview", "nr-history"), ("psychiatry-interview", "np-history"), ("obgyn-interview", "ob-history"), ("peds-common", "peds-history")):
