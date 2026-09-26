@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-09-26-beta.4",
+  "contentVersion": "2026-09-26-beta.5",
   "categories": [
     {
       "id": "00",
@@ -2496,7 +2496,7 @@
         "sections": [
           {
             "id": "abd-view-history",
-            "title": "문진",
+            "title": "Hx",
             "kind": "history",
             "groups": [
               {
@@ -2504,14 +2504,14 @@
                 "items": [
                   {
                     "id": "abd-hx-background",
-                    "text": "Underlying disease / Medication Hx / Operation Hx (　/　/　)",
+                    "text": "Underlying disease / Medication Hx / Operation Hx",
                     "sourceItemIds": [
                       "i-a0dbc0b8eaec"
                     ]
                   },
                   {
                     "id": "abd-hx-operation",
-                    "text": "Abdominal operation Hx (　)",
+                    "text": "Abdominal operation Hx",
                     "sourceItemIds": [
                       "i-eb4aa9826a2d",
                       "i-ecedeb1e4880"
@@ -2520,7 +2520,7 @@
                   },
                   {
                     "id": "abd-hx-npo",
-                    "text": "NPO time (　　　　　　)",
+                    "text": "NPO time",
                     "sourceItemIds": [
                       "i-23c56e483dfc"
                     ],
@@ -2533,7 +2533,7 @@
                 "items": [
                   {
                     "id": "abd-hx-fccsr",
-                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea (　/　/　/　/　)",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea",
                     "sourceItemIds": [
                       "i-473758685a66",
                       "i-a5938abb78b4"
@@ -2541,7 +2541,7 @@
                   },
                   {
                     "id": "abd-hx-anvcd",
-                    "text": "Anorexia / Nausea / Vomiting / Diarrhea / Constipation (　/　/　/　/　)",
+                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea",
                     "sourceItemIds": [
                       "i-473758685a66",
                       "i-39ebda833786",
@@ -2550,7 +2550,7 @@
                   },
                   {
                     "id": "abd-hx-fundhis",
-                    "text": "Frequency / Urgency / Nocturia / Dysuria / Hesitancy / Incomplete emptying / Straining (　/　/　/　/　/　/　)",
+                    "text": "Frequency / Urgency / Nocturia / Dysuria / Hesitancy / Incomplete emptying / Straining",
                     "sourceItemIds": [
                       "i-a7cf0271f916"
                     ]
@@ -2562,14 +2562,14 @@
                 "items": [
                   {
                     "id": "abd-hx-pregnancy",
-                    "text": "임신 가능성 / LMP (　/　)",
+                    "text": "임신 가능성 / LMP",
                     "sourceItemIds": [
                       "i-9a089b00c222"
                     ]
                   },
                   {
                     "id": "abd-hx-female",
-                    "text": "Menstruation / Last coitus / 보호자 관계 (　/　/　)",
+                    "text": "Menstruation / Last coitus / 보호자 관계",
                     "sourceItemIds": [
                       "i-f26b6ccefee9",
                       "i-99dd425247e3"
@@ -2582,7 +2582,7 @@
           },
           {
             "id": "abd-view-exam",
-            "title": "신체진찰",
+            "title": "PEx",
             "kind": "exam",
             "groups": [
               {
@@ -2590,7 +2590,7 @@
                 "items": [
                   {
                     "id": "abd-pe-heent",
-                    "text": "Throat injection / Tonsil enlargement (　/　)",
+                    "text": "Throat injection / Tonsil enlargement",
                     "sourceItemIds": [
                       "i-e8c7079dbc3e"
                     ]
@@ -2602,7 +2602,7 @@
                 "items": [
                   {
                     "id": "abd-pe-chest",
-                    "text": "Lung sound: Clear (　)",
+                    "text": "Lung sound: Clear",
                     "sourceItemIds": [
                       "i-e8c7079dbc3e"
                     ]
@@ -2614,14 +2614,14 @@
                 "items": [
                   {
                     "id": "abd-pe-bowel",
-                    "text": "Bowel sound: Normoactive (　)",
+                    "text": "Bowel sound: Normoactive",
                     "sourceItemIds": [
                       "i-a40910290557"
                     ]
                   },
                   {
                     "id": "abd-pe-tenderness",
-                    "text": "Abdominal Td / rTd / Muscle guarding (　/　/　)",
+                    "text": "Abdominal Td / rTd / Muscle guarding",
                     "sourceItemIds": [
                       "i-a40910290557",
                       "i-4e56e4043370",
@@ -2631,7 +2631,7 @@
                   },
                   {
                     "id": "abd-pe-cvat",
-                    "text": "CVAT (　/　)",
+                    "text": "CVAT",
                     "sourceItemIds": [
                       "i-48f8724d8595",
                       "i-2983d5754b6e"
@@ -3052,7 +3052,65 @@
       "sharedSectionIds": [],
       "sectionIds": [
         "flank-note"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "flank-view-reference",
+            "title": "참고사항",
+            "kind": "note",
+            "groups": [
+              {
+                "title": "처방·검사",
+                "items": [
+                  {
+                    "id": "flank-ref-order",
+                    "text": "ER set: 요로결석",
+                    "sourceItemIds": [
+                      "i-9c83c71a6e33"
+                    ]
+                  },
+                  {
+                    "id": "flank-ref-old-age",
+                    "text": "고령 환자: EKG / D-dimer 추가",
+                    "sourceItemIds": [
+                      "i-eb78ffa7f6c4"
+                    ],
+                    "note": "Renal infarction 가능성 고려"
+                  },
+                  {
+                    "id": "flank-ref-ct",
+                    "text": "CT: RUA 결과 확인 후 시행",
+                    "sourceItemIds": [
+                      "i-e4ebc9e04362"
+                    ],
+                    "note": "원문 인계 원칙"
+                  }
+                ]
+              },
+              {
+                "title": "증상 조절",
+                "items": [
+                  {
+                    "id": "flank-ref-control",
+                    "text": "Pain: Kerasyn, 심한 경우 Morphine / Nausea: Macperan",
+                    "sourceItemIds": [
+                      "i-899326191deb"
+                    ]
+                  },
+                  {
+                    "id": "flank-ref-macperan",
+                    "text": "Parkinsonism 환자: Macperan 투여 금지",
+                    "sourceItemIds": [
+                      "i-956f2c0d1e98"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "bruising",
@@ -3152,7 +3210,76 @@
       "sectionIds": [
         "back-mixed",
         "back-note"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "back-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Present illness",
+                "items": [
+                  {
+                    "id": "back-hx-invasive",
+                    "text": "시술 / 침 등 침습적 치료 Hx",
+                    "sourceItemIds": [
+                      "i-4adbb353ba50"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "back-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "Neurologic",
+                "items": [
+                  {
+                    "id": "back-pe-neuro",
+                    "text": "Neurologic exam",
+                    "sourceItemIds": [
+                      "i-4adbb353ba50"
+                    ],
+                    "note": "충실히 시행"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "back-view-reference",
+            "title": "참고사항",
+            "kind": "note",
+            "groups": [
+              {
+                "title": "환자 설명",
+                "items": [
+                  {
+                    "id": "back-ref-xray",
+                    "text": "XR은 골절 감별 목적이며 디스크·협착증·근육통 감별에는 제한이 있음을 초진 시 설명",
+                    "sourceItemIds": [
+                      "i-887efc4db26b"
+                    ]
+                  },
+                  {
+                    "id": "back-ref-pain",
+                    "text": "Pain control 반응이 더디거나 효과가 거의 없을 수 있음을 미리 설명",
+                    "sourceItemIds": [
+                      "i-115754ffda99"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "rash",
@@ -3168,7 +3295,64 @@
       "sharedSectionIds": [],
       "sectionIds": [
         "rash-note"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "rash-view-reference",
+            "title": "참고사항",
+            "kind": "note",
+            "groups": [
+              {
+                "title": "처방·보고",
+                "items": [
+                  {
+                    "id": "rash-ref-order",
+                    "text": "ER set: Allergy & angioedema routine",
+                    "sourceItemIds": [
+                      "i-0e0ec0f4baeb"
+                    ]
+                  },
+                  {
+                    "id": "rash-ref-peniramine",
+                    "text": "IM Peniramine 후 귀가 계획인 경우가 많음",
+                    "sourceItemIds": [
+                      "i-3dc12c53eebc"
+                    ]
+                  },
+                  {
+                    "id": "rash-ref-angioedema",
+                    "text": "Angioedema 동반: IV fluid treatment / ED notify",
+                    "sourceItemIds": [
+                      "i-6fe69f063abd"
+                    ]
+                  },
+                  {
+                    "id": "rash-ref-consult",
+                    "text": "복용 중인 약물에도 호전이 없으면 DM consult",
+                    "sourceItemIds": [
+                      "i-3b9babba9fdf"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "환자 설명",
+                "items": [
+                  {
+                    "id": "rash-ref-explain",
+                    "text": "초진 후 가려움증 완화 주사 계획 설명 → ED 설명 후 귀가 형태로 진행",
+                    "sourceItemIds": [
+                      "i-92ef6181190b",
+                      "i-1fa2d9cbf8e4"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "trauma",
@@ -3195,7 +3379,350 @@
         "trauma-exam",
         "trauma-note",
         "trauma-example"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "trauma-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Present illness",
+                "items": [
+                  {
+                    "id": "trauma-hx-event",
+                    "text": "Injury time / Mechanism / Object / Impact force",
+                    "sourceItemIds": [
+                      "i-688a6f65c1d7",
+                      "i-de73026cd548",
+                      "i-e1195a72d9d0",
+                      "i-9ebb530af606"
+                    ]
+                  },
+                  {
+                    "id": "trauma-hx-loc",
+                    "text": "LOC",
+                    "sourceItemIds": [
+                      "i-a0f0117152c7"
+                    ]
+                  },
+                  {
+                    "id": "trauma-hx-pain",
+                    "text": "Abdominal pain / Flank pain / Chest wall pain",
+                    "sourceItemIds": [
+                      "i-386ee59bf53f",
+                      "i-b2bb84357bb1"
+                    ]
+                  },
+                  {
+                    "id": "trauma-hx-control",
+                    "text": "Pain control 필요 여부",
+                    "sourceItemIds": [
+                      "i-be27568ef195"
+                    ]
+                  },
+                  {
+                    "id": "trauma-hx-tetanus",
+                    "text": "Tetanus vaccination Hx",
+                    "sourceItemIds": [
+                      "i-d721e9eae930",
+                      "i-0cc7a621fc77"
+                    ],
+                    "note": "최근 5년 이내 접종 여부 확인"
+                  }
+                ]
+              },
+              {
+                "title": "3세 미만 열상",
+                "items": [
+                  {
+                    "id": "trauma-hx-toddler",
+                    "text": "NPO time / Body weight",
+                    "sourceItemIds": [
+                      "i-b84e19f8e78e"
+                    ],
+                    "note": "Line 확보 및 sedative drug 사용 대비; NPO 3시간 확인"
+                  }
+                ]
+              },
+              {
+                "title": "교통사고",
+                "items": [
+                  {
+                    "id": "trauma-hx-ta",
+                    "text": "Mechanism / Speed / Seat / Protective gear / LOC / Airbag deployment",
+                    "sourceItemIds": [
+                      "i-de147cc79d31"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "상해",
+                "items": [
+                  {
+                    "id": "trauma-hx-assault",
+                    "text": "Mechanism·object / Injury site / 횟수·정도",
+                    "sourceItemIds": [
+                      "i-fcd19e2e6a55"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "trauma-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "Musculoskeletal",
+                "items": [
+                  {
+                    "id": "trauma-pe-msk",
+                    "text": "Tenderness / LOM / Deformity / Swelling / External wound",
+                    "sourceItemIds": [
+                      "i-f87ca1e6cd9b",
+                      "i-800b30ed4c7d"
+                    ]
+                  },
+                  {
+                    "id": "trauma-pe-neurovascular",
+                    "text": "Motor / Sensory change",
+                    "sourceItemIds": [
+                      "i-f87ca1e6cd9b",
+                      "i-440ea8d2c491",
+                      "i-deb36614d74a",
+                      "i-03c04767e1cf"
+                    ]
+                  },
+                  {
+                    "id": "trauma-pe-axis",
+                    "text": "Pelvis / C-spine tenderness",
+                    "sourceItemIds": [
+                      "i-108544b6342b"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Wound",
+                "items": [
+                  {
+                    "id": "trauma-pe-expose",
+                    "text": "상처를 완전히 노출하여 직접 확인",
+                    "sourceItemIds": [
+                      "i-04d6f8b0a8a2"
+                    ]
+                  },
+                  {
+                    "id": "trauma-pe-foreign",
+                    "text": "Foreign body",
+                    "sourceItemIds": [
+                      "i-2d07e2abd35d"
+                    ]
+                  },
+                  {
+                    "id": "trauma-pe-site",
+                    "text": "Site / Size",
+                    "sourceItemIds": [
+                      "i-3066cfdb3509",
+                      "i-226da3ed64be"
+                    ],
+                    "note": "Lip laceration은 뒤집어 oral cavity 병변 확인"
+                  },
+                  {
+                    "id": "trauma-pe-bleeding",
+                    "text": "Active bleeding",
+                    "sourceItemIds": [
+                      "i-fce3d24d05a6",
+                      "i-a169f4388074"
+                    ]
+                  },
+                  {
+                    "id": "trauma-pe-depth",
+                    "text": "Depth: superficial / deep / penetrating",
+                    "sourceItemIds": [
+                      "i-996a841fe07e",
+                      "i-226da3ed64be"
+                    ]
+                  },
+                  {
+                    "id": "trauma-pe-margin",
+                    "text": "Margin: regular / irregular",
+                    "sourceItemIds": [
+                      "i-45dcc449d3cd",
+                      "i-226da3ed64be"
+                    ],
+                    "note": "예: chin 2 cm superficial linear irregular-margin laceration"
+                  },
+                  {
+                    "id": "trauma-pe-structure",
+                    "text": "Exposed structure: none / dermis / subcutaneous tissue / tendon / ligament / nerve",
+                    "sourceItemIds": [
+                      "i-ade2395cb1b7"
+                    ]
+                  },
+                  {
+                    "id": "trauma-pe-face",
+                    "text": "Facial tenderness",
+                    "sourceItemIds": [
+                      "i-33c45fd3619a"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "교통사고",
+                "items": [
+                  {
+                    "id": "trauma-pe-ta",
+                    "text": "Head / Thorax / Abdomen / Lower back / Pelvis / Extremities",
+                    "sourceItemIds": [
+                      "i-92155cfad7fe"
+                    ],
+                    "note": "통증 부위 중심으로 보되 전 부위 확인"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "trauma-view-reference",
+            "title": "참고사항",
+            "kind": "note",
+            "groups": [
+              {
+                "title": "초기 처치·오더",
+                "items": [
+                  {
+                    "id": "trauma-ref-set",
+                    "text": "ER set: 정형외과 Routine / 성형외과 Routine / 신경외과 Routine / 07Suture",
+                    "sourceItemIds": [
+                      "i-cc9fb9ec6dff"
+                    ]
+                  },
+                  {
+                    "id": "trauma-ref-xray",
+                    "text": "관절 XR은 여러 view를 모두 포함; 소아는 비교를 위해 양측 촬영",
+                    "sourceItemIds": [
+                      "i-f374b9394b7f",
+                      "i-ce1c89e77931"
+                    ]
+                  },
+                  {
+                    "id": "trauma-ref-confirm",
+                    "text": "처방 전 ED R. 확인",
+                    "sourceItemIds": [
+                      "i-423e0fce3748"
+                    ]
+                  },
+                  {
+                    "id": "trauma-ref-wet",
+                    "text": "Open wound 초진: Gauze + 생리식염수 + 픽스몰 준비 및 wet dressing",
+                    "sourceItemIds": [
+                      "i-189594487b6f",
+                      "i-21694bf54bf1",
+                      "i-203a4da1266c"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "열상",
+                "items": [
+                  {
+                    "id": "trauma-ref-image",
+                    "text": "부위에 맞는 영상 오더; comment에 정확한 부위 입력",
+                    "sourceItemIds": [
+                      "i-4d81c93f9549"
+                    ],
+                    "note": "예: 4th finger"
+                  },
+                  {
+                    "id": "trauma-ref-suture",
+                    "text": "07Suture: bite wound는 Tiramox, 그 외 cefazoline / TD / Hyper TET",
+                    "sourceItemIds": [
+                      "i-883574d75347"
+                    ]
+                  },
+                  {
+                    "id": "trauma-ref-manage",
+                    "text": "Simple laceration은 주로 ED R. suture; deep laceration 또는 fracture 동반 wound는 OS/PS 등에서 처치",
+                    "sourceItemIds": [
+                      "i-a47c1d8faf33"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "교통사고·상해",
+                "items": [
+                  {
+                    "id": "trauma-ref-ta-xray",
+                    "text": "Tenderness 부위의 위·아래 뼈까지 촬영",
+                    "sourceItemIds": [
+                      "i-e8c9278bf2dc"
+                    ],
+                    "note": "예: ankle pain이면 tibia부터 foot까지"
+                  },
+                  {
+                    "id": "trauma-ref-statement",
+                    "text": "차팅에 정보 제공자를 ‘○○ 진술 상’으로 기록",
+                    "sourceItemIds": [
+                      "i-a3ca85a94775",
+                      "i-5e267dc38824"
+                    ],
+                    "note": "예: 119 현장구급대원, 환자 본인"
+                  },
+                  {
+                    "id": "trauma-ref-certificate",
+                    "text": "진단서·상해진단서 발급을 원하면 ED R.에게 알림",
+                    "sourceItemIds": [
+                      "i-74813088c816"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "차팅 예시",
+                "items": [
+                  {
+                    "id": "trauma-ref-chart-neuro",
+                    "text": "Alert mentation / Pupil 0.3/0.3 / EOM OK / Visual disturbance (-) / Nuchal midline tenderness (-), LOM (-)",
+                    "sourceItemIds": [
+                      "i-5735897496c9",
+                      "i-612377d2b84a",
+                      "i-aec507acc5c5",
+                      "i-09934c95f014",
+                      "i-ae266c3ddb7d",
+                      "i-0aca2be86e56"
+                    ]
+                  },
+                  {
+                    "id": "trauma-ref-chart-motor",
+                    "text": "Motor: upper G5/G5, lower G5/G5 / Sensory change (-) / Gait OK",
+                    "sourceItemIds": [
+                      "i-218af66eb411",
+                      "i-438f9d760f95",
+                      "i-276cecfacc29"
+                    ]
+                  },
+                  {
+                    "id": "trauma-ref-chart-wound",
+                    "text": "No external wound on chest, abdomen, and back",
+                    "sourceItemIds": [
+                      "i-233de0814bca"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "head-trauma",
@@ -3317,7 +3844,302 @@
         "dizziness-exam",
         "dizziness-note",
         "dizziness-example"
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "dizziness-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Chief complaint · Present illness",
+                "items": [
+                  {
+                    "id": "dizz-hx-basic",
+                    "text": "S/A / V/S",
+                    "sourceItemIds": [
+                      "i-0ed008b89dee"
+                    ]
+                  },
+                  {
+                    "id": "dizz-hx-cc",
+                    "text": "Chief complaint / Onset",
+                    "sourceItemIds": [
+                      "i-ee4e51907a91"
+                    ]
+                  },
+                  {
+                    "id": "dizz-hx-pi",
+                    "text": "Present illness",
+                    "sourceItemIds": [
+                      "i-295d2b8c0877"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Past · Social · Drug history",
+                "items": [
+                  {
+                    "id": "dizz-hx-past",
+                    "text": "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis",
+                    "sourceItemIds": [
+                      "i-f9672a36bab3",
+                      "i-090b46250227"
+                    ]
+                  },
+                  {
+                    "id": "dizz-hx-social",
+                    "text": "Smoking / Alcohol / Pack-years / Current smoking",
+                    "sourceItemIds": [
+                      "i-3789fe7ad282"
+                    ]
+                  },
+                  {
+                    "id": "dizz-hx-medication",
+                    "text": "Medication",
+                    "sourceItemIds": [
+                      "i-18572f0f6fd3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Review of systems",
+                "items": [
+                  {
+                    "id": "dizz-hx-ros",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Dizziness",
+                "items": [
+                  {
+                    "id": "dizz-hx-pattern",
+                    "text": "Pattern: Vertigo / Presyncope / Lightheadedness / Disequilibrium",
+                    "sourceItemIds": [
+                      "i-6ad27ea2b2e4",
+                      "i-2e37d0e92ac5"
+                    ],
+                    "note": "빙빙 도는지, 쓰러질 것 같은지, 기운이 없는지, 보행이 이상한지 확인"
+                  },
+                  {
+                    "id": "dizz-hx-trs",
+                    "text": "True rotating sensation (TRS)",
+                    "sourceItemIds": [
+                      "i-cdb419f99f24",
+                      "i-6caa8883d154",
+                      "i-6a49a5ad9c82"
+                    ]
+                  },
+                  {
+                    "id": "dizz-hx-duration",
+                    "text": "Duration / 회복까지 걸리는 시간",
+                    "sourceItemIds": [
+                      "i-98a27e5fe646",
+                      "i-6a49a5ad9c82"
+                    ]
+                  },
+                  {
+                    "id": "dizz-hx-ear",
+                    "text": "Tinnitus / Otalgia / Ear fullness / Hearing difficulty or loss / URI Hx",
+                    "sourceItemIds": [
+                      "i-af4103b19fb5",
+                      "i-ab8e235e7ce3",
+                      "i-6caa8883d154"
+                    ]
+                  },
+                  {
+                    "id": "dizz-hx-neuro",
+                    "text": "동반된 neurologic deficit symptom",
+                    "sourceItemIds": [
+                      "i-4796b70d2f28"
+                    ],
+                    "note": "반드시 확인하고 차팅"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dizziness-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "Nystagmus · Positional test",
+                "items": [
+                  {
+                    "id": "dizz-pe-nystagmus",
+                    "text": "Spontaneous / Gaze-evoked / Head-turn induced nystagmus",
+                    "sourceItemIds": [
+                      "i-6a49a5ad9c82",
+                      "i-547582678bb0"
+                    ]
+                  },
+                  {
+                    "id": "dizz-pe-algorithm",
+                    "text": "Spontaneous·gaze-evoked nystagmus 확인 → HINTS / ED R. notify / Dix-Hallpike / Head-roll test",
+                    "sourceItemIds": [
+                      "i-a26c38ea1eef",
+                      "i-f1f1b078d1f6"
+                    ],
+                    "note": "원문의 양성·음성 결과별 시행 순서 확인"
+                  }
+                ]
+              },
+              {
+                "title": "Gait · Cerebellar",
+                "items": [
+                  {
+                    "id": "dizz-pe-gait",
+                    "text": "Falling tendency / Tandem gait / Romberg test",
+                    "sourceItemIds": [
+                      "i-69a715c63b8a",
+                      "i-83754277e4c2"
+                    ]
+                  },
+                  {
+                    "id": "dizz-pe-cerebellar",
+                    "text": "Finger-to-finger / Finger-to-nose / Heel-to-shin / Rapid alternating movement / Positional dependency",
+                    "sourceItemIds": [
+                      "i-b06a29883b36"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dizziness-view-reference",
+            "title": "참고사항",
+            "kind": "note",
+            "groups": [
+              {
+                "title": "처방·검사",
+                "items": [
+                  {
+                    "id": "dizz-ref-order",
+                    "text": "ER set: 신경과 Dizziness / Cardiac panel / EKG",
+                    "sourceItemIds": [
+                      "i-627951e268db",
+                      "i-53a627e34512"
+                    ]
+                  },
+                  {
+                    "id": "dizz-ref-mri",
+                    "text": "비급여 MR 예정임을 초진 시 고지; 거절 시 acute stroke를 배제할 수 없음을 설명",
+                    "sourceItemIds": [
+                      "i-b59d9bb13f2d"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "증상 조절",
+                "items": [
+                  {
+                    "id": "dizz-ref-control",
+                    "text": "IV Macperan / IV Zofran",
+                    "sourceItemIds": [
+                      "i-8be062564911"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "원문 참고",
+                "items": [
+                  {
+                    "id": "dizz-ref-nystagmus",
+                    "text": "안진 확인법은 전공의에게 문의",
+                    "sourceItemIds": [
+                      "i-11e18a0af92f"
+                    ]
+                  },
+                  {
+                    "id": "dizz-ref-cerebellar",
+                    "text": "Cerebellar function test는 생략 가능하다는 원문 메모",
+                    "sourceItemIds": [
+                      "i-eba126edda0c"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "차팅 예시 · Ménière/BPPV",
+                "items": [
+                  {
+                    "id": "dizz-ref-example1-hx",
+                    "text": "이전 Ménière로 우측 tinnitus가 있었고, 금일 이전과 비슷한 TRS·dizziness가 우측으로 고개를 돌릴 때 발생",
+                    "sourceItemIds": [
+                      "i-cb9a91e85adf",
+                      "i-bebd5c3b1a65",
+                      "i-d7a740d21171",
+                      "i-d3e1f226fbb1"
+                    ]
+                  },
+                  {
+                    "id": "dizz-ref-example1-pe",
+                    "text": "Spontaneous nystagmus (+) / Right torsional / Catch-up saccade (+) / No other lateralizing or localizing sign",
+                    "sourceItemIds": [
+                      "i-206f7882d71f",
+                      "i-ef762d070f24",
+                      "i-87070a99c108",
+                      "i-566d5c453205"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "차팅 예시 · Dizziness",
+                "items": [
+                  {
+                    "id": "dizz-ref-example2-pi",
+                    "text": "HTN·Moyamoya disease로 추적 중. TRS 양상의 지속되는 dizziness가 자세 변화에 따라 악화되고 vomiting 수차례 동반; 뚜렷한 neurologic abnormality 없음",
+                    "sourceItemIds": [
+                      "i-64463269cabf",
+                      "i-83e315881da7",
+                      "i-870ebd4a3f0c",
+                      "i-6db3db44bec6"
+                    ]
+                  },
+                  {
+                    "id": "dizz-ref-example2-hx",
+                    "text": "Onset: 내원 2일 전 / TRS (+), Vertigo (+) / Duration: 지속",
+                    "sourceItemIds": [
+                      "i-067c395ba43f",
+                      "i-454f9219d6e6",
+                      "i-e90b2a672f24"
+                    ]
+                  },
+                  {
+                    "id": "dizz-ref-example2-pe",
+                    "text": "Spontaneous nystagmus (-) / Positional dependency (+), head turn 시 / Roll test: Right > Left, ageotropic nystagmus (+)",
+                    "sourceItemIds": [
+                      "i-094174c96cb6",
+                      "i-04abbfca2684"
+                    ]
+                  },
+                  {
+                    "id": "dizz-ref-example2-ros",
+                    "text": "Headache (-) / Nausea·Vomiting (+/+)",
+                    "sourceItemIds": [
+                      "i-1334c34cfd7c"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "headache",

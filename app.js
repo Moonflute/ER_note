@@ -65,7 +65,7 @@
   }
 
   function layoutSectionMarkup(section) {
-    return `<section class="content-section" aria-labelledby="section-${escape(section.id)}"><header class="content-section-header"><h2 id="section-${escape(section.id)}">${escape(section.title)}</h2><span class="kind-label${section.kind === "exam" ? " exam" : ""}">${section.kind === "exam" ? "PEx" : "Hx"}</span></header>${section.groups.map((group) => `<section class="content-group"><h3>${escape(group.title)}</h3>${group.items.map(itemMarkup).join("")}</section>`).join("")}</section>`;
+    return `<section class="content-section" aria-labelledby="section-${escape(section.id)}"><header class="content-section-header"><h2 id="section-${escape(section.id)}">${escape(section.title)}</h2></header>${section.groups.map((group) => `<section class="content-group"><h3>${escape(group.title)}</h3>${group.items.map(itemMarkup).join("")}</section>`).join("")}</section>`;
   }
 
   function referenceGroupMarkup(group) {
@@ -95,8 +95,7 @@
       : primary.flatMap((section) => section.items.map((item) => item.id))))];
     document.title = `${name} · ER 초진`;
     main.innerHTML = `<div class="shell detail-shell"><nav class="detail-toolbar" aria-label="증상 목록으로 이동"><a class="back-link" href="#">${icons.back}목록</a><span class="toolbar-label">${escape(name)}</span></nav>
-      <header class="detail-heading"><p class="eyebrow">${category ? escape(category.name) : "공통"}</p><h1>${escape(name)}</h1><div class="cc-meta">${common ? "" : complaintBadges(complaint)}</div></header>
-      <div class="detail-actions"><span class="progress" id="check-progress" aria-live="polite"></span><button class="text-button" type="button" id="reset-checks" hidden>초기화</button></div>
+      <header class="detail-heading"><p class="eyebrow">${category ? escape(category.name) : "공통"}</p><div class="detail-title-row"><h1>${escape(name)}</h1><div class="detail-progress"><span class="progress" id="check-progress" aria-live="polite"></span><button class="text-button reset-button" type="button" id="reset-checks" hidden>초기화</button></div></div><div class="cc-meta">${common ? "" : complaintBadges(complaint)}</div></header>
       <div id="primary-content">${primaryMarkup}</div>
       ${referenceMarkup ? `<section id="reference-content" aria-labelledby="reference-title"><header class="reference-heading"><h2 id="reference-title">참고사항</h2></header><div class="reference-board">${referenceMarkup}</div></section>` : ""}
       <nav class="mobile-dock" aria-label="빠른 이동"><a class="back-link" href="#">${icons.back}목록</a><button class="text-button" type="button" data-scroll-top>위로</button></nav></div>`;
@@ -175,7 +174,7 @@
 
   async function start() {
     try {
-      const response = await fetch("./data/chief-complaints.json?v=4");
+      const response = await fetch("./data/chief-complaints.json?v=5");
       if (!response.ok) throw new Error("문진 자료를 불러오지 못했습니다.");
       state.data = await response.json();
       sections = new Map(state.data.sections.map((section) => [section.id, section]));
