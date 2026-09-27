@@ -90,9 +90,13 @@ for cc in data["complaints"]:
         require(layout_source_ids == raw_complaint_item_ids, f"Curated layout source coverage mismatch: {cc['id']}")
 require(used == set(sections), "Sections are unreachable")
 require(not any(sid.startswith("peds-") or sid.startswith("np-") for sid in data["referenceSections"]), "Specialty material mixed into general common reference")
-for specialty_id, shared_id in (("neurology-interview", "nr-history"), ("psychiatry-interview", "np-history"), ("obgyn-interview", "ob-history"), ("peds-common", "peds-history")):
+for specialty_id, shared_id in (("psychiatry-interview", "np-history"), ("obgyn-interview", "ob-history"), ("peds-common", "peds-history")):
     specialty = next((cc for cc in data["complaints"] if cc["id"] == specialty_id), None)
     require(specialty is not None and shared_id in specialty["sharedSectionIds"], f"Missing specialty interview entry: {specialty_id}")
+require(not any(cc["id"] == "neurology-interview" for cc in data["complaints"]), "Standalone neurology interview should not be shown")
+for complaint_id in ("dizziness", "headache", "seizure", "mental-change", "stroke"):
+    complaint = next((cc for cc in data["complaints"] if cc["id"] == complaint_id), None)
+    require(complaint is not None and "nr-history" in complaint["sharedSectionIds"], f"Shared history missing from neurologic complaint: {complaint_id}")
 for sid in ("np-ex1", "np-template", "np-ex2", "np-ex3", "np-response"):
     require(sections[sid]["kind"] == "example", f"Example placed in main checklist: {sid}")
 for source in sources.values():

@@ -54,8 +54,8 @@ def add(gid, title, kind, sid, specs, condition=None):
 # Shared sections are tied to the specialty scope of the source heading.
 add("routine-history", "공통 문진", "history", "templates", "2-4")
 add("routine-exam", "공통 진찰", "exam", "templates", "6-7")
-add("nr-history", "신경과 공통 문진", "history", "templates", "83,85-86,88-92")
-add("nr-history", "신경과 공통 문진", "history", "all", "46,49-50,52-54,56")
+add("nr-history", "증상 공통 문진", "history", "templates", "83,85-86,88-92")
+add("nr-history", "증상 공통 문진", "history", "all", "46,49-50,52-54,56")
 add("peds-history", "소아 공통 문진", "history", "templates", "147-151")
 add("peds-history", "소아 공통 문진", "history", "all", "203-207")
 add("peds-exam", "소아 공통 진찰", "exam", "templates", "153-158")
@@ -540,25 +540,6 @@ curated_layouts = {
             {"id": "head-trauma-view-exam", "title": "PEx", "kind": "exam", "groups": [
                 {"title": "Neurologic", "items": [
                     view_item("head-trauma-pe-pupil", "Pupil reflex", ["i-5d548532fd14"]),
-                ]},
-            ]},
-        ]
-    },
-    "neurology-interview": {
-        "sections": [
-            {"id": "neurology-view-history", "title": "Hx", "kind": "history", "groups": [
-                {"title": "Chief complaint · Present illness", "items": [
-                    view_item("neurology-hx-basic", "S/A / V/S", ["i-0ed008b89dee"]),
-                    view_item("neurology-hx-cc", "Chief complaint / Onset", ["i-ee4e51907a91"]),
-                    view_item("neurology-hx-pi", "Present illness", ["i-295d2b8c0877"]),
-                ]},
-                {"title": "Past · Social · Drug history", "items": [
-                    view_item("neurology-hx-past", "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis", ["i-f9672a36bab3", "i-090b46250227"]),
-                    view_item("neurology-hx-social", "Smoking / Alcohol / Pack-years / Current smoking", ["i-3789fe7ad282"]),
-                    view_item("neurology-hx-medication", "Medication", ["i-18572f0f6fd3"]),
-                ]},
-                {"title": "Review of systems", "items": [
-                    view_item("neurology-hx-ros", "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness", ["i-f1940c9b999a"]),
                 ]},
             ]},
         ]
@@ -1083,8 +1064,22 @@ unassigned = [bid for bid in blocks if not assignments[bid]]
 if unassigned:
     raise ValueError("Unassigned source text: " + repr(unassigned))
 
-category_names = ["입원관리", "소화기", "순환기", "호흡기", "신장/비뇨기", "전신증상", "근골격/피부", "신경정신", "산부", "소아", "눈/이비인후", "상담"]
-categories = [{"id": f"{i:02}", "name": name, "order": i if 1 <= i <= 10 else (11 if i == 0 else 12), "secondary": i in (0, 11)} for i, name in enumerate(category_names)]
+category_specs = [
+    ("00", "입원관리", 12, True),
+    ("01", "소화기", 1, False),
+    ("02", "순환기", 2, False),
+    ("03", "호흡기", 3, False),
+    ("04", "신장/비뇨기", 4, False),
+    ("05", "전신증상", 5, False),
+    ("06", "근골격/피부", 6, False),
+    ("07", "신경", 7, False),
+    ("12", "정신", 8, False),
+    ("08", "산부", 9, False),
+    ("09", "소아", 10, False),
+    ("10", "눈/이비인후", 11, False),
+    ("11", "상담", 13, True),
+]
+categories = [{"id": cid, "name": name, "order": order, "secondary": secondary} for cid, name, order, secondary in category_specs]
 catalog = {
  "00": [("acute-condition","급성상태",[]),("abnormal-lab","수치이상",[]),("prescription","처방체액",[]),("device","기구문제",[]),("ward-event","병동사건",[])],
  "01": [("abdominal-pain","복통",["복부 통증","급성복통","abdominal pain","abd pain","AP"]),("dyspepsia","소화불량 / 만성 복통",["dyspepsia"]),("hematemesis","토혈",["hematemesis"]),("bloody-stool","혈변",["hematochezia","melena"]),("vomiting","오심 구토",["오심 / 구토","구역","nausea","vomiting","N/V","emesis"]),("constipation","변비",["constipation"]),("diarrhea","설사",["diarrhea"]),("jaundice","황달",["jaundice"])],
@@ -1094,6 +1089,7 @@ catalog = {
  "05": [("fever","발열",["열","fever","pyrexia"]),("bruising","멍",["bruise"]),("fatigue","피로",["fatigue"]),("weight-loss","체중감소",["weight loss"]),("weight-gain","체중증가",["weight gain"]),("poisoning","중독 / 과량복용",["약물 과다복용","poisoning","overdose","intoxication"])],
  "06": [("joint-pain","관절 문제",["관절 통증 / 붓기","관절 통증","붓기","arthralgia","joint pain"]),("neck-pain","목 통증",["neck pain"]),("back-pain","허리 통증",["요통","등 통증","back pain","LBP"]),("rash","피부 발진",["rash","skin rash"]),("trauma","상처 외상",["상처 / 외상","열상","교통사고","상해","trauma","laceration","lac","TA","wound"]),("head-trauma","두부외상",["머리 외상","head trauma","head injury"])],
  "07": [("mood","기분변화",["우울","mood","depression"]),("anxiety","불안",["anxiety","panic"]),("sleep","수면장애",["불면","insomnia","sleep"]),("memory","기억력 저하",["memory loss"]),("dizziness","어지럼",["어지럼증","어지러움","dizziness","dizzy","vertigo","TRS"]),("headache","두통",["headache","HA"]),("peds-seizure","경련 (소아)",["소아 경련","열성경련","pediatric seizure","febrile seizure"]),("seizure","경련",["경련 (성인)","성인 경련","seizure","convulsion","GTC"]),("weakness","근력 / 감각이상",["weakness","sensory change"]),("mental-change","의식장애",["의식저하","mental change","AMS","altered mental status"]),("movement","떨림 / 운동이상",["tremor"]),("stroke","뇌졸중",["뇌졸중 의심","stroke","CVA"])],
+ "12": [],
  "08": [("breast-pain","유방통",["mastalgia"]),("breast-mass","유방덩이",["breast mass"]),("vaginal-discharge","질분비물",["vaginal discharge"]),("vaginal-bleeding","질출혈",["vaginal bleeding"]),("menstrual","월경이상 (무월경)",["amenorrhea"]),("dysmenorrhea","월경통 (월경과다)",["dysmenorrhea","menorrhagia"]),("pregnancy","산전 진찰",["산모","임신","pregnancy","preterm labor","IUP"]),("pelvic-pain","골반통",["pelvic pain"])],
  "09": [("growth","성장 지연",["growth delay"]),("development","발달 지연",["developmental delay"]),("vaccination","예방접종",["vaccination"]),("peds-common","소아 공통",["소아","pediatrics","PD"])],
  "10": [("eye","눈 이상",["눈 통증 / 시력저하","안통","시력저하","eye pain","ocular pain","blurred vision"]),("throat","인후통 / 연하곤란",["sore throat","dysphagia"]),("ear","귀 이상",["귀 통증 / 청력저하","귀먹먹함","otalgia","hearing loss","tinnitus"]),("epistaxis","코 이상",["코피","비출혈","epistaxis"])],
@@ -1115,10 +1111,7 @@ def specialty_aliases(ids, extras):
 
 for cid, records in catalog.items():
     catalog[cid] = [record for record in records if record[0] not in psychiatric_ids | obgyn_ids | pediatric_ids]
-catalog["07"].extend([
-    ("neurology-interview", "신경과 문진", ["신경과", "neurology", "NR", "신경과 공통"]),
-    ("psychiatry-interview", "정신과 문진", specialty_aliases(psychiatric_ids, ["정신과", "psychiatry", "NP", "정신과 공통"])),
-])
+catalog["12"].append(("psychiatry-interview", "정신과 문진", specialty_aliases(psychiatric_ids, ["정신과", "psychiatry", "NP", "정신과 공통"])))
 catalog["08"].insert(0, ("obgyn-interview", "산부인과 문진", specialty_aliases(obgyn_ids, ["산부인과", "OBGY", "OBGYN", "gynecology", "산부인과 공통"])))
 catalog["09"] = [
     ("peds-common", "소아과 문진", ["소아", "소아 공통", "소아과", "pediatrics", "pediatric", "PD"]),
@@ -1141,7 +1134,6 @@ bindings = {
  "flank-pain": ([], ["flank-note"]),
  "fever": (["peds-history","peds-exam"], ["peds-fever","peds-fever-exam","peds-fever-example"]),
  "psychiatry-interview": (["np-history"], ["np-note","np-response","np-example","np-ex1","np-template","np-ex2","np-ex3"]),
- "neurology-interview": (["nr-history"], []),
  "obgyn-interview": (["ob-history"], ["ob-note"]),
  "joint-pain": ([], ["msk-exam"]),
  "back-pain": ([], ["back-mixed","back-note"]),
@@ -1163,7 +1155,7 @@ bindings = {
 for name in ["hematuria","incontinence"]:
     bindings[name] = ([], ["urinary-history"])
 complaints = []
-specialty_ids = {"neurology-interview", "psychiatry-interview", "obgyn-interview", "peds-common"}
+specialty_ids = {"psychiatry-interview", "obgyn-interview", "peds-common"}
 for cid, records in catalog.items():
     records.sort(key=lambda record: record[0] not in specialty_ids)
     for order, (iid, name, aliases) in enumerate(records):
@@ -1188,7 +1180,7 @@ symptom_abbreviations = [
     {"label": "FUND HIS", "expansion": ["Frequency", "Urgency", "Nocturia", "Dysuria", "Hesitancy", "Incomplete emptying", "Straining"]},
 ]
 
-data = {"schemaVersion": 1, "contentVersion": "2026-09-27-beta.11", "categories": categories,
+data = {"schemaVersion": 1, "contentVersion": "2026-09-27-beta.12", "categories": categories,
         "sections": list(groups.values()), "complaints": complaints,
         "symptomAbbreviations": symptom_abbreviations,
         "referenceSections": ["routine-history","routine-exam","handover-general"]}
@@ -1213,14 +1205,14 @@ report = {"sourceFiles": len(archive["sources"]), "sourceBlocks": source_count,
  "exactDuplicateOccurrencesMerged": linked_blocks - (item_count - len(pdf_additions)),
  "complaints": len(complaints), "complaintsWithSourceMaterial": sum(c["status"]!="missing" for c in complaints),
  "pediatricEntries": [c["name"] for c in complaints if c["scope"]=="pediatric"],
- "specialtyEntries": [c["name"] for c in complaints if c["id"] in ("neurology-interview", "psychiatry-interview", "obgyn-interview", "peds-common")],
+ "specialtyEntries": [c["name"] for c in complaints if c["id"] in ("psychiatry-interview", "obgyn-interview", "peds-common")],
  "missingComplaints": [c["name"] for c in complaints if c["status"]=="missing"],
  "method": "의미를 추정한 병합 없음. 동일 구획의 공백·앞쪽 bullet 차이만 있는 원문만 통합. 복합 항목과 조건 보존."}
 (DOCS / "content-audit.json").write_text(json.dumps(report, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
 
 lines = ["# ER 초진 자료 정리본", "", "원문 문진·진찰·인계 메모·차팅 예시를 구분한 베타 자료입니다. 의학 내용을 추가하거나 임상 지침으로 검증하지 않았습니다.", "",
  f"- 원본 {len(archive['sources'])}개 / 텍스트 블록 {source_count}개 / 미분류 0개", f"- 정리된 항목 {item_count}개 / 분류 항목 {len(complaints)}개 중 자료 보유 {report['complaintsWithSourceMaterial']}개", "",
- "- 분과 공통 양식은 신경과·정신과·산부인과·소아과 문진으로 연결합니다. 소아 증상 자료는 모두 09 소아에 별도로 배치합니다.",
+ "- 일반 공통 문진은 각 신경 증상에 공유하고, 정신과·산부인과·소아과 공통 양식은 독립 문진으로 연결합니다. 소아 증상 자료는 모두 소아 분류에 별도로 배치합니다.",
  "- 항목 수는 원문 묶음 기준입니다. 한 문장에 여러 질문이 들어 있어도 원문 그대로 보존하며, 인계 메모와 차팅 예시를 질문으로 바꾸지 않습니다.", "",
  "## 공통 자료", ""]
 rendered = set()
@@ -1233,7 +1225,7 @@ def render_section(sid):
     for item in s["items"]:
         cond = f"**{item['condition']}** — " if item.get("condition") else ""
         refs = [bid for bid, links in assignments.items() if any(a.get("itemId")==item["id"] for a in links)]
-        lines.append(f"- {cond}{item['text']}  ")
+        lines.append(f"- {cond}{item['text']}")
         lines.append(f"  출처: {', '.join(refs)}")
     lines.append("")
 for sid in data["referenceSections"]:

@@ -7,8 +7,8 @@
   "items": 464,
   "itemSourceBlocks": 499,
   "exactDuplicateOccurrencesMerged": 38,
-  "complaints": 69,
-  "complaintsWithSourceMaterial": 32,
+  "complaints": 68,
+  "complaintsWithSourceMaterial": 31,
   "pediatricEntries": [
     "소아과 문진",
     "발열",
@@ -19,7 +19,6 @@
     "경련"
   ],
   "specialtyEntries": [
-    "신경과 문진",
     "정신과 문진",
     "산부인과 문진",
     "소아과 문진"

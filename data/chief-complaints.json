@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-09-27-beta.11",
+  "contentVersion": "2026-09-27-beta.12",
   "categories": [
     {
       "id": "00",
       "name": "입원관리",
-      "order": 11,
+      "order": 12,
       "secondary": true
     },
     {
@@ -46,32 +46,38 @@
     },
     {
       "id": "07",
-      "name": "신경정신",
+      "name": "신경",
       "order": 7,
+      "secondary": false
+    },
+    {
+      "id": "12",
+      "name": "정신",
+      "order": 8,
       "secondary": false
     },
     {
       "id": "08",
       "name": "산부",
-      "order": 8,
+      "order": 9,
       "secondary": false
     },
     {
       "id": "09",
       "name": "소아",
-      "order": 9,
+      "order": 10,
       "secondary": false
     },
     {
       "id": "10",
       "name": "눈/이비인후",
-      "order": 10,
+      "order": 11,
       "secondary": false
     },
     {
       "id": "11",
       "name": "상담",
-      "order": 12,
+      "order": 13,
       "secondary": true
     }
   ],
@@ -112,7 +118,7 @@
     },
     {
       "id": "nr-history",
-      "title": "신경과 공통 문진",
+      "title": "증상 공통 문진",
       "kind": "history",
       "items": [
         {
@@ -4181,26 +4187,46 @@
       }
     },
     {
-      "id": "neurology-interview",
-      "name": "신경과 문진",
+      "id": "memory",
+      "name": "기억력 저하",
       "categoryId": "07",
       "aliases": [
-        "신경과",
-        "neurology",
-        "NR",
-        "신경과 공통"
+        "memory loss"
       ],
       "order": 0,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "dizziness",
+      "name": "어지럼",
+      "categoryId": "07",
+      "aliases": [
+        "어지럼증",
+        "어지러움",
+        "dizziness",
+        "dizzy",
+        "vertigo",
+        "TRS"
+      ],
+      "order": 1,
       "scope": "general",
       "status": "available",
       "sharedSectionIds": [
         "nr-history"
       ],
-      "sectionIds": [],
+      "sectionIds": [
+        "dizziness-history",
+        "dizziness-exam",
+        "dizziness-note",
+        "dizziness-example"
+      ],
       "layout": {
         "sections": [
           {
-            "id": "neurology-view-history",
+            "id": "dizziness-view-history",
             "title": "Hx",
             "kind": "history",
             "groups": [
@@ -4208,21 +4234,21 @@
                 "title": "Chief complaint · Present illness",
                 "items": [
                   {
-                    "id": "neurology-hx-basic",
+                    "id": "dizz-hx-basic",
                     "text": "S/A / V/S",
                     "sourceItemIds": [
                       "i-0ed008b89dee"
                     ]
                   },
                   {
-                    "id": "neurology-hx-cc",
+                    "id": "dizz-hx-cc",
                     "text": "Chief complaint / Onset",
                     "sourceItemIds": [
                       "i-ee4e51907a91"
                     ]
                   },
                   {
-                    "id": "neurology-hx-pi",
+                    "id": "dizz-hx-pi",
                     "text": "Present illness",
                     "sourceItemIds": [
                       "i-295d2b8c0877"
@@ -4234,7 +4260,7 @@
                 "title": "Past · Social · Drug history",
                 "items": [
                   {
-                    "id": "neurology-hx-past",
+                    "id": "dizz-hx-past",
                     "text": "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis",
                     "sourceItemIds": [
                       "i-f9672a36bab3",
@@ -4242,14 +4268,14 @@
                     ]
                   },
                   {
-                    "id": "neurology-hx-social",
+                    "id": "dizz-hx-social",
                     "text": "Smoking / Alcohol / Pack-years / Current smoking",
                     "sourceItemIds": [
                       "i-3789fe7ad282"
                     ]
                   },
                   {
-                    "id": "neurology-hx-medication",
+                    "id": "dizz-hx-medication",
                     "text": "Medication",
                     "sourceItemIds": [
                       "i-18572f0f6fd3"
@@ -4261,11 +4287,1043 @@
                 "title": "Review of systems",
                 "items": [
                   {
-                    "id": "neurology-hx-ros",
+                    "id": "dizz-hx-ros",
                     "text": "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness",
                     "sourceItemIds": [
                       "i-f1940c9b999a"
                     ]
+                  }
+                ]
+              },
+              {
+                "title": "Dizziness",
+                "items": [
+                  {
+                    "id": "dizz-hx-pattern",
+                    "text": "Pattern: Vertigo / Presyncope / Lightheadedness / Disequilibrium",
+                    "sourceItemIds": [
+                      "i-6ad27ea2b2e4",
+                      "i-2e37d0e92ac5"
+                    ],
+                    "note": "빙빙 도는지, 쓰러질 것 같은지, 기운이 없는지, 보행이 이상한지 확인"
+                  },
+                  {
+                    "id": "dizz-hx-trs",
+                    "text": "True rotating sensation (TRS)",
+                    "sourceItemIds": [
+                      "i-cdb419f99f24",
+                      "i-6caa8883d154",
+                      "i-6a49a5ad9c82"
+                    ]
+                  },
+                  {
+                    "id": "dizz-hx-duration",
+                    "text": "Duration / 회복까지 걸리는 시간",
+                    "sourceItemIds": [
+                      "i-98a27e5fe646",
+                      "i-6a49a5ad9c82"
+                    ]
+                  },
+                  {
+                    "id": "dizz-hx-ear",
+                    "text": "Tinnitus / Otalgia / Ear fullness / Hearing difficulty or loss / URI Hx",
+                    "sourceItemIds": [
+                      "i-af4103b19fb5",
+                      "i-ab8e235e7ce3",
+                      "i-6caa8883d154"
+                    ]
+                  },
+                  {
+                    "id": "dizz-hx-neuro",
+                    "text": "동반된 neurologic deficit symptom",
+                    "sourceItemIds": [
+                      "i-4796b70d2f28"
+                    ],
+                    "note": "반드시 확인하고 차팅"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dizziness-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "Nystagmus · Positional test",
+                "items": [
+                  {
+                    "id": "dizz-pe-nystagmus",
+                    "text": "Spontaneous / Gaze-evoked / Head-turn induced nystagmus",
+                    "sourceItemIds": [
+                      "i-6a49a5ad9c82",
+                      "i-547582678bb0"
+                    ]
+                  },
+                  {
+                    "id": "dizz-pe-algorithm",
+                    "text": "Spontaneous·gaze-evoked nystagmus 확인 → HINTS / ED R. notify / Dix-Hallpike / Head-roll test",
+                    "sourceItemIds": [
+                      "i-a26c38ea1eef",
+                      "i-f1f1b078d1f6"
+                    ],
+                    "note": "원문의 양성·음성 결과별 시행 순서 확인"
+                  }
+                ]
+              },
+              {
+                "title": "Gait · Cerebellar",
+                "items": [
+                  {
+                    "id": "dizz-pe-gait",
+                    "text": "Falling tendency / Tandem gait / Romberg test",
+                    "sourceItemIds": [
+                      "i-69a715c63b8a",
+                      "i-83754277e4c2"
+                    ]
+                  },
+                  {
+                    "id": "dizz-pe-cerebellar",
+                    "text": "Finger-to-finger / Finger-to-nose / Heel-to-shin / Rapid alternating movement / Positional dependency",
+                    "sourceItemIds": [
+                      "i-b06a29883b36"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dizziness-view-reference",
+            "title": "참고사항",
+            "kind": "note",
+            "groups": [
+              {
+                "title": "처방·검사",
+                "items": [
+                  {
+                    "id": "dizz-ref-order",
+                    "text": "ER set: 신경과 Dizziness / Cardiac panel / EKG",
+                    "sourceItemIds": [
+                      "i-627951e268db",
+                      "i-53a627e34512"
+                    ]
+                  },
+                  {
+                    "id": "dizz-ref-mri",
+                    "text": "비급여 MR 예정임을 초진 시 고지; 거절 시 acute stroke를 배제할 수 없음을 설명",
+                    "sourceItemIds": [
+                      "i-b59d9bb13f2d"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "증상 조절",
+                "items": [
+                  {
+                    "id": "dizz-ref-control",
+                    "text": "IV Macperan / IV Zofran",
+                    "sourceItemIds": [
+                      "i-8be062564911"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "원문 참고",
+                "items": [
+                  {
+                    "id": "dizz-ref-nystagmus",
+                    "text": "안진 확인법은 전공의에게 문의",
+                    "sourceItemIds": [
+                      "i-11e18a0af92f"
+                    ]
+                  },
+                  {
+                    "id": "dizz-ref-cerebellar",
+                    "text": "Cerebellar function test는 생략 가능하다는 원문 메모",
+                    "sourceItemIds": [
+                      "i-eba126edda0c"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "차팅 예시 · Ménière/BPPV",
+                "items": [
+                  {
+                    "id": "dizz-ref-example1-hx",
+                    "text": "이전 Ménière로 우측 tinnitus가 있었고, 금일 이전과 비슷한 TRS·dizziness가 우측으로 고개를 돌릴 때 발생",
+                    "sourceItemIds": [
+                      "i-cb9a91e85adf",
+                      "i-bebd5c3b1a65",
+                      "i-d7a740d21171",
+                      "i-d3e1f226fbb1"
+                    ]
+                  },
+                  {
+                    "id": "dizz-ref-example1-pe",
+                    "text": "Spontaneous nystagmus (+) / Right torsional / Catch-up saccade (+) / No other lateralizing or localizing sign",
+                    "sourceItemIds": [
+                      "i-206f7882d71f",
+                      "i-ef762d070f24",
+                      "i-87070a99c108",
+                      "i-566d5c453205"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "차팅 예시 · Dizziness",
+                "items": [
+                  {
+                    "id": "dizz-ref-example2-pi",
+                    "text": "HTN·Moyamoya disease로 추적 중. TRS 양상의 지속되는 dizziness가 자세 변화에 따라 악화되고 vomiting 수차례 동반; 뚜렷한 neurologic abnormality 없음",
+                    "sourceItemIds": [
+                      "i-64463269cabf",
+                      "i-83e315881da7",
+                      "i-870ebd4a3f0c",
+                      "i-6db3db44bec6"
+                    ]
+                  },
+                  {
+                    "id": "dizz-ref-example2-hx",
+                    "text": "Onset: 내원 2일 전 / TRS (+), Vertigo (+) / Duration: 지속",
+                    "sourceItemIds": [
+                      "i-067c395ba43f",
+                      "i-454f9219d6e6",
+                      "i-e90b2a672f24"
+                    ]
+                  },
+                  {
+                    "id": "dizz-ref-example2-pe",
+                    "text": "Spontaneous nystagmus (-) / Positional dependency (+), head turn 시 / Roll test: Right > Left, ageotropic nystagmus (+)",
+                    "sourceItemIds": [
+                      "i-094174c96cb6",
+                      "i-04abbfca2684"
+                    ]
+                  },
+                  {
+                    "id": "dizz-ref-example2-ros",
+                    "text": "Headache (-) / Nausea·Vomiting (+/+)",
+                    "sourceItemIds": [
+                      "i-1334c34cfd7c"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "headache",
+      "name": "두통",
+      "categoryId": "07",
+      "aliases": [
+        "headache",
+        "HA"
+      ],
+      "order": 2,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "nr-history"
+      ],
+      "sectionIds": [
+        "headache-history",
+        "headache-exam"
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "headache-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Chief complaint · Present illness",
+                "items": [
+                  {
+                    "id": "headache-hx-basic",
+                    "text": "S/A / V/S",
+                    "sourceItemIds": [
+                      "i-0ed008b89dee"
+                    ]
+                  },
+                  {
+                    "id": "headache-hx-cc",
+                    "text": "Chief complaint / Onset",
+                    "sourceItemIds": [
+                      "i-ee4e51907a91"
+                    ]
+                  },
+                  {
+                    "id": "headache-hx-pi",
+                    "text": "Present illness",
+                    "sourceItemIds": [
+                      "i-295d2b8c0877"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Past · Social · Drug history",
+                "items": [
+                  {
+                    "id": "headache-hx-past",
+                    "text": "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis",
+                    "sourceItemIds": [
+                      "i-f9672a36bab3",
+                      "i-090b46250227"
+                    ]
+                  },
+                  {
+                    "id": "headache-hx-social",
+                    "text": "Smoking / Alcohol / Pack-years / Current smoking",
+                    "sourceItemIds": [
+                      "i-3789fe7ad282"
+                    ]
+                  },
+                  {
+                    "id": "headache-hx-medication",
+                    "text": "Medication",
+                    "sourceItemIds": [
+                      "i-18572f0f6fd3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Review of systems",
+                "items": [
+                  {
+                    "id": "headache-hx-ros",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Headache",
+                "items": [
+                  {
+                    "id": "headache-hx-character",
+                    "text": "Character / Pulsatile",
+                    "sourceItemIds": [
+                      "i-9fc7e16784c7",
+                      "i-9cfdc43f0e0f",
+                      "i-29e1606c5666",
+                      "i-4d8fc6f58f75"
+                    ]
+                  },
+                  {
+                    "id": "headache-hx-location",
+                    "text": "Location",
+                    "sourceItemIds": [
+                      "i-9fc7e16784c7",
+                      "i-9cfdc43f0e0f",
+                      "i-ffc390c13501"
+                    ]
+                  },
+                  {
+                    "id": "headache-hx-onset",
+                    "text": "Mode of onset: Sudden / Gradual · AM / PM",
+                    "sourceItemIds": [
+                      "i-9fc7e16784c7",
+                      "i-29b81de03b58",
+                      "i-3bd2beb9a620",
+                      "i-a4eafc7a2e27"
+                    ]
+                  },
+                  {
+                    "id": "headache-hx-duration",
+                    "text": "Duration",
+                    "sourceItemIds": [
+                      "i-9fc7e16784c7",
+                      "i-9cfdc43f0e0f",
+                      "i-e70103d43042"
+                    ]
+                  },
+                  {
+                    "id": "headache-hx-aura",
+                    "text": "Aura / Prodrome",
+                    "sourceItemIds": [
+                      "i-9fc7e16784c7",
+                      "i-29b81de03b58",
+                      "i-74fa33af7ce3"
+                    ]
+                  },
+                  {
+                    "id": "headache-hx-analgesic",
+                    "text": "Analgesic effect",
+                    "sourceItemIds": [
+                      "i-9fc7e16784c7",
+                      "i-29b81de03b58",
+                      "i-9d87bd973952"
+                    ]
+                  },
+                  {
+                    "id": "headache-hx-associated",
+                    "text": "Nausea / Vomiting / Dizziness / Other associated symptoms",
+                    "sourceItemIds": [
+                      "i-29b81de03b58",
+                      "i-9de2e117b6a9"
+                    ]
+                  },
+                  {
+                    "id": "headache-hx-factor",
+                    "text": "Trauma / Family Hx / Sleep disturbance / Tenderness point",
+                    "sourceItemIds": [
+                      "i-79bdeb7f9c37"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "headache-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "Neurologic",
+                "items": [
+                  {
+                    "id": "headache-pe-nuchal",
+                    "text": "Nuchal tenderness",
+                    "sourceItemIds": [
+                      "i-05a884b2bfd5"
+                    ]
+                  },
+                  {
+                    "id": "headache-pe-deficit",
+                    "text": "Neurologic deficit",
+                    "sourceItemIds": [
+                      "i-ba842357a8d8"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "seizure",
+      "name": "경련",
+      "categoryId": "07",
+      "aliases": [
+        "경련 (성인)",
+        "성인 경련",
+        "seizure",
+        "convulsion",
+        "GTC"
+      ],
+      "order": 3,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "nr-history"
+      ],
+      "sectionIds": [
+        "seizure-history"
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "seizure-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Chief complaint · Present illness",
+                "items": [
+                  {
+                    "id": "seizure-common-hx-basic",
+                    "text": "S/A / V/S",
+                    "sourceItemIds": [
+                      "i-0ed008b89dee"
+                    ]
+                  },
+                  {
+                    "id": "seizure-common-hx-cc",
+                    "text": "Chief complaint / Onset",
+                    "sourceItemIds": [
+                      "i-ee4e51907a91"
+                    ]
+                  },
+                  {
+                    "id": "seizure-common-hx-pi",
+                    "text": "Present illness",
+                    "sourceItemIds": [
+                      "i-295d2b8c0877"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Past · Social · Drug history",
+                "items": [
+                  {
+                    "id": "seizure-common-hx-past",
+                    "text": "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis",
+                    "sourceItemIds": [
+                      "i-f9672a36bab3",
+                      "i-090b46250227"
+                    ]
+                  },
+                  {
+                    "id": "seizure-common-hx-social",
+                    "text": "Smoking / Alcohol / Pack-years / Current smoking",
+                    "sourceItemIds": [
+                      "i-3789fe7ad282"
+                    ]
+                  },
+                  {
+                    "id": "seizure-common-hx-medication",
+                    "text": "Medication",
+                    "sourceItemIds": [
+                      "i-18572f0f6fd3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Review of systems",
+                "items": [
+                  {
+                    "id": "seizure-common-hx-ros",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Ictal",
+                "items": [
+                  {
+                    "id": "seizure-hx-type",
+                    "text": "Type: GTC / Partial",
+                    "sourceItemIds": [
+                      "i-5b74d90d649a",
+                      "i-ae89dd865504"
+                    ]
+                  },
+                  {
+                    "id": "seizure-hx-site",
+                    "text": "Involved body part",
+                    "sourceItemIds": [
+                      "i-0c9edd42be8b",
+                      "i-ae89dd865504"
+                    ]
+                  },
+                  {
+                    "id": "seizure-hx-duration",
+                    "text": "Duration / First attack",
+                    "sourceItemIds": [
+                      "i-64f5b3d5fed6",
+                      "i-ae89dd865504"
+                    ]
+                  },
+                  {
+                    "id": "seizure-hx-aura",
+                    "text": "Aura",
+                    "sourceItemIds": [
+                      "i-26f686a03c4b",
+                      "i-f42db10ce4f7"
+                    ]
+                  },
+                  {
+                    "id": "seizure-hx-eye",
+                    "text": "Eyeball deviation",
+                    "sourceItemIds": [
+                      "i-f0b47426e7f9",
+                      "i-f42db10ce4f7"
+                    ]
+                  },
+                  {
+                    "id": "seizure-hx-foamy",
+                    "text": "Foamy salivation",
+                    "sourceItemIds": [
+                      "i-75c5995c9d79",
+                      "i-f42db10ce4f7"
+                    ]
+                  },
+                  {
+                    "id": "seizure-hx-cyanosis",
+                    "text": "Cyanosis",
+                    "sourceItemIds": [
+                      "i-b2313f955111",
+                      "i-f42db10ce4f7"
+                    ]
+                  },
+                  {
+                    "id": "seizure-hx-bite",
+                    "text": "Tongue bite",
+                    "sourceItemIds": [
+                      "i-83e4105cd93b",
+                      "i-f42db10ce4f7"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Postictal · Background",
+                "items": [
+                  {
+                    "id": "seizure-hx-postictal",
+                    "text": "Postictal: Sleep / Confusion / Urination / Defecation",
+                    "sourceItemIds": [
+                      "i-dfa4b6f07ef6",
+                      "i-a892e9cfe5c3"
+                    ]
+                  },
+                  {
+                    "id": "seizure-hx-family",
+                    "text": "Family Hx / Personal Hx",
+                    "sourceItemIds": [
+                      "i-aa2f3fa3f103",
+                      "i-a892e9cfe5c3"
+                    ]
+                  },
+                  {
+                    "id": "seizure-hx-nutrition",
+                    "text": "Nutritional status",
+                    "sourceItemIds": [
+                      "i-c181139b0f70",
+                      "i-a892e9cfe5c3"
+                    ]
+                  },
+                  {
+                    "id": "seizure-hx-medication",
+                    "text": "Antiepileptic medication / Last dose time",
+                    "sourceItemIds": [
+                      "i-9fe7bc643a6a",
+                      "i-60884bae711f"
+                    ]
+                  },
+                  {
+                    "id": "seizure-hx-alcohol",
+                    "text": "Last alcohol intake time",
+                    "sourceItemIds": [
+                      "i-5ae8a078122d",
+                      "i-60884bae711f"
+                    ]
+                  },
+                  {
+                    "id": "seizure-hx-sleep",
+                    "text": "Sleep hours per day",
+                    "sourceItemIds": [
+                      "i-821430aff642",
+                      "i-60884bae711f"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "weakness",
+      "name": "근력 / 감각이상",
+      "categoryId": "07",
+      "aliases": [
+        "weakness",
+        "sensory change"
+      ],
+      "order": 4,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "mental-change",
+      "name": "의식장애",
+      "categoryId": "07",
+      "aliases": [
+        "의식저하",
+        "mental change",
+        "AMS",
+        "altered mental status"
+      ],
+      "order": 5,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "nr-history"
+      ],
+      "sectionIds": [
+        "mental-exam"
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "mental-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Chief complaint · Present illness",
+                "items": [
+                  {
+                    "id": "mental-hx-basic",
+                    "text": "S/A / V/S",
+                    "sourceItemIds": [
+                      "i-0ed008b89dee"
+                    ]
+                  },
+                  {
+                    "id": "mental-hx-cc",
+                    "text": "Chief complaint / Onset",
+                    "sourceItemIds": [
+                      "i-ee4e51907a91"
+                    ]
+                  },
+                  {
+                    "id": "mental-hx-pi",
+                    "text": "Present illness",
+                    "sourceItemIds": [
+                      "i-295d2b8c0877"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Past · Social · Drug history",
+                "items": [
+                  {
+                    "id": "mental-hx-past",
+                    "text": "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis",
+                    "sourceItemIds": [
+                      "i-f9672a36bab3",
+                      "i-090b46250227"
+                    ]
+                  },
+                  {
+                    "id": "mental-hx-social",
+                    "text": "Smoking / Alcohol / Pack-years / Current smoking",
+                    "sourceItemIds": [
+                      "i-3789fe7ad282"
+                    ]
+                  },
+                  {
+                    "id": "mental-hx-medication",
+                    "text": "Medication",
+                    "sourceItemIds": [
+                      "i-18572f0f6fd3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Review of systems",
+                "items": [
+                  {
+                    "id": "mental-hx-ros",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "mental-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "Mental · Respiration",
+                "items": [
+                  {
+                    "id": "mental-pe-mental",
+                    "text": "Mental status",
+                    "sourceItemIds": [
+                      "i-5880a2a9aa60",
+                      "i-7605224c4f7e"
+                    ],
+                    "note": "Stroke 진찰 참고"
+                  },
+                  {
+                    "id": "mental-pe-resp",
+                    "text": "Respiration: Regular / Irregular · Deep / Shallow",
+                    "sourceItemIds": [
+                      "i-5880a2a9aa60",
+                      "i-bf300566329e"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Pupil · Response",
+                "items": [
+                  {
+                    "id": "mental-pe-pupil",
+                    "text": "Pupil size / Symmetry",
+                    "sourceItemIds": [
+                      "i-fe4bc183cc47",
+                      "i-593abf312fe2"
+                    ]
+                  },
+                  {
+                    "id": "mental-pe-light",
+                    "text": "Light reflex",
+                    "sourceItemIds": [
+                      "i-fe4bc183cc47",
+                      "i-2c0ef8400763"
+                    ]
+                  },
+                  {
+                    "id": "mental-pe-touch",
+                    "text": "휴지로 눈을 살짝 건드렸을 때 반응",
+                    "sourceItemIds": [
+                      "i-fe4bc183cc47",
+                      "i-9e1ef0fb5a14"
+                    ]
+                  },
+                  {
+                    "id": "mental-pe-pain",
+                    "text": "Pain response: Right upper / Left upper / Right lower / Left lower extremity",
+                    "sourceItemIds": [
+                      "i-485924cb448e"
+                    ]
+                  },
+                  {
+                    "id": "mental-pe-babinski",
+                    "text": "Babinski reflex: Right / Left",
+                    "sourceItemIds": [
+                      "i-f9d2ad838f38"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "movement",
+      "name": "떨림 / 운동이상",
+      "categoryId": "07",
+      "aliases": [
+        "tremor"
+      ],
+      "order": 6,
+      "scope": "general",
+      "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "stroke",
+      "name": "뇌졸중",
+      "categoryId": "07",
+      "aliases": [
+        "뇌졸중 의심",
+        "stroke",
+        "CVA"
+      ],
+      "order": 7,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "nr-history"
+      ],
+      "sectionIds": [
+        "stroke-history",
+        "stroke-exam",
+        "stroke-note"
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "stroke-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Chief complaint · Present illness",
+                "items": [
+                  {
+                    "id": "stroke-hx-basic",
+                    "text": "S/A / V/S",
+                    "sourceItemIds": [
+                      "i-0ed008b89dee"
+                    ]
+                  },
+                  {
+                    "id": "stroke-hx-cc",
+                    "text": "Chief complaint / Onset",
+                    "sourceItemIds": [
+                      "i-ee4e51907a91"
+                    ]
+                  },
+                  {
+                    "id": "stroke-hx-pi",
+                    "text": "Present illness",
+                    "sourceItemIds": [
+                      "i-295d2b8c0877"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Past · Social · Drug history",
+                "items": [
+                  {
+                    "id": "stroke-hx-past",
+                    "text": "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis",
+                    "sourceItemIds": [
+                      "i-f9672a36bab3",
+                      "i-090b46250227"
+                    ]
+                  },
+                  {
+                    "id": "stroke-hx-social",
+                    "text": "Smoking / Alcohol / Pack-years / Current smoking",
+                    "sourceItemIds": [
+                      "i-3789fe7ad282"
+                    ]
+                  },
+                  {
+                    "id": "stroke-hx-medication",
+                    "text": "Medication",
+                    "sourceItemIds": [
+                      "i-18572f0f6fd3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Review of systems",
+                "items": [
+                  {
+                    "id": "stroke-hx-ros",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Time",
+                "items": [
+                  {
+                    "id": "stroke-hx-time",
+                    "text": "Last normal time / First abnormal time",
+                    "sourceItemIds": [
+                      "i-eddf689b48ac"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "stroke-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "Mental · Commands",
+                "items": [
+                  {
+                    "id": "stroke-pe-mental",
+                    "text": "Mentation: Alert / Drowsy / Stupor / Semicoma / Coma",
+                    "sourceItemIds": [
+                      "i-c9dceb3fed3a"
+                    ],
+                    "note": "Drowsy: 말에 반응 · Stupor: 자극에 반응 · Semicoma: Light reflex (+)"
+                  },
+                  {
+                    "id": "stroke-pe-command",
+                    "text": "Month / Age / Eye open-close / Hand grip-release",
+                    "sourceItemIds": [
+                      "i-e998b4dd9427"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Cranial nerve · Language",
+                "items": [
+                  {
+                    "id": "stroke-pe-eye-face",
+                    "text": "Horizontal eye movement / Vision / Facial palsy",
+                    "sourceItemIds": [
+                      "i-68765d3a2beb"
+                    ],
+                    "note": "이마 주름만 가능하면 central pattern"
+                  },
+                  {
+                    "id": "stroke-pe-language",
+                    "text": "Dysarthria / Incoherent speech / Impaired comprehension",
+                    "sourceItemIds": [
+                      "i-fe7269b0f02e"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Motor · Sensory · Cerebellar",
+                "items": [
+                  {
+                    "id": "stroke-pe-power",
+                    "text": "Motor grade: 5 유지 / 4 떨어짐 / 3 들었다 떨어짐 / 2 수평 이동 / 1 움직임 없음",
+                    "sourceItemIds": [
+                      "i-2146beb834c1"
+                    ]
+                  },
+                  {
+                    "id": "stroke-pe-limb",
+                    "text": "Right upper / Left upper / Right lower / Left lower extremity",
+                    "sourceItemIds": [
+                      "i-9d85b6c7f674"
+                    ]
+                  },
+                  {
+                    "id": "stroke-pe-cerebellar",
+                    "text": "Finger-to-finger / Heel-to-shin / Sensory change",
+                    "sourceItemIds": [
+                      "i-f4d9158beb62"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "stroke-view-reference",
+            "title": "참고사항",
+            "kind": "note",
+            "groups": [
+              {
+                "title": "보고",
+                "items": [
+                  {
+                    "id": "stroke-ref-hyperacute",
+                    "text": "증상 발생 3시간 이내인 경우 주증상 확인 후 즉시 연락",
+                    "sourceItemIds": [
+                      "i-2bace8d99e96"
+                    ],
+                    "note": "원문 인계 기준"
                   }
                 ]
               }
@@ -4277,7 +5335,7 @@
     {
       "id": "psychiatry-interview",
       "name": "정신과 문진",
-      "categoryId": "07",
+      "categoryId": "12",
       "aliases": [
         "정신과",
         "psychiatry",
@@ -4306,7 +5364,7 @@
         "suicidal",
         "self harm"
       ],
-      "order": 1,
+      "order": 0,
       "scope": "psychiatric",
       "status": "available",
       "sharedSectionIds": [
@@ -4832,1152 +5890,6 @@
                       "i-9c05f6d645a1",
                       "i-f9fe431ca32a"
                     ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": "memory",
-      "name": "기억력 저하",
-      "categoryId": "07",
-      "aliases": [
-        "memory loss"
-      ],
-      "order": 2,
-      "scope": "general",
-      "status": "missing",
-      "sharedSectionIds": [],
-      "sectionIds": []
-    },
-    {
-      "id": "dizziness",
-      "name": "어지럼",
-      "categoryId": "07",
-      "aliases": [
-        "어지럼증",
-        "어지러움",
-        "dizziness",
-        "dizzy",
-        "vertigo",
-        "TRS"
-      ],
-      "order": 3,
-      "scope": "general",
-      "status": "available",
-      "sharedSectionIds": [
-        "nr-history"
-      ],
-      "sectionIds": [
-        "dizziness-history",
-        "dizziness-exam",
-        "dizziness-note",
-        "dizziness-example"
-      ],
-      "layout": {
-        "sections": [
-          {
-            "id": "dizziness-view-history",
-            "title": "Hx",
-            "kind": "history",
-            "groups": [
-              {
-                "title": "Chief complaint · Present illness",
-                "items": [
-                  {
-                    "id": "dizz-hx-basic",
-                    "text": "S/A / V/S",
-                    "sourceItemIds": [
-                      "i-0ed008b89dee"
-                    ]
-                  },
-                  {
-                    "id": "dizz-hx-cc",
-                    "text": "Chief complaint / Onset",
-                    "sourceItemIds": [
-                      "i-ee4e51907a91"
-                    ]
-                  },
-                  {
-                    "id": "dizz-hx-pi",
-                    "text": "Present illness",
-                    "sourceItemIds": [
-                      "i-295d2b8c0877"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Past · Social · Drug history",
-                "items": [
-                  {
-                    "id": "dizz-hx-past",
-                    "text": "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis",
-                    "sourceItemIds": [
-                      "i-f9672a36bab3",
-                      "i-090b46250227"
-                    ]
-                  },
-                  {
-                    "id": "dizz-hx-social",
-                    "text": "Smoking / Alcohol / Pack-years / Current smoking",
-                    "sourceItemIds": [
-                      "i-3789fe7ad282"
-                    ]
-                  },
-                  {
-                    "id": "dizz-hx-medication",
-                    "text": "Medication",
-                    "sourceItemIds": [
-                      "i-18572f0f6fd3"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Review of systems",
-                "items": [
-                  {
-                    "id": "dizz-hx-ros",
-                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness",
-                    "sourceItemIds": [
-                      "i-f1940c9b999a"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Dizziness",
-                "items": [
-                  {
-                    "id": "dizz-hx-pattern",
-                    "text": "Pattern: Vertigo / Presyncope / Lightheadedness / Disequilibrium",
-                    "sourceItemIds": [
-                      "i-6ad27ea2b2e4",
-                      "i-2e37d0e92ac5"
-                    ],
-                    "note": "빙빙 도는지, 쓰러질 것 같은지, 기운이 없는지, 보행이 이상한지 확인"
-                  },
-                  {
-                    "id": "dizz-hx-trs",
-                    "text": "True rotating sensation (TRS)",
-                    "sourceItemIds": [
-                      "i-cdb419f99f24",
-                      "i-6caa8883d154",
-                      "i-6a49a5ad9c82"
-                    ]
-                  },
-                  {
-                    "id": "dizz-hx-duration",
-                    "text": "Duration / 회복까지 걸리는 시간",
-                    "sourceItemIds": [
-                      "i-98a27e5fe646",
-                      "i-6a49a5ad9c82"
-                    ]
-                  },
-                  {
-                    "id": "dizz-hx-ear",
-                    "text": "Tinnitus / Otalgia / Ear fullness / Hearing difficulty or loss / URI Hx",
-                    "sourceItemIds": [
-                      "i-af4103b19fb5",
-                      "i-ab8e235e7ce3",
-                      "i-6caa8883d154"
-                    ]
-                  },
-                  {
-                    "id": "dizz-hx-neuro",
-                    "text": "동반된 neurologic deficit symptom",
-                    "sourceItemIds": [
-                      "i-4796b70d2f28"
-                    ],
-                    "note": "반드시 확인하고 차팅"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "id": "dizziness-view-exam",
-            "title": "PEx",
-            "kind": "exam",
-            "groups": [
-              {
-                "title": "Nystagmus · Positional test",
-                "items": [
-                  {
-                    "id": "dizz-pe-nystagmus",
-                    "text": "Spontaneous / Gaze-evoked / Head-turn induced nystagmus",
-                    "sourceItemIds": [
-                      "i-6a49a5ad9c82",
-                      "i-547582678bb0"
-                    ]
-                  },
-                  {
-                    "id": "dizz-pe-algorithm",
-                    "text": "Spontaneous·gaze-evoked nystagmus 확인 → HINTS / ED R. notify / Dix-Hallpike / Head-roll test",
-                    "sourceItemIds": [
-                      "i-a26c38ea1eef",
-                      "i-f1f1b078d1f6"
-                    ],
-                    "note": "원문의 양성·음성 결과별 시행 순서 확인"
-                  }
-                ]
-              },
-              {
-                "title": "Gait · Cerebellar",
-                "items": [
-                  {
-                    "id": "dizz-pe-gait",
-                    "text": "Falling tendency / Tandem gait / Romberg test",
-                    "sourceItemIds": [
-                      "i-69a715c63b8a",
-                      "i-83754277e4c2"
-                    ]
-                  },
-                  {
-                    "id": "dizz-pe-cerebellar",
-                    "text": "Finger-to-finger / Finger-to-nose / Heel-to-shin / Rapid alternating movement / Positional dependency",
-                    "sourceItemIds": [
-                      "i-b06a29883b36"
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "id": "dizziness-view-reference",
-            "title": "참고사항",
-            "kind": "note",
-            "groups": [
-              {
-                "title": "처방·검사",
-                "items": [
-                  {
-                    "id": "dizz-ref-order",
-                    "text": "ER set: 신경과 Dizziness / Cardiac panel / EKG",
-                    "sourceItemIds": [
-                      "i-627951e268db",
-                      "i-53a627e34512"
-                    ]
-                  },
-                  {
-                    "id": "dizz-ref-mri",
-                    "text": "비급여 MR 예정임을 초진 시 고지; 거절 시 acute stroke를 배제할 수 없음을 설명",
-                    "sourceItemIds": [
-                      "i-b59d9bb13f2d"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "증상 조절",
-                "items": [
-                  {
-                    "id": "dizz-ref-control",
-                    "text": "IV Macperan / IV Zofran",
-                    "sourceItemIds": [
-                      "i-8be062564911"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "원문 참고",
-                "items": [
-                  {
-                    "id": "dizz-ref-nystagmus",
-                    "text": "안진 확인법은 전공의에게 문의",
-                    "sourceItemIds": [
-                      "i-11e18a0af92f"
-                    ]
-                  },
-                  {
-                    "id": "dizz-ref-cerebellar",
-                    "text": "Cerebellar function test는 생략 가능하다는 원문 메모",
-                    "sourceItemIds": [
-                      "i-eba126edda0c"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "차팅 예시 · Ménière/BPPV",
-                "items": [
-                  {
-                    "id": "dizz-ref-example1-hx",
-                    "text": "이전 Ménière로 우측 tinnitus가 있었고, 금일 이전과 비슷한 TRS·dizziness가 우측으로 고개를 돌릴 때 발생",
-                    "sourceItemIds": [
-                      "i-cb9a91e85adf",
-                      "i-bebd5c3b1a65",
-                      "i-d7a740d21171",
-                      "i-d3e1f226fbb1"
-                    ]
-                  },
-                  {
-                    "id": "dizz-ref-example1-pe",
-                    "text": "Spontaneous nystagmus (+) / Right torsional / Catch-up saccade (+) / No other lateralizing or localizing sign",
-                    "sourceItemIds": [
-                      "i-206f7882d71f",
-                      "i-ef762d070f24",
-                      "i-87070a99c108",
-                      "i-566d5c453205"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "차팅 예시 · Dizziness",
-                "items": [
-                  {
-                    "id": "dizz-ref-example2-pi",
-                    "text": "HTN·Moyamoya disease로 추적 중. TRS 양상의 지속되는 dizziness가 자세 변화에 따라 악화되고 vomiting 수차례 동반; 뚜렷한 neurologic abnormality 없음",
-                    "sourceItemIds": [
-                      "i-64463269cabf",
-                      "i-83e315881da7",
-                      "i-870ebd4a3f0c",
-                      "i-6db3db44bec6"
-                    ]
-                  },
-                  {
-                    "id": "dizz-ref-example2-hx",
-                    "text": "Onset: 내원 2일 전 / TRS (+), Vertigo (+) / Duration: 지속",
-                    "sourceItemIds": [
-                      "i-067c395ba43f",
-                      "i-454f9219d6e6",
-                      "i-e90b2a672f24"
-                    ]
-                  },
-                  {
-                    "id": "dizz-ref-example2-pe",
-                    "text": "Spontaneous nystagmus (-) / Positional dependency (+), head turn 시 / Roll test: Right > Left, ageotropic nystagmus (+)",
-                    "sourceItemIds": [
-                      "i-094174c96cb6",
-                      "i-04abbfca2684"
-                    ]
-                  },
-                  {
-                    "id": "dizz-ref-example2-ros",
-                    "text": "Headache (-) / Nausea·Vomiting (+/+)",
-                    "sourceItemIds": [
-                      "i-1334c34cfd7c"
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": "headache",
-      "name": "두통",
-      "categoryId": "07",
-      "aliases": [
-        "headache",
-        "HA"
-      ],
-      "order": 4,
-      "scope": "general",
-      "status": "available",
-      "sharedSectionIds": [
-        "nr-history"
-      ],
-      "sectionIds": [
-        "headache-history",
-        "headache-exam"
-      ],
-      "layout": {
-        "sections": [
-          {
-            "id": "headache-view-history",
-            "title": "Hx",
-            "kind": "history",
-            "groups": [
-              {
-                "title": "Chief complaint · Present illness",
-                "items": [
-                  {
-                    "id": "headache-hx-basic",
-                    "text": "S/A / V/S",
-                    "sourceItemIds": [
-                      "i-0ed008b89dee"
-                    ]
-                  },
-                  {
-                    "id": "headache-hx-cc",
-                    "text": "Chief complaint / Onset",
-                    "sourceItemIds": [
-                      "i-ee4e51907a91"
-                    ]
-                  },
-                  {
-                    "id": "headache-hx-pi",
-                    "text": "Present illness",
-                    "sourceItemIds": [
-                      "i-295d2b8c0877"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Past · Social · Drug history",
-                "items": [
-                  {
-                    "id": "headache-hx-past",
-                    "text": "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis",
-                    "sourceItemIds": [
-                      "i-f9672a36bab3",
-                      "i-090b46250227"
-                    ]
-                  },
-                  {
-                    "id": "headache-hx-social",
-                    "text": "Smoking / Alcohol / Pack-years / Current smoking",
-                    "sourceItemIds": [
-                      "i-3789fe7ad282"
-                    ]
-                  },
-                  {
-                    "id": "headache-hx-medication",
-                    "text": "Medication",
-                    "sourceItemIds": [
-                      "i-18572f0f6fd3"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Review of systems",
-                "items": [
-                  {
-                    "id": "headache-hx-ros",
-                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness",
-                    "sourceItemIds": [
-                      "i-f1940c9b999a"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Headache",
-                "items": [
-                  {
-                    "id": "headache-hx-character",
-                    "text": "Character / Pulsatile",
-                    "sourceItemIds": [
-                      "i-9fc7e16784c7",
-                      "i-9cfdc43f0e0f",
-                      "i-29e1606c5666",
-                      "i-4d8fc6f58f75"
-                    ]
-                  },
-                  {
-                    "id": "headache-hx-location",
-                    "text": "Location",
-                    "sourceItemIds": [
-                      "i-9fc7e16784c7",
-                      "i-9cfdc43f0e0f",
-                      "i-ffc390c13501"
-                    ]
-                  },
-                  {
-                    "id": "headache-hx-onset",
-                    "text": "Mode of onset: Sudden / Gradual · AM / PM",
-                    "sourceItemIds": [
-                      "i-9fc7e16784c7",
-                      "i-29b81de03b58",
-                      "i-3bd2beb9a620",
-                      "i-a4eafc7a2e27"
-                    ]
-                  },
-                  {
-                    "id": "headache-hx-duration",
-                    "text": "Duration",
-                    "sourceItemIds": [
-                      "i-9fc7e16784c7",
-                      "i-9cfdc43f0e0f",
-                      "i-e70103d43042"
-                    ]
-                  },
-                  {
-                    "id": "headache-hx-aura",
-                    "text": "Aura / Prodrome",
-                    "sourceItemIds": [
-                      "i-9fc7e16784c7",
-                      "i-29b81de03b58",
-                      "i-74fa33af7ce3"
-                    ]
-                  },
-                  {
-                    "id": "headache-hx-analgesic",
-                    "text": "Analgesic effect",
-                    "sourceItemIds": [
-                      "i-9fc7e16784c7",
-                      "i-29b81de03b58",
-                      "i-9d87bd973952"
-                    ]
-                  },
-                  {
-                    "id": "headache-hx-associated",
-                    "text": "Nausea / Vomiting / Dizziness / Other associated symptoms",
-                    "sourceItemIds": [
-                      "i-29b81de03b58",
-                      "i-9de2e117b6a9"
-                    ]
-                  },
-                  {
-                    "id": "headache-hx-factor",
-                    "text": "Trauma / Family Hx / Sleep disturbance / Tenderness point",
-                    "sourceItemIds": [
-                      "i-79bdeb7f9c37"
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "id": "headache-view-exam",
-            "title": "PEx",
-            "kind": "exam",
-            "groups": [
-              {
-                "title": "Neurologic",
-                "items": [
-                  {
-                    "id": "headache-pe-nuchal",
-                    "text": "Nuchal tenderness",
-                    "sourceItemIds": [
-                      "i-05a884b2bfd5"
-                    ]
-                  },
-                  {
-                    "id": "headache-pe-deficit",
-                    "text": "Neurologic deficit",
-                    "sourceItemIds": [
-                      "i-ba842357a8d8"
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": "seizure",
-      "name": "경련",
-      "categoryId": "07",
-      "aliases": [
-        "경련 (성인)",
-        "성인 경련",
-        "seizure",
-        "convulsion",
-        "GTC"
-      ],
-      "order": 5,
-      "scope": "general",
-      "status": "available",
-      "sharedSectionIds": [
-        "nr-history"
-      ],
-      "sectionIds": [
-        "seizure-history"
-      ],
-      "layout": {
-        "sections": [
-          {
-            "id": "seizure-view-history",
-            "title": "Hx",
-            "kind": "history",
-            "groups": [
-              {
-                "title": "Chief complaint · Present illness",
-                "items": [
-                  {
-                    "id": "seizure-common-hx-basic",
-                    "text": "S/A / V/S",
-                    "sourceItemIds": [
-                      "i-0ed008b89dee"
-                    ]
-                  },
-                  {
-                    "id": "seizure-common-hx-cc",
-                    "text": "Chief complaint / Onset",
-                    "sourceItemIds": [
-                      "i-ee4e51907a91"
-                    ]
-                  },
-                  {
-                    "id": "seizure-common-hx-pi",
-                    "text": "Present illness",
-                    "sourceItemIds": [
-                      "i-295d2b8c0877"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Past · Social · Drug history",
-                "items": [
-                  {
-                    "id": "seizure-common-hx-past",
-                    "text": "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis",
-                    "sourceItemIds": [
-                      "i-f9672a36bab3",
-                      "i-090b46250227"
-                    ]
-                  },
-                  {
-                    "id": "seizure-common-hx-social",
-                    "text": "Smoking / Alcohol / Pack-years / Current smoking",
-                    "sourceItemIds": [
-                      "i-3789fe7ad282"
-                    ]
-                  },
-                  {
-                    "id": "seizure-common-hx-medication",
-                    "text": "Medication",
-                    "sourceItemIds": [
-                      "i-18572f0f6fd3"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Review of systems",
-                "items": [
-                  {
-                    "id": "seizure-common-hx-ros",
-                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness",
-                    "sourceItemIds": [
-                      "i-f1940c9b999a"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Ictal",
-                "items": [
-                  {
-                    "id": "seizure-hx-type",
-                    "text": "Type: GTC / Partial",
-                    "sourceItemIds": [
-                      "i-5b74d90d649a",
-                      "i-ae89dd865504"
-                    ]
-                  },
-                  {
-                    "id": "seizure-hx-site",
-                    "text": "Involved body part",
-                    "sourceItemIds": [
-                      "i-0c9edd42be8b",
-                      "i-ae89dd865504"
-                    ]
-                  },
-                  {
-                    "id": "seizure-hx-duration",
-                    "text": "Duration / First attack",
-                    "sourceItemIds": [
-                      "i-64f5b3d5fed6",
-                      "i-ae89dd865504"
-                    ]
-                  },
-                  {
-                    "id": "seizure-hx-aura",
-                    "text": "Aura",
-                    "sourceItemIds": [
-                      "i-26f686a03c4b",
-                      "i-f42db10ce4f7"
-                    ]
-                  },
-                  {
-                    "id": "seizure-hx-eye",
-                    "text": "Eyeball deviation",
-                    "sourceItemIds": [
-                      "i-f0b47426e7f9",
-                      "i-f42db10ce4f7"
-                    ]
-                  },
-                  {
-                    "id": "seizure-hx-foamy",
-                    "text": "Foamy salivation",
-                    "sourceItemIds": [
-                      "i-75c5995c9d79",
-                      "i-f42db10ce4f7"
-                    ]
-                  },
-                  {
-                    "id": "seizure-hx-cyanosis",
-                    "text": "Cyanosis",
-                    "sourceItemIds": [
-                      "i-b2313f955111",
-                      "i-f42db10ce4f7"
-                    ]
-                  },
-                  {
-                    "id": "seizure-hx-bite",
-                    "text": "Tongue bite",
-                    "sourceItemIds": [
-                      "i-83e4105cd93b",
-                      "i-f42db10ce4f7"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Postictal · Background",
-                "items": [
-                  {
-                    "id": "seizure-hx-postictal",
-                    "text": "Postictal: Sleep / Confusion / Urination / Defecation",
-                    "sourceItemIds": [
-                      "i-dfa4b6f07ef6",
-                      "i-a892e9cfe5c3"
-                    ]
-                  },
-                  {
-                    "id": "seizure-hx-family",
-                    "text": "Family Hx / Personal Hx",
-                    "sourceItemIds": [
-                      "i-aa2f3fa3f103",
-                      "i-a892e9cfe5c3"
-                    ]
-                  },
-                  {
-                    "id": "seizure-hx-nutrition",
-                    "text": "Nutritional status",
-                    "sourceItemIds": [
-                      "i-c181139b0f70",
-                      "i-a892e9cfe5c3"
-                    ]
-                  },
-                  {
-                    "id": "seizure-hx-medication",
-                    "text": "Antiepileptic medication / Last dose time",
-                    "sourceItemIds": [
-                      "i-9fe7bc643a6a",
-                      "i-60884bae711f"
-                    ]
-                  },
-                  {
-                    "id": "seizure-hx-alcohol",
-                    "text": "Last alcohol intake time",
-                    "sourceItemIds": [
-                      "i-5ae8a078122d",
-                      "i-60884bae711f"
-                    ]
-                  },
-                  {
-                    "id": "seizure-hx-sleep",
-                    "text": "Sleep hours per day",
-                    "sourceItemIds": [
-                      "i-821430aff642",
-                      "i-60884bae711f"
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": "weakness",
-      "name": "근력 / 감각이상",
-      "categoryId": "07",
-      "aliases": [
-        "weakness",
-        "sensory change"
-      ],
-      "order": 6,
-      "scope": "general",
-      "status": "missing",
-      "sharedSectionIds": [],
-      "sectionIds": []
-    },
-    {
-      "id": "mental-change",
-      "name": "의식장애",
-      "categoryId": "07",
-      "aliases": [
-        "의식저하",
-        "mental change",
-        "AMS",
-        "altered mental status"
-      ],
-      "order": 7,
-      "scope": "general",
-      "status": "available",
-      "sharedSectionIds": [
-        "nr-history"
-      ],
-      "sectionIds": [
-        "mental-exam"
-      ],
-      "layout": {
-        "sections": [
-          {
-            "id": "mental-view-history",
-            "title": "Hx",
-            "kind": "history",
-            "groups": [
-              {
-                "title": "Chief complaint · Present illness",
-                "items": [
-                  {
-                    "id": "mental-hx-basic",
-                    "text": "S/A / V/S",
-                    "sourceItemIds": [
-                      "i-0ed008b89dee"
-                    ]
-                  },
-                  {
-                    "id": "mental-hx-cc",
-                    "text": "Chief complaint / Onset",
-                    "sourceItemIds": [
-                      "i-ee4e51907a91"
-                    ]
-                  },
-                  {
-                    "id": "mental-hx-pi",
-                    "text": "Present illness",
-                    "sourceItemIds": [
-                      "i-295d2b8c0877"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Past · Social · Drug history",
-                "items": [
-                  {
-                    "id": "mental-hx-past",
-                    "text": "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis",
-                    "sourceItemIds": [
-                      "i-f9672a36bab3",
-                      "i-090b46250227"
-                    ]
-                  },
-                  {
-                    "id": "mental-hx-social",
-                    "text": "Smoking / Alcohol / Pack-years / Current smoking",
-                    "sourceItemIds": [
-                      "i-3789fe7ad282"
-                    ]
-                  },
-                  {
-                    "id": "mental-hx-medication",
-                    "text": "Medication",
-                    "sourceItemIds": [
-                      "i-18572f0f6fd3"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Review of systems",
-                "items": [
-                  {
-                    "id": "mental-hx-ros",
-                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness",
-                    "sourceItemIds": [
-                      "i-f1940c9b999a"
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "id": "mental-view-exam",
-            "title": "PEx",
-            "kind": "exam",
-            "groups": [
-              {
-                "title": "Mental · Respiration",
-                "items": [
-                  {
-                    "id": "mental-pe-mental",
-                    "text": "Mental status",
-                    "sourceItemIds": [
-                      "i-5880a2a9aa60",
-                      "i-7605224c4f7e"
-                    ],
-                    "note": "Stroke 진찰 참고"
-                  },
-                  {
-                    "id": "mental-pe-resp",
-                    "text": "Respiration: Regular / Irregular · Deep / Shallow",
-                    "sourceItemIds": [
-                      "i-5880a2a9aa60",
-                      "i-bf300566329e"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Pupil · Response",
-                "items": [
-                  {
-                    "id": "mental-pe-pupil",
-                    "text": "Pupil size / Symmetry",
-                    "sourceItemIds": [
-                      "i-fe4bc183cc47",
-                      "i-593abf312fe2"
-                    ]
-                  },
-                  {
-                    "id": "mental-pe-light",
-                    "text": "Light reflex",
-                    "sourceItemIds": [
-                      "i-fe4bc183cc47",
-                      "i-2c0ef8400763"
-                    ]
-                  },
-                  {
-                    "id": "mental-pe-touch",
-                    "text": "휴지로 눈을 살짝 건드렸을 때 반응",
-                    "sourceItemIds": [
-                      "i-fe4bc183cc47",
-                      "i-9e1ef0fb5a14"
-                    ]
-                  },
-                  {
-                    "id": "mental-pe-pain",
-                    "text": "Pain response: Right upper / Left upper / Right lower / Left lower extremity",
-                    "sourceItemIds": [
-                      "i-485924cb448e"
-                    ]
-                  },
-                  {
-                    "id": "mental-pe-babinski",
-                    "text": "Babinski reflex: Right / Left",
-                    "sourceItemIds": [
-                      "i-f9d2ad838f38"
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": "movement",
-      "name": "떨림 / 운동이상",
-      "categoryId": "07",
-      "aliases": [
-        "tremor"
-      ],
-      "order": 8,
-      "scope": "general",
-      "status": "missing",
-      "sharedSectionIds": [],
-      "sectionIds": []
-    },
-    {
-      "id": "stroke",
-      "name": "뇌졸중",
-      "categoryId": "07",
-      "aliases": [
-        "뇌졸중 의심",
-        "stroke",
-        "CVA"
-      ],
-      "order": 9,
-      "scope": "general",
-      "status": "available",
-      "sharedSectionIds": [
-        "nr-history"
-      ],
-      "sectionIds": [
-        "stroke-history",
-        "stroke-exam",
-        "stroke-note"
-      ],
-      "layout": {
-        "sections": [
-          {
-            "id": "stroke-view-history",
-            "title": "Hx",
-            "kind": "history",
-            "groups": [
-              {
-                "title": "Chief complaint · Present illness",
-                "items": [
-                  {
-                    "id": "stroke-hx-basic",
-                    "text": "S/A / V/S",
-                    "sourceItemIds": [
-                      "i-0ed008b89dee"
-                    ]
-                  },
-                  {
-                    "id": "stroke-hx-cc",
-                    "text": "Chief complaint / Onset",
-                    "sourceItemIds": [
-                      "i-ee4e51907a91"
-                    ]
-                  },
-                  {
-                    "id": "stroke-hx-pi",
-                    "text": "Present illness",
-                    "sourceItemIds": [
-                      "i-295d2b8c0877"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Past · Social · Drug history",
-                "items": [
-                  {
-                    "id": "stroke-hx-past",
-                    "text": "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis",
-                    "sourceItemIds": [
-                      "i-f9672a36bab3",
-                      "i-090b46250227"
-                    ]
-                  },
-                  {
-                    "id": "stroke-hx-social",
-                    "text": "Smoking / Alcohol / Pack-years / Current smoking",
-                    "sourceItemIds": [
-                      "i-3789fe7ad282"
-                    ]
-                  },
-                  {
-                    "id": "stroke-hx-medication",
-                    "text": "Medication",
-                    "sourceItemIds": [
-                      "i-18572f0f6fd3"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Review of systems",
-                "items": [
-                  {
-                    "id": "stroke-hx-ros",
-                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness",
-                    "sourceItemIds": [
-                      "i-f1940c9b999a"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Time",
-                "items": [
-                  {
-                    "id": "stroke-hx-time",
-                    "text": "Last normal time / First abnormal time",
-                    "sourceItemIds": [
-                      "i-eddf689b48ac"
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "id": "stroke-view-exam",
-            "title": "PEx",
-            "kind": "exam",
-            "groups": [
-              {
-                "title": "Mental · Commands",
-                "items": [
-                  {
-                    "id": "stroke-pe-mental",
-                    "text": "Mentation: Alert / Drowsy / Stupor / Semicoma / Coma",
-                    "sourceItemIds": [
-                      "i-c9dceb3fed3a"
-                    ],
-                    "note": "Drowsy: 말에 반응 · Stupor: 자극에 반응 · Semicoma: Light reflex (+)"
-                  },
-                  {
-                    "id": "stroke-pe-command",
-                    "text": "Month / Age / Eye open-close / Hand grip-release",
-                    "sourceItemIds": [
-                      "i-e998b4dd9427"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Cranial nerve · Language",
-                "items": [
-                  {
-                    "id": "stroke-pe-eye-face",
-                    "text": "Horizontal eye movement / Vision / Facial palsy",
-                    "sourceItemIds": [
-                      "i-68765d3a2beb"
-                    ],
-                    "note": "이마 주름만 가능하면 central pattern"
-                  },
-                  {
-                    "id": "stroke-pe-language",
-                    "text": "Dysarthria / Incoherent speech / Impaired comprehension",
-                    "sourceItemIds": [
-                      "i-fe7269b0f02e"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Motor · Sensory · Cerebellar",
-                "items": [
-                  {
-                    "id": "stroke-pe-power",
-                    "text": "Motor grade: 5 유지 / 4 떨어짐 / 3 들었다 떨어짐 / 2 수평 이동 / 1 움직임 없음",
-                    "sourceItemIds": [
-                      "i-2146beb834c1"
-                    ]
-                  },
-                  {
-                    "id": "stroke-pe-limb",
-                    "text": "Right upper / Left upper / Right lower / Left lower extremity",
-                    "sourceItemIds": [
-                      "i-9d85b6c7f674"
-                    ]
-                  },
-                  {
-                    "id": "stroke-pe-cerebellar",
-                    "text": "Finger-to-finger / Heel-to-shin / Sensory change",
-                    "sourceItemIds": [
-                      "i-f4d9158beb62"
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "id": "stroke-view-reference",
-            "title": "참고사항",
-            "kind": "note",
-            "groups": [
-              {
-                "title": "보고",
-                "items": [
-                  {
-                    "id": "stroke-ref-hyperacute",
-                    "text": "증상 발생 3시간 이내인 경우 주증상 확인 후 즉시 연락",
-                    "sourceItemIds": [
-                      "i-2bace8d99e96"
-                    ],
-                    "note": "원문 인계 기준"
                   }
                 ]
               }
