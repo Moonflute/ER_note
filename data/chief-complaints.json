@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-09-27-beta.12",
+  "contentVersion": "2026-09-27-beta.13",
   "categories": [
     {
       "id": "00",
@@ -2506,11 +2506,11 @@
             "kind": "history",
             "groups": [
               {
-                "title": "과거력·복용약",
+                "title": "History",
                 "items": [
                   {
                     "id": "abd-hx-background",
-                    "text": "Underlying disease / Medication Hx / Operation Hx",
+                    "text": "Medical Hx (U/D Drug Adm Op)",
                     "sourceItemIds": [
                       "i-a0dbc0b8eaec"
                     ]
@@ -2837,11 +2837,11 @@
             "kind": "history",
             "groups": [
               {
-                "title": "Past · Drug history",
+                "title": "History",
                 "items": [
                   {
                     "id": "constipation-hx-past",
-                    "text": "Operation Hx / Medication Hx / Underlying disease",
+                    "text": "Medical Hx (U/D Drug Adm Op)",
                     "sourceItemIds": [
                       "i-a0dbc0b8eaec"
                     ]
@@ -2985,11 +2985,11 @@
                 ]
               },
               {
-                "title": "Past · Drug history",
+                "title": "History",
                 "items": [
                   {
                     "id": "chest-hx-past",
-                    "text": "Operation Hx / Medication Hx / Underlying disease",
+                    "text": "Medical Hx (U/D Drug Adm Op)",
                     "sourceItemIds": [
                       "i-bdecab5aa049"
                     ]
@@ -3029,54 +3029,43 @@
             "kind": "history",
             "groups": [
               {
-                "title": "Chief complaint · Present illness",
+                "title": "Basic",
                 "items": [
                   {
                     "id": "syncope-hx-basic",
-                    "text": "S/A / V/S",
+                    "text": "V/S",
                     "sourceItemIds": [
                       "i-0ed008b89dee"
                     ]
                   },
                   {
                     "id": "syncope-hx-cc",
-                    "text": "Chief complaint / Onset",
+                    "text": "CC",
                     "sourceItemIds": [
                       "i-ee4e51907a91"
                     ]
                   },
                   {
                     "id": "syncope-hx-pi",
-                    "text": "Present illness",
+                    "text": "PI",
                     "sourceItemIds": [
                       "i-295d2b8c0877"
                     ]
-                  }
-                ]
-              },
-              {
-                "title": "Past · Social · Drug history",
-                "items": [
+                  },
                   {
-                    "id": "syncope-hx-past",
-                    "text": "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis",
+                    "id": "syncope-hx-medical",
+                    "text": "Medical Hx (U/D Drug Adm Op)",
                     "sourceItemIds": [
                       "i-f9672a36bab3",
-                      "i-090b46250227"
+                      "i-090b46250227",
+                      "i-18572f0f6fd3"
                     ]
                   },
                   {
                     "id": "syncope-hx-social",
-                    "text": "Smoking / Alcohol / Pack-years / Current smoking",
+                    "text": "Social Hx (Alcohol Smoking)",
                     "sourceItemIds": [
                       "i-3789fe7ad282"
-                    ]
-                  },
-                  {
-                    "id": "syncope-hx-medication",
-                    "text": "Medication",
-                    "sourceItemIds": [
-                      "i-18572f0f6fd3"
                     ]
                   }
                 ]
@@ -4231,54 +4220,43 @@
             "kind": "history",
             "groups": [
               {
-                "title": "Chief complaint · Present illness",
+                "title": "Basic",
                 "items": [
                   {
                     "id": "dizz-hx-basic",
-                    "text": "S/A / V/S",
+                    "text": "V/S",
                     "sourceItemIds": [
                       "i-0ed008b89dee"
                     ]
                   },
                   {
                     "id": "dizz-hx-cc",
-                    "text": "Chief complaint / Onset",
+                    "text": "CC",
                     "sourceItemIds": [
                       "i-ee4e51907a91"
                     ]
                   },
                   {
                     "id": "dizz-hx-pi",
-                    "text": "Present illness",
+                    "text": "PI",
                     "sourceItemIds": [
                       "i-295d2b8c0877"
                     ]
-                  }
-                ]
-              },
-              {
-                "title": "Past · Social · Drug history",
-                "items": [
+                  },
                   {
-                    "id": "dizz-hx-past",
-                    "text": "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis",
+                    "id": "dizz-hx-medical",
+                    "text": "Medical Hx (U/D Drug Adm Op)",
                     "sourceItemIds": [
                       "i-f9672a36bab3",
-                      "i-090b46250227"
+                      "i-090b46250227",
+                      "i-18572f0f6fd3"
                     ]
                   },
                   {
                     "id": "dizz-hx-social",
-                    "text": "Smoking / Alcohol / Pack-years / Current smoking",
+                    "text": "Social Hx (Alcohol Smoking)",
                     "sourceItemIds": [
                       "i-3789fe7ad282"
-                    ]
-                  },
-                  {
-                    "id": "dizz-hx-medication",
-                    "text": "Medication",
-                    "sourceItemIds": [
-                      "i-18572f0f6fd3"
                     ]
                   }
                 ]
@@ -4545,54 +4523,43 @@
             "kind": "history",
             "groups": [
               {
-                "title": "Chief complaint · Present illness",
+                "title": "Basic",
                 "items": [
                   {
                     "id": "headache-hx-basic",
-                    "text": "S/A / V/S",
+                    "text": "V/S",
                     "sourceItemIds": [
                       "i-0ed008b89dee"
                     ]
                   },
                   {
                     "id": "headache-hx-cc",
-                    "text": "Chief complaint / Onset",
+                    "text": "CC",
                     "sourceItemIds": [
                       "i-ee4e51907a91"
                     ]
                   },
                   {
                     "id": "headache-hx-pi",
-                    "text": "Present illness",
+                    "text": "PI",
                     "sourceItemIds": [
                       "i-295d2b8c0877"
                     ]
-                  }
-                ]
-              },
-              {
-                "title": "Past · Social · Drug history",
-                "items": [
+                  },
                   {
-                    "id": "headache-hx-past",
-                    "text": "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis",
+                    "id": "headache-hx-medical",
+                    "text": "Medical Hx (U/D Drug Adm Op)",
                     "sourceItemIds": [
                       "i-f9672a36bab3",
-                      "i-090b46250227"
+                      "i-090b46250227",
+                      "i-18572f0f6fd3"
                     ]
                   },
                   {
                     "id": "headache-hx-social",
-                    "text": "Smoking / Alcohol / Pack-years / Current smoking",
+                    "text": "Social Hx (Alcohol Smoking)",
                     "sourceItemIds": [
                       "i-3789fe7ad282"
-                    ]
-                  },
-                  {
-                    "id": "headache-hx-medication",
-                    "text": "Medication",
-                    "sourceItemIds": [
-                      "i-18572f0f6fd3"
                     ]
                   }
                 ]
@@ -4744,54 +4711,43 @@
             "kind": "history",
             "groups": [
               {
-                "title": "Chief complaint · Present illness",
+                "title": "Basic",
                 "items": [
                   {
                     "id": "seizure-common-hx-basic",
-                    "text": "S/A / V/S",
+                    "text": "V/S",
                     "sourceItemIds": [
                       "i-0ed008b89dee"
                     ]
                   },
                   {
                     "id": "seizure-common-hx-cc",
-                    "text": "Chief complaint / Onset",
+                    "text": "CC",
                     "sourceItemIds": [
                       "i-ee4e51907a91"
                     ]
                   },
                   {
                     "id": "seizure-common-hx-pi",
-                    "text": "Present illness",
+                    "text": "PI",
                     "sourceItemIds": [
                       "i-295d2b8c0877"
                     ]
-                  }
-                ]
-              },
-              {
-                "title": "Past · Social · Drug history",
-                "items": [
+                  },
                   {
-                    "id": "seizure-common-hx-past",
-                    "text": "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis",
+                    "id": "seizure-common-hx-medical",
+                    "text": "Medical Hx (U/D Drug Adm Op)",
                     "sourceItemIds": [
                       "i-f9672a36bab3",
-                      "i-090b46250227"
+                      "i-090b46250227",
+                      "i-18572f0f6fd3"
                     ]
                   },
                   {
                     "id": "seizure-common-hx-social",
-                    "text": "Smoking / Alcohol / Pack-years / Current smoking",
+                    "text": "Social Hx (Alcohol Smoking)",
                     "sourceItemIds": [
                       "i-3789fe7ad282"
-                    ]
-                  },
-                  {
-                    "id": "seizure-common-hx-medication",
-                    "text": "Medication",
-                    "sourceItemIds": [
-                      "i-18572f0f6fd3"
                     ]
                   }
                 ]
@@ -4914,7 +4870,7 @@
                   },
                   {
                     "id": "seizure-hx-alcohol",
-                    "text": "Last alcohol intake time",
+                    "text": "Last alcohol",
                     "sourceItemIds": [
                       "i-5ae8a078122d",
                       "i-60884bae711f"
@@ -4976,54 +4932,43 @@
             "kind": "history",
             "groups": [
               {
-                "title": "Chief complaint · Present illness",
+                "title": "Basic",
                 "items": [
                   {
                     "id": "mental-hx-basic",
-                    "text": "S/A / V/S",
+                    "text": "V/S",
                     "sourceItemIds": [
                       "i-0ed008b89dee"
                     ]
                   },
                   {
                     "id": "mental-hx-cc",
-                    "text": "Chief complaint / Onset",
+                    "text": "CC",
                     "sourceItemIds": [
                       "i-ee4e51907a91"
                     ]
                   },
                   {
                     "id": "mental-hx-pi",
-                    "text": "Present illness",
+                    "text": "PI",
                     "sourceItemIds": [
                       "i-295d2b8c0877"
                     ]
-                  }
-                ]
-              },
-              {
-                "title": "Past · Social · Drug history",
-                "items": [
+                  },
                   {
-                    "id": "mental-hx-past",
-                    "text": "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis",
+                    "id": "mental-hx-medical",
+                    "text": "Medical Hx (U/D Drug Adm Op)",
                     "sourceItemIds": [
                       "i-f9672a36bab3",
-                      "i-090b46250227"
+                      "i-090b46250227",
+                      "i-18572f0f6fd3"
                     ]
                   },
                   {
                     "id": "mental-hx-social",
-                    "text": "Smoking / Alcohol / Pack-years / Current smoking",
+                    "text": "Social Hx (Alcohol Smoking)",
                     "sourceItemIds": [
                       "i-3789fe7ad282"
-                    ]
-                  },
-                  {
-                    "id": "mental-hx-medication",
-                    "text": "Medication",
-                    "sourceItemIds": [
-                      "i-18572f0f6fd3"
                     ]
                   }
                 ]
@@ -5158,54 +5103,43 @@
             "kind": "history",
             "groups": [
               {
-                "title": "Chief complaint · Present illness",
+                "title": "Basic",
                 "items": [
                   {
                     "id": "stroke-hx-basic",
-                    "text": "S/A / V/S",
+                    "text": "V/S",
                     "sourceItemIds": [
                       "i-0ed008b89dee"
                     ]
                   },
                   {
                     "id": "stroke-hx-cc",
-                    "text": "Chief complaint / Onset",
+                    "text": "CC",
                     "sourceItemIds": [
                       "i-ee4e51907a91"
                     ]
                   },
                   {
                     "id": "stroke-hx-pi",
-                    "text": "Present illness",
+                    "text": "PI",
                     "sourceItemIds": [
                       "i-295d2b8c0877"
                     ]
-                  }
-                ]
-              },
-              {
-                "title": "Past · Social · Drug history",
-                "items": [
+                  },
                   {
-                    "id": "stroke-hx-past",
-                    "text": "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis",
+                    "id": "stroke-hx-medical",
+                    "text": "Medical Hx (U/D Drug Adm Op)",
                     "sourceItemIds": [
                       "i-f9672a36bab3",
-                      "i-090b46250227"
+                      "i-090b46250227",
+                      "i-18572f0f6fd3"
                     ]
                   },
                   {
                     "id": "stroke-hx-social",
-                    "text": "Smoking / Alcohol / Pack-years / Current smoking",
+                    "text": "Social Hx (Alcohol Smoking)",
                     "sourceItemIds": [
                       "i-3789fe7ad282"
-                    ]
-                  },
-                  {
-                    "id": "stroke-hx-medication",
-                    "text": "Medication",
-                    "sourceItemIds": [
-                      "i-18572f0f6fd3"
                     ]
                   }
                 ]
@@ -5387,20 +5321,14 @@
             "kind": "history",
             "groups": [
               {
-                "title": "Chief complaint · Present illness",
+                "title": "Basic",
                 "items": [
                   {
                     "id": "psychiatry-hx-cc",
-                    "text": "Chief complaint",
+                    "text": "CC",
                     "sourceItemIds": [
                       "i-93bec4f5a11f",
-                      "i-783f0ccc8ad0"
-                    ]
-                  },
-                  {
-                    "id": "psychiatry-hx-onset",
-                    "text": "Onset: #1 / #2",
-                    "sourceItemIds": [
+                      "i-783f0ccc8ad0",
                       "i-a3f32e80a086",
                       "i-1cfcd0419c4d",
                       "i-48e0d543b3fc"
@@ -5415,7 +5343,7 @@
                   },
                   {
                     "id": "psychiatry-hx-stress",
-                    "text": "Present illness / 최근 stress factor",
+                    "text": "PI / 최근 stress factor",
                     "sourceItemIds": [
                       "i-504770b9ef6c",
                       "i-326344007df5"
@@ -5428,7 +5356,7 @@
                 "items": [
                   {
                     "id": "psychiatry-hx-past",
-                    "text": "Past psychiatric Hx / Family Hx",
+                    "text": "Past NP Hx / FHx",
                     "sourceItemIds": [
                       "i-fd017583932e",
                       "i-f97606906869"
@@ -5436,7 +5364,7 @@
                   },
                   {
                     "id": "psychiatry-hx-compliance",
-                    "text": "Medication compliance",
+                    "text": "Drug compliance",
                     "sourceItemIds": [
                       "i-37fe40251ce9"
                     ],
@@ -6148,7 +6076,7 @@
                   },
                   {
                     "id": "pregnancy-hx-operation",
-                    "text": "Operation Hx",
+                    "text": "Op Hx",
                     "sourceItemIds": [
                       "i-ff7aec9585a2"
                     ]
@@ -6221,7 +6149,7 @@
                 "items": [
                   {
                     "id": "peds-common-hx-vital",
-                    "text": "Vital signs: T / P / R / BP",
+                    "text": "V/S",
                     "sourceItemIds": [
                       "i-88fe282cb4fe"
                     ]
@@ -6379,7 +6307,7 @@
                 "items": [
                   {
                     "id": "fever-hx-vital",
-                    "text": "Vital signs: T / P / R / BP",
+                    "text": "V/S",
                     "sourceItemIds": [
                       "i-88fe282cb4fe"
                     ]
@@ -6613,7 +6541,7 @@
                 "items": [
                   {
                     "id": "vomiting-hx-vital",
-                    "text": "Vital signs: T / P / R / BP",
+                    "text": "V/S",
                     "sourceItemIds": [
                       "i-88fe282cb4fe"
                     ]
@@ -6786,7 +6714,7 @@
                 "items": [
                   {
                     "id": "diarrhea-hx-vital",
-                    "text": "Vital signs: T / P / R / BP",
+                    "text": "V/S",
                     "sourceItemIds": [
                       "i-88fe282cb4fe"
                     ]
@@ -6966,7 +6894,7 @@
                 "items": [
                   {
                     "id": "cough-hx-vital",
-                    "text": "Vital signs: T / P / R / BP",
+                    "text": "V/S",
                     "sourceItemIds": [
                       "i-88fe282cb4fe"
                     ]
@@ -7040,7 +6968,7 @@
                   },
                   {
                     "id": "cough-hx-atopy",
-                    "text": "Atopy·Asthma personal Hx / Family Hx",
+                    "text": "Atopy/Asthma PHx / FHx",
                     "sourceItemIds": [
                       "i-3368440da93b"
                     ]
@@ -7152,7 +7080,7 @@
                 "items": [
                   {
                     "id": "peds-abd-hx-vital",
-                    "text": "Vital signs: T / P / R / BP",
+                    "text": "V/S",
                     "sourceItemIds": [
                       "i-88fe282cb4fe"
                     ]
@@ -7351,7 +7279,7 @@
                 "items": [
                   {
                     "id": "peds-seizure-hx-vital",
-                    "text": "Vital signs: T / P / R / BP",
+                    "text": "V/S",
                     "sourceItemIds": [
                       "i-88fe282cb4fe"
                     ]
@@ -7738,7 +7666,7 @@
                 "items": [
                   {
                     "id": "eye-hx-past",
-                    "text": "Ophthalmologic Hx",
+                    "text": "OT HX",
                     "sourceItemIds": [
                       "i-f7aed3e8baa4"
                     ]
@@ -7959,11 +7887,11 @@
                 ]
               },
               {
-                "title": "Past · Drug history",
+                "title": "History",
                 "items": [
                   {
                     "id": "epistaxis-hx-background",
-                    "text": "Medication / HTN Hx",
+                    "text": "Drug / HTN Hx",
                     "sourceItemIds": [
                       "i-ca15bdb71320"
                     ]

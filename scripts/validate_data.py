@@ -97,6 +97,21 @@ require(not any(cc["id"] == "neurology-interview" for cc in data["complaints"]),
 for complaint_id in ("dizziness", "headache", "seizure", "mental-change", "stroke"):
     complaint = next((cc for cc in data["complaints"] if cc["id"] == complaint_id), None)
     require(complaint is not None and "nr-history" in complaint["sharedSectionIds"], f"Shared history missing from neurologic complaint: {complaint_id}")
+compact_basic = {"V/S", "CC", "PI", "Medical Hx (U/D Drug Adm Op)", "Social Hx (Alcohol Smoking)"}
+for complaint_id in ("syncope", "dizziness", "headache", "seizure", "mental-change", "stroke"):
+    complaint = next((cc for cc in data["complaints"] if cc["id"] == complaint_id), None)
+    history_texts = {item["text"] for section in complaint.get("layout", {}).get("sections", []) if section["kind"] == "history" for group in section["groups"] for item in group["items"]} if complaint else set()
+    require(compact_basic <= history_texts, f"Compact basic history missing from complaint: {complaint_id}")
+layout_items = {item["id"]: item for cc in data["complaints"] for section in cc.get("layout", {}).get("sections", []) for group in section["groups"] for item in group["items"]}
+expected_display_text = {
+    "seizure-hx-family": "Family Hx / Personal Hx",
+    "seizure-hx-medication": "Antiepileptic medication / Last dose time",
+    "trauma-hx-tetanus": "Tetanus vaccination Hx",
+    "pregnancy-hx-edc": "Estimated date of confinement (EDC)",
+    "eye-hx-past": "OT HX",
+}
+for item_id, expected_text in expected_display_text.items():
+    require(layout_items.get(item_id, {}).get("text") == expected_text, f"Unexpected compact display text: {item_id}")
 for sid in ("np-ex1", "np-template", "np-ex2", "np-ex3", "np-response"):
     require(sections[sid]["kind"] == "example", f"Example placed in main checklist: {sid}")
 for source in sources.values():

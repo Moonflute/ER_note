@@ -200,15 +200,12 @@ def view_item(iid, text, source_item_ids, note=None, abbreviated_text=None):
 
 def neuro_history_groups(prefix):
     return [
-        {"title": "Chief complaint · Present illness", "items": [
-            view_item(f"{prefix}-hx-basic", "S/A / V/S", ["i-0ed008b89dee"]),
-            view_item(f"{prefix}-hx-cc", "Chief complaint / Onset", ["i-ee4e51907a91"]),
-            view_item(f"{prefix}-hx-pi", "Present illness", ["i-295d2b8c0877"]),
-        ]},
-        {"title": "Past · Social · Drug history", "items": [
-            view_item(f"{prefix}-hx-past", "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis", ["i-f9672a36bab3", "i-090b46250227"]),
-            view_item(f"{prefix}-hx-social", "Smoking / Alcohol / Pack-years / Current smoking", ["i-3789fe7ad282"]),
-            view_item(f"{prefix}-hx-medication", "Medication", ["i-18572f0f6fd3"]),
+        {"title": "Basic", "items": [
+            view_item(f"{prefix}-hx-basic", "V/S", ["i-0ed008b89dee"]),
+            view_item(f"{prefix}-hx-cc", "CC", ["i-ee4e51907a91"]),
+            view_item(f"{prefix}-hx-pi", "PI", ["i-295d2b8c0877"]),
+            view_item(f"{prefix}-hx-medical", "Medical Hx (U/D Drug Adm Op)", ["i-f9672a36bab3", "i-090b46250227", "i-18572f0f6fd3"]),
+            view_item(f"{prefix}-hx-social", "Social Hx (Alcohol Smoking)", ["i-3789fe7ad282"]),
         ]},
         {"title": "Review of systems", "items": [
             view_item(f"{prefix}-hx-ros", "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness", ["i-f1940c9b999a"]),
@@ -218,7 +215,7 @@ def neuro_history_groups(prefix):
 def peds_history_groups(prefix, fccsr_sources=(), daily_sources=()):
     return [
         {"title": "General · Birth history", "items": [
-            view_item(f"{prefix}-hx-vital", "Vital signs: T / P / R / BP", ["i-88fe282cb4fe"]),
+            view_item(f"{prefix}-hx-vital", "V/S", ["i-88fe282cb4fe"]),
             view_item(f"{prefix}-hx-neonate", "Neonate: Current weight / Gestational week / Vaginal delivery or C-section / Birth asphyxia", ["i-88fe282cb4fe", "i-52e3c96499b8"]),
             view_item(f"{prefix}-hx-mother", "Maternal problem", ["i-0ed4387ab7a9"]),
         ]},
@@ -250,8 +247,8 @@ curated_layouts = {
     "abdominal-pain": {
         "sections": [
             {"id": "abd-view-history", "title": "Hx", "kind": "history", "groups": [
-                {"title": "과거력·복용약", "items": [
-                    view_item("abd-hx-background", "Underlying disease / Medication Hx / Operation Hx", ["i-a0dbc0b8eaec"]),
+                {"title": "History", "items": [
+                    view_item("abd-hx-background", "Medical Hx (U/D Drug Adm Op)", ["i-a0dbc0b8eaec"]),
                     view_item("abd-hx-operation", "Abdominal operation Hx", ["i-eb4aa9826a2d", "i-ecedeb1e4880"], "반드시 확인"),
                     view_item("abd-hx-npo", "NPO time", ["i-23c56e483dfc"], "수술 가능성이 있는 경우"),
                 ]},
@@ -421,19 +418,7 @@ curated_layouts = {
     "dizziness": {
         "sections": [
             {"id": "dizziness-view-history", "title": "Hx", "kind": "history", "groups": [
-                {"title": "Chief complaint · Present illness", "items": [
-                    view_item("dizz-hx-basic", "S/A / V/S", ["i-0ed008b89dee"]),
-                    view_item("dizz-hx-cc", "Chief complaint / Onset", ["i-ee4e51907a91"]),
-                    view_item("dizz-hx-pi", "Present illness", ["i-295d2b8c0877"]),
-                ]},
-                {"title": "Past · Social · Drug history", "items": [
-                    view_item("dizz-hx-past", "Operation / Admission / HTN / DM / Hepatitis / Pulmonary tuberculosis", ["i-f9672a36bab3", "i-090b46250227"]),
-                    view_item("dizz-hx-social", "Smoking / Alcohol / Pack-years / Current smoking", ["i-3789fe7ad282"]),
-                    view_item("dizz-hx-medication", "Medication", ["i-18572f0f6fd3"]),
-                ]},
-                {"title": "Review of systems", "items": [
-                    view_item("dizz-hx-ros", "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness", ["i-f1940c9b999a"]),
-                ]},
+                *neuro_history_groups("dizz"),
                 {"title": "Dizziness", "items": [
                     view_item("dizz-hx-pattern", "Pattern: Vertigo / Presyncope / Lightheadedness / Disequilibrium", ["i-6ad27ea2b2e4", "i-2e37d0e92ac5"], "빙빙 도는지, 쓰러질 것 같은지, 기운이 없는지, 보행이 이상한지 확인"),
                     view_item("dizz-hx-trs", "True rotating sensation (TRS)", ["i-cdb419f99f24", "i-6caa8883d154", "i-6a49a5ad9c82"]),
@@ -488,8 +473,8 @@ curated_layouts = {
                     view_item("chest-hx-factor", "Aggravating / Alleviating factors", ["i-bf595e446444"]),
                     view_item("chest-hx-associated", "Associated symptoms", ["i-ae5de500815f"]),
                 ]},
-                {"title": "Past · Drug history", "items": [
-                    view_item("chest-hx-past", "Operation Hx / Medication Hx / Underlying disease", ["i-bdecab5aa049"]),
+                {"title": "History", "items": [
+                    view_item("chest-hx-past", "Medical Hx (U/D Drug Adm Op)", ["i-bdecab5aa049"]),
                 ]},
             ]},
         ]
@@ -548,7 +533,7 @@ curated_layouts = {
         "sections": [
             {"id": "peds-common-view-history", "title": "Hx", "kind": "history", "groups": [
                 {"title": "General · Birth history", "items": [
-                    view_item("peds-common-hx-vital", "Vital signs: T / P / R / BP", ["i-88fe282cb4fe"]),
+                    view_item("peds-common-hx-vital", "V/S", ["i-88fe282cb4fe"]),
                     view_item("peds-common-hx-neonate", "Neonate: Current weight / Gestational week / Vaginal delivery or C-section / Birth asphyxia", ["i-88fe282cb4fe", "i-52e3c96499b8"]),
                     view_item("peds-common-hx-mother", "Maternal problem", ["i-0ed4387ab7a9"]),
                 ]},
@@ -578,8 +563,8 @@ curated_layouts = {
     "constipation": {
         "sections": [
             {"id": "constipation-view-history", "title": "Hx", "kind": "history", "groups": [
-                {"title": "Past · Drug history", "items": [
-                    view_item("constipation-hx-past", "Operation Hx / Medication Hx / Underlying disease", ["i-a0dbc0b8eaec"]),
+                {"title": "History", "items": [
+                    view_item("constipation-hx-past", "Medical Hx (U/D Drug Adm Op)", ["i-a0dbc0b8eaec"]),
                 ]},
                 {"title": "Review of systems", "items": [
                     view_item("constipation-hx-ros", "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea", ["i-473758685a66"]),
@@ -659,7 +644,7 @@ curated_layouts = {
                     view_item("seizure-hx-family", "Family Hx / Personal Hx", ["i-aa2f3fa3f103", "i-a892e9cfe5c3"]),
                     view_item("seizure-hx-nutrition", "Nutritional status", ["i-c181139b0f70", "i-a892e9cfe5c3"]),
                     view_item("seizure-hx-medication", "Antiepileptic medication / Last dose time", ["i-9fe7bc643a6a", "i-60884bae711f"]),
-                    view_item("seizure-hx-alcohol", "Last alcohol intake time", ["i-5ae8a078122d", "i-60884bae711f"]),
+                    view_item("seizure-hx-alcohol", "Last alcohol", ["i-5ae8a078122d", "i-60884bae711f"]),
                     view_item("seizure-hx-sleep", "Sleep hours per day", ["i-821430aff642", "i-60884bae711f"]),
                 ]},
             ]},
@@ -751,7 +736,7 @@ curated_layouts = {
                     view_item("pregnancy-hx-lmp", "LMP", ["i-0138e8dfa9af"]),
                     view_item("pregnancy-hx-edc", "Estimated date of confinement (EDC)", ["i-57925bf76ebf"]),
                     view_item("pregnancy-hx-npo", "NPO time", ["i-1109f9f55fe5", "i-0c081eadaa0e"]),
-                    view_item("pregnancy-hx-operation", "Operation Hx", ["i-ff7aec9585a2"]),
+                    view_item("pregnancy-hx-operation", "Op Hx", ["i-ff7aec9585a2"]),
                 ]},
             ]},
             {"id": "pregnancy-view-reference", "title": "참고사항", "kind": "note", "groups": [
@@ -822,7 +807,7 @@ curated_layouts = {
                 {"title": "Cough", "items": [
                     view_item("cough-hx-sound", "Cough sound: Barking or usual cough", ["i-3368440da93b"]),
                     view_item("cough-hx-position", "Worse when supine / Hoarseness", ["i-3368440da93b"]),
-                    view_item("cough-hx-atopy", "Atopy·Asthma personal Hx / Family Hx", ["i-3368440da93b"]),
+                    view_item("cough-hx-atopy", "Atopy/Asthma PHx / FHx", ["i-3368440da93b"]),
                 ]},
             ]},
             {"id": "cough-view-exam", "title": "PEx", "kind": "exam", "groups": [
@@ -892,7 +877,7 @@ curated_layouts = {
                     view_item("eye-hx-vision", "Blurred vision / Diplopia / Baseline vision and change", ["i-d0723942eb28", "i-cec96462eb1a", "i-18279ab2c20f"]),
                 ]},
                 {"title": "Past history", "items": [
-                    view_item("eye-hx-past", "Ophthalmologic Hx", ["i-f7aed3e8baa4"]),
+                    view_item("eye-hx-past", "OT HX", ["i-f7aed3e8baa4"]),
                 ]},
             ]},
             {"id": "eye-view-exam", "title": "PEx", "kind": "exam", "groups": [
@@ -933,8 +918,8 @@ curated_layouts = {
                 {"title": "Present illness", "items": [
                     view_item("epistaxis-hx-bleeding", "Bleeding amount / Onset time / Current active bleeding", ["i-4a6311b2bab7"]),
                 ]},
-                {"title": "Past · Drug history", "items": [
-                    view_item("epistaxis-hx-background", "Medication / HTN Hx", ["i-ca15bdb71320"]),
+                {"title": "History", "items": [
+                    view_item("epistaxis-hx-background", "Drug / HTN Hx", ["i-ca15bdb71320"]),
                 ]},
             ]},
             {"id": "epistaxis-view-exam", "title": "PEx", "kind": "exam", "groups": [
@@ -953,15 +938,14 @@ curated_layouts = {
     "psychiatry-interview": {
         "sections": [
             {"id": "psychiatry-view-history", "title": "Hx", "kind": "history", "groups": [
-                {"title": "Chief complaint · Present illness", "items": [
-                    view_item("psychiatry-hx-cc", "Chief complaint", ["i-93bec4f5a11f", "i-783f0ccc8ad0"]),
-                    view_item("psychiatry-hx-onset", "Onset: #1 / #2", ["i-a3f32e80a086", "i-1cfcd0419c4d", "i-48e0d543b3fc"]),
+                {"title": "Basic", "items": [
+                    view_item("psychiatry-hx-cc", "CC", ["i-93bec4f5a11f", "i-783f0ccc8ad0", "i-a3f32e80a086", "i-1cfcd0419c4d", "i-48e0d543b3fc"]),
                     view_item("psychiatry-hx-current", "초진 당시 증상 유무", ["i-b6b3279a5fe5"]),
-                    view_item("psychiatry-hx-stress", "Present illness / 최근 stress factor", ["i-504770b9ef6c", "i-326344007df5"]),
+                    view_item("psychiatry-hx-stress", "PI / 최근 stress factor", ["i-504770b9ef6c", "i-326344007df5"]),
                 ]},
                 {"title": "Past psychiatric · Family history", "items": [
-                    view_item("psychiatry-hx-past", "Past psychiatric Hx / Family Hx", ["i-fd017583932e", "i-f97606906869"]),
-                    view_item("psychiatry-hx-compliance", "Medication compliance", ["i-37fe40251ce9"], "정신과적 과거력이 있는 경우"),
+                    view_item("psychiatry-hx-past", "Past NP Hx / FHx", ["i-fd017583932e", "i-f97606906869"]),
+                    view_item("psychiatry-hx-compliance", "Drug compliance", ["i-37fe40251ce9"], "정신과적 과거력이 있는 경우"),
                     view_item("psychiatry-hx-discharge", "마지막 퇴원 이후 경과", ["i-0813ce0b8951"], "입퇴원력이 있는 경우"),
                     view_item("psychiatry-hx-first", "이전에도 같은 증상이 있었는지 / First episode인지", ["i-946e076984ba"], "정신과적 과거력이 없는 경우"),
                 ]},
@@ -1180,7 +1164,7 @@ symptom_abbreviations = [
     {"label": "FUND HIS", "expansion": ["Frequency", "Urgency", "Nocturia", "Dysuria", "Hesitancy", "Incomplete emptying", "Straining"]},
 ]
 
-data = {"schemaVersion": 1, "contentVersion": "2026-09-27-beta.12", "categories": categories,
+data = {"schemaVersion": 1, "contentVersion": "2026-09-27-beta.13", "categories": categories,
         "sections": list(groups.values()), "complaints": complaints,
         "symptomAbbreviations": symptom_abbreviations,
         "referenceSections": ["routine-history","routine-exam","handover-general"]}
