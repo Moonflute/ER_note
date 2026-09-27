@@ -8,6 +8,7 @@
   };
   const compactViewPreferenceKey = "er-note-compact-view";
   const legacyAbbreviationPreferenceKey = "er-note-symptom-abbreviations";
+  const redundantGroupTitles = new Set(["Basic", "History", "Background"]);
   const state = { data: null, homeScroll: 0, route: null, currentItems: [], checked: new Map(), compactView: true };
   let sections;
   let complaints;
@@ -16,15 +17,7 @@
   const orderedCategories = () => [...state.data.categories].sort((a, b) => Number(a.secondary) - Number(b.secondary) || a.order - b.order);
   const categoryOf = (id) => state.data.categories.find((category) => category.id === id);
   const ccUrl = (id) => `#cc/${encodeURIComponent(id)}`;
-  const badge = (text, muted = false) => `<span class="badge${muted ? " muted" : ""}">${escape(text)}</span>`;
   const hasContent = (complaint) => complaint.status !== "missing" && [...complaint.sectionIds, ...complaint.sharedSectionIds].some((id) => sections.get(id)?.items.length);
-
-  function complaintBadges(complaint, includeScope = true) {
-    const badges = [];
-    if (includeScope && complaint.scope === "pediatric" && !complaint.name.includes("소아")) badges.push(badge("소아"));
-    if (includeScope && complaint.scope === "psychiatric") badges.push(badge("정신과"));
-    return badges.join("");
-  }
 
   function complaintCardSpan(name) {
     const compactLength = Array.from(String(name).replace(/\s/g, "")).length;
@@ -35,7 +28,7 @@
 
   function complaintCard(complaint) {
     const span = complaintCardSpan(complaint.name);
-    return `<a class="cc-card span-${span}" href="${ccUrl(complaint.id)}"><span><span class="cc-name">${escape(complaint.name)}</span><span class="cc-meta">${complaintBadges(complaint, false)}</span></span></a>`;
+    return `<a class="cc-card span-${span}" href="${ccUrl(complaint.id)}"><span class="cc-name">${escape(complaint.name)}</span></a>`;
   }
 
   function renderHome() {
@@ -56,7 +49,7 @@
       if (!items.length) return "";
       return `<section class="category${category.secondary ? " secondary" : ""}${category.id === "09" ? " pediatric" : ""}" aria-labelledby="category-${escape(category.id)}"><div class="category-title"><h3 id="category-${escape(category.id)}">${escape(category.name)}</h3></div><div class="category-cards">${items.map(complaintCard).join("")}</div></section>`;
     }).join("");
-    document.querySelector("#home-results").innerHTML = `<section aria-labelledby="catalog-title"><div class="section-heading catalog-heading"><h2 id="catalog-title">초진</h2><div class="catalog-tools"><a class="common-shortcut" href="#common">공통 문진·진찰</a><span class="count">${matching.length}</span></div></div><div class="category-grid">${categoryCards}</div></section>`;
+    document.querySelector("#home-results").innerHTML = `<section aria-labelledby="catalog-title"><div class="section-heading catalog-heading"><h2 id="catalog-title">초진</h2></div><div class="category-grid">${categoryCards}</div></section>`;
   }
 
   function displayItemText(item) {
@@ -105,7 +98,7 @@
   }
 
   function layoutSectionMarkup(section) {
-    return `<section class="content-section" aria-labelledby="section-${escape(section.id)}"><header class="content-section-header"><h2 id="section-${escape(section.id)}">${escape(section.title)}</h2></header>${section.groups.map((group) => `<section class="content-group"><h3>${escape(group.title)}</h3>${groupItemsMarkup(group)}</section>`).join("")}</section>`;
+    return `<section class="content-section" aria-labelledby="section-${escape(section.id)}"><header class="content-section-header"><h2 id="section-${escape(section.id)}">${escape(section.title)}</h2></header>${section.groups.map((group) => `<section class="content-group">${redundantGroupTitles.has(group.title) ? "" : `<h3>${escape(group.title)}</h3>`}${groupItemsMarkup(group)}</section>`).join("")}</section>`;
   }
 
   function referenceGroupMarkup(group) {
@@ -116,14 +109,14 @@
     return referenceGroupMarkup({ title: section.title, items: section.items });
   }
 
-  function renderDetail(complaint, common = false) {
-    const name = common ? "공통 문진·진찰" : complaint.name;
-    const category = common ? null : categoryOf(complaint.categoryId);
-    const ids = common ? state.data.referenceSections : [...complaint.sharedSectionIds, ...complaint.sectionIds];
+  function renderDetail(complaint) {
+    const name = complaint.name;
+    const category = categoryOf(complaint.categoryId);
+    const ids = [...complaint.sharedSectionIds, ...complaint.sectionIds];
     const detailSections = [...new Set(ids)].map((id) => sections.get(id)).filter(Boolean);
     const primary = ["history", "exam"].flatMap((kind) => detailSections.filter((section) => section.kind === kind));
     const references = detailSections.filter((section) => ["note", "example"].includes(section.kind));
-    const layoutSections = common ? [] : (complaint.layout?.sections ?? []);
+    const layoutSections = complaint.layout?.sections ?? [];
     const layoutPrimary = layoutSections.filter((section) => ["history", "exam"].includes(section.kind));
     const layoutReferences = layoutSections.filter((section) => ["note", "example"].includes(section.kind));
     const primaryMarkup = layoutPrimary.length ? layoutPrimary.map(layoutSectionMarkup).join("") : primary.map(sectionMarkup).join("");
@@ -134,7 +127,7 @@
       ? layoutPrimary.flatMap((section) => section.groups.flatMap((group) => group.items.map((item) => item.id)))
       : primary.flatMap((section) => section.items.map((item) => item.id))))];
     document.title = `${name} · ER 초진`;
-    main.innerHTML = `<div class="shell detail-shell"><header class="detail-heading"><p class="eyebrow">${category ? escape(category.name) : "공통"}</p><div class="detail-title-row"><h1>${escape(name)}</h1><div class="detail-progress"><span class="progress" id="check-progress" aria-live="polite"></span><button class="text-button reset-button" type="button" id="reset-checks" hidden>초기화</button></div></div><div class="cc-meta">${common ? "" : complaintBadges(complaint)}</div></header>
+    main.innerHTML = `<div class="shell detail-shell"><header class="detail-heading"><p class="eyebrow">${escape(category.name)}</p><div class="detail-title-row"><h1>${escape(name)}</h1><div class="detail-progress"><span class="progress" id="check-progress" aria-live="polite"></span><button class="text-button reset-button" type="button" id="reset-checks" hidden>초기화</button></div></div></header>
       <div id="primary-content">${primaryMarkup}</div>
       ${referenceMarkup ? `<section id="reference-content" aria-labelledby="reference-title"><header class="reference-heading"><h2 id="reference-title">참고사항</h2></header><div class="reference-board">${referenceMarkup}</div></section>` : ""}</div>`;
     updateProgress();
@@ -173,9 +166,6 @@
         state.route = "unknown";
         main.innerHTML = '<div class="shell"><div class="empty-state"><h1>증상을 찾을 수 없습니다</h1><p>증상 목록에서 다시 선택해 주세요.</p><a class="back-link" href="#">증상 목록으로</a></div></div>';
       }
-    } else if (hash === "#common") {
-      state.route = "common";
-      renderDetail(null, true);
     } else {
       state.route = "home";
       renderHome();
@@ -225,7 +215,7 @@
             ? legacyCompactView === "1"
             : true;
       } catch {}
-      const response = await fetch("./data/chief-complaints.json?v=19");
+      const response = await fetch("./data/chief-complaints.json?v=20");
       if (!response.ok) throw new Error("문진 자료를 불러오지 못했습니다.");
       state.data = await response.json();
       sections = new Map(state.data.sections.map((section) => [section.id, section]));
@@ -235,6 +225,12 @@
       main.innerHTML = `<div class="load-error"><h1>자료를 불러오지 못했습니다</h1><p>${escape(error.message)} 잠시 후 다시 시도해 주세요.</p><button class="text-button" type="button" id="retry-load">다시 불러오기</button></div>`;
       document.querySelector("#retry-load").addEventListener("click", () => { main.innerHTML = '<div class="loading" role="status">문진 자료를 불러오는 중…</div>'; void start(); });
     }
+  }
+
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      void navigator.serviceWorker.register("./sw.js").catch(() => {});
+    }, { once: true });
   }
 
   void start();

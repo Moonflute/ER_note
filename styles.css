@@ -34,16 +34,10 @@ svg { display: block; flex: 0 0 auto; }
 .shell { max-width: 1200px; margin: 0 auto; padding: 18px 24px 24px; }
 .home-shell { max-width: none; }
 .section-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
-.section-heading .count { color: var(--muted); font-size: 12px; font-weight: 500; white-space: nowrap; }
 .cc-card { display: flex; align-items: center; min-height: 32px; padding: 4px 7px; border: 1px solid var(--line); border-radius: 5px; background: var(--paper); gap: 5px; }
 .cc-card:hover { border-color: #bcbcbc; background: #f7f7f7; }
 .cc-name { display: block; font-weight: 600; font-size: 14px; line-height: 1.4; overflow-wrap: anywhere; }
-.cc-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 5px; }
-.cc-meta:empty { display: none; }
-.badge { display: inline-flex; align-items: center; padding: 1px 6px; border-radius: 4px; background: var(--soft); color: #9f1f29; font-size: 11px; line-height: 1.6; font-weight: 600; }
-.common-shortcut { display: inline-flex; align-items: center; justify-content: center; min-height: 32px; padding: 4px 8px; border: 1px solid #cccccc; border-radius: 5px; color: var(--accent); font-size: 12px; font-weight: 650; }
 .catalog-heading { margin-bottom: 10px; }
-.catalog-tools { display: flex; align-items: center; gap: 12px; }
 .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 520px), 1fr)); column-gap: 28px; }
 .category { display: grid; grid-template-columns: 112px minmax(0, 1fr); align-items: start; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--line); }
 .category-title { padding-top: 6px; }
@@ -54,8 +48,6 @@ svg { display: block; flex: 0 0 auto; }
 .category .cc-card.span-2 { grid-column: span 2; }
 .category .cc-card.span-3 { grid-column: span 3; }
 .category .cc-name { font-size: 14px; }
-.home-shell .cc-card > span { display: flex; min-width: 0; align-items: center; justify-content: center; gap: 6px; }
-.home-shell .cc-meta { margin-top: 0; }
 .home-shell .cc-name { white-space: nowrap; }
 .abbreviation-toggle { position: fixed; right: calc(10px + env(safe-area-inset-right)); bottom: calc(9px + env(safe-area-inset-bottom)); z-index: 4; display: flex; align-items: center; gap: 4px; padding: 2px 4px; background: rgba(255, 255, 255, .92); color: #777777; font-size: 11px; line-height: 1.3; white-space: nowrap; }
 .abbreviation-toggle input { width: 12px; height: 12px; margin: 0; accent-color: #666666; }
@@ -68,7 +60,6 @@ svg { display: block; flex: 0 0 auto; }
 .detail-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
 .detail-title-row h1 { min-width: 0; font-size: 26px; }
 .detail-progress { display: flex; flex: 0 0 auto; align-items: center; justify-content: flex-end; gap: 5px; padding-top: 2px; }
-.detail-heading .cc-meta { margin-top: 5px; }
 .text-button { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 8px 12px; min-height: 48px; font-size: 13px; font-weight: 600; }
 .reset-button { min-height: 27px; padding: 3px 7px; border-radius: 4px; font-size: 11px; }
 .progress { color: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; white-space: nowrap; }
@@ -112,7 +103,6 @@ svg { display: block; flex: 0 0 auto; }
   .shell { padding: 12px 14px 22px; }
   h1 { font-size: 27px; }
   .cc-name { font-size: 13px; }
-  .cc-meta { gap: 4px; margin-top: 4px; }
   .category { grid-template-columns: 76px minmax(0, 1fr); gap: 8px; padding: 9px 0; }
   .category-title { padding-top: 6px; }
   .category-title h3 { font-size: 12px; white-space: nowrap; }

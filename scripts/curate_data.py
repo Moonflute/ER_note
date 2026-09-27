@@ -231,7 +231,8 @@ def peds_basic_group(prefix):
 
 def peds_birth_group(prefix):
     return {"title": "Birth history", "items": [
-        view_item(f"{prefix}-hx-neonate", "Neonate: Current weight / Gestational week / Vaginal delivery or C-section / Birth asphyxia", ["i-88fe282cb4fe", "i-52e3c96499b8"]),
+        view_item(f"{prefix}-hx-neonate-growth", "Neonate: Current weight / Gestational week", ["i-88fe282cb4fe", "i-52e3c96499b8"]),
+        view_item(f"{prefix}-hx-neonate-delivery", "Vaginal delivery or C-section / Birth asphyxia", ["i-52e3c96499b8"]),
         view_item(f"{prefix}-hx-mother", "Maternal problem", ["i-0ed4387ab7a9"]),
     ]}
 
@@ -241,7 +242,8 @@ def peds_ros_group(prefix, fccsr_sources=(), daily_sources=()):
         view_item(f"{prefix}-hx-nasal", "Nasal obstruction", ["i-52e3c96499b8", *fccsr_sources]),
         view_item(f"{prefix}-hx-anvcd", "Anorexia / Nausea / Vomiting / Constipation / Diarrhea", ["i-0ed4387ab7a9"], abbreviation="ANVCD"),
         view_item(f"{prefix}-hx-head-irritability", "Headache / Irritability", ["i-0ed4387ab7a9"]),
-        view_item(f"{prefix}-hx-daily", "Feeding / Activity / Urination / Sleeping: Fair or Poor", ["i-915a1e9fb598", *daily_sources]),
+        view_item(f"{prefix}-hx-feeding-activity", "Feeding / Activity: Fair or Poor", ["i-915a1e9fb598", *daily_sources]),
+        view_item(f"{prefix}-hx-urination-sleep", "Urination / Sleeping: Fair or Poor", ["i-915a1e9fb598", *daily_sources]),
         view_item(f"{prefix}-hx-appearance", "Appearance: Well or Ill / Irritable / Lethargic", ["i-2565eaefaa14"]),
     ]}
 
@@ -257,7 +259,8 @@ def peds_exam_groups(prefix, throat_sources=(), neck_sources=(), lung_sources=()
             view_item(f"{prefix}-pe-heart", "Heart murmur", ["i-adc3e02089cf"]),
         ]},
         {"title": "Abdomen", "items": [
-            view_item(f"{prefix}-pe-abd", "Bowel sound: Normoactive / Increased / Decreased · Palpation: Soft / Hard · Flat / Distended", ["i-aed40d3bdf5b", *bowel_sources]),
+            view_item(f"{prefix}-pe-bowel", "Bowel sound: Normoactive / Increased / Decreased", ["i-aed40d3bdf5b", *bowel_sources]),
+            view_item(f"{prefix}-pe-palpation", "Palpation: Soft / Hard · Flat / Distended", ["i-aed40d3bdf5b", *bowel_sources]),
         ]},
     ]
 
@@ -441,7 +444,8 @@ curated_layouts = {
                     view_item("dizz-hx-pattern", "Pattern: Vertigo / Presyncope / Lightheadedness / Disequilibrium", ["i-6ad27ea2b2e4", "i-2e37d0e92ac5"], "빙빙 도는지, 쓰러질 것 같은지, 기운이 없는지, 보행이 이상한지 확인"),
                     view_item("dizz-hx-trs", "True rotating sensation (TRS)", ["i-cdb419f99f24", "i-6caa8883d154", "i-6a49a5ad9c82"]),
                     view_item("dizz-hx-duration", "Duration / 회복까지 걸리는 시간", ["i-98a27e5fe646", "i-6a49a5ad9c82"]),
-                    view_item("dizz-hx-ear", "Tinnitus / Otalgia / Ear fullness / Hearing difficulty or loss / URI Hx", ["i-af4103b19fb5", "i-ab8e235e7ce3", "i-6caa8883d154"]),
+                    view_item("dizz-hx-ear", "Tinnitus / Otalgia / Ear fullness / Hearing difficulty or loss", ["i-af4103b19fb5", "i-ab8e235e7ce3", "i-6caa8883d154"]),
+                    view_item("dizz-hx-uri", "URI Hx", ["i-af4103b19fb5", "i-ab8e235e7ce3", "i-6caa8883d154"]),
                     view_item("dizz-hx-neuro", "동반된 neurologic deficit symptom", ["i-4796b70d2f28"], "반드시 확인하고 차팅"),
                 ]},
                 neuro_background_group("dizz"),
@@ -454,7 +458,9 @@ curated_layouts = {
                 ]},
                 {"title": "Gait · Cerebellar", "items": [
                     view_item("dizz-pe-gait", "Falling tendency / Tandem gait / Romberg test", ["i-69a715c63b8a", "i-83754277e4c2"]),
-                    view_item("dizz-pe-cerebellar", "Finger-to-finger / Finger-to-nose / Heel-to-shin / Rapid alternating movement / Positional dependency", ["i-b06a29883b36"]),
+                    view_item("dizz-pe-upper-coordination", "Finger-to-finger / Finger-to-nose / Rapid alternating movement", ["i-b06a29883b36"]),
+                    view_item("dizz-pe-lower-coordination", "Heel-to-shin", ["i-b06a29883b36"]),
+                    view_item("dizz-pe-positional", "Positional dependency", ["i-b06a29883b36"]),
                 ]},
             ]},
             {"id": "dizziness-view-reference", "title": "참고사항", "kind": "note", "groups": [
@@ -503,7 +509,9 @@ curated_layouts = {
         "sections": [
             {"id": "hematuria-view-history", "title": "Hx", "kind": "history", "groups": [
                 {"title": "Urinary symptoms", "items": [
-                    view_item("hematuria-hx-urinary", "Hematuria / Residual sensation / Frequency / Urgency / Hesitancy / Dysuria / Terminal dribbling / Nocturia / Incontinence / Narrow urine stream", ["i-bda12e23e084"], abbreviated_text="Hematuria / FUND HIS / Terminal dribbling / Incontinence / Narrow urine stream"),
+                    view_item("hematuria-hx-chief", "Hematuria", ["i-bda12e23e084"]),
+                    view_item("hematuria-hx-fundhis", "Frequency / Urgency / Nocturia / Dysuria / Hesitancy / Residual sensation", ["i-bda12e23e084"], abbreviated_text="FUND HIS"),
+                    view_item("hematuria-hx-other", "Incontinence / Terminal dribbling / Narrow urine stream", ["i-bda12e23e084"]),
                 ]},
             ]},
         ]
@@ -512,7 +520,9 @@ curated_layouts = {
         "sections": [
             {"id": "urinary-view-history", "title": "Hx", "kind": "history", "groups": [
                 {"title": "Urinary symptoms", "items": [
-                    view_item("urinary-hx-symptoms", "Residual sensation / Frequency / Urgency / Hesitancy / Dysuria / Hematuria / Terminal dribbling / Nocturia / Incontinence / Narrow urine stream", ["i-bda12e23e084"], abbreviated_text="FUND HIS / Hematuria / Terminal dribbling / Incontinence / Narrow urine stream"),
+                    view_item("urinary-hx-fundhis", "Frequency / Urgency / Nocturia / Dysuria / Hesitancy / Residual sensation", ["i-bda12e23e084"], abbreviated_text="FUND HIS"),
+                    view_item("urinary-hx-blood-control", "Hematuria / Incontinence", ["i-bda12e23e084"]),
+                    view_item("urinary-hx-stream", "Terminal dribbling / Narrow urine stream", ["i-bda12e23e084"]),
                 ]},
             ]},
         ]
@@ -521,7 +531,9 @@ curated_layouts = {
         "sections": [
             {"id": "incontinence-view-history", "title": "Hx", "kind": "history", "groups": [
                 {"title": "Urinary symptoms", "items": [
-                    view_item("incontinence-hx-urinary", "Incontinence / Residual sensation / Frequency / Urgency / Hesitancy / Dysuria / Hematuria / Terminal dribbling / Nocturia / Narrow urine stream", ["i-bda12e23e084"], abbreviated_text="Incontinence / FUND HIS / Hematuria / Terminal dribbling / Narrow urine stream"),
+                    view_item("incontinence-hx-chief", "Incontinence", ["i-bda12e23e084"]),
+                    view_item("incontinence-hx-fundhis", "Frequency / Urgency / Nocturia / Dysuria / Hesitancy / Residual sensation", ["i-bda12e23e084"], abbreviated_text="FUND HIS"),
+                    view_item("incontinence-hx-other", "Hematuria / Terminal dribbling / Narrow urine stream", ["i-bda12e23e084"]),
                 ]},
             ]},
         ]
@@ -567,7 +579,8 @@ curated_layouts = {
                     view_item("peds-common-pe-heart", "Heart murmur", ["i-adc3e02089cf"]),
                 ]},
                 {"title": "Abdomen", "items": [
-                    view_item("peds-common-pe-abd", "Bowel sound: Normoactive / Increased / Decreased · Palpation: Soft / Hard · Flat / Distended", ["i-aed40d3bdf5b"]),
+                    view_item("peds-common-pe-bowel", "Bowel sound: Normoactive / Increased / Decreased", ["i-aed40d3bdf5b"]),
+                    view_item("peds-common-pe-palpation", "Palpation: Soft / Hard · Flat / Distended", ["i-aed40d3bdf5b"]),
                 ]},
             ]},
         ]
@@ -629,7 +642,8 @@ curated_layouts = {
                     view_item("headache-hx-aura", "Aura / Prodrome", ["i-9fc7e16784c7", "i-29b81de03b58", "i-74fa33af7ce3"]),
                     view_item("headache-hx-analgesic", "Analgesic effect", ["i-9fc7e16784c7", "i-29b81de03b58", "i-9d87bd973952"]),
                     view_item("headache-hx-associated", "Nausea / Vomiting / Dizziness / Other associated symptoms", ["i-29b81de03b58", "i-9de2e117b6a9"]),
-                    view_item("headache-hx-factor", "Trauma / Family Hx / Sleep disturbance / Tenderness point", ["i-79bdeb7f9c37"]),
+                    view_item("headache-hx-trauma-tenderness", "Trauma / Tenderness point", ["i-79bdeb7f9c37"]),
+                    view_item("headache-hx-family-sleep", "Family Hx / Sleep disturbance", ["i-79bdeb7f9c37"]),
                 ]},
                 neuro_background_group("headache"),
                 neuro_ros_group("headache"),
@@ -727,11 +741,16 @@ curated_layouts = {
         "sections": [
             {"id": "ob-view-history", "title": "Hx", "kind": "history", "groups": [
                 {"title": "Symptoms", "items": [
-                    view_item("ob-hx-vaginal", "Vaginal bleeding / Vaginal discharge / Abnormal bleeding / Discharge change / Bleeding amount", ["i-49c213f030fe", "i-ccbca1cd1f76"]),
+                    view_item("ob-hx-bleeding", "Vaginal bleeding / Abnormal bleeding / Bleeding amount", ["i-49c213f030fe", "i-ccbca1cd1f76"]),
+                    view_item("ob-hx-discharge", "Vaginal discharge / Discharge change", ["i-49c213f030fe", "i-ccbca1cd1f76"]),
                 ]},
                 {"title": "Gynecologic history", "items": [
-                    view_item("ob-hx-background", "Previous gynecologic care / TPAL / Marital status / NPO time", ["i-1109f9f55fe5"], "필요하면 보호자를 내보내고 환자와 단독으로 확인"),
-                    view_item("ob-hx-menstrual", "LMP / Menstrual cycle / Duration / Amount / Dysmenorrhea", ["i-6ea8e54d6744"]),
+                    view_item("ob-hx-care", "Previous gynecologic care", ["i-1109f9f55fe5"], "필요하면 보호자를 내보내고 환자와 단독으로 확인"),
+                    view_item("ob-hx-tpal", "TPAL", ["i-1109f9f55fe5"]),
+                    view_item("ob-hx-marital", "Marital status", ["i-1109f9f55fe5"]),
+                    view_item("ob-hx-npo", "NPO time", ["i-1109f9f55fe5"]),
+                    view_item("ob-hx-menstrual-cycle", "LMP / Menstrual cycle", ["i-6ea8e54d6744"]),
+                    view_item("ob-hx-menstrual-symptoms", "Duration / Amount / Dysmenorrhea", ["i-6ea8e54d6744"]),
                     view_item("ob-hx-sexual", "Last coitus / Dyspareunia", ["i-68d84b1f6aac"]),
                 ]},
             ]},
@@ -749,7 +768,8 @@ curated_layouts = {
                 {"title": "Current pregnancy", "items": [
                     view_item("pregnancy-hx-iup", "IUP: 정확한 gestational week and day / OT", ["i-10e0162d3aee"]),
                     view_item("pregnancy-hx-labor", "진통·배뭉침 / 주기 / 지속시간", ["i-c75d69226429"]),
-                    view_item("pregnancy-hx-vaginal", "Vaginal bleeding / Vaginal discharge / Abnormal bleeding / Discharge change / Bleeding amount", ["i-49c213f030fe", "i-ccbca1cd1f76"]),
+                    view_item("pregnancy-hx-bleeding", "Vaginal bleeding / Abnormal bleeding / Bleeding amount", ["i-49c213f030fe", "i-ccbca1cd1f76"]),
+                    view_item("pregnancy-hx-discharge", "Vaginal discharge / Discharge change", ["i-49c213f030fe", "i-ccbca1cd1f76"]),
                     view_item("pregnancy-hx-lmp", "LMP", ["i-0138e8dfa9af"]),
                     view_item("pregnancy-hx-edc", "Estimated date of confinement (EDC)", ["i-57925bf76ebf"]),
                 ]},
@@ -759,8 +779,10 @@ curated_layouts = {
                     view_item("pregnancy-hx-operation", "Op Hx", ["i-ff7aec9585a2"]),
                 ]},
                 {"title": "Gynecologic history", "items": [
-                    view_item("pregnancy-hx-background", "Previous gynecologic care / Marital status", ["i-1109f9f55fe5"], "필요하면 보호자를 내보내고 환자와 단독으로 확인"),
-                    view_item("pregnancy-hx-menstrual", "LMP / Menstrual cycle / Duration / Amount / Dysmenorrhea", ["i-6ea8e54d6744"]),
+                    view_item("pregnancy-hx-care", "Previous gynecologic care", ["i-1109f9f55fe5"], "필요하면 보호자를 내보내고 환자와 단독으로 확인"),
+                    view_item("pregnancy-hx-marital", "Marital status", ["i-1109f9f55fe5"]),
+                    view_item("pregnancy-hx-menstrual-cycle", "LMP / Menstrual cycle", ["i-6ea8e54d6744"]),
+                    view_item("pregnancy-hx-menstrual-symptoms", "Duration / Amount / Dysmenorrhea", ["i-6ea8e54d6744"]),
                     view_item("pregnancy-hx-sexual", "Last coitus / Dyspareunia", ["i-68d84b1f6aac"]),
                 ]},
             ]},
@@ -910,7 +932,8 @@ curated_layouts = {
         "sections": [
             {"id": "eye-view-history", "title": "Hx", "kind": "history", "groups": [
                 {"title": "Symptoms", "items": [
-                    view_item("eye-hx-symptoms", "Ocular pain / Foreign body sensation / Conjunctival injection / Discharge", ["i-28ecfc7fcdda", "i-e20bddff3b1d", "i-d16c7ea78bb3", "i-4f259c29f187"]),
+                    view_item("eye-hx-pain", "Ocular pain / Foreign body sensation", ["i-28ecfc7fcdda", "i-e20bddff3b1d"]),
+                    view_item("eye-hx-surface", "Conjunctival injection / Discharge", ["i-d16c7ea78bb3", "i-4f259c29f187"]),
                     view_item("eye-hx-vision", "Blurred vision / Diplopia / Baseline vision and change", ["i-d0723942eb28", "i-cec96462eb1a", "i-18279ab2c20f"]),
                 ]},
                 {"title": "Past history", "items": [
@@ -934,7 +957,8 @@ curated_layouts = {
         "sections": [
             {"id": "ear-view-history", "title": "Hx", "kind": "history", "groups": [
                 {"title": "Symptoms · Exposure", "items": [
-                    view_item("ear-hx-symptoms", "Otalgia / Tinnitus / Ear fullness / Hearing difficulty or loss / Dizziness", ["i-9ed2447b8d64", "i-00f4e17f31db", "i-7eda19f1989e", "i-fdd513cc18af"]),
+                    view_item("ear-hx-ear-symptoms", "Otalgia / Tinnitus / Ear fullness", ["i-9ed2447b8d64", "i-00f4e17f31db", "i-7eda19f1989e", "i-fdd513cc18af"]),
+                    view_item("ear-hx-hearing-dizziness", "Hearing difficulty or loss / Dizziness", ["i-9ed2447b8d64", "i-00f4e17f31db", "i-7eda19f1989e", "i-fdd513cc18af"]),
                     view_item("ear-hx-local", "Redness / Swelling", ["i-9ed2447b8d64"]),
                     view_item("ear-hx-exposure", "URI symptoms / Trauma / Recent water exposure", ["i-5a33dba2ab00", "i-87611c37fa0b"]),
                 ]},
@@ -1203,7 +1227,7 @@ symptom_abbreviations = [
     {"label": "FUND HIS", "expansion": ["Frequency", "Urgency", "Nocturia", "Dysuria", "Hesitancy", "Incomplete emptying", "Straining"]},
 ]
 
-data = {"schemaVersion": 1, "contentVersion": "2026-09-27-beta.19", "categories": categories,
+data = {"schemaVersion": 1, "contentVersion": "2026-09-27-beta.20", "categories": categories,
         "sections": list(groups.values()), "complaints": complaints,
         "symptomAbbreviations": symptom_abbreviations,
         "referenceSections": ["routine-history","routine-exam","handover-general"]}

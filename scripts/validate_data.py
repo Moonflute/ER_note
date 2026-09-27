@@ -161,8 +161,23 @@ for complaint_id, expected_titles in expected_history_group_order.items():
     complaint = next(cc for cc in data["complaints"] if cc["id"] == complaint_id)
     history = next(section for section in complaint["layout"]["sections"] if section["kind"] == "history")
     require([group["title"] for group in history["groups"]] == expected_titles, f"Symptom history order is incorrect: {complaint_id}")
-require(layout_items["hematuria-hx-urinary"]["text"].startswith("Hematuria /"), "Hematuria is not first in its complaint checklist")
-require(layout_items["incontinence-hx-urinary"]["text"].startswith("Incontinence /"), "Incontinence is not first in its complaint checklist")
+require(layout_items["hematuria-hx-chief"]["text"] == "Hematuria", "Hematuria chief symptom is not independently checkable")
+require(layout_items["incontinence-hx-chief"]["text"] == "Incontinence", "Incontinence chief symptom is not independently checkable")
+for item_id in ("hematuria-hx-fundhis", "urinary-hx-fundhis", "incontinence-hx-fundhis"):
+    require(layout_items[item_id].get("abbreviatedText") == "FUND HIS", f"Urinary symptom set is not compacted correctly: {item_id}")
+for prefix in ("peds-common", "fever", "vomiting", "diarrhea", "cough", "peds-abd", "peds-seizure"):
+    require(f"{prefix}-hx-neonate-growth" in layout_items and f"{prefix}-hx-neonate-delivery" in layout_items, f"Pediatric birth history is not split: {prefix}")
+for item_id in ("ob-hx-bleeding", "ob-hx-discharge", "pregnancy-hx-bleeding", "pregnancy-hx-discharge", "dizz-pe-upper-coordination", "dizz-pe-lower-coordination", "dizz-pe-positional"):
+    require(item_id in layout_items, f"Long checklist item was not split: {item_id}")
+app_source = (ROOT / "app.js").read_text(encoding="utf-8")
+index_source = (ROOT / "index.html").read_text(encoding="utf-8")
+service_worker_source = (ROOT / "sw.js").read_text(encoding="utf-8")
+require("common-shortcut" not in app_source and "#common" not in app_source, "Removed common shortcut is still rendered")
+require("catalog-tools" not in app_source and '${matching.length}' not in app_source, "Home catalog count is still rendered")
+require('serviceWorker.register("./sw.js")' in app_source, "Service worker is not registered")
+for asset in ("./styles.css?v=21", "./app.js?v=32", "./data/chief-complaints.json?v=20"):
+    require(asset in service_worker_source, f"Offline cache asset is stale: {asset}")
+require('./styles.css?v=21' in index_source and './app.js?v=32' in index_source, "HTML asset versions do not match offline cache")
 for sid in ("np-ex1", "np-template", "np-ex2", "np-ex3", "np-response"):
     require(sections[sid]["kind"] == "example", f"Example placed in main checklist: {sid}")
 for source in sources.values():
