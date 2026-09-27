@@ -9,7 +9,8 @@
   const icons = {
     back: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m14 5-7 7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
   };
-  const state = { data: null, homeScroll: 0, route: null, currentItems: [], checked: new Map() };
+  const abbreviationPreferenceKey = "er-note-symptom-abbreviations";
+  const state = { data: null, homeScroll: 0, route: null, currentItems: [], checked: new Map(), abbreviateSymptoms: false };
   let sections;
   let complaints;
 
@@ -44,6 +45,7 @@
     main.innerHTML = `<div class="shell home-shell">
       <h1 class="sr-only">ER Quick Reference</h1>
       <div id="home-results"></div>
+      <label class="abbreviation-toggle"><input type="checkbox" data-abbreviation-toggle ${state.abbreviateSymptoms ? "checked" : ""}>증상 약어로 표시</label>
     </div>`;
     renderHomeResults();
   }
@@ -59,8 +61,16 @@
     document.querySelector("#home-results").innerHTML = `<section aria-labelledby="catalog-title"><div class="section-heading catalog-heading"><h2 id="catalog-title">초진</h2><div class="catalog-tools"><a class="common-shortcut" href="#common">공통 문진·진찰</a><span class="count">${matching.length}</span></div></div><div class="category-grid">${categoryCards}</div></section>`;
   }
 
+  function displayItemText(item) {
+    if (!state.abbreviateSymptoms) return item.text;
+    return (state.data.symptomAbbreviations ?? []).reduce((text, abbreviation) => {
+      const expansion = abbreviation.expansion.join(" / ");
+      return text.replaceAll(expansion, abbreviation.label);
+    }, item.text);
+  }
+
   function itemCopy(item) {
-    return `<span class="item-copy">${item.condition ? `<span class="condition">${escape(item.condition)}</span>` : ""}<span class="item-text">${escape(item.text)}</span>${item.note ? `<small class="item-note">* ${escape(item.note)}</small>` : ""}</span>`;
+    return `<span class="item-copy">${item.condition ? `<span class="condition">${escape(item.condition)}</span>` : ""}<span class="item-text">${escape(displayItemText(item))}</span>${item.note ? `<small class="item-note">* ${escape(item.note)}</small>` : ""}</span>`;
   }
 
   function itemMarkup(item) {
@@ -164,6 +174,11 @@
   });
 
   main.addEventListener("change", (event) => {
+    if (event.target.matches("[data-abbreviation-toggle]")) {
+      state.abbreviateSymptoms = event.target.checked;
+      try { localStorage.setItem(abbreviationPreferenceKey, state.abbreviateSymptoms ? "1" : "0"); } catch {}
+      return;
+    }
     if (!event.target.matches("[data-check-item]")) return;
     if (!state.checked.has(state.route)) state.checked.set(state.route, new Set());
     const checked = state.checked.get(state.route);
@@ -182,7 +197,8 @@
 
   async function start() {
     try {
-      const response = await fetch("./data/chief-complaints.json?v=9");
+      try { state.abbreviateSymptoms = localStorage.getItem(abbreviationPreferenceKey) === "1"; } catch {}
+      const response = await fetch("./data/chief-complaints.json?v=10");
       if (!response.ok) throw new Error("문진 자료를 불러오지 못했습니다.");
       state.data = await response.json();
       sections = new Map(state.data.sections.map((section) => [section.id, section]));

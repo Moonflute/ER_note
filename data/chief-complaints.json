@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-09-27-beta.9",
+  "contentVersion": "2026-09-27-beta.10",
   "categories": [
     {
       "id": "00",
@@ -8177,6 +8177,40 @@
       "status": "missing",
       "sharedSectionIds": [],
       "sectionIds": []
+    }
+  ],
+  "symptomAbbreviations": [
+    {
+      "label": "FCCSR",
+      "expansion": [
+        "Fever",
+        "Chill",
+        "Cough",
+        "Sputum",
+        "Rhinorrhea"
+      ]
+    },
+    {
+      "label": "ANVCD",
+      "expansion": [
+        "Anorexia",
+        "Nausea",
+        "Vomiting",
+        "Constipation",
+        "Diarrhea"
+      ]
+    },
+    {
+      "label": "FUND HIS",
+      "expansion": [
+        "Frequency",
+        "Urgency",
+        "Nocturia",
+        "Dysuria",
+        "Hesitancy",
+        "Incomplete emptying",
+        "Straining"
+      ]
     }
   ],
   "referenceSections": [

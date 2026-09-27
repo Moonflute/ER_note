@@ -1180,8 +1180,15 @@ for cid, records in catalog.items():
             item["layout"] = curated_layouts[iid]
         complaints.append(item)
 
-data = {"schemaVersion": 1, "contentVersion": "2026-09-27-beta.9", "categories": categories,
+symptom_abbreviations = [
+    {"label": "FCCSR", "expansion": ["Fever", "Chill", "Cough", "Sputum", "Rhinorrhea"]},
+    {"label": "ANVCD", "expansion": ["Anorexia", "Nausea", "Vomiting", "Constipation", "Diarrhea"]},
+    {"label": "FUND HIS", "expansion": ["Frequency", "Urgency", "Nocturia", "Dysuria", "Hesitancy", "Incomplete emptying", "Straining"]},
+]
+
+data = {"schemaVersion": 1, "contentVersion": "2026-09-27-beta.10", "categories": categories,
         "sections": list(groups.values()), "complaints": complaints,
+        "symptomAbbreviations": symptom_abbreviations,
         "referenceSections": ["routine-history","routine-exam","handover-general"]}
 (DATA / "chief-complaints.json").write_text(json.dumps(data, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
 provenance = {"schemaVersion": 1, "sources": archive["sources"],

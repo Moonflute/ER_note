@@ -26,10 +26,13 @@ blocks = {b["id"]: b for s in sources.values() for b in s["blocks"]}
 sections = {s["id"]: s for s in data["sections"]}
 items = {i["id"]: i for s in sections.values() for i in s["items"]}
 categories = {c["id"] for c in data["categories"]}
+abbreviations = data.get("symptomAbbreviations", [])
 require(len(sections) == len(data["sections"]), "Duplicate section IDs")
 require(len(items) == sum(len(s["items"]) for s in data["sections"]), "Duplicate item IDs")
 require(set(blocks) == set(provenance["assignments"]), "Source blocks not completely accounted for")
 require(len({c["id"] for c in data["complaints"]}) == len(data["complaints"]), "Duplicate complaint IDs")
+require(len({a["label"] for a in abbreviations}) == len(abbreviations), "Duplicate symptom abbreviation labels")
+require(all(a["label"] and len(a["expansion"]) > 1 and all(a["expansion"]) for a in abbreviations), "Invalid symptom abbreviation definition")
 linked = Counter()
 pdf_additions = {a[0]: a[1] for a in provenance["pdfAdditions"]}
 for bid, assignments in provenance["assignments"].items():
