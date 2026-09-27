@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-09-27-beta.15",
+  "contentVersion": "2026-09-27-beta.16",
   "categories": [
     {
       "id": "00",
@@ -2543,7 +2543,8 @@
                     "sourceItemIds": [
                       "i-473758685a66",
                       "i-a5938abb78b4"
-                    ]
+                    ],
+                    "abbreviation": "FCCSR"
                   },
                   {
                     "id": "abd-hx-anvcd",
@@ -2552,14 +2553,16 @@
                       "i-473758685a66",
                       "i-39ebda833786",
                       "i-c4bf0295923d"
-                    ]
+                    ],
+                    "abbreviation": "ANVCD"
                   },
                   {
                     "id": "abd-hx-fundhis",
                     "text": "Frequency / Urgency / Nocturia / Dysuria / Hesitancy / Incomplete emptying / Straining",
                     "sourceItemIds": [
                       "i-a7cf0271f916"
-                    ]
+                    ],
+                    "abbreviation": "FUND HIS"
                   }
                 ]
               },
@@ -2852,11 +2855,20 @@
                 "title": "Review of systems",
                 "items": [
                   {
-                    "id": "constipation-hx-ros",
-                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea",
+                    "id": "constipation-hx-fccsr",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea",
                     "sourceItemIds": [
                       "i-473758685a66"
-                    ]
+                    ],
+                    "abbreviation": "FCCSR"
+                  },
+                  {
+                    "id": "constipation-hx-anvcd",
+                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea",
+                    "sourceItemIds": [
+                      "i-473758685a66"
+                    ],
+                    "abbreviation": "ANVCD"
                   },
                   {
                     "id": "constipation-hx-npo",
@@ -3074,8 +3086,24 @@
                 "title": "Review of systems",
                 "items": [
                   {
-                    "id": "syncope-hx-ros",
-                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness",
+                    "id": "syncope-hx-fccsr",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ],
+                    "abbreviation": "FCCSR"
+                  },
+                  {
+                    "id": "syncope-hx-anvcd",
+                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ],
+                    "abbreviation": "ANVCD"
+                  },
+                  {
+                    "id": "syncope-hx-head-dizz",
+                    "text": "Headache / Dizziness",
                     "sourceItemIds": [
                       "i-f1940c9b999a"
                     ]
@@ -4265,8 +4293,24 @@
                 "title": "Review of systems",
                 "items": [
                   {
-                    "id": "dizz-hx-ros",
-                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness",
+                    "id": "dizz-hx-fccsr",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ],
+                    "abbreviation": "FCCSR"
+                  },
+                  {
+                    "id": "dizz-hx-anvcd",
+                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ],
+                    "abbreviation": "ANVCD"
+                  },
+                  {
+                    "id": "dizz-hx-head-dizz",
+                    "text": "Headache / Dizziness",
                     "sourceItemIds": [
                       "i-f1940c9b999a"
                     ]
@@ -4568,8 +4612,24 @@
                 "title": "Review of systems",
                 "items": [
                   {
-                    "id": "headache-hx-ros",
-                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness",
+                    "id": "headache-hx-fccsr",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ],
+                    "abbreviation": "FCCSR"
+                  },
+                  {
+                    "id": "headache-hx-anvcd",
+                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ],
+                    "abbreviation": "ANVCD"
+                  },
+                  {
+                    "id": "headache-hx-head-dizz",
+                    "text": "Headache / Dizziness",
                     "sourceItemIds": [
                       "i-f1940c9b999a"
                     ]
@@ -4756,8 +4816,24 @@
                 "title": "Review of systems",
                 "items": [
                   {
-                    "id": "seizure-common-hx-ros",
-                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness",
+                    "id": "seizure-common-hx-fccsr",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ],
+                    "abbreviation": "FCCSR"
+                  },
+                  {
+                    "id": "seizure-common-hx-anvcd",
+                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ],
+                    "abbreviation": "ANVCD"
+                  },
+                  {
+                    "id": "seizure-common-hx-head-dizz",
+                    "text": "Headache / Dizziness",
                     "sourceItemIds": [
                       "i-f1940c9b999a"
                     ]
@@ -4977,8 +5053,24 @@
                 "title": "Review of systems",
                 "items": [
                   {
-                    "id": "mental-hx-ros",
-                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness",
+                    "id": "mental-hx-fccsr",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ],
+                    "abbreviation": "FCCSR"
+                  },
+                  {
+                    "id": "mental-hx-anvcd",
+                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ],
+                    "abbreviation": "ANVCD"
+                  },
+                  {
+                    "id": "mental-hx-head-dizz",
+                    "text": "Headache / Dizziness",
                     "sourceItemIds": [
                       "i-f1940c9b999a"
                     ]
@@ -5148,8 +5240,24 @@
                 "title": "Review of systems",
                 "items": [
                   {
-                    "id": "stroke-hx-ros",
-                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness",
+                    "id": "stroke-hx-fccsr",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ],
+                    "abbreviation": "FCCSR"
+                  },
+                  {
+                    "id": "stroke-hx-anvcd",
+                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ],
+                    "abbreviation": "ANVCD"
+                  },
+                  {
+                    "id": "stroke-hx-head-dizz",
+                    "text": "Headache / Dizziness",
                     "sourceItemIds": [
                       "i-f1940c9b999a"
                     ]
@@ -6176,14 +6284,30 @@
                 "items": [
                   {
                     "id": "peds-common-hx-fccsr",
-                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea / Nasal obstruction",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea",
+                    "sourceItemIds": [
+                      "i-52e3c96499b8"
+                    ],
+                    "abbreviation": "FCCSR"
+                  },
+                  {
+                    "id": "peds-common-hx-nasal",
+                    "text": "Nasal obstruction",
                     "sourceItemIds": [
                       "i-52e3c96499b8"
                     ]
                   },
                   {
                     "id": "peds-common-hx-anvcd",
-                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea / Headache / Irritability",
+                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea",
+                    "sourceItemIds": [
+                      "i-0ed4387ab7a9"
+                    ],
+                    "abbreviation": "ANVCD"
+                  },
+                  {
+                    "id": "peds-common-hx-head-irritability",
+                    "text": "Headache / Irritability",
                     "sourceItemIds": [
                       "i-0ed4387ab7a9"
                     ]
@@ -6334,7 +6458,16 @@
                 "items": [
                   {
                     "id": "fever-hx-fccsr",
-                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea / Nasal obstruction",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea",
+                    "sourceItemIds": [
+                      "i-52e3c96499b8",
+                      "i-f67d6676b11b"
+                    ],
+                    "abbreviation": "FCCSR"
+                  },
+                  {
+                    "id": "fever-hx-nasal",
+                    "text": "Nasal obstruction",
                     "sourceItemIds": [
                       "i-52e3c96499b8",
                       "i-f67d6676b11b"
@@ -6342,7 +6475,15 @@
                   },
                   {
                     "id": "fever-hx-anvcd",
-                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea / Headache / Irritability",
+                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea",
+                    "sourceItemIds": [
+                      "i-0ed4387ab7a9"
+                    ],
+                    "abbreviation": "ANVCD"
+                  },
+                  {
+                    "id": "fever-hx-head-irritability",
+                    "text": "Headache / Irritability",
                     "sourceItemIds": [
                       "i-0ed4387ab7a9"
                     ]
@@ -6568,14 +6709,30 @@
                 "items": [
                   {
                     "id": "vomiting-hx-fccsr",
-                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea / Nasal obstruction",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea",
+                    "sourceItemIds": [
+                      "i-52e3c96499b8"
+                    ],
+                    "abbreviation": "FCCSR"
+                  },
+                  {
+                    "id": "vomiting-hx-nasal",
+                    "text": "Nasal obstruction",
                     "sourceItemIds": [
                       "i-52e3c96499b8"
                     ]
                   },
                   {
                     "id": "vomiting-hx-anvcd",
-                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea / Headache / Irritability",
+                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea",
+                    "sourceItemIds": [
+                      "i-0ed4387ab7a9"
+                    ],
+                    "abbreviation": "ANVCD"
+                  },
+                  {
+                    "id": "vomiting-hx-head-irritability",
+                    "text": "Headache / Irritability",
                     "sourceItemIds": [
                       "i-0ed4387ab7a9"
                     ]
@@ -6741,14 +6898,30 @@
                 "items": [
                   {
                     "id": "diarrhea-hx-fccsr",
-                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea / Nasal obstruction",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea",
+                    "sourceItemIds": [
+                      "i-52e3c96499b8"
+                    ],
+                    "abbreviation": "FCCSR"
+                  },
+                  {
+                    "id": "diarrhea-hx-nasal",
+                    "text": "Nasal obstruction",
                     "sourceItemIds": [
                       "i-52e3c96499b8"
                     ]
                   },
                   {
                     "id": "diarrhea-hx-anvcd",
-                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea / Headache / Irritability",
+                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea",
+                    "sourceItemIds": [
+                      "i-0ed4387ab7a9"
+                    ],
+                    "abbreviation": "ANVCD"
+                  },
+                  {
+                    "id": "diarrhea-hx-head-irritability",
+                    "text": "Headache / Irritability",
                     "sourceItemIds": [
                       "i-0ed4387ab7a9"
                     ]
@@ -6921,14 +7094,30 @@
                 "items": [
                   {
                     "id": "cough-hx-fccsr",
-                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea / Nasal obstruction",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea",
+                    "sourceItemIds": [
+                      "i-52e3c96499b8"
+                    ],
+                    "abbreviation": "FCCSR"
+                  },
+                  {
+                    "id": "cough-hx-nasal",
+                    "text": "Nasal obstruction",
                     "sourceItemIds": [
                       "i-52e3c96499b8"
                     ]
                   },
                   {
                     "id": "cough-hx-anvcd",
-                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea / Headache / Irritability",
+                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea",
+                    "sourceItemIds": [
+                      "i-0ed4387ab7a9"
+                    ],
+                    "abbreviation": "ANVCD"
+                  },
+                  {
+                    "id": "cough-hx-head-irritability",
+                    "text": "Headache / Irritability",
                     "sourceItemIds": [
                       "i-0ed4387ab7a9"
                     ]
@@ -7107,14 +7296,30 @@
                 "items": [
                   {
                     "id": "peds-abd-hx-fccsr",
-                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea / Nasal obstruction",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea",
+                    "sourceItemIds": [
+                      "i-52e3c96499b8"
+                    ],
+                    "abbreviation": "FCCSR"
+                  },
+                  {
+                    "id": "peds-abd-hx-nasal",
+                    "text": "Nasal obstruction",
                     "sourceItemIds": [
                       "i-52e3c96499b8"
                     ]
                   },
                   {
                     "id": "peds-abd-hx-anvcd",
-                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea / Headache / Irritability",
+                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea",
+                    "sourceItemIds": [
+                      "i-0ed4387ab7a9"
+                    ],
+                    "abbreviation": "ANVCD"
+                  },
+                  {
+                    "id": "peds-abd-hx-head-irritability",
+                    "text": "Headache / Irritability",
                     "sourceItemIds": [
                       "i-0ed4387ab7a9"
                     ]
@@ -7306,14 +7511,30 @@
                 "items": [
                   {
                     "id": "peds-seizure-hx-fccsr",
-                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea / Nasal obstruction",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea",
+                    "sourceItemIds": [
+                      "i-52e3c96499b8"
+                    ],
+                    "abbreviation": "FCCSR"
+                  },
+                  {
+                    "id": "peds-seizure-hx-nasal",
+                    "text": "Nasal obstruction",
                     "sourceItemIds": [
                       "i-52e3c96499b8"
                     ]
                   },
                   {
                     "id": "peds-seizure-hx-anvcd",
-                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea / Headache / Irritability",
+                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea",
+                    "sourceItemIds": [
+                      "i-0ed4387ab7a9"
+                    ],
+                    "abbreviation": "ANVCD"
+                  },
+                  {
+                    "id": "peds-seizure-hx-head-irritability",
+                    "text": "Headache / Irritability",
                     "sourceItemIds": [
                       "i-0ed4387ab7a9"
                     ]

@@ -190,12 +190,14 @@ for b in archive["sources"][2]["blocks"]:
 # Curated layouts are presentation-ready views over the preserved source items.
 # They may merge duplicate wording, expand confirmed abbreviations and separate
 # instructions into notes without changing or discarding the source archive.
-def view_item(iid, text, source_item_ids, note=None, abbreviated_text=None):
+def view_item(iid, text, source_item_ids, note=None, abbreviated_text=None, abbreviation=None):
     item = {"id": iid, "text": text, "sourceItemIds": source_item_ids}
     if note:
         item["note"] = note
     if abbreviated_text:
         item["abbreviatedText"] = abbreviated_text
+    if abbreviation:
+        item["abbreviation"] = abbreviation
     return item
 
 def neuro_history_groups(prefix):
@@ -208,7 +210,9 @@ def neuro_history_groups(prefix):
             view_item(f"{prefix}-hx-social", "Social Hx (Alcohol Smoking)", ["i-3789fe7ad282"]),
         ]},
         {"title": "Review of systems", "items": [
-            view_item(f"{prefix}-hx-ros", "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea · Headache / Dizziness", ["i-f1940c9b999a"]),
+            view_item(f"{prefix}-hx-fccsr", "Fever / Chill / Cough / Sputum / Rhinorrhea", ["i-f1940c9b999a"], abbreviation="FCCSR"),
+            view_item(f"{prefix}-hx-anvcd", "Anorexia / Nausea / Vomiting / Constipation / Diarrhea", ["i-f1940c9b999a"], abbreviation="ANVCD"),
+            view_item(f"{prefix}-hx-head-dizz", "Headache / Dizziness", ["i-f1940c9b999a"]),
         ]},
     ]
 
@@ -220,8 +224,10 @@ def peds_history_groups(prefix, fccsr_sources=(), daily_sources=()):
             view_item(f"{prefix}-hx-mother", "Maternal problem", ["i-0ed4387ab7a9"]),
         ]},
         {"title": "Review of systems", "items": [
-            view_item(f"{prefix}-hx-fccsr", "Fever / Chill / Cough / Sputum / Rhinorrhea / Nasal obstruction", ["i-52e3c96499b8", *fccsr_sources]),
-            view_item(f"{prefix}-hx-anvcd", "Anorexia / Nausea / Vomiting / Constipation / Diarrhea / Headache / Irritability", ["i-0ed4387ab7a9"]),
+            view_item(f"{prefix}-hx-fccsr", "Fever / Chill / Cough / Sputum / Rhinorrhea", ["i-52e3c96499b8", *fccsr_sources], abbreviation="FCCSR"),
+            view_item(f"{prefix}-hx-nasal", "Nasal obstruction", ["i-52e3c96499b8", *fccsr_sources]),
+            view_item(f"{prefix}-hx-anvcd", "Anorexia / Nausea / Vomiting / Constipation / Diarrhea", ["i-0ed4387ab7a9"], abbreviation="ANVCD"),
+            view_item(f"{prefix}-hx-head-irritability", "Headache / Irritability", ["i-0ed4387ab7a9"]),
             view_item(f"{prefix}-hx-daily", "Feeding / Activity / Urination / Sleeping: Fair or Poor", ["i-915a1e9fb598", *daily_sources]),
             view_item(f"{prefix}-hx-appearance", "Appearance: Well or Ill / Irritable / Lethargic", ["i-2565eaefaa14"]),
         ]},
@@ -253,9 +259,9 @@ curated_layouts = {
                     view_item("abd-hx-npo", "NPO time", ["i-23c56e483dfc"], "수술 가능성이 있는 경우"),
                 ]},
                 {"title": "Review of systems", "items": [
-                    view_item("abd-hx-fccsr", "Fever / Chill / Cough / Sputum / Rhinorrhea", ["i-473758685a66", "i-a5938abb78b4"]),
-                    view_item("abd-hx-anvcd", "Anorexia / Nausea / Vomiting / Constipation / Diarrhea", ["i-473758685a66", "i-39ebda833786", "i-c4bf0295923d"]),
-                    view_item("abd-hx-fundhis", "Frequency / Urgency / Nocturia / Dysuria / Hesitancy / Incomplete emptying / Straining", ["i-a7cf0271f916"]),
+                    view_item("abd-hx-fccsr", "Fever / Chill / Cough / Sputum / Rhinorrhea", ["i-473758685a66", "i-a5938abb78b4"], abbreviation="FCCSR"),
+                    view_item("abd-hx-anvcd", "Anorexia / Nausea / Vomiting / Constipation / Diarrhea", ["i-473758685a66", "i-39ebda833786", "i-c4bf0295923d"], abbreviation="ANVCD"),
+                    view_item("abd-hx-fundhis", "Frequency / Urgency / Nocturia / Dysuria / Hesitancy / Incomplete emptying / Straining", ["i-a7cf0271f916"], abbreviation="FUND HIS"),
                 ]},
                 {"title": "여성 환자", "items": [
                     view_item("abd-hx-pregnancy", "임신 가능성 / LMP", ["i-9a089b00c222"]),
@@ -532,17 +538,7 @@ curated_layouts = {
     "peds-common": {
         "sections": [
             {"id": "peds-common-view-history", "title": "Hx", "kind": "history", "groups": [
-                {"title": "General · Birth history", "items": [
-                    view_item("peds-common-hx-vital", "V/S", ["i-88fe282cb4fe"]),
-                    view_item("peds-common-hx-neonate", "Neonate: Current weight / Gestational week / Vaginal delivery or C-section / Birth asphyxia", ["i-88fe282cb4fe", "i-52e3c96499b8"]),
-                    view_item("peds-common-hx-mother", "Maternal problem", ["i-0ed4387ab7a9"]),
-                ]},
-                {"title": "Review of systems", "items": [
-                    view_item("peds-common-hx-fccsr", "Fever / Chill / Cough / Sputum / Rhinorrhea / Nasal obstruction", ["i-52e3c96499b8"]),
-                    view_item("peds-common-hx-anvcd", "Anorexia / Nausea / Vomiting / Constipation / Diarrhea / Headache / Irritability", ["i-0ed4387ab7a9"]),
-                    view_item("peds-common-hx-daily", "Feeding / Activity / Urination / Sleeping: Fair or Poor", ["i-915a1e9fb598"]),
-                    view_item("peds-common-hx-appearance", "Appearance: Well or Ill / Irritable / Lethargic", ["i-2565eaefaa14"]),
-                ]},
+                *peds_history_groups("peds-common"),
             ]},
             {"id": "peds-common-view-exam", "title": "PEx", "kind": "exam", "groups": [
                 {"title": "HEENT · Neck", "items": [
@@ -567,7 +563,8 @@ curated_layouts = {
                     view_item("constipation-hx-past", "Medical Hx (U/D Drug Adm Op)", ["i-a0dbc0b8eaec"]),
                 ]},
                 {"title": "Review of systems", "items": [
-                    view_item("constipation-hx-ros", "Fever / Chill / Cough / Sputum / Rhinorrhea · Anorexia / Nausea / Vomiting / Constipation / Diarrhea", ["i-473758685a66"]),
+                    view_item("constipation-hx-fccsr", "Fever / Chill / Cough / Sputum / Rhinorrhea", ["i-473758685a66"], abbreviation="FCCSR"),
+                    view_item("constipation-hx-anvcd", "Anorexia / Nausea / Vomiting / Constipation / Diarrhea", ["i-473758685a66"], abbreviation="ANVCD"),
                     view_item("constipation-hx-npo", "NPO time", ["i-23c56e483dfc"], "수술 가능성이 있는 경우"),
                 ]},
                 {"title": "Bowel habit", "items": [
@@ -1164,7 +1161,7 @@ symptom_abbreviations = [
     {"label": "FUND HIS", "expansion": ["Frequency", "Urgency", "Nocturia", "Dysuria", "Hesitancy", "Incomplete emptying", "Straining"]},
 ]
 
-data = {"schemaVersion": 1, "contentVersion": "2026-09-27-beta.15", "categories": categories,
+data = {"schemaVersion": 1, "contentVersion": "2026-09-27-beta.16", "categories": categories,
         "sections": list(groups.values()), "complaints": complaints,
         "symptomAbbreviations": symptom_abbreviations,
         "referenceSections": ["routine-history","routine-exam","handover-general"]}

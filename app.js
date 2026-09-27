@@ -60,6 +60,7 @@
 
   function displayItemText(item) {
     if (!state.abbreviateSymptoms) return item.text;
+    if (item.abbreviation) return item.abbreviation;
     if (item.abbreviatedText) return item.abbreviatedText;
     return (state.data.symptomAbbreviations ?? []).reduce((text, abbreviation) => {
       const expansion = abbreviation.expansion.join(" / ");
@@ -76,12 +77,21 @@
     return `<div class="item-row"><label class="check-item"><input type="checkbox" data-check-item="${escape(item.id)}" ${checked ? "checked" : ""}>${itemCopy(item)}</label></div>`;
   }
 
+  function compactAbbreviationMarkup(item) {
+    const checked = state.checked.get(state.route)?.has(item.id) ?? false;
+    return `<label class="abbreviation-check"><input type="checkbox" data-check-item="${escape(item.id)}" ${checked ? "checked" : ""}><span>${escape(item.abbreviation)}</span></label>`;
+  }
+
   function sectionMarkup(section) {
     return `<section class="content-section" aria-labelledby="section-${escape(section.id)}"><header class="content-section-header"><h2 id="section-${escape(section.id)}">${escape(section.title)}</h2><span class="kind-label${section.kind === "exam" ? " exam" : ""}">${section.kind === "exam" ? "신체진찰" : "문진"}</span></header>${section.items.map(itemMarkup).join("")}</section>`;
   }
 
   function layoutSectionMarkup(section) {
-    return `<section class="content-section" aria-labelledby="section-${escape(section.id)}"><header class="content-section-header"><h2 id="section-${escape(section.id)}">${escape(section.title)}</h2></header>${section.groups.map((group) => `<section class="content-group"><h3>${escape(group.title)}</h3>${group.items.map(itemMarkup).join("")}</section>`).join("")}</section>`;
+    return `<section class="content-section" aria-labelledby="section-${escape(section.id)}"><header class="content-section-header"><h2 id="section-${escape(section.id)}">${escape(section.title)}</h2></header>${section.groups.map((group) => {
+      const abbreviationItems = state.abbreviateSymptoms ? group.items.filter((item) => item.abbreviation) : [];
+      const regularItems = abbreviationItems.length ? group.items.filter((item) => !item.abbreviation) : group.items;
+      return `<section class="content-group"><h3>${escape(group.title)}</h3>${abbreviationItems.length ? `<div class="abbreviation-row">${abbreviationItems.map(compactAbbreviationMarkup).join("")}</div>` : ""}${regularItems.map(itemMarkup).join("")}</section>`;
+    }).join("")}</section>`;
   }
 
   function referenceGroupMarkup(group) {
@@ -193,7 +203,7 @@
   async function start() {
     try {
       try { state.abbreviateSymptoms = localStorage.getItem(abbreviationPreferenceKey) === "1"; } catch {}
-      const response = await fetch("./data/chief-complaints.json?v=15");
+      const response = await fetch("./data/chief-complaints.json?v=16");
       if (!response.ok) throw new Error("문진 자료를 불러오지 못했습니다.");
       state.data = await response.json();
       sections = new Map(state.data.sections.map((section) => [section.id, section]));
