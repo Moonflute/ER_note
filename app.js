@@ -6,9 +6,6 @@
     mood: "psychiatry-interview", anxiety: "psychiatry-interview", sleep: "psychiatry-interview", suicide: "psychiatry-interview", poisoning: "psychiatry-interview",
     "vaginal-discharge": "obgyn-interview", "vaginal-bleeding": "obgyn-interview", menstrual: "obgyn-interview", dysmenorrhea: "obgyn-interview", "pelvic-pain": "obgyn-interview"
   };
-  const icons = {
-    back: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m14 5-7 7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
-  };
   const abbreviationPreferenceKey = "er-note-symptom-abbreviations";
   const state = { data: null, homeScroll: 0, route: null, currentItems: [], checked: new Map(), abbreviateSymptoms: false };
   let sections;
@@ -112,11 +109,9 @@
       ? layoutPrimary.flatMap((section) => section.groups.flatMap((group) => group.items.map((item) => item.id)))
       : primary.flatMap((section) => section.items.map((item) => item.id))))];
     document.title = `${name} · ER 초진`;
-    main.innerHTML = `<div class="shell detail-shell"><nav class="detail-toolbar" aria-label="증상 목록으로 이동"><a class="back-link" href="#">${icons.back}목록</a><span class="toolbar-label">${escape(name)}</span></nav>
-      <header class="detail-heading"><p class="eyebrow">${category ? escape(category.name) : "공통"}</p><div class="detail-title-row"><h1>${escape(name)}</h1><div class="detail-progress"><span class="progress" id="check-progress" aria-live="polite"></span><button class="text-button reset-button" type="button" id="reset-checks" hidden>초기화</button></div></div><div class="cc-meta">${common ? "" : complaintBadges(complaint)}</div></header>
+    main.innerHTML = `<div class="shell detail-shell"><header class="detail-heading"><p class="eyebrow">${category ? escape(category.name) : "공통"}</p><div class="detail-title-row"><h1>${escape(name)}</h1><div class="detail-progress"><span class="progress" id="check-progress" aria-live="polite"></span><button class="text-button reset-button" type="button" id="reset-checks" hidden>초기화</button></div></div><div class="cc-meta">${common ? "" : complaintBadges(complaint)}</div></header>
       <div id="primary-content">${primaryMarkup}</div>
-      ${referenceMarkup ? `<section id="reference-content" aria-labelledby="reference-title"><header class="reference-heading"><h2 id="reference-title">참고사항</h2></header><div class="reference-board">${referenceMarkup}</div></section>` : ""}
-      <nav class="mobile-dock" aria-label="빠른 이동"><a class="back-link" href="#">${icons.back}목록</a><button class="text-button" type="button" data-scroll-top>위로</button></nav></div>`;
+      ${referenceMarkup ? `<section id="reference-content" aria-labelledby="reference-title"><header class="reference-heading"><h2 id="reference-title">참고사항</h2></header><div class="reference-board">${referenceMarkup}</div></section>` : ""}</div>`;
     updateProgress();
   }
 
@@ -170,7 +165,6 @@
       document.querySelectorAll("[data-check-item]").forEach((checkbox) => { checkbox.checked = false; });
       updateProgress();
     }
-    if (event.target.closest("[data-scroll-top]")) window.scrollTo(0, 0);
   });
 
   main.addEventListener("change", (event) => {
