@@ -224,22 +224,26 @@ def neuro_ros_group(prefix):
         view_item(f"{prefix}-hx-head-dizz", "Headache / Dizziness", ["i-f1940c9b999a"]),
     ]}
 
-def peds_history_groups(prefix, fccsr_sources=(), daily_sources=()):
-    return [
-        {"title": "General · Birth history", "items": [
-            view_item(f"{prefix}-hx-vital", "V/S", ["i-88fe282cb4fe"]),
-            view_item(f"{prefix}-hx-neonate", "Neonate: Current weight / Gestational week / Vaginal delivery or C-section / Birth asphyxia", ["i-88fe282cb4fe", "i-52e3c96499b8"]),
-            view_item(f"{prefix}-hx-mother", "Maternal problem", ["i-0ed4387ab7a9"]),
-        ]},
-        {"title": "Review of systems", "items": [
-            view_item(f"{prefix}-hx-fccsr", "Fever / Chill / Cough / Sputum / Rhinorrhea", ["i-52e3c96499b8", *fccsr_sources], abbreviation="FCCSR"),
-            view_item(f"{prefix}-hx-nasal", "Nasal obstruction", ["i-52e3c96499b8", *fccsr_sources]),
-            view_item(f"{prefix}-hx-anvcd", "Anorexia / Nausea / Vomiting / Constipation / Diarrhea", ["i-0ed4387ab7a9"], abbreviation="ANVCD"),
-            view_item(f"{prefix}-hx-head-irritability", "Headache / Irritability", ["i-0ed4387ab7a9"]),
-            view_item(f"{prefix}-hx-daily", "Feeding / Activity / Urination / Sleeping: Fair or Poor", ["i-915a1e9fb598", *daily_sources]),
-            view_item(f"{prefix}-hx-appearance", "Appearance: Well or Ill / Irritable / Lethargic", ["i-2565eaefaa14"]),
-        ]},
-    ]
+def peds_basic_group(prefix):
+    return {"title": "Basic", "items": [
+        view_item(f"{prefix}-hx-vital", "V/S", ["i-88fe282cb4fe"]),
+    ]}
+
+def peds_birth_group(prefix):
+    return {"title": "Birth history", "items": [
+        view_item(f"{prefix}-hx-neonate", "Neonate: Current weight / Gestational week / Vaginal delivery or C-section / Birth asphyxia", ["i-88fe282cb4fe", "i-52e3c96499b8"]),
+        view_item(f"{prefix}-hx-mother", "Maternal problem", ["i-0ed4387ab7a9"]),
+    ]}
+
+def peds_ros_group(prefix, fccsr_sources=(), daily_sources=()):
+    return {"title": "Review of systems", "items": [
+        view_item(f"{prefix}-hx-fccsr", "Fever / Chill / Cough / Sputum / Rhinorrhea", ["i-52e3c96499b8", *fccsr_sources], abbreviation="FCCSR"),
+        view_item(f"{prefix}-hx-nasal", "Nasal obstruction", ["i-52e3c96499b8", *fccsr_sources]),
+        view_item(f"{prefix}-hx-anvcd", "Anorexia / Nausea / Vomiting / Constipation / Diarrhea", ["i-0ed4387ab7a9"], abbreviation="ANVCD"),
+        view_item(f"{prefix}-hx-head-irritability", "Headache / Irritability", ["i-0ed4387ab7a9"]),
+        view_item(f"{prefix}-hx-daily", "Feeding / Activity / Urination / Sleeping: Fair or Poor", ["i-915a1e9fb598", *daily_sources]),
+        view_item(f"{prefix}-hx-appearance", "Appearance: Well or Ill / Irritable / Lethargic", ["i-2565eaefaa14"]),
+    ]}
 
 def peds_exam_groups(prefix, throat_sources=(), neck_sources=(), lung_sources=(), bowel_sources=()):
     return [
@@ -261,6 +265,10 @@ curated_layouts = {
     "abdominal-pain": {
         "sections": [
             {"id": "abd-view-history", "title": "Hx", "kind": "history", "groups": [
+                {"title": "여성 환자", "items": [
+                    view_item("abd-hx-pregnancy", "임신 가능성 / LMP", ["i-9a089b00c222"]),
+                    view_item("abd-hx-female", "Menstruation / Last coitus / 보호자 관계", ["i-f26b6ccefee9", "i-99dd425247e3"], "가임기 여성의 하복부 통증에서는 보호자와의 관계를 고려하여 확인"),
+                ]},
                 {"title": "History", "items": [
                     view_item("abd-hx-background", "Medical Hx (U/D Drug Adm Op)", ["i-a0dbc0b8eaec"]),
                     view_item("abd-hx-operation", "Abdominal operation Hx", ["i-eb4aa9826a2d", "i-ecedeb1e4880"], "반드시 확인"),
@@ -270,10 +278,6 @@ curated_layouts = {
                     view_item("abd-hx-fccsr", "Fever / Chill / Cough / Sputum / Rhinorrhea", ["i-473758685a66", "i-a5938abb78b4"], abbreviation="FCCSR"),
                     view_item("abd-hx-anvcd", "Anorexia / Nausea / Vomiting / Constipation / Diarrhea", ["i-473758685a66", "i-39ebda833786", "i-c4bf0295923d"], abbreviation="ANVCD"),
                     view_item("abd-hx-fundhis", "Frequency / Urgency / Nocturia / Dysuria / Hesitancy / Incomplete emptying / Straining", ["i-a7cf0271f916"], abbreviation="FUND HIS"),
-                ]},
-                {"title": "여성 환자", "items": [
-                    view_item("abd-hx-pregnancy", "임신 가능성 / LMP", ["i-9a089b00c222"]),
-                    view_item("abd-hx-female", "Menstruation / Last coitus / 보호자 관계", ["i-f26b6ccefee9", "i-99dd425247e3"], "가임기 여성의 하복부 통증에서는 보호자와의 관계를 고려하여 확인"),
                 ]},
             ]},
             {"id": "abd-view-exam", "title": "PEx", "kind": "exam", "groups": [
@@ -499,7 +503,7 @@ curated_layouts = {
         "sections": [
             {"id": "hematuria-view-history", "title": "Hx", "kind": "history", "groups": [
                 {"title": "Urinary symptoms", "items": [
-                    view_item("hematuria-hx-urinary", "Residual sensation / Frequency / Urgency / Hesitancy / Dysuria / Hematuria / Terminal dribbling / Nocturia / Incontinence / Narrow urine stream", ["i-bda12e23e084"], abbreviated_text="FUND HIS / Hematuria / Terminal dribbling / Incontinence / Narrow urine stream"),
+                    view_item("hematuria-hx-urinary", "Hematuria / Residual sensation / Frequency / Urgency / Hesitancy / Dysuria / Terminal dribbling / Nocturia / Incontinence / Narrow urine stream", ["i-bda12e23e084"], abbreviated_text="Hematuria / FUND HIS / Terminal dribbling / Incontinence / Narrow urine stream"),
                 ]},
             ]},
         ]
@@ -517,7 +521,7 @@ curated_layouts = {
         "sections": [
             {"id": "incontinence-view-history", "title": "Hx", "kind": "history", "groups": [
                 {"title": "Urinary symptoms", "items": [
-                    view_item("incontinence-hx-urinary", "Residual sensation / Frequency / Urgency / Hesitancy / Dysuria / Hematuria / Terminal dribbling / Nocturia / Incontinence / Narrow urine stream", ["i-bda12e23e084"], abbreviated_text="FUND HIS / Hematuria / Terminal dribbling / Incontinence / Narrow urine stream"),
+                    view_item("incontinence-hx-urinary", "Incontinence / Residual sensation / Frequency / Urgency / Hesitancy / Dysuria / Hematuria / Terminal dribbling / Nocturia / Narrow urine stream", ["i-bda12e23e084"], abbreviated_text="Incontinence / FUND HIS / Hematuria / Terminal dribbling / Narrow urine stream"),
                 ]},
             ]},
         ]
@@ -548,7 +552,9 @@ curated_layouts = {
     "peds-common": {
         "sections": [
             {"id": "peds-common-view-history", "title": "Hx", "kind": "history", "groups": [
-                *peds_history_groups("peds-common"),
+                peds_basic_group("peds-common"),
+                peds_birth_group("peds-common"),
+                peds_ros_group("peds-common"),
             ]},
             {"id": "peds-common-view-exam", "title": "PEx", "kind": "exam", "groups": [
                 {"title": "HEENT · Neck", "items": [
@@ -569,18 +575,18 @@ curated_layouts = {
     "constipation": {
         "sections": [
             {"id": "constipation-view-history", "title": "Hx", "kind": "history", "groups": [
-                {"title": "History", "items": [
-                    view_item("constipation-hx-past", "Medical Hx (U/D Drug Adm Op)", ["i-a0dbc0b8eaec"]),
-                ]},
-                {"title": "Review of systems", "items": [
-                    view_item("constipation-hx-fccsr", "Fever / Chill / Cough / Sputum / Rhinorrhea", ["i-473758685a66"], abbreviation="FCCSR"),
-                    view_item("constipation-hx-anvcd", "Anorexia / Nausea / Vomiting / Constipation / Diarrhea", ["i-473758685a66"], abbreviation="ANVCD"),
-                    view_item("constipation-hx-npo", "NPO time", ["i-23c56e483dfc"], "수술 가능성이 있는 경우"),
-                ]},
                 {"title": "Bowel habit", "items": [
                     view_item("constipation-hx-defecation", "Last defecation", ["i-2b7af5302516"]),
                     view_item("constipation-hx-gas", "Last flatus", ["i-017c756636f4"]),
                     view_item("constipation-hx-scope", "Last colonoscopy / Gastroscopy", ["i-96a78e8d87e7"], "고령 환자의 배변 습관 변화 시 malignancy 감별과 work-up 필요성 설명"),
+                ]},
+                {"title": "History", "items": [
+                    view_item("constipation-hx-past", "Medical Hx (U/D Drug Adm Op)", ["i-a0dbc0b8eaec"]),
+                    view_item("constipation-hx-npo", "NPO time", ["i-23c56e483dfc"], "수술 가능성이 있는 경우"),
+                ]},
+                {"title": "Review of systems", "items": [
+                    view_item("constipation-hx-fccsr", "Fever / Chill / Cough / Sputum / Rhinorrhea", ["i-473758685a66"], abbreviation="FCCSR"),
+                    view_item("constipation-hx-anvcd", "Anorexia / Nausea / Vomiting / Constipation / Diarrhea", ["i-473758685a66"], abbreviation="ANVCD"),
                 ]},
             ]},
         ]
@@ -720,13 +726,13 @@ curated_layouts = {
     "obgyn-interview": {
         "sections": [
             {"id": "ob-view-history", "title": "Hx", "kind": "history", "groups": [
+                {"title": "Symptoms", "items": [
+                    view_item("ob-hx-vaginal", "Vaginal bleeding / Vaginal discharge / Abnormal bleeding / Discharge change / Bleeding amount", ["i-49c213f030fe", "i-ccbca1cd1f76"]),
+                ]},
                 {"title": "Gynecologic history", "items": [
                     view_item("ob-hx-background", "Previous gynecologic care / TPAL / Marital status / NPO time", ["i-1109f9f55fe5"], "필요하면 보호자를 내보내고 환자와 단독으로 확인"),
                     view_item("ob-hx-menstrual", "LMP / Menstrual cycle / Duration / Amount / Dysmenorrhea", ["i-6ea8e54d6744"]),
                     view_item("ob-hx-sexual", "Last coitus / Dyspareunia", ["i-68d84b1f6aac"]),
-                ]},
-                {"title": "Symptoms", "items": [
-                    view_item("ob-hx-vaginal", "Vaginal bleeding / Vaginal discharge / Abnormal bleeding / Discharge change / Bleeding amount", ["i-49c213f030fe", "i-ccbca1cd1f76"]),
                 ]},
             ]},
             {"id": "ob-view-reference", "title": "참고사항", "kind": "note", "groups": [
@@ -740,20 +746,22 @@ curated_layouts = {
     "pregnancy": {
         "sections": [
             {"id": "pregnancy-view-history", "title": "Hx", "kind": "history", "groups": [
+                {"title": "Current pregnancy", "items": [
+                    view_item("pregnancy-hx-iup", "IUP: 정확한 gestational week and day / OT", ["i-10e0162d3aee"]),
+                    view_item("pregnancy-hx-labor", "진통·배뭉침 / 주기 / 지속시간", ["i-c75d69226429"]),
+                    view_item("pregnancy-hx-vaginal", "Vaginal bleeding / Vaginal discharge / Abnormal bleeding / Discharge change / Bleeding amount", ["i-49c213f030fe", "i-ccbca1cd1f76"]),
+                    view_item("pregnancy-hx-lmp", "LMP", ["i-0138e8dfa9af"]),
+                    view_item("pregnancy-hx-edc", "Estimated date of confinement (EDC)", ["i-57925bf76ebf"]),
+                ]},
+                {"title": "Obstetric history", "items": [
+                    view_item("pregnancy-hx-tpal", "TPAL", ["i-1109f9f55fe5", "i-5e79003059b9"]),
+                    view_item("pregnancy-hx-npo", "NPO time", ["i-1109f9f55fe5", "i-0c081eadaa0e"]),
+                    view_item("pregnancy-hx-operation", "Op Hx", ["i-ff7aec9585a2"]),
+                ]},
                 {"title": "Gynecologic history", "items": [
                     view_item("pregnancy-hx-background", "Previous gynecologic care / Marital status", ["i-1109f9f55fe5"], "필요하면 보호자를 내보내고 환자와 단독으로 확인"),
                     view_item("pregnancy-hx-menstrual", "LMP / Menstrual cycle / Duration / Amount / Dysmenorrhea", ["i-6ea8e54d6744"]),
                     view_item("pregnancy-hx-sexual", "Last coitus / Dyspareunia", ["i-68d84b1f6aac"]),
-                    view_item("pregnancy-hx-vaginal", "Vaginal bleeding / Vaginal discharge / Abnormal bleeding / Discharge change / Bleeding amount", ["i-49c213f030fe", "i-ccbca1cd1f76"]),
-                ]},
-                {"title": "Obstetric history", "items": [
-                    view_item("pregnancy-hx-tpal", "TPAL", ["i-1109f9f55fe5", "i-5e79003059b9"]),
-                    view_item("pregnancy-hx-iup", "IUP: 정확한 gestational week and day / OT", ["i-10e0162d3aee"]),
-                    view_item("pregnancy-hx-labor", "진통·배뭉침 / 주기 / 지속시간", ["i-c75d69226429"]),
-                    view_item("pregnancy-hx-lmp", "LMP", ["i-0138e8dfa9af"]),
-                    view_item("pregnancy-hx-edc", "Estimated date of confinement (EDC)", ["i-57925bf76ebf"]),
-                    view_item("pregnancy-hx-npo", "NPO time", ["i-1109f9f55fe5", "i-0c081eadaa0e"]),
-                    view_item("pregnancy-hx-operation", "Op Hx", ["i-ff7aec9585a2"]),
                 ]},
             ]},
             {"id": "pregnancy-view-reference", "title": "참고사항", "kind": "note", "groups": [
@@ -767,11 +775,13 @@ curated_layouts = {
     "fever": {
         "sections": [
             {"id": "fever-view-history", "title": "Hx", "kind": "history", "groups": [
-                *peds_history_groups("fever", fccsr_sources=("i-f67d6676b11b",), daily_sources=("i-ca2d5f59c88c", "i-f67d6676b11b")),
+                peds_basic_group("fever"),
                 {"title": "Fever", "items": [
                     view_item("fever-hx-temperature", "Maximum temperature at home / Temperature on arrival", ["i-09f9f960f4d3", "i-d6027d327579"]),
                     view_item("fever-hx-antipyretic", "Antipyretic: Last dose / Number of doses / Type / Interval / Response", ["i-09f9f960f4d3", "i-d410e445b7d6", "i-d054632e1182"]),
                 ]},
+                peds_birth_group("fever"),
+                peds_ros_group("fever", fccsr_sources=("i-f67d6676b11b",), daily_sources=("i-ca2d5f59c88c", "i-f67d6676b11b")),
             ]},
             {"id": "fever-view-exam", "title": "PEx", "kind": "exam", "groups": [
                 *peds_exam_groups("fever", throat_sources=("i-88be3820287a",), neck_sources=("i-78f591a013bf",), lung_sources=("i-89b8406e0d1a",), bowel_sources=("i-85e00579f43c",)),
@@ -791,11 +801,13 @@ curated_layouts = {
     "vomiting": {
         "sections": [
             {"id": "vomiting-view-history", "title": "Hx", "kind": "history", "groups": [
-                *peds_history_groups("vomiting"),
+                peds_basic_group("vomiting"),
                 {"title": "Vomiting", "items": [
                     view_item("vomiting-hx-count", "Frequency / Pattern: Regurgitation / Vomiting / Projectile", ["i-0cb004905b21"]),
                     view_item("vomiting-hx-content", "Emesis color / Character: Food content / Watery", ["i-0cb004905b21"]),
                 ]},
+                peds_birth_group("vomiting"),
+                peds_ros_group("vomiting"),
             ]},
             {"id": "vomiting-view-exam", "title": "PEx", "kind": "exam", "groups": [
                 *peds_exam_groups("vomiting"),
@@ -805,12 +817,14 @@ curated_layouts = {
     "diarrhea": {
         "sections": [
             {"id": "diarrhea-view-history", "title": "Hx", "kind": "history", "groups": [
-                *peds_history_groups("diarrhea"),
+                peds_basic_group("diarrhea"),
                 {"title": "Diarrhea", "items": [
                     view_item("diarrhea-hx-stool", "Frequency / Character / Color / Last defecation time", ["i-9b0fd04b87dd"]),
                     view_item("diarrhea-hx-npo", "NPO time", ["i-9b0fd04b87dd"]),
                     view_item("diarrhea-hx-diet", "Current diet: 밥 / 미음 / 모유 / 분유", ["i-d8c672ae10ca"]),
                 ]},
+                peds_birth_group("diarrhea"),
+                peds_ros_group("diarrhea"),
             ]},
             {"id": "diarrhea-view-exam", "title": "PEx", "kind": "exam", "groups": [
                 *peds_exam_groups("diarrhea"),
@@ -820,12 +834,14 @@ curated_layouts = {
     "cough": {
         "sections": [
             {"id": "cough-view-history", "title": "Hx", "kind": "history", "groups": [
-                *peds_history_groups("cough"),
+                peds_basic_group("cough"),
                 {"title": "Cough", "items": [
                     view_item("cough-hx-sound", "Cough sound: Barking or usual cough", ["i-3368440da93b"]),
                     view_item("cough-hx-position", "Worse when supine / Hoarseness", ["i-3368440da93b"]),
                     view_item("cough-hx-atopy", "Atopy/Asthma PHx / FHx", ["i-3368440da93b"]),
                 ]},
+                peds_birth_group("cough"),
+                peds_ros_group("cough"),
             ]},
             {"id": "cough-view-exam", "title": "PEx", "kind": "exam", "groups": [
                 *peds_exam_groups("cough"),
@@ -835,11 +851,13 @@ curated_layouts = {
     "peds-abdominal-pain": {
         "sections": [
             {"id": "peds-abd-view-history", "title": "Hx", "kind": "history", "groups": [
-                *peds_history_groups("peds-abd"),
+                peds_basic_group("peds-abd"),
                 {"title": "Abdominal pain", "items": [
                     view_item("peds-abd-hx-pain", "Character / Location / Intermittent or Steady / Duration / Relieving time", ["i-26e3ede4229f"]),
                     view_item("peds-abd-hx-bowel", "Last defecation / NPO time", ["i-2e8d142d81a5"]),
                 ]},
+                peds_birth_group("peds-abd"),
+                peds_ros_group("peds-abd"),
             ]},
             {"id": "peds-abd-view-exam", "title": "PEx", "kind": "exam", "groups": [
                 *peds_exam_groups("peds-abd"),
@@ -853,7 +871,7 @@ curated_layouts = {
     "peds-seizure": {
         "sections": [
             {"id": "peds-seizure-view-history", "title": "Hx", "kind": "history", "groups": [
-                *peds_history_groups("peds-seizure"),
+                peds_basic_group("peds-seizure"),
                 {"title": "Seizure", "items": [
                     view_item("peds-seizure-hx-loc", "LOC", ["i-be829747b960"]),
                     view_item("peds-seizure-hx-eye", "Eyeball deviation", ["i-d953400df2c6"]),
@@ -861,6 +879,8 @@ curated_layouts = {
                     view_item("peds-seizure-hx-foam", "Foamy salivation", ["i-8ce09ee87474"]),
                     view_item("peds-seizure-hx-past", "Previous seizure Hx", ["i-837190c5a23c"]),
                 ]},
+                peds_birth_group("peds-seizure"),
+                peds_ros_group("peds-seizure"),
             ]},
             {"id": "peds-seizure-view-exam", "title": "PEx", "kind": "exam", "groups": [
                 *peds_exam_groups("peds-seizure"),
@@ -957,8 +977,21 @@ curated_layouts = {
             {"id": "psychiatry-view-history", "title": "Hx", "kind": "history", "groups": [
                 {"title": "Basic", "items": [
                     view_item("psychiatry-hx-cc", "CC", ["i-93bec4f5a11f", "i-783f0ccc8ad0", "i-a3f32e80a086", "i-1cfcd0419c4d", "i-48e0d543b3fc"]),
-                    view_item("psychiatry-hx-current", "초진 당시 증상 유무", ["i-b6b3279a5fe5"]),
                     view_item("psychiatry-hx-stress", "PI / 최근 stress factor", ["i-504770b9ef6c", "i-326344007df5"]),
+                    view_item("psychiatry-hx-current", "초진 당시 증상 유무", ["i-b6b3279a5fe5"]),
+                ]},
+                {"title": "Safety · Mood", "items": [
+                    view_item("psychiatry-hx-suicide", "Suicidal idea / Plan / Attempt", ["i-04e13c90aa27", "i-3931bf6f6de2"], "죽고 싶은지, 계획을 세운 적이 있는지, 자해·자살 시도 여부"),
+                    view_item("psychiatry-hx-drive", "Loss of will / Energy / Pleasure", ["i-5425c2d47801", "i-aad1c5cd2aa6", "i-368fa3cdb991"], "의욕·기운·즐거움 확인"),
+                ]},
+                {"title": "Perceptual disturbance", "items": [
+                    view_item("psychiatry-hx-hallucination", "A-H / V-H", ["i-90dad06721fb", "i-a5f32442cb55", "i-836f2bdf14e8"], "헛것이 보이거나 주변에 아무도 없는데 소리가 들리는지"),
+                    view_item("psychiatry-hx-illusion", "Illusion", ["i-2211a268632f"]),
+                    view_item("psychiatry-hx-derealization", "Derealization / Depersonalization", ["i-afcdf3f62fec"]),
+                ]},
+                {"title": "Current function", "items": [
+                    view_item("psychiatry-hx-sleep", "Sleep / Fragmentation", ["i-f089d42d65bc", "i-5010d4f57ede", "i-24ee16959511"]),
+                    view_item("psychiatry-hx-appetite", "Appetite", ["i-29695720395d", "i-b2c9fb17e5b3"]),
                 ]},
                 {"title": "Past psychiatric · Family history", "items": [
                     view_item("psychiatry-hx-past", "Past NP Hx / FHx", ["i-fd017583932e", "i-f97606906869"]),
@@ -969,20 +1002,9 @@ curated_layouts = {
                 {"title": "Social history", "items": [
                     view_item("psychiatry-hx-household", "동거인 / Genogram", ["i-7da5c539aa44", "i-5c3a50bc1ae3", "i-b5075a04bd96"]),
                     view_item("psychiatry-hx-job", "Occupation", ["i-1cf9af4b7bfa"]),
-                    view_item("psychiatry-hx-sleep", "Sleep / Fragmentation", ["i-f089d42d65bc", "i-5010d4f57ede", "i-24ee16959511"]),
-                    view_item("psychiatry-hx-appetite", "Appetite", ["i-29695720395d", "i-b2c9fb17e5b3"]),
                     view_item("psychiatry-hx-smoking", "Smoking", ["i-fb406c1d6afc"], "필수 항목 아님"),
                     view_item("psychiatry-hx-alcohol", "Alcohol", ["i-351476d46859"], "필수 항목 아님"),
                     view_item("psychiatry-hx-caffeine", "Caffeine", ["i-13ed46f5c82e"], "불안·두근거림이 있는 경우"),
-                ]},
-                {"title": "Perceptual disturbance", "items": [
-                    view_item("psychiatry-hx-hallucination", "A-H / V-H", ["i-90dad06721fb", "i-a5f32442cb55", "i-836f2bdf14e8"], "헛것이 보이거나 주변에 아무도 없는데 소리가 들리는지"),
-                    view_item("psychiatry-hx-illusion", "Illusion", ["i-2211a268632f"]),
-                    view_item("psychiatry-hx-derealization", "Derealization / Depersonalization", ["i-afcdf3f62fec"]),
-                ]},
-                {"title": "Thought · Mood", "items": [
-                    view_item("psychiatry-hx-drive", "Loss of will / Energy / Pleasure", ["i-5425c2d47801", "i-aad1c5cd2aa6", "i-368fa3cdb991"], "의욕·기운·즐거움 확인"),
-                    view_item("psychiatry-hx-suicide", "Suicidal idea / Plan / Attempt", ["i-04e13c90aa27", "i-3931bf6f6de2"], "죽고 싶은지, 계획을 세운 적이 있는지, 자해·자살 시도 여부"),
                 ]},
             ]},
             {"id": "psychiatry-view-reference", "title": "참고사항", "kind": "note", "groups": [
@@ -1181,7 +1203,7 @@ symptom_abbreviations = [
     {"label": "FUND HIS", "expansion": ["Frequency", "Urgency", "Nocturia", "Dysuria", "Hesitancy", "Incomplete emptying", "Straining"]},
 ]
 
-data = {"schemaVersion": 1, "contentVersion": "2026-09-27-beta.18", "categories": categories,
+data = {"schemaVersion": 1, "contentVersion": "2026-09-27-beta.19", "categories": categories,
         "sections": list(groups.values()), "complaints": complaints,
         "symptomAbbreviations": symptom_abbreviations,
         "referenceSections": ["routine-history","routine-exam","handover-general"]}

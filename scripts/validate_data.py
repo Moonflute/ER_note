@@ -121,17 +121,48 @@ for item_id, expected_text in expected_display_text.items():
     require(layout_items.get(item_id, {}).get("text") == expected_text, f"Unexpected compact display text: {item_id}")
 require({layout_items[item_id].get("abbreviation") for item_id in ("abd-hx-fccsr", "abd-hx-anvcd", "abd-hx-fundhis")} == {"FCCSR", "ANVCD", "FUND HIS"}, "Abdominal ROS abbreviations are not independently checkable")
 require([layout_items[item_id].get("compactRow") for item_id in ("dizz-hx-basic", "dizz-hx-cc", "dizz-hx-pi", "dizz-hx-medical", "dizz-hx-social")] == ["basic", "basic", "basic", "history", "history"], "Neurologic compact history rows are not grouped correctly")
-expected_neuro_group_order = {
+expected_history_group_order = {
+    "abdominal-pain": ["여성 환자", "History", "Review of systems"],
+    "constipation": ["Bowel habit", "History", "Review of systems"],
+    "chest-pain": ["Present illness", "History"],
     "syncope": ["Basic", "Syncope", "Background", "Review of systems"],
+    "hematuria": ["Urinary symptoms"],
+    "urinary-symptoms": ["Urinary symptoms"],
+    "incontinence": ["Urinary symptoms"],
+    "back-pain": ["Present illness"],
+    "trauma": ["Present illness", "3세 미만 열상", "교통사고", "상해"],
+    "head-trauma": ["Present illness"],
     "dizziness": ["Basic", "Dizziness", "Background", "Review of systems"],
     "headache": ["Basic", "Headache", "Background", "Review of systems"],
     "seizure": ["Basic", "Ictal", "Postictal · Background", "Background", "Review of systems"],
+    "mental-change": ["Basic", "Background", "Review of systems"],
     "stroke": ["Basic", "Time", "Background", "Review of systems"],
+    "psychiatry-interview": ["Basic", "Safety · Mood", "Perceptual disturbance", "Current function", "Past psychiatric · Family history", "Social history"],
+    "obgyn-interview": ["Symptoms", "Gynecologic history"],
+    "pregnancy": ["Current pregnancy", "Obstetric history", "Gynecologic history"],
+    "peds-common": ["Basic", "Birth history", "Review of systems"],
+    "fever": ["Basic", "Fever", "Birth history", "Review of systems"],
+    "vomiting": ["Basic", "Vomiting", "Birth history", "Review of systems"],
+    "diarrhea": ["Basic", "Diarrhea", "Birth history", "Review of systems"],
+    "cough": ["Basic", "Cough", "Birth history", "Review of systems"],
+    "peds-abdominal-pain": ["Basic", "Abdominal pain", "Birth history", "Review of systems"],
+    "peds-seizure": ["Basic", "Seizure", "Birth history", "Review of systems"],
+    "eye": ["Symptoms", "Past history"],
+    "ear": ["Symptoms · Exposure"],
+    "epistaxis": ["Present illness", "History"],
 }
-for complaint_id, expected_titles in expected_neuro_group_order.items():
+history_layout_ids = {
+    cc["id"]
+    for cc in data["complaints"]
+    if any(section["kind"] == "history" for section in cc.get("layout", {}).get("sections", []))
+}
+require(history_layout_ids == set(expected_history_group_order), "History layout order audit is incomplete")
+for complaint_id, expected_titles in expected_history_group_order.items():
     complaint = next(cc for cc in data["complaints"] if cc["id"] == complaint_id)
     history = next(section for section in complaint["layout"]["sections"] if section["kind"] == "history")
     require([group["title"] for group in history["groups"]] == expected_titles, f"Symptom history order is incorrect: {complaint_id}")
+require(layout_items["hematuria-hx-urinary"]["text"].startswith("Hematuria /"), "Hematuria is not first in its complaint checklist")
+require(layout_items["incontinence-hx-urinary"]["text"].startswith("Incontinence /"), "Incontinence is not first in its complaint checklist")
 for sid in ("np-ex1", "np-template", "np-ex2", "np-ex3", "np-response"):
     require(sections[sid]["kind"] == "example", f"Example placed in main checklist: {sid}")
 for source in sources.values():

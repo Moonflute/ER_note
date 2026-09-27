@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-09-27-beta.18",
+  "contentVersion": "2026-09-27-beta.19",
   "categories": [
     {
       "id": "00",
@@ -2506,6 +2506,27 @@
             "kind": "history",
             "groups": [
               {
+                "title": "여성 환자",
+                "items": [
+                  {
+                    "id": "abd-hx-pregnancy",
+                    "text": "임신 가능성 / LMP",
+                    "sourceItemIds": [
+                      "i-9a089b00c222"
+                    ]
+                  },
+                  {
+                    "id": "abd-hx-female",
+                    "text": "Menstruation / Last coitus / 보호자 관계",
+                    "sourceItemIds": [
+                      "i-f26b6ccefee9",
+                      "i-99dd425247e3"
+                    ],
+                    "note": "가임기 여성의 하복부 통증에서는 보호자와의 관계를 고려하여 확인"
+                  }
+                ]
+              },
+              {
                 "title": "History",
                 "items": [
                   {
@@ -2563,27 +2584,6 @@
                       "i-a7cf0271f916"
                     ],
                     "abbreviation": "FUND HIS"
-                  }
-                ]
-              },
-              {
-                "title": "여성 환자",
-                "items": [
-                  {
-                    "id": "abd-hx-pregnancy",
-                    "text": "임신 가능성 / LMP",
-                    "sourceItemIds": [
-                      "i-9a089b00c222"
-                    ]
-                  },
-                  {
-                    "id": "abd-hx-female",
-                    "text": "Menstruation / Last coitus / 보호자 관계",
-                    "sourceItemIds": [
-                      "i-f26b6ccefee9",
-                      "i-99dd425247e3"
-                    ],
-                    "note": "가임기 여성의 하복부 통증에서는 보호자와의 관계를 고려하여 확인"
                   }
                 ]
               }
@@ -2840,47 +2840,6 @@
             "kind": "history",
             "groups": [
               {
-                "title": "History",
-                "items": [
-                  {
-                    "id": "constipation-hx-past",
-                    "text": "Medical Hx (U/D Drug Adm Op)",
-                    "sourceItemIds": [
-                      "i-a0dbc0b8eaec"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Review of systems",
-                "items": [
-                  {
-                    "id": "constipation-hx-fccsr",
-                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea",
-                    "sourceItemIds": [
-                      "i-473758685a66"
-                    ],
-                    "abbreviation": "FCCSR"
-                  },
-                  {
-                    "id": "constipation-hx-anvcd",
-                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea",
-                    "sourceItemIds": [
-                      "i-473758685a66"
-                    ],
-                    "abbreviation": "ANVCD"
-                  },
-                  {
-                    "id": "constipation-hx-npo",
-                    "text": "NPO time",
-                    "sourceItemIds": [
-                      "i-23c56e483dfc"
-                    ],
-                    "note": "수술 가능성이 있는 경우"
-                  }
-                ]
-              },
-              {
                 "title": "Bowel habit",
                 "items": [
                   {
@@ -2904,6 +2863,47 @@
                       "i-96a78e8d87e7"
                     ],
                     "note": "고령 환자의 배변 습관 변화 시 malignancy 감별과 work-up 필요성 설명"
+                  }
+                ]
+              },
+              {
+                "title": "History",
+                "items": [
+                  {
+                    "id": "constipation-hx-past",
+                    "text": "Medical Hx (U/D Drug Adm Op)",
+                    "sourceItemIds": [
+                      "i-a0dbc0b8eaec"
+                    ]
+                  },
+                  {
+                    "id": "constipation-hx-npo",
+                    "text": "NPO time",
+                    "sourceItemIds": [
+                      "i-23c56e483dfc"
+                    ],
+                    "note": "수술 가능성이 있는 경우"
+                  }
+                ]
+              },
+              {
+                "title": "Review of systems",
+                "items": [
+                  {
+                    "id": "constipation-hx-fccsr",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea",
+                    "sourceItemIds": [
+                      "i-473758685a66"
+                    ],
+                    "abbreviation": "FCCSR"
+                  },
+                  {
+                    "id": "constipation-hx-anvcd",
+                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea",
+                    "sourceItemIds": [
+                      "i-473758685a66"
+                    ],
+                    "abbreviation": "ANVCD"
                   }
                 ]
               }
@@ -3347,11 +3347,11 @@
                 "items": [
                   {
                     "id": "hematuria-hx-urinary",
-                    "text": "Residual sensation / Frequency / Urgency / Hesitancy / Dysuria / Hematuria / Terminal dribbling / Nocturia / Incontinence / Narrow urine stream",
+                    "text": "Hematuria / Residual sensation / Frequency / Urgency / Hesitancy / Dysuria / Terminal dribbling / Nocturia / Incontinence / Narrow urine stream",
                     "sourceItemIds": [
                       "i-bda12e23e084"
                     ],
-                    "abbreviatedText": "FUND HIS / Hematuria / Terminal dribbling / Incontinence / Narrow urine stream"
+                    "abbreviatedText": "Hematuria / FUND HIS / Terminal dribbling / Incontinence / Narrow urine stream"
                   }
                 ]
               }
@@ -3431,11 +3431,11 @@
                 "items": [
                   {
                     "id": "incontinence-hx-urinary",
-                    "text": "Residual sensation / Frequency / Urgency / Hesitancy / Dysuria / Hematuria / Terminal dribbling / Nocturia / Incontinence / Narrow urine stream",
+                    "text": "Incontinence / Residual sensation / Frequency / Urgency / Hesitancy / Dysuria / Hematuria / Terminal dribbling / Nocturia / Narrow urine stream",
                     "sourceItemIds": [
                       "i-bda12e23e084"
                     ],
-                    "abbreviatedText": "FUND HIS / Hematuria / Terminal dribbling / Incontinence / Narrow urine stream"
+                    "abbreviatedText": "Incontinence / FUND HIS / Hematuria / Terminal dribbling / Narrow urine stream"
                   }
                 ]
               }
@@ -5533,18 +5533,93 @@
                     ]
                   },
                   {
-                    "id": "psychiatry-hx-current",
-                    "text": "초진 당시 증상 유무",
-                    "sourceItemIds": [
-                      "i-b6b3279a5fe5"
-                    ]
-                  },
-                  {
                     "id": "psychiatry-hx-stress",
                     "text": "PI / 최근 stress factor",
                     "sourceItemIds": [
                       "i-504770b9ef6c",
                       "i-326344007df5"
+                    ]
+                  },
+                  {
+                    "id": "psychiatry-hx-current",
+                    "text": "초진 당시 증상 유무",
+                    "sourceItemIds": [
+                      "i-b6b3279a5fe5"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Safety · Mood",
+                "items": [
+                  {
+                    "id": "psychiatry-hx-suicide",
+                    "text": "Suicidal idea / Plan / Attempt",
+                    "sourceItemIds": [
+                      "i-04e13c90aa27",
+                      "i-3931bf6f6de2"
+                    ],
+                    "note": "죽고 싶은지, 계획을 세운 적이 있는지, 자해·자살 시도 여부"
+                  },
+                  {
+                    "id": "psychiatry-hx-drive",
+                    "text": "Loss of will / Energy / Pleasure",
+                    "sourceItemIds": [
+                      "i-5425c2d47801",
+                      "i-aad1c5cd2aa6",
+                      "i-368fa3cdb991"
+                    ],
+                    "note": "의욕·기운·즐거움 확인"
+                  }
+                ]
+              },
+              {
+                "title": "Perceptual disturbance",
+                "items": [
+                  {
+                    "id": "psychiatry-hx-hallucination",
+                    "text": "A-H / V-H",
+                    "sourceItemIds": [
+                      "i-90dad06721fb",
+                      "i-a5f32442cb55",
+                      "i-836f2bdf14e8"
+                    ],
+                    "note": "헛것이 보이거나 주변에 아무도 없는데 소리가 들리는지"
+                  },
+                  {
+                    "id": "psychiatry-hx-illusion",
+                    "text": "Illusion",
+                    "sourceItemIds": [
+                      "i-2211a268632f"
+                    ]
+                  },
+                  {
+                    "id": "psychiatry-hx-derealization",
+                    "text": "Derealization / Depersonalization",
+                    "sourceItemIds": [
+                      "i-afcdf3f62fec"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Current function",
+                "items": [
+                  {
+                    "id": "psychiatry-hx-sleep",
+                    "text": "Sleep / Fragmentation",
+                    "sourceItemIds": [
+                      "i-f089d42d65bc",
+                      "i-5010d4f57ede",
+                      "i-24ee16959511"
+                    ]
+                  },
+                  {
+                    "id": "psychiatry-hx-appetite",
+                    "text": "Appetite",
+                    "sourceItemIds": [
+                      "i-29695720395d",
+                      "i-b2c9fb17e5b3"
                     ]
                   }
                 ]
@@ -5606,23 +5681,6 @@
                     ]
                   },
                   {
-                    "id": "psychiatry-hx-sleep",
-                    "text": "Sleep / Fragmentation",
-                    "sourceItemIds": [
-                      "i-f089d42d65bc",
-                      "i-5010d4f57ede",
-                      "i-24ee16959511"
-                    ]
-                  },
-                  {
-                    "id": "psychiatry-hx-appetite",
-                    "text": "Appetite",
-                    "sourceItemIds": [
-                      "i-29695720395d",
-                      "i-b2c9fb17e5b3"
-                    ]
-                  },
-                  {
                     "id": "psychiatry-hx-smoking",
                     "text": "Smoking",
                     "sourceItemIds": [
@@ -5645,59 +5703,6 @@
                       "i-13ed46f5c82e"
                     ],
                     "note": "불안·두근거림이 있는 경우"
-                  }
-                ]
-              },
-              {
-                "title": "Perceptual disturbance",
-                "items": [
-                  {
-                    "id": "psychiatry-hx-hallucination",
-                    "text": "A-H / V-H",
-                    "sourceItemIds": [
-                      "i-90dad06721fb",
-                      "i-a5f32442cb55",
-                      "i-836f2bdf14e8"
-                    ],
-                    "note": "헛것이 보이거나 주변에 아무도 없는데 소리가 들리는지"
-                  },
-                  {
-                    "id": "psychiatry-hx-illusion",
-                    "text": "Illusion",
-                    "sourceItemIds": [
-                      "i-2211a268632f"
-                    ]
-                  },
-                  {
-                    "id": "psychiatry-hx-derealization",
-                    "text": "Derealization / Depersonalization",
-                    "sourceItemIds": [
-                      "i-afcdf3f62fec"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Thought · Mood",
-                "items": [
-                  {
-                    "id": "psychiatry-hx-drive",
-                    "text": "Loss of will / Energy / Pleasure",
-                    "sourceItemIds": [
-                      "i-5425c2d47801",
-                      "i-aad1c5cd2aa6",
-                      "i-368fa3cdb991"
-                    ],
-                    "note": "의욕·기운·즐거움 확인"
-                  },
-                  {
-                    "id": "psychiatry-hx-suicide",
-                    "text": "Suicidal idea / Plan / Attempt",
-                    "sourceItemIds": [
-                      "i-04e13c90aa27",
-                      "i-3931bf6f6de2"
-                    ],
-                    "note": "죽고 싶은지, 계획을 세운 적이 있는지, 자해·자살 시도 여부"
                   }
                 ]
               }
@@ -6063,6 +6068,19 @@
             "kind": "history",
             "groups": [
               {
+                "title": "Symptoms",
+                "items": [
+                  {
+                    "id": "ob-hx-vaginal",
+                    "text": "Vaginal bleeding / Vaginal discharge / Abnormal bleeding / Discharge change / Bleeding amount",
+                    "sourceItemIds": [
+                      "i-49c213f030fe",
+                      "i-ccbca1cd1f76"
+                    ]
+                  }
+                ]
+              },
+              {
                 "title": "Gynecologic history",
                 "items": [
                   {
@@ -6085,19 +6103,6 @@
                     "text": "Last coitus / Dyspareunia",
                     "sourceItemIds": [
                       "i-68d84b1f6aac"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Symptoms",
-                "items": [
-                  {
-                    "id": "ob-hx-vaginal",
-                    "text": "Vaginal bleeding / Vaginal discharge / Abnormal bleeding / Discharge change / Bleeding amount",
-                    "sourceItemIds": [
-                      "i-49c213f030fe",
-                      "i-ccbca1cd1f76"
                     ]
                   }
                 ]
@@ -6191,6 +6196,75 @@
             "kind": "history",
             "groups": [
               {
+                "title": "Current pregnancy",
+                "items": [
+                  {
+                    "id": "pregnancy-hx-iup",
+                    "text": "IUP: 정확한 gestational week and day / OT",
+                    "sourceItemIds": [
+                      "i-10e0162d3aee"
+                    ]
+                  },
+                  {
+                    "id": "pregnancy-hx-labor",
+                    "text": "진통·배뭉침 / 주기 / 지속시간",
+                    "sourceItemIds": [
+                      "i-c75d69226429"
+                    ]
+                  },
+                  {
+                    "id": "pregnancy-hx-vaginal",
+                    "text": "Vaginal bleeding / Vaginal discharge / Abnormal bleeding / Discharge change / Bleeding amount",
+                    "sourceItemIds": [
+                      "i-49c213f030fe",
+                      "i-ccbca1cd1f76"
+                    ]
+                  },
+                  {
+                    "id": "pregnancy-hx-lmp",
+                    "text": "LMP",
+                    "sourceItemIds": [
+                      "i-0138e8dfa9af"
+                    ]
+                  },
+                  {
+                    "id": "pregnancy-hx-edc",
+                    "text": "Estimated date of confinement (EDC)",
+                    "sourceItemIds": [
+                      "i-57925bf76ebf"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Obstetric history",
+                "items": [
+                  {
+                    "id": "pregnancy-hx-tpal",
+                    "text": "TPAL",
+                    "sourceItemIds": [
+                      "i-1109f9f55fe5",
+                      "i-5e79003059b9"
+                    ]
+                  },
+                  {
+                    "id": "pregnancy-hx-npo",
+                    "text": "NPO time",
+                    "sourceItemIds": [
+                      "i-1109f9f55fe5",
+                      "i-0c081eadaa0e"
+                    ]
+                  },
+                  {
+                    "id": "pregnancy-hx-operation",
+                    "text": "Op Hx",
+                    "sourceItemIds": [
+                      "i-ff7aec9585a2"
+                    ]
+                  }
+                ]
+              },
+              {
                 "title": "Gynecologic history",
                 "items": [
                   {
@@ -6213,70 +6287,6 @@
                     "text": "Last coitus / Dyspareunia",
                     "sourceItemIds": [
                       "i-68d84b1f6aac"
-                    ]
-                  },
-                  {
-                    "id": "pregnancy-hx-vaginal",
-                    "text": "Vaginal bleeding / Vaginal discharge / Abnormal bleeding / Discharge change / Bleeding amount",
-                    "sourceItemIds": [
-                      "i-49c213f030fe",
-                      "i-ccbca1cd1f76"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Obstetric history",
-                "items": [
-                  {
-                    "id": "pregnancy-hx-tpal",
-                    "text": "TPAL",
-                    "sourceItemIds": [
-                      "i-1109f9f55fe5",
-                      "i-5e79003059b9"
-                    ]
-                  },
-                  {
-                    "id": "pregnancy-hx-iup",
-                    "text": "IUP: 정확한 gestational week and day / OT",
-                    "sourceItemIds": [
-                      "i-10e0162d3aee"
-                    ]
-                  },
-                  {
-                    "id": "pregnancy-hx-labor",
-                    "text": "진통·배뭉침 / 주기 / 지속시간",
-                    "sourceItemIds": [
-                      "i-c75d69226429"
-                    ]
-                  },
-                  {
-                    "id": "pregnancy-hx-lmp",
-                    "text": "LMP",
-                    "sourceItemIds": [
-                      "i-0138e8dfa9af"
-                    ]
-                  },
-                  {
-                    "id": "pregnancy-hx-edc",
-                    "text": "Estimated date of confinement (EDC)",
-                    "sourceItemIds": [
-                      "i-57925bf76ebf"
-                    ]
-                  },
-                  {
-                    "id": "pregnancy-hx-npo",
-                    "text": "NPO time",
-                    "sourceItemIds": [
-                      "i-1109f9f55fe5",
-                      "i-0c081eadaa0e"
-                    ]
-                  },
-                  {
-                    "id": "pregnancy-hx-operation",
-                    "text": "Op Hx",
-                    "sourceItemIds": [
-                      "i-ff7aec9585a2"
                     ]
                   }
                 ]
@@ -6343,7 +6353,7 @@
             "kind": "history",
             "groups": [
               {
-                "title": "General · Birth history",
+                "title": "Basic",
                 "items": [
                   {
                     "id": "peds-common-hx-vital",
@@ -6351,7 +6361,12 @@
                     "sourceItemIds": [
                       "i-88fe282cb4fe"
                     ]
-                  },
+                  }
+                ]
+              },
+              {
+                "title": "Birth history",
+                "items": [
                   {
                     "id": "peds-common-hx-neonate",
                     "text": "Neonate: Current weight / Gestational week / Vaginal delivery or C-section / Birth asphyxia",
@@ -6517,7 +6532,7 @@
             "kind": "history",
             "groups": [
               {
-                "title": "General · Birth history",
+                "title": "Basic",
                 "items": [
                   {
                     "id": "fever-hx-vital",
@@ -6525,7 +6540,34 @@
                     "sourceItemIds": [
                       "i-88fe282cb4fe"
                     ]
+                  }
+                ]
+              },
+              {
+                "title": "Fever",
+                "items": [
+                  {
+                    "id": "fever-hx-temperature",
+                    "text": "Maximum temperature at home / Temperature on arrival",
+                    "sourceItemIds": [
+                      "i-09f9f960f4d3",
+                      "i-d6027d327579"
+                    ]
                   },
+                  {
+                    "id": "fever-hx-antipyretic",
+                    "text": "Antipyretic: Last dose / Number of doses / Type / Interval / Response",
+                    "sourceItemIds": [
+                      "i-09f9f960f4d3",
+                      "i-d410e445b7d6",
+                      "i-d054632e1182"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Birth history",
+                "items": [
                   {
                     "id": "fever-hx-neonate",
                     "text": "Neonate: Current weight / Gestational week / Vaginal delivery or C-section / Birth asphyxia",
@@ -6592,28 +6634,6 @@
                     "text": "Appearance: Well or Ill / Irritable / Lethargic",
                     "sourceItemIds": [
                       "i-2565eaefaa14"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Fever",
-                "items": [
-                  {
-                    "id": "fever-hx-temperature",
-                    "text": "Maximum temperature at home / Temperature on arrival",
-                    "sourceItemIds": [
-                      "i-09f9f960f4d3",
-                      "i-d6027d327579"
-                    ]
-                  },
-                  {
-                    "id": "fever-hx-antipyretic",
-                    "text": "Antipyretic: Last dose / Number of doses / Type / Interval / Response",
-                    "sourceItemIds": [
-                      "i-09f9f960f4d3",
-                      "i-d410e445b7d6",
-                      "i-d054632e1182"
                     ]
                   }
                 ]
@@ -6768,7 +6788,7 @@
             "kind": "history",
             "groups": [
               {
-                "title": "General · Birth history",
+                "title": "Basic",
                 "items": [
                   {
                     "id": "vomiting-hx-vital",
@@ -6776,7 +6796,31 @@
                     "sourceItemIds": [
                       "i-88fe282cb4fe"
                     ]
+                  }
+                ]
+              },
+              {
+                "title": "Vomiting",
+                "items": [
+                  {
+                    "id": "vomiting-hx-count",
+                    "text": "Frequency / Pattern: Regurgitation / Vomiting / Projectile",
+                    "sourceItemIds": [
+                      "i-0cb004905b21"
+                    ]
                   },
+                  {
+                    "id": "vomiting-hx-content",
+                    "text": "Emesis color / Character: Food content / Watery",
+                    "sourceItemIds": [
+                      "i-0cb004905b21"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Birth history",
+                "items": [
                   {
                     "id": "vomiting-hx-neonate",
                     "text": "Neonate: Current weight / Gestational week / Vaginal delivery or C-section / Birth asphyxia",
@@ -6839,25 +6883,6 @@
                     "text": "Appearance: Well or Ill / Irritable / Lethargic",
                     "sourceItemIds": [
                       "i-2565eaefaa14"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Vomiting",
-                "items": [
-                  {
-                    "id": "vomiting-hx-count",
-                    "text": "Frequency / Pattern: Regurgitation / Vomiting / Projectile",
-                    "sourceItemIds": [
-                      "i-0cb004905b21"
-                    ]
-                  },
-                  {
-                    "id": "vomiting-hx-content",
-                    "text": "Emesis color / Character: Food content / Watery",
-                    "sourceItemIds": [
-                      "i-0cb004905b21"
                     ]
                   }
                 ]
@@ -6957,7 +6982,7 @@
             "kind": "history",
             "groups": [
               {
-                "title": "General · Birth history",
+                "title": "Basic",
                 "items": [
                   {
                     "id": "diarrhea-hx-vital",
@@ -6965,7 +6990,38 @@
                     "sourceItemIds": [
                       "i-88fe282cb4fe"
                     ]
+                  }
+                ]
+              },
+              {
+                "title": "Diarrhea",
+                "items": [
+                  {
+                    "id": "diarrhea-hx-stool",
+                    "text": "Frequency / Character / Color / Last defecation time",
+                    "sourceItemIds": [
+                      "i-9b0fd04b87dd"
+                    ]
                   },
+                  {
+                    "id": "diarrhea-hx-npo",
+                    "text": "NPO time",
+                    "sourceItemIds": [
+                      "i-9b0fd04b87dd"
+                    ]
+                  },
+                  {
+                    "id": "diarrhea-hx-diet",
+                    "text": "Current diet: 밥 / 미음 / 모유 / 분유",
+                    "sourceItemIds": [
+                      "i-d8c672ae10ca"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Birth history",
+                "items": [
                   {
                     "id": "diarrhea-hx-neonate",
                     "text": "Neonate: Current weight / Gestational week / Vaginal delivery or C-section / Birth asphyxia",
@@ -7028,32 +7084,6 @@
                     "text": "Appearance: Well or Ill / Irritable / Lethargic",
                     "sourceItemIds": [
                       "i-2565eaefaa14"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Diarrhea",
-                "items": [
-                  {
-                    "id": "diarrhea-hx-stool",
-                    "text": "Frequency / Character / Color / Last defecation time",
-                    "sourceItemIds": [
-                      "i-9b0fd04b87dd"
-                    ]
-                  },
-                  {
-                    "id": "diarrhea-hx-npo",
-                    "text": "NPO time",
-                    "sourceItemIds": [
-                      "i-9b0fd04b87dd"
-                    ]
-                  },
-                  {
-                    "id": "diarrhea-hx-diet",
-                    "text": "Current diet: 밥 / 미음 / 모유 / 분유",
-                    "sourceItemIds": [
-                      "i-d8c672ae10ca"
                     ]
                   }
                 ]
@@ -7153,7 +7183,7 @@
             "kind": "history",
             "groups": [
               {
-                "title": "General · Birth history",
+                "title": "Basic",
                 "items": [
                   {
                     "id": "cough-hx-vital",
@@ -7161,7 +7191,38 @@
                     "sourceItemIds": [
                       "i-88fe282cb4fe"
                     ]
+                  }
+                ]
+              },
+              {
+                "title": "Cough",
+                "items": [
+                  {
+                    "id": "cough-hx-sound",
+                    "text": "Cough sound: Barking or usual cough",
+                    "sourceItemIds": [
+                      "i-3368440da93b"
+                    ]
                   },
+                  {
+                    "id": "cough-hx-position",
+                    "text": "Worse when supine / Hoarseness",
+                    "sourceItemIds": [
+                      "i-3368440da93b"
+                    ]
+                  },
+                  {
+                    "id": "cough-hx-atopy",
+                    "text": "Atopy/Asthma PHx / FHx",
+                    "sourceItemIds": [
+                      "i-3368440da93b"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Birth history",
+                "items": [
                   {
                     "id": "cough-hx-neonate",
                     "text": "Neonate: Current weight / Gestational week / Vaginal delivery or C-section / Birth asphyxia",
@@ -7224,32 +7285,6 @@
                     "text": "Appearance: Well or Ill / Irritable / Lethargic",
                     "sourceItemIds": [
                       "i-2565eaefaa14"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Cough",
-                "items": [
-                  {
-                    "id": "cough-hx-sound",
-                    "text": "Cough sound: Barking or usual cough",
-                    "sourceItemIds": [
-                      "i-3368440da93b"
-                    ]
-                  },
-                  {
-                    "id": "cough-hx-position",
-                    "text": "Worse when supine / Hoarseness",
-                    "sourceItemIds": [
-                      "i-3368440da93b"
-                    ]
-                  },
-                  {
-                    "id": "cough-hx-atopy",
-                    "text": "Atopy/Asthma PHx / FHx",
-                    "sourceItemIds": [
-                      "i-3368440da93b"
                     ]
                   }
                 ]
@@ -7355,7 +7390,7 @@
             "kind": "history",
             "groups": [
               {
-                "title": "General · Birth history",
+                "title": "Basic",
                 "items": [
                   {
                     "id": "peds-abd-hx-vital",
@@ -7363,7 +7398,31 @@
                     "sourceItemIds": [
                       "i-88fe282cb4fe"
                     ]
+                  }
+                ]
+              },
+              {
+                "title": "Abdominal pain",
+                "items": [
+                  {
+                    "id": "peds-abd-hx-pain",
+                    "text": "Character / Location / Intermittent or Steady / Duration / Relieving time",
+                    "sourceItemIds": [
+                      "i-26e3ede4229f"
+                    ]
                   },
+                  {
+                    "id": "peds-abd-hx-bowel",
+                    "text": "Last defecation / NPO time",
+                    "sourceItemIds": [
+                      "i-2e8d142d81a5"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Birth history",
+                "items": [
                   {
                     "id": "peds-abd-hx-neonate",
                     "text": "Neonate: Current weight / Gestational week / Vaginal delivery or C-section / Birth asphyxia",
@@ -7426,25 +7485,6 @@
                     "text": "Appearance: Well or Ill / Irritable / Lethargic",
                     "sourceItemIds": [
                       "i-2565eaefaa14"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Abdominal pain",
-                "items": [
-                  {
-                    "id": "peds-abd-hx-pain",
-                    "text": "Character / Location / Intermittent or Steady / Duration / Relieving time",
-                    "sourceItemIds": [
-                      "i-26e3ede4229f"
-                    ]
-                  },
-                  {
-                    "id": "peds-abd-hx-bowel",
-                    "text": "Last defecation / NPO time",
-                    "sourceItemIds": [
-                      "i-2e8d142d81a5"
                     ]
                   }
                 ]
@@ -7570,7 +7610,7 @@
             "kind": "history",
             "groups": [
               {
-                "title": "General · Birth history",
+                "title": "Basic",
                 "items": [
                   {
                     "id": "peds-seizure-hx-vital",
@@ -7578,7 +7618,52 @@
                     "sourceItemIds": [
                       "i-88fe282cb4fe"
                     ]
+                  }
+                ]
+              },
+              {
+                "title": "Seizure",
+                "items": [
+                  {
+                    "id": "peds-seizure-hx-loc",
+                    "text": "LOC",
+                    "sourceItemIds": [
+                      "i-be829747b960"
+                    ]
                   },
+                  {
+                    "id": "peds-seizure-hx-eye",
+                    "text": "Eyeball deviation",
+                    "sourceItemIds": [
+                      "i-d953400df2c6"
+                    ]
+                  },
+                  {
+                    "id": "peds-seizure-hx-urine",
+                    "text": "Urination",
+                    "sourceItemIds": [
+                      "i-597bebc96605"
+                    ]
+                  },
+                  {
+                    "id": "peds-seizure-hx-foam",
+                    "text": "Foamy salivation",
+                    "sourceItemIds": [
+                      "i-8ce09ee87474"
+                    ]
+                  },
+                  {
+                    "id": "peds-seizure-hx-past",
+                    "text": "Previous seizure Hx",
+                    "sourceItemIds": [
+                      "i-837190c5a23c"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Birth history",
+                "items": [
                   {
                     "id": "peds-seizure-hx-neonate",
                     "text": "Neonate: Current weight / Gestational week / Vaginal delivery or C-section / Birth asphyxia",
@@ -7641,46 +7726,6 @@
                     "text": "Appearance: Well or Ill / Irritable / Lethargic",
                     "sourceItemIds": [
                       "i-2565eaefaa14"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Seizure",
-                "items": [
-                  {
-                    "id": "peds-seizure-hx-loc",
-                    "text": "LOC",
-                    "sourceItemIds": [
-                      "i-be829747b960"
-                    ]
-                  },
-                  {
-                    "id": "peds-seizure-hx-eye",
-                    "text": "Eyeball deviation",
-                    "sourceItemIds": [
-                      "i-d953400df2c6"
-                    ]
-                  },
-                  {
-                    "id": "peds-seizure-hx-urine",
-                    "text": "Urination",
-                    "sourceItemIds": [
-                      "i-597bebc96605"
-                    ]
-                  },
-                  {
-                    "id": "peds-seizure-hx-foam",
-                    "text": "Foamy salivation",
-                    "sourceItemIds": [
-                      "i-8ce09ee87474"
-                    ]
-                  },
-                  {
-                    "id": "peds-seizure-hx-past",
-                    "text": "Previous seizure Hx",
-                    "sourceItemIds": [
-                      "i-837190c5a23c"
                     ]
                   }
                 ]
