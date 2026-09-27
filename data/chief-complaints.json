@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-09-27-beta.16",
+  "contentVersion": "2026-09-27-beta.17",
   "categories": [
     {
       "id": "00",
@@ -3048,21 +3048,27 @@
                     "text": "V/S",
                     "sourceItemIds": [
                       "i-0ed008b89dee"
-                    ]
+                    ],
+                    "compactText": "V/S",
+                    "compactRow": "basic"
                   },
                   {
                     "id": "syncope-hx-cc",
                     "text": "CC",
                     "sourceItemIds": [
                       "i-ee4e51907a91"
-                    ]
+                    ],
+                    "compactText": "CC",
+                    "compactRow": "basic"
                   },
                   {
                     "id": "syncope-hx-pi",
                     "text": "PI",
                     "sourceItemIds": [
                       "i-295d2b8c0877"
-                    ]
+                    ],
+                    "compactText": "PI",
+                    "compactRow": "basic"
                   },
                   {
                     "id": "syncope-hx-medical",
@@ -3071,14 +3077,18 @@
                       "i-f9672a36bab3",
                       "i-090b46250227",
                       "i-18572f0f6fd3"
-                    ]
+                    ],
+                    "compactText": "Medical Hx",
+                    "compactRow": "history"
                   },
                   {
                     "id": "syncope-hx-social",
                     "text": "Social Hx (Alcohol Smoking)",
                     "sourceItemIds": [
                       "i-3789fe7ad282"
-                    ]
+                    ],
+                    "compactText": "Social Hx",
+                    "compactRow": "history"
                   }
                 ]
               },
@@ -4255,21 +4265,27 @@
                     "text": "V/S",
                     "sourceItemIds": [
                       "i-0ed008b89dee"
-                    ]
+                    ],
+                    "compactText": "V/S",
+                    "compactRow": "basic"
                   },
                   {
                     "id": "dizz-hx-cc",
                     "text": "CC",
                     "sourceItemIds": [
                       "i-ee4e51907a91"
-                    ]
+                    ],
+                    "compactText": "CC",
+                    "compactRow": "basic"
                   },
                   {
                     "id": "dizz-hx-pi",
                     "text": "PI",
                     "sourceItemIds": [
                       "i-295d2b8c0877"
-                    ]
+                    ],
+                    "compactText": "PI",
+                    "compactRow": "basic"
                   },
                   {
                     "id": "dizz-hx-medical",
@@ -4278,14 +4294,18 @@
                       "i-f9672a36bab3",
                       "i-090b46250227",
                       "i-18572f0f6fd3"
-                    ]
+                    ],
+                    "compactText": "Medical Hx",
+                    "compactRow": "history"
                   },
                   {
                     "id": "dizz-hx-social",
                     "text": "Social Hx (Alcohol Smoking)",
                     "sourceItemIds": [
                       "i-3789fe7ad282"
-                    ]
+                    ],
+                    "compactText": "Social Hx",
+                    "compactRow": "history"
                   }
                 ]
               },
@@ -4574,21 +4594,27 @@
                     "text": "V/S",
                     "sourceItemIds": [
                       "i-0ed008b89dee"
-                    ]
+                    ],
+                    "compactText": "V/S",
+                    "compactRow": "basic"
                   },
                   {
                     "id": "headache-hx-cc",
                     "text": "CC",
                     "sourceItemIds": [
                       "i-ee4e51907a91"
-                    ]
+                    ],
+                    "compactText": "CC",
+                    "compactRow": "basic"
                   },
                   {
                     "id": "headache-hx-pi",
                     "text": "PI",
                     "sourceItemIds": [
                       "i-295d2b8c0877"
-                    ]
+                    ],
+                    "compactText": "PI",
+                    "compactRow": "basic"
                   },
                   {
                     "id": "headache-hx-medical",
@@ -4597,14 +4623,18 @@
                       "i-f9672a36bab3",
                       "i-090b46250227",
                       "i-18572f0f6fd3"
-                    ]
+                    ],
+                    "compactText": "Medical Hx",
+                    "compactRow": "history"
                   },
                   {
                     "id": "headache-hx-social",
                     "text": "Social Hx (Alcohol Smoking)",
                     "sourceItemIds": [
                       "i-3789fe7ad282"
-                    ]
+                    ],
+                    "compactText": "Social Hx",
+                    "compactRow": "history"
                   }
                 ]
               },
@@ -4778,21 +4808,27 @@
                     "text": "V/S",
                     "sourceItemIds": [
                       "i-0ed008b89dee"
-                    ]
+                    ],
+                    "compactText": "V/S",
+                    "compactRow": "basic"
                   },
                   {
                     "id": "seizure-common-hx-cc",
                     "text": "CC",
                     "sourceItemIds": [
                       "i-ee4e51907a91"
-                    ]
+                    ],
+                    "compactText": "CC",
+                    "compactRow": "basic"
                   },
                   {
                     "id": "seizure-common-hx-pi",
                     "text": "PI",
                     "sourceItemIds": [
                       "i-295d2b8c0877"
-                    ]
+                    ],
+                    "compactText": "PI",
+                    "compactRow": "basic"
                   },
                   {
                     "id": "seizure-common-hx-medical",
@@ -4801,14 +4837,18 @@
                       "i-f9672a36bab3",
                       "i-090b46250227",
                       "i-18572f0f6fd3"
-                    ]
+                    ],
+                    "compactText": "Medical Hx",
+                    "compactRow": "history"
                   },
                   {
                     "id": "seizure-common-hx-social",
                     "text": "Social Hx (Alcohol Smoking)",
                     "sourceItemIds": [
                       "i-3789fe7ad282"
-                    ]
+                    ],
+                    "compactText": "Social Hx",
+                    "compactRow": "history"
                   }
                 ]
               },
@@ -5015,21 +5055,27 @@
                     "text": "V/S",
                     "sourceItemIds": [
                       "i-0ed008b89dee"
-                    ]
+                    ],
+                    "compactText": "V/S",
+                    "compactRow": "basic"
                   },
                   {
                     "id": "mental-hx-cc",
                     "text": "CC",
                     "sourceItemIds": [
                       "i-ee4e51907a91"
-                    ]
+                    ],
+                    "compactText": "CC",
+                    "compactRow": "basic"
                   },
                   {
                     "id": "mental-hx-pi",
                     "text": "PI",
                     "sourceItemIds": [
                       "i-295d2b8c0877"
-                    ]
+                    ],
+                    "compactText": "PI",
+                    "compactRow": "basic"
                   },
                   {
                     "id": "mental-hx-medical",
@@ -5038,14 +5084,18 @@
                       "i-f9672a36bab3",
                       "i-090b46250227",
                       "i-18572f0f6fd3"
-                    ]
+                    ],
+                    "compactText": "Medical Hx",
+                    "compactRow": "history"
                   },
                   {
                     "id": "mental-hx-social",
                     "text": "Social Hx (Alcohol Smoking)",
                     "sourceItemIds": [
                       "i-3789fe7ad282"
-                    ]
+                    ],
+                    "compactText": "Social Hx",
+                    "compactRow": "history"
                   }
                 ]
               },
@@ -5202,21 +5252,27 @@
                     "text": "V/S",
                     "sourceItemIds": [
                       "i-0ed008b89dee"
-                    ]
+                    ],
+                    "compactText": "V/S",
+                    "compactRow": "basic"
                   },
                   {
                     "id": "stroke-hx-cc",
                     "text": "CC",
                     "sourceItemIds": [
                       "i-ee4e51907a91"
-                    ]
+                    ],
+                    "compactText": "CC",
+                    "compactRow": "basic"
                   },
                   {
                     "id": "stroke-hx-pi",
                     "text": "PI",
                     "sourceItemIds": [
                       "i-295d2b8c0877"
-                    ]
+                    ],
+                    "compactText": "PI",
+                    "compactRow": "basic"
                   },
                   {
                     "id": "stroke-hx-medical",
@@ -5225,14 +5281,18 @@
                       "i-f9672a36bab3",
                       "i-090b46250227",
                       "i-18572f0f6fd3"
-                    ]
+                    ],
+                    "compactText": "Medical Hx",
+                    "compactRow": "history"
                   },
                   {
                     "id": "stroke-hx-social",
                     "text": "Social Hx (Alcohol Smoking)",
                     "sourceItemIds": [
                       "i-3789fe7ad282"
-                    ]
+                    ],
+                    "compactText": "Social Hx",
+                    "compactRow": "history"
                   }
                 ]
               },

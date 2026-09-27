@@ -6,8 +6,9 @@
     mood: "psychiatry-interview", anxiety: "psychiatry-interview", sleep: "psychiatry-interview", suicide: "psychiatry-interview", poisoning: "psychiatry-interview",
     "vaginal-discharge": "obgyn-interview", "vaginal-bleeding": "obgyn-interview", menstrual: "obgyn-interview", dysmenorrhea: "obgyn-interview", "pelvic-pain": "obgyn-interview"
   };
-  const abbreviationPreferenceKey = "er-note-symptom-abbreviations";
-  const state = { data: null, homeScroll: 0, route: null, currentItems: [], checked: new Map(), abbreviateSymptoms: false };
+  const compactViewPreferenceKey = "er-note-compact-view";
+  const legacyAbbreviationPreferenceKey = "er-note-symptom-abbreviations";
+  const state = { data: null, homeScroll: 0, route: null, currentItems: [], checked: new Map(), compactView: false };
   let sections;
   let complaints;
 
@@ -42,7 +43,7 @@
     main.innerHTML = `<div class="shell home-shell">
       <h1 class="sr-only">ER Quick Reference</h1>
       <div id="home-results"></div>
-      <label class="abbreviation-toggle"><input type="checkbox" data-abbreviation-toggle ${state.abbreviateSymptoms ? "checked" : ""}>증상 약어로 표시</label>
+      <label class="abbreviation-toggle"><input type="checkbox" data-compact-toggle ${state.compactView ? "checked" : ""}>간략 보기</label>
     </div>`;
     renderHomeResults();
   }
@@ -59,7 +60,7 @@
   }
 
   function displayItemText(item) {
-    if (!state.abbreviateSymptoms) return item.text;
+    if (!state.compactView) return item.text;
     if (item.abbreviation) return item.abbreviation;
     if (item.abbreviatedText) return item.abbreviatedText;
     return (state.data.symptomAbbreviations ?? []).reduce((text, abbreviation) => {
@@ -77,9 +78,26 @@
     return `<div class="item-row"><label class="check-item"><input type="checkbox" data-check-item="${escape(item.id)}" ${checked ? "checked" : ""}>${itemCopy(item)}</label></div>`;
   }
 
-  function compactAbbreviationMarkup(item) {
+  function compactCheckMarkup(item) {
     const checked = state.checked.get(state.route)?.has(item.id) ?? false;
-    return `<label class="abbreviation-check"><input type="checkbox" data-check-item="${escape(item.id)}" ${checked ? "checked" : ""}><span>${escape(item.abbreviation)}</span></label>`;
+    const label = item.compactText ?? item.abbreviation;
+    return `<label class="compact-check"><input type="checkbox" data-check-item="${escape(item.id)}" ${checked ? "checked" : ""}><span>${escape(label)}</span></label>`;
+  }
+
+  function groupItemsMarkup(group) {
+    if (!state.compactView) return group.items.map(itemMarkup).join("");
+    const rows = new Map();
+    const regularItems = [];
+    group.items.forEach((item) => {
+      const rowKey = item.compactRow ?? (item.abbreviation ? "abbreviations" : null);
+      if (!rowKey) {
+        regularItems.push(item);
+        return;
+      }
+      if (!rows.has(rowKey)) rows.set(rowKey, []);
+      rows.get(rowKey).push(item);
+    });
+    return `${[...rows.values()].map((items) => `<div class="compact-row">${items.map(compactCheckMarkup).join("")}</div>`).join("")}${regularItems.map(itemMarkup).join("")}`;
   }
 
   function sectionMarkup(section) {
@@ -87,11 +105,7 @@
   }
 
   function layoutSectionMarkup(section) {
-    return `<section class="content-section" aria-labelledby="section-${escape(section.id)}"><header class="content-section-header"><h2 id="section-${escape(section.id)}">${escape(section.title)}</h2></header>${section.groups.map((group) => {
-      const abbreviationItems = state.abbreviateSymptoms ? group.items.filter((item) => item.abbreviation) : [];
-      const regularItems = abbreviationItems.length ? group.items.filter((item) => !item.abbreviation) : group.items;
-      return `<section class="content-group"><h3>${escape(group.title)}</h3>${abbreviationItems.length ? `<div class="abbreviation-row">${abbreviationItems.map(compactAbbreviationMarkup).join("")}</div>` : ""}${regularItems.map(itemMarkup).join("")}</section>`;
-    }).join("")}</section>`;
+    return `<section class="content-section" aria-labelledby="section-${escape(section.id)}"><header class="content-section-header"><h2 id="section-${escape(section.id)}">${escape(section.title)}</h2></header>${section.groups.map((group) => `<section class="content-group"><h3>${escape(group.title)}</h3>${groupItemsMarkup(group)}</section>`).join("")}</section>`;
   }
 
   function referenceGroupMarkup(group) {
@@ -179,9 +193,9 @@
   });
 
   main.addEventListener("change", (event) => {
-    if (event.target.matches("[data-abbreviation-toggle]")) {
-      state.abbreviateSymptoms = event.target.checked;
-      try { localStorage.setItem(abbreviationPreferenceKey, state.abbreviateSymptoms ? "1" : "0"); } catch {}
+    if (event.target.matches("[data-compact-toggle]")) {
+      state.compactView = event.target.checked;
+      try { localStorage.setItem(compactViewPreferenceKey, state.compactView ? "1" : "0"); } catch {}
       return;
     }
     if (!event.target.matches("[data-check-item]")) return;
@@ -202,8 +216,11 @@
 
   async function start() {
     try {
-      try { state.abbreviateSymptoms = localStorage.getItem(abbreviationPreferenceKey) === "1"; } catch {}
-      const response = await fetch("./data/chief-complaints.json?v=16");
+      try {
+        const savedCompactView = localStorage.getItem(compactViewPreferenceKey);
+        state.compactView = savedCompactView === null ? localStorage.getItem(legacyAbbreviationPreferenceKey) === "1" : savedCompactView === "1";
+      } catch {}
+      const response = await fetch("./data/chief-complaints.json?v=17");
       if (!response.ok) throw new Error("문진 자료를 불러오지 못했습니다.");
       state.data = await response.json();
       sections = new Map(state.data.sections.map((section) => [section.id, section]));

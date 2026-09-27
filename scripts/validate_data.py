@@ -88,6 +88,8 @@ for cc in data["complaints"]:
                     require(bool(layout_item["abbreviatedText"]) and layout_item["abbreviatedText"] != layout_item["text"], f"Invalid abbreviated text: {layout_item['id']}")
                 if "abbreviation" in layout_item:
                     require(layout_item["abbreviation"] in abbreviation_labels, f"Unknown item abbreviation: {layout_item['id']}")
+                if "compactText" in layout_item or "compactRow" in layout_item:
+                    require(bool(layout_item.get("compactText")) and bool(layout_item.get("compactRow")), f"Incomplete compact display metadata: {layout_item['id']}")
                 layout_source_ids.update(layout_item["sourceItemIds"])
     require(len(layout_item_ids) == len(set(layout_item_ids)), f"Duplicate layout item IDs: {cc['id']}")
     if layout_item_ids:
@@ -118,6 +120,7 @@ expected_display_text = {
 for item_id, expected_text in expected_display_text.items():
     require(layout_items.get(item_id, {}).get("text") == expected_text, f"Unexpected compact display text: {item_id}")
 require({layout_items[item_id].get("abbreviation") for item_id in ("abd-hx-fccsr", "abd-hx-anvcd", "abd-hx-fundhis")} == {"FCCSR", "ANVCD", "FUND HIS"}, "Abdominal ROS abbreviations are not independently checkable")
+require([layout_items[item_id].get("compactRow") for item_id in ("dizz-hx-basic", "dizz-hx-cc", "dizz-hx-pi", "dizz-hx-medical", "dizz-hx-social")] == ["basic", "basic", "basic", "history", "history"], "Neurologic compact history rows are not grouped correctly")
 for sid in ("np-ex1", "np-template", "np-ex2", "np-ex3", "np-response"):
     require(sections[sid]["kind"] == "example", f"Example placed in main checklist: {sid}")
 for source in sources.values():

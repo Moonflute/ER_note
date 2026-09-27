@@ -190,7 +190,7 @@ for b in archive["sources"][2]["blocks"]:
 # Curated layouts are presentation-ready views over the preserved source items.
 # They may merge duplicate wording, expand confirmed abbreviations and separate
 # instructions into notes without changing or discarding the source archive.
-def view_item(iid, text, source_item_ids, note=None, abbreviated_text=None, abbreviation=None):
+def view_item(iid, text, source_item_ids, note=None, abbreviated_text=None, abbreviation=None, compact_text=None, compact_row=None):
     item = {"id": iid, "text": text, "sourceItemIds": source_item_ids}
     if note:
         item["note"] = note
@@ -198,16 +198,20 @@ def view_item(iid, text, source_item_ids, note=None, abbreviated_text=None, abbr
         item["abbreviatedText"] = abbreviated_text
     if abbreviation:
         item["abbreviation"] = abbreviation
+    if compact_text:
+        item["compactText"] = compact_text
+    if compact_row:
+        item["compactRow"] = compact_row
     return item
 
 def neuro_history_groups(prefix):
     return [
         {"title": "Basic", "items": [
-            view_item(f"{prefix}-hx-basic", "V/S", ["i-0ed008b89dee"]),
-            view_item(f"{prefix}-hx-cc", "CC", ["i-ee4e51907a91"]),
-            view_item(f"{prefix}-hx-pi", "PI", ["i-295d2b8c0877"]),
-            view_item(f"{prefix}-hx-medical", "Medical Hx (U/D Drug Adm Op)", ["i-f9672a36bab3", "i-090b46250227", "i-18572f0f6fd3"]),
-            view_item(f"{prefix}-hx-social", "Social Hx (Alcohol Smoking)", ["i-3789fe7ad282"]),
+            view_item(f"{prefix}-hx-basic", "V/S", ["i-0ed008b89dee"], compact_text="V/S", compact_row="basic"),
+            view_item(f"{prefix}-hx-cc", "CC", ["i-ee4e51907a91"], compact_text="CC", compact_row="basic"),
+            view_item(f"{prefix}-hx-pi", "PI", ["i-295d2b8c0877"], compact_text="PI", compact_row="basic"),
+            view_item(f"{prefix}-hx-medical", "Medical Hx (U/D Drug Adm Op)", ["i-f9672a36bab3", "i-090b46250227", "i-18572f0f6fd3"], compact_text="Medical Hx", compact_row="history"),
+            view_item(f"{prefix}-hx-social", "Social Hx (Alcohol Smoking)", ["i-3789fe7ad282"], compact_text="Social Hx", compact_row="history"),
         ]},
         {"title": "Review of systems", "items": [
             view_item(f"{prefix}-hx-fccsr", "Fever / Chill / Cough / Sputum / Rhinorrhea", ["i-f1940c9b999a"], abbreviation="FCCSR"),
@@ -1161,7 +1165,7 @@ symptom_abbreviations = [
     {"label": "FUND HIS", "expansion": ["Frequency", "Urgency", "Nocturia", "Dysuria", "Hesitancy", "Incomplete emptying", "Straining"]},
 ]
 
-data = {"schemaVersion": 1, "contentVersion": "2026-09-27-beta.16", "categories": categories,
+data = {"schemaVersion": 1, "contentVersion": "2026-09-27-beta.17", "categories": categories,
         "sections": list(groups.values()), "complaints": complaints,
         "symptomAbbreviations": symptom_abbreviations,
         "referenceSections": ["routine-history","routine-exam","handover-general"]}
