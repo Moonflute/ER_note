@@ -1056,8 +1056,8 @@ category_specs = [
     ("04", "신장/비뇨기", 3, False),
     ("05", "전신증상", 11, False),
     ("06", "근골격/피부", 8, False),
-    ("07", "신경", 7, False),
-    ("12", "정신", 6, False),
+    ("07", "신경", 6, False),
+    ("12", "정신", 7, False),
     ("08", "산부", 4, False),
     ("09", "소아", 5, False),
     ("10", "눈/이비인후", 9, False),
@@ -1164,7 +1164,7 @@ symptom_abbreviations = [
     {"label": "FUND HIS", "expansion": ["Frequency", "Urgency", "Nocturia", "Dysuria", "Hesitancy", "Incomplete emptying", "Straining"]},
 ]
 
-data = {"schemaVersion": 1, "contentVersion": "2026-09-27-beta.14", "categories": categories,
+data = {"schemaVersion": 1, "contentVersion": "2026-09-27-beta.15", "categories": categories,
         "sections": list(groups.values()), "complaints": complaints,
         "symptomAbbreviations": symptom_abbreviations,
         "referenceSections": ["routine-history","routine-exam","handover-general"]}

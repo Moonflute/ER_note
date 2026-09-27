@@ -193,7 +193,7 @@
   async function start() {
     try {
       try { state.abbreviateSymptoms = localStorage.getItem(abbreviationPreferenceKey) === "1"; } catch {}
-      const response = await fetch("./data/chief-complaints.json?v=14");
+      const response = await fetch("./data/chief-complaints.json?v=15");
       if (!response.ok) throw new Error("문진 자료를 불러오지 못했습니다.");
       state.data = await response.json();
       sections = new Map(state.data.sections.map((section) => [section.id, section]));
