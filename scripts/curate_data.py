@@ -204,21 +204,25 @@ def view_item(iid, text, source_item_ids, note=None, abbreviated_text=None, abbr
         item["compactRow"] = compact_row
     return item
 
-def neuro_history_groups(prefix):
-    return [
-        {"title": "Basic", "items": [
-            view_item(f"{prefix}-hx-basic", "V/S", ["i-0ed008b89dee"], compact_text="V/S", compact_row="basic"),
-            view_item(f"{prefix}-hx-cc", "CC", ["i-ee4e51907a91"], compact_text="CC", compact_row="basic"),
-            view_item(f"{prefix}-hx-pi", "PI", ["i-295d2b8c0877"], compact_text="PI", compact_row="basic"),
-            view_item(f"{prefix}-hx-medical", "Medical Hx (U/D Drug Adm Op)", ["i-f9672a36bab3", "i-090b46250227", "i-18572f0f6fd3"], compact_text="Medical Hx", compact_row="history"),
-            view_item(f"{prefix}-hx-social", "Social Hx (Alcohol Smoking)", ["i-3789fe7ad282"], compact_text="Social Hx", compact_row="history"),
-        ]},
-        {"title": "Review of systems", "items": [
-            view_item(f"{prefix}-hx-fccsr", "Fever / Chill / Cough / Sputum / Rhinorrhea", ["i-f1940c9b999a"], abbreviation="FCCSR"),
-            view_item(f"{prefix}-hx-anvcd", "Anorexia / Nausea / Vomiting / Constipation / Diarrhea", ["i-f1940c9b999a"], abbreviation="ANVCD"),
-            view_item(f"{prefix}-hx-head-dizz", "Headache / Dizziness", ["i-f1940c9b999a"]),
-        ]},
-    ]
+def neuro_basic_group(prefix):
+    return {"title": "Basic", "items": [
+        view_item(f"{prefix}-hx-basic", "V/S", ["i-0ed008b89dee"], compact_text="V/S", compact_row="basic"),
+        view_item(f"{prefix}-hx-cc", "CC", ["i-ee4e51907a91"], compact_text="CC", compact_row="basic"),
+        view_item(f"{prefix}-hx-pi", "PI", ["i-295d2b8c0877"], compact_text="PI", compact_row="basic"),
+    ]}
+
+def neuro_background_group(prefix):
+    return {"title": "Background", "items": [
+        view_item(f"{prefix}-hx-medical", "Medical Hx (U/D Drug Adm Op)", ["i-f9672a36bab3", "i-090b46250227", "i-18572f0f6fd3"], compact_text="Medical Hx", compact_row="history"),
+        view_item(f"{prefix}-hx-social", "Social Hx (Alcohol Smoking)", ["i-3789fe7ad282"], compact_text="Social Hx", compact_row="history"),
+    ]}
+
+def neuro_ros_group(prefix):
+    return {"title": "Review of systems", "items": [
+        view_item(f"{prefix}-hx-fccsr", "Fever / Chill / Cough / Sputum / Rhinorrhea", ["i-f1940c9b999a"], abbreviation="FCCSR"),
+        view_item(f"{prefix}-hx-anvcd", "Anorexia / Nausea / Vomiting / Constipation / Diarrhea", ["i-f1940c9b999a"], abbreviation="ANVCD"),
+        view_item(f"{prefix}-hx-head-dizz", "Headache / Dizziness", ["i-f1940c9b999a"]),
+    ]}
 
 def peds_history_groups(prefix, fccsr_sources=(), daily_sources=()):
     return [
@@ -428,7 +432,7 @@ curated_layouts = {
     "dizziness": {
         "sections": [
             {"id": "dizziness-view-history", "title": "Hx", "kind": "history", "groups": [
-                *neuro_history_groups("dizz"),
+                neuro_basic_group("dizz"),
                 {"title": "Dizziness", "items": [
                     view_item("dizz-hx-pattern", "Pattern: Vertigo / Presyncope / Lightheadedness / Disequilibrium", ["i-6ad27ea2b2e4", "i-2e37d0e92ac5"], "빙빙 도는지, 쓰러질 것 같은지, 기운이 없는지, 보행이 이상한지 확인"),
                     view_item("dizz-hx-trs", "True rotating sensation (TRS)", ["i-cdb419f99f24", "i-6caa8883d154", "i-6a49a5ad9c82"]),
@@ -436,6 +440,8 @@ curated_layouts = {
                     view_item("dizz-hx-ear", "Tinnitus / Otalgia / Ear fullness / Hearing difficulty or loss / URI Hx", ["i-af4103b19fb5", "i-ab8e235e7ce3", "i-6caa8883d154"]),
                     view_item("dizz-hx-neuro", "동반된 neurologic deficit symptom", ["i-4796b70d2f28"], "반드시 확인하고 차팅"),
                 ]},
+                neuro_background_group("dizz"),
+                neuro_ros_group("dizz"),
             ]},
             {"id": "dizziness-view-exam", "title": "PEx", "kind": "exam", "groups": [
                 {"title": "Nystagmus · Positional test", "items": [
@@ -582,7 +588,7 @@ curated_layouts = {
     "syncope": {
         "sections": [
             {"id": "syncope-view-history", "title": "Hx", "kind": "history", "groups": [
-                *neuro_history_groups("syncope"),
+                neuro_basic_group("syncope"),
                 {"title": "Syncope", "items": [
                     view_item("syncope-hx-loc", "LOC / Blackout / HTN medication", ["i-74e665c4ee32", "i-0395d2464d8f"]),
                     view_item("syncope-hx-prodrome", "Prodrome: 시야가 캄캄함 / Dizziness / Sweating / Nausea / Chest pain / Dyspnea", ["i-cd65d5c1c19d"]),
@@ -590,6 +596,8 @@ curated_layouts = {
                     view_item("syncope-hx-prior", "Previous similar episode", ["i-5662f55888f8"]),
                     view_item("syncope-hx-context", "Meal / Sleep / Stress", ["i-be7d7e3c523b"]),
                 ]},
+                neuro_background_group("syncope"),
+                neuro_ros_group("syncope"),
             ]},
             {"id": "syncope-view-exam", "title": "PEx", "kind": "exam", "groups": [
                 {"title": "Orthostatic blood pressure", "items": [
@@ -606,7 +614,7 @@ curated_layouts = {
     "headache": {
         "sections": [
             {"id": "headache-view-history", "title": "Hx", "kind": "history", "groups": [
-                *neuro_history_groups("headache"),
+                neuro_basic_group("headache"),
                 {"title": "Headache", "items": [
                     view_item("headache-hx-character", "Character / Pulsatile", ["i-9fc7e16784c7", "i-9cfdc43f0e0f", "i-29e1606c5666", "i-4d8fc6f58f75"]),
                     view_item("headache-hx-location", "Location", ["i-9fc7e16784c7", "i-9cfdc43f0e0f", "i-ffc390c13501"]),
@@ -617,6 +625,8 @@ curated_layouts = {
                     view_item("headache-hx-associated", "Nausea / Vomiting / Dizziness / Other associated symptoms", ["i-29b81de03b58", "i-9de2e117b6a9"]),
                     view_item("headache-hx-factor", "Trauma / Family Hx / Sleep disturbance / Tenderness point", ["i-79bdeb7f9c37"]),
                 ]},
+                neuro_background_group("headache"),
+                neuro_ros_group("headache"),
             ]},
             {"id": "headache-view-exam", "title": "PEx", "kind": "exam", "groups": [
                 {"title": "Neurologic", "items": [
@@ -629,7 +639,7 @@ curated_layouts = {
     "seizure": {
         "sections": [
             {"id": "seizure-view-history", "title": "Hx", "kind": "history", "groups": [
-                *neuro_history_groups("seizure-common"),
+                neuro_basic_group("seizure-common"),
                 {"title": "Ictal", "items": [
                     view_item("seizure-hx-type", "Type: GTC / Partial", ["i-5b74d90d649a", "i-ae89dd865504"]),
                     view_item("seizure-hx-site", "Involved body part", ["i-0c9edd42be8b", "i-ae89dd865504"]),
@@ -648,13 +658,17 @@ curated_layouts = {
                     view_item("seizure-hx-alcohol", "Last alcohol", ["i-5ae8a078122d", "i-60884bae711f"]),
                     view_item("seizure-hx-sleep", "Sleep hours per day", ["i-821430aff642", "i-60884bae711f"]),
                 ]},
+                neuro_background_group("seizure-common"),
+                neuro_ros_group("seizure-common"),
             ]},
         ]
     },
     "mental-change": {
         "sections": [
             {"id": "mental-view-history", "title": "Hx", "kind": "history", "groups": [
-                *neuro_history_groups("mental"),
+                neuro_basic_group("mental"),
+                neuro_background_group("mental"),
+                neuro_ros_group("mental"),
             ]},
             {"id": "mental-view-exam", "title": "PEx", "kind": "exam", "groups": [
                 {"title": "Mental · Respiration", "items": [
@@ -674,10 +688,12 @@ curated_layouts = {
     "stroke": {
         "sections": [
             {"id": "stroke-view-history", "title": "Hx", "kind": "history", "groups": [
-                *neuro_history_groups("stroke"),
+                neuro_basic_group("stroke"),
                 {"title": "Time", "items": [
                     view_item("stroke-hx-time", "Last normal time / First abnormal time", ["i-eddf689b48ac"]),
                 ]},
+                neuro_background_group("stroke"),
+                neuro_ros_group("stroke"),
             ]},
             {"id": "stroke-view-exam", "title": "PEx", "kind": "exam", "groups": [
                 {"title": "Mental · Commands", "items": [
@@ -1165,7 +1181,7 @@ symptom_abbreviations = [
     {"label": "FUND HIS", "expansion": ["Frequency", "Urgency", "Nocturia", "Dysuria", "Hesitancy", "Incomplete emptying", "Straining"]},
 ]
 
-data = {"schemaVersion": 1, "contentVersion": "2026-09-27-beta.17", "categories": categories,
+data = {"schemaVersion": 1, "contentVersion": "2026-09-27-beta.18", "categories": categories,
         "sections": list(groups.values()), "complaints": complaints,
         "symptomAbbreviations": symptom_abbreviations,
         "referenceSections": ["routine-history","routine-exam","handover-general"]}

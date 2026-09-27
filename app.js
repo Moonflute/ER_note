@@ -220,7 +220,7 @@
         const savedCompactView = localStorage.getItem(compactViewPreferenceKey);
         state.compactView = savedCompactView === null ? localStorage.getItem(legacyAbbreviationPreferenceKey) === "1" : savedCompactView === "1";
       } catch {}
-      const response = await fetch("./data/chief-complaints.json?v=17");
+      const response = await fetch("./data/chief-complaints.json?v=18");
       if (!response.ok) throw new Error("문진 자료를 불러오지 못했습니다.");
       state.data = await response.json();
       sections = new Map(state.data.sections.map((section) => [section.id, section]));

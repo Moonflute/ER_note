@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-09-27-beta.17",
+  "contentVersion": "2026-09-27-beta.18",
   "categories": [
     {
       "id": "00",
@@ -3069,7 +3069,53 @@
                     ],
                     "compactText": "PI",
                     "compactRow": "basic"
+                  }
+                ]
+              },
+              {
+                "title": "Syncope",
+                "items": [
+                  {
+                    "id": "syncope-hx-loc",
+                    "text": "LOC / Blackout / HTN medication",
+                    "sourceItemIds": [
+                      "i-74e665c4ee32",
+                      "i-0395d2464d8f"
+                    ]
                   },
+                  {
+                    "id": "syncope-hx-prodrome",
+                    "text": "Prodrome: 시야가 캄캄함 / Dizziness / Sweating / Nausea / Chest pain / Dyspnea",
+                    "sourceItemIds": [
+                      "i-cd65d5c1c19d"
+                    ]
+                  },
+                  {
+                    "id": "syncope-hx-change",
+                    "text": "실신 당시 증상과 현재 증상 비교 / 호전 여부",
+                    "sourceItemIds": [
+                      "i-dc2c688b1dbb"
+                    ]
+                  },
+                  {
+                    "id": "syncope-hx-prior",
+                    "text": "Previous similar episode",
+                    "sourceItemIds": [
+                      "i-5662f55888f8"
+                    ]
+                  },
+                  {
+                    "id": "syncope-hx-context",
+                    "text": "Meal / Sleep / Stress",
+                    "sourceItemIds": [
+                      "i-be7d7e3c523b"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Background",
+                "items": [
                   {
                     "id": "syncope-hx-medical",
                     "text": "Medical Hx (U/D Drug Adm Op)",
@@ -3116,47 +3162,6 @@
                     "text": "Headache / Dizziness",
                     "sourceItemIds": [
                       "i-f1940c9b999a"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Syncope",
-                "items": [
-                  {
-                    "id": "syncope-hx-loc",
-                    "text": "LOC / Blackout / HTN medication",
-                    "sourceItemIds": [
-                      "i-74e665c4ee32",
-                      "i-0395d2464d8f"
-                    ]
-                  },
-                  {
-                    "id": "syncope-hx-prodrome",
-                    "text": "Prodrome: 시야가 캄캄함 / Dizziness / Sweating / Nausea / Chest pain / Dyspnea",
-                    "sourceItemIds": [
-                      "i-cd65d5c1c19d"
-                    ]
-                  },
-                  {
-                    "id": "syncope-hx-change",
-                    "text": "실신 당시 증상과 현재 증상 비교 / 호전 여부",
-                    "sourceItemIds": [
-                      "i-dc2c688b1dbb"
-                    ]
-                  },
-                  {
-                    "id": "syncope-hx-prior",
-                    "text": "Previous similar episode",
-                    "sourceItemIds": [
-                      "i-5662f55888f8"
-                    ]
-                  },
-                  {
-                    "id": "syncope-hx-context",
-                    "text": "Meal / Sleep / Stress",
-                    "sourceItemIds": [
-                      "i-be7d7e3c523b"
                     ]
                   }
                 ]
@@ -4286,54 +4291,6 @@
                     ],
                     "compactText": "PI",
                     "compactRow": "basic"
-                  },
-                  {
-                    "id": "dizz-hx-medical",
-                    "text": "Medical Hx (U/D Drug Adm Op)",
-                    "sourceItemIds": [
-                      "i-f9672a36bab3",
-                      "i-090b46250227",
-                      "i-18572f0f6fd3"
-                    ],
-                    "compactText": "Medical Hx",
-                    "compactRow": "history"
-                  },
-                  {
-                    "id": "dizz-hx-social",
-                    "text": "Social Hx (Alcohol Smoking)",
-                    "sourceItemIds": [
-                      "i-3789fe7ad282"
-                    ],
-                    "compactText": "Social Hx",
-                    "compactRow": "history"
-                  }
-                ]
-              },
-              {
-                "title": "Review of systems",
-                "items": [
-                  {
-                    "id": "dizz-hx-fccsr",
-                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea",
-                    "sourceItemIds": [
-                      "i-f1940c9b999a"
-                    ],
-                    "abbreviation": "FCCSR"
-                  },
-                  {
-                    "id": "dizz-hx-anvcd",
-                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea",
-                    "sourceItemIds": [
-                      "i-f1940c9b999a"
-                    ],
-                    "abbreviation": "ANVCD"
-                  },
-                  {
-                    "id": "dizz-hx-head-dizz",
-                    "text": "Headache / Dizziness",
-                    "sourceItemIds": [
-                      "i-f1940c9b999a"
-                    ]
                   }
                 ]
               },
@@ -4382,6 +4339,59 @@
                       "i-4796b70d2f28"
                     ],
                     "note": "반드시 확인하고 차팅"
+                  }
+                ]
+              },
+              {
+                "title": "Background",
+                "items": [
+                  {
+                    "id": "dizz-hx-medical",
+                    "text": "Medical Hx (U/D Drug Adm Op)",
+                    "sourceItemIds": [
+                      "i-f9672a36bab3",
+                      "i-090b46250227",
+                      "i-18572f0f6fd3"
+                    ],
+                    "compactText": "Medical Hx",
+                    "compactRow": "history"
+                  },
+                  {
+                    "id": "dizz-hx-social",
+                    "text": "Social Hx (Alcohol Smoking)",
+                    "sourceItemIds": [
+                      "i-3789fe7ad282"
+                    ],
+                    "compactText": "Social Hx",
+                    "compactRow": "history"
+                  }
+                ]
+              },
+              {
+                "title": "Review of systems",
+                "items": [
+                  {
+                    "id": "dizz-hx-fccsr",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ],
+                    "abbreviation": "FCCSR"
+                  },
+                  {
+                    "id": "dizz-hx-anvcd",
+                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ],
+                    "abbreviation": "ANVCD"
+                  },
+                  {
+                    "id": "dizz-hx-head-dizz",
+                    "text": "Headache / Dizziness",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ]
                   }
                 ]
               }
@@ -4615,54 +4625,6 @@
                     ],
                     "compactText": "PI",
                     "compactRow": "basic"
-                  },
-                  {
-                    "id": "headache-hx-medical",
-                    "text": "Medical Hx (U/D Drug Adm Op)",
-                    "sourceItemIds": [
-                      "i-f9672a36bab3",
-                      "i-090b46250227",
-                      "i-18572f0f6fd3"
-                    ],
-                    "compactText": "Medical Hx",
-                    "compactRow": "history"
-                  },
-                  {
-                    "id": "headache-hx-social",
-                    "text": "Social Hx (Alcohol Smoking)",
-                    "sourceItemIds": [
-                      "i-3789fe7ad282"
-                    ],
-                    "compactText": "Social Hx",
-                    "compactRow": "history"
-                  }
-                ]
-              },
-              {
-                "title": "Review of systems",
-                "items": [
-                  {
-                    "id": "headache-hx-fccsr",
-                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea",
-                    "sourceItemIds": [
-                      "i-f1940c9b999a"
-                    ],
-                    "abbreviation": "FCCSR"
-                  },
-                  {
-                    "id": "headache-hx-anvcd",
-                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea",
-                    "sourceItemIds": [
-                      "i-f1940c9b999a"
-                    ],
-                    "abbreviation": "ANVCD"
-                  },
-                  {
-                    "id": "headache-hx-head-dizz",
-                    "text": "Headache / Dizziness",
-                    "sourceItemIds": [
-                      "i-f1940c9b999a"
-                    ]
                   }
                 ]
               },
@@ -4738,6 +4700,59 @@
                     "text": "Trauma / Family Hx / Sleep disturbance / Tenderness point",
                     "sourceItemIds": [
                       "i-79bdeb7f9c37"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Background",
+                "items": [
+                  {
+                    "id": "headache-hx-medical",
+                    "text": "Medical Hx (U/D Drug Adm Op)",
+                    "sourceItemIds": [
+                      "i-f9672a36bab3",
+                      "i-090b46250227",
+                      "i-18572f0f6fd3"
+                    ],
+                    "compactText": "Medical Hx",
+                    "compactRow": "history"
+                  },
+                  {
+                    "id": "headache-hx-social",
+                    "text": "Social Hx (Alcohol Smoking)",
+                    "sourceItemIds": [
+                      "i-3789fe7ad282"
+                    ],
+                    "compactText": "Social Hx",
+                    "compactRow": "history"
+                  }
+                ]
+              },
+              {
+                "title": "Review of systems",
+                "items": [
+                  {
+                    "id": "headache-hx-fccsr",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ],
+                    "abbreviation": "FCCSR"
+                  },
+                  {
+                    "id": "headache-hx-anvcd",
+                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ],
+                    "abbreviation": "ANVCD"
+                  },
+                  {
+                    "id": "headache-hx-head-dizz",
+                    "text": "Headache / Dizziness",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
                     ]
                   }
                 ]
@@ -4829,54 +4844,6 @@
                     ],
                     "compactText": "PI",
                     "compactRow": "basic"
-                  },
-                  {
-                    "id": "seizure-common-hx-medical",
-                    "text": "Medical Hx (U/D Drug Adm Op)",
-                    "sourceItemIds": [
-                      "i-f9672a36bab3",
-                      "i-090b46250227",
-                      "i-18572f0f6fd3"
-                    ],
-                    "compactText": "Medical Hx",
-                    "compactRow": "history"
-                  },
-                  {
-                    "id": "seizure-common-hx-social",
-                    "text": "Social Hx (Alcohol Smoking)",
-                    "sourceItemIds": [
-                      "i-3789fe7ad282"
-                    ],
-                    "compactText": "Social Hx",
-                    "compactRow": "history"
-                  }
-                ]
-              },
-              {
-                "title": "Review of systems",
-                "items": [
-                  {
-                    "id": "seizure-common-hx-fccsr",
-                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea",
-                    "sourceItemIds": [
-                      "i-f1940c9b999a"
-                    ],
-                    "abbreviation": "FCCSR"
-                  },
-                  {
-                    "id": "seizure-common-hx-anvcd",
-                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea",
-                    "sourceItemIds": [
-                      "i-f1940c9b999a"
-                    ],
-                    "abbreviation": "ANVCD"
-                  },
-                  {
-                    "id": "seizure-common-hx-head-dizz",
-                    "text": "Headache / Dizziness",
-                    "sourceItemIds": [
-                      "i-f1940c9b999a"
-                    ]
                   }
                 ]
               },
@@ -5001,6 +4968,59 @@
                     ]
                   }
                 ]
+              },
+              {
+                "title": "Background",
+                "items": [
+                  {
+                    "id": "seizure-common-hx-medical",
+                    "text": "Medical Hx (U/D Drug Adm Op)",
+                    "sourceItemIds": [
+                      "i-f9672a36bab3",
+                      "i-090b46250227",
+                      "i-18572f0f6fd3"
+                    ],
+                    "compactText": "Medical Hx",
+                    "compactRow": "history"
+                  },
+                  {
+                    "id": "seizure-common-hx-social",
+                    "text": "Social Hx (Alcohol Smoking)",
+                    "sourceItemIds": [
+                      "i-3789fe7ad282"
+                    ],
+                    "compactText": "Social Hx",
+                    "compactRow": "history"
+                  }
+                ]
+              },
+              {
+                "title": "Review of systems",
+                "items": [
+                  {
+                    "id": "seizure-common-hx-fccsr",
+                    "text": "Fever / Chill / Cough / Sputum / Rhinorrhea",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ],
+                    "abbreviation": "FCCSR"
+                  },
+                  {
+                    "id": "seizure-common-hx-anvcd",
+                    "text": "Anorexia / Nausea / Vomiting / Constipation / Diarrhea",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ],
+                    "abbreviation": "ANVCD"
+                  },
+                  {
+                    "id": "seizure-common-hx-head-dizz",
+                    "text": "Headache / Dizziness",
+                    "sourceItemIds": [
+                      "i-f1940c9b999a"
+                    ]
+                  }
+                ]
               }
             ]
           }
@@ -5076,7 +5096,12 @@
                     ],
                     "compactText": "PI",
                     "compactRow": "basic"
-                  },
+                  }
+                ]
+              },
+              {
+                "title": "Background",
+                "items": [
                   {
                     "id": "mental-hx-medical",
                     "text": "Medical Hx (U/D Drug Adm Op)",
@@ -5273,7 +5298,24 @@
                     ],
                     "compactText": "PI",
                     "compactRow": "basic"
-                  },
+                  }
+                ]
+              },
+              {
+                "title": "Time",
+                "items": [
+                  {
+                    "id": "stroke-hx-time",
+                    "text": "Last normal time / First abnormal time",
+                    "sourceItemIds": [
+                      "i-eddf689b48ac"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Background",
+                "items": [
                   {
                     "id": "stroke-hx-medical",
                     "text": "Medical Hx (U/D Drug Adm Op)",
@@ -5320,18 +5362,6 @@
                     "text": "Headache / Dizziness",
                     "sourceItemIds": [
                       "i-f1940c9b999a"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Time",
-                "items": [
-                  {
-                    "id": "stroke-hx-time",
-                    "text": "Last normal time / First abnormal time",
-                    "sourceItemIds": [
-                      "i-eddf689b48ac"
                     ]
                   }
                 ]

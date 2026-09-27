@@ -121,6 +121,17 @@ for item_id, expected_text in expected_display_text.items():
     require(layout_items.get(item_id, {}).get("text") == expected_text, f"Unexpected compact display text: {item_id}")
 require({layout_items[item_id].get("abbreviation") for item_id in ("abd-hx-fccsr", "abd-hx-anvcd", "abd-hx-fundhis")} == {"FCCSR", "ANVCD", "FUND HIS"}, "Abdominal ROS abbreviations are not independently checkable")
 require([layout_items[item_id].get("compactRow") for item_id in ("dizz-hx-basic", "dizz-hx-cc", "dizz-hx-pi", "dizz-hx-medical", "dizz-hx-social")] == ["basic", "basic", "basic", "history", "history"], "Neurologic compact history rows are not grouped correctly")
+expected_neuro_group_order = {
+    "syncope": ["Basic", "Syncope", "Background", "Review of systems"],
+    "dizziness": ["Basic", "Dizziness", "Background", "Review of systems"],
+    "headache": ["Basic", "Headache", "Background", "Review of systems"],
+    "seizure": ["Basic", "Ictal", "Postictal · Background", "Background", "Review of systems"],
+    "stroke": ["Basic", "Time", "Background", "Review of systems"],
+}
+for complaint_id, expected_titles in expected_neuro_group_order.items():
+    complaint = next(cc for cc in data["complaints"] if cc["id"] == complaint_id)
+    history = next(section for section in complaint["layout"]["sections"] if section["kind"] == "history")
+    require([group["title"] for group in history["groups"]] == expected_titles, f"Symptom history order is incorrect: {complaint_id}")
 for sid in ("np-ex1", "np-template", "np-ex2", "np-ex3", "np-response"):
     require(sections[sid]["kind"] == "example", f"Example placed in main checklist: {sid}")
 for source in sources.values():
