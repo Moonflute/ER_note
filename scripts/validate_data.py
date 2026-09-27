@@ -81,6 +81,8 @@ for cc in data["complaints"]:
                 layout_item_ids.append(layout_item["id"])
                 require(bool(layout_item["sourceItemIds"]), f"Layout item lacks source items: {layout_item['id']}")
                 require(set(layout_item["sourceItemIds"]) <= set(items), f"Layout item has unknown source items: {layout_item['id']}")
+                if "abbreviatedText" in layout_item:
+                    require(bool(layout_item["abbreviatedText"]) and layout_item["abbreviatedText"] != layout_item["text"], f"Invalid abbreviated text: {layout_item['id']}")
                 layout_source_ids.update(layout_item["sourceItemIds"])
     require(len(layout_item_ids) == len(set(layout_item_ids)), f"Duplicate layout item IDs: {cc['id']}")
     if layout_item_ids:

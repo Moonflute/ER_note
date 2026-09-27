@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-09-27-beta.10",
+  "contentVersion": "2026-09-27-beta.11",
   "categories": [
     {
       "id": "00",
@@ -3312,7 +3312,8 @@
                     "text": "Residual sensation / Frequency / Urgency / Hesitancy / Dysuria / Hematuria / Terminal dribbling / Nocturia / Incontinence / Narrow urine stream",
                     "sourceItemIds": [
                       "i-bda12e23e084"
-                    ]
+                    ],
+                    "abbreviatedText": "FUND HIS / Hematuria / Terminal dribbling / Incontinence / Narrow urine stream"
                   }
                 ]
               }
@@ -3356,7 +3357,8 @@
                     "text": "Residual sensation / Frequency / Urgency / Hesitancy / Dysuria / Hematuria / Terminal dribbling / Nocturia / Incontinence / Narrow urine stream",
                     "sourceItemIds": [
                       "i-bda12e23e084"
-                    ]
+                    ],
+                    "abbreviatedText": "FUND HIS / Hematuria / Terminal dribbling / Incontinence / Narrow urine stream"
                   }
                 ]
               }
@@ -3394,7 +3396,8 @@
                     "text": "Residual sensation / Frequency / Urgency / Hesitancy / Dysuria / Hematuria / Terminal dribbling / Nocturia / Incontinence / Narrow urine stream",
                     "sourceItemIds": [
                       "i-bda12e23e084"
-                    ]
+                    ],
+                    "abbreviatedText": "FUND HIS / Hematuria / Terminal dribbling / Incontinence / Narrow urine stream"
                   }
                 ]
               }

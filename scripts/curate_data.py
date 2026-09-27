@@ -190,10 +190,12 @@ for b in archive["sources"][2]["blocks"]:
 # Curated layouts are presentation-ready views over the preserved source items.
 # They may merge duplicate wording, expand confirmed abbreviations and separate
 # instructions into notes without changing or discarding the source archive.
-def view_item(iid, text, source_item_ids, note=None):
+def view_item(iid, text, source_item_ids, note=None, abbreviated_text=None):
     item = {"id": iid, "text": text, "sourceItemIds": source_item_ids}
     if note:
         item["note"] = note
+    if abbreviated_text:
+        item["abbreviatedText"] = abbreviated_text
     return item
 
 def neuro_history_groups(prefix):
@@ -496,7 +498,7 @@ curated_layouts = {
         "sections": [
             {"id": "hematuria-view-history", "title": "Hx", "kind": "history", "groups": [
                 {"title": "Urinary symptoms", "items": [
-                    view_item("hematuria-hx-urinary", "Residual sensation / Frequency / Urgency / Hesitancy / Dysuria / Hematuria / Terminal dribbling / Nocturia / Incontinence / Narrow urine stream", ["i-bda12e23e084"]),
+                    view_item("hematuria-hx-urinary", "Residual sensation / Frequency / Urgency / Hesitancy / Dysuria / Hematuria / Terminal dribbling / Nocturia / Incontinence / Narrow urine stream", ["i-bda12e23e084"], abbreviated_text="FUND HIS / Hematuria / Terminal dribbling / Incontinence / Narrow urine stream"),
                 ]},
             ]},
         ]
@@ -505,7 +507,7 @@ curated_layouts = {
         "sections": [
             {"id": "urinary-view-history", "title": "Hx", "kind": "history", "groups": [
                 {"title": "Urinary symptoms", "items": [
-                    view_item("urinary-hx-symptoms", "Residual sensation / Frequency / Urgency / Hesitancy / Dysuria / Hematuria / Terminal dribbling / Nocturia / Incontinence / Narrow urine stream", ["i-bda12e23e084"]),
+                    view_item("urinary-hx-symptoms", "Residual sensation / Frequency / Urgency / Hesitancy / Dysuria / Hematuria / Terminal dribbling / Nocturia / Incontinence / Narrow urine stream", ["i-bda12e23e084"], abbreviated_text="FUND HIS / Hematuria / Terminal dribbling / Incontinence / Narrow urine stream"),
                 ]},
             ]},
         ]
@@ -514,7 +516,7 @@ curated_layouts = {
         "sections": [
             {"id": "incontinence-view-history", "title": "Hx", "kind": "history", "groups": [
                 {"title": "Urinary symptoms", "items": [
-                    view_item("incontinence-hx-urinary", "Residual sensation / Frequency / Urgency / Hesitancy / Dysuria / Hematuria / Terminal dribbling / Nocturia / Incontinence / Narrow urine stream", ["i-bda12e23e084"]),
+                    view_item("incontinence-hx-urinary", "Residual sensation / Frequency / Urgency / Hesitancy / Dysuria / Hematuria / Terminal dribbling / Nocturia / Incontinence / Narrow urine stream", ["i-bda12e23e084"], abbreviated_text="FUND HIS / Hematuria / Terminal dribbling / Incontinence / Narrow urine stream"),
                 ]},
             ]},
         ]
@@ -1186,7 +1188,7 @@ symptom_abbreviations = [
     {"label": "FUND HIS", "expansion": ["Frequency", "Urgency", "Nocturia", "Dysuria", "Hesitancy", "Incomplete emptying", "Straining"]},
 ]
 
-data = {"schemaVersion": 1, "contentVersion": "2026-09-27-beta.10", "categories": categories,
+data = {"schemaVersion": 1, "contentVersion": "2026-09-27-beta.11", "categories": categories,
         "sections": list(groups.values()), "complaints": complaints,
         "symptomAbbreviations": symptom_abbreviations,
         "referenceSections": ["routine-history","routine-exam","handover-general"]}

@@ -60,6 +60,7 @@
 
   function displayItemText(item) {
     if (!state.abbreviateSymptoms) return item.text;
+    if (item.abbreviatedText) return item.abbreviatedText;
     return (state.data.symptomAbbreviations ?? []).reduce((text, abbreviation) => {
       const expansion = abbreviation.expansion.join(" / ");
       return text.replaceAll(expansion, abbreviation.label);
@@ -192,7 +193,7 @@
   async function start() {
     try {
       try { state.abbreviateSymptoms = localStorage.getItem(abbreviationPreferenceKey) === "1"; } catch {}
-      const response = await fetch("./data/chief-complaints.json?v=10");
+      const response = await fetch("./data/chief-complaints.json?v=11");
       if (!response.ok) throw new Error("문진 자료를 불러오지 못했습니다.");
       state.data = await response.json();
       sections = new Map(state.data.sections.map((section) => [section.id, section]));
