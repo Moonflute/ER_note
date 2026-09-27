@@ -1052,15 +1052,15 @@ category_specs = [
     ("00", "입원관리", 12, True),
     ("01", "소화기", 1, False),
     ("02", "순환기", 2, False),
-    ("03", "호흡기", 3, False),
-    ("04", "신장/비뇨기", 4, False),
-    ("05", "전신증상", 5, False),
-    ("06", "근골격/피부", 6, False),
+    ("03", "호흡기", 10, False),
+    ("04", "신장/비뇨기", 3, False),
+    ("05", "전신증상", 11, False),
+    ("06", "근골격/피부", 8, False),
     ("07", "신경", 7, False),
-    ("12", "정신", 8, False),
-    ("08", "산부", 9, False),
-    ("09", "소아", 10, False),
-    ("10", "눈/이비인후", 11, False),
+    ("12", "정신", 6, False),
+    ("08", "산부", 4, False),
+    ("09", "소아", 5, False),
+    ("10", "눈/이비인후", 9, False),
     ("11", "상담", 13, True),
 ]
 categories = [{"id": cid, "name": name, "order": order, "secondary": secondary} for cid, name, order, secondary in category_specs]
@@ -1164,7 +1164,7 @@ symptom_abbreviations = [
     {"label": "FUND HIS", "expansion": ["Frequency", "Urgency", "Nocturia", "Dysuria", "Hesitancy", "Incomplete emptying", "Straining"]},
 ]
 
-data = {"schemaVersion": 1, "contentVersion": "2026-09-27-beta.13", "categories": categories,
+data = {"schemaVersion": 1, "contentVersion": "2026-09-27-beta.14", "categories": categories,
         "sections": list(groups.values()), "complaints": complaints,
         "symptomAbbreviations": symptom_abbreviations,
         "referenceSections": ["routine-history","routine-exam","handover-general"]}

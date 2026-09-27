@@ -27,10 +27,12 @@ sections = {s["id"]: s for s in data["sections"]}
 items = {i["id"]: i for s in sections.values() for i in s["items"]}
 categories = {c["id"] for c in data["categories"]}
 abbreviations = data.get("symptomAbbreviations", [])
+visible_category_order = [c["name"] for c in sorted(data["categories"], key=lambda c: (c["secondary"], c["order"])) if c["id"] in {"01", "02", "04", "08", "09", "12", "07", "06", "10"}]
 require(len(sections) == len(data["sections"]), "Duplicate section IDs")
 require(len(items) == sum(len(s["items"]) for s in data["sections"]), "Duplicate item IDs")
 require(set(blocks) == set(provenance["assignments"]), "Source blocks not completely accounted for")
 require(len({c["id"] for c in data["complaints"]}) == len(data["complaints"]), "Duplicate complaint IDs")
+require(visible_category_order == ["소화기", "순환기", "신장/비뇨기", "산부", "소아", "정신", "신경", "근골격/피부", "눈/이비인후"], "Unexpected home category order")
 require(len({a["label"] for a in abbreviations}) == len(abbreviations), "Duplicate symptom abbreviation labels")
 require(all(a["label"] and len(a["expansion"]) > 1 and all(a["expansion"]) for a in abbreviations), "Invalid symptom abbreviation definition")
 linked = Counter()

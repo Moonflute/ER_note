@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-09-27-beta.13",
+  "contentVersion": "2026-09-27-beta.14",
   "categories": [
     {
       "id": "00",
@@ -23,25 +23,25 @@
     {
       "id": "03",
       "name": "호흡기",
-      "order": 3,
+      "order": 10,
       "secondary": false
     },
     {
       "id": "04",
       "name": "신장/비뇨기",
-      "order": 4,
+      "order": 3,
       "secondary": false
     },
     {
       "id": "05",
       "name": "전신증상",
-      "order": 5,
+      "order": 11,
       "secondary": false
     },
     {
       "id": "06",
       "name": "근골격/피부",
-      "order": 6,
+      "order": 8,
       "secondary": false
     },
     {
@@ -53,25 +53,25 @@
     {
       "id": "12",
       "name": "정신",
-      "order": 8,
+      "order": 6,
       "secondary": false
     },
     {
       "id": "08",
       "name": "산부",
-      "order": 9,
+      "order": 4,
       "secondary": false
     },
     {
       "id": "09",
       "name": "소아",
-      "order": 10,
+      "order": 5,
       "secondary": false
     },
     {
       "id": "10",
       "name": "눈/이비인후",
-      "order": 11,
+      "order": 9,
       "secondary": false
     },
     {
