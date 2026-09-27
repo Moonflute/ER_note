@@ -8,7 +8,7 @@
   };
   const compactViewPreferenceKey = "er-note-compact-view";
   const legacyAbbreviationPreferenceKey = "er-note-symptom-abbreviations";
-  const state = { data: null, homeScroll: 0, route: null, currentItems: [], checked: new Map(), compactView: false };
+  const state = { data: null, homeScroll: 0, route: null, currentItems: [], checked: new Map(), compactView: true };
   let sections;
   let complaints;
 
@@ -218,7 +218,12 @@
     try {
       try {
         const savedCompactView = localStorage.getItem(compactViewPreferenceKey);
-        state.compactView = savedCompactView === null ? localStorage.getItem(legacyAbbreviationPreferenceKey) === "1" : savedCompactView === "1";
+        const legacyCompactView = localStorage.getItem(legacyAbbreviationPreferenceKey);
+        state.compactView = savedCompactView !== null
+          ? savedCompactView === "1"
+          : legacyCompactView !== null
+            ? legacyCompactView === "1"
+            : true;
       } catch {}
       const response = await fetch("./data/chief-complaints.json?v=18");
       if (!response.ok) throw new Error("문진 자료를 불러오지 못했습니다.");
