@@ -28,12 +28,16 @@ items = {i["id"]: i for s in sections.values() for i in s["items"]}
 categories = {c["id"] for c in data["categories"]}
 abbreviations = data.get("symptomAbbreviations", [])
 abbreviation_labels = {a["label"] for a in abbreviations}
-visible_category_order = [c["name"] for c in sorted(data["categories"], key=lambda c: (c["secondary"], c["order"])) if c["id"] in {"01", "02", "04", "08", "09", "12", "07", "06", "10"}]
+visible_category_order = [c["name"] for c in sorted(data["categories"], key=lambda c: (c["secondary"], c["order"])) if c["id"] in {"01", "02", "04", "08", "09", "12", "07", "06", "10", "13"}]
 require(len(sections) == len(data["sections"]), "Duplicate section IDs")
 require(len(items) == sum(len(s["items"]) for s in data["sections"]), "Duplicate item IDs")
 require(set(blocks) == set(provenance["assignments"]), "Source blocks not completely accounted for")
 require(len({c["id"] for c in data["complaints"]}) == len(data["complaints"]), "Duplicate complaint IDs")
-require(visible_category_order == ["소화기", "순환기", "신장/비뇨기", "산부", "소아", "신경", "정신", "근골격/피부", "눈/이비인후"], "Unexpected home category order")
+require(visible_category_order == ["소화기", "순환기", "신장/비뇨기", "산부", "소아", "신경", "정신", "근골격/피부", "눈/이비인후", "외상"], "Unexpected home category order")
+require("00" not in categories and not any(cc["categoryId"] == "00" for cc in data["complaints"]), "Admission management category must not be shown")
+complaint_categories = {cc["id"]: cc["categoryId"] for cc in data["complaints"]}
+require(all(complaint_categories.get(item_id) == "13" for item_id in ("trauma", "head-trauma", "inhalation-burn", "poisoning")), "Trauma category membership is incorrect")
+require(complaint_categories.get("cardiac-arrest") == "02", "Cardiac arrest should remain in circulation")
 require(len({a["label"] for a in abbreviations}) == len(abbreviations), "Duplicate symptom abbreviation labels")
 require(all(a["label"] and len(a["expansion"]) > 1 and all(a["expansion"]) for a in abbreviations), "Invalid symptom abbreviation definition")
 linked = Counter()
@@ -60,6 +64,7 @@ for section in sections.values():
     if section["kind"] == "example":
         require(all(linked[i["id"]] == 1 for i in section["items"]), f"Merged distinct example occurrences: {section['id']}")
 used = set(data["referenceSections"])
+item_section = {item["id"]: sid for sid, section in sections.items() for item in section["items"]}
 for cc in data["complaints"]:
     require(cc["categoryId"] in categories, f"Unknown category: {cc['id']}")
     refs = cc["sectionIds"] + cc["sharedSectionIds"]
@@ -91,10 +96,11 @@ for cc in data["complaints"]:
                 if "compactText" in layout_item or "compactRow" in layout_item:
                     require(bool(layout_item.get("compactText")) and bool(layout_item.get("compactRow")), f"Incomplete compact display metadata: {layout_item['id']}")
                 layout_source_ids.update(layout_item["sourceItemIds"])
+                used.update(item_section[item_id] for item_id in layout_item["sourceItemIds"])
     require(len(layout_item_ids) == len(set(layout_item_ids)), f"Duplicate layout item IDs: {cc['id']}")
     if layout_item_ids:
         raw_complaint_item_ids = {item["id"] for sid in refs for item in sections[sid]["items"]}
-        require(layout_source_ids == raw_complaint_item_ids, f"Curated layout source coverage mismatch: {cc['id']}")
+        require(raw_complaint_item_ids <= layout_source_ids, f"Curated layout source coverage mismatch: {cc['id']}")
 require(used == set(sections), "Sections are unreachable")
 require(not any(sid.startswith("peds-") or sid.startswith("np-") for sid in data["referenceSections"]), "Specialty material mixed into general common reference")
 for specialty_id, shared_id in (("psychiatry-interview", "np-history"), ("obgyn-interview", "ob-history"), ("peds-common", "peds-history")):
@@ -119,6 +125,10 @@ expected_display_text = {
 }
 for item_id, expected_text in expected_display_text.items():
     require(layout_items.get(item_id, {}).get("text") == expected_text, f"Unexpected compact display text: {item_id}")
+require(layout_items.get("headache-pe-shoulder", {}).get("text") == "Shoulder tenderness", "Confirmed Td meaning is not reflected")
+require(layout_items.get("eye-pe-lom", {}).get("text") == "LOM", "Unconfirmed LOM was expanded")
+require(layout_items.get("trauma-pe-ent-level", {}).get("text") == "Ear or neck laceration: Neck level", "Unconfirmed neck level was changed")
+require(layout_items.get("fever-hx-vaccination", {}).get("text") == "Vaccination Hx / Recent vaccination before fever", "Pediatric fever vaccination questions are incomplete")
 require({layout_items[item_id].get("abbreviation") for item_id in ("abd-hx-fccsr", "abd-hx-anvcd", "abd-hx-fundhis")} == {"FCCSR", "ANVCD", "FUND HIS"}, "Abdominal ROS abbreviations are not independently checkable")
 require([layout_items[item_id].get("compactRow") for item_id in ("dizz-hx-basic", "dizz-hx-cc", "dizz-hx-pi", "dizz-hx-medical", "dizz-hx-social")] == ["basic", "basic", "basic", "history", "history"], "Neurologic compact history rows are not grouped correctly")
 expected_history_group_order = {
@@ -130,8 +140,13 @@ expected_history_group_order = {
     "urinary-symptoms": ["Urinary symptoms"],
     "incontinence": ["Urinary symptoms"],
     "back-pain": ["Present illness"],
-    "trauma": ["Present illness", "3세 미만 열상", "교통사고", "상해"],
+    "trauma": ["Present illness", "3세 미만 열상", "10세 이하 열상", "Nasal bone fracture", "교통사고", "상해"],
     "head-trauma": ["Present illness"],
+    "testicular": ["Present illness"],
+    "oral-dental": ["Present illness"],
+    "poisoning": ["Exposure · Intent"],
+    "inhalation-burn": ["Symptoms"],
+    "cardiac-arrest": ["Arrival"],
     "dizziness": ["Basic", "Dizziness", "Background", "Review of systems"],
     "headache": ["Basic", "Headache", "Background", "Review of systems"],
     "seizure": ["Basic", "Ictal", "Postictal · Background", "Background", "Review of systems"],
@@ -148,6 +163,7 @@ expected_history_group_order = {
     "peds-abdominal-pain": ["Basic", "Abdominal pain", "Birth history", "Review of systems"],
     "peds-seizure": ["Basic", "Seizure", "Birth history", "Review of systems"],
     "eye": ["Symptoms", "Past history"],
+    "throat": ["Symptoms"],
     "ear": ["Symptoms · Exposure"],
     "epistaxis": ["Present illness", "History"],
 }
@@ -175,9 +191,9 @@ service_worker_source = (ROOT / "sw.js").read_text(encoding="utf-8")
 require("common-shortcut" not in app_source and "#common" not in app_source, "Removed common shortcut is still rendered")
 require("catalog-tools" not in app_source and '${matching.length}' not in app_source, "Home catalog count is still rendered")
 require('serviceWorker.register("./sw.js")' in app_source, "Service worker is not registered")
-for asset in ("./styles.css?v=21", "./app.js?v=32", "./data/chief-complaints.json?v=20"):
+for asset in ("./styles.css?v=21", "./app.js?v=33", "./data/chief-complaints.json?v=21"):
     require(asset in service_worker_source, f"Offline cache asset is stale: {asset}")
-require('./styles.css?v=21' in index_source and './app.js?v=32' in index_source, "HTML asset versions do not match offline cache")
+require('./styles.css?v=21' in index_source and './app.js?v=33' in index_source, "HTML asset versions do not match offline cache")
 for sid in ("np-ex1", "np-template", "np-ex2", "np-ex3", "np-response"):
     require(sections[sid]["kind"] == "example", f"Example placed in main checklist: {sid}")
 for source in sources.values():

@@ -215,7 +215,7 @@
             ? legacyCompactView === "1"
             : true;
       } catch {}
-      const response = await fetch("./data/chief-complaints.json?v=20");
+      const response = await fetch("./data/chief-complaints.json?v=21");
       if (!response.ok) throw new Error("문진 자료를 불러오지 못했습니다.");
       state.data = await response.json();
       sections = new Map(state.data.sections.map((section) => [section.id, section]));

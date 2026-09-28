@@ -175,6 +175,47 @@ add("eye-exam", "눈 증상 진찰", "exam", "all", "195-196")
 add("eye-note", "눈 증상 인계 메모", "note", "all", "201")
 add("handover-general", "B구역 인계 메모", "note", "handover", "4-6")
 
+# Additional department handover. Preserve each paragraph once here, then use
+# curated layouts to split mixed paragraphs into Hx, PEx and reference items.
+add("specialty-general-note", "과별 초진 진행", "note", "specialty", "3,5,7-10,12,14")
+add("specialty-peds-history", "소아 추가 문진", "history", "specialty", "18,20,23-24")
+add("specialty-peds-exam", "소아 추가 진찰", "exam", "specialty", "22")
+add("specialty-peds-note", "소아 추가 참고", "note", "specialty", "17,19,21,25")
+add("specialty-ob-history", "산부인과 추가 문진", "history", "specialty", "28-29")
+add("specialty-ob-note", "산부인과 추가 참고", "note", "specialty", "27,30")
+add("specialty-dizziness-history", "어지럼 추가 문진", "history", "specialty", "33")
+add("specialty-dizziness-exam", "어지럼 추가 진찰", "exam", "specialty", "34-36,45,47")
+add("specialty-mental-exam", "의식 추가 진찰", "exam", "specialty", "37-40,46")
+add("specialty-seizure-history", "경련 추가 문진", "history", "specialty", "41")
+add("specialty-neuro-history", "신경 추가 병력", "history", "specialty", "42-44")
+add("specialty-headache-exam", "두통 추가 진찰", "exam", "specialty", "48")
+add("specialty-psychiatry-history", "정신과 추가 문진", "history", "specialty", "52,56,59-61")
+add("specialty-psychiatry-note", "정신과 추가 참고", "note", "specialty", "50-55,57,62")
+add("specialty-throat-note", "인후 이물 참고", "note", "specialty", "64-65")
+add("specialty-ear-history", "귀 추가 문진", "history", "specialty", "66")
+add("specialty-epistaxis-history", "코피 추가 문진", "history", "specialty", "67,69-73")
+add("specialty-epistaxis-note", "코피 추가 참고", "note", "specialty", "68,74,76-77")
+add("specialty-ent-trauma", "이비인후 열상 참고", "note", "specialty", "75")
+add("specialty-ts-note", "흉부외과 참고", "note", "specialty", "79")
+add("specialty-urology-note", "비뇨기 추가 참고", "note", "specialty", "81-82")
+add("specialty-ureter-note", "요관결석 추가 참고", "note", "specialty", "83")
+add("specialty-testicular-exam", "고환 진찰", "exam", "specialty", "84")
+add("specialty-eye-mixed", "안과 추가 문진과 진찰", "exam", "specialty", "87-93")
+add("specialty-eye-note", "안과 추가 참고", "note", "specialty", "86,94-96")
+add("specialty-os-exam", "정형외과 추가 진찰", "exam", "specialty", "100-101,104")
+add("specialty-os-note", "정형외과 추가 참고", "note", "specialty", "98-99,102-103,105")
+add("specialty-ns-exam", "신경외과 추가 진찰", "exam", "specialty", "107")
+add("specialty-ns-note", "신경외과 추가 참고", "note", "specialty", "108")
+add("specialty-dental-note", "치과 참고", "note", "specialty", "110-112")
+add("specialty-derm-note", "피부과 추가 참고", "note", "specialty", "114-116")
+add("specialty-trauma-history", "외상 추가 문진", "history", "specialty", "122,124,129,139,142,144,146")
+add("specialty-trauma-exam", "외상 추가 진찰", "exam", "specialty", "125-128,132,134")
+add("specialty-trauma-note", "외상 추가 참고", "note", "specialty", "118-121,123,130-131,133,135-138,140-141,143,145")
+add("specialty-poisoning-note", "약물중독 참고", "note", "specialty", "149-150")
+add("specialty-arrest-note", "심정지와 DOA 참고", "note", "specialty", "151,153-156")
+add("specialty-burn-mixed", "흡입화상 문진과 진찰", "exam", "specialty", "158")
+add("specialty-trauma-general", "외상 공통 참고", "note", "specialty", "160-162")
+
 # Visible PDF-only annotations. The rest is an alternate rendition, verified visually.
 pdf_additions = [
     ("np-pdf-summary", "가서 물어볼 것들: C.C, o/s, 과거력, 누구와 함께 사는지, 직업, 내원 당시 증상, 최근 stress factor, compliance, sleep/appetite, suicidal idea/plan/attempt", "np-pdf:page1"),
@@ -184,8 +225,19 @@ pdf_additions = [
 for iid, text, bid in pdf_additions:
     groups["np-note"]["items"].append({"id": iid, "text": text})
     assignments[bid].append({"type": "pdfAddition", "sectionId": "np-note", "itemId": iid})
-for b in archive["sources"][2]["blocks"]:
+for b in next(source for source in archive["sources"] if source["id"] == "np-pdf")["blocks"]:
     assignments[b["id"]].append({"type": "alternateRendition", "canonicalSourceId": "np-docx", "verification": "PDF 2페이지 시각 확인. 추가 요약·차팅 문구는 별도 보존."})
+
+def source_items(sid, specs):
+    """Return raw item IDs backed by the selected source paragraphs."""
+    item_ids = []
+    for bid in pick(sid, specs):
+        for assignment in assignments[bid]:
+            if assignment["type"] == "item" and assignment["itemId"] not in item_ids:
+                item_ids.append(assignment["itemId"])
+    if not item_ids:
+        raise ValueError(f"No source items found: {sid} {specs}")
+    return item_ids
 
 # Curated layouts are presentation-ready views over the preserved source items.
 # They may merge duplicate wording, expand confirmed abbreviations and separate
@@ -213,8 +265,9 @@ def neuro_basic_group(prefix):
 
 def neuro_background_group(prefix):
     return {"title": "Background", "items": [
-        view_item(f"{prefix}-hx-medical", "Medical Hx (U/D Drug Adm Op)", ["i-f9672a36bab3", "i-090b46250227", "i-18572f0f6fd3"], compact_text="Medical Hx", compact_row="history"),
-        view_item(f"{prefix}-hx-social", "Social Hx (Alcohol Smoking)", ["i-3789fe7ad282"], compact_text="Social Hx", compact_row="history"),
+        view_item(f"{prefix}-hx-medical", "Medical Hx (U/D Drug Adm Op)", ["i-f9672a36bab3", "i-090b46250227", "i-18572f0f6fd3", *source_items("specialty", "42,44")], compact_text="Medical Hx", compact_row="history"),
+        view_item(f"{prefix}-hx-social", "Social Hx (Alcohol Smoking)", ["i-3789fe7ad282", *source_items("specialty", "43")], compact_text="Social Hx", compact_row="history"),
+        view_item(f"{prefix}-hx-family", "Family Hx (DM / HTN / MI / Stroke / Cancer)", source_items("specialty", "43")),
     ]}
 
 def neuro_ros_group(prefix):
@@ -231,6 +284,7 @@ def peds_basic_group(prefix):
 
 def peds_birth_group(prefix):
     return {"title": "Birth history", "items": [
+        view_item(f"{prefix}-hx-age-months", "Age in months if 24 months or younger", source_items("specialty", "24")),
         view_item(f"{prefix}-hx-neonate-growth", "Neonate: Current weight / Gestational week", ["i-88fe282cb4fe", "i-52e3c96499b8"]),
         view_item(f"{prefix}-hx-neonate-delivery", "Vaginal delivery or C-section / Birth asphyxia", ["i-52e3c96499b8"]),
         view_item(f"{prefix}-hx-mother", "Maternal problem", ["i-0ed4387ab7a9"]),
@@ -242,20 +296,21 @@ def peds_ros_group(prefix, fccsr_sources=(), daily_sources=()):
         view_item(f"{prefix}-hx-nasal", "Nasal obstruction", ["i-52e3c96499b8", *fccsr_sources]),
         view_item(f"{prefix}-hx-anvcd", "Anorexia / Nausea / Vomiting / Constipation / Diarrhea", ["i-0ed4387ab7a9"], abbreviation="ANVCD"),
         view_item(f"{prefix}-hx-head-irritability", "Headache / Irritability", ["i-0ed4387ab7a9"]),
-        view_item(f"{prefix}-hx-feeding-activity", "Feeding / Activity: Fair or Poor", ["i-915a1e9fb598", *daily_sources]),
-        view_item(f"{prefix}-hx-urination-sleep", "Urination / Sleeping: Fair or Poor", ["i-915a1e9fb598", *daily_sources]),
-        view_item(f"{prefix}-hx-appearance", "Appearance: Well or Ill / Irritable / Lethargic", ["i-2565eaefaa14"]),
+        view_item(f"{prefix}-hx-feeding-activity", "Feeding / Activity: Fair or Poor", ["i-915a1e9fb598", *daily_sources, *source_items("specialty", "18")]),
+        view_item(f"{prefix}-hx-urination-sleep", "Urination / Sleeping: Fair or Poor", ["i-915a1e9fb598", *daily_sources, *source_items("specialty", "18")]),
+        view_item(f"{prefix}-hx-last-output", "Last urination / defecation time", source_items("specialty", "18")),
+        view_item(f"{prefix}-hx-appearance", "Appearance: Well or Ill / Irritable / Lethargic", ["i-2565eaefaa14", *source_items("specialty", "18")]),
     ]}
 
 def peds_exam_groups(prefix, throat_sources=(), neck_sources=(), lung_sources=(), bowel_sources=()):
     return [
         {"title": "HEENT · Neck", "items": [
-            view_item(f"{prefix}-pe-throat", "Throat injection / Tonsillar enlargement", ["i-f563840a36c8", "i-711f3514742f", *throat_sources]),
+            view_item(f"{prefix}-pe-throat", "Throat injection / Tonsillar enlargement", ["i-f563840a36c8", "i-711f3514742f", *throat_sources, *source_items("specialty", "22")]),
             view_item(f"{prefix}-pe-tongue", "Dehydrated tongue", ["i-b65cf64b5492"]),
             view_item(f"{prefix}-pe-neck", "Neck stiffness / Nuchal rigidity", ["i-795bc09a858d", *neck_sources]),
         ]},
         {"title": "Chest", "items": [
-            view_item(f"{prefix}-pe-lung", "Lung sound: Clear / Coarse / Wheezing / Stridor / Crackle", ["i-afddfcfacdfb", *lung_sources]),
+            view_item(f"{prefix}-pe-lung", "Lung sound: Clear / Coarse / Wheezing / Stridor / Crackle", ["i-afddfcfacdfb", *lung_sources, *source_items("specialty", "22")]),
             view_item(f"{prefix}-pe-heart", "Heart murmur", ["i-adc3e02089cf"]),
         ]},
         {"title": "Abdomen", "items": [
@@ -292,7 +347,7 @@ curated_layouts = {
                 ]},
                 {"title": "Abdomen", "items": [
                     view_item("abd-pe-bowel", "Bowel sound: Normoactive", ["i-a40910290557"]),
-                    view_item("abd-pe-tenderness", "Abdominal Td / rTd / Muscle guarding", ["i-a40910290557", "i-4e56e4043370", "i-99e95de58023"], "rTd 판단이 어려우면 percussion tenderness를 확인. 환자의 통증 호소만으로 기록하지 말고 진찰자가 판단하여 전공의에게 알림"),
+                    view_item("abd-pe-tenderness", "Abdominal tenderness / rTd / Muscle guarding", ["i-a40910290557", "i-4e56e4043370", "i-99e95de58023"], "rTd 판단이 어려우면 percussion tenderness를 확인. 환자의 통증 호소만으로 기록하지 말고 진찰자가 판단하여 전공의에게 알림"),
                     view_item("abd-pe-cvat", "CVAT", ["i-48f8724d8595", "i-2983d5754b6e"], "반드시 확인"),
                 ]},
             ]},
@@ -328,6 +383,7 @@ curated_layouts = {
                     view_item("flank-ref-order", "ER set: 요로결석", ["i-9c83c71a6e33"]),
                     view_item("flank-ref-old-age", "고령 환자: EKG / D-dimer 추가", ["i-eb78ffa7f6c4"], "Renal infarction 가능성 고려"),
                     view_item("flank-ref-ct", "CT: RUA 결과 확인 후 시행", ["i-e4ebc9e04362"], "원문 인계 원칙"),
+                    view_item("flank-ref-stone-size", "CT에서 ureter stone size를 mm로 확인하여 전달", source_items("specialty", "83")),
                 ]},
                 {"title": "증상 조절", "items": [
                     view_item("flank-ref-control", "Pain: Kerasyn, 심한 경우 Morphine / Nausea: Macperan", ["i-899326191deb"]),
@@ -344,6 +400,8 @@ curated_layouts = {
                     view_item("rash-ref-peniramine", "IM Peniramine 후 귀가 계획인 경우가 많음", ["i-3dc12c53eebc"]),
                     view_item("rash-ref-angioedema", "Angioedema 동반: IV fluid treatment / ED notify", ["i-6fe69f063abd"]),
                     view_item("rash-ref-consult", "복용 중인 약물에도 호전이 없으면 DM consult", ["i-3b9babba9fdf"]),
+                    view_item("rash-ref-description", "피부 병변 description form에 따라 차팅 후 DM 연락", source_items("specialty", "114-115")),
+                    view_item("rash-ref-urticaria", "Urticaria는 주로 ER에서 처치한다는 원문", source_items("specialty", "116")),
                 ]},
                 {"title": "환자 설명", "items": [
                     view_item("rash-ref-explain", "초진 후 가려움증 완화 주사 계획 설명 → ED 설명 후 귀가 형태로 진행", ["i-92ef6181190b", "i-1fa2d9cbf8e4"]),
@@ -375,14 +433,22 @@ curated_layouts = {
         "sections": [
             {"id": "trauma-view-history", "title": "Hx", "kind": "history", "groups": [
                 {"title": "Present illness", "items": [
-                    view_item("trauma-hx-event", "Injury time / Mechanism / Object / Impact force", ["i-688a6f65c1d7", "i-de73026cd548", "i-e1195a72d9d0", "i-9ebb530af606"]),
+                    view_item("trauma-hx-event", "Injury time / Mechanism / Object and material / Impact force", ["i-688a6f65c1d7", "i-de73026cd548", "i-e1195a72d9d0", "i-9ebb530af606", *source_items("specialty", "124,129")]),
                     view_item("trauma-hx-loc", "LOC", ["i-a0f0117152c7"]),
                     view_item("trauma-hx-pain", "Abdominal pain / Flank pain / Chest wall pain", ["i-386ee59bf53f", "i-b2bb84357bb1"]),
                     view_item("trauma-hx-control", "Pain control 필요 여부", ["i-be27568ef195"]),
-                    view_item("trauma-hx-tetanus", "Tetanus vaccination Hx", ["i-d721e9eae930", "i-0cc7a621fc77"], "최근 5년 이내 접종 여부 확인"),
+                    view_item("trauma-hx-tetanus", "Tetanus vaccination Hx", ["i-d721e9eae930", "i-0cc7a621fc77", *source_items("specialty", "122")], "최근 5년 이내 접종 여부 확인"),
+                    view_item("trauma-hx-drunk", "Drunken state", source_items("specialty", "146")),
                 ]},
                 {"title": "3세 미만 열상", "items": [
-                    view_item("trauma-hx-toddler", "NPO time / Body weight", ["i-b84e19f8e78e"], "Line 확보 및 sedative drug 사용 대비; NPO 3시간 확인"),
+                    view_item("trauma-hx-toddler", "NPO time: Solid / Liquid / Body weight", ["i-b84e19f8e78e", *source_items("specialty", "14")], "Line 확보 및 sedative drug 사용 대비; 원문 NPO 3시간 확인"),
+                ]},
+                {"title": "10세 이하 열상", "items": [
+                    view_item("trauma-hx-peds-line", "Line 확보 여부", source_items("specialty", "139-140"), "원문: 소아를 sedation하여 suture하는 경우"),
+                    view_item("trauma-hx-peds-npo", "Line 확보 결정 시 NPO time: Solid / Liquid", source_items("specialty", "14,142")),
+                ]},
+                {"title": "Nasal bone fracture", "items": [
+                    view_item("trauma-hx-nasal", "Glasses at injury / Epistaxis ongoing or stopped", source_items("specialty", "144")),
                 ]},
                 {"title": "교통사고", "items": [
                     view_item("trauma-hx-ta", "Mechanism / Speed / Seat / Protective gear / LOC / Airbag deployment", ["i-de147cc79d31"]),
@@ -393,42 +459,64 @@ curated_layouts = {
             ]},
             {"id": "trauma-view-exam", "title": "PEx", "kind": "exam", "groups": [
                 {"title": "Musculoskeletal", "items": [
-                    view_item("trauma-pe-msk", "Tenderness / LOM / Deformity / Swelling / External wound", ["i-f87ca1e6cd9b", "i-800b30ed4c7d"]),
-                    view_item("trauma-pe-neurovascular", "Motor / Sensory change", ["i-f87ca1e6cd9b", "i-440ea8d2c491", "i-deb36614d74a", "i-03c04767e1cf"]),
+                    view_item("trauma-pe-msk", "Tenderness / LOM / Deformity / Swelling / External wound", ["i-f87ca1e6cd9b", "i-800b30ed4c7d", *source_items("specialty", "100")]),
+                    view_item("trauma-pe-neurovascular", "Distal motor / Sensory change", ["i-f87ca1e6cd9b", "i-440ea8d2c491", "i-deb36614d74a", "i-03c04767e1cf", *source_items("specialty", "100,132")]),
                     view_item("trauma-pe-axis", "Pelvis / C-spine tenderness", ["i-108544b6342b"]),
                 ]},
                 {"title": "Wound", "items": [
-                    view_item("trauma-pe-expose", "상처를 완전히 노출하여 직접 확인", ["i-04d6f8b0a8a2"]),
-                    view_item("trauma-pe-foreign", "Foreign body", ["i-2d07e2abd35d"]),
-                    view_item("trauma-pe-site", "Site / Size", ["i-3066cfdb3509", "i-226da3ed64be"], "Lip laceration은 뒤집어 oral cavity 병변 확인"),
-                    view_item("trauma-pe-bleeding", "Active bleeding", ["i-fce3d24d05a6", "i-a169f4388074"]),
-                    view_item("trauma-pe-depth", "Depth: superficial / deep / penetrating", ["i-996a841fe07e", "i-226da3ed64be"]),
-                    view_item("trauma-pe-margin", "Margin: regular / irregular", ["i-45dcc449d3cd", "i-226da3ed64be"], "예: chin 2 cm superficial linear irregular-margin laceration"),
-                    view_item("trauma-pe-structure", "Exposed structure: none / dermis / subcutaneous tissue / tendon / ligament / nerve", ["i-ade2395cb1b7"]),
+                    view_item("trauma-pe-expose", "붕대·splint를 제거하고 상처를 완전히 노출하여 직접 확인", ["i-04d6f8b0a8a2", *source_items("specialty", "101,104")]),
+                    view_item("trauma-pe-open", "Open (bone visible) / Closed", source_items("specialty", "101")),
+                    view_item("trauma-pe-foreign", "Foreign body", ["i-2d07e2abd35d", *source_items("specialty", "124")]),
+                    view_item("trauma-pe-site", "Site / Size", ["i-3066cfdb3509", "i-226da3ed64be", *source_items("specialty", "125")], "Lip laceration은 뒤집어 oral cavity 병변 확인"),
+                    view_item("trauma-pe-bleeding", "Active bleeding", ["i-fce3d24d05a6", "i-a169f4388074", *source_items("specialty", "120")]),
+                    view_item("trauma-pe-depth", "Depth: superficial / deep / penetrating", ["i-996a841fe07e", "i-226da3ed64be", *source_items("specialty", "125")]),
+                    view_item("trauma-pe-margin", "Margin: regular / irregular", ["i-45dcc449d3cd", "i-226da3ed64be", *source_items("specialty", "125")], "예: chin 2 cm superficial linear irregular-margin laceration"),
+                    view_item("trauma-pe-structure", "Exposed structure: none / dermis / subcutaneous tissue / tendon / ligament / nerve", ["i-ade2395cb1b7", *source_items("specialty", "126-128")]),
+                    view_item("trauma-pe-oral", "Chin or lip penetrating wound / Intraoral laceration / Tongue laceration", source_items("specialty", "134"), "소독된 면봉으로 관통 여부 확인"),
+                    view_item("trauma-pe-ent-level", "Ear or neck laceration: Neck level", source_items("specialty", "75")),
                     view_item("trauma-pe-face", "Facial tenderness", ["i-33c45fd3619a"]),
                 ]},
+                {"title": "Nasal bone fracture", "items": [
+                    view_item("trauma-pe-nasal", "Swelling / Tenderness / Deviation / Epistaxis", source_items("specialty", "144")),
+                ]},
                 {"title": "교통사고", "items": [
-                    view_item("trauma-pe-ta", "Head / Thorax / Abdomen / Lower back / Pelvis / Extremities", ["i-92155cfad7fe"], "통증 부위 중심으로 보되 전 부위 확인"),
+                    view_item("trauma-pe-ta", "Head / Neck / Chest / Abdomen / Lower back / Pelvis / Extremities", ["i-92155cfad7fe", *source_items("specialty", "161-162")], "머리부터 발끝까지 눌러 확인하고, TA는 머리·목·가슴·배 후 팔다리 순서"),
                 ]},
             ]},
             {"id": "trauma-view-reference", "title": "참고사항", "kind": "note", "groups": [
                 {"title": "초기 처치·오더", "items": [
                     view_item("trauma-ref-set", "ER set: 정형외과 Routine / 성형외과 Routine / 신경외과 Routine / 07Suture", ["i-cc9fb9ec6dff"]),
-                    view_item("trauma-ref-xray", "관절 XR은 여러 view를 모두 포함; 소아는 비교를 위해 양측 촬영", ["i-f374b9394b7f", "i-ce1c89e77931"]),
+                    view_item("trauma-ref-xray", "관절 XR은 여러 view를 모두 포함; 소아는 비교를 위해 양측 촬영", ["i-f374b9394b7f", "i-ce1c89e77931", *source_items("specialty", "99")], "OS 연락 전 X-ray 확인"),
                     view_item("trauma-ref-confirm", "처방 전 ED R. 확인", ["i-423e0fce3748"]),
-                    view_item("trauma-ref-wet", "Open wound 초진: Gauze + 생리식염수 + 픽스몰 준비 및 wet dressing", ["i-189594487b6f", "i-21694bf54bf1", "i-203a4da1266c"]),
+                    view_item("trauma-ref-wet", "Open wound 초진: Gauze + 생리식염수 + 픽스몰 준비 및 wet dressing", ["i-189594487b6f", "i-21694bf54bf1", "i-203a4da1266c", *source_items("specialty", "119-121")], "출혈이 심하면 saline wet dressing 후 compression; 상처가 보이도록 saline으로 세척"),
                 ]},
                 {"title": "열상", "items": [
-                    view_item("trauma-ref-image", "부위에 맞는 영상 오더; comment에 정확한 부위 입력", ["i-4d81c93f9549"], "예: 4th finger"),
+                    view_item("trauma-ref-image", "부위에 맞는 영상 오더; comment에 정확한 해부학적 부위 입력", ["i-4d81c93f9549", *source_items("specialty", "105,133")], "Laceration은 원문상 routine X-ray, 얼굴은 X-ray + Facial CT; 미시행 시 사유 기록"),
+                    view_item("trauma-ref-foreign", "Foreign body 제거를 시도하고, 찾지 못하면 영상 촬영 후 연락", source_items("specialty", "124")),
                     view_item("trauma-ref-suture", "07Suture: bite wound는 Tiramox, 그 외 cefazoline / TD / Hyper TET", ["i-883574d75347"]),
                     view_item("trauma-ref-manage", "Simple laceration은 주로 ED R. suture; deep laceration 또는 fracture 동반 wound는 OS/PS 등에서 처치", ["i-a47c1d8faf33"]),
+                    view_item("trauma-ref-department", "Intraoral wound는 DS 우선 / 귀 열상은 환자 앞쪽에서 보이면 PS, 뒤쪽이면 OL", source_items("specialty", "134-136"), "Only intraoral wound는 PS 진료 대상이 아니며, lip laceration과 연관된 경우 PS에서 함께 suture 가능"),
+                    view_item("trauma-ref-boundary", "Upper forehead는 hair가 없는 곳까지; hair가 있는 부위는 scalp laceration", source_items("specialty", "137-138"), "경계가 애매하면 PS 연락 시 전달"),
+                    view_item("trauma-ref-peds-call", "10세 이하: line 확보 여부 결정 후 line을 확보하고 call", source_items("specialty", "139-143"), "Line 확보 결정 시 NPO time 확인; 수면마취 진정동의서는 PS 담당이라는 원문"),
+                    view_item("trauma-ref-nasal-ct", "Nasal bone fracture: CT 촬영 여부 확인", source_items("specialty", "145")),
                 ]},
                 {"title": "교통사고·상해", "items": [
                     view_item("trauma-ref-ta-xray", "Tenderness 부위의 위·아래 뼈까지 촬영", ["i-e8c9278bf2dc"], "예: ankle pain이면 tibia부터 foot까지"),
                     view_item("trauma-ref-statement", "차팅에 정보 제공자를 ‘○○ 진술 상’으로 기록", ["i-a3ca85a94775", "i-5e267dc38824"], "예: 119 현장구급대원, 환자 본인"),
                     view_item("trauma-ref-certificate", "진단서·상해진단서 발급을 원하면 ED R.에게 알림", ["i-74813088c816"]),
+                    view_item("trauma-ref-ta-terms", "TA / ATA / PTA / BTA", source_items("specialty", "130-131"), "Traffic accident / Motorcycle TA / Pedestrian TA / Bicycle TA"),
+                ]},
+                {"title": "보고·관련과", "items": [
+                    view_item("trauma-ref-schedule", "손 laceration: OS 월·수·금·토 / PS 화·목·일", source_items("specialty", "98,118")),
+                    view_item("trauma-ref-os", "OS가 ER에 있으면 2년차에게 직접 연락; 처치실까지 확인", source_items("specialty", "102-103")),
+                    view_item("trauma-ref-ns", "영상 소견의 level과 fracture 유형을 구체적으로 확인하여 전달", source_items("specialty", "108")),
+                    view_item("trauma-ref-ts", "TS: Rib fracture / Aortic dissection은 인턴이 하지 않는다는 원문", source_items("specialty", "79")),
+                    view_item("trauma-ref-contact", "NS / OS / TS / PS / GS / OT / OL 등 해당과 연락", [*source_items("specialty", "7-10"), *source_items("specialty", "160")], "원문에는 인턴이 해당과에 연락하지 않는다는 문장도 함께 있음"),
+                    view_item("trauma-ref-drunk", "Drunken 여부를 연락 시 전달", source_items("specialty", "146,160"), "협조가 어려우면 술이 깬 뒤 진료하게 된다는 원문"),
+                    view_item("trauma-ref-orders", "Laceration wet dressing 외에는 지시받은 처치만 시행", source_items("specialty", "161"), "원문: 처방 등은 인턴이 내지 않음"),
                 ]},
                 {"title": "차팅 예시", "items": [
+                    view_item("trauma-ref-chart-required", "열상 차팅: 수상 시각·기전·물체 재질·Foreign body·Size·Depth·Margin·Exposed structure", source_items("specialty", "123-129")),
                     view_item("trauma-ref-chart-neuro", "Alert mentation / Pupil 0.3/0.3 / EOM OK / Visual disturbance (-) / Nuchal midline tenderness (-), LOM (-)", ["i-5735897496c9", "i-612377d2b84a", "i-aec507acc5c5", "i-09934c95f014", "i-ae266c3ddb7d", "i-0aca2be86e56"]),
                     view_item("trauma-ref-chart-motor", "Motor: upper G5/G5, lower G5/G5 / Sensory change (-) / Gait OK", ["i-218af66eb411", "i-438f9d760f95", "i-276cecfacc29"]),
                     view_item("trauma-ref-chart-wound", "No external wound on chest, abdomen, and back", ["i-233de0814bca"]),
@@ -441,8 +529,9 @@ curated_layouts = {
             {"id": "dizziness-view-history", "title": "Hx", "kind": "history", "groups": [
                 neuro_basic_group("dizz"),
                 {"title": "Dizziness", "items": [
+                    view_item("dizz-hx-context", "At onset: Resting / Standing up / Other activity", source_items("specialty", "33")),
                     view_item("dizz-hx-pattern", "Pattern: Vertigo / Presyncope / Lightheadedness / Disequilibrium", ["i-6ad27ea2b2e4", "i-2e37d0e92ac5"], "빙빙 도는지, 쓰러질 것 같은지, 기운이 없는지, 보행이 이상한지 확인"),
-                    view_item("dizz-hx-trs", "True rotating sensation (TRS)", ["i-cdb419f99f24", "i-6caa8883d154", "i-6a49a5ad9c82"]),
+                    view_item("dizz-hx-trs", "True rotating sensation (TRS)", ["i-cdb419f99f24", "i-6caa8883d154", "i-6a49a5ad9c82", *source_items("specialty", "33")]),
                     view_item("dizz-hx-duration", "Duration / 회복까지 걸리는 시간", ["i-98a27e5fe646", "i-6a49a5ad9c82"]),
                     view_item("dizz-hx-ear", "Tinnitus / Otalgia / Ear fullness / Hearing difficulty or loss", ["i-af4103b19fb5", "i-ab8e235e7ce3", "i-6caa8883d154"]),
                     view_item("dizz-hx-uri", "URI Hx", ["i-af4103b19fb5", "i-ab8e235e7ce3", "i-6caa8883d154"]),
@@ -453,12 +542,13 @@ curated_layouts = {
             ]},
             {"id": "dizziness-view-exam", "title": "PEx", "kind": "exam", "groups": [
                 {"title": "Nystagmus · Positional test", "items": [
-                    view_item("dizz-pe-nystagmus", "Spontaneous / Gaze-evoked / Head-turn induced nystagmus", ["i-6a49a5ad9c82", "i-547582678bb0"]),
-                    view_item("dizz-pe-algorithm", "Spontaneous·gaze-evoked nystagmus 확인 → HINTS / ED R. notify / Dix-Hallpike / Head-roll test", ["i-a26c38ea1eef", "i-f1f1b078d1f6"], "원문의 양성·음성 결과별 시행 순서 확인"),
+                    view_item("dizz-pe-nystagmus", "Spontaneous / Gaze-evoked / Head-turn induced nystagmus", ["i-6a49a5ad9c82", "i-547582678bb0", *source_items("specialty", "33")]),
+                    view_item("dizz-pe-hints", "Spontaneous nystagmus present: Head impulse / Unidirectional or bidirectional nystagmus / Skew", ["i-a26c38ea1eef", *source_items("specialty", "34-35")]),
+                    view_item("dizz-pe-provocation", "Spontaneous nystagmus absent: Dix-Hallpike / Head-roll test", ["i-f1f1b078d1f6", *source_items("specialty", "36")]),
                 ]},
                 {"title": "Gait · Cerebellar", "items": [
                     view_item("dizz-pe-gait", "Falling tendency / Tandem gait / Romberg test", ["i-69a715c63b8a", "i-83754277e4c2"]),
-                    view_item("dizz-pe-upper-coordination", "Finger-to-finger / Finger-to-nose / Rapid alternating movement", ["i-b06a29883b36"]),
+                    view_item("dizz-pe-upper-coordination", "Finger-to-finger / Finger-to-nose / Rapid alternating movement", ["i-b06a29883b36", *source_items("specialty", "47")]),
                     view_item("dizz-pe-lower-coordination", "Heel-to-shin", ["i-b06a29883b36"]),
                     view_item("dizz-pe-positional", "Positional dependency", ["i-b06a29883b36"]),
                 ]},
@@ -473,6 +563,7 @@ curated_layouts = {
                 ]},
                 {"title": "원문 참고", "items": [
                     view_item("dizz-ref-nystagmus", "안진 확인법은 전공의에게 문의", ["i-11e18a0af92f"]),
+                    view_item("dizz-ref-basic-tests", "Nystagmus와 provocation test 등 시행 가능한 검사는 확인", source_items("specialty", "45"), "Motor G4는 뚜렷한 약화가 있을 때 기록하고, 원문상 대부분의 건강한 환자는 G5/G5"),
                     view_item("dizz-ref-cerebellar", "Cerebellar function test는 생략 가능하다는 원문 메모", ["i-eba126edda0c"]),
                 ]},
                 {"title": "차팅 예시 · Ménière/BPPV", "items": [
@@ -547,6 +638,112 @@ curated_layouts = {
             ]},
         ]
     },
+    "testicular": {
+        "sections": [
+            {"id": "testicular-view-history", "title": "Hx", "kind": "history", "groups": [
+                {"title": "Present illness", "items": [
+                    view_item("testicular-hx-scope", "Testicular abnormality / Suspected torsion", source_items("specialty", "81,84")),
+                ]},
+            ]},
+            {"id": "testicular-view-exam", "title": "PEx", "kind": "exam", "groups": [
+                {"title": "Testis", "items": [
+                    view_item("testicular-pe-cremasteric", "Cremasteric reflex", source_items("specialty", "84")),
+                ]},
+            ]},
+            {"id": "testicular-view-reference", "title": "참고사항", "kind": "note", "groups": [
+                {"title": "보고", "items": [
+                    view_item("testicular-ref-notify", "Testicular torsion 의심 시 cremasteric reflex 유무를 확인하여 전달", source_items("specialty", "82,84")),
+                ]},
+            ]},
+        ]
+    },
+    "oral-dental": {
+        "sections": [
+            {"id": "oral-dental-view-history", "title": "Hx", "kind": "history", "groups": [
+                {"title": "Present illness", "items": [
+                    view_item("oral-dental-hx-scope", "Dental pain / Intraoral laceration", source_items("specialty", "110")),
+                ]},
+            ]},
+            {"id": "oral-dental-view-exam", "title": "PEx", "kind": "exam", "groups": [
+                {"title": "Oral cavity", "items": [
+                    view_item("oral-dental-pe-wound", "Chin or lip penetrating wound / Intraoral laceration / Tongue laceration", source_items("specialty", "134")),
+                ]},
+            ]},
+            {"id": "oral-dental-view-reference", "title": "참고사항", "kind": "note", "groups": [
+                {"title": "진료·콜", "items": [
+                    view_item("oral-dental-ref-availability", "만 6세 이하 소아치과 진료 없음; 주말에는 치과 진료 없음", source_items("specialty", "111"), "소아 환자는 다른 병원으로 안내"),
+                    view_item("oral-dental-ref-call", "DS call을 끄지 않음", source_items("specialty", "112")),
+                    view_item("oral-dental-ref-suture", "Intraoral laceration은 PS보다 DS suture를 우선", source_items("specialty", "134-135"), "Only intraoral wound는 PS 진료 대상이 아니며, lip laceration과 연관된 경우 PS에서 함께 suture 가능"),
+                ]},
+            ]},
+        ]
+    },
+    "poisoning": {
+        "sections": [
+            {"id": "poisoning-view-history", "title": "Hx", "kind": "history", "groups": [
+                {"title": "Exposure · Intent", "items": [
+                    view_item("poisoning-hx-exposure", "Drug intoxication / CO poisoning", source_items("specialty", "50,52,149")),
+                    view_item("poisoning-hx-intent", "Suicide attempt / Accident / Plan", source_items("specialty", "52")),
+                ]},
+            ]},
+            {"id": "poisoning-view-exam", "title": "PEx", "kind": "exam", "groups": [
+                {"title": "Mental", "items": [
+                    view_item("poisoning-pe-interview", "Mental status / Interview possible", source_items("specialty", "55,62")),
+                ]},
+            ]},
+            {"id": "poisoning-view-reference", "title": "참고사항", "kind": "note", "groups": [
+                {"title": "처치·보고", "items": [
+                    view_item("poisoning-ref-er", "ER 응급처치 후 면담 가능할 때 NP 연락", source_items("specialty", "55,150")),
+                    view_item("poisoning-ref-tox", "Tox 기계 시행", source_items("specialty", "150"), "TOX ID는 barcode 아래 18로 시작하는 긴 번호 입력"),
+                    view_item("poisoning-ref-explain", "NP 진료가 필요함을 설명", source_items("specialty", "52-53,57,150")),
+                ]},
+            ]},
+        ]
+    },
+    "inhalation-burn": {
+        "sections": [
+            {"id": "burn-view-history", "title": "Hx", "kind": "history", "groups": [
+                {"title": "Symptoms", "items": [
+                    view_item("burn-hx-respiratory", "Dyspnea / Cough / Sputum / Rhinorrhea", source_items("specialty", "158")),
+                ]},
+            ]},
+            {"id": "burn-view-exam", "title": "PEx", "kind": "exam", "groups": [
+                {"title": "Airway · Chest", "items": [
+                    view_item("burn-pe-soot", "Soot around nose or mouth", source_items("specialty", "158")),
+                    view_item("burn-pe-lung", "Lung sound", source_items("specialty", "158")),
+                ]},
+            ]},
+            {"id": "burn-view-reference", "title": "참고사항", "kind": "note", "groups": [
+                {"title": "보고", "items": [
+                    view_item("burn-ref-ol", "OL 연락", source_items("specialty", "158")),
+                ]},
+            ]},
+        ]
+    },
+    "cardiac-arrest": {
+        "sections": [
+            {"id": "arrest-view-history", "title": "Hx", "kind": "history", "groups": [
+                {"title": "Arrival", "items": [
+                    view_item("arrest-hx-scope", "Incoming CPR / DOA", source_items("specialty", "151,153")),
+                ]},
+            ]},
+            {"id": "arrest-view-exam", "title": "PEx", "kind": "exam", "groups": [
+                {"title": "Circulation", "items": [
+                    view_item("arrest-pe-pulse", "Pulse absent", source_items("specialty", "153")),
+                ]},
+            ]},
+            {"id": "arrest-view-reference", "title": "참고사항", "kind": "note", "groups": [
+                {"title": "DOA", "items": [
+                    view_item("arrest-ref-doa", "DOA 검안은 주로 ER R.이 시행", source_items("specialty", "151")),
+                ]},
+                {"title": "CPR", "items": [
+                    view_item("arrest-ref-abga", "장갑 착용 후 femoral ABGA 준비·채혈; 결과를 바로 전달", source_items("specialty", "153-154"), "원문: 10 cc syringe로 왼쪽 femoral에서 음압을 걸어 sampling"),
+                    view_item("arrest-ref-compression", "LUCAS 세팅 전까지 chest compression; 중단 지시까지 시행하고 힘들면 교대 요청", source_items("specialty", "153-155")),
+                    view_item("arrest-ref-rosc", "ROSC 후 ECG 준비; CAG 가능성이 있으면 가능한 오른쪽 femoral puncture를 피함", source_items("specialty", "154,156")),
+                ]},
+            ]},
+        ]
+    },
     "head-trauma": {
         "sections": [
             {"id": "head-trauma-view-history", "title": "Hx", "kind": "history", "groups": [
@@ -557,6 +754,13 @@ curated_layouts = {
             {"id": "head-trauma-view-exam", "title": "PEx", "kind": "exam", "groups": [
                 {"title": "Neurologic", "items": [
                     view_item("head-trauma-pe-pupil", "Pupil reflex", ["i-5d548532fd14"]),
+                    view_item("head-trauma-pe-mental", "Mental status", source_items("specialty", "107")),
+                    view_item("head-trauma-pe-motor", "Upper extremity / Lower extremity motor grade", source_items("specialty", "107")),
+                ]},
+            ]},
+            {"id": "head-trauma-view-reference", "title": "참고사항", "kind": "note", "groups": [
+                {"title": "보고", "items": [
+                    view_item("head-trauma-ref-imaging", "영상 소견의 level과 fracture 유형을 구체적으로 확인하여 전달", source_items("specialty", "108")),
                 ]},
             ]},
         ]
@@ -570,17 +774,22 @@ curated_layouts = {
             ]},
             {"id": "peds-common-view-exam", "title": "PEx", "kind": "exam", "groups": [
                 {"title": "HEENT · Neck", "items": [
-                    view_item("peds-common-pe-throat", "Throat injection / Tonsillar enlargement", ["i-f563840a36c8", "i-711f3514742f"]),
+                    view_item("peds-common-pe-throat", "Throat injection / Tonsillar enlargement", ["i-f563840a36c8", "i-711f3514742f", *source_items("specialty", "22")]),
                     view_item("peds-common-pe-tongue", "Dehydrated tongue", ["i-b65cf64b5492"]),
                     view_item("peds-common-pe-neck", "Neck stiffness / Nuchal rigidity", ["i-795bc09a858d"]),
                 ]},
                 {"title": "Chest", "items": [
-                    view_item("peds-common-pe-lung", "Lung sound: Clear / Coarse / Wheezing / Stridor / Crackle", ["i-afddfcfacdfb"]),
+                    view_item("peds-common-pe-lung", "Lung sound: Clear / Coarse / Wheezing / Stridor / Crackle", ["i-afddfcfacdfb", *source_items("specialty", "22")]),
                     view_item("peds-common-pe-heart", "Heart murmur", ["i-adc3e02089cf"]),
                 ]},
                 {"title": "Abdomen", "items": [
                     view_item("peds-common-pe-bowel", "Bowel sound: Normoactive / Increased / Decreased", ["i-aed40d3bdf5b"]),
                     view_item("peds-common-pe-palpation", "Palpation: Soft / Hard · Flat / Distended", ["i-aed40d3bdf5b"]),
+                ]},
+            ]},
+            {"id": "peds-common-view-reference", "title": "참고사항", "kind": "note", "groups": [
+                {"title": "차팅·연락", "items": [
+                    view_item("peds-common-ref-flow", "차팅을 먼저 작성한 뒤 연락", source_items("specialty", "17,25")),
                 ]},
             ]},
         ]
@@ -651,6 +860,7 @@ curated_layouts = {
             {"id": "headache-view-exam", "title": "PEx", "kind": "exam", "groups": [
                 {"title": "Neurologic", "items": [
                     view_item("headache-pe-nuchal", "Nuchal tenderness", ["i-05a884b2bfd5"]),
+                    view_item("headache-pe-shoulder", "Shoulder tenderness", source_items("specialty", "48")),
                     view_item("headache-pe-deficit", "Neurologic deficit", ["i-ba842357a8d8"]),
                 ]},
             ]},
@@ -663,7 +873,7 @@ curated_layouts = {
                 {"title": "Ictal", "items": [
                     view_item("seizure-hx-type", "Type: GTC / Partial", ["i-5b74d90d649a", "i-ae89dd865504"]),
                     view_item("seizure-hx-site", "Involved body part", ["i-0c9edd42be8b", "i-ae89dd865504"]),
-                    view_item("seizure-hx-duration", "Duration / First attack", ["i-64f5b3d5fed6", "i-ae89dd865504"]),
+                    view_item("seizure-hx-duration", "Duration / 5 minutes or longer / First attack", ["i-64f5b3d5fed6", "i-ae89dd865504", *source_items("specialty", "41")]),
                     view_item("seizure-hx-aura", "Aura", ["i-26f686a03c4b", "i-f42db10ce4f7"]),
                     view_item("seizure-hx-eye", "Eyeball deviation", ["i-f0b47426e7f9", "i-f42db10ce4f7"]),
                     view_item("seizure-hx-foamy", "Foamy salivation", ["i-75c5995c9d79", "i-f42db10ce4f7"]),
@@ -692,7 +902,7 @@ curated_layouts = {
             ]},
             {"id": "mental-view-exam", "title": "PEx", "kind": "exam", "groups": [
                 {"title": "Mental · Respiration", "items": [
-                    view_item("mental-pe-mental", "Mental status", ["i-5880a2a9aa60", "i-7605224c4f7e"], "Stroke 진찰 참고"),
+                    view_item("mental-pe-mental", "Mental status", ["i-5880a2a9aa60", "i-7605224c4f7e", *source_items("specialty", "37-40,46")], "Mild drowsy: verbal order에 눈을 뜸 · Deep drowsy: 자극을 줘야 눈을 뜸 · Stupor: 자극을 피하려는 움직임 · Semicoma: 통증에 조금 움직임"),
                     view_item("mental-pe-resp", "Respiration: Regular / Irregular · Deep / Shallow", ["i-5880a2a9aa60", "i-bf300566329e"]),
                 ]},
                 {"title": "Pupil · Response", "items": [
@@ -717,7 +927,7 @@ curated_layouts = {
             ]},
             {"id": "stroke-view-exam", "title": "PEx", "kind": "exam", "groups": [
                 {"title": "Mental · Commands", "items": [
-                    view_item("stroke-pe-mental", "Mentation: Alert / Drowsy / Stupor / Semicoma / Coma", ["i-c9dceb3fed3a"], "Drowsy: 말에 반응 · Stupor: 자극에 반응 · Semicoma: Light reflex (+)"),
+                    view_item("stroke-pe-mental", "Mentation: Alert / Drowsy / Stupor / Semicoma / Coma", ["i-c9dceb3fed3a", *source_items("specialty", "37-40,46")], "Mild drowsy: verbal order에 눈을 뜸 · Deep drowsy: 자극을 줘야 눈을 뜸 · Stupor: 자극을 피하려는 움직임 · Semicoma: 통증에 조금 움직임"),
                     view_item("stroke-pe-command", "Month / Age / Eye open-close / Hand grip-release", ["i-e998b4dd9427"]),
                 ]},
                 {"title": "Cranial nerve · Language", "items": [
@@ -725,8 +935,8 @@ curated_layouts = {
                     view_item("stroke-pe-language", "Dysarthria / Incoherent speech / Impaired comprehension", ["i-fe7269b0f02e"]),
                 ]},
                 {"title": "Motor · Sensory · Cerebellar", "items": [
-                    view_item("stroke-pe-power", "Motor grade: 5 유지 / 4 떨어짐 / 3 들었다 떨어짐 / 2 수평 이동 / 1 움직임 없음", ["i-2146beb834c1"]),
-                    view_item("stroke-pe-limb", "Right upper / Left upper / Right lower / Left lower extremity", ["i-9d85b6c7f674"]),
+                    view_item("stroke-pe-power", "Motor grade: 5 유지 / 4 떨어짐 / 3 들었다 떨어짐 / 2 수평 이동 / 1 움직임 없음", ["i-2146beb834c1", *source_items("specialty", "45")]),
+                    view_item("stroke-pe-limb", "Right upper / Left upper / Right lower / Left lower extremity", ["i-9d85b6c7f674", *source_items("specialty", "107")]),
                     view_item("stroke-pe-cerebellar", "Finger-to-finger / Heel-to-shin / Sensory change", ["i-f4d9158beb62"]),
                 ]},
             ]},
@@ -741,23 +951,23 @@ curated_layouts = {
         "sections": [
             {"id": "ob-view-history", "title": "Hx", "kind": "history", "groups": [
                 {"title": "Symptoms", "items": [
-                    view_item("ob-hx-bleeding", "Vaginal bleeding / Abnormal bleeding / Bleeding amount", ["i-49c213f030fe", "i-ccbca1cd1f76"]),
-                    view_item("ob-hx-discharge", "Vaginal discharge / Discharge change", ["i-49c213f030fe", "i-ccbca1cd1f76"]),
+                    view_item("ob-hx-bleeding", "Vaginal bleeding / Abnormal bleeding / Bleeding amount", ["i-49c213f030fe", "i-ccbca1cd1f76", *source_items("specialty", "28")]),
+                    view_item("ob-hx-discharge", "Vaginal discharge / Discharge change", ["i-49c213f030fe", "i-ccbca1cd1f76", *source_items("specialty", "28")]),
                 ]},
                 {"title": "Gynecologic history", "items": [
-                    view_item("ob-hx-care", "Previous gynecologic care", ["i-1109f9f55fe5"], "필요하면 보호자를 내보내고 환자와 단독으로 확인"),
-                    view_item("ob-hx-tpal", "TPAL", ["i-1109f9f55fe5"]),
-                    view_item("ob-hx-marital", "Marital status", ["i-1109f9f55fe5"]),
-                    view_item("ob-hx-npo", "NPO time", ["i-1109f9f55fe5"]),
-                    view_item("ob-hx-menstrual-cycle", "LMP / Menstrual cycle", ["i-6ea8e54d6744"]),
-                    view_item("ob-hx-menstrual-symptoms", "Duration / Amount / Dysmenorrhea", ["i-6ea8e54d6744"]),
-                    view_item("ob-hx-sexual", "Last coitus / Dyspareunia", ["i-68d84b1f6aac"]),
+                    view_item("ob-hx-care", "Previous gynecologic care", ["i-1109f9f55fe5", *source_items("specialty", "28")], "필요하면 보호자를 내보내고 환자와 단독으로 확인"),
+                    view_item("ob-hx-tpal", "TPAL", ["i-1109f9f55fe5", *source_items("specialty", "28")]),
+                    view_item("ob-hx-marital", "Marital status", ["i-1109f9f55fe5", *source_items("specialty", "28")]),
+                    view_item("ob-hx-npo", "NPO time: Solid / Liquid", ["i-1109f9f55fe5", *source_items("specialty", "14,28")]),
+                    view_item("ob-hx-menstrual-cycle", "LMP / Menstrual cycle", ["i-6ea8e54d6744", *source_items("specialty", "28")]),
+                    view_item("ob-hx-menstrual-symptoms", "Duration / Amount / Dysmenorrhea", ["i-6ea8e54d6744", *source_items("specialty", "28")]),
+                    view_item("ob-hx-sexual", "Last coitus / Dyspareunia", ["i-68d84b1f6aac", *source_items("specialty", "28")]),
                 ]},
             ]},
             {"id": "ob-view-reference", "title": "참고사항", "kind": "note", "groups": [
                 {"title": "원문 인계 범위", "items": [
-                    view_item("ob-ref-scope", "OBGY: Preterm labor / Hemoperitoneum / Vaginal bleeding 등", ["i-a81efe90df85", "i-057ab3fb8640", "i-754621b3148d", "i-1517462b6cc6"]),
-                    view_item("ob-ref-emr", "본원 OBGY 추적 환자는 EMR 내용을 참고하여 차팅", ["i-301803998d87"]),
+                    view_item("ob-ref-scope", "OBGY: Preterm labor / Hemoperitoneum / Vaginal bleeding 등", ["i-a81efe90df85", "i-057ab3fb8640", "i-754621b3148d", "i-1517462b6cc6", *source_items("specialty", "27")]),
+                    view_item("ob-ref-emr", "본원 OBGY 추적 환자는 EMR 내용을 참고하여 차팅", ["i-301803998d87", *source_items("specialty", "30")]),
                 ]},
             ]},
         ]
@@ -766,17 +976,17 @@ curated_layouts = {
         "sections": [
             {"id": "pregnancy-view-history", "title": "Hx", "kind": "history", "groups": [
                 {"title": "Current pregnancy", "items": [
-                    view_item("pregnancy-hx-iup", "IUP: 정확한 gestational week and day / OT", ["i-10e0162d3aee"]),
-                    view_item("pregnancy-hx-labor", "진통·배뭉침 / 주기 / 지속시간", ["i-c75d69226429"]),
+                    view_item("pregnancy-hx-iup", "IUP: 정확한 gestational week and day / OT", ["i-10e0162d3aee", *source_items("specialty", "29")]),
+                    view_item("pregnancy-hx-labor", "진통·배뭉침 / 주기 / 지속시간", ["i-c75d69226429", *source_items("specialty", "29")]),
                     view_item("pregnancy-hx-bleeding", "Vaginal bleeding / Abnormal bleeding / Bleeding amount", ["i-49c213f030fe", "i-ccbca1cd1f76"]),
                     view_item("pregnancy-hx-discharge", "Vaginal discharge / Discharge change", ["i-49c213f030fe", "i-ccbca1cd1f76"]),
                     view_item("pregnancy-hx-lmp", "LMP", ["i-0138e8dfa9af"]),
-                    view_item("pregnancy-hx-edc", "Estimated date of confinement (EDC)", ["i-57925bf76ebf"]),
+                    view_item("pregnancy-hx-edc", "Estimated date of confinement (EDC)", ["i-57925bf76ebf", *source_items("specialty", "29")]),
                 ]},
                 {"title": "Obstetric history", "items": [
                     view_item("pregnancy-hx-tpal", "TPAL", ["i-1109f9f55fe5", "i-5e79003059b9"]),
-                    view_item("pregnancy-hx-npo", "NPO time", ["i-1109f9f55fe5", "i-0c081eadaa0e"]),
-                    view_item("pregnancy-hx-operation", "Op Hx", ["i-ff7aec9585a2"]),
+                    view_item("pregnancy-hx-npo", "NPO time: Solid / Liquid", ["i-1109f9f55fe5", "i-0c081eadaa0e", *source_items("specialty", "14,29")]),
+                    view_item("pregnancy-hx-operation", "Op Hx", ["i-ff7aec9585a2", *source_items("specialty", "29")]),
                 ]},
                 {"title": "Gynecologic history", "items": [
                     view_item("pregnancy-hx-care", "Previous gynecologic care", ["i-1109f9f55fe5"], "필요하면 보호자를 내보내고 환자와 단독으로 확인"),
@@ -788,8 +998,8 @@ curated_layouts = {
             ]},
             {"id": "pregnancy-view-reference", "title": "참고사항", "kind": "note", "groups": [
                 {"title": "원문 인계 범위", "items": [
-                    view_item("pregnancy-ref-scope", "OBGY: Preterm labor / Hemoperitoneum / Vaginal bleeding 등", ["i-a81efe90df85", "i-057ab3fb8640", "i-754621b3148d", "i-1517462b6cc6"]),
-                    view_item("pregnancy-ref-emr", "본원 OBGY 추적 환자는 EMR 내용을 참고하여 차팅", ["i-301803998d87"]),
+                    view_item("pregnancy-ref-scope", "OBGY: Preterm labor / Hemoperitoneum / Vaginal bleeding 등", ["i-a81efe90df85", "i-057ab3fb8640", "i-754621b3148d", "i-1517462b6cc6", *source_items("specialty", "27")]),
+                    view_item("pregnancy-ref-emr", "본원 OBGY 추적 환자는 EMR 내용을 참고하여 차팅", ["i-301803998d87", *source_items("specialty", "30")]),
                 ]},
             ]},
         ]
@@ -799,8 +1009,10 @@ curated_layouts = {
             {"id": "fever-view-history", "title": "Hx", "kind": "history", "groups": [
                 peds_basic_group("fever"),
                 {"title": "Fever", "items": [
-                    view_item("fever-hx-temperature", "Maximum temperature at home / Temperature on arrival", ["i-09f9f960f4d3", "i-d6027d327579"]),
-                    view_item("fever-hx-antipyretic", "Antipyretic: Last dose / Number of doses / Type / Interval / Response", ["i-09f9f960f4d3", "i-d410e445b7d6", "i-d054632e1182"]),
+                    view_item("fever-hx-temperature", "Maximum temperature at home / Temperature on arrival", ["i-09f9f960f4d3", "i-d6027d327579", *source_items("specialty", "23")]),
+                    view_item("fever-hx-antipyretic", "Antipyretic: Last dose time / Number of doses / Type / Interval / Response", ["i-09f9f960f4d3", "i-d410e445b7d6", "i-d054632e1182", *source_items("specialty", "20")]),
+                    view_item("fever-hx-associated-onset", "Onset of associated cough / sputum", source_items("specialty", "23")),
+                    view_item("fever-hx-vaccination", "Vaccination Hx / Recent vaccination before fever", source_items("specialty", "23")),
                 ]},
                 peds_birth_group("fever"),
                 peds_ros_group("fever", fccsr_sources=("i-f67d6676b11b",), daily_sources=("i-ca2d5f59c88c", "i-f67d6676b11b")),
@@ -816,6 +1028,9 @@ curated_layouts = {
             {"id": "fever-view-reference", "title": "참고사항", "kind": "example", "groups": [
                 {"title": "차팅 예시", "items": [
                     view_item("fever-ref-example", "내원 당일 14시부터 fever. 가정 최고 38.0℃, 내원 시 39.5℃. 14시 해열제 복용 후 호전되었다가 17시 다시 상승. 전일 저녁부터 cough가 있어 당일 아침 local clinic 방문 후 medication.", ["i-f70eebcacd56"]),
+                ]},
+                {"title": "차팅·연락", "items": [
+                    view_item("fever-ref-flow", "최고 체온부터 차팅한 뒤 연락", source_items("specialty", "23,25")),
                 ]},
             ]},
         ]
@@ -858,7 +1073,7 @@ curated_layouts = {
             {"id": "cough-view-history", "title": "Hx", "kind": "history", "groups": [
                 peds_basic_group("cough"),
                 {"title": "Cough", "items": [
-                    view_item("cough-hx-sound", "Cough sound: Barking or usual cough", ["i-3368440da93b"]),
+                    view_item("cough-hx-sound", "Cough sound: Barking or usual cough", ["i-3368440da93b", *source_items("specialty", "19")]),
                     view_item("cough-hx-position", "Worse when supine / Hoarseness", ["i-3368440da93b"]),
                     view_item("cough-hx-atopy", "Atopy/Asthma PHx / FHx", ["i-3368440da93b"]),
                 ]},
@@ -908,6 +1123,9 @@ curated_layouts = {
                 *peds_exam_groups("peds-seizure"),
             ]},
             {"id": "peds-seizure-view-reference", "title": "참고사항", "kind": "example", "groups": [
+                {"title": "보고", "items": [
+                    view_item("peds-seizure-ref-active", "현재 seizure 중이면 즉시 연락", source_items("specialty", "21")),
+                ]},
                 {"title": "차팅 예시 · 간단 기록", "items": [
                     view_item("peds-seizure-ref-brief", "00시 seizure 30분 지속 / 04시 seizure 5분 이내 / 경련 상황 기억함", ["i-23456d42c6fc"]),
                 ]},
@@ -928,27 +1146,53 @@ curated_layouts = {
             ]},
         ]
     },
+    "throat": {
+        "sections": [
+            {"id": "throat-view-history", "title": "Hx", "kind": "history", "groups": [
+                {"title": "Symptoms", "items": [
+                    view_item("throat-hx-scope", "Foreign body in throat / Tonsil abscess", source_items("specialty", "64")),
+                ]},
+            ]},
+            {"id": "throat-view-exam", "title": "PEx", "kind": "exam", "groups": [
+                {"title": "Foreign body", "items": [
+                    view_item("throat-pe-visible", "Foreign body: Visible / Not visible", source_items("specialty", "65")),
+                ]},
+            ]},
+            {"id": "throat-view-reference", "title": "참고사항", "kind": "note", "groups": [
+                {"title": "처치·보고", "items": [
+                    view_item("throat-ref-removal", "육안으로 보이고 제거 가능한 이물: 처치 합병증 설명 후 ENT forceps로 제거하고 ED 확인", source_items("specialty", "65"), "육안으로 보이지 않는 경우에 대한 원문 문장이 중간에서 끊겨 있어 원문 범위만 표시"),
+                ]},
+            ]},
+        ]
+    },
     "eye": {
         "sections": [
             {"id": "eye-view-history", "title": "Hx", "kind": "history", "groups": [
                 {"title": "Symptoms", "items": [
-                    view_item("eye-hx-pain", "Ocular pain / Foreign body sensation", ["i-28ecfc7fcdda", "i-e20bddff3b1d"]),
-                    view_item("eye-hx-surface", "Conjunctival injection / Discharge", ["i-d16c7ea78bb3", "i-4f259c29f187"]),
-                    view_item("eye-hx-vision", "Blurred vision / Diplopia / Baseline vision and change", ["i-d0723942eb28", "i-cec96462eb1a", "i-18279ab2c20f"]),
+                    view_item("eye-hx-pain", "Ocular pain / Foreign body sensation", ["i-28ecfc7fcdda", "i-e20bddff3b1d", *source_items("specialty", "87")]),
+                    view_item("eye-hx-surface", "Conjunctival injection / Discharge / Tearing / Photophobia", ["i-d16c7ea78bb3", "i-4f259c29f187", *source_items("specialty", "87")]),
+                    view_item("eye-hx-vision", "Blurred vision / Diplopia / Baseline vision and change", ["i-d0723942eb28", "i-cec96462eb1a", "i-18279ab2c20f", *source_items("specialty", "91")]),
                 ]},
                 {"title": "Past history", "items": [
-                    view_item("eye-hx-past", "OT HX", ["i-f7aed3e8baa4"]),
+                    view_item("eye-hx-past", "OT HX", ["i-f7aed3e8baa4", *source_items("specialty", "92")]),
+                    view_item("eye-hx-medical", "Medical Hx (U/D)", source_items("specialty", "93")),
                 ]},
             ]},
             {"id": "eye-view-exam", "title": "PEx", "kind": "exam", "groups": [
                 {"title": "Eye", "items": [
-                    view_item("eye-pe-light", "Light reflex", ["i-b5dbf567b8b4"]),
+                    view_item("eye-pe-bleeding", "Bleeding point", source_items("specialty", "87")),
+                    view_item("eye-pe-light", "Light reflex (LR)", ["i-b5dbf567b8b4", *source_items("specialty", "87-88")]),
+                    view_item("eye-pe-lom", "LOM", source_items("specialty", "87-88")),
                     view_item("eye-pe-eom", "Extraocular movement", ["i-3354730896e4"]),
+                    view_item("eye-pe-field-acuity", "Visual field / Visual acuity", source_items("specialty", "88-91")),
                 ]},
             ]},
             {"id": "eye-view-reference", "title": "참고사항", "kind": "note", "groups": [
                 {"title": "보고·처치", "items": [
-                    view_item("eye-ref-irrigation", "Foreign body, 특히 화학물질 노출은 즉시 보고; 지시 시 suture room에서 eye irrigation", ["i-12d19359ec2c"]),
+                    view_item("eye-ref-scope", "OT 연락 범위: Ocular pain / BOF / High BP", source_items("specialty", "86")),
+                    view_item("eye-ref-vision", "연락 전 시력검사", source_items("specialty", "88-91"), "시력표는 약 30 cm 거리에서 사용. 눈이 떠지지 않으면 면봉으로 위눈꺼풀을 말아 올려 측정. 시력표가 없으면 이전 시력과 변화 여부 확인"),
+                    view_item("eye-ref-facial-ct", "눈 주위 외상: Facial CT 권유", source_items("specialty", "94"), "BOF는 적은 힘으로도 발생 가능"),
+                    view_item("eye-ref-irrigation", "Foreign body, 특히 화학물질 노출은 즉시 보고; 지시 시 suture room에서 eye irrigation", ["i-12d19359ec2c", *source_items("specialty", "95-96")], "원문: 1 L irrigation에 약 20분"),
                 ]},
             ]},
         ]
@@ -957,10 +1201,10 @@ curated_layouts = {
         "sections": [
             {"id": "ear-view-history", "title": "Hx", "kind": "history", "groups": [
                 {"title": "Symptoms · Exposure", "items": [
-                    view_item("ear-hx-ear-symptoms", "Otalgia / Tinnitus / Ear fullness", ["i-9ed2447b8d64", "i-00f4e17f31db", "i-7eda19f1989e", "i-fdd513cc18af"]),
-                    view_item("ear-hx-hearing-dizziness", "Hearing difficulty or loss / Dizziness", ["i-9ed2447b8d64", "i-00f4e17f31db", "i-7eda19f1989e", "i-fdd513cc18af"]),
+                    view_item("ear-hx-ear-symptoms", "Otalgia / Tinnitus / Ear fullness", ["i-9ed2447b8d64", "i-00f4e17f31db", "i-7eda19f1989e", "i-fdd513cc18af", *source_items("specialty", "66")]),
+                    view_item("ear-hx-hearing-dizziness", "Hearing difficulty or loss / Dizziness", ["i-9ed2447b8d64", "i-00f4e17f31db", "i-7eda19f1989e", "i-fdd513cc18af", *source_items("specialty", "66")]),
                     view_item("ear-hx-local", "Redness / Swelling", ["i-9ed2447b8d64"]),
-                    view_item("ear-hx-exposure", "URI symptoms / Trauma / Recent water exposure", ["i-5a33dba2ab00", "i-87611c37fa0b"]),
+                    view_item("ear-hx-exposure", "URI symptoms / Trauma / Recent water exposure", ["i-5a33dba2ab00", "i-87611c37fa0b", *source_items("specialty", "66")]),
                 ]},
             ]},
             {"id": "ear-view-reference", "title": "참고사항", "kind": "example", "groups": [
@@ -977,21 +1221,28 @@ curated_layouts = {
         "sections": [
             {"id": "epistaxis-view-history", "title": "Hx", "kind": "history", "groups": [
                 {"title": "Present illness", "items": [
-                    view_item("epistaxis-hx-bleeding", "Bleeding amount / Onset time / Current active bleeding", ["i-4a6311b2bab7"]),
+                    view_item("epistaxis-hx-bleeding", "Bleeding amount / Onset time / Current active bleeding", ["i-4a6311b2bab7", *source_items("specialty", "67,69")]),
+                    view_item("epistaxis-hx-side", "Bleeding side / If bilateral, which side started first", source_items("specialty", "67")),
+                    view_item("epistaxis-hx-prior-care", "Previous treatment at another hospital", source_items("specialty", "73")),
                 ]},
                 {"title": "History", "items": [
-                    view_item("epistaxis-hx-background", "Drug / HTN Hx", ["i-ca15bdb71320"]),
+                    view_item("epistaxis-hx-background", "Medical Hx (U/D Drug Op) / HTN Hx", ["i-ca15bdb71320", *source_items("specialty", "70-72")]),
+                    view_item("epistaxis-hx-antithrombotic", "Warfarin / Aspirin", source_items("specialty", "72")),
                 ]},
             ]},
             {"id": "epistaxis-view-exam", "title": "PEx", "kind": "exam", "groups": [
                 {"title": "Bleeding", "items": [
-                    view_item("epistaxis-pe-throat", "Active bleeding / Oropharynx", ["i-4a6311b2bab7"], "목 안을 반드시 확인"),
-                    view_item("epistaxis-pe-bp", "Blood pressure", ["i-ca15bdb71320"]),
+                    view_item("epistaxis-pe-throat", "Active bleeding / Oral bleeding / Posterior drainage", ["i-4a6311b2bab7", *source_items("specialty", "69")], "목 안을 반드시 확인"),
+                    view_item("epistaxis-pe-packing", "Packing change: Active bleeding", source_items("specialty", "69")),
+                    view_item("epistaxis-pe-bp", "Blood pressure", ["i-ca15bdb71320", *source_items("specialty", "74")]),
                 ]},
             ]},
             {"id": "epistaxis-view-reference", "title": "참고사항", "kind": "note", "groups": [
                 {"title": "처치", "items": [
-                    view_item("epistaxis-ref-merocel", "Active bleeding: Merocel", ["i-ed62a7868ff4"]),
+                    view_item("epistaxis-ref-call", "출혈이 멎었어도 진료를 위해 OL call", source_items("specialty", "67")),
+                    view_item("epistaxis-ref-merocel", "Active bleeding: Merocel", ["i-ed62a7868ff4", *source_items("specialty", "68,76")], "사용 시 간호사에게 알림 · 원문 위치: T2방 dressing 용품 아래"),
+                    view_item("epistaxis-ref-bp", "BP가 높으면 BP control 후 연락; initial BP / current BP / 사용한 BP control을 함께 전달", source_items("specialty", "74,76"), "원문 borderline 약 160. 2021.3 이후 인턴이 하지 않는다는 메모와 BP가 높아도 OL에 적당히 둘러대고 연락하라는 메모가 함께 있음"),
+                    view_item("epistaxis-ref-outpatient", "외래 이동 요청은 간호사에게 전달", source_items("specialty", "77")),
                 ]},
             ]},
         ]
@@ -1002,23 +1253,26 @@ curated_layouts = {
                 {"title": "Basic", "items": [
                     view_item("psychiatry-hx-cc", "CC", ["i-93bec4f5a11f", "i-783f0ccc8ad0", "i-a3f32e80a086", "i-1cfcd0419c4d", "i-48e0d543b3fc"]),
                     view_item("psychiatry-hx-stress", "PI / 최근 stress factor", ["i-504770b9ef6c", "i-326344007df5"]),
-                    view_item("psychiatry-hx-current", "초진 당시 증상 유무", ["i-b6b3279a5fe5"]),
+                    view_item("psychiatry-hx-today", "오늘 내원하게 된 증상 또는 평소와 다른 변화", source_items("specialty", "60")),
+                    view_item("psychiatry-hx-current", "초진 당시 증상 유무", ["i-b6b3279a5fe5", *source_items("specialty", "60")]),
                 ]},
                 {"title": "Safety · Mood", "items": [
                     view_item("psychiatry-hx-suicide", "Suicidal idea / Plan / Attempt", ["i-04e13c90aa27", "i-3931bf6f6de2"], "죽고 싶은지, 계획을 세운 적이 있는지, 자해·자살 시도 여부"),
                     view_item("psychiatry-hx-drive", "Loss of will / Energy / Pleasure", ["i-5425c2d47801", "i-aad1c5cd2aa6", "i-368fa3cdb991"], "의욕·기운·즐거움 확인"),
                 ]},
                 {"title": "Perceptual disturbance", "items": [
+                    view_item("psychiatry-hx-delusion", "Delusion content / Plausibility", source_items("specialty", "59"), "망상의 구체적인 내용을 확인하고 정상 범주의 의심과 구분"),
                     view_item("psychiatry-hx-hallucination", "A-H / V-H", ["i-90dad06721fb", "i-a5f32442cb55", "i-836f2bdf14e8"], "헛것이 보이거나 주변에 아무도 없는데 소리가 들리는지"),
                     view_item("psychiatry-hx-illusion", "Illusion", ["i-2211a268632f"]),
                     view_item("psychiatry-hx-derealization", "Derealization / Depersonalization", ["i-afcdf3f62fec"]),
                 ]},
                 {"title": "Current function", "items": [
+                    view_item("psychiatry-hx-goal", "상담 희망 / 입원 희망", source_items("specialty", "61")),
                     view_item("psychiatry-hx-sleep", "Sleep / Fragmentation", ["i-f089d42d65bc", "i-5010d4f57ede", "i-24ee16959511"]),
                     view_item("psychiatry-hx-appetite", "Appetite", ["i-29695720395d", "i-b2c9fb17e5b3"]),
                 ]},
                 {"title": "Past psychiatric · Family history", "items": [
-                    view_item("psychiatry-hx-past", "Past NP Hx / FHx", ["i-fd017583932e", "i-f97606906869"]),
+                    view_item("psychiatry-hx-past", "Past NP Hx / FHx", ["i-fd017583932e", "i-f97606906869", *source_items("specialty", "56")]),
                     view_item("psychiatry-hx-compliance", "Drug compliance", ["i-37fe40251ce9"], "정신과적 과거력이 있는 경우"),
                     view_item("psychiatry-hx-discharge", "마지막 퇴원 이후 경과", ["i-0813ce0b8951"], "입퇴원력이 있는 경우"),
                     view_item("psychiatry-hx-first", "이전에도 같은 증상이 있었는지 / First episode인지", ["i-946e076984ba"], "정신과적 과거력이 없는 경우"),
@@ -1034,7 +1288,9 @@ curated_layouts = {
             {"id": "psychiatry-view-reference", "title": "참고사항", "kind": "note", "groups": [
                 {"title": "초진·보고", "items": [
                     view_item("psychiatry-ref-consent", "정신과 진료 동의 여부", ["i-2f6c9dc4a7c1"], "젊은 환자는 진료 기록이 남을 수 있음을 설명"),
-                    view_item("psychiatry-ref-conversation", "현재 대화 가능 여부", ["i-00bfc259bdbd"], "Drowsy 상태이면 alert해졌을 때 notify"),
+                    view_item("psychiatry-ref-conversation", "현재 대화 가능 여부", ["i-00bfc259bdbd", *source_items("specialty", "55,62")], "다른 처치가 급하거나 대화가 불가능하면 먼저 ER R.에게 보고하고, 대화 가능한 정도로 mental alert해진 뒤 NP 연락·콜"),
+                    view_item("psychiatry-ref-attempt", "DI·CO 중독 등의 자살시도·사고·계획은 NP 진료를 받도록 설명", source_items("specialty", "52-53"), "환자·보호자가 거부하거나 병력 청취가 어려우면 ER R.에게 먼저 확인"),
+                    view_item("psychiatry-ref-call", "초진·차팅 후 NP 진료를 설명하고, 지시에 따라 NP call", [*source_items("specialty", "50-51,54,57"), *source_items("specialty", "7-10")]),
                     view_item("psychiatry-ref-firstline", "첫 줄: 정신과 진료 동의 / 협조적 / 원활한 대화 가능 여부", ["np-pdf-firstline"]),
                     view_item("psychiatry-ref-summary", "확인 항목 요약: C.C / Onset / Past Hx / 동거인 / 직업 / 내원 당시 증상 / 최근 stress factor / Compliance / Sleep / Appetite / Suicidal idea·plan·attempt", ["np-pdf-summary"]),
                     view_item("psychiatry-ref-safety", "위험해 보이는 상황에서는 무리하지 말고 정신과 전공의 등 주변 의료진과 상의", ["i-45ca9b877fa0", "i-35a8bcbc9c0f"]),
@@ -1098,6 +1354,7 @@ for layout in curated_layouts.values():
 # All remaining DOCX blocks must be formatting / headings, never substantive omissions.
 structures = {
  "handover": "2,8,10,17,25,31,36,41,43,49,55,61,69,70,75,79,80,85,90,91,95,101,104",
+ "specialty": "1-2,16,32,58,148,152,157,159",
  "np-docx": "30-32",
  "templates": "1,5,9,12,17,21,26,34,37,39,56,60,63,82,84,110,121,146,152,159,162,164,167,169",
  "all": "13,25,41,48,69,83,104,120,130-131,135,187,202,209,218,223,226,230,233,238,305,307",
@@ -1112,7 +1369,6 @@ if unassigned:
     raise ValueError("Unassigned source text: " + repr(unassigned))
 
 category_specs = [
-    ("00", "입원관리", 12, True),
     ("01", "소화기", 1, False),
     ("02", "순환기", 2, False),
     ("03", "호흡기", 10, False),
@@ -1124,27 +1380,28 @@ category_specs = [
     ("08", "산부", 4, False),
     ("09", "소아", 5, False),
     ("10", "눈/이비인후", 9, False),
+    ("13", "외상", 12, False),
     ("11", "상담", 13, True),
 ]
 categories = [{"id": cid, "name": name, "order": order, "secondary": secondary} for cid, name, order, secondary in category_specs]
 catalog = {
- "00": [("acute-condition","급성상태",[]),("abnormal-lab","수치이상",[]),("prescription","처방체액",[]),("device","기구문제",[]),("ward-event","병동사건",[])],
  "01": [("abdominal-pain","복통",["복부 통증","급성복통","abdominal pain","abd pain","AP"]),("dyspepsia","소화불량 / 만성 복통",["dyspepsia"]),("hematemesis","토혈",["hematemesis"]),("bloody-stool","혈변",["hematochezia","melena"]),("vomiting","오심 구토",["오심 / 구토","구역","nausea","vomiting","N/V","emesis"]),("constipation","변비",["constipation"]),("diarrhea","설사",["diarrhea"]),("jaundice","황달",["jaundice"])],
- "02": [("chest-pain","흉통",["가슴통증","가슴 통증","chest pain","CP"]),("syncope","실신",["syncope","LOC","blackout"]),("palpitation","두근거림",["palpitation","palpitations"]),("hypertension","고혈압",["hypertension","HTN"]),("dyslipidemia","이상지질혈증",["dyslipidemia"])],
+ "02": [("chest-pain","흉통",["가슴통증","가슴 통증","chest pain","CP"]),("syncope","실신",["syncope","LOC","blackout"]),("palpitation","두근거림",["palpitation","palpitations"]),("hypertension","고혈압",["hypertension","HTN"]),("dyslipidemia","이상지질혈증",["dyslipidemia"]),("cardiac-arrest","심정지 / DOA",["심정지","cardiac arrest","arrest","CPR","DOA","ROSC"])],
  "03": [("cough","기침",["cough"]),("rhinorrhea","콧물 / 코막힘",["rhinorrhea","nasal obstruction"]),("hemoptysis","객혈",["hemoptysis"]),("dyspnea","호흡곤란",["숨참","숨차","dyspnea","dyspnoea","SOB","shortness of breath"])],
- "04": [("polyuria","다뇨",["polyuria"]),("oliguria","핍뇨",["oliguria"]),("hematuria","혈뇨",["hematuria"]),("urinary-symptoms","배뇨이상",["배뇨이상 / 빈뇨","배뇨장애","빈뇨","배뇨통","dysuria","frequency","urinary symptoms"]),("incontinence","요실금",["incontinence"]),("flank-pain","옆구리 통",["옆구리 통증","flank pain","renal colic"])],
- "05": [("fever","발열",["열","fever","pyrexia"]),("bruising","멍",["bruise"]),("fatigue","피로",["fatigue"]),("weight-loss","체중감소",["weight loss"]),("weight-gain","체중증가",["weight gain"]),("poisoning","중독 / 과량복용",["약물 과다복용","poisoning","overdose","intoxication"])],
- "06": [("joint-pain","관절 문제",["관절 통증 / 붓기","관절 통증","붓기","arthralgia","joint pain"]),("neck-pain","목 통증",["neck pain"]),("back-pain","허리 통증",["요통","등 통증","back pain","LBP"]),("rash","피부 발진",["rash","skin rash"]),("trauma","상처 외상",["상처 / 외상","열상","교통사고","상해","trauma","laceration","lac","TA","wound"]),("head-trauma","두부외상",["머리 외상","head trauma","head injury"])],
+ "04": [("polyuria","다뇨",["polyuria"]),("oliguria","핍뇨",["oliguria"]),("hematuria","혈뇨",["hematuria"]),("urinary-symptoms","배뇨이상",["배뇨이상 / 빈뇨","배뇨장애","빈뇨","배뇨통","dysuria","frequency","urinary symptoms"]),("incontinence","요실금",["incontinence"]),("flank-pain","옆구리 통",["옆구리 통증","flank pain","renal colic"]),("testicular","고환 이상",["고환이상","고환통","testicular pain","testicular torsion","torsion"])],
+ "05": [("fever","발열",["열","fever","pyrexia"]),("bruising","멍",["bruise"]),("fatigue","피로",["fatigue"]),("weight-loss","체중감소",["weight loss"]),("weight-gain","체중증가",["weight gain"])],
+ "06": [("joint-pain","관절 문제",["관절 통증 / 붓기","관절 통증","붓기","arthralgia","joint pain"]),("neck-pain","목 통증",["neck pain"]),("back-pain","허리 통증",["요통","등 통증","back pain","LBP"]),("rash","피부 발진",["rash","skin rash"])],
  "07": [("mood","기분변화",["우울","mood","depression"]),("anxiety","불안",["anxiety","panic"]),("sleep","수면장애",["불면","insomnia","sleep"]),("memory","기억력 저하",["memory loss"]),("dizziness","어지럼",["어지럼증","어지러움","dizziness","dizzy","vertigo","TRS"]),("headache","두통",["headache","HA"]),("peds-seizure","경련 (소아)",["소아 경련","열성경련","pediatric seizure","febrile seizure"]),("seizure","경련",["경련 (성인)","성인 경련","seizure","convulsion","GTC"]),("weakness","근력 / 감각이상",["weakness","sensory change"]),("mental-change","의식장애",["의식저하","mental change","AMS","altered mental status"]),("movement","떨림 / 운동이상",["tremor"]),("stroke","뇌졸중",["뇌졸중 의심","stroke","CVA"])],
  "12": [],
  "08": [("breast-pain","유방통",["mastalgia"]),("breast-mass","유방덩이",["breast mass"]),("vaginal-discharge","질분비물",["vaginal discharge"]),("vaginal-bleeding","질출혈",["vaginal bleeding"]),("menstrual","월경이상 (무월경)",["amenorrhea"]),("dysmenorrhea","월경통 (월경과다)",["dysmenorrhea","menorrhagia"]),("pregnancy","산전 진찰",["산모","임신","pregnancy","preterm labor","IUP"]),("pelvic-pain","골반통",["pelvic pain"])],
  "09": [("growth","성장 지연",["growth delay"]),("development","발달 지연",["developmental delay"]),("vaccination","예방접종",["vaccination"]),("peds-common","소아 공통",["소아","pediatrics","PD"])],
- "10": [("eye","눈 이상",["눈 통증 / 시력저하","안통","시력저하","eye pain","ocular pain","blurred vision"]),("throat","인후통 / 연하곤란",["sore throat","dysphagia"]),("ear","귀 이상",["귀 통증 / 청력저하","귀먹먹함","otalgia","hearing loss","tinnitus"]),("epistaxis","코 이상",["코피","비출혈","epistaxis"])],
+ "10": [("eye","눈 이상",["눈 통증 / 시력저하","안통","시력저하","eye pain","ocular pain","blurred vision"]),("throat","인후통 / 연하곤란",["sore throat","dysphagia","foreign body in throat","tonsil abscess"]),("ear","귀 이상",["귀 통증 / 청력저하","귀먹먹함","otalgia","hearing loss","tinnitus"]),("epistaxis","코 이상",["코피","비출혈","epistaxis","nasal bone fracture","NBF"]),("oral-dental","구강·치아",["치아통증","입안열상","dental pain","intraoral laceration","oral wound","DS"])],
+ "13": [("trauma","상처 외상",["상처 / 외상","열상","교통사고","상해","trauma","laceration","lac","TA","wound"]),("head-trauma","두부외상",["머리 외상","head trauma","head injury"]),("inhalation-burn","흡입화상",["화상","흡입 화상","inhalation burn","burn"]),("poisoning","약물중독",["중독 / 과량복용","약물 과다복용","DI","drug intoxication","poisoning","overdose","intoxication"])],
  "11": [("alcohol-counsel","음주 상담",["alcohol"]),("smoking-counsel","흡연 상담",["smoking"]),("substance","물질 오남용",["substance abuse"]),("bad-news","나쁜 소식 전하기",[]),("domestic-violence","가정폭력",[]),("sexual-violence","성폭력",[]),("suicide","자살 / 자해",["자살사고","자해충동","suicide","suicidal","self harm"])],
 }
 # The supplied CC catalog is a classification reference. Keep source-backed
 # specialty templates as one entry and pediatric material in its own category.
-psychiatric_ids = {"mood", "anxiety", "sleep", "suicide", "poisoning"}
+psychiatric_ids = {"mood", "anxiety", "sleep", "suicide"}
 obgyn_ids = {"vaginal-discharge", "vaginal-bleeding", "menstrual", "dysmenorrhea", "pelvic-pain"}
 pediatric_ids = {"vomiting", "diarrhea", "cough", "fever", "peds-seizure", "peds-common", "peds-abdominal-pain"}
 records_by_id = {record[0]: record for records in catalog.values() for record in records}
@@ -1179,6 +1436,7 @@ bindings = {
  "cough": (["peds-history","peds-exam"], ["peds-cough"]),
  "urinary-symptoms": ([], ["urinary-history"]),
  "flank-pain": ([], ["flank-note"]),
+ "testicular": ([], ["specialty-urology-note", "specialty-testicular-exam"]),
  "fever": (["peds-history","peds-exam"], ["peds-fever","peds-fever-exam","peds-fever-example"]),
  "psychiatry-interview": (["np-history"], ["np-note","np-response","np-example","np-ex1","np-template","np-ex2","np-ex3"]),
  "obgyn-interview": (["ob-history"], ["ob-note"]),
@@ -1196,8 +1454,13 @@ bindings = {
  "pregnancy": (["ob-history"], ["pregnancy-history","ob-note"]),
  "peds-common": (["peds-history","peds-exam"], []),
  "eye": ([], ["eye-history","eye-exam","eye-note"]),
+ "throat": ([], ["specialty-throat-note"]),
  "ear": ([], ["ear-history","ear-example"]),
  "epistaxis": ([], ["epistaxis-mixed","epistaxis-note"]),
+ "oral-dental": ([], ["specialty-dental-note"]),
+ "poisoning": ([], ["specialty-poisoning-note"]),
+ "inhalation-burn": ([], ["specialty-burn-mixed"]),
+ "cardiac-arrest": ([], ["specialty-arrest-note"]),
 }
 for name in ["hematuria","incontinence"]:
     bindings[name] = ([], ["urinary-history"])
@@ -1227,10 +1490,10 @@ symptom_abbreviations = [
     {"label": "FUND HIS", "expansion": ["Frequency", "Urgency", "Nocturia", "Dysuria", "Hesitancy", "Incomplete emptying", "Straining"]},
 ]
 
-data = {"schemaVersion": 1, "contentVersion": "2026-09-27-beta.20", "categories": categories,
+data = {"schemaVersion": 1, "contentVersion": "2026-09-28-beta.21", "categories": categories,
         "sections": list(groups.values()), "complaints": complaints,
         "symptomAbbreviations": symptom_abbreviations,
-        "referenceSections": ["routine-history","routine-exam","handover-general"]}
+        "referenceSections": ["routine-history","routine-exam","handover-general","specialty-general-note"]}
 (DATA / "chief-complaints.json").write_text(json.dumps(data, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
 provenance = {"schemaVersion": 1, "sources": archive["sources"],
               "assignments": dict(assignments), "pdfAdditions": pdf_additions,

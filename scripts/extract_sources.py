@@ -13,6 +13,7 @@ NS = {"w": "http://schemas.openxmlformats.org/wordprocessingml/2006/main"}
 W = "{" + NS["w"] + "}"
 FILES = [
     ("handover", "2023.10 B구역 인계의 사본의 사본.docx"),
+    ("specialty", "과별 초진.docx"),
     ("np-docx", "NP 인턴초진.docx"),
     ("np-pdf", "NP 인턴초진.pdf"),
     ("templates", "와꾸모음 2020ver. ~이거 뽑으시면 됩니다~.docx"),

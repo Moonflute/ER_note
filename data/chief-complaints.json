@@ -1,13 +1,7 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-09-27-beta.20",
+  "contentVersion": "2026-09-28-beta.21",
   "categories": [
-    {
-      "id": "00",
-      "name": "입원관리",
-      "order": 12,
-      "secondary": true
-    },
     {
       "id": "01",
       "name": "소화기",
@@ -72,6 +66,12 @@
       "id": "10",
       "name": "눈/이비인후",
       "order": 9,
+      "secondary": false
+    },
+    {
+      "id": "13",
+      "name": "외상",
+      "order": 12,
       "secondary": false
     },
     {
@@ -2417,64 +2417,819 @@
           "text": "모르겠으면 ED R.에게 질문하면 친절하게 알려줄 것임"
         }
       ]
+    },
+    {
+      "id": "specialty-general-note",
+      "title": "과별 초진 진행",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-85df7d28fb66",
+          "text": "★★<필독>2024필수초진인계★★_이것만 읽으면 초진킹 25.09) 초진의 질보다 빠르기를 더 중요하게 생각하심."
+        },
+        {
+          "id": "i-6fcf537b0a62",
+          "text": "와꾸를 잘 활용합시다!!!"
+        },
+        {
+          "id": "i-0b18d0c807b3",
+          "text": "★PD ★NP, ★OT, ★OL, ★DM, ★OG 초진 보고 차팅해서 콜까지 켜는 것"
+        },
+        {
+          "id": "i-b868c17b0a09",
+          "text": "25.09) 해당과 저희가 알아서 콜 켜지않고 노티 후 콜 유무 알려주십니다. 그럼 차팅하고 콜 켜면 됨"
+        },
+        {
+          "id": "i-274395dc53a3",
+          "text": "25.10) 치프쌤 인계 : EM에서 안보고 어차피 콜 켜야하는 과들의 경우 초진 및 차팅 너무 자세하고 꼼꼼하게 하지 말고 와꾸만 빠르게 채워서 콜 켜기 (NP, OT, OL, DM, OS 등등)"
+        },
+        {
+          "id": "i-6662bfee9be5",
+          "text": "25.11 (NP, OT, OL, DM, OS 등등) 이런 과들은 빨리 쓰고 빨리 켜는게 중요하다고 빨리 해달라고 하심. 그리고 응급 초진기록 상병명 안들어가있으면 기다리지 말고 비슷한거 하나 등록해서 서명 빨리하기"
+        },
+        {
+          "id": "i-1b74aea9aa51",
+          "text": "그 외에는 초진 보고 ED쌤께 노티."
+        },
+        {
+          "id": "i-84f34ae75d7e",
+          "text": "+) 수술 가능성이 있는 환자 : NPO Time(solid, liquid 나눠서) 물어보기"
+        }
+      ]
+    },
+    {
+      "id": "specialty-peds-history",
+      "title": "소아 추가 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-519572e43b06",
+          "text": "소아의 경우 쳐지는지 or 보채는지, 대소변 잘보는지(마지막 대소변시간), 잠은잘자는지, 먹는것은 잘먹는지 기본으로 물어보세요. <- 와꾸에 있음"
+        },
+        {
+          "id": "i-19869a15bafe",
+          "text": "Fever: 마지막 해열제 먹은 시간 알아야 하구요"
+        },
+        {
+          "id": "i-d964ff2ec75c",
+          "text": "Fever : 최고 체온부터 차팅, 열나서 온 애기는 동반 증상 기침, 가래 이런 것들은 언제부터 시작했는지 알아보기, 백신 맞은 적 있는지도 물어보기"
+        },
+        {
+          "id": "i-19868515803b",
+          "text": "2세이하: 와꾸 중 신생아력도. 특히 개월수! 24개월 이하는 개월수로 말해야 됨."
+        }
+      ]
+    },
+    {
+      "id": "specialty-peds-exam",
+      "title": "소아 추가 진찰",
+      "kind": "exam",
+      "items": [
+        {
+          "id": "i-14019c6c3332",
+          "text": "설압자&청진기 챙겨 -> 편도 시진/호흡 청진"
+        }
+      ]
+    },
+    {
+      "id": "specialty-peds-note",
+      "title": "소아 추가 참고",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-224004611136",
+          "text": "해당와꾸(PD Hx, seizure)를 채우면 됩니다. 차팅 최대한 빨리"
+        },
+        {
+          "id": "i-38c37e000f2b",
+          "text": "주로 fever, abdominal pain, seizure환자가 많이 오고, 가끔 “개짖는 소리”기침은 croup"
+        },
+        {
+          "id": "i-f2731a163a8b",
+          "text": "Seizure의 경우 소아경련 와꾸보고 다 채워 넣으면 됩니다. 단, Seizure중이면 바로 노티."
+        },
+        {
+          "id": "i-974ce540f23a",
+          "text": "차트 먼저 쓰고 노티(필수)"
+        }
+      ]
+    },
+    {
+      "id": "specialty-ob-history",
+      "title": "산부인과 추가 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-4b331752b9fc",
+          "text": "와꾸: LMP, 생리주기, 생리기간, 생리량, 생리통여부, last coitus, 성교통, 이상질출혈, 냉변화, 부인과 진료경험, 질 출혈이면 양이 어느정도인지, TPAL, 결혼여부, NPO time (필요하면 보호자 내보내고 혼자있을때 물어보기)"
+        },
+        {
+          "id": "i-dbc6bd712a86",
+          "text": "산모인 경우: IUP(몇주 몇일 정확히!), 진통여부(배뭉침, 주기, 지속시간), 예정일(EDC), NPO, Op hx."
+        }
+      ]
+    },
+    {
+      "id": "specialty-ob-note",
+      "title": "산부인과 추가 참고",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-18b344949537",
+          "text": "3) OG: preterm labor, hemoperitoneum, vaginal bleeding,..."
+        },
+        {
+          "id": "i-e0d3887f4c24",
+          "text": "보통 본원 OBGY f/u 하시는 분들이 많아서 EMR에 있는 내용 붙여넣기 하면 좋아용.."
+        }
+      ]
+    },
+    {
+      "id": "specialty-dizziness-history",
+      "title": "어지럼 추가 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-6d735f242897",
+          "text": "Dizziness는# 어지러울 때 뭐하고 있었는지(Resting시에 발생했는지, 앉았다 일어나면서 발생했는지), TRS(=True Rotating Sx=정말로 빙빙 도는 느낌인지. Faintness와 구분해야됨)와 nystagmus 3개가 제일 중요하고, 와꾸에 있는대로 피지컬 해서 차팅하면 됩니다."
+        }
+      ]
+    },
+    {
+      "id": "specialty-dizziness-exam",
+      "title": "어지럼 추가 진찰",
+      "kind": "exam",
+      "items": [
+        {
+          "id": "i-12fdf55bcbbf",
+          "text": "TRS인데 Spontaneous nystagmus 가 있으면 Head impulse test, unidirectional/"
+        },
+        {
+          "id": "i-cd1bf5edc442",
+          "text": "bidirectional nystagmus, skew 3가지를 확인하고"
+        },
+        {
+          "id": "i-e642c2308ebc",
+          "text": "TRS인데 Spontaneous nystagmus 가 없으면 유발검사 (Dix-hallpike test, Head-roll test) 를 시행해야 합니다."
+        },
+        {
+          "id": "i-b8924856ccf5",
+          "text": "nystagmus, provocation test등 간단하게 할 수 있는 검사는 꼭 하시고.. MOTOR G4는 왠만큼 약하지 않으면 안나옵니다... 웬만큼 건강한 사람은 대부분 G5/G5."
+        },
+        {
+          "id": "i-03d82df068e2",
+          "text": "RAM=rapid alternating movement"
+        }
+      ]
+    },
+    {
+      "id": "specialty-mental-exam",
+      "title": "의식 추가 진찰",
+      "kind": "exam",
+      "items": [
+        {
+          "id": "i-c75be9377774",
+          "text": "Mentation: 5단계로 작성"
+        },
+        {
+          "id": "i-a74fcaca2a0a",
+          "text": "Mild Drowsy : 눈감고 있다 가 verbal order에 눈을 뜸"
+        },
+        {
+          "id": "i-1ace1646b36d",
+          "text": "Deep Drowsy 자극을 줘야 눈을 뜸"
+        },
+        {
+          "id": "i-025940a80feb",
+          "text": "stupor: 자극을 주면 자극을 피하려는 움직임을 보임"
+        },
+        {
+          "id": "i-10b6e0cb7efe",
+          "text": "semicoma: 통증 주면 조금 움직이는 정도 (”반응”과 다름. 방응은 눈뜨고 등등)"
+        }
+      ]
+    },
+    {
+      "id": "specialty-seizure-history",
+      "title": "경련 추가 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-c92c7330f272",
+          "text": "Seizure: 5분이 넘었는지 여부가 매우중요. 꼭 시간을 정확히 알아야함"
+        }
+      ]
+    },
+    {
+      "id": "specialty-neuro-history",
+      "title": "신경 추가 병력",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-46a120f174e4",
+          "text": "와꾸없는NR환자 노티할 경우 기본 hx"
+        },
+        {
+          "id": "i-02568ea8c754",
+          "text": ": 술 (1주일에 어느정도, 어떤술, 얼마나) 담배 (-pyrs, current/ex), Op/Adm hx, Family hx (DM, HTN, MI, Stroke, 암)"
+        },
+        {
+          "id": "i-c54be5d40e02",
+          "text": "기저질환"
+        }
+      ]
+    },
+    {
+      "id": "specialty-headache-exam",
+      "title": "두통 추가 진찰",
+      "kind": "exam",
+      "items": [
+        {
+          "id": "i-fc1f1cd02fc7",
+          "text": "Headache: Td on shoulder 있는지 확인"
+        }
+      ]
+    },
+    {
+      "id": "specialty-psychiatry-history",
+      "title": "정신과 추가 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-84ce7af50788",
+          "text": "DI 나 CO중독 등의 자살시도/사고/계획은 정신과적 초응급으로 환자를 위해 NP진료를 보게 유도해야함."
+        },
+        {
+          "id": "i-876cef3db013",
+          "text": "정신과 입원치료 과거력, 자기 (특히 본원 f/u인 분)"
+        },
+        {
+          "id": "i-092edab5e977",
+          "text": "망상 있다고 할 때 내용 물어보고 망상 종류가 정상인 범주 내의 것인지 아닌지 (ex. 친구들이 내 욕한다 vs 트럼프가 나를 좋아한다) 구분해줄 것."
+        },
+        {
+          "id": "i-b3fdcd9aaafc",
+          "text": "‘오늘’ 온 이유를 꼭 물어보고 노티하기. 예) “원래 우울했는데 오늘은 죽고싶은 생각이 들었어요.” “원래 조현병인데 평소와는 다르게 오늘 폭력적인 모습을 보였어요”"
+        },
+        {
+          "id": "i-123bd798e498",
+          "text": "상담을 받고 싶은지 입원을 하고 싶은지도 물어보고 노티하기."
+        }
+      ]
+    },
+    {
+      "id": "specialty-psychiatry-note",
+      "title": "정신과 추가 참고",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-fc84b31de169",
+          "text": "6) NP 인계 : DI, 자살시도, 그 외 정신질환들....."
+        },
+        {
+          "id": "i-4ea27a8d6986",
+          "text": "인계대로 초진 차팅"
+        },
+        {
+          "id": "i-89fb5e4f89c7",
+          "text": "DI 나 CO중독 등의 자살시도/사고/계획은 정신과적 초응급으로 환자를 위해 NP진료를 보게 유도해야함."
+        },
+        {
+          "id": "i-672cb2718159",
+          "text": "(단 NP 진료보게끔 유도해서 질문 했음에도 환자/보호자가 거부하거나 병력청취힘들면 ER선생님께 먼저 물어보세요)"
+        },
+        {
+          "id": "i-cb55f883b9e7",
+          "text": "와꾸를 채우세요. 가끔 정말 손도 대지 못할 Schizophrenia가 올 경우 레지쌤들이 바로 NP 노티하십니다.."
+        },
+        {
+          "id": "i-a910b07b9fe8",
+          "text": "DI,CO poisoning 환자가 오면 일단 ER에서 응급처치를 한 뒤, 면담가능할때 NP 노티를 하라고함."
+        },
+        {
+          "id": "i-dd968ca0517e",
+          "text": "와꾸채우고 NP보셔야된다고 잘 설득해서, NP.콜키기"
+        },
+        {
+          "id": "i-cc89bdaa9a19",
+          "text": "NP 환자가 왔는데 당장 NP샘을 콜해야 하지만 어차피 와봤자 대화가 불가능해보인다던가, 당장 다른 처치가 급해서 정신과면담이 바로 가능하지 않은 경우 NP노티전 일단 ER레지샘께 먼저 보고하세요!! NP와 ER간의 혼선으로 인해 그렇게 해달라고 부탁하십니다 → 꼭꼭 대화 가능할 정도로 mental alert 해졌을때 NP 켜달라합니다!"
+        }
+      ]
+    },
+    {
+      "id": "specialty-throat-note",
+      "title": "인후 이물 참고",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-4a04d1918168",
+          "text": "7) OL 인계 : 열 없는 AOM (otalgia), Epistaxis, FB in ear or throat, Tonsil abscess"
+        },
+        {
+          "id": "i-92db91b70f73",
+          "text": "0. FB in throat : 육안으로 보이지 않는 경우 -> 육안으로 보이면 꺼낼 수 있으면 처치시 합병증 설명 후 ENT 포셉으로 꺼내고 ED쌤에게 컨펌받기."
+        }
+      ]
+    },
+    {
+      "id": "specialty-ear-history",
+      "title": "귀 추가 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-c75fe7c8c22a",
+          "text": "Otalgia : 이명/청력저하/trauma/ 최근에 귀에 물 들어간 적 있는지(ex.수영장)/URI sx"
+        }
+      ]
+    },
+    {
+      "id": "specialty-epistaxis-history",
+      "title": "코피 추가 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-1e3bb9e94fbc",
+          "text": "Epistaxis: 출혈 멈췄어도 진료위해 콜!! 양쪽으로 나면 어디부터 났는지 순서대로"
+        },
+        {
+          "id": "i-b075a2d04e4a",
+          "text": "입 안 Bleeding, 코 넘김 확인. Packing Change 시, active bleeding 여부"
+        },
+        {
+          "id": "i-9271dddfbfae",
+          "text": "Op hx."
+        },
+        {
+          "id": "i-ba691002feb1",
+          "text": "Underlying disease"
+        },
+        {
+          "id": "i-a828b10c3fa9",
+          "text": "Warfarin, 아스피린 복용여부"
+        },
+        {
+          "id": "i-e7088656eb8a",
+          "text": "타원 들렀다 왔으면 거기서 무슨 치료했었는지"
+        }
+      ]
+    },
+    {
+      "id": "specialty-epistaxis-note",
+      "title": "코피 추가 참고",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-c2c34d0eadcc",
+          "text": "Active bleeding인 경우 merocel 넣는다. (쓴 경우 간호사쌤한테 꼭 말해야함. 비싸므로..)"
+        },
+        {
+          "id": "i-8ccffb032e0f",
+          "text": "BP 높으면 BP control 후에 노티. (160정도가 보더라인) – 만약에 노티하라고 레지쌤이 말씀하시고 아직 혈압이 높다면 일단 아달락 등으로 BP control하고 있으면 initial 내원했을 때 BP, 지금 현재 BP, BP Control 무엇으로 했는지 말씀드리면 bp내려가면 다시 노티해달라고 하실겁니다. -> ER레지쌤께 노티 했다고 말씀드리면 bp 160미만으로 내려가면 OL선생님께 간호사선생님이 노티하게 오더 넣어주실거에요 (2021.3월: 이런거 우리가 안함)"
+        },
+        {
+          "id": "i-42c4356bf7eb",
+          "text": "* 코피용 메로셀은 T2방 드레싱용품 있는 곳 아래에 있습니다. BP높은 사람들 떨어질때까지 기다리고만 있으면 ED샘들이 노티 왜 안하냐고 하시니.. BP높아도 OL샘들에게 적당히 둘러대고 노티해야합니다."
+        },
+        {
+          "id": "i-4845bf4420ec",
+          "text": "4. 외래 내려주세요 -> 간호사쌤에게 말하기"
+        }
+      ]
+    },
+    {
+      "id": "specialty-ent-trauma",
+      "title": "이비인후 열상 참고",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-70ac6c9216b7",
+          "text": "3. Ear, neck쪽의 laceration. ->해당부위 neck level을 알아야함."
+        }
+      ]
+    },
+    {
+      "id": "specialty-ts-note",
+      "title": "흉부외과 참고",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-d438ee695254",
+          "text": "8) TS 인계 : rib Fx, aortic dissection ( 인턴이 안함.)"
+        }
+      ]
+    },
+    {
+      "id": "specialty-urology-note",
+      "title": "비뇨기 추가 참고",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-213038c73091",
+          "text": "9) UR 인계 : 고환이상,.."
+        },
+        {
+          "id": "i-9193ebfde857",
+          "text": "인턴 to 인턴이라 부담 없음"
+        }
+      ]
+    },
+    {
+      "id": "specialty-ureter-note",
+      "title": "요관결석 추가 참고",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-b654a8a2342a",
+          "text": "Ureter stone인 경우 CT에서 stone size 측정해서 몇mm인지 확인한 후 알려주면 좋아합니다"
+        }
+      ]
+    },
+    {
+      "id": "specialty-testicular-exam",
+      "title": "고환 진찰",
+      "kind": "exam",
+      "items": [
+        {
+          "id": "i-df22aa944202",
+          "text": "Testicular torsion 의심 시에는 cremasteric reflex 유무 확인해서 알려주면 좋아합니다"
+        }
+      ]
+    },
+    {
+      "id": "specialty-eye-mixed",
+      "title": "안과 추가 문진과 진찰",
+      "kind": "exam",
+      "items": [
+        {
+          "id": "i-7aea5eb1eac9",
+          "text": "1. 동반증상 확인. (충혈/눈물/눈부심/이물감 등), 눈 출혈점, 동공반사, LOM, 동통"
+        },
+        {
+          "id": "i-ddf34588da4c",
+          "text": "2. LOM, LR, 시야/시력 - 꼭 시력검사를 하고 노티하셔야 합니다. 시력검사표를 30cm정도"
+        },
+        {
+          "id": "i-8bbb47276c0f",
+          "text": "거리에서 들고 측정하시면 됩니다. 눈이 안떠지면 어떻게든 눈을 뜨게해서 시력측정"
+        },
+        {
+          "id": "i-7197bd65ed7c",
+          "text": "안 떠지는 경우 면봉을 윗눈꺼풀에 대고 돌돌 말아 올려 보이게 한 후 시력 측정"
+        },
+        {
+          "id": "i-e2ec400f622f",
+          "text": "> 2020.03 인계받을때 시력검사표 없으니 이전 시력 물어보고, 변화없냐고 물어보라고 하셨음."
+        },
+        {
+          "id": "i-77b741c32397",
+          "text": "3. 안과적 과거력"
+        },
+        {
+          "id": "i-615711b1c28d",
+          "text": "4. underlying"
+        }
+      ]
+    },
+    {
+      "id": "specialty-eye-note",
+      "title": "안과 추가 참고",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-5b4a713c8ccc",
+          "text": "10) OT 인계 : 안구통증, BOF, High BP"
+        },
+        {
+          "id": "i-79589a8b1fcb",
+          "text": "5. 눈 주위 맞거나 부딪쳤을 경우 facial CT 권유. (BOF는 생각보다 적은 힘으로도 생깁니다)"
+        },
+        {
+          "id": "i-ad2d7e46a399",
+          "text": "6. 눈에 뭐가 들어가서 온 환자의 경우 노티 빨리 하고 irrigation하라고 하면 suture방에서"
+        },
+        {
+          "id": "i-8994130e1760",
+          "text": "eye irrigation을 하면 됩니다. (1L 넣는데 20분 걸림 ㅜ)"
+        }
+      ]
+    },
+    {
+      "id": "specialty-os-exam",
+      "title": "정형외과 추가 진찰",
+      "kind": "exam",
+      "items": [
+        {
+          "id": "i-af5c63fbac18",
+          "text": "Td,Swelling,Laceration(margin,depth,size), LOM유무,Motor/Senso 평가(수상부위 Distal이 중요)"
+        },
+        {
+          "id": "i-997259ca3d88",
+          "text": "Wound 붕대감고 왔으면 열어서 Open(뼈 보임)/Closed 꼭 확인"
+        },
+        {
+          "id": "i-cb3b3ffe3c96",
+          "text": "스플린트 대고 있으면 다 열고 상처 눈으로 본 후 노티."
+        }
+      ]
+    },
+    {
+      "id": "specialty-os-note",
+      "title": "정형외과 추가 참고",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-09ee16c11b40",
+          "text": "11) OS 인계 : 월수금토 손laceration, 각종fx들(얼굴제외), 다리lac"
+        },
+        {
+          "id": "i-e2b34c5ebbaf",
+          "text": "X-ray 찍은 후에 노티하세요. 꼭!!!"
+        },
+        {
+          "id": "i-2545c7e2a8dc",
+          "text": "ER에 계신 경우가 많기 때문에 계시면 2년차 샘께 직접노티,"
+        },
+        {
+          "id": "i-25cdc91b0d68",
+          "text": "; 처치실 (suture방)까지 선생님 계신지 꼭 확인하기"
+        },
+        {
+          "id": "i-f604b66270dd",
+          "text": "위치는 해부학적 용어로 사용. anatomymapper참고!"
+        }
+      ]
+    },
+    {
+      "id": "specialty-ns-exam",
+      "title": "신경외과 추가 진찰",
+      "kind": "exam",
+      "items": [
+        {
+          "id": "i-8640d6a97a1d",
+          "text": "12) NS 인계 : 뇌출혈,....Mental, Uex(G5/G5),Lex(G5/G5)는 필수"
+        }
+      ]
+    },
+    {
+      "id": "specialty-ns-note",
+      "title": "신경외과 추가 참고",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-9d687c75ab92",
+          "text": "영상 소견 나오면 최대한 자세히 파악해서 노티하세요(ex. lumbar fx면 어느 level인지, 무슨 유형의 fx인지 등)"
+        }
+      ]
+    },
+    {
+      "id": "specialty-dental-note",
+      "title": "치과 참고",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-958f2c6feda5",
+          "text": "13) DS 인계 : 치아통증, 입안열상, 인턴노티!"
+        },
+        {
+          "id": "i-ba05b7c828dc",
+          "text": "소아치과(만6세이하)는 없음(소아가 오면 다른 병원으로 보냄) & 주말에는 치과 진료 아예 안봅니다"
+        },
+        {
+          "id": "i-58351ee9178b",
+          "text": "콜 자꾸 꺼달라하는데 꺼주면 안됨"
+        }
+      ]
+    },
+    {
+      "id": "specialty-derm-note",
+      "title": "피부과 추가 참고",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-d2edc02ca070",
+          "text": "14) DM 인계 : 피부병변 (두드러기ex.multiple erythematous vesicle)"
+        },
+        {
+          "id": "i-61d3a33d316e",
+          "text": "피부병변 description form (인턴 자리 벽에 붙어있음) 대로 차팅하고 노티"
+        },
+        {
+          "id": "i-f323218dc964",
+          "text": "urticaria는 거진 DM노티 안하고 ER쌤들이 주로 해결하심."
+        }
+      ]
+    },
+    {
+      "id": "specialty-trauma-history",
+      "title": "외상 추가 문진",
+      "kind": "history",
+      "items": [
+        {
+          "id": "i-6f8e33003816",
+          "text": "2. 파상풍 예방접종 했는지는 물어봅시다 (모든 열상에 해당됨)"
+        },
+        {
+          "id": "i-778576738764",
+          "text": "몇 시에 어떻게 생긴 상처인가? 어떤 것에 베인 건지, 재질 알기, foreign body유무확인→ foreign body 찾아서 제거 시도 후 영상, 못 찾겠으면 영상 찍고 노티)"
+        },
+        {
+          "id": "i-a7bc51c5bb85",
+          "text": "수상기전(어떤식으로 다쳤는지 ex) ATA, PTA, BTA, 무엇에 맞았는지, 어디에 베였는지, 어느정도 세기로 부딪쳤는지)"
+        },
+        {
+          "id": "i-961f5008bdcf",
+          "text": "10세 이하의 경우 line 잡는지 or 안 잡는지"
+        },
+        {
+          "id": "i-ad50b672ee34",
+          "text": "만약 라인 잡기로 결정했다면 NPO time도 물어보기 (토할수도 있어서)"
+        },
+        {
+          "id": "i-910bf212bb88",
+          "text": "4. Nasal bone fx : 안경을 썼는가/ swelling / tenderness / deviation / epistaxis진행중? 멎었는지?"
+        },
+        {
+          "id": "i-94f561fde7ff",
+          "text": "5. Drunken환자는 drunken state임을 꼭 말해줘야함."
+        }
+      ]
+    },
+    {
+      "id": "specialty-trauma-exam",
+      "title": "외상 추가 진찰",
+      "kind": "exam",
+      "items": [
+        {
+          "id": "i-d7e2879f1e8f",
+          "text": "사이즈, depth (deep or superficial). margin (regular or irregular)"
+        },
+        {
+          "id": "i-c575e2018e58",
+          "text": "Structure 유무 (Tendon, ligament, nerve, SubQ 등)"
+        },
+        {
+          "id": "i-490b6b10d4bc",
+          "text": "아무 것도 안보이면 아무것도 안보임"
+        },
+        {
+          "id": "i-5c27e6ecd3cc",
+          "text": "Dermis만 보입니다. 등등"
+        },
+        {
+          "id": "i-d2e5f3e38cba",
+          "text": "motor/sensor 어떤지 중요합니다."
+        },
+        {
+          "id": "i-8d83c2721b91",
+          "text": "Chin laceration 또는 lip laceration 경우 관통상이 있는지 꼭 확인하고(소독된 면봉을 넣어서 확인 꼭) intraoral laceration 이 있다면 PS 보다 DS suture가 우선시 되어야 합니다. Tongue laceration이 있는지도 확인해줍시다."
+        }
+      ]
+    },
+    {
+      "id": "specialty-trauma-note",
+      "title": "외상 추가 참고",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-d11f043333d1",
+          "text": "15) PS 인계 : 화목일 손laceration, 얼굴lac, BOF, NBF"
+        },
+        {
+          "id": "i-78dbce8c8189",
+          "text": "1. 우선 disposable kit로 상처를 닦고 조금이라도 벌어지는 상처는 suture하게 될 가능성이 높습니다."
+        },
+        {
+          "id": "i-a423f3ca48ad",
+          "text": "Bleeding이 심할경우 거즈로 saline wet dressing을 해놓고 compression 해줍시다."
+        },
+        {
+          "id": "i-b24c31f9a90d",
+          "text": "wound 를 identify할 수 있도록 saline으로 박박 닦아줍시다."
+        },
+        {
+          "id": "i-f2d4e89902ff",
+          "text": "3. 열상 차팅시 꼭 적을 것"
+        },
+        {
+          "id": "i-8ecab46a3622",
+          "text": "TA =Traffic Accident, ATA = 오토바이 TA,"
+        },
+        {
+          "id": "i-c9409343c59c",
+          "text": "PTA= Pedestrial(환자가 보행자) TA, BTA = Bicycle TA"
+        },
+        {
+          "id": "i-9b0a218fe89d",
+          "text": "영상검사 유무 (laceration 있으면 루틴으로 X-ray, 얼굴에있으면 X-ray + facial CT 찍습니다. 영상을 안찍고 노티를 하는 경우 합당한 이유가 있어야 합니다. Ex) 소아 부모님 강력거절)"
+        },
+        {
+          "id": "i-1dc79737497c",
+          "text": "원칙적으로 intraoral wound는 PS에서 진료를 보지 않습니다. 그러므로 주말의 경우, DS가 ER진료를 하지 않기 때문에Only intraoral wound는 다른 병원으로 보내야합니다. 다만, lip laceration과 관련된 경우는 PS에서 같이 suture를 해주는 것입니다."
+        },
+        {
+          "id": "i-c75efef3b831",
+          "text": "귀 열상 ㅡ 열살이 환자앞쪽에서 보이면 ps , 뒤에있으면 ol"
+        },
+        {
+          "id": "i-458ef6a08c8d",
+          "text": "upper forehead의 범위 : hair가 없는곳 까지"
+        },
+        {
+          "id": "i-84806d1a23b4",
+          "text": "Hair가 있는 부위에 laceration이 있다면 Scalp laceration입니다. Description할 때 헷갈리지 않도록 합시다. 머리가 없는 분처럼 애매한 경우 PS 노티할 때 말해주도록 합니다."
+        },
+        {
+          "id": "i-1ad0affbb779",
+          "text": "(line 잡다 = 아기 sedation시켜서 꿰맨다.)"
+        },
+        {
+          "id": "i-72c9613f0b30",
+          "text": "라인잡고콜키기!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+        },
+        {
+          "id": "i-cd8b215fd60a",
+          "text": "수면 마취 진정동의서는 ps쌤이 하시는 거라고 함"
+        },
+        {
+          "id": "i-1f6bef2735d5",
+          "text": "nasal b fx 는 ct 찍었는지도 물어보심"
+        }
+      ]
+    },
+    {
+      "id": "specialty-poisoning-note",
+      "title": "약물중독 참고",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-a3449df4b509",
+          "text": "(1) DI (Drug Intoxication)"
+        },
+        {
+          "id": "i-0aa5ee2d5cb6",
+          "text": "대부분 DI 환자가 오면 ER 샘들이 보시고 lavage나 charcoal도 직접 하십니다. 문진 잘 해서 노티하시고, NP노티 시키시면 NP노티 합니다. 설명 잘 하시고 NP보게끔.. Tox기계돌리기 —구두인계 (TOX 아이디 입력은 바코드 밑에 18~~~하는 긴 걸로 써야함!)"
+        }
+      ]
+    },
+    {
+      "id": "specialty-arrest-note",
+      "title": "심정지와 DOA 참고",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-ca5df71b46ea",
+          "text": "(2) DOA (와꾸) ; 대부분 검안은 레지쌤이 하시고"
+        },
+        {
+          "id": "i-c55f6f1047ad",
+          "text": "가끔 CPR환자가 생기거나 119타고 온다고 연락이 옵니다. 장갑 끼고 ABGA (맥이 없으니 femoral에 10cc syringe로 대충 찔러 샘플링합니다) 빠르게 할 준비 하시고 대기하다 도착하면 ABGA합니다. 환자 오면 얼른 옷 가위로 잘라버리시고 CPR 하시면 됩니다. ER선생님들은 intubation을 하실거고 간호사분들은 라인잡고 monitor를 달고 계실겁니다. 그만하라고 하실때까지 하면 되고, 힘들면 교대해달라고 말하세요."
+        },
+        {
+          "id": "i-cb4a2ca29896",
+          "text": "*서울은 기계(루카스)로 합니다, 10cc시린지로 왼쪽femoral에서 음압 걸어서 ABGA하면 됨. 가스 결과 바로 가져다드리기. 그러고 나오면 됨. 이외 인턴잡 거의 없음. ROSC 되면 ECG 바로 찍어야되니까 인턴자리에서 대기하기. 거기서 대기할 필요는 없음."
+        },
+        {
+          "id": "i-9ada2891ff80",
+          "text": "*루카스 세팅 전까진 Chest compression 해야하수도 있음"
+        },
+        {
+          "id": "i-5687d670dc58",
+          "text": "*Arrest 환자 중에 ROSC되고 난 후에 CAG실 가는 경우가 있습니다. 그러면 오른쪽 femoral a.에서 시술할 가능성도 있으므로 가능한 오른쪽에서는 puncture하지 마세요!!!"
+        }
+      ]
+    },
+    {
+      "id": "specialty-burn-mixed",
+      "title": "흡입화상 문진과 진찰",
+      "kind": "exam",
+      "items": [
+        {
+          "id": "i-661de3f26302",
+          "text": "본적은 없지만 OL 노티하면 된답니다. Dyspnea 없는지, C/S/R 없는지, 코나 입에 그을린 자극 없는지 물어보고 lung sound도 들어보면 된다네요."
+        }
+      ]
+    },
+    {
+      "id": "specialty-trauma-general",
+      "title": "외상 공통 참고",
+      "kind": "note",
+      "items": [
+        {
+          "id": "i-e8279d274e2d",
+          "text": "응급실 케이스 중 절대 다수를 차지합니다. 그때그때 NS, OS, TS, PS, GS, OT, OL 등 해당과에 노티하시면 됩니다.(우리가 해당과에 노티 안함.) 밤에는 Drunken 환자가 많은데 노티할 때 drunken 여부도 꼭 노티하셔야 됩니다. 협조가 안되면 환자를 볼 수가 없어서 대부분 술 깨고 환자를 보게 됨."
+        },
+        {
+          "id": "i-ab7207b869e5",
+          "text": "피지컬은 머리부터 발끝까지 모두 훑어보셔야 하고 꾹꾹 눌러보세요. 이상한 부분 있으면 꼭 노티하시고, lac부위 wet dressing 빼고는 하라는 것만 함 (처방 등 인턴이 안 냄)"
+        },
+        {
+          "id": "i-8ca4c668e154",
+          "text": "TA환자는 머리, 목, 가슴, 배부터 촉진 후 그 다음 팔다리 촉진!"
+        }
+      ]
     }
   ],
   "complaints": [
-    {
-      "id": "acute-condition",
-      "name": "급성상태",
-      "categoryId": "00",
-      "aliases": [],
-      "order": 0,
-      "scope": "general",
-      "status": "missing",
-      "sharedSectionIds": [],
-      "sectionIds": []
-    },
-    {
-      "id": "abnormal-lab",
-      "name": "수치이상",
-      "categoryId": "00",
-      "aliases": [],
-      "order": 1,
-      "scope": "general",
-      "status": "missing",
-      "sharedSectionIds": [],
-      "sectionIds": []
-    },
-    {
-      "id": "prescription",
-      "name": "처방체액",
-      "categoryId": "00",
-      "aliases": [],
-      "order": 2,
-      "scope": "general",
-      "status": "missing",
-      "sharedSectionIds": [],
-      "sectionIds": []
-    },
-    {
-      "id": "device",
-      "name": "기구문제",
-      "categoryId": "00",
-      "aliases": [],
-      "order": 3,
-      "scope": "general",
-      "status": "missing",
-      "sharedSectionIds": [],
-      "sectionIds": []
-    },
-    {
-      "id": "ward-event",
-      "name": "병동사건",
-      "categoryId": "00",
-      "aliases": [],
-      "order": 4,
-      "scope": "general",
-      "status": "missing",
-      "sharedSectionIds": [],
-      "sectionIds": []
-    },
     {
       "id": "abdominal-pain",
       "name": "복통",
@@ -2630,7 +3385,7 @@
                   },
                   {
                     "id": "abd-pe-tenderness",
-                    "text": "Abdominal Td / rTd / Muscle guarding",
+                    "text": "Abdominal tenderness / rTd / Muscle guarding",
                     "sourceItemIds": [
                       "i-a40910290557",
                       "i-4e56e4043370",
@@ -3122,7 +3877,9 @@
                     "sourceItemIds": [
                       "i-f9672a36bab3",
                       "i-090b46250227",
-                      "i-18572f0f6fd3"
+                      "i-18572f0f6fd3",
+                      "i-46a120f174e4",
+                      "i-c54be5d40e02"
                     ],
                     "compactText": "Medical Hx",
                     "compactRow": "history"
@@ -3131,10 +3888,18 @@
                     "id": "syncope-hx-social",
                     "text": "Social Hx (Alcohol Smoking)",
                     "sourceItemIds": [
-                      "i-3789fe7ad282"
+                      "i-3789fe7ad282",
+                      "i-02568ea8c754"
                     ],
                     "compactText": "Social Hx",
                     "compactRow": "history"
+                  },
+                  {
+                    "id": "syncope-hx-family",
+                    "text": "Family Hx (DM / HTN / MI / Stroke / Cancer)",
+                    "sourceItemIds": [
+                      "i-02568ea8c754"
+                    ]
                   }
                 ]
               },
@@ -3249,6 +4014,119 @@
       "status": "missing",
       "sharedSectionIds": [],
       "sectionIds": []
+    },
+    {
+      "id": "cardiac-arrest",
+      "name": "심정지 / DOA",
+      "categoryId": "02",
+      "aliases": [
+        "심정지",
+        "cardiac arrest",
+        "arrest",
+        "CPR",
+        "DOA",
+        "ROSC"
+      ],
+      "order": 5,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [],
+      "sectionIds": [
+        "specialty-arrest-note"
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "arrest-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Arrival",
+                "items": [
+                  {
+                    "id": "arrest-hx-scope",
+                    "text": "Incoming CPR / DOA",
+                    "sourceItemIds": [
+                      "i-ca5df71b46ea",
+                      "i-c55f6f1047ad"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "arrest-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "Circulation",
+                "items": [
+                  {
+                    "id": "arrest-pe-pulse",
+                    "text": "Pulse absent",
+                    "sourceItemIds": [
+                      "i-c55f6f1047ad"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "arrest-view-reference",
+            "title": "참고사항",
+            "kind": "note",
+            "groups": [
+              {
+                "title": "DOA",
+                "items": [
+                  {
+                    "id": "arrest-ref-doa",
+                    "text": "DOA 검안은 주로 ER R.이 시행",
+                    "sourceItemIds": [
+                      "i-ca5df71b46ea"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "CPR",
+                "items": [
+                  {
+                    "id": "arrest-ref-abga",
+                    "text": "장갑 착용 후 femoral ABGA 준비·채혈; 결과를 바로 전달",
+                    "sourceItemIds": [
+                      "i-c55f6f1047ad",
+                      "i-cb4a2ca29896"
+                    ],
+                    "note": "원문: 10 cc syringe로 왼쪽 femoral에서 음압을 걸어 sampling"
+                  },
+                  {
+                    "id": "arrest-ref-compression",
+                    "text": "LUCAS 세팅 전까지 chest compression; 중단 지시까지 시행하고 힘들면 교대 요청",
+                    "sourceItemIds": [
+                      "i-c55f6f1047ad",
+                      "i-cb4a2ca29896",
+                      "i-9ada2891ff80"
+                    ]
+                  },
+                  {
+                    "id": "arrest-ref-rosc",
+                    "text": "ROSC 후 ECG 준비; CAG 가능성이 있으면 가능한 오른쪽 femoral puncture를 피함",
+                    "sourceItemIds": [
+                      "i-cb4a2ca29896",
+                      "i-5687d670dc58"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "rhinorrhea",
@@ -3534,6 +4412,13 @@
                       "i-e4ebc9e04362"
                     ],
                     "note": "원문 인계 원칙"
+                  },
+                  {
+                    "id": "flank-ref-stone-size",
+                    "text": "CT에서 ureter stone size를 mm로 확인하여 전달",
+                    "sourceItemIds": [
+                      "i-b654a8a2342a"
+                    ]
                   }
                 ]
               },
@@ -3552,6 +4437,89 @@
                     "text": "Parkinsonism 환자: Macperan 투여 금지",
                     "sourceItemIds": [
                       "i-956f2c0d1e98"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "testicular",
+      "name": "고환 이상",
+      "categoryId": "04",
+      "aliases": [
+        "고환이상",
+        "고환통",
+        "testicular pain",
+        "testicular torsion",
+        "torsion"
+      ],
+      "order": 6,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [],
+      "sectionIds": [
+        "specialty-urology-note",
+        "specialty-testicular-exam"
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "testicular-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Present illness",
+                "items": [
+                  {
+                    "id": "testicular-hx-scope",
+                    "text": "Testicular abnormality / Suspected torsion",
+                    "sourceItemIds": [
+                      "i-213038c73091",
+                      "i-df22aa944202"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "testicular-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "Testis",
+                "items": [
+                  {
+                    "id": "testicular-pe-cremasteric",
+                    "text": "Cremasteric reflex",
+                    "sourceItemIds": [
+                      "i-df22aa944202"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "testicular-view-reference",
+            "title": "참고사항",
+            "kind": "note",
+            "groups": [
+              {
+                "title": "보고",
+                "items": [
+                  {
+                    "id": "testicular-ref-notify",
+                    "text": "Testicular torsion 의심 시 cremasteric reflex 유무를 확인하여 전달",
+                    "sourceItemIds": [
+                      "i-9193ebfde857",
+                      "i-df22aa944202"
                     ]
                   }
                 ]
@@ -3808,6 +4776,21 @@
                     "sourceItemIds": [
                       "i-3b9babba9fdf"
                     ]
+                  },
+                  {
+                    "id": "rash-ref-description",
+                    "text": "피부 병변 description form에 따라 차팅 후 DM 연락",
+                    "sourceItemIds": [
+                      "i-d2edc02ca070",
+                      "i-61d3a33d316e"
+                    ]
+                  },
+                  {
+                    "id": "rash-ref-urticaria",
+                    "text": "Urticaria는 주로 ER에서 처치한다는 원문",
+                    "sourceItemIds": [
+                      "i-f323218dc964"
+                    ]
                   }
                 ]
               },
@@ -3820,437 +4803,6 @@
                     "sourceItemIds": [
                       "i-92ef6181190b",
                       "i-1fa2d9cbf8e4"
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": "trauma",
-      "name": "상처 외상",
-      "categoryId": "06",
-      "aliases": [
-        "상처 / 외상",
-        "열상",
-        "교통사고",
-        "상해",
-        "trauma",
-        "laceration",
-        "lac",
-        "TA",
-        "wound"
-      ],
-      "order": 4,
-      "scope": "general",
-      "status": "available",
-      "sharedSectionIds": [
-        "msk-exam"
-      ],
-      "sectionIds": [
-        "trauma-history",
-        "trauma-exam",
-        "trauma-note",
-        "trauma-example"
-      ],
-      "layout": {
-        "sections": [
-          {
-            "id": "trauma-view-history",
-            "title": "Hx",
-            "kind": "history",
-            "groups": [
-              {
-                "title": "Present illness",
-                "items": [
-                  {
-                    "id": "trauma-hx-event",
-                    "text": "Injury time / Mechanism / Object / Impact force",
-                    "sourceItemIds": [
-                      "i-688a6f65c1d7",
-                      "i-de73026cd548",
-                      "i-e1195a72d9d0",
-                      "i-9ebb530af606"
-                    ]
-                  },
-                  {
-                    "id": "trauma-hx-loc",
-                    "text": "LOC",
-                    "sourceItemIds": [
-                      "i-a0f0117152c7"
-                    ]
-                  },
-                  {
-                    "id": "trauma-hx-pain",
-                    "text": "Abdominal pain / Flank pain / Chest wall pain",
-                    "sourceItemIds": [
-                      "i-386ee59bf53f",
-                      "i-b2bb84357bb1"
-                    ]
-                  },
-                  {
-                    "id": "trauma-hx-control",
-                    "text": "Pain control 필요 여부",
-                    "sourceItemIds": [
-                      "i-be27568ef195"
-                    ]
-                  },
-                  {
-                    "id": "trauma-hx-tetanus",
-                    "text": "Tetanus vaccination Hx",
-                    "sourceItemIds": [
-                      "i-d721e9eae930",
-                      "i-0cc7a621fc77"
-                    ],
-                    "note": "최근 5년 이내 접종 여부 확인"
-                  }
-                ]
-              },
-              {
-                "title": "3세 미만 열상",
-                "items": [
-                  {
-                    "id": "trauma-hx-toddler",
-                    "text": "NPO time / Body weight",
-                    "sourceItemIds": [
-                      "i-b84e19f8e78e"
-                    ],
-                    "note": "Line 확보 및 sedative drug 사용 대비; NPO 3시간 확인"
-                  }
-                ]
-              },
-              {
-                "title": "교통사고",
-                "items": [
-                  {
-                    "id": "trauma-hx-ta",
-                    "text": "Mechanism / Speed / Seat / Protective gear / LOC / Airbag deployment",
-                    "sourceItemIds": [
-                      "i-de147cc79d31"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "상해",
-                "items": [
-                  {
-                    "id": "trauma-hx-assault",
-                    "text": "Mechanism·object / Injury site / 횟수·정도",
-                    "sourceItemIds": [
-                      "i-fcd19e2e6a55"
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "id": "trauma-view-exam",
-            "title": "PEx",
-            "kind": "exam",
-            "groups": [
-              {
-                "title": "Musculoskeletal",
-                "items": [
-                  {
-                    "id": "trauma-pe-msk",
-                    "text": "Tenderness / LOM / Deformity / Swelling / External wound",
-                    "sourceItemIds": [
-                      "i-f87ca1e6cd9b",
-                      "i-800b30ed4c7d"
-                    ]
-                  },
-                  {
-                    "id": "trauma-pe-neurovascular",
-                    "text": "Motor / Sensory change",
-                    "sourceItemIds": [
-                      "i-f87ca1e6cd9b",
-                      "i-440ea8d2c491",
-                      "i-deb36614d74a",
-                      "i-03c04767e1cf"
-                    ]
-                  },
-                  {
-                    "id": "trauma-pe-axis",
-                    "text": "Pelvis / C-spine tenderness",
-                    "sourceItemIds": [
-                      "i-108544b6342b"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Wound",
-                "items": [
-                  {
-                    "id": "trauma-pe-expose",
-                    "text": "상처를 완전히 노출하여 직접 확인",
-                    "sourceItemIds": [
-                      "i-04d6f8b0a8a2"
-                    ]
-                  },
-                  {
-                    "id": "trauma-pe-foreign",
-                    "text": "Foreign body",
-                    "sourceItemIds": [
-                      "i-2d07e2abd35d"
-                    ]
-                  },
-                  {
-                    "id": "trauma-pe-site",
-                    "text": "Site / Size",
-                    "sourceItemIds": [
-                      "i-3066cfdb3509",
-                      "i-226da3ed64be"
-                    ],
-                    "note": "Lip laceration은 뒤집어 oral cavity 병변 확인"
-                  },
-                  {
-                    "id": "trauma-pe-bleeding",
-                    "text": "Active bleeding",
-                    "sourceItemIds": [
-                      "i-fce3d24d05a6",
-                      "i-a169f4388074"
-                    ]
-                  },
-                  {
-                    "id": "trauma-pe-depth",
-                    "text": "Depth: superficial / deep / penetrating",
-                    "sourceItemIds": [
-                      "i-996a841fe07e",
-                      "i-226da3ed64be"
-                    ]
-                  },
-                  {
-                    "id": "trauma-pe-margin",
-                    "text": "Margin: regular / irregular",
-                    "sourceItemIds": [
-                      "i-45dcc449d3cd",
-                      "i-226da3ed64be"
-                    ],
-                    "note": "예: chin 2 cm superficial linear irregular-margin laceration"
-                  },
-                  {
-                    "id": "trauma-pe-structure",
-                    "text": "Exposed structure: none / dermis / subcutaneous tissue / tendon / ligament / nerve",
-                    "sourceItemIds": [
-                      "i-ade2395cb1b7"
-                    ]
-                  },
-                  {
-                    "id": "trauma-pe-face",
-                    "text": "Facial tenderness",
-                    "sourceItemIds": [
-                      "i-33c45fd3619a"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "교통사고",
-                "items": [
-                  {
-                    "id": "trauma-pe-ta",
-                    "text": "Head / Thorax / Abdomen / Lower back / Pelvis / Extremities",
-                    "sourceItemIds": [
-                      "i-92155cfad7fe"
-                    ],
-                    "note": "통증 부위 중심으로 보되 전 부위 확인"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "id": "trauma-view-reference",
-            "title": "참고사항",
-            "kind": "note",
-            "groups": [
-              {
-                "title": "초기 처치·오더",
-                "items": [
-                  {
-                    "id": "trauma-ref-set",
-                    "text": "ER set: 정형외과 Routine / 성형외과 Routine / 신경외과 Routine / 07Suture",
-                    "sourceItemIds": [
-                      "i-cc9fb9ec6dff"
-                    ]
-                  },
-                  {
-                    "id": "trauma-ref-xray",
-                    "text": "관절 XR은 여러 view를 모두 포함; 소아는 비교를 위해 양측 촬영",
-                    "sourceItemIds": [
-                      "i-f374b9394b7f",
-                      "i-ce1c89e77931"
-                    ]
-                  },
-                  {
-                    "id": "trauma-ref-confirm",
-                    "text": "처방 전 ED R. 확인",
-                    "sourceItemIds": [
-                      "i-423e0fce3748"
-                    ]
-                  },
-                  {
-                    "id": "trauma-ref-wet",
-                    "text": "Open wound 초진: Gauze + 생리식염수 + 픽스몰 준비 및 wet dressing",
-                    "sourceItemIds": [
-                      "i-189594487b6f",
-                      "i-21694bf54bf1",
-                      "i-203a4da1266c"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "열상",
-                "items": [
-                  {
-                    "id": "trauma-ref-image",
-                    "text": "부위에 맞는 영상 오더; comment에 정확한 부위 입력",
-                    "sourceItemIds": [
-                      "i-4d81c93f9549"
-                    ],
-                    "note": "예: 4th finger"
-                  },
-                  {
-                    "id": "trauma-ref-suture",
-                    "text": "07Suture: bite wound는 Tiramox, 그 외 cefazoline / TD / Hyper TET",
-                    "sourceItemIds": [
-                      "i-883574d75347"
-                    ]
-                  },
-                  {
-                    "id": "trauma-ref-manage",
-                    "text": "Simple laceration은 주로 ED R. suture; deep laceration 또는 fracture 동반 wound는 OS/PS 등에서 처치",
-                    "sourceItemIds": [
-                      "i-a47c1d8faf33"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "교통사고·상해",
-                "items": [
-                  {
-                    "id": "trauma-ref-ta-xray",
-                    "text": "Tenderness 부위의 위·아래 뼈까지 촬영",
-                    "sourceItemIds": [
-                      "i-e8c9278bf2dc"
-                    ],
-                    "note": "예: ankle pain이면 tibia부터 foot까지"
-                  },
-                  {
-                    "id": "trauma-ref-statement",
-                    "text": "차팅에 정보 제공자를 ‘○○ 진술 상’으로 기록",
-                    "sourceItemIds": [
-                      "i-a3ca85a94775",
-                      "i-5e267dc38824"
-                    ],
-                    "note": "예: 119 현장구급대원, 환자 본인"
-                  },
-                  {
-                    "id": "trauma-ref-certificate",
-                    "text": "진단서·상해진단서 발급을 원하면 ED R.에게 알림",
-                    "sourceItemIds": [
-                      "i-74813088c816"
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "차팅 예시",
-                "items": [
-                  {
-                    "id": "trauma-ref-chart-neuro",
-                    "text": "Alert mentation / Pupil 0.3/0.3 / EOM OK / Visual disturbance (-) / Nuchal midline tenderness (-), LOM (-)",
-                    "sourceItemIds": [
-                      "i-5735897496c9",
-                      "i-612377d2b84a",
-                      "i-aec507acc5c5",
-                      "i-09934c95f014",
-                      "i-ae266c3ddb7d",
-                      "i-0aca2be86e56"
-                    ]
-                  },
-                  {
-                    "id": "trauma-ref-chart-motor",
-                    "text": "Motor: upper G5/G5, lower G5/G5 / Sensory change (-) / Gait OK",
-                    "sourceItemIds": [
-                      "i-218af66eb411",
-                      "i-438f9d760f95",
-                      "i-276cecfacc29"
-                    ]
-                  },
-                  {
-                    "id": "trauma-ref-chart-wound",
-                    "text": "No external wound on chest, abdomen, and back",
-                    "sourceItemIds": [
-                      "i-233de0814bca"
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": "head-trauma",
-      "name": "두부외상",
-      "categoryId": "06",
-      "aliases": [
-        "머리 외상",
-        "head trauma",
-        "head injury"
-      ],
-      "order": 5,
-      "scope": "general",
-      "status": "available",
-      "sharedSectionIds": [],
-      "sectionIds": [
-        "headtrauma-history",
-        "headtrauma-exam"
-      ],
-      "layout": {
-        "sections": [
-          {
-            "id": "head-trauma-view-history",
-            "title": "Hx",
-            "kind": "history",
-            "groups": [
-              {
-                "title": "Present illness",
-                "items": [
-                  {
-                    "id": "head-trauma-hx",
-                    "text": "LOC / Headache / Nausea / Vomiting",
-                    "sourceItemIds": [
-                      "i-3ef205c69344"
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "id": "head-trauma-view-exam",
-            "title": "PEx",
-            "kind": "exam",
-            "groups": [
-              {
-                "title": "Neurologic",
-                "items": [
-                  {
-                    "id": "head-trauma-pe-pupil",
-                    "text": "Pupil reflex",
-                    "sourceItemIds": [
-                      "i-5d548532fd14"
                     ]
                   }
                 ]
@@ -4340,6 +4892,13 @@
                 "title": "Dizziness",
                 "items": [
                   {
+                    "id": "dizz-hx-context",
+                    "text": "At onset: Resting / Standing up / Other activity",
+                    "sourceItemIds": [
+                      "i-6d735f242897"
+                    ]
+                  },
+                  {
                     "id": "dizz-hx-pattern",
                     "text": "Pattern: Vertigo / Presyncope / Lightheadedness / Disequilibrium",
                     "sourceItemIds": [
@@ -4354,7 +4913,8 @@
                     "sourceItemIds": [
                       "i-cdb419f99f24",
                       "i-6caa8883d154",
-                      "i-6a49a5ad9c82"
+                      "i-6a49a5ad9c82",
+                      "i-6d735f242897"
                     ]
                   },
                   {
@@ -4402,7 +4962,9 @@
                     "sourceItemIds": [
                       "i-f9672a36bab3",
                       "i-090b46250227",
-                      "i-18572f0f6fd3"
+                      "i-18572f0f6fd3",
+                      "i-46a120f174e4",
+                      "i-c54be5d40e02"
                     ],
                     "compactText": "Medical Hx",
                     "compactRow": "history"
@@ -4411,10 +4973,18 @@
                     "id": "dizz-hx-social",
                     "text": "Social Hx (Alcohol Smoking)",
                     "sourceItemIds": [
-                      "i-3789fe7ad282"
+                      "i-3789fe7ad282",
+                      "i-02568ea8c754"
                     ],
                     "compactText": "Social Hx",
                     "compactRow": "history"
+                  },
+                  {
+                    "id": "dizz-hx-family",
+                    "text": "Family Hx (DM / HTN / MI / Stroke / Cancer)",
+                    "sourceItemIds": [
+                      "i-02568ea8c754"
+                    ]
                   }
                 ]
               },
@@ -4461,17 +5031,26 @@
                     "text": "Spontaneous / Gaze-evoked / Head-turn induced nystagmus",
                     "sourceItemIds": [
                       "i-6a49a5ad9c82",
-                      "i-547582678bb0"
+                      "i-547582678bb0",
+                      "i-6d735f242897"
                     ]
                   },
                   {
-                    "id": "dizz-pe-algorithm",
-                    "text": "Spontaneous·gaze-evoked nystagmus 확인 → HINTS / ED R. notify / Dix-Hallpike / Head-roll test",
+                    "id": "dizz-pe-hints",
+                    "text": "Spontaneous nystagmus present: Head impulse / Unidirectional or bidirectional nystagmus / Skew",
                     "sourceItemIds": [
                       "i-a26c38ea1eef",
-                      "i-f1f1b078d1f6"
-                    ],
-                    "note": "원문의 양성·음성 결과별 시행 순서 확인"
+                      "i-12fdf55bcbbf",
+                      "i-cd1bf5edc442"
+                    ]
+                  },
+                  {
+                    "id": "dizz-pe-provocation",
+                    "text": "Spontaneous nystagmus absent: Dix-Hallpike / Head-roll test",
+                    "sourceItemIds": [
+                      "i-f1f1b078d1f6",
+                      "i-e642c2308ebc"
+                    ]
                   }
                 ]
               },
@@ -4490,7 +5069,8 @@
                     "id": "dizz-pe-upper-coordination",
                     "text": "Finger-to-finger / Finger-to-nose / Rapid alternating movement",
                     "sourceItemIds": [
-                      "i-b06a29883b36"
+                      "i-b06a29883b36",
+                      "i-03d82df068e2"
                     ]
                   },
                   {
@@ -4557,6 +5137,14 @@
                     "sourceItemIds": [
                       "i-11e18a0af92f"
                     ]
+                  },
+                  {
+                    "id": "dizz-ref-basic-tests",
+                    "text": "Nystagmus와 provocation test 등 시행 가능한 검사는 확인",
+                    "sourceItemIds": [
+                      "i-b8924856ccf5"
+                    ],
+                    "note": "Motor G4는 뚜렷한 약화가 있을 때 기록하고, 원문상 대부분의 건강한 환자는 G5/G5"
                   },
                   {
                     "id": "dizz-ref-cerebellar",
@@ -4785,7 +5373,9 @@
                     "sourceItemIds": [
                       "i-f9672a36bab3",
                       "i-090b46250227",
-                      "i-18572f0f6fd3"
+                      "i-18572f0f6fd3",
+                      "i-46a120f174e4",
+                      "i-c54be5d40e02"
                     ],
                     "compactText": "Medical Hx",
                     "compactRow": "history"
@@ -4794,10 +5384,18 @@
                     "id": "headache-hx-social",
                     "text": "Social Hx (Alcohol Smoking)",
                     "sourceItemIds": [
-                      "i-3789fe7ad282"
+                      "i-3789fe7ad282",
+                      "i-02568ea8c754"
                     ],
                     "compactText": "Social Hx",
                     "compactRow": "history"
+                  },
+                  {
+                    "id": "headache-hx-family",
+                    "text": "Family Hx (DM / HTN / MI / Stroke / Cancer)",
+                    "sourceItemIds": [
+                      "i-02568ea8c754"
+                    ]
                   }
                 ]
               },
@@ -4844,6 +5442,13 @@
                     "text": "Nuchal tenderness",
                     "sourceItemIds": [
                       "i-05a884b2bfd5"
+                    ]
+                  },
+                  {
+                    "id": "headache-pe-shoulder",
+                    "text": "Shoulder tenderness",
+                    "sourceItemIds": [
+                      "i-fc1f1cd02fc7"
                     ]
                   },
                   {
@@ -4940,10 +5545,11 @@
                   },
                   {
                     "id": "seizure-hx-duration",
-                    "text": "Duration / First attack",
+                    "text": "Duration / 5 minutes or longer / First attack",
                     "sourceItemIds": [
                       "i-64f5b3d5fed6",
-                      "i-ae89dd865504"
+                      "i-ae89dd865504",
+                      "i-c92c7330f272"
                     ]
                   },
                   {
@@ -5050,7 +5656,9 @@
                     "sourceItemIds": [
                       "i-f9672a36bab3",
                       "i-090b46250227",
-                      "i-18572f0f6fd3"
+                      "i-18572f0f6fd3",
+                      "i-46a120f174e4",
+                      "i-c54be5d40e02"
                     ],
                     "compactText": "Medical Hx",
                     "compactRow": "history"
@@ -5059,10 +5667,18 @@
                     "id": "seizure-common-hx-social",
                     "text": "Social Hx (Alcohol Smoking)",
                     "sourceItemIds": [
-                      "i-3789fe7ad282"
+                      "i-3789fe7ad282",
+                      "i-02568ea8c754"
                     ],
                     "compactText": "Social Hx",
                     "compactRow": "history"
+                  },
+                  {
+                    "id": "seizure-common-hx-family",
+                    "text": "Family Hx (DM / HTN / MI / Stroke / Cancer)",
+                    "sourceItemIds": [
+                      "i-02568ea8c754"
+                    ]
                   }
                 ]
               },
@@ -5180,7 +5796,9 @@
                     "sourceItemIds": [
                       "i-f9672a36bab3",
                       "i-090b46250227",
-                      "i-18572f0f6fd3"
+                      "i-18572f0f6fd3",
+                      "i-46a120f174e4",
+                      "i-c54be5d40e02"
                     ],
                     "compactText": "Medical Hx",
                     "compactRow": "history"
@@ -5189,10 +5807,18 @@
                     "id": "mental-hx-social",
                     "text": "Social Hx (Alcohol Smoking)",
                     "sourceItemIds": [
-                      "i-3789fe7ad282"
+                      "i-3789fe7ad282",
+                      "i-02568ea8c754"
                     ],
                     "compactText": "Social Hx",
                     "compactRow": "history"
+                  },
+                  {
+                    "id": "mental-hx-family",
+                    "text": "Family Hx (DM / HTN / MI / Stroke / Cancer)",
+                    "sourceItemIds": [
+                      "i-02568ea8c754"
+                    ]
                   }
                 ]
               },
@@ -5239,9 +5865,14 @@
                     "text": "Mental status",
                     "sourceItemIds": [
                       "i-5880a2a9aa60",
-                      "i-7605224c4f7e"
+                      "i-7605224c4f7e",
+                      "i-c75be9377774",
+                      "i-a74fcaca2a0a",
+                      "i-1ace1646b36d",
+                      "i-025940a80feb",
+                      "i-10b6e0cb7efe"
                     ],
-                    "note": "Stroke 진찰 참고"
+                    "note": "Mild drowsy: verbal order에 눈을 뜸 · Deep drowsy: 자극을 줘야 눈을 뜸 · Stupor: 자극을 피하려는 움직임 · Semicoma: 통증에 조금 움직임"
                   },
                   {
                     "id": "mental-pe-resp",
@@ -5394,7 +6025,9 @@
                     "sourceItemIds": [
                       "i-f9672a36bab3",
                       "i-090b46250227",
-                      "i-18572f0f6fd3"
+                      "i-18572f0f6fd3",
+                      "i-46a120f174e4",
+                      "i-c54be5d40e02"
                     ],
                     "compactText": "Medical Hx",
                     "compactRow": "history"
@@ -5403,10 +6036,18 @@
                     "id": "stroke-hx-social",
                     "text": "Social Hx (Alcohol Smoking)",
                     "sourceItemIds": [
-                      "i-3789fe7ad282"
+                      "i-3789fe7ad282",
+                      "i-02568ea8c754"
                     ],
                     "compactText": "Social Hx",
                     "compactRow": "history"
+                  },
+                  {
+                    "id": "stroke-hx-family",
+                    "text": "Family Hx (DM / HTN / MI / Stroke / Cancer)",
+                    "sourceItemIds": [
+                      "i-02568ea8c754"
+                    ]
                   }
                 ]
               },
@@ -5452,9 +6093,14 @@
                     "id": "stroke-pe-mental",
                     "text": "Mentation: Alert / Drowsy / Stupor / Semicoma / Coma",
                     "sourceItemIds": [
-                      "i-c9dceb3fed3a"
+                      "i-c9dceb3fed3a",
+                      "i-c75be9377774",
+                      "i-a74fcaca2a0a",
+                      "i-1ace1646b36d",
+                      "i-025940a80feb",
+                      "i-10b6e0cb7efe"
                     ],
-                    "note": "Drowsy: 말에 반응 · Stupor: 자극에 반응 · Semicoma: Light reflex (+)"
+                    "note": "Mild drowsy: verbal order에 눈을 뜸 · Deep drowsy: 자극을 줘야 눈을 뜸 · Stupor: 자극을 피하려는 움직임 · Semicoma: 통증에 조금 움직임"
                   },
                   {
                     "id": "stroke-pe-command",
@@ -5492,14 +6138,16 @@
                     "id": "stroke-pe-power",
                     "text": "Motor grade: 5 유지 / 4 떨어짐 / 3 들었다 떨어짐 / 2 수평 이동 / 1 움직임 없음",
                     "sourceItemIds": [
-                      "i-2146beb834c1"
+                      "i-2146beb834c1",
+                      "i-b8924856ccf5"
                     ]
                   },
                   {
                     "id": "stroke-pe-limb",
                     "text": "Right upper / Left upper / Right lower / Left lower extremity",
                     "sourceItemIds": [
-                      "i-9d85b6c7f674"
+                      "i-9d85b6c7f674",
+                      "i-8640d6a97a1d"
                     ]
                   },
                   {
@@ -5552,11 +6200,6 @@
         "우울",
         "mood",
         "depression",
-        "중독 / 과량복용",
-        "약물 과다복용",
-        "poisoning",
-        "overdose",
-        "intoxication",
         "수면장애",
         "불면",
         "insomnia",
@@ -5613,10 +6256,18 @@
                     ]
                   },
                   {
+                    "id": "psychiatry-hx-today",
+                    "text": "오늘 내원하게 된 증상 또는 평소와 다른 변화",
+                    "sourceItemIds": [
+                      "i-b3fdcd9aaafc"
+                    ]
+                  },
+                  {
                     "id": "psychiatry-hx-current",
                     "text": "초진 당시 증상 유무",
                     "sourceItemIds": [
-                      "i-b6b3279a5fe5"
+                      "i-b6b3279a5fe5",
+                      "i-b3fdcd9aaafc"
                     ]
                   }
                 ]
@@ -5649,6 +6300,14 @@
                 "title": "Perceptual disturbance",
                 "items": [
                   {
+                    "id": "psychiatry-hx-delusion",
+                    "text": "Delusion content / Plausibility",
+                    "sourceItemIds": [
+                      "i-092edab5e977"
+                    ],
+                    "note": "망상의 구체적인 내용을 확인하고 정상 범주의 의심과 구분"
+                  },
+                  {
                     "id": "psychiatry-hx-hallucination",
                     "text": "A-H / V-H",
                     "sourceItemIds": [
@@ -5678,6 +6337,13 @@
                 "title": "Current function",
                 "items": [
                   {
+                    "id": "psychiatry-hx-goal",
+                    "text": "상담 희망 / 입원 희망",
+                    "sourceItemIds": [
+                      "i-123bd798e498"
+                    ]
+                  },
+                  {
                     "id": "psychiatry-hx-sleep",
                     "text": "Sleep / Fragmentation",
                     "sourceItemIds": [
@@ -5704,7 +6370,8 @@
                     "text": "Past NP Hx / FHx",
                     "sourceItemIds": [
                       "i-fd017583932e",
-                      "i-f97606906869"
+                      "i-f97606906869",
+                      "i-876cef3db013"
                     ]
                   },
                   {
@@ -5800,9 +6467,35 @@
                     "id": "psychiatry-ref-conversation",
                     "text": "현재 대화 가능 여부",
                     "sourceItemIds": [
-                      "i-00bfc259bdbd"
+                      "i-00bfc259bdbd",
+                      "i-a910b07b9fe8",
+                      "i-cc89bdaa9a19"
                     ],
-                    "note": "Drowsy 상태이면 alert해졌을 때 notify"
+                    "note": "다른 처치가 급하거나 대화가 불가능하면 먼저 ER R.에게 보고하고, 대화 가능한 정도로 mental alert해진 뒤 NP 연락·콜"
+                  },
+                  {
+                    "id": "psychiatry-ref-attempt",
+                    "text": "DI·CO 중독 등의 자살시도·사고·계획은 NP 진료를 받도록 설명",
+                    "sourceItemIds": [
+                      "i-84ce7af50788",
+                      "i-89fb5e4f89c7",
+                      "i-672cb2718159"
+                    ],
+                    "note": "환자·보호자가 거부하거나 병력 청취가 어려우면 ER R.에게 먼저 확인"
+                  },
+                  {
+                    "id": "psychiatry-ref-call",
+                    "text": "초진·차팅 후 NP 진료를 설명하고, 지시에 따라 NP call",
+                    "sourceItemIds": [
+                      "i-fc84b31de169",
+                      "i-4ea27a8d6986",
+                      "i-cb55f883b9e7",
+                      "i-dd968ca0517e",
+                      "i-0b18d0c807b3",
+                      "i-b868c17b0a09",
+                      "i-274395dc53a3",
+                      "i-6662bfee9be5"
+                    ]
                   },
                   {
                     "id": "psychiatry-ref-firstline",
@@ -6147,7 +6840,8 @@
                     "text": "Vaginal bleeding / Abnormal bleeding / Bleeding amount",
                     "sourceItemIds": [
                       "i-49c213f030fe",
-                      "i-ccbca1cd1f76"
+                      "i-ccbca1cd1f76",
+                      "i-4b331752b9fc"
                     ]
                   },
                   {
@@ -6155,7 +6849,8 @@
                     "text": "Vaginal discharge / Discharge change",
                     "sourceItemIds": [
                       "i-49c213f030fe",
-                      "i-ccbca1cd1f76"
+                      "i-ccbca1cd1f76",
+                      "i-4b331752b9fc"
                     ]
                   }
                 ]
@@ -6167,7 +6862,8 @@
                     "id": "ob-hx-care",
                     "text": "Previous gynecologic care",
                     "sourceItemIds": [
-                      "i-1109f9f55fe5"
+                      "i-1109f9f55fe5",
+                      "i-4b331752b9fc"
                     ],
                     "note": "필요하면 보호자를 내보내고 환자와 단독으로 확인"
                   },
@@ -6175,42 +6871,49 @@
                     "id": "ob-hx-tpal",
                     "text": "TPAL",
                     "sourceItemIds": [
-                      "i-1109f9f55fe5"
+                      "i-1109f9f55fe5",
+                      "i-4b331752b9fc"
                     ]
                   },
                   {
                     "id": "ob-hx-marital",
                     "text": "Marital status",
                     "sourceItemIds": [
-                      "i-1109f9f55fe5"
+                      "i-1109f9f55fe5",
+                      "i-4b331752b9fc"
                     ]
                   },
                   {
                     "id": "ob-hx-npo",
-                    "text": "NPO time",
+                    "text": "NPO time: Solid / Liquid",
                     "sourceItemIds": [
-                      "i-1109f9f55fe5"
+                      "i-1109f9f55fe5",
+                      "i-84f34ae75d7e",
+                      "i-4b331752b9fc"
                     ]
                   },
                   {
                     "id": "ob-hx-menstrual-cycle",
                     "text": "LMP / Menstrual cycle",
                     "sourceItemIds": [
-                      "i-6ea8e54d6744"
+                      "i-6ea8e54d6744",
+                      "i-4b331752b9fc"
                     ]
                   },
                   {
                     "id": "ob-hx-menstrual-symptoms",
                     "text": "Duration / Amount / Dysmenorrhea",
                     "sourceItemIds": [
-                      "i-6ea8e54d6744"
+                      "i-6ea8e54d6744",
+                      "i-4b331752b9fc"
                     ]
                   },
                   {
                     "id": "ob-hx-sexual",
                     "text": "Last coitus / Dyspareunia",
                     "sourceItemIds": [
-                      "i-68d84b1f6aac"
+                      "i-68d84b1f6aac",
+                      "i-4b331752b9fc"
                     ]
                   }
                 ]
@@ -6232,14 +6935,16 @@
                       "i-a81efe90df85",
                       "i-057ab3fb8640",
                       "i-754621b3148d",
-                      "i-1517462b6cc6"
+                      "i-1517462b6cc6",
+                      "i-18b344949537"
                     ]
                   },
                   {
                     "id": "ob-ref-emr",
                     "text": "본원 OBGY 추적 환자는 EMR 내용을 참고하여 차팅",
                     "sourceItemIds": [
-                      "i-301803998d87"
+                      "i-301803998d87",
+                      "i-e0d3887f4c24"
                     ]
                   }
                 ]
@@ -6310,14 +7015,16 @@
                     "id": "pregnancy-hx-iup",
                     "text": "IUP: 정확한 gestational week and day / OT",
                     "sourceItemIds": [
-                      "i-10e0162d3aee"
+                      "i-10e0162d3aee",
+                      "i-dbc6bd712a86"
                     ]
                   },
                   {
                     "id": "pregnancy-hx-labor",
                     "text": "진통·배뭉침 / 주기 / 지속시간",
                     "sourceItemIds": [
-                      "i-c75d69226429"
+                      "i-c75d69226429",
+                      "i-dbc6bd712a86"
                     ]
                   },
                   {
@@ -6347,7 +7054,8 @@
                     "id": "pregnancy-hx-edc",
                     "text": "Estimated date of confinement (EDC)",
                     "sourceItemIds": [
-                      "i-57925bf76ebf"
+                      "i-57925bf76ebf",
+                      "i-dbc6bd712a86"
                     ]
                   }
                 ]
@@ -6365,17 +7073,20 @@
                   },
                   {
                     "id": "pregnancy-hx-npo",
-                    "text": "NPO time",
+                    "text": "NPO time: Solid / Liquid",
                     "sourceItemIds": [
                       "i-1109f9f55fe5",
-                      "i-0c081eadaa0e"
+                      "i-0c081eadaa0e",
+                      "i-84f34ae75d7e",
+                      "i-dbc6bd712a86"
                     ]
                   },
                   {
                     "id": "pregnancy-hx-operation",
                     "text": "Op Hx",
                     "sourceItemIds": [
-                      "i-ff7aec9585a2"
+                      "i-ff7aec9585a2",
+                      "i-dbc6bd712a86"
                     ]
                   }
                 ]
@@ -6438,14 +7149,16 @@
                       "i-a81efe90df85",
                       "i-057ab3fb8640",
                       "i-754621b3148d",
-                      "i-1517462b6cc6"
+                      "i-1517462b6cc6",
+                      "i-18b344949537"
                     ]
                   },
                   {
                     "id": "pregnancy-ref-emr",
                     "text": "본원 OBGY 추적 환자는 EMR 내용을 참고하여 차팅",
                     "sourceItemIds": [
-                      "i-301803998d87"
+                      "i-301803998d87",
+                      "i-e0d3887f4c24"
                     ]
                   }
                 ]
@@ -6497,6 +7210,13 @@
               {
                 "title": "Birth history",
                 "items": [
+                  {
+                    "id": "peds-common-hx-age-months",
+                    "text": "Age in months if 24 months or younger",
+                    "sourceItemIds": [
+                      "i-19868515803b"
+                    ]
+                  },
                   {
                     "id": "peds-common-hx-neonate-growth",
                     "text": "Neonate: Current weight / Gestational week",
@@ -6558,21 +7278,31 @@
                     "id": "peds-common-hx-feeding-activity",
                     "text": "Feeding / Activity: Fair or Poor",
                     "sourceItemIds": [
-                      "i-915a1e9fb598"
+                      "i-915a1e9fb598",
+                      "i-519572e43b06"
                     ]
                   },
                   {
                     "id": "peds-common-hx-urination-sleep",
                     "text": "Urination / Sleeping: Fair or Poor",
                     "sourceItemIds": [
-                      "i-915a1e9fb598"
+                      "i-915a1e9fb598",
+                      "i-519572e43b06"
+                    ]
+                  },
+                  {
+                    "id": "peds-common-hx-last-output",
+                    "text": "Last urination / defecation time",
+                    "sourceItemIds": [
+                      "i-519572e43b06"
                     ]
                   },
                   {
                     "id": "peds-common-hx-appearance",
                     "text": "Appearance: Well or Ill / Irritable / Lethargic",
                     "sourceItemIds": [
-                      "i-2565eaefaa14"
+                      "i-2565eaefaa14",
+                      "i-519572e43b06"
                     ]
                   }
                 ]
@@ -6592,7 +7322,8 @@
                     "text": "Throat injection / Tonsillar enlargement",
                     "sourceItemIds": [
                       "i-f563840a36c8",
-                      "i-711f3514742f"
+                      "i-711f3514742f",
+                      "i-14019c6c3332"
                     ]
                   },
                   {
@@ -6618,7 +7349,8 @@
                     "id": "peds-common-pe-lung",
                     "text": "Lung sound: Clear / Coarse / Wheezing / Stridor / Crackle",
                     "sourceItemIds": [
-                      "i-afddfcfacdfb"
+                      "i-afddfcfacdfb",
+                      "i-14019c6c3332"
                     ]
                   },
                   {
@@ -6645,6 +7377,26 @@
                     "text": "Palpation: Soft / Hard · Flat / Distended",
                     "sourceItemIds": [
                       "i-aed40d3bdf5b"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "peds-common-view-reference",
+            "title": "참고사항",
+            "kind": "note",
+            "groups": [
+              {
+                "title": "차팅·연락",
+                "items": [
+                  {
+                    "id": "peds-common-ref-flow",
+                    "text": "차팅을 먼저 작성한 뒤 연락",
+                    "sourceItemIds": [
+                      "i-224004611136",
+                      "i-974ce540f23a"
                     ]
                   }
                 ]
@@ -6702,16 +7454,32 @@
                     "text": "Maximum temperature at home / Temperature on arrival",
                     "sourceItemIds": [
                       "i-09f9f960f4d3",
-                      "i-d6027d327579"
+                      "i-d6027d327579",
+                      "i-d964ff2ec75c"
                     ]
                   },
                   {
                     "id": "fever-hx-antipyretic",
-                    "text": "Antipyretic: Last dose / Number of doses / Type / Interval / Response",
+                    "text": "Antipyretic: Last dose time / Number of doses / Type / Interval / Response",
                     "sourceItemIds": [
                       "i-09f9f960f4d3",
                       "i-d410e445b7d6",
-                      "i-d054632e1182"
+                      "i-d054632e1182",
+                      "i-19869a15bafe"
+                    ]
+                  },
+                  {
+                    "id": "fever-hx-associated-onset",
+                    "text": "Onset of associated cough / sputum",
+                    "sourceItemIds": [
+                      "i-d964ff2ec75c"
+                    ]
+                  },
+                  {
+                    "id": "fever-hx-vaccination",
+                    "text": "Vaccination Hx / Recent vaccination before fever",
+                    "sourceItemIds": [
+                      "i-d964ff2ec75c"
                     ]
                   }
                 ]
@@ -6719,6 +7487,13 @@
               {
                 "title": "Birth history",
                 "items": [
+                  {
+                    "id": "fever-hx-age-months",
+                    "text": "Age in months if 24 months or younger",
+                    "sourceItemIds": [
+                      "i-19868515803b"
+                    ]
+                  },
                   {
                     "id": "fever-hx-neonate-growth",
                     "text": "Neonate: Current weight / Gestational week",
@@ -6784,7 +7559,8 @@
                     "sourceItemIds": [
                       "i-915a1e9fb598",
                       "i-ca2d5f59c88c",
-                      "i-f67d6676b11b"
+                      "i-f67d6676b11b",
+                      "i-519572e43b06"
                     ]
                   },
                   {
@@ -6793,14 +7569,23 @@
                     "sourceItemIds": [
                       "i-915a1e9fb598",
                       "i-ca2d5f59c88c",
-                      "i-f67d6676b11b"
+                      "i-f67d6676b11b",
+                      "i-519572e43b06"
+                    ]
+                  },
+                  {
+                    "id": "fever-hx-last-output",
+                    "text": "Last urination / defecation time",
+                    "sourceItemIds": [
+                      "i-519572e43b06"
                     ]
                   },
                   {
                     "id": "fever-hx-appearance",
                     "text": "Appearance: Well or Ill / Irritable / Lethargic",
                     "sourceItemIds": [
-                      "i-2565eaefaa14"
+                      "i-2565eaefaa14",
+                      "i-519572e43b06"
                     ]
                   }
                 ]
@@ -6821,7 +7606,8 @@
                     "sourceItemIds": [
                       "i-f563840a36c8",
                       "i-711f3514742f",
-                      "i-88be3820287a"
+                      "i-88be3820287a",
+                      "i-14019c6c3332"
                     ]
                   },
                   {
@@ -6849,7 +7635,8 @@
                     "text": "Lung sound: Clear / Coarse / Wheezing / Stridor / Crackle",
                     "sourceItemIds": [
                       "i-afddfcfacdfb",
-                      "i-89b8406e0d1a"
+                      "i-89b8406e0d1a",
+                      "i-14019c6c3332"
                     ]
                   },
                   {
@@ -6927,6 +7714,19 @@
                     ]
                   }
                 ]
+              },
+              {
+                "title": "차팅·연락",
+                "items": [
+                  {
+                    "id": "fever-ref-flow",
+                    "text": "최고 체온부터 차팅한 뒤 연락",
+                    "sourceItemIds": [
+                      "i-d964ff2ec75c",
+                      "i-974ce540f23a"
+                    ]
+                  }
+                ]
               }
             ]
           }
@@ -6997,6 +7797,13 @@
                 "title": "Birth history",
                 "items": [
                   {
+                    "id": "vomiting-hx-age-months",
+                    "text": "Age in months if 24 months or younger",
+                    "sourceItemIds": [
+                      "i-19868515803b"
+                    ]
+                  },
+                  {
                     "id": "vomiting-hx-neonate-growth",
                     "text": "Neonate: Current weight / Gestational week",
                     "sourceItemIds": [
@@ -7057,21 +7864,31 @@
                     "id": "vomiting-hx-feeding-activity",
                     "text": "Feeding / Activity: Fair or Poor",
                     "sourceItemIds": [
-                      "i-915a1e9fb598"
+                      "i-915a1e9fb598",
+                      "i-519572e43b06"
                     ]
                   },
                   {
                     "id": "vomiting-hx-urination-sleep",
                     "text": "Urination / Sleeping: Fair or Poor",
                     "sourceItemIds": [
-                      "i-915a1e9fb598"
+                      "i-915a1e9fb598",
+                      "i-519572e43b06"
+                    ]
+                  },
+                  {
+                    "id": "vomiting-hx-last-output",
+                    "text": "Last urination / defecation time",
+                    "sourceItemIds": [
+                      "i-519572e43b06"
                     ]
                   },
                   {
                     "id": "vomiting-hx-appearance",
                     "text": "Appearance: Well or Ill / Irritable / Lethargic",
                     "sourceItemIds": [
-                      "i-2565eaefaa14"
+                      "i-2565eaefaa14",
+                      "i-519572e43b06"
                     ]
                   }
                 ]
@@ -7091,7 +7908,8 @@
                     "text": "Throat injection / Tonsillar enlargement",
                     "sourceItemIds": [
                       "i-f563840a36c8",
-                      "i-711f3514742f"
+                      "i-711f3514742f",
+                      "i-14019c6c3332"
                     ]
                   },
                   {
@@ -7117,7 +7935,8 @@
                     "id": "vomiting-pe-lung",
                     "text": "Lung sound: Clear / Coarse / Wheezing / Stridor / Crackle",
                     "sourceItemIds": [
-                      "i-afddfcfacdfb"
+                      "i-afddfcfacdfb",
+                      "i-14019c6c3332"
                     ]
                   },
                   {
@@ -7219,6 +8038,13 @@
                 "title": "Birth history",
                 "items": [
                   {
+                    "id": "diarrhea-hx-age-months",
+                    "text": "Age in months if 24 months or younger",
+                    "sourceItemIds": [
+                      "i-19868515803b"
+                    ]
+                  },
+                  {
                     "id": "diarrhea-hx-neonate-growth",
                     "text": "Neonate: Current weight / Gestational week",
                     "sourceItemIds": [
@@ -7279,21 +8105,31 @@
                     "id": "diarrhea-hx-feeding-activity",
                     "text": "Feeding / Activity: Fair or Poor",
                     "sourceItemIds": [
-                      "i-915a1e9fb598"
+                      "i-915a1e9fb598",
+                      "i-519572e43b06"
                     ]
                   },
                   {
                     "id": "diarrhea-hx-urination-sleep",
                     "text": "Urination / Sleeping: Fair or Poor",
                     "sourceItemIds": [
-                      "i-915a1e9fb598"
+                      "i-915a1e9fb598",
+                      "i-519572e43b06"
+                    ]
+                  },
+                  {
+                    "id": "diarrhea-hx-last-output",
+                    "text": "Last urination / defecation time",
+                    "sourceItemIds": [
+                      "i-519572e43b06"
                     ]
                   },
                   {
                     "id": "diarrhea-hx-appearance",
                     "text": "Appearance: Well or Ill / Irritable / Lethargic",
                     "sourceItemIds": [
-                      "i-2565eaefaa14"
+                      "i-2565eaefaa14",
+                      "i-519572e43b06"
                     ]
                   }
                 ]
@@ -7313,7 +8149,8 @@
                     "text": "Throat injection / Tonsillar enlargement",
                     "sourceItemIds": [
                       "i-f563840a36c8",
-                      "i-711f3514742f"
+                      "i-711f3514742f",
+                      "i-14019c6c3332"
                     ]
                   },
                   {
@@ -7339,7 +8176,8 @@
                     "id": "diarrhea-pe-lung",
                     "text": "Lung sound: Clear / Coarse / Wheezing / Stridor / Crackle",
                     "sourceItemIds": [
-                      "i-afddfcfacdfb"
+                      "i-afddfcfacdfb",
+                      "i-14019c6c3332"
                     ]
                   },
                   {
@@ -7418,7 +8256,8 @@
                     "id": "cough-hx-sound",
                     "text": "Cough sound: Barking or usual cough",
                     "sourceItemIds": [
-                      "i-3368440da93b"
+                      "i-3368440da93b",
+                      "i-38c37e000f2b"
                     ]
                   },
                   {
@@ -7440,6 +8279,13 @@
               {
                 "title": "Birth history",
                 "items": [
+                  {
+                    "id": "cough-hx-age-months",
+                    "text": "Age in months if 24 months or younger",
+                    "sourceItemIds": [
+                      "i-19868515803b"
+                    ]
+                  },
                   {
                     "id": "cough-hx-neonate-growth",
                     "text": "Neonate: Current weight / Gestational week",
@@ -7501,21 +8347,31 @@
                     "id": "cough-hx-feeding-activity",
                     "text": "Feeding / Activity: Fair or Poor",
                     "sourceItemIds": [
-                      "i-915a1e9fb598"
+                      "i-915a1e9fb598",
+                      "i-519572e43b06"
                     ]
                   },
                   {
                     "id": "cough-hx-urination-sleep",
                     "text": "Urination / Sleeping: Fair or Poor",
                     "sourceItemIds": [
-                      "i-915a1e9fb598"
+                      "i-915a1e9fb598",
+                      "i-519572e43b06"
+                    ]
+                  },
+                  {
+                    "id": "cough-hx-last-output",
+                    "text": "Last urination / defecation time",
+                    "sourceItemIds": [
+                      "i-519572e43b06"
                     ]
                   },
                   {
                     "id": "cough-hx-appearance",
                     "text": "Appearance: Well or Ill / Irritable / Lethargic",
                     "sourceItemIds": [
-                      "i-2565eaefaa14"
+                      "i-2565eaefaa14",
+                      "i-519572e43b06"
                     ]
                   }
                 ]
@@ -7535,7 +8391,8 @@
                     "text": "Throat injection / Tonsillar enlargement",
                     "sourceItemIds": [
                       "i-f563840a36c8",
-                      "i-711f3514742f"
+                      "i-711f3514742f",
+                      "i-14019c6c3332"
                     ]
                   },
                   {
@@ -7561,7 +8418,8 @@
                     "id": "cough-pe-lung",
                     "text": "Lung sound: Clear / Coarse / Wheezing / Stridor / Crackle",
                     "sourceItemIds": [
-                      "i-afddfcfacdfb"
+                      "i-afddfcfacdfb",
+                      "i-14019c6c3332"
                     ]
                   },
                   {
@@ -7662,6 +8520,13 @@
                 "title": "Birth history",
                 "items": [
                   {
+                    "id": "peds-abd-hx-age-months",
+                    "text": "Age in months if 24 months or younger",
+                    "sourceItemIds": [
+                      "i-19868515803b"
+                    ]
+                  },
+                  {
                     "id": "peds-abd-hx-neonate-growth",
                     "text": "Neonate: Current weight / Gestational week",
                     "sourceItemIds": [
@@ -7722,21 +8587,31 @@
                     "id": "peds-abd-hx-feeding-activity",
                     "text": "Feeding / Activity: Fair or Poor",
                     "sourceItemIds": [
-                      "i-915a1e9fb598"
+                      "i-915a1e9fb598",
+                      "i-519572e43b06"
                     ]
                   },
                   {
                     "id": "peds-abd-hx-urination-sleep",
                     "text": "Urination / Sleeping: Fair or Poor",
                     "sourceItemIds": [
-                      "i-915a1e9fb598"
+                      "i-915a1e9fb598",
+                      "i-519572e43b06"
+                    ]
+                  },
+                  {
+                    "id": "peds-abd-hx-last-output",
+                    "text": "Last urination / defecation time",
+                    "sourceItemIds": [
+                      "i-519572e43b06"
                     ]
                   },
                   {
                     "id": "peds-abd-hx-appearance",
                     "text": "Appearance: Well or Ill / Irritable / Lethargic",
                     "sourceItemIds": [
-                      "i-2565eaefaa14"
+                      "i-2565eaefaa14",
+                      "i-519572e43b06"
                     ]
                   }
                 ]
@@ -7756,7 +8631,8 @@
                     "text": "Throat injection / Tonsillar enlargement",
                     "sourceItemIds": [
                       "i-f563840a36c8",
-                      "i-711f3514742f"
+                      "i-711f3514742f",
+                      "i-14019c6c3332"
                     ]
                   },
                   {
@@ -7782,7 +8658,8 @@
                     "id": "peds-abd-pe-lung",
                     "text": "Lung sound: Clear / Coarse / Wheezing / Stridor / Crackle",
                     "sourceItemIds": [
-                      "i-afddfcfacdfb"
+                      "i-afddfcfacdfb",
+                      "i-14019c6c3332"
                     ]
                   },
                   {
@@ -7924,6 +8801,13 @@
                 "title": "Birth history",
                 "items": [
                   {
+                    "id": "peds-seizure-hx-age-months",
+                    "text": "Age in months if 24 months or younger",
+                    "sourceItemIds": [
+                      "i-19868515803b"
+                    ]
+                  },
+                  {
                     "id": "peds-seizure-hx-neonate-growth",
                     "text": "Neonate: Current weight / Gestational week",
                     "sourceItemIds": [
@@ -7984,21 +8868,31 @@
                     "id": "peds-seizure-hx-feeding-activity",
                     "text": "Feeding / Activity: Fair or Poor",
                     "sourceItemIds": [
-                      "i-915a1e9fb598"
+                      "i-915a1e9fb598",
+                      "i-519572e43b06"
                     ]
                   },
                   {
                     "id": "peds-seizure-hx-urination-sleep",
                     "text": "Urination / Sleeping: Fair or Poor",
                     "sourceItemIds": [
-                      "i-915a1e9fb598"
+                      "i-915a1e9fb598",
+                      "i-519572e43b06"
+                    ]
+                  },
+                  {
+                    "id": "peds-seizure-hx-last-output",
+                    "text": "Last urination / defecation time",
+                    "sourceItemIds": [
+                      "i-519572e43b06"
                     ]
                   },
                   {
                     "id": "peds-seizure-hx-appearance",
                     "text": "Appearance: Well or Ill / Irritable / Lethargic",
                     "sourceItemIds": [
-                      "i-2565eaefaa14"
+                      "i-2565eaefaa14",
+                      "i-519572e43b06"
                     ]
                   }
                 ]
@@ -8018,7 +8912,8 @@
                     "text": "Throat injection / Tonsillar enlargement",
                     "sourceItemIds": [
                       "i-f563840a36c8",
-                      "i-711f3514742f"
+                      "i-711f3514742f",
+                      "i-14019c6c3332"
                     ]
                   },
                   {
@@ -8044,7 +8939,8 @@
                     "id": "peds-seizure-pe-lung",
                     "text": "Lung sound: Clear / Coarse / Wheezing / Stridor / Crackle",
                     "sourceItemIds": [
-                      "i-afddfcfacdfb"
+                      "i-afddfcfacdfb",
+                      "i-14019c6c3332"
                     ]
                   },
                   {
@@ -8082,6 +8978,18 @@
             "title": "참고사항",
             "kind": "example",
             "groups": [
+              {
+                "title": "보고",
+                "items": [
+                  {
+                    "id": "peds-seizure-ref-active",
+                    "text": "현재 seizure 중이면 즉시 연락",
+                    "sourceItemIds": [
+                      "i-f2731a163a8b"
+                    ]
+                  }
+                ]
+              },
               {
                 "title": "차팅 예시 · 간단 기록",
                 "items": [
@@ -8281,15 +9189,17 @@
                     "text": "Ocular pain / Foreign body sensation",
                     "sourceItemIds": [
                       "i-28ecfc7fcdda",
-                      "i-e20bddff3b1d"
+                      "i-e20bddff3b1d",
+                      "i-7aea5eb1eac9"
                     ]
                   },
                   {
                     "id": "eye-hx-surface",
-                    "text": "Conjunctival injection / Discharge",
+                    "text": "Conjunctival injection / Discharge / Tearing / Photophobia",
                     "sourceItemIds": [
                       "i-d16c7ea78bb3",
-                      "i-4f259c29f187"
+                      "i-4f259c29f187",
+                      "i-7aea5eb1eac9"
                     ]
                   },
                   {
@@ -8298,7 +9208,8 @@
                     "sourceItemIds": [
                       "i-d0723942eb28",
                       "i-cec96462eb1a",
-                      "i-18279ab2c20f"
+                      "i-18279ab2c20f",
+                      "i-e2ec400f622f"
                     ]
                   }
                 ]
@@ -8310,7 +9221,15 @@
                     "id": "eye-hx-past",
                     "text": "OT HX",
                     "sourceItemIds": [
-                      "i-f7aed3e8baa4"
+                      "i-f7aed3e8baa4",
+                      "i-77b741c32397"
+                    ]
+                  },
+                  {
+                    "id": "eye-hx-medical",
+                    "text": "Medical Hx (U/D)",
+                    "sourceItemIds": [
+                      "i-615711b1c28d"
                     ]
                   }
                 ]
@@ -8326,10 +9245,27 @@
                 "title": "Eye",
                 "items": [
                   {
-                    "id": "eye-pe-light",
-                    "text": "Light reflex",
+                    "id": "eye-pe-bleeding",
+                    "text": "Bleeding point",
                     "sourceItemIds": [
-                      "i-b5dbf567b8b4"
+                      "i-7aea5eb1eac9"
+                    ]
+                  },
+                  {
+                    "id": "eye-pe-light",
+                    "text": "Light reflex (LR)",
+                    "sourceItemIds": [
+                      "i-b5dbf567b8b4",
+                      "i-7aea5eb1eac9",
+                      "i-ddf34588da4c"
+                    ]
+                  },
+                  {
+                    "id": "eye-pe-lom",
+                    "text": "LOM",
+                    "sourceItemIds": [
+                      "i-7aea5eb1eac9",
+                      "i-ddf34588da4c"
                     ]
                   },
                   {
@@ -8337,6 +9273,16 @@
                     "text": "Extraocular movement",
                     "sourceItemIds": [
                       "i-3354730896e4"
+                    ]
+                  },
+                  {
+                    "id": "eye-pe-field-acuity",
+                    "text": "Visual field / Visual acuity",
+                    "sourceItemIds": [
+                      "i-ddf34588da4c",
+                      "i-8bbb47276c0f",
+                      "i-7197bd65ed7c",
+                      "i-e2ec400f622f"
                     ]
                   }
                 ]
@@ -8352,11 +9298,40 @@
                 "title": "보고·처치",
                 "items": [
                   {
+                    "id": "eye-ref-scope",
+                    "text": "OT 연락 범위: Ocular pain / BOF / High BP",
+                    "sourceItemIds": [
+                      "i-5b4a713c8ccc"
+                    ]
+                  },
+                  {
+                    "id": "eye-ref-vision",
+                    "text": "연락 전 시력검사",
+                    "sourceItemIds": [
+                      "i-ddf34588da4c",
+                      "i-8bbb47276c0f",
+                      "i-7197bd65ed7c",
+                      "i-e2ec400f622f"
+                    ],
+                    "note": "시력표는 약 30 cm 거리에서 사용. 눈이 떠지지 않으면 면봉으로 위눈꺼풀을 말아 올려 측정. 시력표가 없으면 이전 시력과 변화 여부 확인"
+                  },
+                  {
+                    "id": "eye-ref-facial-ct",
+                    "text": "눈 주위 외상: Facial CT 권유",
+                    "sourceItemIds": [
+                      "i-79589a8b1fcb"
+                    ],
+                    "note": "BOF는 적은 힘으로도 발생 가능"
+                  },
+                  {
                     "id": "eye-ref-irrigation",
                     "text": "Foreign body, 특히 화학물질 노출은 즉시 보고; 지시 시 suture room에서 eye irrigation",
                     "sourceItemIds": [
-                      "i-12d19359ec2c"
-                    ]
+                      "i-12d19359ec2c",
+                      "i-ad2d7e46a399",
+                      "i-8994130e1760"
+                    ],
+                    "note": "원문: 1 L irrigation에 약 20분"
                   }
                 ]
               }
@@ -8371,13 +9346,79 @@
       "categoryId": "10",
       "aliases": [
         "sore throat",
-        "dysphagia"
+        "dysphagia",
+        "foreign body in throat",
+        "tonsil abscess"
       ],
       "order": 1,
       "scope": "general",
-      "status": "missing",
+      "status": "available",
       "sharedSectionIds": [],
-      "sectionIds": []
+      "sectionIds": [
+        "specialty-throat-note"
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "throat-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Symptoms",
+                "items": [
+                  {
+                    "id": "throat-hx-scope",
+                    "text": "Foreign body in throat / Tonsil abscess",
+                    "sourceItemIds": [
+                      "i-4a04d1918168"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "throat-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "Foreign body",
+                "items": [
+                  {
+                    "id": "throat-pe-visible",
+                    "text": "Foreign body: Visible / Not visible",
+                    "sourceItemIds": [
+                      "i-92db91b70f73"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "throat-view-reference",
+            "title": "참고사항",
+            "kind": "note",
+            "groups": [
+              {
+                "title": "처치·보고",
+                "items": [
+                  {
+                    "id": "throat-ref-removal",
+                    "text": "육안으로 보이고 제거 가능한 이물: 처치 합병증 설명 후 ENT forceps로 제거하고 ED 확인",
+                    "sourceItemIds": [
+                      "i-92db91b70f73"
+                    ],
+                    "note": "육안으로 보이지 않는 경우에 대한 원문 문장이 중간에서 끊겨 있어 원문 범위만 표시"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "ear",
@@ -8415,7 +9456,8 @@
                       "i-9ed2447b8d64",
                       "i-00f4e17f31db",
                       "i-7eda19f1989e",
-                      "i-fdd513cc18af"
+                      "i-fdd513cc18af",
+                      "i-c75fe7c8c22a"
                     ]
                   },
                   {
@@ -8425,7 +9467,8 @@
                       "i-9ed2447b8d64",
                       "i-00f4e17f31db",
                       "i-7eda19f1989e",
-                      "i-fdd513cc18af"
+                      "i-fdd513cc18af",
+                      "i-c75fe7c8c22a"
                     ]
                   },
                   {
@@ -8440,7 +9483,8 @@
                     "text": "URI symptoms / Trauma / Recent water exposure",
                     "sourceItemIds": [
                       "i-5a33dba2ab00",
-                      "i-87611c37fa0b"
+                      "i-87611c37fa0b",
+                      "i-c75fe7c8c22a"
                     ]
                   }
                 ]
@@ -8509,7 +9553,9 @@
       "aliases": [
         "코피",
         "비출혈",
-        "epistaxis"
+        "epistaxis",
+        "nasal bone fracture",
+        "NBF"
       ],
       "order": 3,
       "scope": "general",
@@ -8533,7 +9579,23 @@
                     "id": "epistaxis-hx-bleeding",
                     "text": "Bleeding amount / Onset time / Current active bleeding",
                     "sourceItemIds": [
-                      "i-4a6311b2bab7"
+                      "i-4a6311b2bab7",
+                      "i-1e3bb9e94fbc",
+                      "i-b075a2d04e4a"
+                    ]
+                  },
+                  {
+                    "id": "epistaxis-hx-side",
+                    "text": "Bleeding side / If bilateral, which side started first",
+                    "sourceItemIds": [
+                      "i-1e3bb9e94fbc"
+                    ]
+                  },
+                  {
+                    "id": "epistaxis-hx-prior-care",
+                    "text": "Previous treatment at another hospital",
+                    "sourceItemIds": [
+                      "i-e7088656eb8a"
                     ]
                   }
                 ]
@@ -8543,9 +9605,19 @@
                 "items": [
                   {
                     "id": "epistaxis-hx-background",
-                    "text": "Drug / HTN Hx",
+                    "text": "Medical Hx (U/D Drug Op) / HTN Hx",
                     "sourceItemIds": [
-                      "i-ca15bdb71320"
+                      "i-ca15bdb71320",
+                      "i-9271dddfbfae",
+                      "i-ba691002feb1",
+                      "i-a828b10c3fa9"
+                    ]
+                  },
+                  {
+                    "id": "epistaxis-hx-antithrombotic",
+                    "text": "Warfarin / Aspirin",
+                    "sourceItemIds": [
+                      "i-a828b10c3fa9"
                     ]
                   }
                 ]
@@ -8562,17 +9634,26 @@
                 "items": [
                   {
                     "id": "epistaxis-pe-throat",
-                    "text": "Active bleeding / Oropharynx",
+                    "text": "Active bleeding / Oral bleeding / Posterior drainage",
                     "sourceItemIds": [
-                      "i-4a6311b2bab7"
+                      "i-4a6311b2bab7",
+                      "i-b075a2d04e4a"
                     ],
                     "note": "목 안을 반드시 확인"
+                  },
+                  {
+                    "id": "epistaxis-pe-packing",
+                    "text": "Packing change: Active bleeding",
+                    "sourceItemIds": [
+                      "i-b075a2d04e4a"
+                    ]
                   },
                   {
                     "id": "epistaxis-pe-bp",
                     "text": "Blood pressure",
                     "sourceItemIds": [
-                      "i-ca15bdb71320"
+                      "i-ca15bdb71320",
+                      "i-8ccffb032e0f"
                     ]
                   }
                 ]
@@ -8588,10 +9669,1031 @@
                 "title": "처치",
                 "items": [
                   {
+                    "id": "epistaxis-ref-call",
+                    "text": "출혈이 멎었어도 진료를 위해 OL call",
+                    "sourceItemIds": [
+                      "i-1e3bb9e94fbc"
+                    ]
+                  },
+                  {
                     "id": "epistaxis-ref-merocel",
                     "text": "Active bleeding: Merocel",
                     "sourceItemIds": [
-                      "i-ed62a7868ff4"
+                      "i-ed62a7868ff4",
+                      "i-c2c34d0eadcc",
+                      "i-42c4356bf7eb"
+                    ],
+                    "note": "사용 시 간호사에게 알림 · 원문 위치: T2방 dressing 용품 아래"
+                  },
+                  {
+                    "id": "epistaxis-ref-bp",
+                    "text": "BP가 높으면 BP control 후 연락; initial BP / current BP / 사용한 BP control을 함께 전달",
+                    "sourceItemIds": [
+                      "i-8ccffb032e0f",
+                      "i-42c4356bf7eb"
+                    ],
+                    "note": "원문 borderline 약 160. 2021.3 이후 인턴이 하지 않는다는 메모와 BP가 높아도 OL에 적당히 둘러대고 연락하라는 메모가 함께 있음"
+                  },
+                  {
+                    "id": "epistaxis-ref-outpatient",
+                    "text": "외래 이동 요청은 간호사에게 전달",
+                    "sourceItemIds": [
+                      "i-4845bf4420ec"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "oral-dental",
+      "name": "구강·치아",
+      "categoryId": "10",
+      "aliases": [
+        "치아통증",
+        "입안열상",
+        "dental pain",
+        "intraoral laceration",
+        "oral wound",
+        "DS"
+      ],
+      "order": 4,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [],
+      "sectionIds": [
+        "specialty-dental-note"
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "oral-dental-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Present illness",
+                "items": [
+                  {
+                    "id": "oral-dental-hx-scope",
+                    "text": "Dental pain / Intraoral laceration",
+                    "sourceItemIds": [
+                      "i-958f2c6feda5"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "oral-dental-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "Oral cavity",
+                "items": [
+                  {
+                    "id": "oral-dental-pe-wound",
+                    "text": "Chin or lip penetrating wound / Intraoral laceration / Tongue laceration",
+                    "sourceItemIds": [
+                      "i-8d83c2721b91"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "oral-dental-view-reference",
+            "title": "참고사항",
+            "kind": "note",
+            "groups": [
+              {
+                "title": "진료·콜",
+                "items": [
+                  {
+                    "id": "oral-dental-ref-availability",
+                    "text": "만 6세 이하 소아치과 진료 없음; 주말에는 치과 진료 없음",
+                    "sourceItemIds": [
+                      "i-ba05b7c828dc"
+                    ],
+                    "note": "소아 환자는 다른 병원으로 안내"
+                  },
+                  {
+                    "id": "oral-dental-ref-call",
+                    "text": "DS call을 끄지 않음",
+                    "sourceItemIds": [
+                      "i-58351ee9178b"
+                    ]
+                  },
+                  {
+                    "id": "oral-dental-ref-suture",
+                    "text": "Intraoral laceration은 PS보다 DS suture를 우선",
+                    "sourceItemIds": [
+                      "i-8d83c2721b91",
+                      "i-1dc79737497c"
+                    ],
+                    "note": "Only intraoral wound는 PS 진료 대상이 아니며, lip laceration과 연관된 경우 PS에서 함께 suture 가능"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "trauma",
+      "name": "상처 외상",
+      "categoryId": "13",
+      "aliases": [
+        "상처 / 외상",
+        "열상",
+        "교통사고",
+        "상해",
+        "trauma",
+        "laceration",
+        "lac",
+        "TA",
+        "wound"
+      ],
+      "order": 0,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [
+        "msk-exam"
+      ],
+      "sectionIds": [
+        "trauma-history",
+        "trauma-exam",
+        "trauma-note",
+        "trauma-example"
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "trauma-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Present illness",
+                "items": [
+                  {
+                    "id": "trauma-hx-event",
+                    "text": "Injury time / Mechanism / Object and material / Impact force",
+                    "sourceItemIds": [
+                      "i-688a6f65c1d7",
+                      "i-de73026cd548",
+                      "i-e1195a72d9d0",
+                      "i-9ebb530af606",
+                      "i-778576738764",
+                      "i-a7bc51c5bb85"
+                    ]
+                  },
+                  {
+                    "id": "trauma-hx-loc",
+                    "text": "LOC",
+                    "sourceItemIds": [
+                      "i-a0f0117152c7"
+                    ]
+                  },
+                  {
+                    "id": "trauma-hx-pain",
+                    "text": "Abdominal pain / Flank pain / Chest wall pain",
+                    "sourceItemIds": [
+                      "i-386ee59bf53f",
+                      "i-b2bb84357bb1"
+                    ]
+                  },
+                  {
+                    "id": "trauma-hx-control",
+                    "text": "Pain control 필요 여부",
+                    "sourceItemIds": [
+                      "i-be27568ef195"
+                    ]
+                  },
+                  {
+                    "id": "trauma-hx-tetanus",
+                    "text": "Tetanus vaccination Hx",
+                    "sourceItemIds": [
+                      "i-d721e9eae930",
+                      "i-0cc7a621fc77",
+                      "i-6f8e33003816"
+                    ],
+                    "note": "최근 5년 이내 접종 여부 확인"
+                  },
+                  {
+                    "id": "trauma-hx-drunk",
+                    "text": "Drunken state",
+                    "sourceItemIds": [
+                      "i-94f561fde7ff"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "3세 미만 열상",
+                "items": [
+                  {
+                    "id": "trauma-hx-toddler",
+                    "text": "NPO time: Solid / Liquid / Body weight",
+                    "sourceItemIds": [
+                      "i-b84e19f8e78e",
+                      "i-84f34ae75d7e"
+                    ],
+                    "note": "Line 확보 및 sedative drug 사용 대비; 원문 NPO 3시간 확인"
+                  }
+                ]
+              },
+              {
+                "title": "10세 이하 열상",
+                "items": [
+                  {
+                    "id": "trauma-hx-peds-line",
+                    "text": "Line 확보 여부",
+                    "sourceItemIds": [
+                      "i-961f5008bdcf",
+                      "i-1ad0affbb779"
+                    ],
+                    "note": "원문: 소아를 sedation하여 suture하는 경우"
+                  },
+                  {
+                    "id": "trauma-hx-peds-npo",
+                    "text": "Line 확보 결정 시 NPO time: Solid / Liquid",
+                    "sourceItemIds": [
+                      "i-84f34ae75d7e",
+                      "i-ad50b672ee34"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Nasal bone fracture",
+                "items": [
+                  {
+                    "id": "trauma-hx-nasal",
+                    "text": "Glasses at injury / Epistaxis ongoing or stopped",
+                    "sourceItemIds": [
+                      "i-910bf212bb88"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "교통사고",
+                "items": [
+                  {
+                    "id": "trauma-hx-ta",
+                    "text": "Mechanism / Speed / Seat / Protective gear / LOC / Airbag deployment",
+                    "sourceItemIds": [
+                      "i-de147cc79d31"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "상해",
+                "items": [
+                  {
+                    "id": "trauma-hx-assault",
+                    "text": "Mechanism·object / Injury site / 횟수·정도",
+                    "sourceItemIds": [
+                      "i-fcd19e2e6a55"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "trauma-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "Musculoskeletal",
+                "items": [
+                  {
+                    "id": "trauma-pe-msk",
+                    "text": "Tenderness / LOM / Deformity / Swelling / External wound",
+                    "sourceItemIds": [
+                      "i-f87ca1e6cd9b",
+                      "i-800b30ed4c7d",
+                      "i-af5c63fbac18"
+                    ]
+                  },
+                  {
+                    "id": "trauma-pe-neurovascular",
+                    "text": "Distal motor / Sensory change",
+                    "sourceItemIds": [
+                      "i-f87ca1e6cd9b",
+                      "i-440ea8d2c491",
+                      "i-deb36614d74a",
+                      "i-03c04767e1cf",
+                      "i-af5c63fbac18",
+                      "i-d2e5f3e38cba"
+                    ]
+                  },
+                  {
+                    "id": "trauma-pe-axis",
+                    "text": "Pelvis / C-spine tenderness",
+                    "sourceItemIds": [
+                      "i-108544b6342b"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Wound",
+                "items": [
+                  {
+                    "id": "trauma-pe-expose",
+                    "text": "붕대·splint를 제거하고 상처를 완전히 노출하여 직접 확인",
+                    "sourceItemIds": [
+                      "i-04d6f8b0a8a2",
+                      "i-997259ca3d88",
+                      "i-cb3b3ffe3c96"
+                    ]
+                  },
+                  {
+                    "id": "trauma-pe-open",
+                    "text": "Open (bone visible) / Closed",
+                    "sourceItemIds": [
+                      "i-997259ca3d88"
+                    ]
+                  },
+                  {
+                    "id": "trauma-pe-foreign",
+                    "text": "Foreign body",
+                    "sourceItemIds": [
+                      "i-2d07e2abd35d",
+                      "i-778576738764"
+                    ]
+                  },
+                  {
+                    "id": "trauma-pe-site",
+                    "text": "Site / Size",
+                    "sourceItemIds": [
+                      "i-3066cfdb3509",
+                      "i-226da3ed64be",
+                      "i-d7e2879f1e8f"
+                    ],
+                    "note": "Lip laceration은 뒤집어 oral cavity 병변 확인"
+                  },
+                  {
+                    "id": "trauma-pe-bleeding",
+                    "text": "Active bleeding",
+                    "sourceItemIds": [
+                      "i-fce3d24d05a6",
+                      "i-a169f4388074",
+                      "i-a423f3ca48ad"
+                    ]
+                  },
+                  {
+                    "id": "trauma-pe-depth",
+                    "text": "Depth: superficial / deep / penetrating",
+                    "sourceItemIds": [
+                      "i-996a841fe07e",
+                      "i-226da3ed64be",
+                      "i-d7e2879f1e8f"
+                    ]
+                  },
+                  {
+                    "id": "trauma-pe-margin",
+                    "text": "Margin: regular / irregular",
+                    "sourceItemIds": [
+                      "i-45dcc449d3cd",
+                      "i-226da3ed64be",
+                      "i-d7e2879f1e8f"
+                    ],
+                    "note": "예: chin 2 cm superficial linear irregular-margin laceration"
+                  },
+                  {
+                    "id": "trauma-pe-structure",
+                    "text": "Exposed structure: none / dermis / subcutaneous tissue / tendon / ligament / nerve",
+                    "sourceItemIds": [
+                      "i-ade2395cb1b7",
+                      "i-c575e2018e58",
+                      "i-490b6b10d4bc",
+                      "i-5c27e6ecd3cc"
+                    ]
+                  },
+                  {
+                    "id": "trauma-pe-oral",
+                    "text": "Chin or lip penetrating wound / Intraoral laceration / Tongue laceration",
+                    "sourceItemIds": [
+                      "i-8d83c2721b91"
+                    ],
+                    "note": "소독된 면봉으로 관통 여부 확인"
+                  },
+                  {
+                    "id": "trauma-pe-ent-level",
+                    "text": "Ear or neck laceration: Neck level",
+                    "sourceItemIds": [
+                      "i-70ac6c9216b7"
+                    ]
+                  },
+                  {
+                    "id": "trauma-pe-face",
+                    "text": "Facial tenderness",
+                    "sourceItemIds": [
+                      "i-33c45fd3619a"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Nasal bone fracture",
+                "items": [
+                  {
+                    "id": "trauma-pe-nasal",
+                    "text": "Swelling / Tenderness / Deviation / Epistaxis",
+                    "sourceItemIds": [
+                      "i-910bf212bb88"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "교통사고",
+                "items": [
+                  {
+                    "id": "trauma-pe-ta",
+                    "text": "Head / Neck / Chest / Abdomen / Lower back / Pelvis / Extremities",
+                    "sourceItemIds": [
+                      "i-92155cfad7fe",
+                      "i-ab7207b869e5",
+                      "i-8ca4c668e154"
+                    ],
+                    "note": "머리부터 발끝까지 눌러 확인하고, TA는 머리·목·가슴·배 후 팔다리 순서"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "trauma-view-reference",
+            "title": "참고사항",
+            "kind": "note",
+            "groups": [
+              {
+                "title": "초기 처치·오더",
+                "items": [
+                  {
+                    "id": "trauma-ref-set",
+                    "text": "ER set: 정형외과 Routine / 성형외과 Routine / 신경외과 Routine / 07Suture",
+                    "sourceItemIds": [
+                      "i-cc9fb9ec6dff"
+                    ]
+                  },
+                  {
+                    "id": "trauma-ref-xray",
+                    "text": "관절 XR은 여러 view를 모두 포함; 소아는 비교를 위해 양측 촬영",
+                    "sourceItemIds": [
+                      "i-f374b9394b7f",
+                      "i-ce1c89e77931",
+                      "i-e2b34c5ebbaf"
+                    ],
+                    "note": "OS 연락 전 X-ray 확인"
+                  },
+                  {
+                    "id": "trauma-ref-confirm",
+                    "text": "처방 전 ED R. 확인",
+                    "sourceItemIds": [
+                      "i-423e0fce3748"
+                    ]
+                  },
+                  {
+                    "id": "trauma-ref-wet",
+                    "text": "Open wound 초진: Gauze + 생리식염수 + 픽스몰 준비 및 wet dressing",
+                    "sourceItemIds": [
+                      "i-189594487b6f",
+                      "i-21694bf54bf1",
+                      "i-203a4da1266c",
+                      "i-78dbce8c8189",
+                      "i-a423f3ca48ad",
+                      "i-b24c31f9a90d"
+                    ],
+                    "note": "출혈이 심하면 saline wet dressing 후 compression; 상처가 보이도록 saline으로 세척"
+                  }
+                ]
+              },
+              {
+                "title": "열상",
+                "items": [
+                  {
+                    "id": "trauma-ref-image",
+                    "text": "부위에 맞는 영상 오더; comment에 정확한 해부학적 부위 입력",
+                    "sourceItemIds": [
+                      "i-4d81c93f9549",
+                      "i-f604b66270dd",
+                      "i-9b0a218fe89d"
+                    ],
+                    "note": "Laceration은 원문상 routine X-ray, 얼굴은 X-ray + Facial CT; 미시행 시 사유 기록"
+                  },
+                  {
+                    "id": "trauma-ref-foreign",
+                    "text": "Foreign body 제거를 시도하고, 찾지 못하면 영상 촬영 후 연락",
+                    "sourceItemIds": [
+                      "i-778576738764"
+                    ]
+                  },
+                  {
+                    "id": "trauma-ref-suture",
+                    "text": "07Suture: bite wound는 Tiramox, 그 외 cefazoline / TD / Hyper TET",
+                    "sourceItemIds": [
+                      "i-883574d75347"
+                    ]
+                  },
+                  {
+                    "id": "trauma-ref-manage",
+                    "text": "Simple laceration은 주로 ED R. suture; deep laceration 또는 fracture 동반 wound는 OS/PS 등에서 처치",
+                    "sourceItemIds": [
+                      "i-a47c1d8faf33"
+                    ]
+                  },
+                  {
+                    "id": "trauma-ref-department",
+                    "text": "Intraoral wound는 DS 우선 / 귀 열상은 환자 앞쪽에서 보이면 PS, 뒤쪽이면 OL",
+                    "sourceItemIds": [
+                      "i-8d83c2721b91",
+                      "i-1dc79737497c",
+                      "i-c75efef3b831"
+                    ],
+                    "note": "Only intraoral wound는 PS 진료 대상이 아니며, lip laceration과 연관된 경우 PS에서 함께 suture 가능"
+                  },
+                  {
+                    "id": "trauma-ref-boundary",
+                    "text": "Upper forehead는 hair가 없는 곳까지; hair가 있는 부위는 scalp laceration",
+                    "sourceItemIds": [
+                      "i-458ef6a08c8d",
+                      "i-84806d1a23b4"
+                    ],
+                    "note": "경계가 애매하면 PS 연락 시 전달"
+                  },
+                  {
+                    "id": "trauma-ref-peds-call",
+                    "text": "10세 이하: line 확보 여부 결정 후 line을 확보하고 call",
+                    "sourceItemIds": [
+                      "i-961f5008bdcf",
+                      "i-1ad0affbb779",
+                      "i-72c9613f0b30",
+                      "i-ad50b672ee34",
+                      "i-cd8b215fd60a"
+                    ],
+                    "note": "Line 확보 결정 시 NPO time 확인; 수면마취 진정동의서는 PS 담당이라는 원문"
+                  },
+                  {
+                    "id": "trauma-ref-nasal-ct",
+                    "text": "Nasal bone fracture: CT 촬영 여부 확인",
+                    "sourceItemIds": [
+                      "i-1f6bef2735d5"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "교통사고·상해",
+                "items": [
+                  {
+                    "id": "trauma-ref-ta-xray",
+                    "text": "Tenderness 부위의 위·아래 뼈까지 촬영",
+                    "sourceItemIds": [
+                      "i-e8c9278bf2dc"
+                    ],
+                    "note": "예: ankle pain이면 tibia부터 foot까지"
+                  },
+                  {
+                    "id": "trauma-ref-statement",
+                    "text": "차팅에 정보 제공자를 ‘○○ 진술 상’으로 기록",
+                    "sourceItemIds": [
+                      "i-a3ca85a94775",
+                      "i-5e267dc38824"
+                    ],
+                    "note": "예: 119 현장구급대원, 환자 본인"
+                  },
+                  {
+                    "id": "trauma-ref-certificate",
+                    "text": "진단서·상해진단서 발급을 원하면 ED R.에게 알림",
+                    "sourceItemIds": [
+                      "i-74813088c816"
+                    ]
+                  },
+                  {
+                    "id": "trauma-ref-ta-terms",
+                    "text": "TA / ATA / PTA / BTA",
+                    "sourceItemIds": [
+                      "i-8ecab46a3622",
+                      "i-c9409343c59c"
+                    ],
+                    "note": "Traffic accident / Motorcycle TA / Pedestrian TA / Bicycle TA"
+                  }
+                ]
+              },
+              {
+                "title": "보고·관련과",
+                "items": [
+                  {
+                    "id": "trauma-ref-schedule",
+                    "text": "손 laceration: OS 월·수·금·토 / PS 화·목·일",
+                    "sourceItemIds": [
+                      "i-09ee16c11b40",
+                      "i-d11f043333d1"
+                    ]
+                  },
+                  {
+                    "id": "trauma-ref-os",
+                    "text": "OS가 ER에 있으면 2년차에게 직접 연락; 처치실까지 확인",
+                    "sourceItemIds": [
+                      "i-2545c7e2a8dc",
+                      "i-25cdc91b0d68"
+                    ]
+                  },
+                  {
+                    "id": "trauma-ref-ns",
+                    "text": "영상 소견의 level과 fracture 유형을 구체적으로 확인하여 전달",
+                    "sourceItemIds": [
+                      "i-9d687c75ab92"
+                    ]
+                  },
+                  {
+                    "id": "trauma-ref-ts",
+                    "text": "TS: Rib fracture / Aortic dissection은 인턴이 하지 않는다는 원문",
+                    "sourceItemIds": [
+                      "i-d438ee695254"
+                    ]
+                  },
+                  {
+                    "id": "trauma-ref-contact",
+                    "text": "NS / OS / TS / PS / GS / OT / OL 등 해당과 연락",
+                    "sourceItemIds": [
+                      "i-0b18d0c807b3",
+                      "i-b868c17b0a09",
+                      "i-274395dc53a3",
+                      "i-6662bfee9be5",
+                      "i-e8279d274e2d"
+                    ],
+                    "note": "원문에는 인턴이 해당과에 연락하지 않는다는 문장도 함께 있음"
+                  },
+                  {
+                    "id": "trauma-ref-drunk",
+                    "text": "Drunken 여부를 연락 시 전달",
+                    "sourceItemIds": [
+                      "i-94f561fde7ff",
+                      "i-e8279d274e2d"
+                    ],
+                    "note": "협조가 어려우면 술이 깬 뒤 진료하게 된다는 원문"
+                  },
+                  {
+                    "id": "trauma-ref-orders",
+                    "text": "Laceration wet dressing 외에는 지시받은 처치만 시행",
+                    "sourceItemIds": [
+                      "i-ab7207b869e5"
+                    ],
+                    "note": "원문: 처방 등은 인턴이 내지 않음"
+                  }
+                ]
+              },
+              {
+                "title": "차팅 예시",
+                "items": [
+                  {
+                    "id": "trauma-ref-chart-required",
+                    "text": "열상 차팅: 수상 시각·기전·물체 재질·Foreign body·Size·Depth·Margin·Exposed structure",
+                    "sourceItemIds": [
+                      "i-f2d4e89902ff",
+                      "i-778576738764",
+                      "i-d7e2879f1e8f",
+                      "i-c575e2018e58",
+                      "i-490b6b10d4bc",
+                      "i-5c27e6ecd3cc",
+                      "i-a7bc51c5bb85"
+                    ]
+                  },
+                  {
+                    "id": "trauma-ref-chart-neuro",
+                    "text": "Alert mentation / Pupil 0.3/0.3 / EOM OK / Visual disturbance (-) / Nuchal midline tenderness (-), LOM (-)",
+                    "sourceItemIds": [
+                      "i-5735897496c9",
+                      "i-612377d2b84a",
+                      "i-aec507acc5c5",
+                      "i-09934c95f014",
+                      "i-ae266c3ddb7d",
+                      "i-0aca2be86e56"
+                    ]
+                  },
+                  {
+                    "id": "trauma-ref-chart-motor",
+                    "text": "Motor: upper G5/G5, lower G5/G5 / Sensory change (-) / Gait OK",
+                    "sourceItemIds": [
+                      "i-218af66eb411",
+                      "i-438f9d760f95",
+                      "i-276cecfacc29"
+                    ]
+                  },
+                  {
+                    "id": "trauma-ref-chart-wound",
+                    "text": "No external wound on chest, abdomen, and back",
+                    "sourceItemIds": [
+                      "i-233de0814bca"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "head-trauma",
+      "name": "두부외상",
+      "categoryId": "13",
+      "aliases": [
+        "머리 외상",
+        "head trauma",
+        "head injury"
+      ],
+      "order": 1,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [],
+      "sectionIds": [
+        "headtrauma-history",
+        "headtrauma-exam"
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "head-trauma-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Present illness",
+                "items": [
+                  {
+                    "id": "head-trauma-hx",
+                    "text": "LOC / Headache / Nausea / Vomiting",
+                    "sourceItemIds": [
+                      "i-3ef205c69344"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "head-trauma-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "Neurologic",
+                "items": [
+                  {
+                    "id": "head-trauma-pe-pupil",
+                    "text": "Pupil reflex",
+                    "sourceItemIds": [
+                      "i-5d548532fd14"
+                    ]
+                  },
+                  {
+                    "id": "head-trauma-pe-mental",
+                    "text": "Mental status",
+                    "sourceItemIds": [
+                      "i-8640d6a97a1d"
+                    ]
+                  },
+                  {
+                    "id": "head-trauma-pe-motor",
+                    "text": "Upper extremity / Lower extremity motor grade",
+                    "sourceItemIds": [
+                      "i-8640d6a97a1d"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "head-trauma-view-reference",
+            "title": "참고사항",
+            "kind": "note",
+            "groups": [
+              {
+                "title": "보고",
+                "items": [
+                  {
+                    "id": "head-trauma-ref-imaging",
+                    "text": "영상 소견의 level과 fracture 유형을 구체적으로 확인하여 전달",
+                    "sourceItemIds": [
+                      "i-9d687c75ab92"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "inhalation-burn",
+      "name": "흡입화상",
+      "categoryId": "13",
+      "aliases": [
+        "화상",
+        "흡입 화상",
+        "inhalation burn",
+        "burn"
+      ],
+      "order": 2,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [],
+      "sectionIds": [
+        "specialty-burn-mixed"
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "burn-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Symptoms",
+                "items": [
+                  {
+                    "id": "burn-hx-respiratory",
+                    "text": "Dyspnea / Cough / Sputum / Rhinorrhea",
+                    "sourceItemIds": [
+                      "i-661de3f26302"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "burn-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "Airway · Chest",
+                "items": [
+                  {
+                    "id": "burn-pe-soot",
+                    "text": "Soot around nose or mouth",
+                    "sourceItemIds": [
+                      "i-661de3f26302"
+                    ]
+                  },
+                  {
+                    "id": "burn-pe-lung",
+                    "text": "Lung sound",
+                    "sourceItemIds": [
+                      "i-661de3f26302"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "burn-view-reference",
+            "title": "참고사항",
+            "kind": "note",
+            "groups": [
+              {
+                "title": "보고",
+                "items": [
+                  {
+                    "id": "burn-ref-ol",
+                    "text": "OL 연락",
+                    "sourceItemIds": [
+                      "i-661de3f26302"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "poisoning",
+      "name": "약물중독",
+      "categoryId": "13",
+      "aliases": [
+        "중독 / 과량복용",
+        "약물 과다복용",
+        "DI",
+        "drug intoxication",
+        "poisoning",
+        "overdose",
+        "intoxication"
+      ],
+      "order": 3,
+      "scope": "general",
+      "status": "available",
+      "sharedSectionIds": [],
+      "sectionIds": [
+        "specialty-poisoning-note"
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "poisoning-view-history",
+            "title": "Hx",
+            "kind": "history",
+            "groups": [
+              {
+                "title": "Exposure · Intent",
+                "items": [
+                  {
+                    "id": "poisoning-hx-exposure",
+                    "text": "Drug intoxication / CO poisoning",
+                    "sourceItemIds": [
+                      "i-fc84b31de169",
+                      "i-84ce7af50788",
+                      "i-89fb5e4f89c7",
+                      "i-a3449df4b509"
+                    ]
+                  },
+                  {
+                    "id": "poisoning-hx-intent",
+                    "text": "Suicide attempt / Accident / Plan",
+                    "sourceItemIds": [
+                      "i-84ce7af50788",
+                      "i-89fb5e4f89c7"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "poisoning-view-exam",
+            "title": "PEx",
+            "kind": "exam",
+            "groups": [
+              {
+                "title": "Mental",
+                "items": [
+                  {
+                    "id": "poisoning-pe-interview",
+                    "text": "Mental status / Interview possible",
+                    "sourceItemIds": [
+                      "i-a910b07b9fe8",
+                      "i-cc89bdaa9a19"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "poisoning-view-reference",
+            "title": "참고사항",
+            "kind": "note",
+            "groups": [
+              {
+                "title": "처치·보고",
+                "items": [
+                  {
+                    "id": "poisoning-ref-er",
+                    "text": "ER 응급처치 후 면담 가능할 때 NP 연락",
+                    "sourceItemIds": [
+                      "i-a910b07b9fe8",
+                      "i-0aa5ee2d5cb6"
+                    ]
+                  },
+                  {
+                    "id": "poisoning-ref-tox",
+                    "text": "Tox 기계 시행",
+                    "sourceItemIds": [
+                      "i-0aa5ee2d5cb6"
+                    ],
+                    "note": "TOX ID는 barcode 아래 18로 시작하는 긴 번호 입력"
+                  },
+                  {
+                    "id": "poisoning-ref-explain",
+                    "text": "NP 진료가 필요함을 설명",
+                    "sourceItemIds": [
+                      "i-84ce7af50788",
+                      "i-89fb5e4f89c7",
+                      "i-672cb2718159",
+                      "i-dd968ca0517e",
+                      "i-0aa5ee2d5cb6"
                     ]
                   }
                 ]
@@ -8711,6 +10813,7 @@
   "referenceSections": [
     "routine-history",
     "routine-exam",
-    "handover-general"
+    "handover-general",
+    "specialty-general-note"
   ]
 }

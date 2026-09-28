@@ -770,6 +770,1314 @@
       "trackedChanges": 0
     },
     {
+      "id": "specialty",
+      "file": "문진항목 정리/과별 초진.docx",
+      "sha256": "3069bddb27c82b0b9fcd2cd701c1ef8184b5100e47e944691d6aa3bf04fe8907",
+      "blocks": [
+        {
+          "id": "specialty:document:p1",
+          "part": "word/document.xml",
+          "paragraph": 1,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "과별 초진 "
+        },
+        {
+          "id": "specialty:document:p2",
+          "part": "word/document.xml",
+          "paragraph": 2,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "방법"
+        },
+        {
+          "id": "specialty:document:p3",
+          "part": "word/document.xml",
+          "paragraph": 3,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "★★<필독>2024필수초진인계★★_이것만 읽으면 초진킹\n25.09) 초진의 질보다 빠르기를 더 중요하게 생각하심. "
+        },
+        {
+          "id": "specialty:document:p5",
+          "part": "word/document.xml",
+          "paragraph": 5,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "와꾸를 잘 활용합시다!!! "
+        },
+        {
+          "id": "specialty:document:p7",
+          "part": "word/document.xml",
+          "paragraph": 7,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "★PD ★NP, ★OT, ★OL, ★DM, ★OG  초진 보고 차팅해서 콜까지 켜는 것"
+        },
+        {
+          "id": "specialty:document:p8",
+          "part": "word/document.xml",
+          "paragraph": 8,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "25.09) 해당과 저희가 알아서 콜 켜지않고 노티 후 콜 유무 알려주십니다. 그럼 차팅하고 콜 켜면 됨"
+        },
+        {
+          "id": "specialty:document:p9",
+          "part": "word/document.xml",
+          "paragraph": 9,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "25.10) 치프쌤 인계 : EM에서 안보고 어차피 콜 켜야하는 과들의 경우 초진 및 차팅 너무 자세하고 꼼꼼하게 하지 말고 와꾸만 빠르게 채워서 콜 켜기 (NP, OT, OL, DM, OS 등등)"
+        },
+        {
+          "id": "specialty:document:p10",
+          "part": "word/document.xml",
+          "paragraph": 10,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "25.11 (NP, OT, OL, DM, OS 등등) 이런 과들은 빨리 쓰고 빨리 켜는게 중요하다고 빨리 해달라고 하심. 그리고 응급 초진기록 상병명 안들어가있으면 기다리지 말고 비슷한거 하나 등록해서 서명 빨리하기"
+        },
+        {
+          "id": "specialty:document:p12",
+          "part": "word/document.xml",
+          "paragraph": 12,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "그 외에는 초진 보고 ED쌤께 노티."
+        },
+        {
+          "id": "specialty:document:p14",
+          "part": "word/document.xml",
+          "paragraph": 14,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "+) 수술 가능성이 있는 환자 : NPO Time(solid, liquid 나눠서) 물어보기"
+        },
+        {
+          "id": "specialty:document:p16",
+          "part": "word/document.xml",
+          "paragraph": 16,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "2) PD "
+        },
+        {
+          "id": "specialty:document:p17",
+          "part": "word/document.xml",
+          "paragraph": 17,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- 해당와꾸(PD Hx, seizure)를 채우면 됩니다. 차팅 최대한 빨리"
+        },
+        {
+          "id": "specialty:document:p18",
+          "part": "word/document.xml",
+          "paragraph": 18,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- 소아의 경우 쳐지는지 or 보채는지, 대소변 잘보는지(마지막 대소변시간), 잠은잘자는지, 먹는것은 잘먹는지 기본으로 물어보세요.  <- 와꾸에 있음"
+        },
+        {
+          "id": "specialty:document:p19",
+          "part": "word/document.xml",
+          "paragraph": 19,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- 주로 fever, abdominal pain, seizure환자가 많이 오고, 가끔 “개짖는 소리”기침은 croup"
+        },
+        {
+          "id": "specialty:document:p20",
+          "part": "word/document.xml",
+          "paragraph": 20,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- Fever: 마지막 해열제 먹은 시간 알아야 하구요"
+        },
+        {
+          "id": "specialty:document:p21",
+          "part": "word/document.xml",
+          "paragraph": 21,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- Seizure의 경우 소아경련 와꾸보고 다 채워 넣으면 됩니다. 단, Seizure중이면 바로 노티."
+        },
+        {
+          "id": "specialty:document:p22",
+          "part": "word/document.xml",
+          "paragraph": 22,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- 설압자&청진기 챙겨 -> 편도 시진/호흡 청진"
+        },
+        {
+          "id": "specialty:document:p23",
+          "part": "word/document.xml",
+          "paragraph": 23,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- Fever : 최고 체온부터 차팅, 열나서 온 애기는 동반 증상 기침, 가래 이런 것들은 언제부터 시작했는지 알아보기, 백신 맞은 적 있는지도 물어보기"
+        },
+        {
+          "id": "specialty:document:p24",
+          "part": "word/document.xml",
+          "paragraph": 24,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- 2세이하: 와꾸 중 신생아력도. 특히 개월수! 24개월 이하는 개월수로 말해야 됨."
+        },
+        {
+          "id": "specialty:document:p25",
+          "part": "word/document.xml",
+          "paragraph": 25,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- 차트 먼저 쓰고 노티(필수)"
+        },
+        {
+          "id": "specialty:document:p27",
+          "part": "word/document.xml",
+          "paragraph": 27,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "3) OG: preterm labor, hemoperitoneum, vaginal bleeding,..."
+        },
+        {
+          "id": "specialty:document:p28",
+          "part": "word/document.xml",
+          "paragraph": 28,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "-와꾸: LMP, 생리주기, 생리기간, 생리량, 생리통여부, last coitus, 성교통, 이상질출혈, 냉변화, 부인과 진료경험, 질 출혈이면 양이 어느정도인지, TPAL, 결혼여부, NPO time (필요하면 보호자 내보내고 혼자있을때 물어보기)"
+        },
+        {
+          "id": "specialty:document:p29",
+          "part": "word/document.xml",
+          "paragraph": 29,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "-산모인 경우: IUP(몇주 몇일 정확히!), 진통여부(배뭉침, 주기, 지속시간), 예정일(EDC), NPO, Op hx."
+        },
+        {
+          "id": "specialty:document:p30",
+          "part": "word/document.xml",
+          "paragraph": 30,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "-보통 본원 OBGY f/u 하시는 분들이 많아서 EMR에 있는 내용 붙여넣기 하면 좋아용.."
+        },
+        {
+          "id": "specialty:document:p32",
+          "part": "word/document.xml",
+          "paragraph": 32,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "5) NR 인계 : Dizziness, Headache, 뇌경색, seizure"
+        },
+        {
+          "id": "specialty:document:p33",
+          "part": "word/document.xml",
+          "paragraph": 33,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- Dizziness는# 어지러울 때 뭐하고 있었는지(Resting시에 발생했는지, 앉았다 일어나면서 발생했는지), TRS(=True Rotating Sx=정말로 빙빙 도는 느낌인지. Faintness와 구분해야됨)와 nystagmus 3개가 제일 중요하고, 와꾸에 있는대로 피지컬 해서 차팅하면 됩니다. "
+        },
+        {
+          "id": "specialty:document:p34",
+          "part": "word/document.xml",
+          "paragraph": 34,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "   TRS인데 Spontaneous nystagmus 가 있으면 Head impulse test, unidirectional/"
+        },
+        {
+          "id": "specialty:document:p35",
+          "part": "word/document.xml",
+          "paragraph": 35,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "    bidirectional nystagmus, skew 3가지를 확인하고"
+        },
+        {
+          "id": "specialty:document:p36",
+          "part": "word/document.xml",
+          "paragraph": 36,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "   TRS인데 Spontaneous nystagmus 가 없으면 유발검사 (Dix-hallpike test, Head-roll test) 를 시행해야 합니다. "
+        },
+        {
+          "id": "specialty:document:p37",
+          "part": "word/document.xml",
+          "paragraph": 37,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- Mentation: 5단계로 작성"
+        },
+        {
+          "id": "specialty:document:p38",
+          "part": "word/document.xml",
+          "paragraph": 38,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "Mild Drowsy : 눈감고 있다 가 verbal order에 눈을 뜸"
+        },
+        {
+          "id": "specialty:document:p39",
+          "part": "word/document.xml",
+          "paragraph": 39,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "Deep  Drowsy 자극을 줘야 눈을 뜸"
+        },
+        {
+          "id": "specialty:document:p40",
+          "part": "word/document.xml",
+          "paragraph": 40,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": " stupor: 자극을 주면 자극을 피하려는 움직임을 보임"
+        },
+        {
+          "id": "specialty:document:p41",
+          "part": "word/document.xml",
+          "paragraph": 41,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- Seizure: 5분이 넘었는지 여부가 매우중요. 꼭 시간을 정확히 알아야함"
+        },
+        {
+          "id": "specialty:document:p42",
+          "part": "word/document.xml",
+          "paragraph": 42,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- 와꾸없는NR환자 노티할 경우 기본 hx"
+        },
+        {
+          "id": "specialty:document:p43",
+          "part": "word/document.xml",
+          "paragraph": 43,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": ": 술 (1주일에 어느정도, 어떤술, 얼마나) 담배 (-pyrs, current/ex), Op/Adm hx, Family hx (DM, HTN, MI, Stroke, 암)"
+        },
+        {
+          "id": "specialty:document:p44",
+          "part": "word/document.xml",
+          "paragraph": 44,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": " 기저질환"
+        },
+        {
+          "id": "specialty:document:p45",
+          "part": "word/document.xml",
+          "paragraph": 45,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- nystagmus, provocation test등 간단하게 할 수 있는 검사는 꼭 하시고.. MOTOR G4는 왠만큼 약하지 않으면 안나옵니다... 웬만큼 건강한 사람은 대부분 G5/G5."
+        },
+        {
+          "id": "specialty:document:p46",
+          "part": "word/document.xml",
+          "paragraph": 46,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- semicoma: 통증 주면 조금 움직이는 정도 (”반응”과 다름. 방응은 눈뜨고 등등)"
+        },
+        {
+          "id": "specialty:document:p47",
+          "part": "word/document.xml",
+          "paragraph": 47,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- RAM=rapid alternating movement"
+        },
+        {
+          "id": "specialty:document:p48",
+          "part": "word/document.xml",
+          "paragraph": 48,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- Headache: Td on shoulder 있는지 확인"
+        },
+        {
+          "id": "specialty:document:p50",
+          "part": "word/document.xml",
+          "paragraph": 50,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "6) NP 인계 : DI, 자살시도, 그 외 정신질환들....."
+        },
+        {
+          "id": "specialty:document:p51",
+          "part": "word/document.xml",
+          "paragraph": 51,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "인계대로 초진 차팅"
+        },
+        {
+          "id": "specialty:document:p52",
+          "part": "word/document.xml",
+          "paragraph": 52,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "-DI 나 CO중독 등의 자살시도/사고/계획은 정신과적 초응급으로 환자를 위해 NP진료를 보게 유도해야함.  "
+        },
+        {
+          "id": "specialty:document:p53",
+          "part": "word/document.xml",
+          "paragraph": 53,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "(단 NP 진료보게끔 유도해서 질문 했음에도 환자/보호자가 거부하거나 병력청취힘들면 ER선생님께 먼저 물어보세요)"
+        },
+        {
+          "id": "specialty:document:p54",
+          "part": "word/document.xml",
+          "paragraph": 54,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- 와꾸를 채우세요. 가끔 정말 손도 대지 못할  Schizophrenia가 올 경우 레지쌤들이 바로 NP 노티하십니다.."
+        },
+        {
+          "id": "specialty:document:p55",
+          "part": "word/document.xml",
+          "paragraph": 55,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- DI,CO poisoning 환자가 오면 일단 ER에서 응급처치를 한 뒤, 면담가능할때 NP 노티를 하라고함."
+        },
+        {
+          "id": "specialty:document:p56",
+          "part": "word/document.xml",
+          "paragraph": 56,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- 정신과 입원치료 과거력, 자기 (특히 본원 f/u인 분)"
+        },
+        {
+          "id": "specialty:document:p57",
+          "part": "word/document.xml",
+          "paragraph": 57,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- 와꾸채우고 NP보셔야된다고 잘 설득해서, NP.콜키기"
+        },
+        {
+          "id": "specialty:document:p58",
+          "part": "word/document.xml",
+          "paragraph": 58,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "*정신과 쌤들 인계사항:"
+        },
+        {
+          "id": "specialty:document:p59",
+          "part": "word/document.xml",
+          "paragraph": 59,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "망상 있다고 할 때 내용 물어보고 망상 종류가 정상인 범주 내의 것인지 아닌지 (ex. 친구들이 내 욕한다 vs 트럼프가 나를 좋아한다) 구분해줄 것."
+        },
+        {
+          "id": "specialty:document:p60",
+          "part": "word/document.xml",
+          "paragraph": 60,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "‘오늘’ 온 이유를 꼭 물어보고 노티하기. 예) “원래 우울했는데 오늘은 죽고싶은 생각이 들었어요.” “원래 조현병인데 평소와는 다르게 오늘 폭력적인 모습을 보였어요”"
+        },
+        {
+          "id": "specialty:document:p61",
+          "part": "word/document.xml",
+          "paragraph": 61,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "- 상담을 받고 싶은지 입원을 하고 싶은지도 물어보고 노티하기."
+        },
+        {
+          "id": "specialty:document:p62",
+          "part": "word/document.xml",
+          "paragraph": 62,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "NP 환자가 왔는데 당장 NP샘을 콜해야 하지만 어차피 와봤자 대화가 불가능해보인다던가, 당장 다른 처치가 급해서 정신과면담이 바로 가능하지 않은 경우 NP노티전 일단 ER레지샘께 먼저 보고하세요!! NP와 ER간의 혼선으로 인해 그렇게 해달라고 부탁하십니다 → 꼭꼭 대화 가능할 정도로 mental alert 해졌을때 NP 켜달라합니다!"
+        },
+        {
+          "id": "specialty:document:p64",
+          "part": "word/document.xml",
+          "paragraph": 64,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "7) OL 인계 : 열 없는 AOM (otalgia), Epistaxis, FB in ear or throat, Tonsil abscess  "
+        },
+        {
+          "id": "specialty:document:p65",
+          "part": "word/document.xml",
+          "paragraph": 65,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "0. FB in throat : 육안으로 보이지 않는 경우 -> 육안으로 보이면 꺼낼 수 있으면 처치시 합병증 설명 후 ENT 포셉으로 꺼내고 ED쌤에게 컨펌받기."
+        },
+        {
+          "id": "specialty:document:p66",
+          "part": "word/document.xml",
+          "paragraph": 66,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "Otalgia : 이명/청력저하/trauma/ 최근에 귀에 물 들어간 적 있는지(ex.수영장)/URI sx"
+        },
+        {
+          "id": "specialty:document:p67",
+          "part": "word/document.xml",
+          "paragraph": 67,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "Epistaxis: 출혈 멈췄어도 진료위해 콜!! 양쪽으로 나면 어디부터 났는지 순서대로"
+        },
+        {
+          "id": "specialty:document:p68",
+          "part": "word/document.xml",
+          "paragraph": 68,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "Active bleeding인 경우 merocel 넣는다. (쓴 경우 간호사쌤한테 꼭 말해야함. 비싸므로..)"
+        },
+        {
+          "id": "specialty:document:p69",
+          "part": "word/document.xml",
+          "paragraph": 69,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "입 안 Bleeding, 코 넘김 확인. Packing Change 시, active bleeding 여부"
+        },
+        {
+          "id": "specialty:document:p70",
+          "part": "word/document.xml",
+          "paragraph": 70,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "Op hx."
+        },
+        {
+          "id": "specialty:document:p71",
+          "part": "word/document.xml",
+          "paragraph": 71,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "Underlying disease"
+        },
+        {
+          "id": "specialty:document:p72",
+          "part": "word/document.xml",
+          "paragraph": 72,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "Warfarin, 아스피린 복용여부"
+        },
+        {
+          "id": "specialty:document:p73",
+          "part": "word/document.xml",
+          "paragraph": 73,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "타원 들렀다 왔으면 거기서 무슨 치료했었는지"
+        },
+        {
+          "id": "specialty:document:p74",
+          "part": "word/document.xml",
+          "paragraph": 74,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "BP 높으면 BP control 후에 노티. (160정도가 보더라인) – 만약에 노티하라고 레지쌤이 말씀하시고 아직 혈압이 높다면 일단 아달락 등으로 BP control하고 있으면 initial 내원했을 때 BP, 지금 현재 BP, BP Control 무엇으로 했는지 말씀드리면 bp내려가면 다시 노티해달라고 하실겁니다. -> ER레지쌤께 노티 했다고 말씀드리면 bp 160미만으로 내려가면 OL선생님께 간호사선생님이 노티하게 오더 넣어주실거에요 (2021.3월: 이런거 우리가 안함)"
+        },
+        {
+          "id": "specialty:document:p75",
+          "part": "word/document.xml",
+          "paragraph": 75,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "3. Ear, neck쪽의 laceration. ->해당부위 neck level을 알아야함."
+        },
+        {
+          "id": "specialty:document:p76",
+          "part": "word/document.xml",
+          "paragraph": 76,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "* 코피용 메로셀은 T2방 드레싱용품 있는 곳 아래에 있습니다. BP높은 사람들 떨어질때까지 기다리고만 있으면 ED샘들이 노티 왜 안하냐고 하시니.. BP높아도 OL샘들에게 적당히 둘러대고 노티해야합니다. "
+        },
+        {
+          "id": "specialty:document:p77",
+          "part": "word/document.xml",
+          "paragraph": 77,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "4. 외래 내려주세요 -> 간호사쌤에게 말하기"
+        },
+        {
+          "id": "specialty:document:p79",
+          "part": "word/document.xml",
+          "paragraph": 79,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "8) TS 인계 : rib Fx, aortic dissection ( 인턴이 안함.)"
+        },
+        {
+          "id": "specialty:document:p81",
+          "part": "word/document.xml",
+          "paragraph": 81,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "9) UR 인계 : 고환이상,.."
+        },
+        {
+          "id": "specialty:document:p82",
+          "part": "word/document.xml",
+          "paragraph": 82,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": " 인턴 to 인턴이라 부담 없음"
+        },
+        {
+          "id": "specialty:document:p83",
+          "part": "word/document.xml",
+          "paragraph": 83,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "-Ureter stone인 경우 CT에서 stone size 측정해서 몇mm인지 확인한 후 알려주면 좋아합니다"
+        },
+        {
+          "id": "specialty:document:p84",
+          "part": "word/document.xml",
+          "paragraph": 84,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "-Testicular torsion 의심 시에는 cremasteric reflex 유무 확인해서 알려주면 좋아합니다"
+        },
+        {
+          "id": "specialty:document:p86",
+          "part": "word/document.xml",
+          "paragraph": 86,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "10) OT 인계 : 안구통증, BOF, High BP"
+        },
+        {
+          "id": "specialty:document:p87",
+          "part": "word/document.xml",
+          "paragraph": 87,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "1. 동반증상 확인. (충혈/눈물/눈부심/이물감 등), 눈 출혈점, 동공반사, LOM, 동통"
+        },
+        {
+          "id": "specialty:document:p88",
+          "part": "word/document.xml",
+          "paragraph": 88,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "2. LOM, LR, 시야/시력 - 꼭 시력검사를 하고 노티하셔야 합니다. 시력검사표를 30cm정도"
+        },
+        {
+          "id": "specialty:document:p89",
+          "part": "word/document.xml",
+          "paragraph": 89,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "    거리에서 들고 측정하시면 됩니다. 눈이 안떠지면 어떻게든 눈을 뜨게해서 시력측정"
+        },
+        {
+          "id": "specialty:document:p90",
+          "part": "word/document.xml",
+          "paragraph": 90,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "    안 떠지는 경우 면봉을 윗눈꺼풀에 대고 돌돌 말아 올려 보이게 한 후 시력 측정"
+        },
+        {
+          "id": "specialty:document:p91",
+          "part": "word/document.xml",
+          "paragraph": 91,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "-> 2020.03 인계받을때 시력검사표 없으니 이전 시력 물어보고, 변화없냐고 물어보라고 하셨음."
+        },
+        {
+          "id": "specialty:document:p92",
+          "part": "word/document.xml",
+          "paragraph": 92,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "3. 안과적 과거력 "
+        },
+        {
+          "id": "specialty:document:p93",
+          "part": "word/document.xml",
+          "paragraph": 93,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "4. underlying"
+        },
+        {
+          "id": "specialty:document:p94",
+          "part": "word/document.xml",
+          "paragraph": 94,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "5. 눈 주위 맞거나 부딪쳤을 경우 facial CT 권유. (BOF는 생각보다 적은 힘으로도 생깁니다)"
+        },
+        {
+          "id": "specialty:document:p95",
+          "part": "word/document.xml",
+          "paragraph": 95,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "6. 눈에 뭐가 들어가서 온 환자의 경우 노티 빨리 하고 irrigation하라고 하면 suture방에서"
+        },
+        {
+          "id": "specialty:document:p96",
+          "part": "word/document.xml",
+          "paragraph": 96,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "  eye irrigation을 하면 됩니다. (1L 넣는데 20분 걸림 ㅜ)"
+        },
+        {
+          "id": "specialty:document:p98",
+          "part": "word/document.xml",
+          "paragraph": 98,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "11) OS 인계 : 월수금토 손laceration, 각종fx들(얼굴제외), 다리lac"
+        },
+        {
+          "id": "specialty:document:p99",
+          "part": "word/document.xml",
+          "paragraph": 99,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "-X-ray 찍은 후에 노티하세요. 꼭!!!"
+        },
+        {
+          "id": "specialty:document:p100",
+          "part": "word/document.xml",
+          "paragraph": 100,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- Td,Swelling,Laceration(margin,depth,size), LOM유무,Motor/Senso 평가(수상부위 Distal이 중요)"
+        },
+        {
+          "id": "specialty:document:p101",
+          "part": "word/document.xml",
+          "paragraph": 101,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- Wound 붕대감고 왔으면 열어서 Open(뼈 보임)/Closed 꼭 확인"
+        },
+        {
+          "id": "specialty:document:p102",
+          "part": "word/document.xml",
+          "paragraph": 102,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- ER에 계신 경우가 많기 때문에 계시면 2년차 샘께 직접노티, "
+        },
+        {
+          "id": "specialty:document:p103",
+          "part": "word/document.xml",
+          "paragraph": 103,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "; 처치실 (suture방)까지 선생님 계신지 꼭 확인하기"
+        },
+        {
+          "id": "specialty:document:p104",
+          "part": "word/document.xml",
+          "paragraph": 104,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "스플린트 대고 있으면 다 열고 상처 눈으로 본 후 노티."
+        },
+        {
+          "id": "specialty:document:p105",
+          "part": "word/document.xml",
+          "paragraph": 105,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- 위치는 해부학적 용어로 사용. anatomymapper참고! "
+        },
+        {
+          "id": "specialty:document:p107",
+          "part": "word/document.xml",
+          "paragraph": 107,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "12) NS 인계 : 뇌출혈,....Mental, Uex(G5/G5),Lex(G5/G5)는 필수"
+        },
+        {
+          "id": "specialty:document:p108",
+          "part": "word/document.xml",
+          "paragraph": 108,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "-영상 소견 나오면 최대한 자세히 파악해서 노티하세요(ex. lumbar fx면 어느 level인지, 무슨 유형의 fx인지 등)"
+        },
+        {
+          "id": "specialty:document:p110",
+          "part": "word/document.xml",
+          "paragraph": 110,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "13) DS 인계 : 치아통증, 입안열상, 인턴노티!"
+        },
+        {
+          "id": "specialty:document:p111",
+          "part": "word/document.xml",
+          "paragraph": 111,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "-소아치과(만6세이하)는 없음(소아가 오면 다른 병원으로 보냄) & 주말에는 치과 진료 아예 안봅니다"
+        },
+        {
+          "id": "specialty:document:p112",
+          "part": "word/document.xml",
+          "paragraph": 112,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "-콜 자꾸 꺼달라하는데 꺼주면 안됨"
+        },
+        {
+          "id": "specialty:document:p114",
+          "part": "word/document.xml",
+          "paragraph": 114,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "14) DM 인계 : 피부병변 (두드러기ex.multiple erythematous vesicle)"
+        },
+        {
+          "id": "specialty:document:p115",
+          "part": "word/document.xml",
+          "paragraph": 115,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "-피부병변 description form (인턴 자리 벽에 붙어있음) 대로 차팅하고 노티"
+        },
+        {
+          "id": "specialty:document:p116",
+          "part": "word/document.xml",
+          "paragraph": 116,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- urticaria는 거진 DM노티 안하고 ER쌤들이 주로 해결하심."
+        },
+        {
+          "id": "specialty:document:p118",
+          "part": "word/document.xml",
+          "paragraph": 118,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "15) PS 인계 : 화목일 손laceration, 얼굴lac, BOF, NBF"
+        },
+        {
+          "id": "specialty:document:p119",
+          "part": "word/document.xml",
+          "paragraph": 119,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": " 1. 우선 disposable kit로 상처를 닦고 조금이라도 벌어지는 상처는 suture하게 될 가능성이 높습니다."
+        },
+        {
+          "id": "specialty:document:p120",
+          "part": "word/document.xml",
+          "paragraph": 120,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- Bleeding이 심할경우 거즈로 saline wet dressing을 해놓고 compression 해줍시다."
+        },
+        {
+          "id": "specialty:document:p121",
+          "part": "word/document.xml",
+          "paragraph": 121,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- wound 를 identify할 수 있도록 saline으로 박박 닦아줍시다."
+        },
+        {
+          "id": "specialty:document:p122",
+          "part": "word/document.xml",
+          "paragraph": 122,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": " 2. 파상풍 예방접종 했는지는 물어봅시다 (모든 열상에 해당됨)"
+        },
+        {
+          "id": "specialty:document:p123",
+          "part": "word/document.xml",
+          "paragraph": 123,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": " 3. 열상 차팅시 꼭 적을 것"
+        },
+        {
+          "id": "specialty:document:p124",
+          "part": "word/document.xml",
+          "paragraph": 124,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "몇 시에 어떻게 생긴 상처인가? 어떤 것에 베인 건지, 재질 알기, foreign body유무확인→ foreign body 찾아서 제거 시도 후 영상, 못 찾겠으면 영상 찍고 노티)"
+        },
+        {
+          "id": "specialty:document:p125",
+          "part": "word/document.xml",
+          "paragraph": 125,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "사이즈, depth (deep or superficial).  margin (regular or irregular)"
+        },
+        {
+          "id": "specialty:document:p126",
+          "part": "word/document.xml",
+          "paragraph": 126,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "Structure 유무 (Tendon, ligament, nerve, SubQ 등)"
+        },
+        {
+          "id": "specialty:document:p127",
+          "part": "word/document.xml",
+          "paragraph": 127,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "아무 것도 안보이면 아무것도 안보임"
+        },
+        {
+          "id": "specialty:document:p128",
+          "part": "word/document.xml",
+          "paragraph": 128,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "Dermis만 보입니다. 등등"
+        },
+        {
+          "id": "specialty:document:p129",
+          "part": "word/document.xml",
+          "paragraph": 129,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "수상기전(어떤식으로 다쳤는지 ex) ATA, PTA, BTA, 무엇에 맞았는지, 어디에 베였는지, 어느정도 세기로 부딪쳤는지)"
+        },
+        {
+          "id": "specialty:document:p130",
+          "part": "word/document.xml",
+          "paragraph": 130,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "-TA =Traffic Accident, ATA = 오토바이 TA,"
+        },
+        {
+          "id": "specialty:document:p131",
+          "part": "word/document.xml",
+          "paragraph": 131,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "PTA= Pedestrial(환자가 보행자) TA, BTA = Bicycle TA"
+        },
+        {
+          "id": "specialty:document:p132",
+          "part": "word/document.xml",
+          "paragraph": 132,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "motor/sensor 어떤지 중요합니다."
+        },
+        {
+          "id": "specialty:document:p133",
+          "part": "word/document.xml",
+          "paragraph": 133,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "영상검사 유무 (laceration 있으면 루틴으로 X-ray, 얼굴에있으면 X-ray + facial CT 찍습니다. 영상을 안찍고 노티를 하는 경우 합당한 이유가 있어야 합니다. Ex) 소아 부모님 강력거절)"
+        },
+        {
+          "id": "specialty:document:p134",
+          "part": "word/document.xml",
+          "paragraph": 134,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "Chin laceration 또는 lip laceration 경우 관통상이 있는지 꼭 확인하고(소독된 면봉을 넣어서 확인 꼭) intraoral laceration 이 있다면 PS 보다 DS suture가 우선시 되어야 합니다. Tongue laceration이 있는지도 확인해줍시다."
+        },
+        {
+          "id": "specialty:document:p135",
+          "part": "word/document.xml",
+          "paragraph": 135,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": " 원칙적으로 intraoral wound는 PS에서 진료를 보지 않습니다. 그러므로 주말의 경우, DS가 ER진료를 하지 않기 때문에Only intraoral wound는 다른 병원으로 보내야합니다. 다만, lip laceration과 관련된 경우는 PS에서 같이 suture를 해주는 것입니다."
+        },
+        {
+          "id": "specialty:document:p136",
+          "part": "word/document.xml",
+          "paragraph": 136,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": " 귀 열상 ㅡ 열살이 환자앞쪽에서 보이면 ps , 뒤에있으면 ol"
+        },
+        {
+          "id": "specialty:document:p137",
+          "part": "word/document.xml",
+          "paragraph": 137,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "upper forehead의 범위 : hair가 없는곳 까지"
+        },
+        {
+          "id": "specialty:document:p138",
+          "part": "word/document.xml",
+          "paragraph": 138,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "Hair가 있는 부위에 laceration이 있다면 Scalp laceration입니다. Description할 때 헷갈리지 않도록 합시다. 머리가 없는 분처럼 애매한 경우 PS 노티할 때 말해주도록 합니다."
+        },
+        {
+          "id": "specialty:document:p139",
+          "part": "word/document.xml",
+          "paragraph": 139,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "10세 이하의 경우 line 잡는지 or 안 잡는지"
+        },
+        {
+          "id": "specialty:document:p140",
+          "part": "word/document.xml",
+          "paragraph": 140,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "(line 잡다 = 아기 sedation시켜서 꿰맨다.)"
+        },
+        {
+          "id": "specialty:document:p141",
+          "part": "word/document.xml",
+          "paragraph": 141,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "라인잡고콜키기!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! "
+        },
+        {
+          "id": "specialty:document:p142",
+          "part": "word/document.xml",
+          "paragraph": 142,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": " 만약 라인 잡기로 결정했다면 NPO time도 물어보기 (토할수도 있어서)"
+        },
+        {
+          "id": "specialty:document:p143",
+          "part": "word/document.xml",
+          "paragraph": 143,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "수면 마취 진정동의서는 ps쌤이 하시는 거라고 함"
+        },
+        {
+          "id": "specialty:document:p144",
+          "part": "word/document.xml",
+          "paragraph": 144,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": " 4. Nasal bone fx : 안경을 썼는가/ swelling / tenderness / deviation / epistaxis진행중? 멎었는지?"
+        },
+        {
+          "id": "specialty:document:p145",
+          "part": "word/document.xml",
+          "paragraph": 145,
+          "style": null,
+          "numbered": true,
+          "inTable": true,
+          "text": "nasal b fx 는 ct 찍었는지도 물어보심"
+        },
+        {
+          "id": "specialty:document:p146",
+          "part": "word/document.xml",
+          "paragraph": 146,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": " 5. Drunken환자는 drunken state임을 꼭 말해줘야함."
+        },
+        {
+          "id": "specialty:document:p148",
+          "part": "word/document.xml",
+          "paragraph": 148,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "16) 그 외 CASE"
+        },
+        {
+          "id": "specialty:document:p149",
+          "part": "word/document.xml",
+          "paragraph": 149,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "(1) DI  (Drug Intoxication)"
+        },
+        {
+          "id": "specialty:document:p150",
+          "part": "word/document.xml",
+          "paragraph": 150,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "대부분 DI 환자가 오면 ER 샘들이 보시고 lavage나 charcoal도 직접 하십니다. 문진 잘 해서 노티하시고, NP노티 시키시면 NP노티 합니다. 설명 잘 하시고 NP보게끔.. Tox기계돌리기 —구두인계 (TOX 아이디 입력은 바코드 밑에 18~~~하는 긴 걸로 써야함!)"
+        },
+        {
+          "id": "specialty:document:p151",
+          "part": "word/document.xml",
+          "paragraph": 151,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "(2) DOA (와꾸) ; 대부분 검안은 레지쌤이 하시고 "
+        },
+        {
+          "id": "specialty:document:p152",
+          "part": "word/document.xml",
+          "paragraph": 152,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "(3) CPR"
+        },
+        {
+          "id": "specialty:document:p153",
+          "part": "word/document.xml",
+          "paragraph": 153,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "-가끔 CPR환자가 생기거나 119타고 온다고 연락이 옵니다. 장갑 끼고 ABGA (맥이 없으니 femoral에 10cc syringe로 대충 찔러 샘플링합니다) 빠르게 할 준비 하시고 대기하다 도착하면 ABGA합니다. 환자 오면 얼른 옷 가위로 잘라버리시고 CPR 하시면 됩니다. ER선생님들은 intubation을 하실거고 간호사분들은 라인잡고 monitor를 달고 계실겁니다. 그만하라고 하실때까지 하면 되고, 힘들면 교대해달라고 말하세요."
+        },
+        {
+          "id": "specialty:document:p154",
+          "part": "word/document.xml",
+          "paragraph": 154,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "*서울은 기계(루카스)로 합니다, 10cc시린지로 왼쪽femoral에서 음압 걸어서 ABGA하면 됨. 가스 결과 바로 가져다드리기. 그러고 나오면 됨. 이외 인턴잡 거의 없음. ROSC 되면 ECG 바로 찍어야되니까 인턴자리에서 대기하기. 거기서 대기할 필요는 없음. "
+        },
+        {
+          "id": "specialty:document:p155",
+          "part": "word/document.xml",
+          "paragraph": 155,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "*루카스 세팅 전까진 Chest compression 해야하수도 있음"
+        },
+        {
+          "id": "specialty:document:p156",
+          "part": "word/document.xml",
+          "paragraph": 156,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "*Arrest 환자 중에 ROSC되고 난 후에 CAG실 가는 경우가 있습니다. 그러면 오른쪽 femoral a.에서 시술할 가능성도 있으므로 가능한 오른쪽에서는 puncture하지 마세요!!!"
+        },
+        {
+          "id": "specialty:document:p157",
+          "part": "word/document.xml",
+          "paragraph": 157,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "(4) Inhalation burn"
+        },
+        {
+          "id": "specialty:document:p158",
+          "part": "word/document.xml",
+          "paragraph": 158,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "-본적은 없지만 OL 노티하면 된답니다. Dyspnea 없는지, C/S/R 없는지, 코나 입에 그을린 자극 없는지 물어보고 lung sound도 들어보면 된다네요."
+        },
+        {
+          "id": "specialty:document:p159",
+          "part": "word/document.xml",
+          "paragraph": 159,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "(5) Trauma "
+        },
+        {
+          "id": "specialty:document:p160",
+          "part": "word/document.xml",
+          "paragraph": 160,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- 응급실 케이스 중 절대 다수를 차지합니다. 그때그때 NS, OS, TS, PS, GS, OT, OL 등 해당과에 노티하시면 됩니다.(우리가 해당과에 노티 안함.) 밤에는 Drunken 환자가 많은데 노티할 때 drunken 여부도 꼭 노티하셔야 됩니다. 협조가 안되면 환자를 볼 수가 없어서 대부분 술 깨고 환자를 보게 됨."
+        },
+        {
+          "id": "specialty:document:p161",
+          "part": "word/document.xml",
+          "paragraph": 161,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": "- 피지컬은 머리부터 발끝까지 모두 훑어보셔야 하고 꾹꾹 눌러보세요. 이상한 부분 있으면 꼭 노티하시고, lac부위 wet dressing 빼고는 하라는 것만 함 (처방 등 인턴이 안 냄)"
+        },
+        {
+          "id": "specialty:document:p162",
+          "part": "word/document.xml",
+          "paragraph": 162,
+          "style": null,
+          "numbered": false,
+          "inTable": true,
+          "text": " -TA환자는 머리, 목, 가슴, 배부터 촉진 후 그 다음 팔다리 촉진!"
+        }
+      ],
+      "media": [],
+      "parts": [
+        "word/document.xml"
+      ],
+      "trackedChanges": 0
+    },
+    {
       "id": "np-docx",
       "file": "문진항목 정리/NP 인턴초진.docx",
       "sha256": "71289be5f9e823bdaa729e7364a59412507dd281f42b50f45e241dab0417888d",
@@ -8703,6 +10011,956 @@
         "itemId": "i-cf7e2efd2775"
       }
     ],
+    "specialty:document:p3": [
+      {
+        "type": "item",
+        "sectionId": "specialty-general-note",
+        "itemId": "i-85df7d28fb66"
+      }
+    ],
+    "specialty:document:p5": [
+      {
+        "type": "item",
+        "sectionId": "specialty-general-note",
+        "itemId": "i-6fcf537b0a62"
+      }
+    ],
+    "specialty:document:p7": [
+      {
+        "type": "item",
+        "sectionId": "specialty-general-note",
+        "itemId": "i-0b18d0c807b3"
+      }
+    ],
+    "specialty:document:p8": [
+      {
+        "type": "item",
+        "sectionId": "specialty-general-note",
+        "itemId": "i-b868c17b0a09"
+      }
+    ],
+    "specialty:document:p9": [
+      {
+        "type": "item",
+        "sectionId": "specialty-general-note",
+        "itemId": "i-274395dc53a3"
+      }
+    ],
+    "specialty:document:p10": [
+      {
+        "type": "item",
+        "sectionId": "specialty-general-note",
+        "itemId": "i-6662bfee9be5"
+      }
+    ],
+    "specialty:document:p12": [
+      {
+        "type": "item",
+        "sectionId": "specialty-general-note",
+        "itemId": "i-1b74aea9aa51"
+      }
+    ],
+    "specialty:document:p14": [
+      {
+        "type": "item",
+        "sectionId": "specialty-general-note",
+        "itemId": "i-84f34ae75d7e"
+      }
+    ],
+    "specialty:document:p18": [
+      {
+        "type": "item",
+        "sectionId": "specialty-peds-history",
+        "itemId": "i-519572e43b06"
+      }
+    ],
+    "specialty:document:p20": [
+      {
+        "type": "item",
+        "sectionId": "specialty-peds-history",
+        "itemId": "i-19869a15bafe"
+      }
+    ],
+    "specialty:document:p23": [
+      {
+        "type": "item",
+        "sectionId": "specialty-peds-history",
+        "itemId": "i-d964ff2ec75c"
+      }
+    ],
+    "specialty:document:p24": [
+      {
+        "type": "item",
+        "sectionId": "specialty-peds-history",
+        "itemId": "i-19868515803b"
+      }
+    ],
+    "specialty:document:p22": [
+      {
+        "type": "item",
+        "sectionId": "specialty-peds-exam",
+        "itemId": "i-14019c6c3332"
+      }
+    ],
+    "specialty:document:p17": [
+      {
+        "type": "item",
+        "sectionId": "specialty-peds-note",
+        "itemId": "i-224004611136"
+      }
+    ],
+    "specialty:document:p19": [
+      {
+        "type": "item",
+        "sectionId": "specialty-peds-note",
+        "itemId": "i-38c37e000f2b"
+      }
+    ],
+    "specialty:document:p21": [
+      {
+        "type": "item",
+        "sectionId": "specialty-peds-note",
+        "itemId": "i-f2731a163a8b"
+      }
+    ],
+    "specialty:document:p25": [
+      {
+        "type": "item",
+        "sectionId": "specialty-peds-note",
+        "itemId": "i-974ce540f23a"
+      }
+    ],
+    "specialty:document:p28": [
+      {
+        "type": "item",
+        "sectionId": "specialty-ob-history",
+        "itemId": "i-4b331752b9fc"
+      }
+    ],
+    "specialty:document:p29": [
+      {
+        "type": "item",
+        "sectionId": "specialty-ob-history",
+        "itemId": "i-dbc6bd712a86"
+      }
+    ],
+    "specialty:document:p27": [
+      {
+        "type": "item",
+        "sectionId": "specialty-ob-note",
+        "itemId": "i-18b344949537"
+      }
+    ],
+    "specialty:document:p30": [
+      {
+        "type": "item",
+        "sectionId": "specialty-ob-note",
+        "itemId": "i-e0d3887f4c24"
+      }
+    ],
+    "specialty:document:p33": [
+      {
+        "type": "item",
+        "sectionId": "specialty-dizziness-history",
+        "itemId": "i-6d735f242897"
+      }
+    ],
+    "specialty:document:p34": [
+      {
+        "type": "item",
+        "sectionId": "specialty-dizziness-exam",
+        "itemId": "i-12fdf55bcbbf"
+      }
+    ],
+    "specialty:document:p35": [
+      {
+        "type": "item",
+        "sectionId": "specialty-dizziness-exam",
+        "itemId": "i-cd1bf5edc442"
+      }
+    ],
+    "specialty:document:p36": [
+      {
+        "type": "item",
+        "sectionId": "specialty-dizziness-exam",
+        "itemId": "i-e642c2308ebc"
+      }
+    ],
+    "specialty:document:p45": [
+      {
+        "type": "item",
+        "sectionId": "specialty-dizziness-exam",
+        "itemId": "i-b8924856ccf5"
+      }
+    ],
+    "specialty:document:p47": [
+      {
+        "type": "item",
+        "sectionId": "specialty-dizziness-exam",
+        "itemId": "i-03d82df068e2"
+      }
+    ],
+    "specialty:document:p37": [
+      {
+        "type": "item",
+        "sectionId": "specialty-mental-exam",
+        "itemId": "i-c75be9377774"
+      }
+    ],
+    "specialty:document:p38": [
+      {
+        "type": "item",
+        "sectionId": "specialty-mental-exam",
+        "itemId": "i-a74fcaca2a0a"
+      }
+    ],
+    "specialty:document:p39": [
+      {
+        "type": "item",
+        "sectionId": "specialty-mental-exam",
+        "itemId": "i-1ace1646b36d"
+      }
+    ],
+    "specialty:document:p40": [
+      {
+        "type": "item",
+        "sectionId": "specialty-mental-exam",
+        "itemId": "i-025940a80feb"
+      }
+    ],
+    "specialty:document:p46": [
+      {
+        "type": "item",
+        "sectionId": "specialty-mental-exam",
+        "itemId": "i-10b6e0cb7efe"
+      }
+    ],
+    "specialty:document:p41": [
+      {
+        "type": "item",
+        "sectionId": "specialty-seizure-history",
+        "itemId": "i-c92c7330f272"
+      }
+    ],
+    "specialty:document:p42": [
+      {
+        "type": "item",
+        "sectionId": "specialty-neuro-history",
+        "itemId": "i-46a120f174e4"
+      }
+    ],
+    "specialty:document:p43": [
+      {
+        "type": "item",
+        "sectionId": "specialty-neuro-history",
+        "itemId": "i-02568ea8c754"
+      }
+    ],
+    "specialty:document:p44": [
+      {
+        "type": "item",
+        "sectionId": "specialty-neuro-history",
+        "itemId": "i-c54be5d40e02"
+      }
+    ],
+    "specialty:document:p48": [
+      {
+        "type": "item",
+        "sectionId": "specialty-headache-exam",
+        "itemId": "i-fc1f1cd02fc7"
+      }
+    ],
+    "specialty:document:p52": [
+      {
+        "type": "item",
+        "sectionId": "specialty-psychiatry-history",
+        "itemId": "i-84ce7af50788"
+      },
+      {
+        "type": "item",
+        "sectionId": "specialty-psychiatry-note",
+        "itemId": "i-89fb5e4f89c7"
+      }
+    ],
+    "specialty:document:p56": [
+      {
+        "type": "item",
+        "sectionId": "specialty-psychiatry-history",
+        "itemId": "i-876cef3db013"
+      }
+    ],
+    "specialty:document:p59": [
+      {
+        "type": "item",
+        "sectionId": "specialty-psychiatry-history",
+        "itemId": "i-092edab5e977"
+      }
+    ],
+    "specialty:document:p60": [
+      {
+        "type": "item",
+        "sectionId": "specialty-psychiatry-history",
+        "itemId": "i-b3fdcd9aaafc"
+      }
+    ],
+    "specialty:document:p61": [
+      {
+        "type": "item",
+        "sectionId": "specialty-psychiatry-history",
+        "itemId": "i-123bd798e498"
+      }
+    ],
+    "specialty:document:p50": [
+      {
+        "type": "item",
+        "sectionId": "specialty-psychiatry-note",
+        "itemId": "i-fc84b31de169"
+      }
+    ],
+    "specialty:document:p51": [
+      {
+        "type": "item",
+        "sectionId": "specialty-psychiatry-note",
+        "itemId": "i-4ea27a8d6986"
+      }
+    ],
+    "specialty:document:p53": [
+      {
+        "type": "item",
+        "sectionId": "specialty-psychiatry-note",
+        "itemId": "i-672cb2718159"
+      }
+    ],
+    "specialty:document:p54": [
+      {
+        "type": "item",
+        "sectionId": "specialty-psychiatry-note",
+        "itemId": "i-cb55f883b9e7"
+      }
+    ],
+    "specialty:document:p55": [
+      {
+        "type": "item",
+        "sectionId": "specialty-psychiatry-note",
+        "itemId": "i-a910b07b9fe8"
+      }
+    ],
+    "specialty:document:p57": [
+      {
+        "type": "item",
+        "sectionId": "specialty-psychiatry-note",
+        "itemId": "i-dd968ca0517e"
+      }
+    ],
+    "specialty:document:p62": [
+      {
+        "type": "item",
+        "sectionId": "specialty-psychiatry-note",
+        "itemId": "i-cc89bdaa9a19"
+      }
+    ],
+    "specialty:document:p64": [
+      {
+        "type": "item",
+        "sectionId": "specialty-throat-note",
+        "itemId": "i-4a04d1918168"
+      }
+    ],
+    "specialty:document:p65": [
+      {
+        "type": "item",
+        "sectionId": "specialty-throat-note",
+        "itemId": "i-92db91b70f73"
+      }
+    ],
+    "specialty:document:p66": [
+      {
+        "type": "item",
+        "sectionId": "specialty-ear-history",
+        "itemId": "i-c75fe7c8c22a"
+      }
+    ],
+    "specialty:document:p67": [
+      {
+        "type": "item",
+        "sectionId": "specialty-epistaxis-history",
+        "itemId": "i-1e3bb9e94fbc"
+      }
+    ],
+    "specialty:document:p69": [
+      {
+        "type": "item",
+        "sectionId": "specialty-epistaxis-history",
+        "itemId": "i-b075a2d04e4a"
+      }
+    ],
+    "specialty:document:p70": [
+      {
+        "type": "item",
+        "sectionId": "specialty-epistaxis-history",
+        "itemId": "i-9271dddfbfae"
+      }
+    ],
+    "specialty:document:p71": [
+      {
+        "type": "item",
+        "sectionId": "specialty-epistaxis-history",
+        "itemId": "i-ba691002feb1"
+      }
+    ],
+    "specialty:document:p72": [
+      {
+        "type": "item",
+        "sectionId": "specialty-epistaxis-history",
+        "itemId": "i-a828b10c3fa9"
+      }
+    ],
+    "specialty:document:p73": [
+      {
+        "type": "item",
+        "sectionId": "specialty-epistaxis-history",
+        "itemId": "i-e7088656eb8a"
+      }
+    ],
+    "specialty:document:p68": [
+      {
+        "type": "item",
+        "sectionId": "specialty-epistaxis-note",
+        "itemId": "i-c2c34d0eadcc"
+      }
+    ],
+    "specialty:document:p74": [
+      {
+        "type": "item",
+        "sectionId": "specialty-epistaxis-note",
+        "itemId": "i-8ccffb032e0f"
+      }
+    ],
+    "specialty:document:p76": [
+      {
+        "type": "item",
+        "sectionId": "specialty-epistaxis-note",
+        "itemId": "i-42c4356bf7eb"
+      }
+    ],
+    "specialty:document:p77": [
+      {
+        "type": "item",
+        "sectionId": "specialty-epistaxis-note",
+        "itemId": "i-4845bf4420ec"
+      }
+    ],
+    "specialty:document:p75": [
+      {
+        "type": "item",
+        "sectionId": "specialty-ent-trauma",
+        "itemId": "i-70ac6c9216b7"
+      }
+    ],
+    "specialty:document:p79": [
+      {
+        "type": "item",
+        "sectionId": "specialty-ts-note",
+        "itemId": "i-d438ee695254"
+      }
+    ],
+    "specialty:document:p81": [
+      {
+        "type": "item",
+        "sectionId": "specialty-urology-note",
+        "itemId": "i-213038c73091"
+      }
+    ],
+    "specialty:document:p82": [
+      {
+        "type": "item",
+        "sectionId": "specialty-urology-note",
+        "itemId": "i-9193ebfde857"
+      }
+    ],
+    "specialty:document:p83": [
+      {
+        "type": "item",
+        "sectionId": "specialty-ureter-note",
+        "itemId": "i-b654a8a2342a"
+      }
+    ],
+    "specialty:document:p84": [
+      {
+        "type": "item",
+        "sectionId": "specialty-testicular-exam",
+        "itemId": "i-df22aa944202"
+      }
+    ],
+    "specialty:document:p87": [
+      {
+        "type": "item",
+        "sectionId": "specialty-eye-mixed",
+        "itemId": "i-7aea5eb1eac9"
+      }
+    ],
+    "specialty:document:p88": [
+      {
+        "type": "item",
+        "sectionId": "specialty-eye-mixed",
+        "itemId": "i-ddf34588da4c"
+      }
+    ],
+    "specialty:document:p89": [
+      {
+        "type": "item",
+        "sectionId": "specialty-eye-mixed",
+        "itemId": "i-8bbb47276c0f"
+      }
+    ],
+    "specialty:document:p90": [
+      {
+        "type": "item",
+        "sectionId": "specialty-eye-mixed",
+        "itemId": "i-7197bd65ed7c"
+      }
+    ],
+    "specialty:document:p91": [
+      {
+        "type": "item",
+        "sectionId": "specialty-eye-mixed",
+        "itemId": "i-e2ec400f622f"
+      }
+    ],
+    "specialty:document:p92": [
+      {
+        "type": "item",
+        "sectionId": "specialty-eye-mixed",
+        "itemId": "i-77b741c32397"
+      }
+    ],
+    "specialty:document:p93": [
+      {
+        "type": "item",
+        "sectionId": "specialty-eye-mixed",
+        "itemId": "i-615711b1c28d"
+      }
+    ],
+    "specialty:document:p86": [
+      {
+        "type": "item",
+        "sectionId": "specialty-eye-note",
+        "itemId": "i-5b4a713c8ccc"
+      }
+    ],
+    "specialty:document:p94": [
+      {
+        "type": "item",
+        "sectionId": "specialty-eye-note",
+        "itemId": "i-79589a8b1fcb"
+      }
+    ],
+    "specialty:document:p95": [
+      {
+        "type": "item",
+        "sectionId": "specialty-eye-note",
+        "itemId": "i-ad2d7e46a399"
+      }
+    ],
+    "specialty:document:p96": [
+      {
+        "type": "item",
+        "sectionId": "specialty-eye-note",
+        "itemId": "i-8994130e1760"
+      }
+    ],
+    "specialty:document:p100": [
+      {
+        "type": "item",
+        "sectionId": "specialty-os-exam",
+        "itemId": "i-af5c63fbac18"
+      }
+    ],
+    "specialty:document:p101": [
+      {
+        "type": "item",
+        "sectionId": "specialty-os-exam",
+        "itemId": "i-997259ca3d88"
+      }
+    ],
+    "specialty:document:p104": [
+      {
+        "type": "item",
+        "sectionId": "specialty-os-exam",
+        "itemId": "i-cb3b3ffe3c96"
+      }
+    ],
+    "specialty:document:p98": [
+      {
+        "type": "item",
+        "sectionId": "specialty-os-note",
+        "itemId": "i-09ee16c11b40"
+      }
+    ],
+    "specialty:document:p99": [
+      {
+        "type": "item",
+        "sectionId": "specialty-os-note",
+        "itemId": "i-e2b34c5ebbaf"
+      }
+    ],
+    "specialty:document:p102": [
+      {
+        "type": "item",
+        "sectionId": "specialty-os-note",
+        "itemId": "i-2545c7e2a8dc"
+      }
+    ],
+    "specialty:document:p103": [
+      {
+        "type": "item",
+        "sectionId": "specialty-os-note",
+        "itemId": "i-25cdc91b0d68"
+      }
+    ],
+    "specialty:document:p105": [
+      {
+        "type": "item",
+        "sectionId": "specialty-os-note",
+        "itemId": "i-f604b66270dd"
+      }
+    ],
+    "specialty:document:p107": [
+      {
+        "type": "item",
+        "sectionId": "specialty-ns-exam",
+        "itemId": "i-8640d6a97a1d"
+      }
+    ],
+    "specialty:document:p108": [
+      {
+        "type": "item",
+        "sectionId": "specialty-ns-note",
+        "itemId": "i-9d687c75ab92"
+      }
+    ],
+    "specialty:document:p110": [
+      {
+        "type": "item",
+        "sectionId": "specialty-dental-note",
+        "itemId": "i-958f2c6feda5"
+      }
+    ],
+    "specialty:document:p111": [
+      {
+        "type": "item",
+        "sectionId": "specialty-dental-note",
+        "itemId": "i-ba05b7c828dc"
+      }
+    ],
+    "specialty:document:p112": [
+      {
+        "type": "item",
+        "sectionId": "specialty-dental-note",
+        "itemId": "i-58351ee9178b"
+      }
+    ],
+    "specialty:document:p114": [
+      {
+        "type": "item",
+        "sectionId": "specialty-derm-note",
+        "itemId": "i-d2edc02ca070"
+      }
+    ],
+    "specialty:document:p115": [
+      {
+        "type": "item",
+        "sectionId": "specialty-derm-note",
+        "itemId": "i-61d3a33d316e"
+      }
+    ],
+    "specialty:document:p116": [
+      {
+        "type": "item",
+        "sectionId": "specialty-derm-note",
+        "itemId": "i-f323218dc964"
+      }
+    ],
+    "specialty:document:p122": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-history",
+        "itemId": "i-6f8e33003816"
+      }
+    ],
+    "specialty:document:p124": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-history",
+        "itemId": "i-778576738764"
+      }
+    ],
+    "specialty:document:p129": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-history",
+        "itemId": "i-a7bc51c5bb85"
+      }
+    ],
+    "specialty:document:p139": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-history",
+        "itemId": "i-961f5008bdcf"
+      }
+    ],
+    "specialty:document:p142": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-history",
+        "itemId": "i-ad50b672ee34"
+      }
+    ],
+    "specialty:document:p144": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-history",
+        "itemId": "i-910bf212bb88"
+      }
+    ],
+    "specialty:document:p146": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-history",
+        "itemId": "i-94f561fde7ff"
+      }
+    ],
+    "specialty:document:p125": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-exam",
+        "itemId": "i-d7e2879f1e8f"
+      }
+    ],
+    "specialty:document:p126": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-exam",
+        "itemId": "i-c575e2018e58"
+      }
+    ],
+    "specialty:document:p127": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-exam",
+        "itemId": "i-490b6b10d4bc"
+      }
+    ],
+    "specialty:document:p128": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-exam",
+        "itemId": "i-5c27e6ecd3cc"
+      }
+    ],
+    "specialty:document:p132": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-exam",
+        "itemId": "i-d2e5f3e38cba"
+      }
+    ],
+    "specialty:document:p134": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-exam",
+        "itemId": "i-8d83c2721b91"
+      }
+    ],
+    "specialty:document:p118": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-note",
+        "itemId": "i-d11f043333d1"
+      }
+    ],
+    "specialty:document:p119": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-note",
+        "itemId": "i-78dbce8c8189"
+      }
+    ],
+    "specialty:document:p120": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-note",
+        "itemId": "i-a423f3ca48ad"
+      }
+    ],
+    "specialty:document:p121": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-note",
+        "itemId": "i-b24c31f9a90d"
+      }
+    ],
+    "specialty:document:p123": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-note",
+        "itemId": "i-f2d4e89902ff"
+      }
+    ],
+    "specialty:document:p130": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-note",
+        "itemId": "i-8ecab46a3622"
+      }
+    ],
+    "specialty:document:p131": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-note",
+        "itemId": "i-c9409343c59c"
+      }
+    ],
+    "specialty:document:p133": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-note",
+        "itemId": "i-9b0a218fe89d"
+      }
+    ],
+    "specialty:document:p135": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-note",
+        "itemId": "i-1dc79737497c"
+      }
+    ],
+    "specialty:document:p136": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-note",
+        "itemId": "i-c75efef3b831"
+      }
+    ],
+    "specialty:document:p137": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-note",
+        "itemId": "i-458ef6a08c8d"
+      }
+    ],
+    "specialty:document:p138": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-note",
+        "itemId": "i-84806d1a23b4"
+      }
+    ],
+    "specialty:document:p140": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-note",
+        "itemId": "i-1ad0affbb779"
+      }
+    ],
+    "specialty:document:p141": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-note",
+        "itemId": "i-72c9613f0b30"
+      }
+    ],
+    "specialty:document:p143": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-note",
+        "itemId": "i-cd8b215fd60a"
+      }
+    ],
+    "specialty:document:p145": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-note",
+        "itemId": "i-1f6bef2735d5"
+      }
+    ],
+    "specialty:document:p149": [
+      {
+        "type": "item",
+        "sectionId": "specialty-poisoning-note",
+        "itemId": "i-a3449df4b509"
+      }
+    ],
+    "specialty:document:p150": [
+      {
+        "type": "item",
+        "sectionId": "specialty-poisoning-note",
+        "itemId": "i-0aa5ee2d5cb6"
+      }
+    ],
+    "specialty:document:p151": [
+      {
+        "type": "item",
+        "sectionId": "specialty-arrest-note",
+        "itemId": "i-ca5df71b46ea"
+      }
+    ],
+    "specialty:document:p153": [
+      {
+        "type": "item",
+        "sectionId": "specialty-arrest-note",
+        "itemId": "i-c55f6f1047ad"
+      }
+    ],
+    "specialty:document:p154": [
+      {
+        "type": "item",
+        "sectionId": "specialty-arrest-note",
+        "itemId": "i-cb4a2ca29896"
+      }
+    ],
+    "specialty:document:p155": [
+      {
+        "type": "item",
+        "sectionId": "specialty-arrest-note",
+        "itemId": "i-9ada2891ff80"
+      }
+    ],
+    "specialty:document:p156": [
+      {
+        "type": "item",
+        "sectionId": "specialty-arrest-note",
+        "itemId": "i-5687d670dc58"
+      }
+    ],
+    "specialty:document:p158": [
+      {
+        "type": "item",
+        "sectionId": "specialty-burn-mixed",
+        "itemId": "i-661de3f26302"
+      }
+    ],
+    "specialty:document:p160": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-general",
+        "itemId": "i-e8279d274e2d"
+      }
+    ],
+    "specialty:document:p161": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-general",
+        "itemId": "i-ab7207b869e5"
+      }
+    ],
+    "specialty:document:p162": [
+      {
+        "type": "item",
+        "sectionId": "specialty-trauma-general",
+        "itemId": "i-8ca4c668e154"
+      }
+    ],
     "np-pdf:page1": [
       {
         "type": "pdfAddition",
@@ -8865,6 +11123,60 @@
       }
     ],
     "handover:document:p104": [
+      {
+        "type": "structure",
+        "reason": "제목·구획·서식 필드. 원문 보존."
+      }
+    ],
+    "specialty:document:p1": [
+      {
+        "type": "structure",
+        "reason": "제목·구획·서식 필드. 원문 보존."
+      }
+    ],
+    "specialty:document:p2": [
+      {
+        "type": "structure",
+        "reason": "제목·구획·서식 필드. 원문 보존."
+      }
+    ],
+    "specialty:document:p16": [
+      {
+        "type": "structure",
+        "reason": "제목·구획·서식 필드. 원문 보존."
+      }
+    ],
+    "specialty:document:p32": [
+      {
+        "type": "structure",
+        "reason": "제목·구획·서식 필드. 원문 보존."
+      }
+    ],
+    "specialty:document:p58": [
+      {
+        "type": "structure",
+        "reason": "제목·구획·서식 필드. 원문 보존."
+      }
+    ],
+    "specialty:document:p148": [
+      {
+        "type": "structure",
+        "reason": "제목·구획·서식 필드. 원문 보존."
+      }
+    ],
+    "specialty:document:p152": [
+      {
+        "type": "structure",
+        "reason": "제목·구획·서식 필드. 원문 보존."
+      }
+    ],
+    "specialty:document:p157": [
+      {
+        "type": "structure",
+        "reason": "제목·구획·서식 필드. 원문 보존."
+      }
+    ],
+    "specialty:document:p159": [
       {
         "type": "structure",
         "reason": "제목·구획·서식 필드. 원문 보존."
