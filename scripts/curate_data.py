@@ -1368,22 +1368,30 @@ unassigned = [bid for bid in blocks if not assignments[bid]]
 if unassigned:
     raise ValueError("Unassigned source text: " + repr(unassigned))
 
-category_specs = [
-    ("01", "소화기", 1, False),
-    ("02", "순환기", 2, False),
-    ("03", "호흡기", 10, False),
-    ("04", "신장/비뇨기", 3, False),
-    ("05", "전신증상", 11, False),
-    ("06", "근골격/피부", 8, False),
-    ("07", "신경", 6, False),
-    ("12", "정신", 7, False),
-    ("08", "산부", 4, False),
-    ("09", "소아", 5, False),
-    ("10", "눈/이비인후", 9, False),
-    ("13", "외상", 12, False),
-    ("11", "상담", 13, True),
+home_groups = [
+    {"id": "adult", "name": "성인", "order": 1},
+    {"id": "pediatric", "name": "소아", "order": 2},
+    {"id": "psychiatric", "name": "정신", "order": 3},
 ]
-categories = [{"id": cid, "name": name, "order": order, "secondary": secondary} for cid, name, order, secondary in category_specs]
+category_specs = [
+    ("01", "소화기", 1, False, "adult"),
+    ("02", "순환기", 2, False, "adult"),
+    ("03", "호흡기", 8, False, "adult"),
+    ("04", "신장/비뇨기", 3, False, "adult"),
+    ("05", "전신증상", 9, False, "adult"),
+    ("06", "근골격/피부", 6, False, "adult"),
+    ("07", "신경", 5, False, "adult"),
+    ("12", "정신", 1, False, "psychiatric"),
+    ("08", "산부", 4, False, "adult"),
+    ("09", "소아", 1, False, "pediatric"),
+    ("10", "눈/이비인후", 7, False, "adult"),
+    ("13", "외상", 10, False, "adult"),
+    ("11", "상담", 2, True, "psychiatric"),
+]
+categories = [
+    {"id": cid, "name": name, "order": order, "secondary": secondary, "homeGroupId": home_group_id}
+    for cid, name, order, secondary, home_group_id in category_specs
+]
 catalog = {
  "01": [("abdominal-pain","복통",["복부 통증","급성복통","abdominal pain","abd pain","AP"]),("dyspepsia","소화불량 / 만성 복통",["dyspepsia"]),("hematemesis","토혈",["hematemesis"]),("bloody-stool","혈변",["hematochezia","melena"]),("vomiting","오심 구토",["오심 / 구토","구역","nausea","vomiting","N/V","emesis"]),("constipation","변비",["constipation"]),("diarrhea","설사",["diarrhea"]),("jaundice","황달",["jaundice"])],
  "02": [("chest-pain","흉통",["가슴통증","가슴 통증","chest pain","CP"]),("syncope","실신",["syncope","LOC","blackout"]),("palpitation","두근거림",["palpitation","palpitations"]),("hypertension","고혈압",["hypertension","HTN"]),("dyslipidemia","이상지질혈증",["dyslipidemia"]),("cardiac-arrest","심정지 / DOA",["심정지","cardiac arrest","arrest","CPR","DOA","ROSC"])],
@@ -1490,7 +1498,7 @@ symptom_abbreviations = [
     {"label": "FUND HIS", "expansion": ["Frequency", "Urgency", "Nocturia", "Dysuria", "Hesitancy", "Incomplete emptying", "Straining"]},
 ]
 
-data = {"schemaVersion": 1, "contentVersion": "2026-09-28-beta.21", "categories": categories,
+data = {"schemaVersion": 1, "contentVersion": "2026-09-28-beta.22", "homeGroups": home_groups, "categories": categories,
         "sections": list(groups.values()), "complaints": complaints,
         "symptomAbbreviations": symptom_abbreviations,
         "referenceSections": ["routine-history","routine-exam","handover-general","specialty-general-note"]}
@@ -1540,7 +1548,8 @@ def render_section(sid):
     lines.append("")
 for sid in data["referenceSections"]:
     render_section(sid)
-for cat in sorted(categories, key=lambda x:x["order"]):
+home_group_order = {group["id"]: group["order"] for group in home_groups}
+for cat in sorted(categories, key=lambda x:(home_group_order[x["homeGroupId"]], x["order"])):
     lines.extend([f"## {cat['id']} {cat['name']}", ""])
     for complaint in [c for c in complaints if c["categoryId"]==cat["id"]]:
         lines.extend([f"### {complaint['name']}", ""])

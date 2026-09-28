@@ -14,7 +14,8 @@
   let complaints;
 
   const escape = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
-  const orderedCategories = () => [...state.data.categories].sort((a, b) => Number(a.secondary) - Number(b.secondary) || a.order - b.order);
+  const orderedHomeGroups = () => [...state.data.homeGroups].sort((a, b) => a.order - b.order);
+  const orderedCategories = () => [...state.data.categories].sort((a, b) => a.order - b.order || Number(a.secondary) - Number(b.secondary));
   const categoryOf = (id) => state.data.categories.find((category) => category.id === id);
   const ccUrl = (id) => `#cc/${encodeURIComponent(id)}`;
   const hasContent = (complaint) => complaint.status !== "missing" && [...complaint.sectionIds, ...complaint.sharedSectionIds].some((id) => sections.get(id)?.items.length);
@@ -44,12 +45,20 @@
   function renderHomeResults() {
     const matching = state.data.complaints.filter(hasContent);
     const categories = orderedCategories().filter((category) => matching.some((complaint) => complaint.categoryId === category.id));
-    const categoryCards = categories.map((category) => {
+    const categoryMarkup = (category, headingTag = "h3", headingId = `category-${category.id}`) => {
       const items = matching.filter((complaint) => complaint.categoryId === category.id).sort((a, b) => a.order - b.order);
       if (!items.length) return "";
-      return `<section class="category${category.secondary ? " secondary" : ""}${category.id === "09" ? " pediatric" : ""}" aria-labelledby="category-${escape(category.id)}"><div class="category-title"><h3 id="category-${escape(category.id)}">${escape(category.name)}</h3></div><div class="category-cards">${items.map(complaintCard).join("")}</div></section>`;
+      return `<section class="category${category.secondary ? " secondary" : ""}${category.id === "09" ? " pediatric" : ""}" aria-labelledby="${escape(headingId)}"><div class="category-title"><${headingTag} id="${escape(headingId)}">${escape(category.name)}</${headingTag}></div><div class="category-cards">${items.map(complaintCard).join("")}</div></section>`;
+    };
+    const groupMarkup = orderedHomeGroups().map((group) => {
+      const groupCategories = categories.filter((category) => category.homeGroupId === group.id);
+      if (!groupCategories.length) return "";
+      if (groupCategories.length === 1 && groupCategories[0].name === group.name) {
+        return `<section class="home-group home-group-single">${categoryMarkup(groupCategories[0], "h2", `home-group-${group.id}`)}</section>`;
+      }
+      return `<section class="home-group" aria-labelledby="home-group-${escape(group.id)}"><h2 class="home-group-title" id="home-group-${escape(group.id)}">${escape(group.name)}</h2><div class="category-grid">${groupCategories.map((category) => categoryMarkup(category)).join("")}</div></section>`;
     }).join("");
-    document.querySelector("#home-results").innerHTML = `<section aria-labelledby="catalog-title"><div class="section-heading catalog-heading"><h2 id="catalog-title">초진</h2></div><div class="category-grid">${categoryCards}</div></section>`;
+    document.querySelector("#home-results").innerHTML = groupMarkup;
   }
 
   function displayItemText(item) {
@@ -215,7 +224,7 @@
             ? legacyCompactView === "1"
             : true;
       } catch {}
-      const response = await fetch("./data/chief-complaints.json?v=21");
+      const response = await fetch("./data/chief-complaints.json?v=22");
       if (!response.ok) throw new Error("문진 자료를 불러오지 못했습니다.");
       state.data = await response.json();
       sections = new Map(state.data.sections.map((section) => [section.id, section]));

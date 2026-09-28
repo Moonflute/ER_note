@@ -1,84 +1,114 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-09-28-beta.21",
+  "contentVersion": "2026-09-28-beta.22",
+  "homeGroups": [
+    {
+      "id": "adult",
+      "name": "성인",
+      "order": 1
+    },
+    {
+      "id": "pediatric",
+      "name": "소아",
+      "order": 2
+    },
+    {
+      "id": "psychiatric",
+      "name": "정신",
+      "order": 3
+    }
+  ],
   "categories": [
     {
       "id": "01",
       "name": "소화기",
       "order": 1,
-      "secondary": false
+      "secondary": false,
+      "homeGroupId": "adult"
     },
     {
       "id": "02",
       "name": "순환기",
       "order": 2,
-      "secondary": false
+      "secondary": false,
+      "homeGroupId": "adult"
     },
     {
       "id": "03",
       "name": "호흡기",
-      "order": 10,
-      "secondary": false
+      "order": 8,
+      "secondary": false,
+      "homeGroupId": "adult"
     },
     {
       "id": "04",
       "name": "신장/비뇨기",
       "order": 3,
-      "secondary": false
+      "secondary": false,
+      "homeGroupId": "adult"
     },
     {
       "id": "05",
       "name": "전신증상",
-      "order": 11,
-      "secondary": false
+      "order": 9,
+      "secondary": false,
+      "homeGroupId": "adult"
     },
     {
       "id": "06",
       "name": "근골격/피부",
-      "order": 8,
-      "secondary": false
+      "order": 6,
+      "secondary": false,
+      "homeGroupId": "adult"
     },
     {
       "id": "07",
       "name": "신경",
-      "order": 6,
-      "secondary": false
+      "order": 5,
+      "secondary": false,
+      "homeGroupId": "adult"
     },
     {
       "id": "12",
       "name": "정신",
-      "order": 7,
-      "secondary": false
+      "order": 1,
+      "secondary": false,
+      "homeGroupId": "psychiatric"
     },
     {
       "id": "08",
       "name": "산부",
       "order": 4,
-      "secondary": false
+      "secondary": false,
+      "homeGroupId": "adult"
     },
     {
       "id": "09",
       "name": "소아",
-      "order": 5,
-      "secondary": false
+      "order": 1,
+      "secondary": false,
+      "homeGroupId": "pediatric"
     },
     {
       "id": "10",
       "name": "눈/이비인후",
-      "order": 9,
-      "secondary": false
+      "order": 7,
+      "secondary": false,
+      "homeGroupId": "adult"
     },
     {
       "id": "13",
       "name": "외상",
-      "order": 12,
-      "secondary": false
+      "order": 10,
+      "secondary": false,
+      "homeGroupId": "adult"
     },
     {
       "id": "11",
       "name": "상담",
-      "order": 13,
-      "secondary": true
+      "order": 2,
+      "secondary": true,
+      "homeGroupId": "psychiatric"
     }
   ],
   "sections": [

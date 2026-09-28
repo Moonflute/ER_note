@@ -25,15 +25,21 @@ sources = {s["id"]: s for s in provenance["sources"]}
 blocks = {b["id"]: b for s in sources.values() for b in s["blocks"]}
 sections = {s["id"]: s for s in data["sections"]}
 items = {i["id"]: i for s in sections.values() for i in s["items"]}
-categories = {c["id"] for c in data["categories"]}
+category_records = {c["id"]: c for c in data["categories"]}
+categories = set(category_records)
+home_groups = sorted(data["homeGroups"], key=lambda group: group["order"])
+home_group_order = {group["id"]: group["order"] for group in home_groups}
 abbreviations = data.get("symptomAbbreviations", [])
 abbreviation_labels = {a["label"] for a in abbreviations}
-visible_category_order = [c["name"] for c in sorted(data["categories"], key=lambda c: (c["secondary"], c["order"])) if c["id"] in {"01", "02", "04", "08", "09", "12", "07", "06", "10", "13"}]
+visible_category_ids = {cc["categoryId"] for cc in data["complaints"] if cc["status"] != "missing"}
+visible_category_order = [c["name"] for c in sorted(data["categories"], key=lambda c: (home_group_order[c["homeGroupId"]], c["order"])) if c["id"] in visible_category_ids]
 require(len(sections) == len(data["sections"]), "Duplicate section IDs")
 require(len(items) == sum(len(s["items"]) for s in data["sections"]), "Duplicate item IDs")
 require(set(blocks) == set(provenance["assignments"]), "Source blocks not completely accounted for")
 require(len({c["id"] for c in data["complaints"]}) == len(data["complaints"]), "Duplicate complaint IDs")
-require(visible_category_order == ["소화기", "순환기", "신장/비뇨기", "산부", "소아", "신경", "정신", "근골격/피부", "눈/이비인후", "외상"], "Unexpected home category order")
+require([(group["id"], group["name"]) for group in home_groups] == [("adult", "성인"), ("pediatric", "소아"), ("psychiatric", "정신")], "Unexpected home group order")
+require(all(category["homeGroupId"] in home_group_order for category in data["categories"]), "Category has an unknown home group")
+require(visible_category_order == ["소화기", "순환기", "신장/비뇨기", "산부", "신경", "근골격/피부", "눈/이비인후", "외상", "소아", "정신"], "Unexpected home category order")
 require("00" not in categories and not any(cc["categoryId"] == "00" for cc in data["complaints"]), "Admission management category must not be shown")
 complaint_categories = {cc["id"]: cc["categoryId"] for cc in data["complaints"]}
 require(all(complaint_categories.get(item_id) == "13" for item_id in ("trauma", "head-trauma", "inhalation-burn", "poisoning")), "Trauma category membership is incorrect")
@@ -190,10 +196,11 @@ index_source = (ROOT / "index.html").read_text(encoding="utf-8")
 service_worker_source = (ROOT / "sw.js").read_text(encoding="utf-8")
 require("common-shortcut" not in app_source and "#common" not in app_source, "Removed common shortcut is still rendered")
 require("catalog-tools" not in app_source and '${matching.length}' not in app_source, "Home catalog count is still rendered")
+require(all(token in app_source for token in ("orderedHomeGroups", "home-group-title", "home-group-single")), "Home groups are not rendered")
 require('serviceWorker.register("./sw.js")' in app_source, "Service worker is not registered")
-for asset in ("./styles.css?v=21", "./app.js?v=33", "./data/chief-complaints.json?v=21"):
+for asset in ("./styles.css?v=22", "./app.js?v=34", "./data/chief-complaints.json?v=22"):
     require(asset in service_worker_source, f"Offline cache asset is stale: {asset}")
-require('./styles.css?v=21' in index_source and './app.js?v=33' in index_source, "HTML asset versions do not match offline cache")
+require('./styles.css?v=22' in index_source and './app.js?v=34' in index_source, "HTML asset versions do not match offline cache")
 for sid in ("np-ex1", "np-template", "np-ex2", "np-ex3", "np-response"):
     require(sections[sid]["kind"] == "example", f"Example placed in main checklist: {sid}")
 for source in sources.values():
