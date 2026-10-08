@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-10-08.2",
+  "contentVersion": "2026-10-08.3",
   "sources": [
     {
       "id": "tint-abd",
@@ -790,7 +790,7 @@
       "title": "Approach to the Patient With Headache — Professional Edition",
       "url": "https://www.msdmanuals.com/professional/neurologic-disorders/headache/approach-to-the-patient-with-headache",
       "publisher": "MSD Manual",
-      "locator": "Physical examination; Red flags; secondary causes — GCA, ocular/ICP findings",
+      "locator": "History; examination; Red flags; table of primary and secondary causes — migraine, tension, GCA, ocular/ICP findings",
       "accessedAt": "2026-10-08",
       "access": "full-text"
     },
@@ -1016,6 +1016,24 @@
       "url": "https://www.nice.org.uk/guidance/cg113/resources/treating-generalised-anxiety-disorder-and-panic-disorder-in-adults-pdf-176693878213",
       "publisher": "NICE",
       "locator": "Panic disorder, page 10 — intense fear and physical symptoms; emergency physical-cause assessment",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "aci-vertigo",
+      "title": "Emergency Care Institute: Vertigo",
+      "url": "https://aci.health.nsw.gov.au/networks/eci/clinical/tools/vertigo",
+      "publisher": "NSW Agency for Clinical Innovation",
+      "locator": "Examination; HINTS components; peripheral and central nystagmus; August 2026 revision",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "titrate",
+      "title": "TiTrATE: A Novel Approach to Diagnosing Acute Dizziness and Vertigo",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4522574/",
+      "publisher": "Neurologic Clinics (Newman-Toker and Edlow); NIH PMC author manuscript",
+      "locator": "2015;33(3):577–599, doi:10.1016/j.ncl.2015.04.011; Triggered EVS — triggers versus exacerbating features",
       "accessedAt": "2026-10-08",
       "access": "full-text"
     }
@@ -2376,6 +2394,216 @@
           "grace3",
           "tint-vertigo"
         ]
+      },
+      "flow": {
+        "entry": "지속? 반복 발작? · 자세/기립으로 유발?",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "Duration · Trigger"
+          }
+        ],
+        "sourceIds": [
+          "grace3",
+          "titrate"
+        ],
+        "stages": [
+          {
+            "id": "central-warning",
+            "question": "먼저 신경·보행 위험?",
+            "priority": "urgent",
+            "sourceIds": [
+              "grace3",
+              "aci-vertigo"
+            ],
+            "branches": [
+              {
+                "id": "neuro-gait",
+                "when": "새 신경증상·보행 불가",
+                "check": "실조 · dysmetria",
+                "consider": "후순환 뇌졸중 등",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "후순환 뇌졸중"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Gait · Coordination"
+                  }
+                ],
+                "sourceIds": [
+                  "grace3",
+                  "tint-vertigo",
+                  "msd-coordination"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "continuous",
+            "question": "지속+자발안진 → HINTS (숙련자)",
+            "priority": "standard",
+            "sourceIds": [
+              "grace3"
+            ],
+            "branches": [
+              {
+                "id": "central-hints",
+                "when": "하나라도 해당",
+                "check": "정상 HIT / 방향전환 주시안진 / skew(+)",
+                "consider": "중추 의심",
+                "conceptRefs": [
+                  {
+                    "kind": "pex",
+                    "key": "HINTS"
+                  }
+                ],
+                "sourceIds": [
+                  "tint-vertigo",
+                  "grace3"
+                ]
+              },
+              {
+                "id": "peripheral-hints",
+                "when": "모두 말초 패턴",
+                "check": "비정상 HIT·단방향 수평 안진·skew(-)",
+                "consider": "전정신경염 가능",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "전정신경염"
+                  },
+                  {
+                    "kind": "hx",
+                    "key": "Hearing · Neuro symptom"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-vertigo",
+                  "grace3",
+                  "tint-vertigo"
+                ],
+                "note": "새 청력↓면 중추 재평가"
+              }
+            ]
+          },
+          {
+            "id": "positional",
+            "question": "머리 자세로 유발되는 짧은 발작",
+            "priority": "standard",
+            "sourceIds": [
+              "grace3",
+              "aao-bppv",
+              "titrate"
+            ],
+            "branches": [
+              {
+                "id": "posterior-bppv",
+                "when": "Dix-Hallpike",
+                "check": "짧은 상향·회선 안진+vertigo",
+                "consider": "후반고리관 BPPV",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "BPPV"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Dix-Hallpike"
+                  }
+                ],
+                "sourceIds": [
+                  "grace3",
+                  "tint-vertigo",
+                  "aao-bppv"
+                ]
+              },
+              {
+                "id": "lateral-bppv",
+                "when": "DH(-) / 수평 안진",
+                "check": "Head-roll: 유발 수평 안진",
+                "consider": "수평반고리관 BPPV",
+                "conceptRefs": [
+                  {
+                    "kind": "pex",
+                    "key": "Supine head-roll"
+                  }
+                ],
+                "sourceIds": [
+                  "aao-bppv",
+                  "tint-vertigo"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "other-episodes",
+            "question": "그 밖의 발작·유발 상황",
+            "priority": "standard",
+            "sourceIds": [
+              "grace3",
+              "nice-syncope",
+              "msd-meniere"
+            ],
+            "branches": [
+              {
+                "id": "meniere",
+                "when": "자발 반복 발작",
+                "check": "변동 청력↓·이명·귀 먹먹함",
+                "consider": "메니에르 의심",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "메니에르"
+                  }
+                ],
+                "sourceIds": [
+                  "grace3",
+                  "msd-meniere"
+                ],
+                "note": "자발 발작은 TIA도 감별"
+              },
+              {
+                "id": "orthostatic",
+                "when": "일어설 때",
+                "check": "실신감·기립 BP↓",
+                "consider": "기립성·실신 전단계",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "기립성·실신 전단계"
+                  }
+                ],
+                "sourceIds": [
+                  "nice-syncope"
+                ],
+                "note": "탈수/약물 확인"
+              }
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "text": "지속형에 자발안진 없으면 보행/실조 평가. 움직여 더 어지러운 것 ≠ 자세 유발 발작.",
+            "sourceIds": [
+              "grace3",
+              "titrate"
+            ]
+          },
+          {
+            "text": "Romberg: 눈 감을 때 악화 → 위치감각/전정 이상; 단독 중추/말초 구분 불가.",
+            "conceptRefs": [
+              {
+                "kind": "pex",
+                "key": "Romberg"
+              }
+            ],
+            "sourceIds": [
+              "msd-sensation"
+            ]
+          }
+        ]
       }
     },
     {
@@ -2503,6 +2731,199 @@
         "sourceIds": [
           "tint-headache",
           "nice-meningitis"
+        ]
+      },
+      "flow": {
+        "entry": "최대 강도까지 얼마나 빨리? · 처음/평소와 다른 두통?",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "Onset · 양상 변화"
+          }
+        ],
+        "sourceIds": [
+          "aci-headache",
+          "msd-headache-exam"
+        ],
+        "stages": [
+          {
+            "id": "danger",
+            "question": "위험 단서? 해당하는 갈래부터 확인",
+            "priority": "urgent",
+            "sourceIds": [
+              "aci-headache",
+              "msd-headache-exam"
+            ],
+            "branches": [
+              {
+                "id": "sah",
+                "when": "갑자기 최대 강도",
+                "check": "± 실신/구토 · 경부강직",
+                "consider": "SAH 등 혈관성",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "SAH"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Neck stiffness"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-headache",
+                  "tint-headache",
+                  "nice-meningitis",
+                  "msd-headache-exam"
+                ]
+              },
+              {
+                "id": "infection",
+                "when": "발열 / 의식 변화",
+                "check": "경부강직 · 의식/반응",
+                "consider": "수막염·뇌염",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "수막염·뇌염"
+                  },
+                  {
+                    "kind": "hx",
+                    "key": "동반 증상 · Trauma"
+                  }
+                ],
+                "sourceIds": [
+                  "nice-meningitis",
+                  "aci-headache"
+                ]
+              },
+              {
+                "id": "focal",
+                "when": "국소 이상 / 외상",
+                "check": "편측 약화·언어/시야 이상",
+                "consider": "출혈·혈관/구조 병변",
+                "conceptRefs": [
+                  {
+                    "kind": "pex",
+                    "key": "Neurologic deficit"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-headache-exam",
+                  "aci-headache",
+                  "tint-headache"
+                ]
+              },
+              {
+                "id": "gca",
+                "when": ">50세 새 두통",
+                "check": "턱 파행·시각 증상·측두 Td",
+                "consider": "GCA",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "GCA"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Fundus · 눈 · 측두동맥"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-headache-exam"
+                ]
+              },
+              {
+                "id": "icp",
+                "when": "점점 악화",
+                "check": "Fundus: 유두부종",
+                "consider": "ICP 상승",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "ICP 상승·안과 응급"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-headache-exam"
+                ]
+              },
+              {
+                "id": "glaucoma",
+                "when": "안통·충혈·시력↓",
+                "check": "중간산대·고정 동공",
+                "consider": "폐쇄각녹내장",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "ICP 상승·안과 응급"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-headache-exam"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "pattern",
+            "question": "이차성 위험 평가 후 → 반복되는 유사 양상?",
+            "priority": "standard",
+            "sourceIds": [
+              "msd-headache-exam"
+            ],
+            "branches": [
+              {
+                "id": "migraine",
+                "when": "박동성",
+                "check": "오심 · 빛/소리 민감",
+                "consider": "편두통",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "편두통"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-headache-exam",
+                  "aci-headache",
+                  "tint-headache"
+                ]
+              },
+              {
+                "id": "tension",
+                "when": "압박성",
+                "check": "목/어깨 Td · 근육 통증",
+                "consider": "긴장성·근육성",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "긴장성·근육성"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Nuchal · Shoulder tenderness"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-headache-exam",
+                  "aci-headache",
+                  "tint-neck",
+                  "nice-meningitis"
+                ],
+                "note": "근육 압통 ≠ 경부강직"
+              }
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "text": "외상·항응고제·암/면역저하도 이차성 위험. 여러 갈래에 동시에 해당할 수 있음.",
+            "sourceIds": [
+              "aci-headache",
+              "msd-headache-exam"
+            ]
+          }
         ]
       }
     },

@@ -18,8 +18,10 @@ def require(condition, message):
         errors.append(message)
 
 
-def keys(node, expected, location):
-    require(set(node) == set(expected.split()), f"Unexpected fields: {location}")
+def keys(node, expected, location, optional=""):
+    fields = set(node)
+    required = set(expected.split())
+    require(required <= fields <= required | set(optional.split()), f"Unexpected fields: {location}")
 
 
 def text(value, maximum, location):
@@ -69,9 +71,71 @@ def references(node, location):
     node_count += 1
 
 
+def validate_flow(concept):
+    complaint_id = concept["complaintId"]
+    flow = concept["flow"]
+    keys(flow, "entry conceptRefs sourceIds stages notes", complaint_id + ".flow")
+    text(flow["entry"], 80, complaint_id + ".flow.entry")
+    references(flow, complaint_id + ".flow")
+    clinical = [flow["entry"], concept["caution"]["text"]]
+    canonical = {(kind, item.get("label", item.get("disease"))): item
+                 for kind in ("differentials", "hx", "pex") for item in concept[kind]}
+    covered = set()
+
+    def concept_refs(node, location):
+        pairs = []
+        for ref in node["conceptRefs"]:
+            keys(ref, "kind key", location + ".conceptRefs")
+            pair = (ref["kind"], ref["key"])
+            require(pair in canonical, f"Unknown clinical concept: {location} {pair}")
+            if pair in canonical:
+                require(set(canonical[pair]["sourceIds"]) <= set(node["sourceIds"]),
+                        f"Original concept citations lost: {location} {pair}")
+            pairs.append(pair)
+        require(bool(pairs) and len(pairs) == len(set(pairs)), f"Missing/duplicate concept refs: {location}")
+        covered.update(pairs)
+
+    concept_refs(flow, complaint_id + ".flow")
+    require(bool(flow["stages"]), f"Empty flow stages: {complaint_id}")
+    ids = []
+    for stage in flow["stages"]:
+        location = complaint_id + ".flow." + stage["id"]
+        keys(stage, "id question priority sourceIds branches", location)
+        ids.append(stage["id"])
+        require(stage["priority"] in ("urgent", "standard"), f"Unknown clinical priority: {location}")
+        text(stage["question"], 80, location + ".question")
+        clinical.append(stage["question"])
+        references(stage, location)
+        require(bool(stage["branches"]), f"Empty branches: {location}")
+        for branch in stage["branches"]:
+            branch_location = location + "." + branch["id"]
+            keys(branch, "id when check consider conceptRefs sourceIds", branch_location, "note")
+            ids.append(branch["id"])
+            for field in ("when", "check", "consider"):
+                text(branch[field], 80, branch_location + "." + field)
+                clinical.append(branch[field])
+            if "note" in branch:
+                text(branch["note"], 80, branch_location + ".note")
+                clinical.append(branch["note"])
+            references(branch, branch_location)
+            concept_refs(branch, branch_location)
+    for index, note in enumerate(flow["notes"]):
+        location = f"{complaint_id}.flow.notes[{index}]"
+        keys(note, "text sourceIds", location, "conceptRefs")
+        text(note["text"], 80, location)
+        clinical.append(note["text"])
+        references(note, location)
+        if "conceptRefs" in note:
+            concept_refs(note, location)
+    require(all(re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", id) for id in ids)
+            and len(ids) == len(set(ids)), f"Invalid/duplicate flow IDs: {complaint_id}")
+    require(covered == set(canonical), f"Clinical meaning lost from flow: {complaint_id} {set(canonical) - covered}")
+    return clinical
+
+
 for concept in data["complaints"]:
     complaint_id = concept["complaintId"]
-    keys(concept, "complaintId scope differentials hx pex caution", complaint_id)
+    keys(concept, "complaintId scope differentials hx pex caution", complaint_id, "flow")
     if complaint_id not in available:
         continue
     complaint = available[complaint_id]
@@ -106,6 +170,8 @@ for concept in data["complaints"]:
     text(concept["caution"]["text"], 80, complaint_id + ".caution.text")
     clinical_text.append(concept["caution"]["text"])
     references(concept["caution"], complaint_id + ".caution")
+    if "flow" in concept:
+        clinical_text = validate_flow(concept)
     length = sum(map(len, clinical_text))
     if length > 500:
         dense.append((complaint_id, length))

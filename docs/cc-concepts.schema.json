@@ -56,6 +56,62 @@
         "sourceIds": { "$ref": "#/$defs/sourceIds" }
       }
     },
+    "conceptRef": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kind", "key"],
+      "properties": {
+        "kind": { "enum": ["differentials", "hx", "pex"] },
+        "key": { "$ref": "#/$defs/text" }
+      }
+    },
+    "conceptRefs": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": { "$ref": "#/$defs/conceptRef" }
+    },
+    "flowBranch": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "when", "check", "consider", "conceptRefs", "sourceIds"],
+      "properties": {
+        "id": { "$ref": "#/$defs/text" },
+        "when": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "check": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "consider": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "note": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "conceptRefs": { "$ref": "#/$defs/conceptRefs" },
+        "sourceIds": { "$ref": "#/$defs/sourceIds" }
+      }
+    },
+    "flowStage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "question", "priority", "sourceIds", "branches"],
+      "properties": {
+        "id": { "$ref": "#/$defs/text" },
+        "question": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "priority": { "enum": ["urgent", "standard"] },
+        "sourceIds": { "$ref": "#/$defs/sourceIds" },
+        "branches": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/flowBranch" } }
+      }
+    },
+    "flowNote": {
+      "type": "object", "additionalProperties": false,
+      "required": ["text", "sourceIds"],
+      "properties": {
+        "text": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "conceptRefs": { "$ref": "#/$defs/conceptRefs" },
+        "sourceIds": { "$ref": "#/$defs/sourceIds" }
+      }
+    },
+    "flow": {
+      "type": "object", "additionalProperties": false,
+      "required": ["entry", "conceptRefs", "sourceIds", "stages", "notes"],
+      "properties": {
+        "entry": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "conceptRefs": { "$ref": "#/$defs/conceptRefs" },
+        "sourceIds": { "$ref": "#/$defs/sourceIds" },
+        "stages": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/flowStage" } },
+        "notes": { "type": "array", "items": { "$ref": "#/$defs/flowNote" } }
+      }
+    },
     "complaint": {
       "type": "object", "additionalProperties": false,
       "required": ["complaintId", "scope", "differentials", "hx", "pex", "caution"],
@@ -65,7 +121,8 @@
         "differentials": { "type": "array", "minItems": 3, "items": { "$ref": "#/$defs/differential" } },
         "hx": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/meaning" } },
         "pex": { "type": "array", "minItems": 2, "items": { "$ref": "#/$defs/meaning" } },
-        "caution": { "$ref": "#/$defs/caution" }
+        "caution": { "$ref": "#/$defs/caution" },
+        "flow": { "$ref": "#/$defs/flow" }
       }
     }
   }

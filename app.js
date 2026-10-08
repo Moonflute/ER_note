@@ -118,9 +118,17 @@
     return referenceGroupMarkup({ title: section.title, items: section.items });
   }
 
+  function conceptFlowMarkup(concept) {
+    const { flow } = concept;
+    const branchMarkup = (branch) => `<li class="concept-flow-branch"><strong class="concept-flow-condition">${escape(branch.when)}</strong><span class="concept-flow-arrow" aria-hidden="true">→</span><span class="concept-flow-check"><span class="sr-only">추가 확인: </span>${escape(branch.check)}${branch.note ? `<small>${escape(branch.note)}</small>` : ""}</span><span class="concept-flow-arrow" aria-hidden="true">→</span><strong class="concept-flow-result"><span class="sr-only">의심 질환: </span>${escape(branch.consider)}</strong></li>`;
+    const stages = flow.stages.map((stage) => `<section class="concept-flow-stage${stage.priority === "urgent" ? " urgent" : ""}" aria-labelledby="flow-${escape(stage.id)}"><h2 id="flow-${escape(stage.id)}">${escape(stage.question)}</h2><ul class="concept-flow-branches">${stage.branches.map(branchMarkup).join("")}</ul></section>`).join("");
+    return `<div class="concept-summary concept-flow"><p class="concept-flow-entry">${escape(flow.entry)}</p><span class="concept-flow-down" aria-hidden="true">↓</span><div class="concept-flow-labels" aria-hidden="true"><span>해당 양상</span><span>추가 확인</span><span>의심</span></div>${stages}${flow.notes.map((note) => `<p class="concept-flow-note">${escape(note.text)}</p>`).join("")}<p class="concept-caution">${escape(concept.caution.text)}</p></div>`;
+  }
+
   function conceptMarkup(complaint) {
     const concept = state.concepts.get(complaint.id);
     if (!concept) return '<p class="concept-error" role="status">개념 자료를 불러오지 못했습니다. <button class="text-button reset-button" type="button" id="retry-concepts">다시 불러오기</button></p>';
+    if (concept.flow) return conceptFlowMarkup(concept);
     const meanings = (kind, title) => concept[kind].length
       ? `<section class="concept-section"><h2>${title}</h2><dl class="concept-meanings">${concept[kind].map((item) => `<div><dt>${escape(item.label)}</dt><dd>${escape(item.meaning)}</dd></div>`).join("")}</dl></section>`
       : "";
@@ -271,7 +279,7 @@
 
   async function loadConcepts() {
     try {
-      const response = await fetch("./data/cc-concepts.json?v=2");
+      const response = await fetch("./data/cc-concepts.json?v=3");
       if (!response.ok) throw new Error("개념 자료를 불러오지 못했습니다.");
       const data = await response.json();
       state.concepts = new Map(data.complaints.map((concept) => [concept.complaintId, concept]));
