@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-10-08.3",
+  "contentVersion": "2026-10-08.4",
   "sources": [
     {
       "id": "tint-abd",
@@ -1024,7 +1024,7 @@
       "title": "Emergency Care Institute: Vertigo",
       "url": "https://aci.health.nsw.gov.au/networks/eci/clinical/tools/vertigo",
       "publisher": "NSW Agency for Clinical Innovation",
-      "locator": "Examination; HINTS components; peripheral and central nystagmus; August 2026 revision",
+      "locator": "Introduction; History; Examination; HINTS components; peripheral/central nystagmus; August 2026 revision",
       "accessedAt": "2026-10-08",
       "access": "full-text"
     },
@@ -2304,6 +2304,18 @@
       ],
       "hx": [
         {
+          "label": "TRS · 양상",
+          "meaning": "회전감/실신감/불균형을 확인; 느낌만으로 원인 확정 불가",
+          "itemIds": [
+            "dizz-hx-trs",
+            "dizz-hx-pattern"
+          ],
+          "sourceIds": [
+            "aci-vertigo",
+            "grace3"
+          ]
+        },
+        {
           "label": "Duration · Trigger",
           "meaning": "지속/발작성·자세 유발로 분류",
           "itemIds": [
@@ -2396,21 +2408,31 @@
         ]
       },
       "flow": {
-        "entry": "지속? 반복 발작? · 자세/기립으로 유발?",
+        "entry": "TRS? → Duration·유발 상황 → Ear/Neuro Sx → 안진·보행",
         "conceptRefs": [
           {
             "kind": "hx",
+            "key": "TRS · 양상"
+          },
+          {
+            "kind": "hx",
             "key": "Duration · Trigger"
+          },
+          {
+            "kind": "hx",
+            "key": "Hearing · Neuro symptom"
           }
         ],
         "sourceIds": [
+          "aci-vertigo",
           "grace3",
+          "tint-vertigo",
           "titrate"
         ],
         "stages": [
           {
             "id": "central-warning",
-            "question": "먼저 신경·보행 위험?",
+            "question": "동반 신경증상·심한 보행 이상?",
             "priority": "urgent",
             "sourceIds": [
               "grace3",
@@ -2584,6 +2606,13 @@
           }
         ],
         "notes": [
+          {
+            "text": "TRS(+)/(-)만으로 중추/말초 판별·뇌졸중 배제 불가.",
+            "sourceIds": [
+              "grace3",
+              "aci-vertigo"
+            ]
+          },
           {
             "text": "지속형에 자발안진 없으면 보행/실조 평가. 움직여 더 어지러운 것 ≠ 자세 유발 발작.",
             "sourceIds": [

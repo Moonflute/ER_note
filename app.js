@@ -279,7 +279,7 @@
 
   async function loadConcepts() {
     try {
-      const response = await fetch("./data/cc-concepts.json?v=3");
+      const response = await fetch("./data/cc-concepts.json?v=4");
       if (!response.ok) throw new Error("개념 자료를 불러오지 못했습니다.");
       const data = await response.json();
       state.concepts = new Map(data.complaints.map((concept) => [concept.complaintId, concept]));
@@ -299,7 +299,7 @@
             ? legacyCompactView === "1"
             : true;
       } catch {}
-      const [response] = await Promise.all([fetch("./data/chief-complaints.json?v=22"), loadConcepts()]);
+      const [response] = await Promise.all([fetch("./data/chief-complaints.json?v=23"), loadConcepts()]);
       if (!response.ok) throw new Error("문진 자료를 불러오지 못했습니다.");
       state.data = await response.json();
       sections = new Map(state.data.sections.map((section) => [section.id, section]));

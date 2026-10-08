@@ -529,10 +529,10 @@ curated_layouts = {
             {"id": "dizziness-view-history", "title": "Hx", "kind": "history", "groups": [
                 neuro_basic_group("dizz"),
                 {"title": "Dizziness", "items": [
-                    view_item("dizz-hx-context", "At onset: Resting / Standing up / Other activity", source_items("specialty", "33")),
-                    view_item("dizz-hx-pattern", "Pattern: Vertigo / Presyncope / Lightheadedness / Disequilibrium", ["i-6ad27ea2b2e4", "i-2e37d0e92ac5"], "빙빙 도는지, 쓰러질 것 같은지, 기운이 없는지, 보행이 이상한지 확인"),
                     view_item("dizz-hx-trs", "True rotating sensation (TRS)", ["i-cdb419f99f24", "i-6caa8883d154", "i-6a49a5ad9c82", *source_items("specialty", "33")]),
+                    view_item("dizz-hx-pattern", "Pattern: Vertigo / Presyncope / Lightheadedness / Disequilibrium", ["i-6ad27ea2b2e4", "i-2e37d0e92ac5"], "빙빙 도는지, 쓰러질 것 같은지, 기운이 없는지, 보행이 이상한지 확인"),
                     view_item("dizz-hx-duration", "Duration / 회복까지 걸리는 시간", ["i-98a27e5fe646", "i-6a49a5ad9c82"]),
+                    view_item("dizz-hx-context", "At onset: Resting / Standing up / Other activity", source_items("specialty", "33")),
                     view_item("dizz-hx-ear", "Tinnitus / Otalgia / Ear fullness / Hearing difficulty or loss", ["i-af4103b19fb5", "i-ab8e235e7ce3", "i-6caa8883d154"]),
                     view_item("dizz-hx-uri", "URI Hx", ["i-af4103b19fb5", "i-ab8e235e7ce3", "i-6caa8883d154"]),
                     view_item("dizz-hx-neuro", "동반된 neurologic deficit symptom", ["i-4796b70d2f28"], "반드시 확인하고 차팅"),
@@ -1498,7 +1498,7 @@ symptom_abbreviations = [
     {"label": "FUND HIS", "expansion": ["Frequency", "Urgency", "Nocturia", "Dysuria", "Hesitancy", "Incomplete emptying", "Straining"]},
 ]
 
-data = {"schemaVersion": 1, "contentVersion": "2026-09-28-beta.22", "homeGroups": home_groups, "categories": categories,
+data = {"schemaVersion": 1, "contentVersion": "2026-09-28-beta.23", "homeGroups": home_groups, "categories": categories,
         "sections": list(groups.values()), "complaints": complaints,
         "symptomAbbreviations": symptom_abbreviations,
         "referenceSections": ["routine-history","routine-exam","handover-general","specialty-general-note"]}

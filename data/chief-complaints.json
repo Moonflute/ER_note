@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-09-28-beta.22",
+  "contentVersion": "2026-09-28-beta.23",
   "homeGroups": [
     {
       "id": "adult",
@@ -4922,9 +4922,12 @@
                 "title": "Dizziness",
                 "items": [
                   {
-                    "id": "dizz-hx-context",
-                    "text": "At onset: Resting / Standing up / Other activity",
+                    "id": "dizz-hx-trs",
+                    "text": "True rotating sensation (TRS)",
                     "sourceItemIds": [
+                      "i-cdb419f99f24",
+                      "i-6caa8883d154",
+                      "i-6a49a5ad9c82",
                       "i-6d735f242897"
                     ]
                   },
@@ -4938,21 +4941,18 @@
                     "note": "빙빙 도는지, 쓰러질 것 같은지, 기운이 없는지, 보행이 이상한지 확인"
                   },
                   {
-                    "id": "dizz-hx-trs",
-                    "text": "True rotating sensation (TRS)",
-                    "sourceItemIds": [
-                      "i-cdb419f99f24",
-                      "i-6caa8883d154",
-                      "i-6a49a5ad9c82",
-                      "i-6d735f242897"
-                    ]
-                  },
-                  {
                     "id": "dizz-hx-duration",
                     "text": "Duration / 회복까지 걸리는 시간",
                     "sourceItemIds": [
                       "i-98a27e5fe646",
                       "i-6a49a5ad9c82"
+                    ]
+                  },
+                  {
+                    "id": "dizz-hx-context",
+                    "text": "At onset: Resting / Standing up / Other activity",
+                    "sourceItemIds": [
+                      "i-6d735f242897"
                     ]
                   },
                   {
