@@ -170,15 +170,18 @@ for concept in data["complaints"]:
     text(concept["caution"]["text"], 80, complaint_id + ".caution.text")
     clinical_text.append(concept["caution"]["text"])
     references(concept["caution"], complaint_id + ".caution")
+    views = [("concept", clinical_text)]
     if "flow" in concept:
-        clinical_text = validate_flow(concept)
-    length = sum(map(len, clinical_text))
-    if length > 500:
-        dense.append((complaint_id, length))
-        require(f"<!-- density: {complaint_id} -->" in review,
-                f"Needs documented density review, not deletion of clinical content: {complaint_id} ({length} characters)")
-    require(not [value for value, count in Counter(clinical_text).items() if count > 1], f"Repeated text: {complaint_id}")
-    largest = max(largest, (length, complaint_id))
+        views.append(("flow", validate_flow(concept)))
+    for view_name, view_text in views:
+        location = f"{complaint_id}.{view_name}"
+        length = sum(map(len, view_text))
+        if length > 500:
+            dense.append((location, length))
+            require(f"<!-- density: {complaint_id} -->" in review,
+                    f"Needs documented density review, not deletion of clinical content: {location} ({length} characters)")
+        require(not [value for value, count in Counter(view_text).items() if count > 1], f"Repeated text: {location}")
+        largest = max(largest, (length, location))
 
 require(used_sources == set(sources), "Unreferenced source records")
 workflow = (ROOT / ".github/workflows/pages.yml").read_text(encoding="utf-8")
