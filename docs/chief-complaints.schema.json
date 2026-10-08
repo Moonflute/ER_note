@@ -74,7 +74,7 @@
           "aliases": { "$ref": "#/$defs/strings" },
           "order": { "type": "integer" },
           "scope": { "enum": ["general", "pediatric", "psychiatric"] },
-          "status": { "enum": ["available", "missing", "notesOnly"] },
+          "status": { "enum": ["available", "missing", "notesOnly", "conceptOnly"] },
           "sharedSectionIds": { "$ref": "#/$defs/strings" },
           "sectionIds": { "$ref": "#/$defs/strings" },
           "layout": { "$ref": "#/$defs/layout" }

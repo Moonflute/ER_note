@@ -39,7 +39,7 @@ require(set(blocks) == set(provenance["assignments"]), "Source blocks not comple
 require(len({c["id"] for c in data["complaints"]}) == len(data["complaints"]), "Duplicate complaint IDs")
 require([(group["id"], group["name"]) for group in home_groups] == [("adult", "성인"), ("pediatric", "소아"), ("psychiatric", "정신")], "Unexpected home group order")
 require(all(category["homeGroupId"] in home_group_order for category in data["categories"]), "Category has an unknown home group")
-require(visible_category_order == ["소화기", "순환기", "신장/비뇨기", "산부", "신경", "근골격/피부", "눈/이비인후", "외상", "소아", "정신"], "Unexpected home category order")
+require(visible_category_order == ["소화기", "순환기", "신장/비뇨기", "산부", "신경", "근골격/피부", "눈/이비인후", "전신증상", "외상", "소아", "정신"], "Unexpected home category order")
 require("00" not in categories and not any(cc["categoryId"] == "00" for cc in data["complaints"]), "Admission management category must not be shown")
 complaint_categories = {cc["id"]: cc["categoryId"] for cc in data["complaints"]}
 require(all(complaint_categories.get(item_id) == "13" for item_id in ("trauma", "head-trauma", "inhalation-burn", "poisoning")), "Trauma category membership is incorrect")
@@ -76,7 +76,11 @@ for cc in data["complaints"]:
     refs = cc["sectionIds"] + cc["sharedSectionIds"]
     used.update(refs)
     require(set(refs) <= set(sections), f"Broken complaint section: {cc['id']}")
-    require(bool(refs) == (cc["status"] != "missing"), f"Wrong material status: {cc['id']}")
+    require(cc["status"] in ("available", "missing", "notesOnly", "conceptOnly"), f"Unknown material status: {cc['id']}")
+    if cc["status"] == "conceptOnly":
+        require(not refs and "layout" not in cc, f"Concept-only entry contains unsupported interview material: {cc['id']}")
+    else:
+        require(bool(refs) == (cc["status"] != "missing"), f"Wrong material status: {cc['id']}")
     require(cc["scope"] in ("general", "pediatric", "psychiatric"), f"Unknown scope: {cc['id']}")
     pediatric_refs = [sid for sid in refs if sid.startswith("peds-")]
     if cc["scope"] == "pediatric":
@@ -198,9 +202,9 @@ require("common-shortcut" not in app_source and "#common" not in app_source, "Re
 require("catalog-tools" not in app_source and '${matching.length}' not in app_source, "Home catalog count is still rendered")
 require(all(token in app_source for token in ("orderedHomeGroups", "home-group-title", "home-group-single")), "Home groups are not rendered")
 require('serviceWorker.register("./sw.js")' in app_source, "Service worker is not registered")
-for asset in ("./styles.css?v=24", "./app.js?v=38", "./data/chief-complaints.json?v=23", "./data/cc-concepts.json?v=4"):
+for asset in ("./styles.css?v=24", "./app.js?v=39", "./data/chief-complaints.json?v=24", "./data/cc-concepts.json?v=5"):
     require(asset in service_worker_source, f"Offline cache asset is stale: {asset}")
-require('./styles.css?v=24' in index_source and './app.js?v=38' in index_source, "HTML asset versions do not match offline cache")
+require('./styles.css?v=24' in index_source and './app.js?v=39' in index_source, "HTML asset versions do not match offline cache")
 for sid in ("np-ex1", "np-template", "np-ex2", "np-ex3", "np-response"):
     require(sections[sid]["kind"] == "example", f"Example placed in main checklist: {sid}")
 for source in sources.values():
@@ -210,7 +214,11 @@ for source in sources.values():
 require(audit["sourceBlocks"] == len(blocks) and audit["unassignedSourceBlocks"] == [], "Stale completeness audit")
 require(audit["items"] == len(items), "Stale item audit")
 require(audit["complaints"] == len(data["complaints"]), "Stale catalog audit")
-require(audit["complaintsWithSourceMaterial"] == sum(cc["status"] != "missing" for cc in data["complaints"]), "Stale available entry audit")
+require(audit["complaintsWithSourceMaterial"] == sum(bool(cc["sharedSectionIds"] or cc["sectionIds"]) for cc in data["complaints"]), "Stale source-backed entry audit")
+require(audit["conceptOnlyEntries"] == [cc["id"] for cc in data["complaints"] if cc["status"] == "conceptOnly"], "Stale concept-only entry audit")
+fever_entries = {cc["id"]: cc for cc in data["complaints"] if cc["id"] in ("fever", "adult-fever")}
+require(fever_entries.get("adult-fever", {}).get("scope") == "general" and fever_entries.get("adult-fever", {}).get("categoryId") == "05", "Adult fever is in the wrong scope/category")
+require(fever_entries.get("fever", {}).get("scope") == "pediatric" and fever_entries.get("fever", {}).get("categoryId") == "09", "Pediatric fever was replaced by adult material")
 if errors:
     print("FAIL\n" + "\n".join(errors))
     sys.exit(1)

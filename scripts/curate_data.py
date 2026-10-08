@@ -1432,6 +1432,8 @@ catalog["09"] = [
     ("peds-seizure", "경련", records_by_id["peds-seizure"][2] + ["경련", "seizure", "convulsion"]),
     *catalog["09"],
 ]
+# Adult fever has externally sourced concepts but no supplied interview template.
+catalog["05"].append(("adult-fever", "발열", ["열", "성인 발열", "fever", "pyrexia"]))
 
 bindings = {
  "abdominal-pain": (["routine-history","routine-exam"], ["abd-history","abd-exam","abd-note"]),
@@ -1488,6 +1490,8 @@ for cid, records in catalog.items():
                 "sharedSectionIds": shared, "sectionIds": section_ids}
         if iid in ("rash","flank-pain"):
             item["status"] = "notesOnly"
+        if iid == "adult-fever":
+            item["status"] = "conceptOnly"
         if iid in curated_layouts:
             item["layout"] = curated_layouts[iid]
         complaints.append(item)
@@ -1498,7 +1502,7 @@ symptom_abbreviations = [
     {"label": "FUND HIS", "expansion": ["Frequency", "Urgency", "Nocturia", "Dysuria", "Hesitancy", "Incomplete emptying", "Straining"]},
 ]
 
-data = {"schemaVersion": 1, "contentVersion": "2026-09-28-beta.23", "homeGroups": home_groups, "categories": categories,
+data = {"schemaVersion": 1, "contentVersion": "2026-09-28-beta.24", "homeGroups": home_groups, "categories": categories,
         "sections": list(groups.values()), "complaints": complaints,
         "symptomAbbreviations": symptom_abbreviations,
         "referenceSections": ["routine-history","routine-exam","handover-general","specialty-general-note"]}
@@ -1521,7 +1525,8 @@ report = {"sourceFiles": len(archive["sources"]), "sourceBlocks": source_count,
  "mappedSourceBlocks": len(assignments), "unassignedSourceBlocks": [], "sections": len(groups),
  "items": item_count, "itemSourceBlocks": linked_blocks,
  "exactDuplicateOccurrencesMerged": linked_blocks - (item_count - len(pdf_additions)),
- "complaints": len(complaints), "complaintsWithSourceMaterial": sum(c["status"]!="missing" for c in complaints),
+ "complaints": len(complaints), "complaintsWithSourceMaterial": sum(bool(c["sharedSectionIds"] or c["sectionIds"]) for c in complaints),
+ "conceptOnlyEntries": [c["id"] for c in complaints if c["status"]=="conceptOnly"],
  "pediatricEntries": [c["name"] for c in complaints if c["scope"]=="pediatric"],
  "specialtyEntries": [c["name"] for c in complaints if c["id"] in ("psychiatry-interview", "obgyn-interview", "peds-common")],
  "missingComplaints": [c["name"] for c in complaints if c["status"]=="missing"],
@@ -1555,6 +1560,8 @@ for cat in sorted(categories, key=lambda x:(home_group_order[x["homeGroupId"]], 
         lines.extend([f"### {complaint['name']}", ""])
         if complaint["status"]=="missing":
             lines.extend(["독립 항목 자료 없음. 문진 내용 미생성.", ""])
+        if complaint["status"]=="conceptOnly":
+            lines.extend(["외부 근거 개념만 제공. 원문 문진 내용 미생성. 개념은 data/cc-concepts.json에 별도 보존.", ""])
         if complaint["scope"]=="pediatric":
             lines.extend(["범위: 소아 원문 자료.", ""])
         if complaint["scope"]=="psychiatric":

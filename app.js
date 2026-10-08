@@ -18,7 +18,7 @@
   const orderedCategories = () => [...state.data.categories].sort((a, b) => a.order - b.order || Number(a.secondary) - Number(b.secondary));
   const categoryOf = (id) => state.data.categories.find((category) => category.id === id);
   const ccUrl = (id) => `#cc/${encodeURIComponent(id)}`;
-  const hasContent = (complaint) => complaint.status !== "missing" && [...complaint.sectionIds, ...complaint.sharedSectionIds].some((id) => sections.get(id)?.items.length);
+  const hasContent = (complaint) => complaint.status === "conceptOnly" || complaint.status !== "missing" && [...complaint.sectionIds, ...complaint.sharedSectionIds].some((id) => sections.get(id)?.items.length);
 
   function complaintCardSpan(name) {
     const compactLength = Array.from(String(name).replace(/\s/g, "")).length;
@@ -159,6 +159,14 @@
   function renderDetail(complaint) {
     const name = complaint.name;
     const category = categoryOf(complaint.categoryId);
+    if (complaint.status === "conceptOnly") {
+      state.currentItems = [];
+      state.detailTab = "concept";
+      state.panelScroll = {};
+      document.title = `${name} · ER 초진`;
+      main.innerHTML = `<div class="shell detail-shell"><header class="detail-heading"><p class="eyebrow">${escape(category.name)}</p><div class="detail-title-row"><h1>${escape(name)}</h1></div></header><div id="concept-panel">${conceptMarkup(complaint)}</div></div>`;
+      return;
+    }
     const ids = [...complaint.sharedSectionIds, ...complaint.sectionIds];
     const detailSections = [...new Set(ids)].map((id) => sections.get(id)).filter(Boolean);
     const primary = ["history", "exam"].flatMap((kind) => detailSections.filter((section) => section.kind === kind));
@@ -279,7 +287,7 @@
 
   async function loadConcepts() {
     try {
-      const response = await fetch("./data/cc-concepts.json?v=4");
+      const response = await fetch("./data/cc-concepts.json?v=5");
       if (!response.ok) throw new Error("개념 자료를 불러오지 못했습니다.");
       const data = await response.json();
       state.concepts = new Map(data.complaints.map((concept) => [concept.complaintId, concept]));
@@ -299,7 +307,7 @@
             ? legacyCompactView === "1"
             : true;
       } catch {}
-      const [response] = await Promise.all([fetch("./data/chief-complaints.json?v=23"), loadConcepts()]);
+      const [response] = await Promise.all([fetch("./data/chief-complaints.json?v=24"), loadConcepts()]);
       if (!response.ok) throw new Error("문진 자료를 불러오지 못했습니다.");
       state.data = await response.json();
       sections = new Map(state.data.sections.map((section) => [section.id, section]));

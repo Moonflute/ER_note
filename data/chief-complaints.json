@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-09-28-beta.23",
+  "contentVersion": "2026-09-28-beta.24",
   "homeGroups": [
     {
       "id": "adult",
@@ -4608,6 +4608,22 @@
       "order": 3,
       "scope": "general",
       "status": "missing",
+      "sharedSectionIds": [],
+      "sectionIds": []
+    },
+    {
+      "id": "adult-fever",
+      "name": "발열",
+      "categoryId": "05",
+      "aliases": [
+        "열",
+        "성인 발열",
+        "fever",
+        "pyrexia"
+      ],
+      "order": 4,
+      "scope": "general",
+      "status": "conceptOnly",
       "sharedSectionIds": [],
       "sectionIds": []
     },
