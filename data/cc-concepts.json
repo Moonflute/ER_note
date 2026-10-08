@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-10-08.1",
+  "contentVersion": "2026-10-08.2",
   "sources": [
     {
       "id": "tint-abd",
@@ -106,7 +106,7 @@
       "title": "EAU Guidelines on Urological Infections",
       "url": "https://uroweb.org/guidelines/urological-infections/chapter/the-guideline",
       "publisher": "European Association of Urology",
-      "locator": "3.4 Cystitis; 3.6 Pyelonephritis; 3.7 Systemic UTI",
+      "locator": "Clinical diagnosis of pyelonephritis; systemic UTI; bacterial prostatitis 3.11.4.c — DRE and no prostatic massage",
       "accessedAt": "2026-10-08",
       "access": "full-text"
     },
@@ -448,7 +448,7 @@
       "title": "Adult ECAT: Ocular presentations",
       "url": "https://aci.health.nsw.gov.au/ecat/adult/ocular",
       "publisher": "NSW Agency for Clinical Innovation",
-      "locator": "Visual acuity; red flags; RAPD; serious injury with normal acuity",
+      "locator": "Visual acuity; red flags; RAPD; chemical exposure — immediate irrigation; normal acuity does not exclude injury",
       "accessedAt": "2026-10-08",
       "access": "full-text"
     },
@@ -712,6 +712,312 @@
       "locator": "Symptoms and signs: Rovsing, psoas and obturator signs; atypical findings in children",
       "accessedAt": "2026-10-08",
       "access": "full-text"
+    },
+    {
+      "id": "msd-acute-abd",
+      "title": "Acute Abdominal Pain — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/gastrointestinal-disorders/acute-abdomen-and-surgical-gastroenterology/acute-abdominal-pain",
+      "publisher": "MSD Manual",
+      "locator": "History; Physical examination; Interpretation — localized Td, peritoneal signs and obstruction",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-gi-exam",
+      "title": "Evaluation of the Gastrointestinal Patient — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/gastrointestinal-disorders/approach-to-the-gastrointestinal-patient/evaluation-of-the-gastrointestinal-patient",
+      "publisher": "MSD Manual",
+      "locator": "History — pain location/radiation and possible causes",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-cholecystitis",
+      "title": "Acute Cholecystitis — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/hepatic-and-biliary-disorders/gallbladder-and-bile-duct-disorders/acute-cholecystitis",
+      "publisher": "MSD Manual",
+      "locator": "Symptoms and Signs — RUQ pain, Murphy sign; Diagnosis — ultrasound and equivocal findings",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "aha-chest-exam",
+      "title": "2021 AHA/ACC Chest Pain Guideline",
+      "url": "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001029",
+      "publisher": "American Heart Association / American College of Cardiology",
+      "locator": "2.2 Physical Examination; Table 4; ACS evaluation",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-joint-exam",
+      "title": "Pain in and Around a Single Joint — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/musculoskeletal-and-connective-tissue-disorders/pain-in-and-around-joints/pain-in-and-around-a-single-joint",
+      "publisher": "MSD Manual",
+      "locator": "Physical examination; Interpretation — active/passive motion, joint-line vs periarticular tenderness",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-radiculopathy",
+      "title": "Lumbosacral Radiculopathy — Professional Edition",
+      "url": "https://www.merckmanuals.com/professional/musculoskeletal-and-connective-tissue-disorders/neck-and-back-pain/lumbosacral-radiculopathy",
+      "publisher": "Merck Manual",
+      "locator": "Symptoms and Signs — straight-leg raise, crossed SLR, strength/reflex/sensation",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "aao-bppv",
+      "title": "AAO-HNSF BPPV guideline update: key action statements",
+      "url": "https://www.entnet.org/resource/aao-hnsf-updated-cpg-bppv-press-release-fact-sheet/",
+      "publisher": "American Academy of Otolaryngology–Head and Neck Surgery",
+      "locator": "Diagnosis of posterior canal BPPV; lateral canal BPPV and supine roll testing",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-coordination",
+      "title": "How To Assess Gait, Stance, and Coordination — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/neurologic-disorders/neurologic-examination/how-to-assess-gait-stance-and-coordination",
+      "publisher": "MSD Manual",
+      "locator": "Gait/stance; finger-to-nose, rapid alternating movements and heel-to-shin — cerebellar pathways",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-headache-exam",
+      "title": "Approach to the Patient With Headache — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/neurologic-disorders/headache/approach-to-the-patient-with-headache",
+      "publisher": "MSD Manual",
+      "locator": "Physical examination; Red flags; secondary causes — GCA, ocular/ICP findings",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-stroke-signs",
+      "title": "Overview of Stroke — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/neurologic-disorders/stroke/overview-of-stroke",
+      "publisher": "MSD Manual",
+      "locator": "Selected Stroke Syndromes; NIHSS — language, dysarthria, eye and cerebellar signs",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "nice-bipolar",
+      "title": "QS95: Bipolar disorder in adults — specialist mental health assessment",
+      "url": "https://www.nice.org.uk/guidance/qs95/chapter/quality-statement-1-referral-for-specialist-mental-health-assessment",
+      "publisher": "NICE",
+      "locator": "Definitions — overactivity/disinhibition: decreased need for sleep, talkativeness and elevated/irritable mood",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "nice-pregnancy-htn",
+      "title": "NG133: Hypertension in pregnancy",
+      "url": "https://www.nice.org.uk/guidance/ng133/chapter/recommendations",
+      "publisher": "NICE",
+      "locator": "1.1.1 Symptoms; 1.8.3 Severe features; Terms — pre-eclampsia after 20 weeks",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "rch-otitis",
+      "title": "Clinical Practice Guidelines: Acute otitis media",
+      "url": "https://www.rch.org.au/clinicalguide/guideline_index/Acute_otitis_media/",
+      "publisher": "Royal Children’s Hospital Melbourne",
+      "locator": "Examination — bulging/opaque TM and middle-ear effusion; red TM alone is not AOM",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "rch-pyloric",
+      "title": "Clinical Practice Guidelines: Pyloric stenosis",
+      "url": "https://www.rch.org.au/clinicalguide/guideline_index/Pyloric_stenosis/",
+      "publisher": "Royal Children’s Hospital Melbourne",
+      "locator": "Key points; Examination — pyloric mass may be absent early",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "rch-asthma",
+      "title": "Clinical Practice Guidelines: Acute asthma",
+      "url": "https://www.rch.org.au/clinicalguide/guideline_index/Asthma_Acute/",
+      "publisher": "Royal Children’s Hospital Melbourne",
+      "locator": "Examination — air entry, silent chest with unwell appearance and respiratory-collapse risk",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "tint-appendix-signs",
+      "title": "Tintinalli's Emergency Medicine Manual, 8e: Acute Appendicitis",
+      "url": "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2158&sectionid=162270325",
+      "publisher": "McGraw Hill Medical",
+      "locator": "Clinical Features — migration, Rovsing/psoas/obturator; no single sign rules in/out",
+      "accessedAt": "2026-10-08",
+      "access": "publisher-excerpt"
+    },
+    {
+      "id": "msd-eye-pain",
+      "title": "Eye Pain — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/eye-disorders/symptoms-of-ophthalmic-disorders/eye-pain",
+      "publisher": "MSD Manual",
+      "locator": "Some Causes; Physical examination; Interpretation — corneal staining, EOM, orbital/CNS infection",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-eye-exam",
+      "title": "Evaluation of the Ophthalmologic Patient — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/eye-disorders/approach-to-the-ophthalmologic-patient/evaluation-of-the-ophthalmologic-patient",
+      "publisher": "MSD Manual",
+      "locator": "Corneal examination; Pupil examination — fluorescein and RAPD; extraocular muscles",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-retinal-artery",
+      "title": "Central Retinal Artery Occlusion and Branch Retinal Artery Occlusion — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/eye-disorders/retinal-disorders/central-retinal-artery-occlusion-and-branch-retinal-artery-occlusion",
+      "publisher": "MSD Manual",
+      "locator": "Symptoms and Signs; Diagnosis — sudden painless monocular loss, RAPD; urgent stroke-center assessment",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-hearing-exam",
+      "title": "Hearing Loss — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/ear-nose-and-throat-disorders/hearing-loss/hearing-loss",
+      "publisher": "MSD Manual",
+      "locator": "Physical examination — Weber and Rinne; conductive vs sensorineural patterns",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-nasal-fracture",
+      "title": "Nasal Fractures — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/injuries-poisoning/facial-trauma/nasal-fractures",
+      "publisher": "MSD Manual",
+      "locator": "Symptoms and Signs; Treatment — septal hematoma, septal bulge and immediate drainage",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-dental-exam",
+      "title": "Toothache and Infection — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/dental-disorders/symptoms-of-dental-and-oral-disorders/toothache-and-infection",
+      "publisher": "MSD Manual",
+      "locator": "Some Causes; Physical examination; Interpretation — percussion pain and fluctuant abscess",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "boa-compartment",
+      "title": "BOASt: Diagnosis and Management of Compartment Syndrome of the Extremities",
+      "url": "https://www.boa.ac.uk/resource/boast-10-pdf.html",
+      "publisher": "British Orthopaedic Association",
+      "locator": "July 2025 update; key findings — disproportionate pain and passive-stretch pain; repeated assessment",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-compartment",
+      "title": "Compartment Syndrome — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/injuries-poisoning/fractures/compartment-syndrome",
+      "publisher": "MSD Manual",
+      "locator": "Symptoms and Signs — pain on passive stretch; perfusion can fail before pulses disappear",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-fractures",
+      "title": "Overview of Fractures — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/injuries-poisoning/fractures/overview-of-fractures",
+      "publisher": "MSD Manual",
+      "locator": "Physical examination — wound near fracture implies possible open fracture; distal neurovascular exam",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-smoke",
+      "title": "Smoke Inhalation — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/injuries-poisoning/burns/smoke-inhalation",
+      "publisher": "MSD Manual",
+      "locator": "Symptoms and Signs; Diagnosis — delayed airway/lung findings; CO and cyanide, lactate/acidosis",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-serotonin",
+      "title": "Serotonin Syndrome — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/injuries-poisoning/heat-illness/serotonin-syndrome",
+      "publisher": "MSD Manual",
+      "locator": "Symptoms and Signs; Diagnosis — serotonergic exposure, clonus/hyperreflexia and rapid onset",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-cholinergic",
+      "title": "Organophosphate Poisoning and Carbamate Poisoning — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/injuries-poisoning/poisoning/organophosphate-poisoning-and-carbamate-poisoning",
+      "publisher": "MSD Manual",
+      "locator": "Symptoms and Signs — bronchorrhea, miosis, secretions, fasciculations and respiratory failure",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "wses-cholecystitis",
+      "title": "2020 WSES guidelines for acute calculous cholecystitis",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7643471/",
+      "publisher": "World Society of Emergency Surgery",
+      "locator": "Section 1, recommendations 1.1–1.2 — no single finding establishes or excludes diagnosis",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-sensation",
+      "title": "How To Assess Sensation — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/neurologic-disorders/neurologic-examination/how-to-assess-sensation",
+      "publisher": "MSD Manual",
+      "locator": "Position sense and Romberg; cerebellar vs sensory/vestibular loss",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-cholangitis",
+      "title": "Choledocholithiasis and Cholangitis — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/hepatic-and-biliary-disorders/gallbladder-and-bile-duct-disorders/choledocholithiasis-and-cholangitis",
+      "publisher": "MSD Manual",
+      "locator": "Symptoms and Signs — abdominal pain, jaundice, fever; triad is not sensitive",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-renal-occlusion",
+      "title": "Renal Artery Stenosis and Occlusion — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/nephrology/renovascular-disorders/renal-artery-stenosis-and-occlusion",
+      "publisher": "MSD Manual",
+      "locator": "Etiology — cardiac emboli/AF; acute occlusion — steady flank pain, hematuria and AKI",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-meniere",
+      "title": "Meniere Disease — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/ear-nose-and-throat-disorders/inner-ear-disorders/meniere-disease",
+      "publisher": "MSD Manual",
+      "locator": "Symptoms and Signs; Diagnosis — episodic vertigo, fluctuating hearing, tinnitus/fullness",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "nice-panic",
+      "title": "CG113: Panic disorder — NICE information for the public",
+      "url": "https://www.nice.org.uk/guidance/cg113/resources/treating-generalised-anxiety-disorder-and-panic-disorder-in-adults-pdf-176693878213",
+      "publisher": "NICE",
+      "locator": "Panic disorder, page 10 — intense fear and physical symptoms; emergency physical-cause assessment",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
     }
   ],
   "complaints": [
@@ -720,10 +1026,28 @@
       "scope": "general",
       "differentials": [
         {
-          "disease": "충수염·복막염",
+          "disease": "충수염·게실염·복막염",
           "clues": "국소 통증·guarding/rTd; 천공이면 전신 악화",
           "sourceIds": [
-            "aci-abd"
+            "aci-abd",
+            "msd-acute-abd"
+          ]
+        },
+        {
+          "disease": "담낭·담도 질환",
+          "clues": "RUQ 통증·우측 견갑 방사; 발열/오한+황달이면 담관염",
+          "sourceIds": [
+            "msd-cholecystitis",
+            "msd-acute-abd",
+            "msd-cholangitis"
+          ]
+        },
+        {
+          "disease": "췌장·위십이지장 질환",
+          "clues": "상복부·등 방사 / 천공 시 급격한 통증·복막자극",
+          "sourceIds": [
+            "msd-acute-abd",
+            "msd-gi-exam"
           ]
         },
         {
@@ -751,6 +1075,15 @@
       ],
       "hx": [
         {
+          "label": "통증 위치 · 이동 · 방사",
+          "meaning": "배꼽→RLQ는 충수염; 등 방사 상복부통은 췌장 등 평가",
+          "itemIds": [],
+          "sourceIds": [
+            "tint-appendix-signs",
+            "msd-acute-abd"
+          ]
+        },
+        {
           "label": "LMP · 임신 가능성",
           "meaning": "자궁외임신 위험 판단",
           "itemIds": [
@@ -776,14 +1109,44 @@
       ],
       "pex": [
         {
-          "label": "Tenderness · rTd · Guarding",
-          "meaning": "국소화·복막자극; 초기 병변은 소견이 미약할 수 있음",
+          "label": "Abd Td 위치",
+          "meaning": "RUQ 담낭 / Epig 위·췌장 / RLQ 충수 / LLQ 게실 단서",
+          "itemIds": [
+            "abd-pe-tenderness"
+          ],
+          "sourceIds": [
+            "msd-acute-abd",
+            "msd-gi-exam"
+          ]
+        },
+        {
+          "label": "Murphy",
+          "meaning": "RUQ 촉진 중 흡기 시 통증으로 숨 멈춤 → 담낭염 지지",
+          "itemIds": [],
+          "sourceIds": [
+            "msd-cholecystitis"
+          ]
+        },
+        {
+          "label": "rTd · Guarding",
+          "meaning": "복막자극 단서; 초기·고령·면역저하에서는 미약할 수 있음",
           "itemIds": [
             "abd-pe-tenderness"
           ],
           "sourceIds": [
             "tint-abd",
-            "aci-abd"
+            "aci-abd",
+            "msd-acute-abd"
+          ]
+        },
+        {
+          "label": "팽만 · Bowel sound",
+          "meaning": "팽만+고음 장음은 폐색 단서; 정상 장음으로 배제 불가",
+          "itemIds": [
+            "abd-pe-bowel"
+          ],
+          "sourceIds": [
+            "msd-acute-abd"
           ]
         },
         {
@@ -799,10 +1162,12 @@
         }
       ],
       "caution": {
-        "text": "증상 지속/악화 시 재진찰·영상 판단; 통증에 비해 진찰이 미약하면 허혈 등 고려.",
+        "text": "Td 위치·Murphy 음성만으로 배제 불가. 통증>진찰 소견이면 허혈 등 평가; 지속/악화 시 재진찰·영상.",
         "sourceIds": [
+          "msd-acute-abd",
+          "msd-cholecystitis",
           "tint-abd",
-          "aci-abd"
+          "wses-cholecystitis"
         ]
       }
     },
@@ -920,6 +1285,20 @@
           "sourceIds": [
             "tint-pneumothorax"
           ]
+        },
+        {
+          "disease": "심낭염",
+          "clues": "호흡/누운 자세에 악화·앞으로 숙이면 완화; friction rub",
+          "sourceIds": [
+            "aha-chest-exam"
+          ]
+        },
+        {
+          "disease": "식도파열",
+          "clues": "심한 구토 뒤 급격한 통증·피하기종",
+          "sourceIds": [
+            "aha-chest-exam"
+          ]
         }
       ],
       "hx": [
@@ -963,6 +1342,30 @@
           "itemIds": [],
           "sourceIds": [
             "tint-pneumothorax"
+          ]
+        },
+        {
+          "label": "좌우 맥박/BP",
+          "meaning": "차이가 나면 박리 단서; 차이가 없어도 배제 불가",
+          "itemIds": [],
+          "sourceIds": [
+            "aha-chest-exam"
+          ]
+        },
+        {
+          "label": "Chest wall Td",
+          "meaning": "통증 재현은 흉벽 원인 지지; ACS 배제 근거는 아님",
+          "itemIds": [],
+          "sourceIds": [
+            "aha-chest-exam"
+          ]
+        },
+        {
+          "label": "Friction rub · 피하기종",
+          "meaning": "심낭 마찰음은 심낭염, 구토 뒤 피하기종은 식도파열 단서",
+          "itemIds": [],
+          "sourceIds": [
+            "aha-chest-exam"
           ]
         }
       ],
@@ -1045,10 +1448,11 @@
         },
         {
           "label": "맥박 · 심장 진찰",
-          "meaning": "불규칙맥·심잡음은 부정맥/구조성 심질환 평가 단서",
+          "meaning": "불규칙맥은 부정맥, 수축기 잡음은 AS 등 구조성 심질환 단서",
           "itemIds": [],
           "sourceIds": [
-            "nice-syncope"
+            "nice-syncope",
+            "aha-chest-exam"
           ]
         }
       ],
@@ -1108,7 +1512,7 @@
       "pex": [
         {
           "label": "무반응 · 비정상 호흡 · 무맥",
-          "meaning": "심정지 인지; agonal gasping은 정상 호흡이 아님",
+          "meaning": "무반응+gasping/무호흡; 10초 내 맥박이 확실하지 않으면 CPR",
           "itemIds": [
             "arrest-pe-pulse"
           ],
@@ -1118,7 +1522,7 @@
         },
         {
           "label": "리듬",
-          "meaning": "VF/pVT와 PEA/asystole 구분; 가역 원인 함께 평가",
+          "meaning": "VF/pVT는 제세동, PEA/asystole은 비충격 리듬; 가역 원인 평가",
           "itemIds": [],
           "sourceIds": [
             "aha-arrest"
@@ -1249,6 +1653,13 @@
           "sourceIds": [
             "aci-retention"
           ]
+        },
+        {
+          "disease": "급성 전립선염",
+          "clues": "발열·배뇨통/배출 장애·회음부 통증",
+          "sourceIds": [
+            "eau-infections"
+          ]
         }
       ],
       "hx": [
@@ -1291,6 +1702,14 @@
           "sourceIds": [
             "eau-infections",
             "aci-retention"
+          ]
+        },
+        {
+          "label": "전립선 DRE",
+          "meaning": "필요 시 압통·종창은 전립선염 단서; 의심 시 마사지 금지",
+          "itemIds": [],
+          "sourceIds": [
+            "eau-infections"
           ]
         }
       ],
@@ -1369,6 +1788,14 @@
           ]
         },
         {
+          "label": "Cough stress test",
+          "meaning": "방광 충만 상태에서 기침과 동시에 누출 → 복압성 지지",
+          "itemIds": [],
+          "sourceIds": [
+            "msd-incontinence"
+          ]
+        },
+        {
           "label": "하지 · 회음부 감각",
           "meaning": "새 이상은 신경성 원인·CES 평가 단서",
           "itemIds": [],
@@ -1415,6 +1842,13 @@
           "clues": "급격한 복부/등 통증·실신·저혈압",
           "sourceIds": [
             "aci-abd"
+          ]
+        },
+        {
+          "disease": "신경색",
+          "clues": "갑작스럽고 지속적인 옆구리 통증·혈뇨; AF/색전 위험",
+          "sourceIds": [
+            "msd-renal-occlusion"
           ]
         }
       ],
@@ -1522,7 +1956,7 @@
         },
         {
           "label": "위치 · 압통 · 피부",
-          "meaning": "높은/가로 고환은 염전; 괴사/염발음은 Fournier 단서",
+          "meaning": "고위/가로 고환은 염전, 부고환 Td는 감염; 괴사/염발음은 Fournier",
           "itemIds": [],
           "sourceIds": [
             "aci-scrotum"
@@ -1530,7 +1964,7 @@
         }
       ],
       "caution": {
-        "text": "염전이 의심되면 정상 반사·검사 대기로 수술 평가가 지연되지 않도록 함.",
+        "text": "정상 반사·Prehn sign으로 염전 배제 불가. 의심 시 검사 대기로 수술 평가를 지연시키지 않음.",
         "sourceIds": [
           "aci-scrotum"
         ]
@@ -1591,6 +2025,14 @@
           "sourceIds": [
             "sanjo",
             "aci-msk"
+          ]
+        },
+        {
+          "label": "Active / Passive ROM",
+          "meaning": "둘 다 아프면 관절 내 염증, 능동만 아프면 건/점액낭 등 단서",
+          "itemIds": [],
+          "sourceIds": [
+            "msd-joint-exam"
           ]
         },
         {
@@ -1684,6 +2126,16 @@
           "sourceIds": [
             "aci-back"
           ]
+        },
+        {
+          "label": "SLR",
+          "meaning": "익숙한 하지 방사통 재현 → 신경근 자극; 반대쪽 SLR 양성이 더 특이적",
+          "itemIds": [
+            "back-pe-neuro"
+          ],
+          "sourceIds": [
+            "msd-radiculopathy"
+          ]
         }
       ],
       "caution": {
@@ -1723,6 +2175,13 @@
           "clues": "가려운 팽진; 전신 호흡/순환 증상 동반 여부 구분",
           "sourceIds": [
             "msd-anaphylaxis"
+          ]
+        },
+        {
+          "disease": "자반·수막구균 감염",
+          "clues": "눌러도 안 옅어지는 점상/자반+발열·전신 악화",
+          "sourceIds": [
+            "nice-meningitis"
           ]
         }
       ],
@@ -1764,6 +2223,14 @@
             "msd-sjs",
             "idsa-skin"
           ]
+        },
+        {
+          "label": "Non-blanching rash",
+          "meaning": "빠르게 퍼지는 자반·전신 악화는 수막구균 질환 경고",
+          "itemIds": [],
+          "sourceIds": [
+            "nice-meningitis"
+          ]
         }
       ],
       "caution": {
@@ -1800,6 +2267,13 @@
           "sourceIds": [
             "grace3",
             "tint-vertigo"
+          ]
+        },
+        {
+          "disease": "메니에르",
+          "clues": "반복 vertigo+변동 청력저하·이명·귀 먹먹함",
+          "sourceIds": [
+            "msd-meniere"
           ]
         },
         {
@@ -1850,17 +2324,49 @@
           ]
         },
         {
-          "label": "Dix-Hallpike · Gait",
-          "meaning": "짧은 상향·회선 안진은 후반고리관 BPPV; 심한 실조는 중추 경고",
+          "label": "Dix-Hallpike",
+          "meaning": "짧은 상향·회선 안진+vertigo → 후반고리관 BPPV",
           "itemIds": [
-            "dizz-pe-provocation",
+            "dizz-pe-provocation"
+          ],
+          "sourceIds": [
+            "tint-vertigo",
+            "grace3",
+            "aao-bppv"
+          ]
+        },
+        {
+          "label": "Supine head-roll",
+          "meaning": "자세로 유발되는 수평 안진 → 수평반고리관 BPPV 평가",
+          "itemIds": [
+            "dizz-pe-provocation"
+          ],
+          "sourceIds": [
+            "aao-bppv",
+            "tint-vertigo"
+          ]
+        },
+        {
+          "label": "Gait · Coordination",
+          "meaning": "보행 불가·심한 실조는 중추 경고; dysmetria는 소뇌 단서",
+          "itemIds": [
             "dizz-pe-gait",
             "dizz-pe-upper-coordination",
             "dizz-pe-lower-coordination"
           ],
           "sourceIds": [
-            "tint-vertigo",
-            "grace3"
+            "grace3",
+            "msd-coordination"
+          ]
+        },
+        {
+          "label": "Romberg",
+          "meaning": "눈 감을 때 불안정 증가 → 위치감각/전정 이상; 단독으로 중추/말초 판별 불가",
+          "sourceIds": [
+            "msd-sensation"
+          ],
+          "itemIds": [
+            "dizz-pe-gait"
           ]
         }
       ],
@@ -1906,6 +2412,20 @@
           "sourceIds": [
             "aci-headache",
             "tint-neck"
+          ]
+        },
+        {
+          "disease": "GCA",
+          "clues": ">50세 새 두통·씹을 때 턱 통증·시각 증상",
+          "sourceIds": [
+            "msd-headache-exam"
+          ]
+        },
+        {
+          "disease": "ICP 상승·안과 응급",
+          "clues": "진행성 두통·유두부종 / 안통·충혈·시력 변화",
+          "sourceIds": [
+            "msd-headache-exam"
           ]
         }
       ],
@@ -1959,6 +2479,23 @@
             "tint-neck",
             "nice-meningitis"
           ]
+        },
+        {
+          "label": "Neck stiffness",
+          "meaning": "수막자극 단서: 수막염·SAH 등; nuchal Td와 구분",
+          "itemIds": [],
+          "sourceIds": [
+            "nice-meningitis",
+            "msd-headache-exam"
+          ]
+        },
+        {
+          "label": "Fundus · 눈 · 측두동맥",
+          "meaning": "유두부종은 ICP 상승; 충혈/고정 동공은 녹내장, 측두동맥 Td는 GCA 단서",
+          "itemIds": [],
+          "sourceIds": [
+            "msd-headache-exam"
+          ]
         }
       ],
       "caution": {
@@ -2009,7 +2546,7 @@
       "hx": [
         {
           "label": "목격 양상 · Duration · Postictal",
-          "meaning": "국소성·시간·회복 양상으로 발작/실신 구분",
+          "meaning": "국소성·지속/반복 시간·사이 회복·발작 후 혼돈으로 발작/실신 구분",
           "itemIds": [
             "seizure-hx-type",
             "seizure-hx-site",
@@ -2114,7 +2651,7 @@
       "pex": [
         {
           "label": "Pupil · Light reflex",
-          "meaning": "새 비대칭/반응 저하는 뇌간·압박 병변 경고; 약물도 영향",
+          "meaning": "편측 산대·무반응은 압박/탈출 경고; 축동은 opioid·교뇌 병변도 가능",
           "itemIds": [
             "mental-pe-pupil",
             "mental-pe-light"
@@ -2215,21 +2752,30 @@
       ],
       "pex": [
         {
-          "label": "Motor · Face · Language",
-          "meaning": "편측 약화·실어증·안면마비는 국소 뇌 병변 단서",
+          "label": "Motor · Face",
+          "meaning": "새 편측 약화·안면마비는 국소 뇌 병변 단서; 기존 결손과 구분",
           "itemIds": [
-            "stroke-pe-power",
             "stroke-pe-limb",
-            "stroke-pe-eye-face",
-            "stroke-pe-language"
+            "stroke-pe-eye-face"
           ],
           "sourceIds": [
             "aci-stroke"
           ]
         },
         {
+          "label": "Aphasia / Dysarthria",
+          "meaning": "이해·명명·반복 장애는 언어, 발음만 어눌하면 구음 문제로 구분",
+          "itemIds": [
+            "stroke-pe-language",
+            "stroke-pe-command"
+          ],
+          "sourceIds": [
+            "msd-stroke-signs"
+          ]
+        },
+        {
           "label": "Eye · Cerebellar · Mentation",
-          "meaning": "안구/시야 이상·실조·의식 저하는 후순환 포함 평가",
+          "meaning": "복시·안구운동 이상·몸통/사지 실조는 후순환 단서; 의식 저하도 확인",
           "itemIds": [
             "stroke-pe-eye-face",
             "stroke-pe-cerebellar",
@@ -2238,7 +2784,8 @@
           ],
           "sourceIds": [
             "aci-stroke",
-            "grace3"
+            "grace3",
+            "msd-stroke-signs"
           ]
         }
       ],
@@ -2258,6 +2805,20 @@
           "clues": "흥미/의욕 저하·수면/식욕 변화·기능 저하",
           "sourceIds": [
             "nice-depression"
+          ]
+        },
+        {
+          "disease": "공황·불안",
+          "clues": "갑작스러운 강한 공포·두근거림/호흡곤란; 신체 응급 감별",
+          "sourceIds": [
+            "nice-panic"
+          ]
+        },
+        {
+          "disease": "조증",
+          "clues": "수면 욕구 감소·활동/말 증가·고양/과민한 기분·탈억제",
+          "sourceIds": [
+            "nice-bipolar"
           ]
         },
         {
@@ -2298,7 +2859,7 @@
         },
         {
           "label": "급성 변화 · Drug compliance",
-          "meaning": "초발·재발·물질 영향 구분",
+          "meaning": "초발·재발·물질 영향; 불면과 수면 욕구 감소를 구분",
           "itemIds": [
             "psychiatry-hx-today",
             "psychiatry-hx-first",
@@ -2307,7 +2868,8 @@
           ],
           "sourceIds": [
             "aci-behaviour",
-            "nice-delirium"
+            "nice-delirium",
+            "nice-bipolar"
           ]
         }
       ],
@@ -2413,10 +2975,18 @@
             "cdc-pid",
             "msd-pelvic"
           ]
+        },
+        {
+          "label": "Speculum",
+          "meaning": "출혈 부위·양과 분비물을 관찰; CMT/부속기 촉진과 목적 구분",
+          "itemIds": [],
+          "sourceIds": [
+            "msd-pelvic"
+          ]
         }
       ],
       "caution": {
-        "text": "가임기 골반통은 병력만으로 임신을 배제하지 않음; 임신 검사와 출혈 위험 평가.",
+        "text": "병력·정상 골반진찰로 임신/자궁외임신·염전 배제 불가; 임신 검사와 출혈 위험 평가.",
         "sourceIds": [
           "msd-pelvic"
         ]
@@ -2452,6 +3022,13 @@
           "clues": "임신 초기 통증/출혈: 자궁외임신·유산 평가",
           "sourceIds": [
             "msd-pelvic"
+          ]
+        },
+        {
+          "disease": "전자간증·자간증",
+          "clues": "≥20주 새 고혈압+두통·시각/RUQ 증상; 경련이면 자간증 평가",
+          "sourceIds": [
+            "nice-pregnancy-htn"
           ]
         }
       ],
@@ -2497,6 +3074,14 @@
           "itemIds": [],
           "sourceIds": [
             "nice-preterm"
+          ]
+        },
+        {
+          "label": "BP · 신경 증상",
+          "meaning": "고혈압+지속 두통·시각 이상·clonus는 전자간증 중증 소견",
+          "itemIds": [],
+          "sourceIds": [
+            "nice-pregnancy-htn"
           ]
         }
       ],
@@ -2590,6 +3175,29 @@
           "sourceIds": [
             "rch-cough",
             "rch-infant"
+          ]
+        },
+        {
+          "label": "Neck · Fontanelle",
+          "meaning": "강직·팽창 대천문+불량한 반응은 CNS 감염 경고",
+          "itemIds": [
+            "peds-common-pe-neck"
+          ],
+          "sourceIds": [
+            "rch-infant",
+            "nice-meningitis"
+          ]
+        },
+        {
+          "label": "Heart · Abdomen",
+          "meaning": "약한 대퇴맥박/청색증은 심장, 팽만/guarding은 복부 응급 단서",
+          "itemIds": [
+            "peds-common-pe-heart",
+            "peds-common-pe-palpation"
+          ],
+          "sourceIds": [
+            "rch-infant",
+            "rch-abd"
           ]
         }
       ],
@@ -2686,6 +3294,27 @@
             "rch-cough",
             "rch-infant"
           ]
+        },
+        {
+          "label": "TM · Uvula",
+          "meaning": "고막 팽륜/삼출은 AOM; 편측 팽윤·uvula 편위+trismus는 농양 단서",
+          "itemIds": [
+            "fever-pe-ear",
+            "fever-pe-uvula",
+            "fever-pe-throat"
+          ],
+          "sourceIds": [
+            "rch-otitis",
+            "msd-throat"
+          ]
+        },
+        {
+          "label": "CRT · Non-blanching rash",
+          "meaning": "관류 저하·비창백성 자반은 패혈증/수막구균 질환 경고",
+          "itemIds": [],
+          "sourceIds": [
+            "nice-meningitis"
+          ]
         }
       ],
       "caution": {
@@ -2727,6 +3356,14 @@
           "sourceIds": [
             "rch-vomiting",
             "rch-ge"
+          ]
+        },
+        {
+          "disease": "CNS 원인",
+          "clues": "아침 구토·두통·신경 이상; 발열/강직이면 CNS 감염",
+          "sourceIds": [
+            "rch-vomiting",
+            "nice-meningitis"
           ]
         }
       ],
@@ -2778,6 +3415,25 @@
           ],
           "sourceIds": [
             "rch-dehydration"
+          ]
+        },
+        {
+          "label": "Pyloric olive",
+          "meaning": "어린 영아의 유문 종괴는 유문협착 단서; 안 만져져도 배제 불가",
+          "itemIds": [],
+          "sourceIds": [
+            "rch-pyloric"
+          ]
+        },
+        {
+          "label": "Neuro · Fontanelle",
+          "meaning": "의식/신경 이상·팽창 대천문은 CNS 감염/ICP 상승 등 경고",
+          "itemIds": [
+            "vomiting-pe-neck"
+          ],
+          "sourceIds": [
+            "rch-vomiting",
+            "nice-meningitis"
           ]
         }
       ],
@@ -2855,13 +3511,14 @@
         },
         {
           "label": "복부 압통 · Guarding",
-          "meaning": "심한 국소 압통·복막자극은 장염 외 원인 경고",
+          "meaning": "국소 Td/guarding은 외과 원인; 간헐적 통증+창백/처짐은 장중첩 단서",
           "itemIds": [
             "diarrhea-pe-palpation"
           ],
           "sourceIds": [
             "rch-ge",
-            "rch-abd"
+            "rch-abd",
+            "rch-intussusception"
           ]
         }
       ],
@@ -2932,7 +3589,7 @@
       "pex": [
         {
           "label": "Stridor · Wheeze · Crackle",
-          "meaning": "상기도 협착 / 하기도 협착 / 폐실질 병변의 단서",
+          "meaning": "상기도 / 하기도 협착 / 폐실질 단서; 안정 시 stridor는 상기도 위험",
           "itemIds": [
             "cough-pe-lung"
           ],
@@ -2950,6 +3607,16 @@
           "sourceIds": [
             "rch-fb",
             "rch-infant"
+          ]
+        },
+        {
+          "label": "Silent chest",
+          "meaning": "아파 보이고 air entry가 미약하면 중증 폐쇄 경고; wheeze 없음이 안심 근거 아님",
+          "itemIds": [
+            "cough-pe-lung"
+          ],
+          "sourceIds": [
+            "rch-asthma"
           ]
         }
       ],
@@ -3034,21 +3701,44 @@
           ]
         },
         {
-          "label": "Rovsing · Psoas · Obturator",
-          "meaning": "양성이면 충수 주위 자극 단서; 음성으로 충수염 배제 불가",
+          "label": "Rovsing",
+          "meaning": "LLQ를 눌렀을 때 RLQ 통증 → 충수염/복막자극 단서",
           "itemIds": [
             "peds-abd-pe-sign"
           ],
           "sourceIds": [
             "msd-appendicitis",
+            "rch-abd",
+            "tint-appendix-signs"
+          ]
+        },
+        {
+          "label": "Psoas · Obturator",
+          "meaning": "우측 고관절 신전 / 굴곡 후 내회전 시 통증 → 충수 주위 자극 단서",
+          "itemIds": [
+            "peds-abd-pe-sign"
+          ],
+          "sourceIds": [
+            "tint-appendix-signs"
+          ]
+        },
+        {
+          "label": "Genital · Hernia · Lung",
+          "meaning": "고환/서혜 종괴는 염전/감돈, 국소 폐 소견은 폐렴성 복통 단서",
+          "itemIds": [
+            "peds-abd-pe-lung"
+          ],
+          "sourceIds": [
             "rch-abd"
           ]
         }
       ],
       "caution": {
-        "text": "어린 소아는 전형적 충수염 소견이 없을 수 있음. 호전/악화 추세를 반복 진찰.",
+        "text": "유발검사 음성으로 충수염 배제 불가; 어린 소아는 비전형 가능. 경과에 따라 반복 진찰.",
         "sourceIds": [
-          "rch-abd"
+          "rch-abd",
+          "msd-appendicitis",
+          "tint-appendix-signs"
         ]
       }
     },
@@ -3114,15 +3804,16 @@
       ],
       "pex": [
         {
-          "label": "Neck stiffness · 반응",
-          "meaning": "강직/불량한 반응은 CNS 감염 경고; 영아는 강직 없이도 가능",
+          "label": "Neck · Fontanelle · 반응",
+          "meaning": "강직·팽창 대천문·불량한 반응은 CNS 감염 경고; 영아는 강직 없이도 가능",
           "itemIds": [
             "peds-seizure-pe-neck",
             "peds-seizure-hx-appearance"
           ],
           "sourceIds": [
             "rch-febrile-seizure",
-            "rch-infant"
+            "rch-infant",
+            "nice-meningitis"
           ]
         },
         {
@@ -3160,16 +3851,39 @@
           ]
         },
         {
-          "disease": "망막박리",
-          "clues": "광시증·비문증·커튼처럼 가려지는 시야",
+          "disease": "포도막염",
+          "clues": "깊은 안통·광과민·섬모체 충혈",
           "sourceIds": [
-            "msd-retina"
+            "msd-eye-pain"
+          ]
+        },
+        {
+          "disease": "망막박리·동맥폐색",
+          "clues": "광시증·비문/커튼 시야 / 갑작스러운 무통성 단안 시력 저하",
+          "sourceIds": [
+            "msd-retina",
+            "msd-retinal-artery"
           ]
         },
         {
           "disease": "결막염",
           "clues": "분비물·충혈; 대개 시력/동공/EOM 정상",
           "sourceIds": [
+            "tint-eye"
+          ]
+        },
+        {
+          "disease": "안와 감염·안내염",
+          "clues": "발열·안구돌출/EOM 이상 / 수술·외상 뒤 심한 안통·시력 저하",
+          "sourceIds": [
+            "msd-eye-pain"
+          ]
+        },
+        {
+          "disease": "화학손상·관통상",
+          "clues": "산/알칼리 노출 / 고속 이물·관통 기전",
+          "sourceIds": [
+            "aci-eye",
             "tint-eye"
           ]
         }
@@ -3214,17 +3928,47 @@
         },
         {
           "label": "Pupil · Light reflex",
-          "meaning": "중간산대·고정 동공+각막 혼탁은 폐쇄각 의심",
+          "meaning": "중간산대·고정+각막 혼탁은 폐쇄각; RAPD는 시신경/망막 기능 이상",
           "itemIds": [
             "eye-pe-light"
           ],
           "sourceIds": [
-            "msd-glaucoma"
+            "msd-glaucoma",
+            "msd-eye-exam"
           ]
+        },
+        {
+          "label": "EOM · Proptosis",
+          "meaning": "통증/운동 제한+발열·돌출은 안와 감염; 외상 뒤 제한은 포착 등 평가",
+          "itemIds": [
+            "eye-pe-eom"
+          ],
+          "sourceIds": [
+            "msd-eye-pain",
+            "aci-eye"
+          ]
+        },
+        {
+          "label": "Fluorescein",
+          "meaning": "국소 염색은 상피 결손, 수지상 병변은 HSV 각막염 단서",
+          "itemIds": [],
+          "sourceIds": [
+            "msd-eye-pain",
+            "msd-eye-exam",
+            "tint-eye"
+          ]
+        },
+        {
+          "label": "Ciliary flush · Photophobia",
+          "meaning": "각막 주변 충혈은 포도막염/녹내장 등 안구 내 병변; 광과민은 각막 병변도 가능",
+          "sourceIds": [
+            "msd-eye-pain"
+          ],
+          "itemIds": []
         }
       ],
       "caution": {
-        "text": "정상 시력만으로 중증 안질환 배제 불가.",
+        "text": "정상 시력으로 중증 손상 배제 불가. 화학손상은 세척을 지연하지 않음; 관통상 의심 시 압박 금지.",
         "sourceIds": [
           "aci-eye"
         ]
@@ -3258,6 +4002,13 @@
         {
           "disease": "편도·인두염",
           "clues": "발적·삼출·발열; 기도 위험 소견과 구분",
+          "sourceIds": [
+            "msd-throat"
+          ]
+        },
+        {
+          "disease": "심부 경부 감염",
+          "clues": "목 부종·경부 운동 제한·인두 뒤 팽윤·전신 악화",
           "sourceIds": [
             "msd-throat"
           ]
@@ -3384,10 +4135,18 @@
           "sourceIds": [
             "msd-ear"
           ]
+        },
+        {
+          "label": "Weber · Rinne",
+          "meaning": "전음성: 환측 Weber·BC>AC / 감각신경성: 건측 Weber·AC>BC",
+          "itemIds": [],
+          "sourceIds": [
+            "msd-hearing-exam"
+          ]
         }
       ],
       "caution": {
-        "text": "고막 발적만으로 중이염 확정 불가. 급성 난청을 귀지 탓으로 단정하지 않음.",
+        "text": "음차는 보조검사; 급성 난청은 청력검사/전문의 평가. 고막 발적만으로 AOM 확정 불가.",
         "sourceIds": [
           "msd-ear",
           "aao-hearing"
@@ -3465,6 +4224,14 @@
           "sourceIds": [
             "msd-epistaxis"
           ]
+        },
+        {
+          "label": "외상 후 비중격 팽윤",
+          "meaning": "비중격 혈종 의심; 연골 손상 예방 위해 신속한 ENT 평가",
+          "itemIds": [],
+          "sourceIds": [
+            "msd-nasal-fracture"
+          ]
         }
       ],
       "caution": {
@@ -3539,6 +4306,14 @@
           "sourceIds": [
             "aci-dental"
           ]
+        },
+        {
+          "label": "Tooth percussion · Fluctuance",
+          "meaning": "타진통은 치근단 염증, 치아 기저의 압통성 파동성 부종은 농양 단서",
+          "itemIds": [],
+          "sourceIds": [
+            "msd-dental-exam"
+          ]
         }
       ],
       "caution": {
@@ -3566,6 +4341,14 @@
           "sourceIds": [
             "tint-wound",
             "tint-tendon"
+          ]
+        },
+        {
+          "disease": "구획증후군",
+          "clues": "손상보다 심한 통증·수동 신장통; 맥박이 남아 있어도 가능",
+          "sourceIds": [
+            "boa-compartment",
+            "msd-compartment"
           ]
         },
         {
@@ -3625,7 +4408,7 @@
         },
         {
           "label": "Depth · Structure · Open wound",
-          "meaning": "노출 구조·골절과 연결된 상처·이물을 직접 확인",
+          "meaning": "골절 근처 상처는 개방성 의심; 뼈 노출이 없어도 가능. 이물/깊은 구조 확인",
           "itemIds": [
             "trauma-pe-expose",
             "trauma-pe-open",
@@ -3635,6 +4418,29 @@
           ],
           "sourceIds": [
             "tint-wound",
+            "aci-trauma",
+            "msd-fractures"
+          ]
+        },
+        {
+          "label": "Passive stretch · Compartment",
+          "meaning": "수동 신장통·긴장성 부종은 구획증후군 단서; 연속 진찰 필요",
+          "itemIds": [
+            "trauma-pe-msk"
+          ],
+          "sourceIds": [
+            "boa-compartment",
+            "msd-compartment"
+          ]
+        },
+        {
+          "label": "C-spine · Pelvis · Trunk",
+          "meaning": "정중 압통/흉복부 이상은 숨은 손상; 음주·협조 불가 시 진찰 한계",
+          "itemIds": [
+            "trauma-pe-axis",
+            "trauma-pe-ta"
+          ],
+          "sourceIds": [
             "aci-trauma"
           ]
         }
@@ -3723,6 +4529,14 @@
           "sourceIds": [
             "nice-head-injury"
           ]
+        },
+        {
+          "label": "Battle sign · Raccoon eyes · CSF leak",
+          "meaning": "두개저 골절 단서; GCS가 정상이어도 CT 평가 기준",
+          "itemIds": [],
+          "sourceIds": [
+            "nice-head-injury"
+          ]
         }
       ],
       "caution": {
@@ -3756,6 +4570,13 @@
           "sourceIds": [
             "cdc-co"
           ]
+        },
+        {
+          "disease": "Cyanide 중독",
+          "clues": "화재 노출+의식 저하·순환 악화·심한 젖산산증",
+          "sourceIds": [
+            "msd-smoke"
+          ]
         }
       ],
       "hx": [
@@ -3774,12 +4595,13 @@
       "pex": [
         {
           "label": "Soot · Voice · Stridor",
-          "meaning": "그을음은 노출 단서; 쉰 목소리/stridor는 기도 손상 경고",
+          "meaning": "그을음은 노출 단서; 쉰 목소리·stridor/구강 부종은 기도 위험",
           "itemIds": [
             "burn-pe-soot"
           ],
           "sourceIds": [
-            "aci-burn"
+            "aci-burn",
+            "msd-smoke"
           ]
         },
         {
@@ -3832,6 +4654,20 @@
           "sourceIds": [
             "cdc-co"
           ]
+        },
+        {
+          "disease": "콜린성",
+          "clues": "축동·침/기관지 분비 증가·설사·근섬유다발수축",
+          "sourceIds": [
+            "msd-cholinergic"
+          ]
+        },
+        {
+          "disease": "Serotonin syndrome",
+          "clues": "관련 약물 뒤 초조·발한/고체온·clonus/hyperreflexia",
+          "sourceIds": [
+            "msd-serotonin"
+          ]
         }
       ],
       "hx": [
@@ -3873,6 +4709,15 @@
           "itemIds": [],
           "sourceIds": [
             "tint-toxicology"
+          ]
+        },
+        {
+          "label": "분비물 · Reflex/Clonus",
+          "meaning": "과다 분비·근섬유다발수축은 콜린성, clonus/과반사는 serotonin 단서",
+          "itemIds": [],
+          "sourceIds": [
+            "msd-cholinergic",
+            "msd-serotonin"
           ]
         }
       ],

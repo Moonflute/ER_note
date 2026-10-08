@@ -1,13 +1,13 @@
 "use strict";
 
-const CACHE_NAME = "er-note-v23";
+const CACHE_NAME = "er-note-v24";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./styles.css?v=23",
-  "./app.js?v=35",
+  "./app.js?v=36",
   "./data/chief-complaints.json?v=22",
-  "./data/cc-concepts.json?v=1",
+  "./data/cc-concepts.json?v=2",
   "./manifest.webmanifest",
   "./assets/icons/er-icon-32.png",
   "./assets/icons/er-icon-180.png",

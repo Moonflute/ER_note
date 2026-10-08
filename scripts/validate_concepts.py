@@ -1,4 +1,4 @@
-"""Validate concept coverage, citations and the short-form content budget offline."""
+"""Validate concept coverage/citations offline; flag density for clinical review."""
 from collections import Counter
 from datetime import date
 from pathlib import Path
@@ -56,6 +56,8 @@ require(len(concept_ids) == len(set(concept_ids)), "Duplicate concept complaint 
 used_sources = set()
 node_count = 0
 largest = (0, "")
+dense = []
+review = (ROOT / "docs/개념 검토.md").read_text(encoding="utf-8")
 
 
 def references(node, location):
@@ -76,16 +78,16 @@ for concept in data["complaints"]:
     require(concept["scope"] == complaint["scope"], f"Adult/pediatric/psychiatric scope mismatch: {complaint_id}")
     layout_ids = {item["id"] for section in complaint.get("layout", {}).get("sections", [])
                   for group in section["groups"] for item in group["items"]}
-    require(3 <= len(concept["differentials"]) <= 4, f"Differential count exceeds short-form budget: {complaint_id}")
-    require(1 <= len(concept["hx"]) <= 3 and 2 <= len(concept["pex"]) <= 3,
-            f"Missing Hx/PEx interpretation or too many rows: {complaint_id}")
-    require(len(concept["hx"]) + len(concept["pex"]) <= 5, f"Hx/PEx row budget exceeded: {complaint_id}")
+    require(len(concept["differentials"]) >= 3, f"Missing differential overview: {complaint_id}")
+    require(len(concept["hx"]) >= 1 and len(concept["pex"]) >= 2,
+            f"Missing Hx/PEx interpretation: {complaint_id}")
+    require(f"`{complaint_id}`" in review, f"Missing CC clinical review record: {complaint_id}")
     clinical_text = []
     for index, differential in enumerate(concept["differentials"]):
         location = f"{complaint_id}.differentials[{index}]"
         keys(differential, "disease clues sourceIds", location)
         text(differential["disease"], 30, location + ".disease")
-        text(differential["clues"], 60, location + ".clues")
+        text(differential["clues"], 80, location + ".clues")
         clinical_text.extend([differential["disease"], differential["clues"]])
         references(differential, location)
     require(len({d["disease"] for d in concept["differentials"]}) == len(concept["differentials"]), f"Duplicate differentials: {complaint_id}")
@@ -95,17 +97,20 @@ for concept in data["complaints"]:
             location = f"{complaint_id}.{kind}[{index}]"
             keys(item, "label meaning itemIds sourceIds", location)
             text(item["label"], 50, location + ".label")
-            text(item["meaning"], 60, location + ".meaning")
+            text(item["meaning"], 80, location + ".meaning")
             clinical_text.extend([item["label"], item["meaning"]])
             require(len(item["itemIds"]) == len(set(item["itemIds"])) and set(item["itemIds"]) <= layout_ids,
                     f"Unknown or unrelated questionnaire item: {location}")
             references(item, location)
     keys(concept["caution"], "text sourceIds", complaint_id + ".caution")
-    text(concept["caution"]["text"], 60, complaint_id + ".caution.text")
+    text(concept["caution"]["text"], 80, complaint_id + ".caution.text")
     clinical_text.append(concept["caution"]["text"])
     references(concept["caution"], complaint_id + ".caution")
     length = sum(map(len, clinical_text))
-    require(length <= 420, f"Total text budget exceeded: {complaint_id} ({length} > 420)")
+    if length > 500:
+        dense.append((complaint_id, length))
+        require(f"<!-- density: {complaint_id} -->" in review,
+                f"Needs documented density review, not deletion of clinical content: {complaint_id} ({length} characters)")
     require(not [value for value, count in Counter(clinical_text).items() if count > 1], f"Repeated text: {complaint_id}")
     largest = max(largest, (length, complaint_id))
 
@@ -117,4 +122,6 @@ require("app.js sw.js .nojekyll" in workflow, "Service worker missing from Pages
 if errors:
     print("FAIL\n" + "\n".join(errors))
     sys.exit(1)
-print(f"PASS: {len(concept_ids)} concepts, {len(sources)} references, {node_count} cited clinical rows; max {largest[0]}/420 characters ({largest[1]}).")
+print(f"PASS: {len(concept_ids)} concepts, {len(sources)} references, {node_count} cited clinical rows; max {largest[0]} characters ({largest[1]}).")
+if dense:
+    print("Density reviewed (>500 characters): " + ", ".join(f"{id} {length}" for id, length in dense))
