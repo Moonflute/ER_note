@@ -1,12 +1,13 @@
 "use strict";
 
-const CACHE_NAME = "er-note-v22";
+const CACHE_NAME = "er-note-v23";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./styles.css?v=22",
-  "./app.js?v=34",
+  "./styles.css?v=23",
+  "./app.js?v=35",
   "./data/chief-complaints.json?v=22",
+  "./data/cc-concepts.json?v=1",
   "./manifest.webmanifest",
   "./assets/icons/er-icon-32.png",
   "./assets/icons/er-icon-180.png",
@@ -34,8 +35,11 @@ async function networkFirst(request, fallbackUrl) {
   const cache = await caches.open(CACHE_NAME);
   try {
     const response = await fetch(request);
-    if (response.ok) await cache.put(request, response.clone());
-    return response;
+    if (response.ok) {
+      await cache.put(request, response.clone());
+      return response;
+    }
+    return (await cache.match(request)) || (fallbackUrl ? await cache.match(fallbackUrl) : undefined) || response;
   } catch {
     return (await cache.match(request)) || (fallbackUrl ? await cache.match(fallbackUrl) : undefined) || Response.error();
   }
@@ -60,7 +64,7 @@ self.addEventListener("fetch", (event) => {
     event.respondWith(networkFirst(request, "./index.html"));
     return;
   }
-  if (url.pathname.endsWith("/data/chief-complaints.json")) {
+  if (url.pathname.endsWith("/data/chief-complaints.json") || url.pathname.endsWith("/data/cc-concepts.json")) {
     event.respondWith(networkFirst(request));
     return;
   }

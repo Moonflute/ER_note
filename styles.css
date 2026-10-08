@@ -64,6 +64,21 @@ svg { display: block; flex: 0 0 auto; }
 .text-button { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 8px 12px; min-height: 48px; font-size: 13px; font-weight: 600; }
 .reset-button { min-height: 27px; padding: 3px 7px; border-radius: 4px; font-size: 11px; }
 .progress { color: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.detail-tabs { display: flex; gap: 4px; margin-bottom: 8px; border-bottom: 1px solid var(--line); }
+.detail-tabs button { min-height: 32px; padding: 4px 16px 5px; border: 0; border-bottom: 2px solid transparent; background: none; color: var(--muted); font-size: 13px; line-height: 1.4; font-weight: 600; }
+.detail-tabs button[aria-selected="true"] { border-bottom-color: var(--accent); color: var(--accent); }
+.concept-summary { font-size: 12.5px; line-height: 1.4; overflow-wrap: anywhere; }
+.concept-section + .concept-section { margin-top: 8px; }
+.concept-section h2 { margin-bottom: 3px; font-size: 12.5px; line-height: 1.4; }
+.concept-summary dl { margin: 0; }
+.concept-differentials > div { display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 8px; padding: 4px 0; border-bottom: 1px solid #ededed; }
+.concept-summary dt { font-weight: 600; }
+.concept-summary dd { margin: 0; }
+.concept-meanings > div { padding: 3px 0; }
+.concept-meanings dt, .concept-meanings dd { display: inline; }
+.concept-meanings dt::after { content: " → "; color: var(--muted); font-weight: 400; }
+.concept-caution { margin-top: 10px; color: var(--muted); font-size: 11.5px; line-height: 1.45; }
+.concept-error { font-size: 13px; color: var(--muted); }
 .content-section { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; margin-bottom: 10px; overflow: hidden; }
 .content-section-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 7px 11px; border-bottom: 1px solid var(--line); }
 .content-section-header h2 { font-size: 14px; line-height: 1.35; }

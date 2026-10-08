@@ -1,0 +1,3888 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026-10-08.1",
+  "sources": [
+    {
+      "id": "tint-abd",
+      "title": "Tintinalli's Emergency Medicine, 9e: Acute Abdominal Pain",
+      "url": "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2353&sectionid=189592906",
+      "publisher": "McGraw Hill",
+      "locator": "Introduction; history, examination and imaging limitations",
+      "accessedAt": "2026-10-08",
+      "access": "publisher-excerpt"
+    },
+    {
+      "id": "aci-abd",
+      "title": "Adult ECAT: Abdominal pain",
+      "url": "https://aci.health.nsw.gov.au/ecat/adult/abdominal-pain",
+      "publisher": "NSW Agency for Clinical Innovation",
+      "locator": "History prompts; Red flags; Focused assessment",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-constipation",
+      "title": "Constipation — Professional Edition",
+      "url": "https://www.merckmanuals.com/professional/gastrointestinal-disorders/symptoms-of-gastrointestinal-disorders/constipation",
+      "publisher": "Merck/MSD Manuals",
+      "locator": "Evaluation: History, Physical examination, Red flags, Interpretation",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "tint-chest",
+      "title": "Clinical Emergency Medicine: Chest Pain",
+      "url": "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=991&sectionid=55139120",
+      "publisher": "McGraw Hill",
+      "locator": "Differential diagnosis; classic pain characteristics",
+      "accessedAt": "2026-10-08",
+      "access": "publisher-excerpt"
+    },
+    {
+      "id": "tint-acs",
+      "title": "Tintinalli's Emergency Medicine, 9e: Low-Probability Acute Coronary Syndrome",
+      "url": "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2353&sectionid=219641540",
+      "publisher": "McGraw Hill",
+      "locator": "Clinical data cannot exclude ACS",
+      "accessedAt": "2026-10-08",
+      "access": "publisher-excerpt"
+    },
+    {
+      "id": "tint-pneumothorax",
+      "title": "Tintinalli's Emergency Medicine Manual, 8e: Spontaneous and Iatrogenic Pneumothorax",
+      "url": "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2158&sectionid=162270053",
+      "publisher": "McGraw Hill",
+      "locator": "Clinical features: breath sounds, tension signs and their absence",
+      "accessedAt": "2026-10-08",
+      "access": "publisher-excerpt"
+    },
+    {
+      "id": "aci-chest",
+      "title": "Adult ECAT: Chest pain",
+      "url": "https://aci.health.nsw.gov.au/ecat/adult/chest-pain",
+      "publisher": "NSW Agency for Clinical Innovation",
+      "locator": "History prompts; Circulation; Precautions and notes",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "nice-syncope",
+      "title": "CG109: Transient loss of consciousness in over 16s",
+      "url": "https://www.nice.org.uk/guidance/cg109/chapter/Recommendations",
+      "publisher": "NICE",
+      "locator": "1.1 Initial assessment; 1.2.2 Orthostatic hypotension; 1.2.3 Suspected epilepsy",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "tint-syncope",
+      "title": "Tintinalli's Emergency Medicine Manual, 8e: Syncope",
+      "url": "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2158&sectionid=162269651",
+      "publisher": "McGraw Hill",
+      "locator": "Orthostatic changes do not exclude other serious causes",
+      "accessedAt": "2026-10-08",
+      "access": "publisher-excerpt"
+    },
+    {
+      "id": "aha-arrest",
+      "title": "2025 AHA Guidelines: Adult Advanced Life Support",
+      "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-advanced-life-support",
+      "publisher": "American Heart Association",
+      "locator": "Adult cardiac arrest algorithm; reversible causes; POCUS",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-hematuria",
+      "title": "Hematuria — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/nephrology/symptoms-of-nephrologic-disorders/hematuria",
+      "publisher": "Merck/MSD Manuals",
+      "locator": "Some Common Specific Causes of Hematuria; Evaluation",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "eau-infections",
+      "title": "EAU Guidelines on Urological Infections",
+      "url": "https://uroweb.org/guidelines/urological-infections/chapter/the-guideline",
+      "publisher": "European Association of Urology",
+      "locator": "3.4 Cystitis; 3.6 Pyelonephritis; 3.7 Systemic UTI",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "eau-stones",
+      "title": "EAU Guidelines on Urolithiasis",
+      "url": "https://uroweb.org/guidelines/urolithiasis/chapter/guidelines",
+      "publisher": "European Association of Urology",
+      "locator": "3.3.1 Diagnostic imaging; 3.4.2 Sepsis/anuria in obstructed kidney",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "aci-retention",
+      "title": "Adult ECAT: Urinary retention (suspected)",
+      "url": "https://aci.health.nsw.gov.au/ecat/adult/urinary-retention",
+      "publisher": "NSW Agency for Clinical Innovation",
+      "locator": "History prompts; Red flags; overflow; bladder assessment",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-incontinence",
+      "title": "Urinary Incontinence in Adults — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/genitourinary-disorders/voiding-disorders/urinary-incontinence-in-adults",
+      "publisher": "Merck/MSD Manuals",
+      "locator": "Types; Evaluation; Physical examination; postvoid residual",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "aci-scrotum",
+      "title": "Emergency Care Institute: Acute scrotum",
+      "url": "https://aci.health.nsw.gov.au/networks/eci/clinical/tools/acute-scrotum",
+      "publisher": "NSW Agency for Clinical Innovation",
+      "locator": "Assessment; torsion, epididymitis, hernia, Fournier; July 2026 revision",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "tint-joints",
+      "title": "Tintinalli's Emergency Medicine, 9e: Joints and Bursae",
+      "url": "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2353&sectionid=222407706",
+      "publisher": "McGraw Hill",
+      "locator": "Mechanisms and differential of acute joint symptoms",
+      "accessedAt": "2026-10-08",
+      "access": "publisher-excerpt"
+    },
+    {
+      "id": "sanjo",
+      "title": "Guideline for management of septic arthritis in native joints (SANJO)",
+      "url": "https://jbji.copernicus.org/articles/8/29/2023/",
+      "publisher": "European Bone and Joint Infection Society",
+      "locator": "Diagnostic approach recommendations 1–5",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "aci-msk",
+      "title": "Adult ECAT: Musculoskeletal assessment",
+      "url": "https://aci.health.nsw.gov.au/ecat/adult/assessment/musculoskeletal",
+      "publisher": "NSW Agency for Clinical Innovation",
+      "locator": "Look, Feel, Move; point tenderness; neurovascular assessment",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "aci-back",
+      "title": "Emergency Care Institute: Acute low back pain",
+      "url": "https://aci.health.nsw.gov.au/networks/eci/clinical/tools/orthopaedic-and-musculoskeletal/acute-low-back-pain",
+      "publisher": "NSW Agency for Clinical Innovation",
+      "locator": "Red flags; serious pathology; examination; cauda equina",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-sjs",
+      "title": "Stevens-Johnson Syndrome and Toxic Epidermal Necrolysis — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/dermatologic-disorders/hypersensitivity-and-reactive-skin-disorders/stevens-johnson-syndrome-sjs-and-toxic-epidermal-necrolysis-ten",
+      "publisher": "Merck/MSD Manuals",
+      "locator": "Symptoms and signs; Diagnosis",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-anaphylaxis",
+      "title": "Anaphylaxis — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/immunology-allergic-disorders/allergic-autoimmune-and-other-hypersensitivity-disorders/anaphylaxis",
+      "publisher": "Merck/MSD Manuals",
+      "locator": "Symptoms and signs; diagnostic criteria; September 2026 revision",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "idsa-skin",
+      "title": "IDSA Guidelines: Skin and Soft Tissue Infections",
+      "url": "https://www.idsociety.org/practice-guideline/skin-and-soft-tissue-infections/",
+      "publisher": "Infectious Diseases Society of America",
+      "locator": "Cellulitis; Necrotizing fasciitis — deeper tissue involvement features",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "tint-vertigo",
+      "title": "Tintinalli's Emergency Medicine, 9e: Vertigo",
+      "url": "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2353&sectionid=196726222",
+      "publisher": "McGraw Hill",
+      "locator": "April 2020 HINTS update; Peripheral and Central Causes of Vertigo",
+      "accessedAt": "2026-10-08",
+      "access": "publisher-excerpt"
+    },
+    {
+      "id": "grace3",
+      "title": "GRACE-3: Acute Dizziness and Vertigo in the Emergency Department",
+      "url": "https://www.saem.org/publications/grace/grace-3",
+      "publisher": "Society for Academic Emergency Medicine",
+      "locator": "Timing/triggers; AVS recommendations 1–7; episodic syndromes",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "aci-headache",
+      "title": "Emergency Care Institute: Headache",
+      "url": "https://aci.health.nsw.gov.au/networks/eci/clinical/tools/neurology/headache",
+      "publisher": "NSW Agency for Clinical Innovation",
+      "locator": "Serious and common causes; Red flags; May 2026 revision",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "tint-headache",
+      "title": "Tintinalli's Emergency Medicine Manual, 8e: Headache",
+      "url": "https://accessemergencymedicine.mhmedical.com/content.aspx?sectionid=162273430",
+      "publisher": "McGraw Hill",
+      "locator": "Diagnosis and differential; physical findings; further workup after negative CT",
+      "accessedAt": "2026-10-08",
+      "access": "publisher-excerpt"
+    },
+    {
+      "id": "tint-neck",
+      "title": "Tintinalli's Emergency Medicine Manual, 7e: Neck and Thoracolumbar Pain",
+      "url": "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=521&sectionid=41069116",
+      "publisher": "McGraw Hill",
+      "locator": "Clinical features: localized ligament/muscle pain and neck movement",
+      "accessedAt": "2026-10-08",
+      "access": "publisher-excerpt"
+    },
+    {
+      "id": "tint-seizures",
+      "title": "Tintinalli's Emergency Medicine, 9e: Seizures and Status Epilepticus in Adults",
+      "url": "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2353&sectionid=192077268",
+      "publisher": "McGraw Hill",
+      "locator": "Secondary and reactive seizures; risk factors update",
+      "accessedAt": "2026-10-08",
+      "access": "publisher-excerpt"
+    },
+    {
+      "id": "nice-epilepsy",
+      "title": "NG217: Diagnosis and assessment of epilepsy",
+      "url": "https://www.nice.org.uk/guidance/ng217/chapter/diagnosis-and-assessment-of-epilepsy",
+      "publisher": "NICE",
+      "locator": "1.2 Specialist assessment; witness history; ECG; metabolic disturbance",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "nice-status",
+      "title": "NG217: Treating status epilepticus, repeated or cluster seizures, and prolonged seizures",
+      "url": "https://www.nice.org.uk/guidance/ng217/chapter/treating-status-epilepticus-repeated-or-cluster-seizures-and-prolonged-seizures",
+      "publisher": "NICE",
+      "locator": "7.1.1–7.1.6: 5-minute threshold, hypoglycaemia, alcohol withdrawal, non-adherence",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-coma",
+      "title": "Overview of Coma and Impaired Consciousness — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/neurologic-disorders/coma-and-impaired-consciousness/overview-of-coma-and-impaired-consciousness",
+      "publisher": "Merck/MSD Manuals",
+      "locator": "Etiology; neurologic exam; pupillary response; asymmetric motor response",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "aci-unconscious",
+      "title": "Adult ECAT: Unconscious person",
+      "url": "https://aci.health.nsw.gov.au/ecat/adult/unconscious-person",
+      "publisher": "NSW Agency for Clinical Innovation",
+      "locator": "History prompts; Red flags; airway, breathing and glucose",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "aci-stroke",
+      "title": "Adult ECAT: Stroke or transient ischaemic attack (suspected)",
+      "url": "https://aci.health.nsw.gov.au/ecat/adult/stroke-and-transient-ischaemic-attack",
+      "publisher": "NSW Agency for Clinical Innovation",
+      "locator": "FAST; last seen well; risk factors; A to G; precautions",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "aci-behaviour",
+      "title": "Adult ECAT: Acute behavioural disturbance",
+      "url": "https://aci.health.nsw.gov.au/ecat/adult/acute-behavioural-disturbance",
+      "publisher": "NSW Agency for Clinical Innovation",
+      "locator": "History prompts; Red flags — metabolic, delirium, infection, intoxication",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "nice-self-harm",
+      "title": "NG225: Self-harm — assessment, management and preventing recurrence",
+      "url": "https://www.nice.org.uk/guidance/ng225/resources/selfharm-assessment-management-and-preventingrecurrence-pdf-66143837346757",
+      "publisher": "NICE",
+      "locator": "1.5 Psychosocial assessment; 1.6 Risk assessment tools and scales",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-pelvic",
+      "title": "Female Pelvic Pain — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/gynecology-and-obstetrics/symptoms-of-gynecologic-disorders/female-pelvic-pain",
+      "publisher": "Merck/MSD Manuals",
+      "locator": "Some Gynecologic Causes of Pelvic Pain; evaluation",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "cdc-pid",
+      "title": "STI Treatment Guidelines: Pelvic Inflammatory Disease",
+      "url": "https://www.cdc.gov/std/treatment-guidelines/pid.htm",
+      "publisher": "Centers for Disease Control and Prevention",
+      "locator": "Diagnostic considerations; cervical motion, uterine and adnexal tenderness",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "nice-preterm",
+      "title": "NG25: Preterm labour and birth",
+      "url": "https://www.nice.org.uk/guidance/ng25/chapter/recommendations",
+      "publisher": "NICE",
+      "locator": "1.3 Diagnosing P-PROM; 1.7 Diagnosing preterm labour",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-pregnancy-bleeding",
+      "title": "Vaginal Bleeding During Late Pregnancy — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/gynecology-and-obstetrics/symptoms-during-pregnancy/vaginal-bleeding-during-late-pregnancy",
+      "publisher": "Merck/MSD Manuals",
+      "locator": "Causes; pain characteristics; avoiding digital cervical exam before excluding previa",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "rch-infant",
+      "title": "Recognition of the seriously unwell neonate and young infant",
+      "url": "https://www.rch.org.au/clinicalguide/guideline_index/Recognition_of_the_seriously_unwell_neonate_and_young_infant/",
+      "publisher": "Royal Children's Hospital Melbourne",
+      "locator": "Key points; Assessment; differential causes",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "rch-dehydration",
+      "title": "Clinical Practice Guidelines: Dehydration",
+      "url": "https://www.rch.org.au/clinicalguide/guideline_index/Dehydration/",
+      "publisher": "Royal Children's Hospital Melbourne",
+      "locator": "Assessment; clinical signs by degree of dehydration",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "rch-fever",
+      "title": "Clinical Practice Guidelines: Febrile child",
+      "url": "https://www.rch.org.au/clinicalguide/guideline_index/Febrile_child/",
+      "publisher": "Royal Children's Hospital Melbourne",
+      "locator": "Key points; common SBI; ≥5-day fever; appearance; infant age groups",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "rch-vomiting",
+      "title": "Clinical Practice Guidelines: Vomiting",
+      "url": "https://www.rch.org.au/clinicalguide/guideline_index/Vomiting/",
+      "publisher": "Royal Children's Hospital Melbourne",
+      "locator": "Key points; differential by vomit pattern; red flags; examination",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "rch-ge",
+      "title": "Clinical Practice Guidelines: Gastroenteritis",
+      "url": "https://www.rch.org.au/clinicalguide/guideline_index/Gastroenteritis/",
+      "publisher": "Royal Children's Hospital Melbourne",
+      "locator": "History; diarrhoea characteristics; dehydration; alternative diagnoses",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "rch-cough",
+      "title": "Clinical Practice Guidelines: Cough",
+      "url": "https://www.rch.org.au/clinicalguide/guideline_index/Cough/",
+      "publisher": "Royal Children's Hospital Melbourne",
+      "locator": "Onset/triggers; cough quality; Examination; acute unwell children",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "rch-fb",
+      "title": "Clinical Practice Guidelines: Foreign bodies inhaled",
+      "url": "https://www.rch.org.au/clinicalguide/guideline_index/Foreign_Bodies_Inhaled/",
+      "publisher": "Royal Children's Hospital Melbourne",
+      "locator": "Choking; focal wheeze; normal examination does not exclude inhalation",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "rch-abd",
+      "title": "Clinical Practice Guidelines: Abdominal pain — acute",
+      "url": "https://www.rch.org.au/clinicalguide/guideline_index/Abdominal_pain_-_acute/",
+      "publisher": "Royal Children's Hospital Melbourne",
+      "locator": "Causes by age; Assessment; Peritonism; serial examination",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "rch-febrile-seizure",
+      "title": "Clinical Practice Guidelines: Febrile seizure",
+      "url": "https://www.rch.org.au/clinicalguide/guideline_index/Febrile_seizure/",
+      "publisher": "Royal Children's Hospital Melbourne",
+      "locator": "Definition; simple/complex features; CNS infection; 5-minute treatment threshold",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "aci-eye",
+      "title": "Adult ECAT: Ocular presentations",
+      "url": "https://aci.health.nsw.gov.au/ecat/adult/ocular",
+      "publisher": "NSW Agency for Clinical Innovation",
+      "locator": "Visual acuity; red flags; RAPD; serious injury with normal acuity",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-glaucoma",
+      "title": "Angle-Closure Glaucoma — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/eye-disorders/glaucoma/angle-closure-glaucoma",
+      "publisher": "Merck/MSD Manuals",
+      "locator": "Acute angle closure — symptoms, fixed mid-dilated pupil, hazy cornea",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-retina",
+      "title": "Retinal Detachment — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/eye-disorders/retinal-disorders/retinal-detachment",
+      "publisher": "Merck/MSD Manuals",
+      "locator": "Symptoms and signs; urgency of indirect ophthalmoscopy",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "tint-eye",
+      "title": "Tintinalli's Emergency Medicine Manual, 8e: Eye Emergencies",
+      "url": "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2158&sectionid=162273694",
+      "publisher": "McGraw Hill",
+      "locator": "Conjunctivitis; visual acuity and EOM; fluorescein staining",
+      "accessedAt": "2026-10-08",
+      "access": "publisher-excerpt"
+    },
+    {
+      "id": "msd-throat",
+      "title": "Sore Throat — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/ear-nose-and-throat-disorders/approach-to-the-patient-with-nasal-and-pharyngeal-symptoms/sore-throat",
+      "publisher": "Merck/MSD Manuals",
+      "locator": "Evaluation; abscess and epiglottitis; airway threat",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-fb",
+      "title": "Esophageal Foreign Bodies — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/gastrointestinal-disorders/bezoars-and-foreign-bodies/esophageal-foreign-bodies",
+      "publisher": "Merck/MSD Manuals",
+      "locator": "Symptoms; acute dysphagia and drooling; Diagnosis",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-ear",
+      "title": "Otalgia — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/ear-nose-and-throat-disorders/approach-to-the-patient-with-ear-problems/otalgia",
+      "publisher": "Merck/MSD Manuals",
+      "locator": "Some Causes of Otalgia; otoscopy; pinna/tragal pain; mastoid findings",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "aao-hearing",
+      "title": "Sudden Hearing Loss: Update to Guideline",
+      "url": "https://www.entnet.org/resource/aao-hnsf-updated-cpg-shl-press-release-fact-sheet/",
+      "publisher": "American Academy of Otolaryngology–Head and Neck Surgery",
+      "locator": "KAS1: distinguish conductive and sensorineural loss; KAS4: audiometry",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "tint-nose",
+      "title": "Tintinalli's Emergency Medicine, 9e: Nose and Sinuses",
+      "url": "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2353&sectionid=221179919",
+      "publisher": "McGraw Hill",
+      "locator": "Epistaxis: anterior/posterior anatomy; focused Hx; medication and coagulopathy",
+      "accessedAt": "2026-10-08",
+      "access": "publisher-excerpt"
+    },
+    {
+      "id": "msd-epistaxis",
+      "title": "Epistaxis — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/ear-nose-and-throat-disorders/approach-to-the-patient-with-nasal-and-pharyngeal-symptoms/epistaxis",
+      "publisher": "Merck/MSD Manuals",
+      "locator": "Etiology; Evaluation; hypertension is not the sole etiology",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "tint-dental",
+      "title": "Tintinalli's Emergency Medicine Manual, 8e: Oral and Dental Emergencies",
+      "url": "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2158&sectionid=162273848",
+      "publisher": "McGraw Hill",
+      "locator": "Dental pain; facial space infections; Ludwig angina",
+      "accessedAt": "2026-10-08",
+      "access": "publisher-excerpt"
+    },
+    {
+      "id": "aci-dental",
+      "title": "Adult ECAT: Dental assessment",
+      "url": "https://aci.health.nsw.gov.au/ecat/adult/assessment/dental",
+      "publisher": "NSW Agency for Clinical Innovation",
+      "locator": "Injury assessment; fragments; malocclusion; dental pain assessment",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "tint-wound",
+      "title": "Tintinalli's Emergency Medicine, 8e: Wound Preparation",
+      "url": "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=1658&sectionid=109428273",
+      "publisher": "McGraw Hill",
+      "locator": "Pre-anaesthetic sensory/motor/vascular examination; wound exploration",
+      "accessedAt": "2026-10-08",
+      "access": "publisher-excerpt"
+    },
+    {
+      "id": "aci-trauma",
+      "title": "Adult ECAT: Traumatic injury",
+      "url": "https://aci.health.nsw.gov.au/ecat/adult/traumatic-injury",
+      "publisher": "NSW Agency for Clinical Innovation",
+      "locator": "Mechanism; primary assessment; secondary survey",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "nice-head-injury",
+      "title": "NG232: Head injury — assessment and early management",
+      "url": "https://www.nice.org.uk/guidance/NG232/chapter/recommendations",
+      "publisher": "NICE",
+      "locator": "1.5 CT criteria; 1.9 observation; neurologic deterioration",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "tint-head-injury",
+      "title": "Tintinalli's Emergency Medicine, 9e: Head Trauma",
+      "url": "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2353&sectionid=221181086",
+      "publisher": "McGraw Hill",
+      "locator": "TBI definitions; confusion to coma; mild injury terminology",
+      "accessedAt": "2026-10-08",
+      "access": "publisher-excerpt"
+    },
+    {
+      "id": "aci-burn",
+      "title": "Adult ECAT: Burns",
+      "url": "https://aci.health.nsw.gov.au/ecat/adult/burns",
+      "publisher": "NSW Agency for Clinical Innovation",
+      "locator": "Inhalation red flags; soot; delayed airway worsening",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "cdc-co",
+      "title": "Clinical Guidance for Carbon Monoxide Poisoning",
+      "url": "https://www.cdc.gov/carbon-monoxide/hcp/clinical-guidance/index.html",
+      "publisher": "Centers for Disease Control and Prevention",
+      "locator": "Exposure/symptoms; COHb; conventional pulse oximeter limitation",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "tint-toxicology",
+      "title": "Tintinalli's Emergency Medicine Manual, 8e: General Management of the Poisoned Patient",
+      "url": "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2158&sectionid=162272278",
+      "publisher": "McGraw Hill",
+      "locator": "Exposure clues; comprehensive exam; common toxidromes",
+      "accessedAt": "2026-10-08",
+      "access": "publisher-excerpt"
+    },
+    {
+      "id": "aha-bls",
+      "title": "2025 AHA Guidelines: Adult Basic Life Support",
+      "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-basic-life-support",
+      "publisher": "American Heart Association",
+      "locator": "Recognition of cardiac arrest; agonal breathing; pulse check",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "nice-depression",
+      "title": "NG222: Depression in adults — treatment and management",
+      "url": "https://www.nice.org.uk/guidance/ng222/chapter/Recommendations",
+      "publisher": "NICE",
+      "locator": "1.2 Recognition and assessment; mood, interest, function and suicide risk",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "nice-delirium",
+      "title": "CG103: Delirium — prevention, diagnosis and management",
+      "url": "https://www.nice.org.uk/guidance/cg103/chapter/Recommendations",
+      "publisher": "NICE",
+      "locator": "1.3 Indicators of delirium: recent and fluctuating cognition, perception and function",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "nice-meningitis",
+      "title": "NG240: Meningitis (bacterial) and meningococcal disease",
+      "url": "https://www.nice.org.uk/guidance/ng240/chapter/Recommendations",
+      "publisher": "NICE",
+      "locator": "1.1 When to suspect bacterial meningitis; incomplete red-flag combinations",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "tint-tendon",
+      "title": "Tintinalli's Emergency Medicine Manual, 8e: Lacerations to the Leg and Foot",
+      "url": "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2158&sectionid=162269453",
+      "publisher": "McGraw Hill",
+      "locator": "Clinical features: partial tendon laceration may preserve function",
+      "accessedAt": "2026-10-08",
+      "access": "publisher-excerpt"
+    },
+    {
+      "id": "atlas-apap",
+      "title": "The Atlas of Emergency Medicine, 5e: Acetaminophen Poisoning",
+      "url": "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2969&sectionid=250462133",
+      "publisher": "McGraw Hill",
+      "locator": "Clinical summary: early asymptomatic period before liver injury",
+      "accessedAt": "2026-10-08",
+      "access": "publisher-excerpt"
+    },
+    {
+      "id": "msd-seizures",
+      "title": "Seizure Disorders — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/neurologic-disorders/seizure-disorders/seizure-disorders",
+      "publisher": "Merck/MSD Manuals",
+      "locator": "Postictal Todd paralysis; nonconvulsive status and EEG; diagnosis",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-reflexes",
+      "title": "How to Assess Reflexes — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/neurologic-disorders/neurologic-examination/how-to-assess-reflexes",
+      "publisher": "Merck/MSD Manuals",
+      "locator": "Pathologic reflexes: extensor plantar response and upper motor neuron lesions",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "rch-intussusception",
+      "title": "Clinical Practice Guidelines: Intussusception",
+      "url": "https://www.rch.org.au/clinicalguide/guideline_index/intussusception_guideline/",
+      "publisher": "Royal Children's Hospital Melbourne",
+      "locator": "Intermittent distress/lethargy; early diarrhoea; late bleeding; examination",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "rch-kawasaki",
+      "title": "Clinical Practice Guidelines: Kawasaki disease",
+      "url": "https://www.rch.org.au/clinicalguide/guideline_index/kawasaki_disease_guideline/",
+      "publisher": "Royal Children's Hospital Melbourne",
+      "locator": "Clinical diagnostic features; conjunctival, oral, rash and limb changes",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    },
+    {
+      "id": "msd-appendicitis",
+      "title": "Appendicitis — Professional Edition",
+      "url": "https://www.msdmanuals.com/professional/gastrointestinal-disorders/acute-abdomen-and-surgical-gastroenterology/appendicitis",
+      "publisher": "Merck/MSD Manuals",
+      "locator": "Symptoms and signs: Rovsing, psoas and obturator signs; atypical findings in children",
+      "accessedAt": "2026-10-08",
+      "access": "full-text"
+    }
+  ],
+  "complaints": [
+    {
+      "complaintId": "abdominal-pain",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "충수염·복막염",
+          "clues": "국소 통증·guarding/rTd; 천공이면 전신 악화",
+          "sourceIds": [
+            "aci-abd"
+          ]
+        },
+        {
+          "disease": "장폐색",
+          "clues": "복부팽만·구토·배변/가스 감소; 수술력",
+          "sourceIds": [
+            "aci-abd"
+          ]
+        },
+        {
+          "disease": "요로계",
+          "clues": "결석: 산통·혈뇨 / 신우신염: 발열·CVAT",
+          "sourceIds": [
+            "eau-stones",
+            "eau-infections"
+          ]
+        },
+        {
+          "disease": "혈관·산부 응급",
+          "clues": "AAA/허혈: 급격한 통증·쇼크 / 임신 시 자궁외임신",
+          "sourceIds": [
+            "aci-abd"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "LMP · 임신 가능성",
+          "meaning": "자궁외임신 위험 판단",
+          "itemIds": [
+            "abd-hx-pregnancy"
+          ],
+          "sourceIds": [
+            "aci-abd"
+          ]
+        },
+        {
+          "label": "수술력 · ANVCD · FUND HIS",
+          "meaning": "장폐색/장염과 요로 원인을 구분",
+          "itemIds": [
+            "abd-hx-operation",
+            "abd-hx-anvcd",
+            "abd-hx-fundhis"
+          ],
+          "sourceIds": [
+            "aci-abd",
+            "eau-infections"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "Tenderness · rTd · Guarding",
+          "meaning": "국소화·복막자극; 초기 병변은 소견이 미약할 수 있음",
+          "itemIds": [
+            "abd-pe-tenderness"
+          ],
+          "sourceIds": [
+            "tint-abd",
+            "aci-abd"
+          ]
+        },
+        {
+          "label": "CVAT",
+          "meaning": "발열·요로증상 동반 시 신우신염 의심; 결석도 가능",
+          "itemIds": [
+            "abd-pe-cvat"
+          ],
+          "sourceIds": [
+            "eau-infections",
+            "eau-stones"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "증상 지속/악화 시 재진찰·영상 판단; 통증에 비해 진찰이 미약하면 허혈 등 고려.",
+        "sourceIds": [
+          "tint-abd",
+          "aci-abd"
+        ]
+      }
+    },
+    {
+      "complaintId": "constipation",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "장폐색",
+          "clues": "구토·팽만·가스 배출 중단·지속 통증",
+          "sourceIds": [
+            "msd-constipation"
+          ]
+        },
+        {
+          "disease": "분변매복",
+          "clues": "배변 정체; 주위로 묽은 변이 새어 설사처럼 보임",
+          "sourceIds": [
+            "msd-constipation"
+          ]
+        },
+        {
+          "disease": "기능성·약물성",
+          "clues": "기존 양상 반복 / opioid·항콜린제 등 시작 후",
+          "sourceIds": [
+            "msd-constipation"
+          ]
+        },
+        {
+          "disease": "기질성 장질환",
+          "clues": "새로 악화된 변비·혈변·체중감소",
+          "sourceIds": [
+            "msd-constipation"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "Last defecation · Flatus",
+          "meaning": "변뿐 아니라 가스도 끊겼는지: 폐색 단서",
+          "itemIds": [
+            "constipation-hx-defecation",
+            "constipation-hx-gas"
+          ],
+          "sourceIds": [
+            "msd-constipation"
+          ]
+        },
+        {
+          "label": "Medical Hx · 내시경력",
+          "meaning": "약물·수술·기질 질환과 기존 평가 확인",
+          "itemIds": [
+            "constipation-hx-past",
+            "constipation-hx-scope"
+          ],
+          "sourceIds": [
+            "msd-constipation"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "복부팽만 · 압통",
+          "meaning": "뚜렷한 팽만/구토·복막자극이면 폐색·합병증 의심",
+          "itemIds": [],
+          "sourceIds": [
+            "msd-constipation"
+          ]
+        },
+        {
+          "label": "직장수지검사",
+          "meaning": "분변매복·혈액·종괴 확인; 필요에 따라 시행",
+          "itemIds": [],
+          "sourceIds": [
+            "msd-constipation"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "심한 통증·구토·팽만·혈변이 있으면 단순 변비로 판단하지 않음.",
+        "sourceIds": [
+          "msd-constipation"
+        ]
+      }
+    },
+    {
+      "complaintId": "chest-pain",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "ACS",
+          "clues": "압박감·운동 연관·팔/턱 방사·발한; 비전형도 가능",
+          "sourceIds": [
+            "tint-chest",
+            "aci-chest"
+          ]
+        },
+        {
+          "disease": "대동맥박리",
+          "clues": "갑자기 최대 강도·등으로 방사; 허혈 소견 동반 가능",
+          "sourceIds": [
+            "tint-chest"
+          ]
+        },
+        {
+          "disease": "PE",
+          "clues": "호흡성 통증·호흡곤란; 혈전 위험 인자",
+          "sourceIds": [
+            "tint-chest"
+          ]
+        },
+        {
+          "disease": "기흉",
+          "clues": "갑작스러운 편측 통증·호흡곤란; 긴장성이면 쇼크",
+          "sourceIds": [
+            "tint-pneumothorax"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "Onset · Radiation · Factors",
+          "meaning": "급작스러움·방사·운동/호흡 연관으로 감별",
+          "itemIds": [
+            "chest-hx-onset",
+            "chest-hx-radiation",
+            "chest-hx-factor"
+          ],
+          "sourceIds": [
+            "tint-chest"
+          ]
+        },
+        {
+          "label": "Associated · Medical Hx",
+          "meaning": "발한/실신/호흡곤란과 심혈관·혈전 위험 평가",
+          "itemIds": [
+            "chest-hx-associated",
+            "chest-hx-past"
+          ],
+          "sourceIds": [
+            "aci-chest",
+            "tint-chest"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "V/S · 관류",
+          "meaning": "저혈압·의식저하·식은땀은 불안정 신호",
+          "itemIds": [],
+          "sourceIds": [
+            "aci-chest"
+          ]
+        },
+        {
+          "label": "편측 호흡음 감소",
+          "meaning": "기흉 의심; 정상 청진으로 기흉을 배제할 수 없음",
+          "itemIds": [],
+          "sourceIds": [
+            "tint-pneumothorax"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "통증 양상·정상 진찰만으로 ACS 배제 불가; ECG와 troponin 경로로 판단.",
+        "sourceIds": [
+          "tint-acs",
+          "aci-chest"
+        ]
+      }
+    },
+    {
+      "complaintId": "syncope",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "심장성",
+          "clues": "운동 중·전조 없이 발생; 심질환/돌연사 가족력",
+          "sourceIds": [
+            "nice-syncope"
+          ]
+        },
+        {
+          "disease": "미주신경성",
+          "clues": "오래 서기·통증/자극 뒤 발한·오심·시야 흐림",
+          "sourceIds": [
+            "nice-syncope"
+          ]
+        },
+        {
+          "disease": "기립성",
+          "clues": "일어선 뒤 발생; 탈수·혈압약 등 연관",
+          "sourceIds": [
+            "nice-syncope",
+            "tint-syncope"
+          ]
+        },
+        {
+          "disease": "경련",
+          "clues": "혀 깨물림·지속 경련·회복 후 혼돈",
+          "sourceIds": [
+            "nice-syncope"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "Prodrome · 당시/현재 증상",
+          "meaning": "실신 전 위험 증상과 경련 후 혼돈 구분",
+          "itemIds": [
+            "syncope-hx-prodrome",
+            "syncope-hx-change"
+          ],
+          "sourceIds": [
+            "nice-syncope"
+          ]
+        },
+        {
+          "label": "Medical Hx · 약물",
+          "meaning": "심질환·부정맥 위험과 약물성 저혈압 확인",
+          "itemIds": [
+            "syncope-hx-medical",
+            "syncope-hx-loc"
+          ],
+          "sourceIds": [
+            "nice-syncope"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "자세별 BP",
+          "meaning": "기립 시 혈압저하와 증상 재현은 기립성 단서",
+          "itemIds": [
+            "syncope-pe-bp"
+          ],
+          "sourceIds": [
+            "nice-syncope"
+          ]
+        },
+        {
+          "label": "맥박 · 심장 진찰",
+          "meaning": "불규칙맥·심잡음은 부정맥/구조성 심질환 평가 단서",
+          "itemIds": [],
+          "sourceIds": [
+            "nice-syncope"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "짧은 jerk는 실신에도 가능. 기립성 변화가 있어도 다른 위험 원인을 배제하지 않음.",
+        "sourceIds": [
+          "nice-syncope",
+          "tint-syncope"
+        ]
+      }
+    },
+    {
+      "complaintId": "cardiac-arrest",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "저산소·저혈량",
+          "clues": "기도/호흡 문제·대량출혈·체액 소실",
+          "sourceIds": [
+            "aha-arrest"
+          ]
+        },
+        {
+          "disease": "대사·저체온",
+          "clues": "K 이상·산증·심한 저체온",
+          "sourceIds": [
+            "aha-arrest"
+          ]
+        },
+        {
+          "disease": "혈전·중독",
+          "clues": "관상동맥/폐 혈전·약물 노출",
+          "sourceIds": [
+            "aha-arrest"
+          ]
+        },
+        {
+          "disease": "폐쇄성 원인",
+          "clues": "긴장성 기흉·심장압전",
+          "sourceIds": [
+            "aha-arrest"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "Incoming CPR",
+          "meaning": "목격·발생 시각·bystander CPR·초기 리듬/처치 확인",
+          "itemIds": [
+            "arrest-hx-scope"
+          ],
+          "sourceIds": [
+            "aha-arrest"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "무반응 · 비정상 호흡 · 무맥",
+          "meaning": "심정지 인지; agonal gasping은 정상 호흡이 아님",
+          "itemIds": [
+            "arrest-pe-pulse"
+          ],
+          "sourceIds": [
+            "aha-bls"
+          ]
+        },
+        {
+          "label": "리듬",
+          "meaning": "VF/pVT와 PEA/asystole 구분; 가역 원인 함께 평가",
+          "itemIds": [],
+          "sourceIds": [
+            "aha-arrest"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "문진·맥박 확인·POCUS가 흉부압박과 제세동을 지연시키지 않도록 함.",
+        "sourceIds": [
+          "aha-arrest"
+        ]
+      }
+    },
+    {
+      "complaintId": "hematuria",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "감염",
+          "clues": "배뇨통·빈뇨·절박뇨; 발열이면 전신 UTI 고려",
+          "sourceIds": [
+            "msd-hematuria",
+            "eau-infections"
+          ]
+        },
+        {
+          "disease": "결석",
+          "clues": "갑작스러운 옆구리 산통·오심/구토",
+          "sourceIds": [
+            "msd-hematuria"
+          ]
+        },
+        {
+          "disease": "비뇨기 종양",
+          "clues": "통증 없는 혈뇨·흡연/고령 등 위험 인자",
+          "sourceIds": [
+            "msd-hematuria"
+          ]
+        },
+        {
+          "disease": "사구체 질환",
+          "clues": "단백뇨·부종·고혈압·RBC cast 동반",
+          "sourceIds": [
+            "msd-hematuria"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "Hematuria",
+          "meaning": "육안/현미경적·기간·혈괴·실제 요로 출혈인지 구분",
+          "itemIds": [
+            "hematuria-hx-chief"
+          ],
+          "sourceIds": [
+            "msd-hematuria",
+            "aci-retention"
+          ]
+        },
+        {
+          "label": "FUND HIS · Stream",
+          "meaning": "자극 증상은 감염, 배출 장애는 폐색 평가 단서",
+          "itemIds": [
+            "hematuria-hx-fundhis",
+            "hematuria-hx-other"
+          ],
+          "sourceIds": [
+            "msd-hematuria",
+            "aci-retention"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "치골상부 팽만",
+          "meaning": "혈괴 등으로 인한 요폐 의심",
+          "itemIds": [],
+          "sourceIds": [
+            "aci-retention"
+          ]
+        },
+        {
+          "label": "부종 · BP · CVAT",
+          "meaning": "부종/고혈압은 신장성, CVAT+발열은 상부 UTI 단서",
+          "itemIds": [],
+          "sourceIds": [
+            "msd-hematuria",
+            "eau-infections"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "항응고제 복용만으로 원인을 설명하지 않음. 혈괴·배뇨 불가면 요폐를 우선 평가.",
+        "sourceIds": [
+          "msd-hematuria",
+          "aci-retention"
+        ]
+      }
+    },
+    {
+      "complaintId": "urinary-symptoms",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "방광염·요도염",
+          "clues": "배뇨통·빈뇨·절박뇨; 분비물/성접촉력도 구분",
+          "sourceIds": [
+            "eau-infections"
+          ]
+        },
+        {
+          "disease": "신우신염·전신 UTI",
+          "clues": "발열·오한·옆구리 통증·전신 상태 악화",
+          "sourceIds": [
+            "eau-infections"
+          ]
+        },
+        {
+          "disease": "요폐·출구 폐색",
+          "clues": "배뇨 지연·약한 줄기·잔뇨감·치골상부 통증",
+          "sourceIds": [
+            "aci-retention"
+          ]
+        },
+        {
+          "disease": "신경성 배뇨장애",
+          "clues": "새 요폐/실금+허리통증·하지/회음부 신경 증상",
+          "sourceIds": [
+            "aci-retention"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "FUND HIS",
+          "meaning": "저장 증상과 배출 장애를 나눠 감염/폐색 평가",
+          "itemIds": [
+            "urinary-hx-fundhis"
+          ],
+          "sourceIds": [
+            "eau-infections",
+            "aci-retention"
+          ]
+        },
+        {
+          "label": "Hematuria · Stream",
+          "meaning": "혈괴·결석 등 폐색 원인과 실금 동반 확인",
+          "itemIds": [
+            "urinary-hx-blood-control",
+            "urinary-hx-stream"
+          ],
+          "sourceIds": [
+            "aci-retention"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "치골상부 팽만",
+          "meaning": "팽창된 방광은 요폐 단서; 잔뇨량과 함께 판단",
+          "itemIds": [],
+          "sourceIds": [
+            "aci-retention"
+          ]
+        },
+        {
+          "label": "CVAT · 하지/회음부",
+          "meaning": "발열+CVAT는 상부 감염; 신경 이상은 CES 경고",
+          "itemIds": [],
+          "sourceIds": [
+            "eau-infections",
+            "aci-retention"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "소량씩 자주 배뇨해도 overflow 요폐 가능; 배뇨된다는 이유로 폐색을 배제하지 않음.",
+        "sourceIds": [
+          "aci-retention"
+        ]
+      }
+    },
+    {
+      "complaintId": "incontinence",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "절박성",
+          "clues": "급한 요의 직후 새는 양상",
+          "sourceIds": [
+            "msd-incontinence"
+          ]
+        },
+        {
+          "disease": "복압성",
+          "clues": "기침·웃음·운동 등 복압 상승 때 소량 누출",
+          "sourceIds": [
+            "msd-incontinence"
+          ]
+        },
+        {
+          "disease": "범람성",
+          "clues": "배출 장애·잔뇨감·약한 줄기·반복 누출",
+          "sourceIds": [
+            "msd-incontinence"
+          ]
+        },
+        {
+          "disease": "급성 이차성",
+          "clues": "UTI·약물·신경 질환; 새 신경 증상이면 CES 고려",
+          "sourceIds": [
+            "msd-incontinence",
+            "aci-retention"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "Incontinence",
+          "meaning": "요의/기침과 누출 시점, 새로 생긴 변화 구분",
+          "itemIds": [
+            "incontinence-hx-chief"
+          ],
+          "sourceIds": [
+            "msd-incontinence"
+          ]
+        },
+        {
+          "label": "FUND HIS · Stream",
+          "meaning": "절박성 저장 증상과 요폐/배출 장애 구분",
+          "itemIds": [
+            "incontinence-hx-fundhis",
+            "incontinence-hx-other"
+          ],
+          "sourceIds": [
+            "msd-incontinence"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "방광팽만 · 잔뇨",
+          "meaning": "증가하면 overflow/배출 장애 의심",
+          "itemIds": [],
+          "sourceIds": [
+            "msd-incontinence",
+            "aci-retention"
+          ]
+        },
+        {
+          "label": "하지 · 회음부 감각",
+          "meaning": "새 이상은 신경성 원인·CES 평가 단서",
+          "itemIds": [],
+          "sourceIds": [
+            "aci-retention"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "실금과 요폐가 함께 있을 수 있음. 새 허리통증·신경 이상을 동반하면 긴급 평가.",
+        "sourceIds": [
+          "aci-retention"
+        ]
+      }
+    },
+    {
+      "complaintId": "flank-pain",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "요관결석",
+          "clues": "산통·서혜부 방사·오심·혈뇨",
+          "sourceIds": [
+            "eau-stones",
+            "msd-hematuria"
+          ]
+        },
+        {
+          "disease": "신우신염",
+          "clues": "발열·오한·CVAT·요로증상",
+          "sourceIds": [
+            "eau-infections"
+          ]
+        },
+        {
+          "disease": "감염성 폐색",
+          "clues": "결석/폐색 의심+발열·패혈증 또는 무뇨",
+          "sourceIds": [
+            "eau-stones"
+          ]
+        },
+        {
+          "disease": "AAA 등 대체 원인",
+          "clues": "급격한 복부/등 통증·실신·저혈압",
+          "sourceIds": [
+            "aci-abd"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "통증 양상 · 배뇨증상",
+          "meaning": "산통과 감염 단서를 분리",
+          "itemIds": [],
+          "sourceIds": [
+            "eau-stones",
+            "eau-infections"
+          ]
+        },
+        {
+          "label": "발열 · 단일신 · 소변량",
+          "meaning": "감염성 폐색·신기능 위험을 먼저 확인",
+          "itemIds": [],
+          "sourceIds": [
+            "eau-stones"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "CVAT",
+          "meaning": "상부 요로 병변 단서; 결석과 신우신염 모두 가능",
+          "itemIds": [],
+          "sourceIds": [
+            "eau-infections",
+            "eau-stones"
+          ]
+        },
+        {
+          "label": "V/S · 복부 진찰",
+          "meaning": "저혈압/전신 악화면 패혈증·혈관 응급 고려",
+          "itemIds": [],
+          "sourceIds": [
+            "eau-stones",
+            "aci-abd"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "발열·단일신·진단 불확실이면 신속한 영상 평가. 감염성 폐색은 비뇨기 응급.",
+        "sourceIds": [
+          "eau-stones"
+        ]
+      }
+    },
+    {
+      "complaintId": "testicular",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "고환염전",
+          "clues": "갑작스러운 편측 심한 통증·구토·높거나 가로 놓인 고환",
+          "sourceIds": [
+            "aci-scrotum"
+          ]
+        },
+        {
+          "disease": "부고환염",
+          "clues": "서서히 발생·부고환 압통·배뇨통/발열",
+          "sourceIds": [
+            "aci-scrotum"
+          ]
+        },
+        {
+          "disease": "감돈 탈장",
+          "clues": "서혜/음낭 종괴·폐색 증상",
+          "sourceIds": [
+            "aci-scrotum"
+          ]
+        },
+        {
+          "disease": "Fournier 괴저",
+          "clues": "소견보다 심한 통증·전신 독성·변색/염발음",
+          "sourceIds": [
+            "aci-scrotum"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "통증 발생 · 동반 증상",
+          "meaning": "갑작스러운 통증/구토는 염전, 요로증상은 감염 단서",
+          "itemIds": [
+            "testicular-hx-scope"
+          ],
+          "sourceIds": [
+            "aci-scrotum"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "Cremasteric reflex",
+          "meaning": "소실 시 염전 의심; 보존되어도 배제 불가",
+          "itemIds": [
+            "testicular-pe-cremasteric"
+          ],
+          "sourceIds": [
+            "aci-scrotum"
+          ]
+        },
+        {
+          "label": "위치 · 압통 · 피부",
+          "meaning": "높은/가로 고환은 염전; 괴사/염발음은 Fournier 단서",
+          "itemIds": [],
+          "sourceIds": [
+            "aci-scrotum"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "염전이 의심되면 정상 반사·검사 대기로 수술 평가가 지연되지 않도록 함.",
+        "sourceIds": [
+          "aci-scrotum"
+        ]
+      }
+    },
+    {
+      "complaintId": "joint-pain",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "패혈성 관절염",
+          "clues": "급성 통증·열감·부종; 발열이 없을 수도 있음",
+          "sourceIds": [
+            "sanjo"
+          ]
+        },
+        {
+          "disease": "결정성 관절염",
+          "clues": "급성 염증성 관절통·통풍/CPPD; 감염과 공존 가능",
+          "sourceIds": [
+            "tint-joints",
+            "sanjo"
+          ]
+        },
+        {
+          "disease": "골절·외상",
+          "clues": "외상력·국소 골성 압통·변형·상처",
+          "sourceIds": [
+            "aci-msk"
+          ]
+        },
+        {
+          "disease": "관절주위 병변",
+          "clues": "건/점액낭 등 국소 압통; 관절염과 위치 구분",
+          "sourceIds": [
+            "tint-joints"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "발생 · 외상 · 시술력",
+          "meaning": "감염·외상·기존 관절 질환의 맥락 확인",
+          "itemIds": [],
+          "sourceIds": [
+            "sanjo",
+            "aci-msk"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "Tenderness · Swelling",
+          "meaning": "열감/부종은 관절 염증, 골성 압통은 골절 평가 단서",
+          "itemIds": [
+            "joint-pe-msk"
+          ],
+          "sourceIds": [
+            "sanjo",
+            "aci-msk"
+          ]
+        },
+        {
+          "label": "M·S change · External wound",
+          "meaning": "새 운동/감각 이상은 신경 손상, 상처는 개방 손상 단서",
+          "itemIds": [
+            "joint-pe-msk"
+          ],
+          "sourceIds": [
+            "aci-msk"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "발열·CRP가 정상이어도 감염 배제 불가. 관절액 결정이 있어도 감염이 공존할 수 있음.",
+        "sourceIds": [
+          "sanjo"
+        ]
+      }
+    },
+    {
+      "complaintId": "back-pain",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "Cauda equina",
+          "clues": "새 배뇨/배변장애·회음부 감각저하·하지 근력저하",
+          "sourceIds": [
+            "aci-back"
+          ]
+        },
+        {
+          "disease": "척추 감염·혈종",
+          "clues": "침습적 시술·항응고·발열/면역저하·신경 이상",
+          "sourceIds": [
+            "aci-back"
+          ]
+        },
+        {
+          "disease": "골절·종양",
+          "clues": "외상/골다공증·암 병력·지속 통증",
+          "sourceIds": [
+            "aci-back"
+          ]
+        },
+        {
+          "disease": "근육성·신경근성",
+          "clues": "자세/운동 연관 통증; 신경근성이면 하지 방사",
+          "sourceIds": [
+            "aci-back"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "시술 · 침 치료 Hx",
+          "meaning": "척추 감염·시술 관련 혈종 위험 확인",
+          "itemIds": [
+            "back-hx-invasive"
+          ],
+          "sourceIds": [
+            "aci-back"
+          ]
+        },
+        {
+          "label": "배뇨/배변 · 회음부 변화",
+          "meaning": "CES는 완전 요폐 전의 변화로 시작할 수도 있음",
+          "itemIds": [],
+          "sourceIds": [
+            "aci-back"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "하지 Motor · Sensory",
+          "meaning": "분절성 이상은 신경근, 양측/진행성 이상은 중증 병변 의심",
+          "itemIds": [
+            "back-pe-neuro"
+          ],
+          "sourceIds": [
+            "aci-back"
+          ]
+        },
+        {
+          "label": "회음부 감각",
+          "meaning": "감각저하+괄약근 변화는 CES 평가 단서",
+          "itemIds": [
+            "back-pe-neuro"
+          ],
+          "sourceIds": [
+            "aci-back"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "CES 의심 시 정상 단순 X-ray로 배제하지 않음; 긴급 MRI·전문의 평가 판단.",
+        "sourceIds": [
+          "aci-back"
+        ]
+      }
+    },
+    {
+      "complaintId": "rash",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "아나필락시스",
+          "clues": "급성 발진/부종+호흡 또는 순환 장애",
+          "sourceIds": [
+            "msd-anaphylaxis"
+          ]
+        },
+        {
+          "disease": "SJS/TEN",
+          "clues": "새 약물·피부 통증·수포/박리·점막 병변",
+          "sourceIds": [
+            "msd-sjs"
+          ]
+        },
+        {
+          "disease": "봉와직염·NSTI",
+          "clues": "열감/홍반; 소견보다 심한 통증·염발음이면 깊은 감염",
+          "sourceIds": [
+            "idsa-skin"
+          ]
+        },
+        {
+          "disease": "두드러기",
+          "clues": "가려운 팽진; 전신 호흡/순환 증상 동반 여부 구분",
+          "sourceIds": [
+            "msd-anaphylaxis"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "약물 · 노출 · 진행 속도",
+          "meaning": "약물 반응·알레르기·진행성 감염 구분",
+          "itemIds": [],
+          "sourceIds": [
+            "msd-sjs",
+            "msd-anaphylaxis",
+            "idsa-skin"
+          ]
+        },
+        {
+          "label": "호흡곤란 · 실신 · 통증",
+          "meaning": "아나필락시스와 피부 응급의 전신 위험 확인",
+          "itemIds": [],
+          "sourceIds": [
+            "msd-anaphylaxis",
+            "msd-sjs"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "V/S · 기도/호흡",
+          "meaning": "저혈압·stridor/wheeze면 아나필락시스 의심",
+          "itemIds": [],
+          "sourceIds": [
+            "msd-anaphylaxis"
+          ]
+        },
+        {
+          "label": "점막 · 수포 · 깊은 압통",
+          "meaning": "점막+박리는 SJS/TEN; 심한 압통/염발음은 NSTI 단서",
+          "itemIds": [],
+          "sourceIds": [
+            "msd-sjs",
+            "idsa-skin"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "발진이 없어도 아나필락시스 가능. 통증성 발진·점막 병변·전신 악화는 우선 평가.",
+        "sourceIds": [
+          "msd-anaphylaxis",
+          "msd-sjs",
+          "idsa-skin"
+        ]
+      }
+    },
+    {
+      "complaintId": "dizziness",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "후순환 뇌졸중",
+          "clues": "지속 어지럼·중추성 안구 소견·심한 보행 불안정",
+          "sourceIds": [
+            "grace3",
+            "tint-vertigo"
+          ]
+        },
+        {
+          "disease": "전정신경염",
+          "clues": "급성 지속 vertigo·오심·자발안진; 중추 원인 배제 필요",
+          "sourceIds": [
+            "tint-vertigo"
+          ]
+        },
+        {
+          "disease": "BPPV",
+          "clues": "특정 머리 자세에서 짧은 반복 발작",
+          "sourceIds": [
+            "grace3",
+            "tint-vertigo"
+          ]
+        },
+        {
+          "disease": "기립성·실신 전단계",
+          "clues": "일어설 때·실신감·회복; 탈수/약물 등 맥락",
+          "sourceIds": [
+            "nice-syncope"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "Duration · Trigger",
+          "meaning": "지속/발작성·자세 유발로 분류",
+          "itemIds": [
+            "dizz-hx-duration",
+            "dizz-hx-context",
+            "dizz-hx-pattern"
+          ],
+          "sourceIds": [
+            "grace3"
+          ]
+        },
+        {
+          "label": "Hearing · Neuro symptom",
+          "meaning": "새 청력저하·국소 신경증상은 중추 위험 평가 단서",
+          "itemIds": [
+            "dizz-hx-ear",
+            "dizz-hx-neuro"
+          ],
+          "sourceIds": [
+            "grace3",
+            "tint-vertigo"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "HINTS",
+          "meaning": "정상 head impulse·방향전환 주시안진·skew 중 하나면 중추 의심",
+          "itemIds": [
+            "dizz-pe-hints",
+            "dizz-pe-nystagmus"
+          ],
+          "sourceIds": [
+            "tint-vertigo",
+            "grace3"
+          ]
+        },
+        {
+          "label": "Dix-Hallpike · Gait",
+          "meaning": "짧은 상향·회선 안진은 후반고리관 BPPV; 심한 실조는 중추 경고",
+          "itemIds": [
+            "dizz-pe-provocation",
+            "dizz-pe-gait",
+            "dizz-pe-upper-coordination",
+            "dizz-pe-lower-coordination"
+          ],
+          "sourceIds": [
+            "tint-vertigo",
+            "grace3"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "HINTS는 지속 AVS+자발안진에서 숙련자가 시행. 중추성/불확실 결과는 MRI 평가.",
+        "sourceIds": [
+          "grace3",
+          "tint-vertigo"
+        ]
+      }
+    },
+    {
+      "complaintId": "headache",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "SAH",
+          "clues": "갑자기 최대 강도에 도달하는 두통; 실신/구토 가능",
+          "sourceIds": [
+            "aci-headache",
+            "tint-headache"
+          ]
+        },
+        {
+          "disease": "수막염·뇌염",
+          "clues": "발열·경부강직·의식 변화",
+          "sourceIds": [
+            "nice-meningitis",
+            "aci-headache"
+          ]
+        },
+        {
+          "disease": "편두통",
+          "clues": "박동성·오심·빛/소리 민감; 반복되는 유사 양상",
+          "sourceIds": [
+            "aci-headache",
+            "tint-headache"
+          ]
+        },
+        {
+          "disease": "긴장성·근육성",
+          "clues": "압박감·목/어깨 통증; 위험 단서와 구분",
+          "sourceIds": [
+            "aci-headache",
+            "tint-neck"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "Onset · 양상 변화",
+          "meaning": "thunderclap·새 두통·이전과 다른 양상은 이차성 원인 평가",
+          "itemIds": [
+            "headache-hx-onset",
+            "headache-hx-character",
+            "headache-hx-duration"
+          ],
+          "sourceIds": [
+            "aci-headache"
+          ]
+        },
+        {
+          "label": "동반 증상 · Trauma",
+          "meaning": "발열/의식 변화·국소 증상·외상은 감염/출혈/구조 병변 단서",
+          "itemIds": [
+            "headache-hx-associated",
+            "headache-hx-trauma-tenderness",
+            "headache-hx-fccsr"
+          ],
+          "sourceIds": [
+            "aci-headache",
+            "nice-meningitis"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "Neurologic deficit",
+          "meaning": "국소 이상은 혈관·구조 병변 경고",
+          "itemIds": [
+            "headache-pe-deficit"
+          ],
+          "sourceIds": [
+            "aci-headache",
+            "tint-headache"
+          ]
+        },
+        {
+          "label": "Nuchal · Shoulder tenderness",
+          "meaning": "국소 근육성 통증 단서; 압통은 경부강직과 다른 소견",
+          "itemIds": [
+            "headache-pe-nuchal",
+            "headache-pe-shoulder"
+          ],
+          "sourceIds": [
+            "tint-neck",
+            "nice-meningitis"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "정상 진찰로 SAH 배제 불가. 수막염도 발열·강직·의식 변화가 모두 있는 것은 아님.",
+        "sourceIds": [
+          "tint-headache",
+          "nice-meningitis"
+        ]
+      }
+    },
+    {
+      "complaintId": "seizure",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "기존 뇌전증",
+          "clues": "유사 발작·약물 누락·수면 부족",
+          "sourceIds": [
+            "tint-seizures",
+            "nice-status"
+          ]
+        },
+        {
+          "disease": "유발성 발작",
+          "clues": "저혈당/전해질·중독·알코올 금단 등 급성 원인",
+          "sourceIds": [
+            "tint-seizures",
+            "nice-epilepsy",
+            "nice-status"
+          ]
+        },
+        {
+          "disease": "뇌 병변·감염",
+          "clues": "새 국소 발작·신경 이상·발열/두통",
+          "sourceIds": [
+            "tint-seizures"
+          ]
+        },
+        {
+          "disease": "실신",
+          "clues": "자세/전조 연관·빠른 회복; 짧은 jerk도 가능",
+          "sourceIds": [
+            "nice-syncope",
+            "nice-epilepsy"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "목격 양상 · Duration · Postictal",
+          "meaning": "국소성·시간·회복 양상으로 발작/실신 구분",
+          "itemIds": [
+            "seizure-hx-type",
+            "seizure-hx-site",
+            "seizure-hx-duration",
+            "seizure-hx-postictal",
+            "seizure-hx-bite"
+          ],
+          "sourceIds": [
+            "nice-epilepsy",
+            "nice-syncope"
+          ]
+        },
+        {
+          "label": "Antiepileptic medication / Last dose time",
+          "meaning": "누락 여부와 Last alcohol로 재발·금단 맥락 확인",
+          "itemIds": [
+            "seizure-hx-medication",
+            "seizure-hx-alcohol"
+          ],
+          "sourceIds": [
+            "nice-status"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "의식 회복",
+          "meaning": "지속 의식장애면 비경련성 status·급성 원인 평가",
+          "itemIds": [],
+          "sourceIds": [
+            "msd-seizures"
+          ]
+        },
+        {
+          "label": "국소 신경 이상",
+          "meaning": "뇌 병변/Todd paresis 가능; 후유증으로 단정하지 않음",
+          "itemIds": [],
+          "sourceIds": [
+            "msd-seizures"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "전신 경련이 5분 이상 지속되면 status 경로로 대응; 혈당 등 가역 원인을 함께 확인.",
+        "sourceIds": [
+          "nice-status"
+        ]
+      }
+    },
+    {
+      "complaintId": "mental-change",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "뇌혈관·구조 병변",
+          "clues": "갑작스러운 변화·국소 신경 이상·동공 비대칭",
+          "sourceIds": [
+            "msd-coma"
+          ]
+        },
+        {
+          "disease": "대사·중독",
+          "clues": "혈당/전해질·저산소·약물/알코올; 양측성 이상도 가능",
+          "sourceIds": [
+            "msd-coma",
+            "aci-unconscious"
+          ]
+        },
+        {
+          "disease": "감염",
+          "clues": "발열·순환 악화·경부강직; 패혈증/CNS 감염",
+          "sourceIds": [
+            "msd-coma",
+            "aci-unconscious"
+          ]
+        },
+        {
+          "disease": "발작 후·비경련성 status",
+          "clues": "목격 경련·지속/변동 의식장애",
+          "sourceIds": [
+            "msd-coma",
+            "tint-seizures"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "PI · Medical/Social Hx",
+          "meaning": "마지막 정상·약물/음주·외상·감염 맥락 확인",
+          "itemIds": [
+            "mental-hx-pi",
+            "mental-hx-medical",
+            "mental-hx-social",
+            "mental-hx-fccsr"
+          ],
+          "sourceIds": [
+            "msd-coma",
+            "aci-unconscious"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "Pupil · Light reflex",
+          "meaning": "새 비대칭/반응 저하는 뇌간·압박 병변 경고; 약물도 영향",
+          "itemIds": [
+            "mental-pe-pupil",
+            "mental-pe-light"
+          ],
+          "sourceIds": [
+            "msd-coma"
+          ]
+        },
+        {
+          "label": "Pain response · Babinski",
+          "meaning": "좌우 운동반응 차이는 국소 병변, 신전족저반사는 상위운동신경원 단서",
+          "itemIds": [
+            "mental-pe-pain",
+            "mental-pe-babinski"
+          ],
+          "sourceIds": [
+            "msd-coma",
+            "msd-reflexes"
+          ]
+        },
+        {
+          "label": "Respiration · Mental status",
+          "meaning": "호흡·의식 저하는 중증도 단서; 패턴만으로 원인 확정 불가",
+          "itemIds": [
+            "mental-pe-resp",
+            "mental-pe-mental"
+          ],
+          "sourceIds": [
+            "msd-coma",
+            "aci-unconscious"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "ABC·혈당을 먼저 확인. 음주/약물 노출이 있어도 출혈·감염 등 동반 원인을 평가.",
+        "sourceIds": [
+          "aci-unconscious",
+          "msd-coma"
+        ]
+      }
+    },
+    {
+      "complaintId": "stroke",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "허혈성 뇌졸중",
+          "clues": "갑작스러운 편측 약화·언어/시야 장애",
+          "sourceIds": [
+            "aci-stroke"
+          ]
+        },
+        {
+          "disease": "뇌출혈",
+          "clues": "동일한 국소 증상 ± 두통·구토·의식 저하",
+          "sourceIds": [
+            "aci-stroke",
+            "msd-coma"
+          ]
+        },
+        {
+          "disease": "TIA",
+          "clues": "국소 증상이 회복되어도 혈관성 위험은 남음",
+          "sourceIds": [
+            "aci-stroke"
+          ]
+        },
+        {
+          "disease": "Stroke mimic",
+          "clues": "저혈당·발작 후 상태 등; 혈당과 병력 함께 확인",
+          "sourceIds": [
+            "aci-stroke",
+            "nice-epilepsy"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "Last normal / First abnormal time",
+          "meaning": "마지막 정상과 첫 이상 시각을 구분; 기상 시 발견도 분리",
+          "itemIds": [
+            "stroke-hx-time"
+          ],
+          "sourceIds": [
+            "aci-stroke"
+          ]
+        },
+        {
+          "label": "Medical Hx · 약물",
+          "meaning": "항응고제·혈관 위험과 기존 신경 기능 확인",
+          "itemIds": [
+            "stroke-hx-medical"
+          ],
+          "sourceIds": [
+            "aci-stroke"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "Motor · Face · Language",
+          "meaning": "편측 약화·실어증·안면마비는 국소 뇌 병변 단서",
+          "itemIds": [
+            "stroke-pe-power",
+            "stroke-pe-limb",
+            "stroke-pe-eye-face",
+            "stroke-pe-language"
+          ],
+          "sourceIds": [
+            "aci-stroke"
+          ]
+        },
+        {
+          "label": "Eye · Cerebellar · Mentation",
+          "meaning": "안구/시야 이상·실조·의식 저하는 후순환 포함 평가",
+          "itemIds": [
+            "stroke-pe-eye-face",
+            "stroke-pe-cerebellar",
+            "stroke-pe-mental",
+            "stroke-pe-command"
+          ],
+          "sourceIds": [
+            "aci-stroke",
+            "grace3"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "진찰만으로 허혈/출혈 구별 불가. 혈당·뇌영상 평가; 증상 회복만으로 안심하지 않음.",
+        "sourceIds": [
+          "aci-stroke"
+        ]
+      }
+    },
+    {
+      "complaintId": "psychiatry-interview",
+      "scope": "psychiatric",
+      "differentials": [
+        {
+          "disease": "우울장애",
+          "clues": "흥미/의욕 저하·수면/식욕 변화·기능 저하",
+          "sourceIds": [
+            "nice-depression"
+          ]
+        },
+        {
+          "disease": "정신병적 상태",
+          "clues": "망상·환각·사고/행동 변화; 기존 양상·복약 확인",
+          "sourceIds": [
+            "aci-behaviour"
+          ]
+        },
+        {
+          "disease": "섬망",
+          "clues": "수시간~수일의 변화·변동·주의력/각성 저하",
+          "sourceIds": [
+            "nice-delirium"
+          ]
+        },
+        {
+          "disease": "중독·금단/신체 질환",
+          "clues": "약물/음주 연관·비정상 V/S·신경 소견",
+          "sourceIds": [
+            "aci-behaviour"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "Suicidal idea · Plan · Attempt",
+          "meaning": "계획·행동·현재 안전을 직접 평가; 환각/망상 맥락도 확인",
+          "itemIds": [
+            "psychiatry-hx-suicide",
+            "psychiatry-hx-delusion",
+            "psychiatry-hx-hallucination"
+          ],
+          "sourceIds": [
+            "nice-self-harm",
+            "nice-depression"
+          ]
+        },
+        {
+          "label": "급성 변화 · Drug compliance",
+          "meaning": "초발·재발·물질 영향 구분",
+          "itemIds": [
+            "psychiatry-hx-today",
+            "psychiatry-hx-first",
+            "psychiatry-hx-compliance",
+            "psychiatry-hx-alcohol"
+          ],
+          "sourceIds": [
+            "aci-behaviour",
+            "nice-delirium"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "주의력 · 각성 변동",
+          "meaning": "환각만으로 정신과 질환 단정 불가; 섬망 평가",
+          "itemIds": [],
+          "sourceIds": [
+            "nice-delirium"
+          ]
+        },
+        {
+          "label": "V/S · Neurologic exam",
+          "meaning": "발열·저산소·국소 이상이면 신체 원인을 함께 평가",
+          "itemIds": [],
+          "sourceIds": [
+            "aci-behaviour"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "자살 위험은 체크 수·점수로 판단하지 않음; 현재 안전을 개별 평가.",
+        "sourceIds": [
+          "nice-self-harm"
+        ]
+      }
+    },
+    {
+      "complaintId": "obgyn-interview",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "자궁외임신·유산",
+          "clues": "임신 가능성+골반통/출혈; 쇼크면 출혈성 응급",
+          "sourceIds": [
+            "msd-pelvic"
+          ]
+        },
+        {
+          "disease": "난소염전",
+          "clues": "갑작스러운 편측 통증·오심/구토",
+          "sourceIds": [
+            "msd-pelvic"
+          ]
+        },
+        {
+          "disease": "PID",
+          "clues": "하복부 통증·분비물·CMT/자궁·부속기 압통",
+          "sourceIds": [
+            "cdc-pid",
+            "msd-pelvic"
+          ]
+        },
+        {
+          "disease": "낭종 파열·월경통",
+          "clues": "급성 편측 통증 / 월경 주기의 반복 통증",
+          "sourceIds": [
+            "msd-pelvic"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "LMP · 출혈 · Last coitus",
+          "meaning": "임신 관련 원인과 출혈량/주기 연관 확인",
+          "itemIds": [
+            "ob-hx-menstrual-cycle",
+            "ob-hx-bleeding",
+            "ob-hx-sexual"
+          ],
+          "sourceIds": [
+            "msd-pelvic"
+          ]
+        },
+        {
+          "label": "Discharge · OBGY Hx",
+          "meaning": "감염과 이전 병변/치료 확인",
+          "itemIds": [
+            "ob-hx-discharge",
+            "ob-hx-care"
+          ],
+          "sourceIds": [
+            "cdc-pid",
+            "msd-pelvic"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "V/S · 복막자극",
+          "meaning": "저혈압·guarding/rTd는 복강 내 출혈/급성 복증 경고",
+          "itemIds": [],
+          "sourceIds": [
+            "msd-pelvic"
+          ]
+        },
+        {
+          "label": "CMT · Adnexal tenderness",
+          "meaning": "PID/부속기 병변 단서; 압통 하나로 원인 확정 불가",
+          "itemIds": [],
+          "sourceIds": [
+            "cdc-pid",
+            "msd-pelvic"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "가임기 골반통은 병력만으로 임신을 배제하지 않음; 임신 검사와 출혈 위험 평가.",
+        "sourceIds": [
+          "msd-pelvic"
+        ]
+      }
+    },
+    {
+      "complaintId": "pregnancy",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "진통·조기진통",
+          "clues": "규칙적 수축·경부 변화; 37주 미만이면 조기진통",
+          "sourceIds": [
+            "nice-preterm"
+          ]
+        },
+        {
+          "disease": "양막파수",
+          "clues": "지속/반복 물 같은 유출; 분비물과 구분",
+          "sourceIds": [
+            "nice-preterm"
+          ]
+        },
+        {
+          "disease": "전치태반·태반조기박리",
+          "clues": "전치: 대개 무통 출혈 / 박리: 통증·자궁 압통",
+          "sourceIds": [
+            "msd-pregnancy-bleeding"
+          ]
+        },
+        {
+          "disease": "초기 임신 응급",
+          "clues": "임신 초기 통증/출혈: 자궁외임신·유산 평가",
+          "sourceIds": [
+            "msd-pelvic"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "Gestational week/day · 진통",
+          "meaning": "주수와 수축 주기/지속으로 평가 경로 결정",
+          "itemIds": [
+            "pregnancy-hx-iup",
+            "pregnancy-hx-labor",
+            "pregnancy-hx-edc"
+          ],
+          "sourceIds": [
+            "nice-preterm"
+          ]
+        },
+        {
+          "label": "Bleeding · Discharge · Op Hx",
+          "meaning": "출혈/파수 구분; 이전 산과 수술과 위험 맥락 확인",
+          "itemIds": [
+            "pregnancy-hx-bleeding",
+            "pregnancy-hx-discharge",
+            "pregnancy-hx-operation"
+          ],
+          "sourceIds": [
+            "nice-preterm",
+            "msd-pregnancy-bleeding"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "자궁 압통 · V/S",
+          "meaning": "통증/압통·쇼크는 박리 등 출혈 경고; 외부 출혈이 적을 수 있음",
+          "itemIds": [],
+          "sourceIds": [
+            "msd-pregnancy-bleeding"
+          ]
+        },
+        {
+          "label": "Speculum pooling",
+          "meaning": "질경에서 양수 고임은 파수 단서; 안 보여도 추가 평가 필요",
+          "itemIds": [],
+          "sourceIds": [
+            "nice-preterm"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "임신 후반기 출혈은 전치태반 배제 전 손가락 경부진찰을 피함; 산과 평가 우선.",
+        "sourceIds": [
+          "msd-pregnancy-bleeding"
+        ]
+      }
+    },
+    {
+      "complaintId": "peds-common",
+      "scope": "pediatric",
+      "differentials": [
+        {
+          "disease": "중증 감염",
+          "clues": "영아: 발열 없이도 처짐·수유 저하·무호흡 가능",
+          "sourceIds": [
+            "rch-infant"
+          ]
+        },
+        {
+          "disease": "탈수",
+          "clues": "섭취/소변 감소·점막 건조; 관류/의식 저하면 중증",
+          "sourceIds": [
+            "rch-dehydration"
+          ]
+        },
+        {
+          "disease": "호흡기 질환",
+          "clues": "호흡 노력·stridor/wheeze/crackle·저산소",
+          "sourceIds": [
+            "rch-cough",
+            "rch-infant"
+          ]
+        },
+        {
+          "disease": "영아의 기타 응급",
+          "clues": "심장: 발한/청색증 / 대사: 경련 / 외과: 담즙성 구토",
+          "sourceIds": [
+            "rch-infant"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "Age · Birth/Maternal Hx",
+          "meaning": "연령·미숙·주산기 문제로 위험 층화",
+          "itemIds": [
+            "peds-common-hx-age-months",
+            "peds-common-hx-neonate-growth",
+            "peds-common-hx-neonate-delivery",
+            "peds-common-hx-mother"
+          ],
+          "sourceIds": [
+            "rch-infant"
+          ]
+        },
+        {
+          "label": "Feeding · Activity · Urination",
+          "meaning": "평소 대비 변화·마지막 소변으로 전신 상태/탈수 판단",
+          "itemIds": [
+            "peds-common-hx-feeding-activity",
+            "peds-common-hx-urination-sleep",
+            "peds-common-hx-last-output",
+            "peds-common-hx-appearance"
+          ],
+          "sourceIds": [
+            "rch-infant",
+            "rch-dehydration"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "Tongue · 관류",
+          "meaning": "건조 점막은 탈수 단서; CRT 지연/차가운 사지는 순환 저하",
+          "itemIds": [
+            "peds-common-pe-tongue"
+          ],
+          "sourceIds": [
+            "rch-dehydration"
+          ]
+        },
+        {
+          "label": "Lung sound · 호흡 노력",
+          "meaning": "stridor는 상기도, wheeze는 기도 협착; crackle은 폐 병변 단서",
+          "itemIds": [
+            "peds-common-pe-lung"
+          ],
+          "sourceIds": [
+            "rch-cough",
+            "rch-infant"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "소아 V/S는 연령에 맞게 해석. 어린 영아는 열이 없어도 중증 질환 가능.",
+        "sourceIds": [
+          "rch-infant",
+          "rch-dehydration"
+        ]
+      }
+    },
+    {
+      "complaintId": "fever",
+      "scope": "pediatric",
+      "differentials": [
+        {
+          "disease": "패혈증·CNS 감염",
+          "clues": "처짐·반응 저하·관류 악화·경부강직",
+          "sourceIds": [
+            "rch-fever",
+            "rch-infant"
+          ]
+        },
+        {
+          "disease": "UTI",
+          "clues": "뚜렷한 발열 초점 없을 때 중요한 세균 감염",
+          "sourceIds": [
+            "rch-fever"
+          ]
+        },
+        {
+          "disease": "호흡기 감염",
+          "clues": "URI 증상 / 빈호흡·retraction·국소 폐 소견이면 폐렴 평가",
+          "sourceIds": [
+            "rch-fever",
+            "rch-cough"
+          ]
+        },
+        {
+          "disease": "가와사키병",
+          "clues": "지속 발열·결막/구강/피부·사지 변화; 불완전형도 가능",
+          "sourceIds": [
+            "rch-kawasaki"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "Age · Vaccination",
+          "meaning": "3개월 미만 고위험; 최근 예방접종만으로 발열 설명하지 않음",
+          "itemIds": [
+            "fever-hx-age-months",
+            "fever-hx-temperature",
+            "fever-hx-vaccination"
+          ],
+          "sourceIds": [
+            "rch-fever"
+          ]
+        },
+        {
+          "label": "Appearance · Feeding/Urination",
+          "meaning": "반응·섭취·소변 변화로 중증도 판단",
+          "itemIds": [
+            "fever-hx-appearance",
+            "fever-hx-feeding-activity",
+            "fever-hx-urination-sleep"
+          ],
+          "sourceIds": [
+            "rch-fever",
+            "rch-infant"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "Neck · 의식/반응",
+          "meaning": "강직·처짐은 CNS 감염 경고; 영아는 강직 없이도 가능",
+          "itemIds": [
+            "fever-pe-neck"
+          ],
+          "sourceIds": [
+            "rch-infant",
+            "nice-meningitis"
+          ]
+        },
+        {
+          "label": "Lung · Retraction",
+          "meaning": "crackle/호흡 노력은 하기도 병변·호흡 중증도 단서",
+          "itemIds": [
+            "fever-pe-lung",
+            "fever-pe-retraction"
+          ],
+          "sourceIds": [
+            "rch-cough",
+            "rch-infant"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "교정연령 ≤28일 발열은 신속 평가. 해열제 반응으로 중증 감염을 배제하지 않음.",
+        "sourceIds": [
+          "rch-fever"
+        ]
+      }
+    },
+    {
+      "complaintId": "vomiting",
+      "scope": "pediatric",
+      "differentials": [
+        {
+          "disease": "장폐색·염전",
+          "clues": "녹색 담즙성 구토; 팽만·통증 동반 가능",
+          "sourceIds": [
+            "rch-vomiting"
+          ]
+        },
+        {
+          "disease": "장중첩증",
+          "clues": "간헐적 통증/창백·구토·처짐; 혈변은 늦거나 없을 수 있음",
+          "sourceIds": [
+            "rch-intussusception"
+          ]
+        },
+        {
+          "disease": "유문협착",
+          "clues": "어린 영아의 진행성 비담즙성 분출성 구토",
+          "sourceIds": [
+            "rch-vomiting",
+            "rch-infant"
+          ]
+        },
+        {
+          "disease": "위장염",
+          "clues": "구토+설사; 설사 없으면 다른 원인도 평가",
+          "sourceIds": [
+            "rch-vomiting",
+            "rch-ge"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "Emesis color · Pattern",
+          "meaning": "담즙성/분출성·수유 연관으로 폐색 등 감별",
+          "itemIds": [
+            "vomiting-hx-content",
+            "vomiting-hx-count",
+            "vomiting-hx-age-months"
+          ],
+          "sourceIds": [
+            "rch-vomiting"
+          ]
+        },
+        {
+          "label": "Feeding · Urination · Headache",
+          "meaning": "탈수 정도와 아침 구토+두통의 두개내 원인 확인",
+          "itemIds": [
+            "vomiting-hx-feeding-activity",
+            "vomiting-hx-last-output",
+            "vomiting-hx-head-irritability"
+          ],
+          "sourceIds": [
+            "rch-vomiting",
+            "rch-dehydration"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "복부팽만 · Guarding",
+          "meaning": "폐색/복막자극 경고; 장음만으로 폐색 배제 불가",
+          "itemIds": [
+            "vomiting-pe-palpation",
+            "vomiting-pe-bowel"
+          ],
+          "sourceIds": [
+            "rch-vomiting",
+            "rch-abd"
+          ]
+        },
+        {
+          "label": "Tongue · 관류/의식",
+          "meaning": "건조 점막·CRT 지연·처짐은 탈수/전신 악화 단서",
+          "itemIds": [
+            "vomiting-pe-tongue"
+          ],
+          "sourceIds": [
+            "rch-dehydration"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "녹색 담즙성 구토는 외과적 원인 우선 평가. 구토가 멎어도 위험 원인 배제 불가.",
+        "sourceIds": [
+          "rch-vomiting"
+        ]
+      }
+    },
+    {
+      "complaintId": "diarrhea",
+      "scope": "pediatric",
+      "differentials": [
+        {
+          "disease": "위장염",
+          "clues": "급성 묽은 변·구토; 전신 상태/탈수 평가",
+          "sourceIds": [
+            "rch-ge"
+          ]
+        },
+        {
+          "disease": "침습성 장감염",
+          "clues": "혈액/점액 변·발열·복통은 장 염증 단서",
+          "sourceIds": [
+            "rch-ge"
+          ]
+        },
+        {
+          "disease": "장중첩증 등 외과 원인",
+          "clues": "간헐적 통증·창백/처짐; 초기 설사로 오인 가능",
+          "sourceIds": [
+            "rch-intussusception",
+            "rch-ge"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "Stool · 통증 양상",
+          "meaning": "혈액/점액과 간헐적 통증을 확인; 단순 장염 가정 피함",
+          "itemIds": [
+            "diarrhea-hx-stool",
+            "diarrhea-hx-anvcd"
+          ],
+          "sourceIds": [
+            "rch-ge",
+            "rch-intussusception"
+          ]
+        },
+        {
+          "label": "Diet · Feeding/Urination",
+          "meaning": "섭취 대비 손실·마지막 소변으로 탈수 위험 평가",
+          "itemIds": [
+            "diarrhea-hx-diet",
+            "diarrhea-hx-feeding-activity",
+            "diarrhea-hx-last-output"
+          ],
+          "sourceIds": [
+            "rch-ge",
+            "rch-dehydration"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "Tongue · 관류",
+          "meaning": "건조 점막/CRT 지연은 탈수; 저혈압·의식 저하는 중증",
+          "itemIds": [
+            "diarrhea-pe-tongue"
+          ],
+          "sourceIds": [
+            "rch-dehydration"
+          ]
+        },
+        {
+          "label": "복부 압통 · Guarding",
+          "meaning": "심한 국소 압통·복막자극은 장염 외 원인 경고",
+          "itemIds": [
+            "diarrhea-pe-palpation"
+          ],
+          "sourceIds": [
+            "rch-ge",
+            "rch-abd"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "설사가 있어도 외과 질환 가능. 장중첩증의 전형적 혈변을 기다려 판단하지 않음.",
+        "sourceIds": [
+          "rch-intussusception",
+          "rch-ge"
+        ]
+      }
+    },
+    {
+      "complaintId": "cough",
+      "scope": "pediatric",
+      "differentials": [
+        {
+          "disease": "Croup",
+          "clues": "barking cough·쉰 목소리·stridor",
+          "sourceIds": [
+            "rch-cough"
+          ]
+        },
+        {
+          "disease": "천식·세기관지염",
+          "clues": "wheeze·호흡 노력; 연령·atopy 맥락",
+          "sourceIds": [
+            "rch-cough",
+            "rch-infant"
+          ]
+        },
+        {
+          "disease": "폐렴",
+          "clues": "발열·빈호흡·국소 crackle/호흡음 변화",
+          "sourceIds": [
+            "rch-cough"
+          ]
+        },
+        {
+          "disease": "기도 이물",
+          "clues": "갑자기 시작·choking·편측 wheeze/호흡음 감소",
+          "sourceIds": [
+            "rch-fb"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "Sound · Hoarseness · Atopy",
+          "meaning": "상기도 양상과 반복 wheeze/알레르기 배경 구분",
+          "itemIds": [
+            "cough-hx-sound",
+            "cough-hx-position",
+            "cough-hx-atopy"
+          ],
+          "sourceIds": [
+            "rch-cough"
+          ]
+        },
+        {
+          "label": "급작스러운 시작 · Choking",
+          "meaning": "식사/놀이 중 발생이면 이물 흡인 평가",
+          "itemIds": [],
+          "sourceIds": [
+            "rch-fb"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "Stridor · Wheeze · Crackle",
+          "meaning": "상기도 협착 / 하기도 협착 / 폐실질 병변의 단서",
+          "itemIds": [
+            "cough-pe-lung"
+          ],
+          "sourceIds": [
+            "rch-cough",
+            "rch-infant"
+          ]
+        },
+        {
+          "label": "호흡 노력 · Air entry",
+          "meaning": "retraction·저산소는 중증도, 편측 감소는 이물 등 국소 병변 단서",
+          "itemIds": [
+            "cough-pe-lung"
+          ],
+          "sourceIds": [
+            "rch-fb",
+            "rch-infant"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "정상 진찰·단순 X-ray로 기도 이물을 배제하지 않음; 노출/발생 상황을 함께 판단.",
+        "sourceIds": [
+          "rch-fb"
+        ]
+      }
+    },
+    {
+      "complaintId": "peds-abdominal-pain",
+      "scope": "pediatric",
+      "differentials": [
+        {
+          "disease": "충수염",
+          "clues": "통증 국소화·RLQ 압통·복막자극; 어린 소아는 비전형",
+          "sourceIds": [
+            "rch-abd",
+            "msd-appendicitis"
+          ]
+        },
+        {
+          "disease": "장중첩증",
+          "clues": "간헐적 통증·창백·구토/처짐; 발작 사이 멀쩡할 수 있음",
+          "sourceIds": [
+            "rch-intussusception"
+          ]
+        },
+        {
+          "disease": "위장염·변비",
+          "clues": "설사/구토 또는 배변 정체; 국소 복막자극과 구분",
+          "sourceIds": [
+            "rch-abd",
+            "rch-ge"
+          ]
+        },
+        {
+          "disease": "복부 밖 원인",
+          "clues": "고환염전·UTI·폐렴도 복통으로 내원 가능",
+          "sourceIds": [
+            "rch-abd"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "Location · Intermittent/Steady",
+          "meaning": "국소화·간헐적 발작·진행 경과로 감별",
+          "itemIds": [
+            "peds-abd-hx-pain"
+          ],
+          "sourceIds": [
+            "rch-abd",
+            "rch-intussusception"
+          ]
+        },
+        {
+          "label": "Bowel · Vomiting · Urination",
+          "meaning": "폐색·장염·요로 원인과 섭취/손실 확인",
+          "itemIds": [
+            "peds-abd-hx-bowel",
+            "peds-abd-hx-anvcd",
+            "peds-abd-hx-urination-sleep"
+          ],
+          "sourceIds": [
+            "rch-abd"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "RLQ tenderness · rTd",
+          "meaning": "충수염/복막자극 단서; 움직이기 싫어함도 함께 확인",
+          "itemIds": [
+            "peds-abd-pe-tenderness",
+            "peds-abd-pe-palpation"
+          ],
+          "sourceIds": [
+            "rch-abd",
+            "msd-appendicitis"
+          ]
+        },
+        {
+          "label": "Rovsing · Psoas · Obturator",
+          "meaning": "양성이면 충수 주위 자극 단서; 음성으로 충수염 배제 불가",
+          "itemIds": [
+            "peds-abd-pe-sign"
+          ],
+          "sourceIds": [
+            "msd-appendicitis",
+            "rch-abd"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "어린 소아는 전형적 충수염 소견이 없을 수 있음. 호전/악화 추세를 반복 진찰.",
+        "sourceIds": [
+          "rch-abd"
+        ]
+      }
+    },
+    {
+      "complaintId": "peds-seizure",
+      "scope": "pediatric",
+      "differentials": [
+        {
+          "disease": "단순 열성경련",
+          "clues": "전신성·<15분·1시간 내 회복·같은 질병 중 재발 없음",
+          "sourceIds": [
+            "rch-febrile-seizure"
+          ]
+        },
+        {
+          "disease": "CNS 감염",
+          "clues": "전신 상태 불량·수막자극·회복 지연",
+          "sourceIds": [
+            "rch-febrile-seizure"
+          ]
+        },
+        {
+          "disease": "유발성 경련",
+          "clues": "저혈당·전해질/대사 이상; 연령·섭취 맥락",
+          "sourceIds": [
+            "rch-febrile-seizure",
+            "rch-infant"
+          ]
+        },
+        {
+          "disease": "뇌전증·기타 발작",
+          "clues": "무열 발작·국소 양상·과거 경련",
+          "sourceIds": [
+            "rch-febrile-seizure",
+            "msd-seizures"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "Age · Fever · Previous seizure",
+          "meaning": "열성경련 맥락과 무열 발작/기저 질환 구분",
+          "itemIds": [
+            "peds-seizure-hx-age-months",
+            "peds-seizure-hx-fccsr",
+            "peds-seizure-hx-past"
+          ],
+          "sourceIds": [
+            "rch-febrile-seizure"
+          ]
+        },
+        {
+          "label": "Eyeball deviation · LOC",
+          "meaning": "국소성·지속 시간·반복·회복 경과로 복잡 발작 평가",
+          "itemIds": [
+            "peds-seizure-hx-eye",
+            "peds-seizure-hx-loc"
+          ],
+          "sourceIds": [
+            "rch-febrile-seizure"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "Neck stiffness · 반응",
+          "meaning": "강직/불량한 반응은 CNS 감염 경고; 영아는 강직 없이도 가능",
+          "itemIds": [
+            "peds-seizure-pe-neck",
+            "peds-seizure-hx-appearance"
+          ],
+          "sourceIds": [
+            "rch-febrile-seizure",
+            "rch-infant"
+          ]
+        },
+        {
+          "label": "발작 후 신경 상태",
+          "meaning": "기저 상태로 회복 확인; 국소 이상·지속 의식 변화는 추가 평가",
+          "itemIds": [],
+          "sourceIds": [
+            "rch-febrile-seizure"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "경련이 5분 이상 지속되면 응급 대응. 발열이 있다는 이유만으로 열성경련으로 단정하지 않음.",
+        "sourceIds": [
+          "rch-febrile-seizure"
+        ]
+      }
+    },
+    {
+      "complaintId": "eye",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "급성 폐쇄각녹내장",
+          "clues": "심한 안통·두통/구토·시력 저하",
+          "sourceIds": [
+            "msd-glaucoma"
+          ]
+        },
+        {
+          "disease": "각막 손상·각막염",
+          "clues": "이물감·광과민·통증; 외상/렌즈 사용",
+          "sourceIds": [
+            "tint-eye"
+          ]
+        },
+        {
+          "disease": "망막박리",
+          "clues": "광시증·비문증·커튼처럼 가려지는 시야",
+          "sourceIds": [
+            "msd-retina"
+          ]
+        },
+        {
+          "disease": "결막염",
+          "clues": "분비물·충혈; 대개 시력/동공/EOM 정상",
+          "sourceIds": [
+            "tint-eye"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "Pain · Photophobia · Vision",
+          "meaning": "단순 충혈과 시력 위협 질환 구분",
+          "itemIds": [
+            "eye-hx-pain",
+            "eye-hx-surface",
+            "eye-hx-vision"
+          ],
+          "sourceIds": [
+            "aci-eye",
+            "tint-eye"
+          ]
+        },
+        {
+          "label": "OT HX · 외상/렌즈",
+          "meaning": "이전 수술·각막 감염/손상 위험",
+          "itemIds": [
+            "eye-hx-past"
+          ],
+          "sourceIds": [
+            "aci-eye",
+            "tint-eye"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "Visual acuity/field",
+          "meaning": "새 저하는 망막·시신경 등 응급 경고",
+          "itemIds": [
+            "eye-pe-field-acuity"
+          ],
+          "sourceIds": [
+            "aci-eye",
+            "msd-retina"
+          ]
+        },
+        {
+          "label": "Pupil · Light reflex",
+          "meaning": "중간산대·고정 동공+각막 혼탁은 폐쇄각 의심",
+          "itemIds": [
+            "eye-pe-light"
+          ],
+          "sourceIds": [
+            "msd-glaucoma"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "정상 시력만으로 중증 안질환 배제 불가.",
+        "sourceIds": [
+          "aci-eye"
+        ]
+      }
+    },
+    {
+      "complaintId": "throat",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "편도주위농양",
+          "clues": "편측 통증·trismus·먹먹한 목소리",
+          "sourceIds": [
+            "msd-throat"
+          ]
+        },
+        {
+          "disease": "후두개염",
+          "clues": "심한 연하통·침흘림·stridor; 인두 소견은 미약할 수 있음",
+          "sourceIds": [
+            "msd-throat"
+          ]
+        },
+        {
+          "disease": "인두·식도 이물",
+          "clues": "섭취 직후 이물감·연하곤란·침 못 삼킴",
+          "sourceIds": [
+            "msd-fb"
+          ]
+        },
+        {
+          "disease": "편도·인두염",
+          "clues": "발적·삼출·발열; 기도 위험 소견과 구분",
+          "sourceIds": [
+            "msd-throat"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "섭취 상황 · 삼킴/호흡",
+          "meaning": "이물과 감염, 분비물 처리/기도 위험 구분",
+          "itemIds": [
+            "throat-hx-scope"
+          ],
+          "sourceIds": [
+            "msd-throat",
+            "msd-fb"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "Uvula deviation · Trismus",
+          "meaning": "편도주위농양 단서",
+          "itemIds": [],
+          "sourceIds": [
+            "msd-throat"
+          ]
+        },
+        {
+          "label": "Drooling · Stridor",
+          "meaning": "상기도 폐쇄 경고; 기도 평가 우선",
+          "itemIds": [],
+          "sourceIds": [
+            "msd-throat"
+          ]
+        },
+        {
+          "label": "Visible foreign body",
+          "meaning": "안 보여도 인두 깊은 부위/식도 이물 가능",
+          "itemIds": [
+            "throat-pe-visible"
+          ],
+          "sourceIds": [
+            "msd-fb"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "기도 위험 시 무리한 인두 진찰로 평가를 지연시키지 않음.",
+        "sourceIds": [
+          "msd-throat"
+        ]
+      }
+    },
+    {
+      "complaintId": "ear",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "외이도염",
+          "clues": "귓바퀴/tragus 통증·외이도 부종; 물 노출",
+          "sourceIds": [
+            "msd-ear"
+          ]
+        },
+        {
+          "disease": "중이염",
+          "clues": "고막 팽륜·중이 삼출; URI 뒤 통증",
+          "sourceIds": [
+            "msd-ear"
+          ]
+        },
+        {
+          "disease": "돌발성 감각신경성 난청",
+          "clues": "갑작스러운 청력 저하; 이경은 정상일 수 있음",
+          "sourceIds": [
+            "aao-hearing"
+          ]
+        },
+        {
+          "disease": "유양돌기염",
+          "clues": "귀 뒤 발적/부종·압통·귓바퀴 돌출",
+          "sourceIds": [
+            "msd-ear"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "Hearing loss · Onset",
+          "meaning": "급성 난청의 전음성/감각신경성 구분",
+          "itemIds": [
+            "ear-hx-hearing-dizziness"
+          ],
+          "sourceIds": [
+            "aao-hearing"
+          ]
+        },
+        {
+          "label": "URI · Water/Trauma",
+          "meaning": "중이·외이도·외상 맥락",
+          "itemIds": [
+            "ear-hx-exposure"
+          ],
+          "sourceIds": [
+            "msd-ear"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "Tragus · 외이도",
+          "meaning": "압통+부종은 외이도염 단서",
+          "itemIds": [],
+          "sourceIds": [
+            "msd-ear"
+          ]
+        },
+        {
+          "label": "TM · Mastoid",
+          "meaning": "팽륜은 중이염, 귀 뒤 부종/돌출은 유양돌기염 경고",
+          "itemIds": [
+            "ear-ref-pe-ear"
+          ],
+          "sourceIds": [
+            "msd-ear"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "고막 발적만으로 중이염 확정 불가. 급성 난청을 귀지 탓으로 단정하지 않음.",
+        "sourceIds": [
+          "msd-ear",
+          "aao-hearing"
+        ]
+      }
+    },
+    {
+      "complaintId": "epistaxis",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "전방 출혈",
+          "clues": "대개 비중격 앞쪽; 출혈점이 보일 수 있음",
+          "sourceIds": [
+            "tint-nose",
+            "msd-epistaxis"
+          ]
+        },
+        {
+          "disease": "후방 출혈",
+          "clues": "출혈점 불명·인두로 흐르는 지속 출혈",
+          "sourceIds": [
+            "msd-epistaxis"
+          ]
+        },
+        {
+          "disease": "약물·응고장애",
+          "clues": "항혈전제·다른 부위 출혈·쉽게 멍듦",
+          "sourceIds": [
+            "tint-nose",
+            "msd-epistaxis"
+          ]
+        },
+        {
+          "disease": "국소 병변",
+          "clues": "외상/이물; 반복 편측 출혈+코막힘이면 종괴 등",
+          "sourceIds": [
+            "msd-epistaxis"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "Side · Amount · Warfarin/Aspirin",
+          "meaning": "위치·지속 출혈·약물성 위험 확인",
+          "itemIds": [
+            "epistaxis-hx-side",
+            "epistaxis-hx-bleeding",
+            "epistaxis-hx-antithrombotic"
+          ],
+          "sourceIds": [
+            "tint-nose",
+            "msd-epistaxis"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "출혈점 · Posterior drainage",
+          "meaning": "비강 앞쪽과 인두를 함께 관찰; 후방 유출만으로 위치 확정 불가",
+          "itemIds": [
+            "epistaxis-pe-throat",
+            "epistaxis-pe-packing"
+          ],
+          "sourceIds": [
+            "msd-epistaxis"
+          ]
+        },
+        {
+          "label": "BP · Pulse · 관류",
+          "meaning": "저혈압/빈맥·관류 저하는 출혈 중증도 경고",
+          "itemIds": [
+            "epistaxis-pe-bp"
+          ],
+          "sourceIds": [
+            "msd-epistaxis"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "고혈압만으로 원인을 설명하지 않음; 출혈량·지속 여부·순환 상태를 함께 판단.",
+        "sourceIds": [
+          "msd-epistaxis"
+        ]
+      }
+    },
+    {
+      "complaintId": "oral-dental",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "치수염·치근단 감염",
+          "clues": "치아 통증·저작/온도 연관·국소 부종",
+          "sourceIds": [
+            "tint-dental",
+            "aci-dental"
+          ]
+        },
+        {
+          "disease": "심부 치성 감염",
+          "clues": "trismus·구강저 경결·혀 상승·연하곤란",
+          "sourceIds": [
+            "tint-dental"
+          ]
+        },
+        {
+          "disease": "치아·연조직 외상",
+          "clues": "치아 파절/탈구·입술/혀 열상·파편",
+          "sourceIds": [
+            "aci-dental"
+          ]
+        },
+        {
+          "disease": "턱 골절",
+          "clues": "교합 변화·변형·국소 압통",
+          "sourceIds": [
+            "aci-dental"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "Dental pain · Injury",
+          "meaning": "치아별 통증 양상과 외상 기전 구분",
+          "itemIds": [
+            "oral-dental-hx-scope"
+          ],
+          "sourceIds": [
+            "aci-dental",
+            "tint-dental"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "구강저 · Tongue · Trismus",
+          "meaning": "경결/혀 상승은 심부 감염·기도 위험",
+          "itemIds": [],
+          "sourceIds": [
+            "tint-dental"
+          ]
+        },
+        {
+          "label": "Wound · Tooth · 교합",
+          "meaning": "관통·파편/소실 치아·교합 이상은 깊은 손상/골절 단서",
+          "itemIds": [
+            "oral-dental-pe-wound"
+          ],
+          "sourceIds": [
+            "aci-dental"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "심부 감염은 겉보기보다 기도 위험이 클 수 있음; 호흡·분비물 처리 능력 우선.",
+        "sourceIds": [
+          "tint-dental"
+        ]
+      }
+    },
+    {
+      "complaintId": "trauma",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "골절·탈구",
+          "clues": "변형·골성 압통·기능 저하; 상처 동반 시 개방성 확인",
+          "sourceIds": [
+            "aci-msk",
+            "aci-trauma"
+          ]
+        },
+        {
+          "disease": "건·신경·혈관 손상",
+          "clues": "심부 열상·원위 운동/감각·관류 이상",
+          "sourceIds": [
+            "tint-wound",
+            "tint-tendon"
+          ]
+        },
+        {
+          "disease": "숨은 흉복부·골반 손상",
+          "clues": "고위험 기전·흉복부 통증·쇼크",
+          "sourceIds": [
+            "aci-trauma"
+          ]
+        },
+        {
+          "disease": "잔류 이물",
+          "clues": "유리/금속·관통·깊은 상처",
+          "sourceIds": [
+            "tint-wound",
+            "tint-tendon"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "Mechanism · LOC · Alcohol",
+          "meaning": "손상 범위와 평가가 어려운 상황 확인",
+          "itemIds": [
+            "trauma-hx-event",
+            "trauma-hx-loc",
+            "trauma-hx-drunk",
+            "trauma-hx-ta"
+          ],
+          "sourceIds": [
+            "aci-trauma"
+          ]
+        },
+        {
+          "label": "Object · Tetanus vaccination Hx",
+          "meaning": "이물/오염 위험과 파상풍 예방 판단",
+          "itemIds": [
+            "trauma-hx-event",
+            "trauma-hx-tetanus"
+          ],
+          "sourceIds": [
+            "tint-tendon",
+            "aci-trauma"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "Distal motor/sensory · 관류",
+          "meaning": "이상은 건/신경/혈관 손상 경고; 마취 전 감각 확인",
+          "itemIds": [
+            "trauma-pe-neurovascular"
+          ],
+          "sourceIds": [
+            "tint-wound",
+            "tint-tendon"
+          ]
+        },
+        {
+          "label": "Depth · Structure · Open wound",
+          "meaning": "노출 구조·골절과 연결된 상처·이물을 직접 확인",
+          "itemIds": [
+            "trauma-pe-expose",
+            "trauma-pe-open",
+            "trauma-pe-foreign",
+            "trauma-pe-depth",
+            "trauma-pe-structure"
+          ],
+          "sourceIds": [
+            "tint-wound",
+            "aci-trauma"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "움직임이 남아 있어도 부분 건 손상 가능; 작은 상처도 깊은 구조 손상을 확인.",
+        "sourceIds": [
+          "tint-tendon",
+          "tint-wound"
+        ]
+      }
+    },
+    {
+      "complaintId": "head-trauma",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "두개내 출혈",
+          "clues": "의식 악화·국소 이상·반복 구토/심한 두통",
+          "sourceIds": [
+            "nice-head-injury"
+          ]
+        },
+        {
+          "disease": "뇌진탕",
+          "clues": "외상 후 혼돈/기억장애; LOC 없이도 가능",
+          "sourceIds": [
+            "tint-head-injury"
+          ]
+        },
+        {
+          "disease": "두개골 골절",
+          "clues": "함몰·CSF leak·안와/유양부 멍 등",
+          "sourceIds": [
+            "nice-head-injury"
+          ]
+        },
+        {
+          "disease": "동반 경추 손상",
+          "clues": "기전·목 통증·사지 신경 이상",
+          "sourceIds": [
+            "nice-head-injury",
+            "aci-trauma"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "LOC · Headache · Vomiting",
+          "meaning": "초기 증상과 악화 추세 확인",
+          "itemIds": [
+            "head-trauma-hx"
+          ],
+          "sourceIds": [
+            "nice-head-injury"
+          ]
+        },
+        {
+          "label": "기전 · 항응고제",
+          "meaning": "중증 손상·지연 출혈/영상 위험 기준 확인",
+          "itemIds": [],
+          "sourceIds": [
+            "nice-head-injury"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "Mental status · Pupil",
+          "meaning": "의식 저하·새 동공 비대칭은 출혈/압박 경고",
+          "itemIds": [
+            "head-trauma-pe-mental",
+            "head-trauma-pe-pupil"
+          ],
+          "sourceIds": [
+            "nice-head-injury",
+            "msd-coma"
+          ]
+        },
+        {
+          "label": "Limb motor",
+          "meaning": "새 편측 약화는 국소 뇌 손상; 사지 이상은 경추도 평가",
+          "itemIds": [
+            "head-trauma-pe-motor"
+          ],
+          "sourceIds": [
+            "nice-head-injury"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "정상 의식/진찰로 출혈 배제 불가. 나이·기전·약물·경과를 포함한 CT 기준 적용.",
+        "sourceIds": [
+          "nice-head-injury"
+        ]
+      }
+    },
+    {
+      "complaintId": "inhalation-burn",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "상기도 열 손상",
+          "clues": "얼굴/목 화상·쉰 목소리·stridor",
+          "sourceIds": [
+            "aci-burn"
+          ]
+        },
+        {
+          "disease": "하기도 흡입 손상",
+          "clues": "연기 뒤 기침·wheeze·호흡곤란",
+          "sourceIds": [
+            "aci-burn"
+          ]
+        },
+        {
+          "disease": "CO 중독",
+          "clues": "밀폐 공간 노출·두통/어지럼·혼돈/실신",
+          "sourceIds": [
+            "cdc-co"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "노출 공간/시간 · Symptoms",
+          "meaning": "밀폐 공간·연기 노출과 진행하는 호흡 증상 확인",
+          "itemIds": [
+            "burn-hx-respiratory"
+          ],
+          "sourceIds": [
+            "aci-burn",
+            "cdc-co"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "Soot · Voice · Stridor",
+          "meaning": "그을음은 노출 단서; 쉰 목소리/stridor는 기도 손상 경고",
+          "itemIds": [
+            "burn-pe-soot"
+          ],
+          "sourceIds": [
+            "aci-burn"
+          ]
+        },
+        {
+          "label": "Lung sound · 호흡 노력",
+          "meaning": "wheeze/호흡 노력은 하기도 손상·악화 단서",
+          "itemIds": [
+            "burn-pe-lung"
+          ],
+          "sourceIds": [
+            "aci-burn"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "기도 부종은 지연 악화 가능. 일반 SpO₂가 정상이어도 CO 중독 배제 불가.",
+        "sourceIds": [
+          "aci-burn",
+          "cdc-co"
+        ]
+      }
+    },
+    {
+      "complaintId": "poisoning",
+      "scope": "general",
+      "differentials": [
+        {
+          "disease": "Opioid·진정제",
+          "clues": "의식/호흡 저하; opioid는 축동이 흔함",
+          "sourceIds": [
+            "tint-toxicology"
+          ]
+        },
+        {
+          "disease": "항콜린성",
+          "clues": "산동·건조·고체온·섬망",
+          "sourceIds": [
+            "tint-toxicology"
+          ]
+        },
+        {
+          "disease": "교감신경성",
+          "clues": "산동·발한·초조·빈맥/고혈압",
+          "sourceIds": [
+            "tint-toxicology"
+          ]
+        },
+        {
+          "disease": "CO 중독",
+          "clues": "노출+두통/어지럼·혼돈; 여러 명이 동시 증상",
+          "sourceIds": [
+            "cdc-co"
+          ]
+        }
+      ],
+      "hx": [
+        {
+          "label": "Drug · Dose/Time · Co-ingestion",
+          "meaning": "약물·양·시각·함께 섭취한 물질로 위험 판단",
+          "itemIds": [
+            "poisoning-hx-exposure"
+          ],
+          "sourceIds": [
+            "tint-toxicology"
+          ]
+        },
+        {
+          "label": "Intent · Plan",
+          "meaning": "고의/사고와 현재 자해 위험 확인",
+          "itemIds": [
+            "poisoning-hx-intent"
+          ],
+          "sourceIds": [
+            "nice-self-harm"
+          ]
+        }
+      ],
+      "pex": [
+        {
+          "label": "Mental · Respiration · Pupil",
+          "meaning": "호흡 저하+축동은 opioid 단서; 기도/환기 우선",
+          "itemIds": [
+            "poisoning-pe-interview"
+          ],
+          "sourceIds": [
+            "tint-toxicology"
+          ]
+        },
+        {
+          "label": "Skin · Temperature · V/S",
+          "meaning": "건조/발한·체온·맥박으로 toxidrome 구분",
+          "itemIds": [],
+          "sourceIds": [
+            "tint-toxicology"
+          ]
+        }
+      ],
+      "caution": {
+        "text": "혼합 중독은 전형적 소견이 없을 수 있음. Acetaminophen은 초기 무증상이어도 위험.",
+        "sourceIds": [
+          "tint-toxicology",
+          "atlas-apap"
+        ]
+      }
+    }
+  ]
+}

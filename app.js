@@ -9,7 +9,7 @@
   const compactViewPreferenceKey = "er-note-compact-view";
   const legacyAbbreviationPreferenceKey = "er-note-symptom-abbreviations";
   const redundantGroupTitles = new Set(["Basic", "History", "Background"]);
-  const state = { data: null, homeScroll: 0, route: null, currentItems: [], checked: new Map(), compactView: true };
+  const state = { data: null, concepts: new Map(), homeScroll: 0, route: null, currentItems: [], checked: new Map(), compactView: true, detailTab: "interview", panelScroll: {} };
   let sections;
   let complaints;
 
@@ -118,6 +118,36 @@
     return referenceGroupMarkup({ title: section.title, items: section.items });
   }
 
+  function conceptMarkup(complaint) {
+    const concept = state.concepts.get(complaint.id);
+    if (!concept) return '<p class="concept-error" role="status">개념 자료를 불러오지 못했습니다. <button class="text-button reset-button" type="button" id="retry-concepts">다시 불러오기</button></p>';
+    const meanings = (kind, title) => concept[kind].length
+      ? `<section class="concept-section"><h2>${title}</h2><dl class="concept-meanings">${concept[kind].map((item) => `<div><dt>${escape(item.label)}</dt><dd>${escape(item.meaning)}</dd></div>`).join("")}</dl></section>`
+      : "";
+    return `<div class="concept-summary"><section class="concept-section"><h2>감별</h2><dl class="concept-differentials">${concept.differentials.map((item) => `<div><dt>${escape(item.disease)}</dt><dd>${escape(item.clues)}</dd></div>`).join("")}</dl></section>${meanings("hx", "Hx")}${meanings("pex", "PEx")}<p class="concept-caution">${escape(concept.caution.text)}</p></div>`;
+  }
+
+  function selectDetailTab(name, focus = false) {
+    if (!["interview", "concept"].includes(name)) return;
+    if (state.detailTab !== name) {
+      state.panelScroll[state.detailTab] = window.scrollY;
+      state.detailTab = name;
+      document.querySelector("#interview-panel").hidden = name !== "interview";
+      document.querySelector("#concept-panel").hidden = name !== "concept";
+      document.querySelector(".detail-progress").hidden = name !== "interview";
+      const complaintId = state.route;
+      window.requestAnimationFrame(() => {
+        if (state.route === complaintId && state.detailTab === name) window.scrollTo(0, state.panelScroll[name] ?? 0);
+      });
+    }
+    document.querySelectorAll("[data-detail-tab]").forEach((tab) => {
+      const selected = tab.dataset.detailTab === name;
+      tab.setAttribute("aria-selected", String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+      if (selected && focus) tab.focus({ preventScroll: true });
+    });
+  }
+
   function renderDetail(complaint) {
     const name = complaint.name;
     const category = categoryOf(complaint.categoryId);
@@ -135,10 +165,14 @@
     state.currentItems = [...new Set((layoutPrimary.length
       ? layoutPrimary.flatMap((section) => section.groups.flatMap((group) => group.items.map((item) => item.id)))
       : primary.flatMap((section) => section.items.map((item) => item.id))))];
+    state.detailTab = "interview";
+    state.panelScroll = {};
     document.title = `${name} · ER 초진`;
     main.innerHTML = `<div class="shell detail-shell"><header class="detail-heading"><p class="eyebrow">${escape(category.name)}</p><div class="detail-title-row"><h1>${escape(name)}</h1><div class="detail-progress"><span class="progress" id="check-progress" aria-live="polite"></span><button class="text-button reset-button" type="button" id="reset-checks" hidden>초기화</button></div></div></header>
-      <div id="primary-content">${primaryMarkup}</div>
-      ${referenceMarkup ? `<section id="reference-content" aria-labelledby="reference-title"><header class="reference-heading"><h2 id="reference-title">참고사항</h2></header><div class="reference-board">${referenceMarkup}</div></section>` : ""}</div>`;
+      <div class="detail-tabs" role="tablist" aria-label="상세 내용"><button type="button" id="interview-tab" role="tab" aria-controls="interview-panel" aria-selected="true" data-detail-tab="interview">문진</button><button type="button" id="concept-tab" role="tab" aria-controls="concept-panel" aria-selected="false" tabindex="-1" data-detail-tab="concept">개념</button></div>
+      <div id="interview-panel" role="tabpanel" aria-labelledby="interview-tab"><div id="primary-content">${primaryMarkup}</div>
+      ${referenceMarkup ? `<section id="reference-content" aria-labelledby="reference-title"><header class="reference-heading"><h2 id="reference-title">참고사항</h2></header><div class="reference-board">${referenceMarkup}</div></section>` : ""}</div>
+      <div id="concept-panel" role="tabpanel" aria-labelledby="concept-tab" hidden>${conceptMarkup(complaint)}</div></div>`;
     updateProgress();
   }
 
@@ -159,7 +193,7 @@
     if (hash.startsWith("#cc/")) {
       let id;
       try { id = decodeURIComponent(hash.slice(4)); } catch { id = ""; }
-      if (legacyRoutes[id] && complaints.has(legacyRoutes[id])) {
+      if (!hasContent(complaints.get(id) ?? { status: "missing" }) && legacyRoutes[id] && complaints.has(legacyRoutes[id])) {
         id = legacyRoutes[id];
         history.replaceState(null, "", window.location.pathname + window.location.search + ccUrl(id));
       }
@@ -184,11 +218,33 @@
   }
 
   main.addEventListener("click", (event) => {
+    const tab = event.target.closest("[data-detail-tab]");
+    if (tab) {
+      selectDetailTab(tab.dataset.detailTab);
+      return;
+    }
+    if (event.target.closest("#retry-concepts")) {
+      const panel = document.querySelector("#concept-panel");
+      const complaint = complaints.get(state.route);
+      panel.innerHTML = '<p class="concept-error" role="status">개념 자료를 불러오는 중…</p>';
+      void loadConcepts().then(() => {
+        if (complaint.id === state.route && panel === document.querySelector("#concept-panel")) panel.innerHTML = conceptMarkup(complaint);
+      });
+      return;
+    }
     if (event.target.closest("#reset-checks")) {
       state.checked.delete(state.route);
       document.querySelectorAll("[data-check-item]").forEach((checkbox) => { checkbox.checked = false; });
       updateProgress();
     }
+  });
+
+  main.addEventListener("keydown", (event) => {
+    const tab = event.target.closest("[data-detail-tab]");
+    if (!tab || !["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+    event.preventDefault();
+    const name = event.key === "Home" ? "interview" : event.key === "End" ? "concept" : tab.dataset.detailTab === "interview" ? "concept" : "interview";
+    selectDetailTab(name, true);
   });
 
   main.addEventListener("change", (event) => {
@@ -213,6 +269,17 @@
   window.addEventListener("hashchange", route);
   if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 
+  async function loadConcepts() {
+    try {
+      const response = await fetch("./data/cc-concepts.json?v=1");
+      if (!response.ok) throw new Error("개념 자료를 불러오지 못했습니다.");
+      const data = await response.json();
+      state.concepts = new Map(data.complaints.map((concept) => [concept.complaintId, concept]));
+    } catch {
+      state.concepts = new Map();
+    }
+  }
+
   async function start() {
     try {
       try {
@@ -224,7 +291,7 @@
             ? legacyCompactView === "1"
             : true;
       } catch {}
-      const response = await fetch("./data/chief-complaints.json?v=22");
+      const [response] = await Promise.all([fetch("./data/chief-complaints.json?v=22"), loadConcepts()]);
       if (!response.ok) throw new Error("문진 자료를 불러오지 못했습니다.");
       state.data = await response.json();
       sections = new Map(state.data.sections.map((section) => [section.id, section]));

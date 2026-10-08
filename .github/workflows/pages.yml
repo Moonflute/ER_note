@@ -23,14 +23,18 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Validate source coverage and app data
-        run: python3 scripts/validate_data.py
+        run: |
+          python3 scripts/validate_data.py
+          python3 scripts/validate_concepts.py
+          node --check app.js
+          node --check sw.js
 
       - name: Package static app
         run: |
           set -eu
           mkdir -p _site/data _site/assets/icons
-          cp index.html styles.css app.js .nojekyll manifest.webmanifest _site/
-          cp data/chief-complaints.json _site/data/
+          cp index.html styles.css app.js sw.js .nojekyll manifest.webmanifest _site/
+          cp data/chief-complaints.json data/cc-concepts.json _site/data/
           cp assets/icons/er-icon-32.png assets/icons/er-icon-180.png assets/icons/er-icon-192.png assets/icons/er-icon-512.png _site/assets/icons/
 
       - name: Upload Pages artifact

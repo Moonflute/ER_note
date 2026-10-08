@@ -1,69 +1,66 @@
 # ER 초진 Quick Reference
 
-응급실 초진 중 증상별 문진과 신체진찰 항목을 빠르게 확인하는 정적 웹앱입니다.
+응급실 초진 중 문진·신체진찰과 핵심 감별을 확인하는 정적 PWA입니다.
 
-**[베타 앱 열기](https://moonflute.github.io/ER_note/)**
+**[앱 열기](https://moonflute.github.io/ER_note/)**
 
-## 베타 구성
+## 구성
 
-- 증상 검색: 한글, 영어, 약어
-- 00–11 기준 분류. 자료가 연결된 CC와 분류만 화면에 표시
-- 문진과 신체진찰을 상세 본문에 표시
-- 인계 메모와 차팅 예시는 본문 뒤 참고 영역
-- 분과 공통 양식은 `신경과 문진`, `정신과 문진`, `산부인과 문진`, `소아과 문진` 항목으로 표시
-- 소아의 발열·구토·설사·기침·복통·경련은 `09 소아` 섹션에 별도로 표시. 성인 증상에는 소아 항목을 연결하지 않음
-- 검색부터 시작하는 화면, 빨강 중심 색상, 간결한 버튼
-- 체크 상태는 현재 탭에서만 유지되며 새로고침 시 초기화됨. 환자 정보나 체크 상태를 저장하지 않음
+- 홈: `성인 → 소아 → 정신`. 자료가 있는 CC만 표시합니다.
+- 상세: `문진 | 개념`. 문진은 `Hx → PEx → 참고사항`, 개념은 핵심 감별·Hx/PEx 해석입니다.
+- 현재 제공하는 37개 항목 모두 개념이 있습니다. 소아는 성인과 분리합니다.
+- 작은 글자와 간결한 버튼, 흰 배경과 빨강 강조를 사용합니다.
+- 간략 보기 선택은 브라우저에 저장합니다. 체크 상태는 새로고침 전까지 유지하며, 탭을 바꿔도 유지합니다.
+- 앱과 자료는 서비스 워커로 캐시합니다. 정적 자료는 네트워크 우선, 연결 실패 시 캐시를 사용합니다.
 
-## 데이터와 출처
+## 데이터
 
-`data/chief-complaints.json`이 앱과 다른 프로젝트에서 공유할 수 있는 데이터입니다. HTML, 화면 상태, 체크 상태를 포함하지 않습니다.
+UI·체크 상태와 분리된 JSON이므로 다른 앱에서도 재사용할 수 있습니다.
 
-```text
-categories  분류 코드와 표시 순서
-complaints  CC 식별자, 검색 별칭, 범위, 연결된 section ID
-sections    문진·신체진찰·메모·예시 항목
-```
+| 파일 | 내용 |
+| --- | --- |
+| `data/chief-complaints.json` | CC·분류·원문 보존 계층·화면용 `layout` |
+| `data/cc-concepts.json` | CC별 감별·Hx/PEx 의미·주의점·외부 근거 |
+| `data/content-provenance.json` | 원본 해시·문단·원문 항목 대응표 |
+| `docs/chief-complaints.schema.json` | 문진 데이터 스키마 |
+| `docs/cc-concepts.schema.json` | 개념 데이터 스키마 |
 
-각 항목은 안정적인 `id`와 원문 `text`를 가집니다. 원문 조건이 필요한 경우 `condition`을 따로 둡니다. 여러 CC가 동일한 공통 문진을 `sectionId`로 참조할 수 있습니다.
+문진은 원본 6개 자료의 600개 항목을 보존합니다. 중복 정리·순서 변경은 `layout`에서만 하며, 모든 원문 항목을 `sourceItemIds`로 연결합니다. 참고사항도 문진 탭 뒤에 항상 표시합니다.
 
-분과 공통 양식만 있는 증상은 분과 문진 카드의 검색 별칭으로 연결합니다. 정신과의 기분변화·불안·수면장애·중독/과량복용·자살/자해는 정신과 문진으로, 산부인과의 질분비물·질출혈·월경이상·월경통·골반통은 산부인과 문진으로 찾을 수 있습니다. 증상별 내용이 있는 산전 진찰과 신경과 증상은 별도 항목을 유지합니다.
+개념은 별도 요청에 따라 작성한 외부 근거 기반 설명입니다. Tintinalli의 출판사 제공 본문과 SAEM·NICE·AHA·EAU·RCH 등 공식 자료를 대조했습니다. 각 문장에 `sourceIds`, 근거 자료에 판/절·URL·확인일·본문 접근 범위를 기록합니다. 개념 작성으로 기존 체크리스트를 늘리거나 줄이지 않습니다.
 
-항목 수는 원문 문장·묶음 기준입니다. 한 줄에 여러 질문이 있어도 원문대로 보존하며, 인계 메모만 있는 피부 발진·옆구리 통증에는 `참고` 표시를 붙입니다. 인계 메모를 임의의 문진 질문으로 바꾸지 않습니다.
-
-- [자료 정리본](docs/자료%20정리본.md): 분류별 검토용 문서
-- `data/content-provenance.json`: 원본 파일 해시, 원문 텍스트, 문단 위치, 정리 항목 대응표
-- `docs/content-audit.json`: 보존 검사 및 자료가 없는 CC 목록
-- `docs/chief-complaints.schema.json`: 다른 프로젝트에서 재사용할 때 참고할 JSON Schema
-
-원본 5개 파일의 문진·진찰·메모·예시를 보존했습니다. 같은 구획에서 공백 또는 앞쪽 bullet만 다른 중복만 통합합니다. 차팅 예시의 반복 소견은 사례 순서를 위해 통합하지 않습니다. 비슷하지만 조건·범위가 다른 항목은 각각 유지합니다. 원문 약어, 수치와 인계 내용을 임의로 교정하거나 새 의학 내용을 보충하지 않았습니다.
-
-베타 데이터는 인계 자료를 정리한 것으로, 최신 진료 지침이나 병원 내부 오더의 적합성을 검증한 결과는 아닙니다. 원문 간 상충 내용은 `content-provenance.json`의 `reviewIssues`에 기록합니다.
+- [편집 기준](docs/편집%20기준.md)
+- [개념 자료와 근거](docs/개념%20자료.md)
+- [문진 자료 정리본](docs/자료%20정리본.md)
+- `docs/content-audit.json`: 원문 보존 검사 결과
 
 ## 로컬 실행
 
-빌드·npm 의존성이 없습니다. 프로젝트 폴더에서 정적 HTTP 서버를 실행합니다.
+빌드·npm 의존성 없이 정적 HTTP 서버를 사용합니다.
 
 ```shell
 python -m http.server 4173 --bind 127.0.0.1
 ```
 
-브라우저에서 `http://127.0.0.1:4173/`를 엽니다. JSON을 fetch하므로 `file://` 직접 열기 대신 HTTP 서버를 사용합니다.
+JSON을 fetch하므로 `file://`로 직접 열 수 없습니다.
 
-## 자료 재정리
+## 편집·검증
 
-원본은 로컬 `문진항목 정리/` 폴더에 보존하며 Git과 Pages 배포에서 제외합니다. 추출에는 `lxml`, `pdfplumber`, PDF 렌더링 런타임이 필요합니다. 재정리 과정의 핵심은 `scripts/curate_data.py`의 명시적인 원문 위치 대응표입니다.
+원본은 로컬 `문진항목 정리/`에 보존하고 Git·Pages에서 제외합니다. 문진 재정리는 `scripts/curate_data.py`의 명시적 대응표를 사용합니다. 개념은 별도 JSON에서 수정합니다.
 
 ```shell
-python scripts/extract_sources.py
 python scripts/curate_data.py
 python scripts/validate_data.py
+python scripts/validate_concepts.py
+node --check app.js
+node --check sw.js
+git diff --check
 ```
 
-배포 전 검증은 Python 표준 라이브러리만 사용합니다. 원본이 로컬에 있으면 해시까지 확인하고, CI에서는 보존된 원문·대응표와 결과 데이터의 일치 여부를 확인합니다.
+검증기는 원문 보존·전체 CC의 개념 연결·소아/성인 범위·근거 연결·문구 길이를 확인합니다. 임상 내용의 정확성은 근거 본문과 직접 대조해야 합니다.
 
-## GitHub Pages
+## 배포
 
-저장소: [Moonflute/ER_note](https://github.com/Moonflute/ER_note)
+[Moonflute/ER_note](https://github.com/Moonflute/ER_note)의 `main`에 푸시하면 GitHub Actions가 Pages에 배포합니다. 상대 경로·hash routing으로 `/ER_note/` 하위 경로에서 동작합니다.
 
-배포 방법과 상태 확인은 [배포 안내](docs/deployment.md)를 참고합니다. 앱의 URL·파일 경로는 상대 경로와 hash routing을 사용해 GitHub Pages의 `/ER_note/` 하위 경로에서도 동작합니다.
+[배포 안내](docs/deployment.md). 사용자의 요청에 따라 브라우저 검증과 배포 상태 조회는 하지 않습니다.
