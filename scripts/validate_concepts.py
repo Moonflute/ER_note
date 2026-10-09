@@ -60,6 +60,7 @@ node_count = 0
 largest = (0, "")
 dense = []
 review = (ROOT / "docs/개념 검토.md").read_text(encoding="utf-8")
+flow_review = (ROOT / "docs/전체 Flow 검토.md").read_text(encoding="utf-8")
 
 
 def references(node, location):
@@ -73,6 +74,8 @@ def references(node, location):
 
 def validate_flow(concept):
     complaint_id = concept["complaintId"]
+    require(f"<!-- flow-review: {complaint_id} -->" in flow_review,
+            f"Missing CC flow clinical review record: {complaint_id}")
     flow = concept["flow"]
     keys(flow, "entry conceptRefs sourceIds stages notes", complaint_id + ".flow")
     text(flow["entry"], 80, complaint_id + ".flow.entry")
@@ -135,7 +138,7 @@ def validate_flow(concept):
 
 for concept in data["complaints"]:
     complaint_id = concept["complaintId"]
-    keys(concept, "complaintId scope differentials hx pex caution", complaint_id, "flow")
+    keys(concept, "complaintId scope differentials hx pex caution flow", complaint_id)
     if complaint_id not in available:
         continue
     complaint = available[complaint_id]
@@ -178,7 +181,8 @@ for concept in data["complaints"]:
         length = sum(map(len, view_text))
         if length > 500:
             dense.append((location, length))
-            require(f"<!-- density: {complaint_id} -->" in review,
+            density_review = flow_review if view_name == "flow" else review
+            require(f"<!-- density: {complaint_id} -->" in density_review,
                     f"Needs documented density review, not deletion of clinical content: {location} ({length} characters)")
         require(not [value for value, count in Counter(view_text).items() if count > 1], f"Repeated text: {location}")
         largest = max(largest, (length, location))
@@ -191,6 +195,7 @@ require("app.js sw.js .nojekyll" in workflow, "Service worker missing from Pages
 if errors:
     print("FAIL\n" + "\n".join(errors))
     sys.exit(1)
-print(f"PASS: {len(concept_ids)} concepts, {len(sources)} references, {node_count} cited clinical rows; max {largest[0]} characters ({largest[1]}).")
+flow_count = sum("flow" in concept for concept in data["complaints"])
+print(f"PASS: {len(concept_ids)} concepts, {flow_count} flows, {len(sources)} references, {node_count} cited clinical rows; max {largest[0]} characters ({largest[1]}).")
 if dense:
     print("Density reviewed (>500 characters): " + ", ".join(f"{id} {length}" for id, length in dense))

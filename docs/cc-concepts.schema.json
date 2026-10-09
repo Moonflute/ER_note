@@ -114,7 +114,7 @@
     },
     "complaint": {
       "type": "object", "additionalProperties": false,
-      "required": ["complaintId", "scope", "differentials", "hx", "pex", "caution"],
+      "required": ["complaintId", "scope", "differentials", "hx", "pex", "caution", "flow"],
       "properties": {
         "complaintId": { "$ref": "#/$defs/text" },
         "scope": { "enum": ["general", "pediatric", "psychiatric"] },

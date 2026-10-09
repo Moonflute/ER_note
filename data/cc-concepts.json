@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-10-08.5",
+  "contentVersion": "2026-10-10.1",
   "sources": [
     {
       "id": "tint-abd",
@@ -1072,6 +1072,24 @@
       "locator": "March 2026 update: Heat stroke — high body temperature, altered mental status, heat/exertion exposure; emergency care",
       "accessedAt": "2026-10-08",
       "access": "full-text"
+    },
+    {
+      "id": "nice-panic-flow",
+      "title": "CG113: Generalised anxiety disorder and panic disorder in adults — Recommendations",
+      "url": "https://www.nice.org.uk/guidance/cg113/chapter/Recommendations",
+      "publisher": "NICE",
+      "locator": "1.3.1–1.3.6 — panic diagnosis, comorbidity and acute physical assessment in A&E; a panic attack does not establish panic disorder",
+      "accessedAt": "2026-10-10",
+      "access": "full-text"
+    },
+    {
+      "id": "apap-consensus-2023",
+      "title": "Management of Acetaminophen Poisoning in the US and Canada: A Consensus Statement",
+      "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2808062",
+      "publisher": "JAMA Network Open; US and Canadian clinical toxicology societies",
+      "locator": "2023 consensus: unreliable/unknown ingestion history; 4–24 hour nomogram; repeated >24 h ingestion; extended-release/co-ingestion and repeat concentration",
+      "accessedAt": "2026-10-10",
+      "access": "full-text"
     }
   ],
   "complaints": [
@@ -1223,6 +1241,215 @@
           "tint-abd",
           "wses-cholecystitis"
         ]
+      },
+      "flow": {
+        "entry": "통증 위치·이동/방사? → 구토·배변/가스·요로증상 → LMP·수술력",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "통증 위치 · 이동 · 방사"
+          },
+          {
+            "kind": "hx",
+            "key": "LMP · 임신 가능성"
+          },
+          {
+            "kind": "hx",
+            "key": "수술력 · ANVCD · FUND HIS"
+          }
+        ],
+        "sourceIds": [
+          "tint-appendix-signs",
+          "msd-acute-abd",
+          "aci-abd",
+          "eau-infections"
+        ],
+        "stages": [
+          {
+            "id": "danger",
+            "question": "갑자기 심하거나 관류·복막자극 이상?",
+            "priority": "urgent",
+            "sourceIds": [
+              "aci-abd",
+              "msd-acute-abd",
+              "tint-abd"
+            ],
+            "branches": [
+              {
+                "id": "vascular-peritoneal",
+                "when": "실신·저혈압 / 통증>진찰",
+                "check": "저혈압·rTd/Guarding(+): 관류/복막 위험",
+                "consider": "AAA·허혈·천공 우선 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "혈관·산부 응급"
+                  },
+                  {
+                    "kind": "differentials",
+                    "key": "충수염·게실염·복막염"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "rTd · Guarding"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-abd",
+                  "msd-acute-abd",
+                  "tint-abd"
+                ],
+                "note": "초기·고령·면역저하에서는 복막 소견이 미약할 수 있음"
+              },
+              {
+                "id": "pregnancy",
+                "when": "임신 가능성·하복부통",
+                "check": "임신 검사·출혈/쇼크",
+                "consider": "자궁외임신 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "혈관·산부 응급"
+                  },
+                  {
+                    "kind": "hx",
+                    "key": "LMP · 임신 가능성"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-abd",
+                  "msd-acute-abd"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "location",
+            "question": "위치·동반 증상 → 해당 부위 진찰",
+            "priority": "standard",
+            "sourceIds": [
+              "msd-cholecystitis",
+              "msd-acute-abd",
+              "msd-cholangitis",
+              "msd-gi-exam",
+              "aci-abd",
+              "eau-stones",
+              "eau-infections"
+            ],
+            "branches": [
+              {
+                "id": "biliary",
+                "when": "RUQ·우측 견갑 방사",
+                "check": "Murphy: RUQ 압박 시 통증으로 흡기 중단",
+                "consider": "담낭염; 발열/황달이면 담관염",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "담낭·담도 질환"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Murphy"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Abd Td 위치"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-cholecystitis",
+                  "msd-acute-abd",
+                  "msd-cholangitis",
+                  "msd-gi-exam"
+                ]
+              },
+              {
+                "id": "lower",
+                "when": "배꼽→RLQ / LLQ 통증",
+                "check": "RLQ/LLQ Td(+)·rTd·이동 양상",
+                "consider": "충수염 / 게실염",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "충수염·게실염·복막염"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Abd Td 위치"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-abd",
+                  "msd-acute-abd",
+                  "msd-gi-exam"
+                ]
+              },
+              {
+                "id": "epigastric",
+                "when": "Epig·등 방사",
+                "check": "상복부 Td(+)·복막자극·lipase",
+                "consider": "췌장·위십이지장 질환",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "췌장·위십이지장 질환"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Abd Td 위치"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-acute-abd",
+                  "msd-gi-exam"
+                ]
+              },
+              {
+                "id": "obstruction",
+                "when": "팽만·구토·변/가스 감소",
+                "check": "수술력·팽만+고음 장음",
+                "consider": "장폐색",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "장폐색"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "팽만 · Bowel sound"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-abd",
+                  "msd-acute-abd"
+                ],
+                "note": "장음 정상으로 폐색 배제 불가"
+              },
+              {
+                "id": "urinary",
+                "when": "산통·혈뇨 / 발열·배뇨통",
+                "check": "CVAT(+): 상부 요로 단서",
+                "consider": "결석 / 신우신염",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "요로계"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "CVAT"
+                  }
+                ],
+                "sourceIds": [
+                  "eau-stones",
+                  "eau-infections"
+                ],
+                "note": "발열/pyuria는 감염 단서; CVAT만으로 결석과 구분 못함"
+              }
+            ]
+          }
+        ],
+        "notes": []
       }
     },
     {
@@ -1305,6 +1532,121 @@
         "sourceIds": [
           "msd-constipation"
         ]
+      },
+      "flow": {
+        "entry": "Last defecation·flatus? → 평소와 다른지·구토/팽만 → 약물·수술·내시경력",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "Last defecation · Flatus"
+          },
+          {
+            "kind": "hx",
+            "key": "Medical Hx · 내시경력"
+          }
+        ],
+        "sourceIds": [
+          "msd-constipation"
+        ],
+        "stages": [
+          {
+            "id": "obstructed",
+            "question": "가스도 끊기고 구토·지속 통증?",
+            "priority": "urgent",
+            "sourceIds": [
+              "msd-constipation"
+            ],
+            "branches": [
+              {
+                "id": "bowel-obstruction",
+                "when": "배변/가스 중단+구토·팽만",
+                "check": "복부팽만·압통·복막자극",
+                "consider": "장폐색·합병증 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "장폐색"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "복부팽만 · 압통"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-constipation"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "pattern",
+            "question": "배변 정체가 어떤 양상?",
+            "priority": "standard",
+            "sourceIds": [
+              "msd-constipation"
+            ],
+            "branches": [
+              {
+                "id": "impaction",
+                "when": "묽은 변만 소량 새거나 막힌 느낌",
+                "check": "DRE에서 굳은 변",
+                "consider": "분변매복",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "분변매복"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "직장수지검사"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-constipation"
+                ]
+              },
+              {
+                "id": "organic",
+                "when": "새로 악화·혈변·체중감소",
+                "check": "DRE: 혈액/종괴·내시경력",
+                "consider": "기질성 장질환 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "기질성 장질환"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "직장수지검사"
+                  },
+                  {
+                    "kind": "hx",
+                    "key": "Medical Hx · 내시경력"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-constipation"
+                ]
+              },
+              {
+                "id": "functional-drug",
+                "when": "기존 양상 반복 / 새 약 이후",
+                "check": "opioid·항콜린제·배변 패턴",
+                "consider": "기능성·약물성 가능",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "기능성·약물성"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-constipation"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": []
       }
     },
     {
@@ -1429,6 +1771,203 @@
           "tint-acs",
           "aci-chest"
         ]
+      },
+      "flow": {
+        "entry": "언제·얼마나, 어디로 방사? → 운동/호흡/자세·구토 연관 → 동반 증상·U/D",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "Onset · Radiation · Factors"
+          },
+          {
+            "kind": "hx",
+            "key": "Associated · Medical Hx"
+          }
+        ],
+        "sourceIds": [
+          "tint-chest",
+          "aci-chest"
+        ],
+        "stages": [
+          {
+            "id": "unstable",
+            "question": "실신·저혈압·의식/호흡 이상?",
+            "priority": "urgent",
+            "sourceIds": [
+              "aci-chest"
+            ],
+            "branches": [
+              {
+                "id": "perfusion",
+                "when": "실신·저혈압·식은땀",
+                "check": "V/S·관류·ECG",
+                "consider": "불안정 → 응급 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "pex",
+                    "key": "V/S · 관류"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-chest"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dangerous-pattern",
+            "question": "발생·방사·유발 양상에 진찰을 연결",
+            "priority": "urgent",
+            "sourceIds": [
+              "tint-chest",
+              "aci-chest",
+              "tint-acs",
+              "aha-chest-exam",
+              "tint-pneumothorax"
+            ],
+            "branches": [
+              {
+                "id": "ischemic",
+                "when": "압박감·운동 연관·팔/턱 방사",
+                "check": "발한·위험력; ECG/serial troponin",
+                "consider": "ACS",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "ACS"
+                  }
+                ],
+                "sourceIds": [
+                  "tint-chest",
+                  "aci-chest",
+                  "tint-acs"
+                ]
+              },
+              {
+                "id": "aorta",
+                "when": "처음부터 최대·등 방사",
+                "check": "좌우 맥박/BP 차이·신경/허혈 소견",
+                "consider": "대동맥박리",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "대동맥박리"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "좌우 맥박/BP"
+                  }
+                ],
+                "sourceIds": [
+                  "tint-chest",
+                  "aha-chest-exam"
+                ],
+                "note": "좌우 차이가 없어도 박리 배제 불가"
+              },
+              {
+                "id": "embolism",
+                "when": "호흡성 통증+Dyspnea",
+                "check": "혈전 위험·빈맥/호흡 상태",
+                "consider": "PE 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "PE"
+                  }
+                ],
+                "sourceIds": [
+                  "tint-chest",
+                  "aha-chest-exam"
+                ]
+              },
+              {
+                "id": "pleural",
+                "when": "갑작스러운 편측 통증+호흡곤란",
+                "check": "편측 호흡음↓·쇼크",
+                "consider": "기흉; 쇼크면 긴장성 의심",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "기흉"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "편측 호흡음 감소"
+                  }
+                ],
+                "sourceIds": [
+                  "tint-pneumothorax"
+                ],
+                "note": "정상 청진으로도 기흉 배제 불가"
+              },
+              {
+                "id": "esophagus",
+                "when": "심한 구토 직후 급격한 통증",
+                "check": "피하기종·호흡음",
+                "consider": "식도파열",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "식도파열"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Friction rub · 피하기종"
+                  }
+                ],
+                "sourceIds": [
+                  "aha-chest-exam"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "other-pattern",
+            "question": "자세·촉진에 따라 달라지나?",
+            "priority": "standard",
+            "sourceIds": [
+              "aha-chest-exam"
+            ],
+            "branches": [
+              {
+                "id": "pericardium",
+                "when": "호흡/누울 때 악화·숙이면 완화",
+                "check": "Friction rub(+)",
+                "consider": "심낭염",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "심낭염"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Friction rub · 피하기종"
+                  }
+                ],
+                "sourceIds": [
+                  "aha-chest-exam"
+                ]
+              },
+              {
+                "id": "chest-wall",
+                "when": "누르면 같은 통증 재현",
+                "check": "Chest wall Td",
+                "consider": "흉벽 원인 지지",
+                "conceptRefs": [
+                  {
+                    "kind": "pex",
+                    "key": "Chest wall Td"
+                  }
+                ],
+                "sourceIds": [
+                  "aha-chest-exam"
+                ],
+                "note": "통증 재현도 ACS 배제 근거는 아님"
+              }
+            ]
+          }
+        ],
+        "notes": []
       }
     },
     {
@@ -1516,6 +2055,121 @@
           "nice-syncope",
           "tint-syncope"
         ]
+      },
+      "flow": {
+        "entry": "전조·자세/운동 중? → 목격 당시 움직임·회복 뒤 혼돈 → 심질환·약물·가족력",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "Prodrome · 당시/현재 증상"
+          },
+          {
+            "kind": "hx",
+            "key": "Medical Hx · 약물"
+          }
+        ],
+        "sourceIds": [
+          "nice-syncope"
+        ],
+        "stages": [
+          {
+            "id": "cardiac-seizure",
+            "question": "완전히 회복했나 / 심장 위험 있나?",
+            "priority": "urgent",
+            "sourceIds": [
+              "nice-syncope",
+              "aha-chest-exam"
+            ],
+            "branches": [
+              {
+                "id": "cardiac",
+                "when": "운동 중·전조 없음·흉통/호흡곤란",
+                "check": "ECG 이상·불규칙맥·수축기 잡음(AS)",
+                "consider": "심장성 실신 우선 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "심장성"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "맥박 · 심장 진찰"
+                  }
+                ],
+                "sourceIds": [
+                  "nice-syncope",
+                  "aha-chest-exam"
+                ]
+              },
+              {
+                "id": "epileptic",
+                "when": "혀 깨물림·지속 jerk·회복 후 혼돈",
+                "check": "목격자·경련 기간·현재 신경 상태",
+                "consider": "경련 가능; 미회복이면 긴급 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "경련"
+                  },
+                  {
+                    "kind": "hx",
+                    "key": "Prodrome · 당시/현재 증상"
+                  }
+                ],
+                "sourceIds": [
+                  "nice-syncope"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "trigger",
+            "question": "발생 상황·전조와 BP를 연결",
+            "priority": "standard",
+            "sourceIds": [
+              "nice-syncope",
+              "tint-syncope"
+            ],
+            "branches": [
+              {
+                "id": "vasovagal",
+                "when": "오래 서기·통증 뒤 발한/오심",
+                "check": "눕자 호전·회복 양상",
+                "consider": "미주신경성 지지",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "미주신경성"
+                  }
+                ],
+                "sourceIds": [
+                  "nice-syncope"
+                ]
+              },
+              {
+                "id": "orthostatic",
+                "when": "일어선 뒤 발생·탈수/혈압약",
+                "check": "누움→기립 BP↓+증상 재현",
+                "consider": "기립성 지지",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "기립성"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "자세별 BP"
+                  }
+                ],
+                "sourceIds": [
+                  "nice-syncope",
+                  "tint-syncope"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": []
       }
     },
     {
@@ -1588,6 +2242,158 @@
         "sourceIds": [
           "aha-arrest"
         ]
+      },
+      "flow": {
+        "entry": "목격·발생 시각·CPR/초기 리듬? → 반응·호흡·맥박을 소생과 동시에 확인",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "Incoming CPR"
+          }
+        ],
+        "sourceIds": [
+          "aha-arrest"
+        ],
+        "stages": [
+          {
+            "id": "recognition",
+            "question": "현재 반응·호흡·맥박은?",
+            "priority": "urgent",
+            "sourceIds": [
+              "aha-bls"
+            ],
+            "branches": [
+              {
+                "id": "no-pulse",
+                "when": "무반응+무호흡/gasping",
+                "check": "10초 내 맥박이 확실하지 않음",
+                "consider": "심정지 → 즉시 CPR",
+                "conceptRefs": [
+                  {
+                    "kind": "pex",
+                    "key": "무반응 · 비정상 호흡 · 무맥"
+                  }
+                ],
+                "sourceIds": [
+                  "aha-bls"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "rhythm",
+            "question": "모니터 리듬이 충격 리듬인가?",
+            "priority": "urgent",
+            "sourceIds": [
+              "aha-arrest"
+            ],
+            "branches": [
+              {
+                "id": "shockable",
+                "when": "VF/pVT",
+                "check": "제세동 후 즉시 CPR",
+                "consider": "충격 리듬 경로",
+                "conceptRefs": [
+                  {
+                    "kind": "pex",
+                    "key": "리듬"
+                  }
+                ],
+                "sourceIds": [
+                  "aha-arrest"
+                ]
+              },
+              {
+                "id": "nonshockable",
+                "when": "PEA/asystole",
+                "check": "CPR 지속·Epinephrine ASAP",
+                "consider": "비충격 리듬 경로",
+                "conceptRefs": [
+                  {
+                    "kind": "pex",
+                    "key": "리듬"
+                  }
+                ],
+                "sourceIds": [
+                  "aha-arrest"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "reversible",
+            "question": "처치 중 가역 원인 단서를 병행",
+            "priority": "urgent",
+            "sourceIds": [
+              "aha-arrest",
+              "tint-pneumothorax"
+            ],
+            "branches": [
+              {
+                "id": "oxygen-volume",
+                "when": "기도/호흡 문제·출혈/체액 소실",
+                "check": "환기·산소·출혈원",
+                "consider": "저산소·저혈량",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "저산소·저혈량"
+                  }
+                ],
+                "sourceIds": [
+                  "aha-arrest"
+                ]
+              },
+              {
+                "id": "metabolic",
+                "when": "전해질 위험·한랭 노출",
+                "check": "K·산염기·체온",
+                "consider": "대사 이상·저체온",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "대사·저체온"
+                  }
+                ],
+                "sourceIds": [
+                  "aha-arrest"
+                ]
+              },
+              {
+                "id": "thrombus-toxin",
+                "when": "흉통/혈전 위험·약물 노출",
+                "check": "목격/이송 정보·노출력",
+                "consider": "관상/폐혈전·중독",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "혈전·중독"
+                  }
+                ],
+                "sourceIds": [
+                  "aha-arrest"
+                ]
+              },
+              {
+                "id": "obstructive",
+                "when": "편측 호흡음↓·기흉/심낭 병력",
+                "check": "숙련 POCUS: 기흉·심낭액/압전 소견(보조)",
+                "consider": "긴장성 기흉·심장압전",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "폐쇄성 원인"
+                  }
+                ],
+                "sourceIds": [
+                  "aha-arrest",
+                  "tint-pneumothorax"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": []
       }
     },
     {
@@ -1674,6 +2480,134 @@
           "msd-hematuria",
           "aci-retention"
         ]
+      },
+      "flow": {
+        "entry": "진짜 소변 피·혈괴·기간? → 통증/발열·FUND HIS·줄기 → 흡연·항응고제",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "Hematuria"
+          },
+          {
+            "kind": "hx",
+            "key": "FUND HIS · Stream"
+          }
+        ],
+        "sourceIds": [
+          "msd-hematuria",
+          "aci-retention"
+        ],
+        "stages": [
+          {
+            "id": "outflow-infection",
+            "question": "소변이 나오나 / 전신 상태가 나빠지나?",
+            "priority": "urgent",
+            "sourceIds": [
+              "aci-retention",
+              "msd-hematuria",
+              "eau-infections"
+            ],
+            "branches": [
+              {
+                "id": "clot-retention",
+                "when": "혈괴+배뇨 불가/배출 장애",
+                "check": "치골상부 팽만·잔뇨↑",
+                "consider": "혈괴 요폐 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "pex",
+                    "key": "치골상부 팽만"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-retention"
+                ]
+              },
+              {
+                "id": "infected",
+                "when": "발열·배뇨통 / 옆구리통",
+                "check": "CVAT(+)+발열 / UA 감염 소견·V/S",
+                "consider": "감염; 전신 UTI 여부 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "감염"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "부종 · BP · CVAT"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-hematuria",
+                  "eau-infections"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "source",
+            "question": "통증·요검사 소견으로 분기",
+            "priority": "standard",
+            "sourceIds": [
+              "msd-hematuria",
+              "eau-infections"
+            ],
+            "branches": [
+              {
+                "id": "stone",
+                "when": "옆구리 산통·오심",
+                "check": "UA·결석 영상",
+                "consider": "결석",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "결석"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-hematuria"
+                ]
+              },
+              {
+                "id": "glomerular",
+                "when": "부종·고혈압",
+                "check": "단백뇨·RBC cast·신기능",
+                "consider": "사구체 질환",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "사구체 질환"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "부종 · BP · CVAT"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-hematuria",
+                  "eau-infections"
+                ]
+              },
+              {
+                "id": "malignancy",
+                "when": "통증 없는 혈뇨·흡연/고령",
+                "check": "지속/반복·비뇨기 평가",
+                "consider": "비뇨기 종양 감별",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "비뇨기 종양"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-hematuria"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": []
       }
     },
     {
@@ -1772,6 +2706,141 @@
         "sourceIds": [
           "aci-retention"
         ]
+      },
+      "flow": {
+        "entry": "FUND HIS: 급한 요의/통증인가, 배출이 힘든가? → 혈뇨·실금·줄기",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "FUND HIS"
+          },
+          {
+            "kind": "hx",
+            "key": "Hematuria · Stream"
+          }
+        ],
+        "sourceIds": [
+          "eau-infections",
+          "aci-retention"
+        ],
+        "stages": [
+          {
+            "id": "urgent-outflow",
+            "question": "소변량↓·새 신경 증상·전신 악화?",
+            "priority": "urgent",
+            "sourceIds": [
+              "aci-retention",
+              "eau-infections"
+            ],
+            "branches": [
+              {
+                "id": "retained",
+                "when": "배뇨 불가 / 약한 줄기·잔뇨감",
+                "check": "치골상부 팽만·PVR↑",
+                "consider": "요폐·출구 폐색",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "요폐·출구 폐색"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "치골상부 팽만"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-retention"
+                ]
+              },
+              {
+                "id": "neurologic",
+                "when": "새 요폐/실금+허리통증",
+                "check": "하지근력↓·회음부 감각↓",
+                "consider": "신경성 배뇨장애·CES 긴급 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "신경성 배뇨장애"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "CVAT · 하지/회음부"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-retention",
+                  "eau-infections"
+                ]
+              },
+              {
+                "id": "upper-infection",
+                "when": "발열·오한·옆구리통",
+                "check": "CVAT(+)+발열·전신 악화·UA/culture",
+                "consider": "신우신염·전신 UTI",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "신우신염·전신 UTI"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "CVAT · 하지/회음부"
+                  }
+                ],
+                "sourceIds": [
+                  "eau-infections",
+                  "aci-retention"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "local-infection",
+            "question": "자극 증상에 감염 위치를 구분",
+            "priority": "standard",
+            "sourceIds": [
+              "eau-infections"
+            ],
+            "branches": [
+              {
+                "id": "bladder-urethra",
+                "when": "배뇨통·빈뇨/절박뇨",
+                "check": "UA; 분비물·성접촉력/요도 검사",
+                "consider": "방광염 / 요도염",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "방광염·요도염"
+                  }
+                ],
+                "sourceIds": [
+                  "eau-infections"
+                ]
+              },
+              {
+                "id": "prostate",
+                "when": "발열+회음부통·배출 장애",
+                "check": "필요 시 DRE: 전립선 압통/종창",
+                "consider": "급성 전립선염",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "급성 전립선염"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "전립선 DRE"
+                  }
+                ],
+                "sourceIds": [
+                  "eau-infections"
+                ],
+                "note": "의심 시 전립선 마사지 금지"
+              }
+            ]
+          }
+        ],
+        "notes": []
       }
     },
     {
@@ -1863,6 +2932,143 @@
         "sourceIds": [
           "aci-retention"
         ]
+      },
+      "flow": {
+        "entry": "언제 새나: 요의 직후, 기침/운동 때, 계속 조금씩? → 새 변화·FUND HIS",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "Incontinence"
+          },
+          {
+            "kind": "hx",
+            "key": "FUND HIS · Stream"
+          }
+        ],
+        "sourceIds": [
+          "msd-incontinence"
+        ],
+        "stages": [
+          {
+            "id": "new-onset",
+            "question": "갑자기 시작 + 허리/하지 증상?",
+            "priority": "urgent",
+            "sourceIds": [
+              "msd-incontinence",
+              "aci-retention"
+            ],
+            "branches": [
+              {
+                "id": "spinal",
+                "when": "새 실금+허리통증",
+                "check": "하지근력↓·회음부 감각↓",
+                "consider": "신경성 원인/CES 긴급 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "급성 이차성"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "하지 · 회음부 감각"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-incontinence",
+                  "aci-retention"
+                ]
+              },
+              {
+                "id": "secondary",
+                "when": "배뇨통·발열 / 새 약 이후",
+                "check": "UA·약물/급성 변화",
+                "consider": "UTI·약물 등 이차성",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "급성 이차성"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-incontinence",
+                  "aci-retention"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "leak-pattern",
+            "question": "누출 시점과 진찰을 붙이면?",
+            "priority": "standard",
+            "sourceIds": [
+              "msd-incontinence",
+              "aci-retention"
+            ],
+            "branches": [
+              {
+                "id": "urge",
+                "when": "요의 직후 참지 못해 누출",
+                "check": "저장증상·잔뇨로 요폐 확인",
+                "consider": "절박성 지지",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "절박성"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "방광팽만 · 잔뇨"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-incontinence",
+                  "aci-retention"
+                ]
+              },
+              {
+                "id": "stress",
+                "when": "기침·웃음·운동과 동시에 누출",
+                "check": "방광 충만+기침 즉시 누출",
+                "consider": "복압성 지지",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "복압성"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Cough stress test"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-incontinence"
+                ],
+                "note": "방광이 비어 있으면 검사 음성일 수 있음"
+              },
+              {
+                "id": "overflow",
+                "when": "약한 줄기·잔뇨감·조금씩 반복 누출",
+                "check": "방광팽만·PVR↑",
+                "consider": "범람성/배출 장애",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "범람성"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "방광팽만 · 잔뇨"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-incontinence",
+                  "aci-retention"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": []
       }
     },
     {
@@ -1950,6 +3156,148 @@
         "sourceIds": [
           "eau-stones"
         ]
+      },
+      "flow": {
+        "entry": "언제·산통/지속통·서혜부 방사? → 발열·배뇨증상·소변량·단일신",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "통증 양상 · 배뇨증상"
+          },
+          {
+            "kind": "hx",
+            "key": "발열 · 단일신 · 소변량"
+          }
+        ],
+        "sourceIds": [
+          "eau-stones",
+          "eau-infections"
+        ],
+        "stages": [
+          {
+            "id": "danger-renal-vascular",
+            "question": "발열/무뇨·쇼크 / 혈관 위험?",
+            "priority": "urgent",
+            "sourceIds": [
+              "eau-stones",
+              "aci-abd",
+              "msd-renal-occlusion"
+            ],
+            "branches": [
+              {
+                "id": "infected-obstruction",
+                "when": "발열+폐색 의심 / 무뇨",
+                "check": "V/S·신기능·신속 영상/폐색 확인",
+                "consider": "감염성 폐색·비뇨기 응급",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "감염성 폐색"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "V/S · 복부 진찰"
+                  }
+                ],
+                "sourceIds": [
+                  "eau-stones",
+                  "aci-abd"
+                ],
+                "note": "감염성 폐색이면 긴급 배액 평가"
+              },
+              {
+                "id": "aortic",
+                "when": "급격한 복부/등 통증·실신·저혈압",
+                "check": "복부·관류·대동맥 영상 평가",
+                "consider": "AAA 등 혈관 응급",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "AAA 등 대체 원인"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "V/S · 복부 진찰"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-abd",
+                  "eau-stones"
+                ]
+              },
+              {
+                "id": "infarct",
+                "when": "갑자기 지속통·AF/색전 위험",
+                "check": "혈뇨·신기능·혈관 영상",
+                "consider": "신경색",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "신경색"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-renal-occlusion"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "pain-infection",
+            "question": "산통인가, 감염 양상인가?",
+            "priority": "standard",
+            "sourceIds": [
+              "eau-stones",
+              "msd-hematuria",
+              "eau-infections"
+            ],
+            "branches": [
+              {
+                "id": "renal-colic",
+                "when": "서혜부 방사 산통·오심/혈뇨",
+                "check": "CVAT·UA·결석 영상",
+                "consider": "요관결석",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "요관결석"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "CVAT"
+                  }
+                ],
+                "sourceIds": [
+                  "eau-stones",
+                  "msd-hematuria",
+                  "eau-infections"
+                ]
+              },
+              {
+                "id": "pyelonephritis",
+                "when": "발열·오한·옆구리 Td",
+                "check": "CVAT(+)·배양; 요로증상 유무",
+                "consider": "신우신염",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "신우신염"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "CVAT"
+                  }
+                ],
+                "sourceIds": [
+                  "eau-infections",
+                  "eau-stones"
+                ],
+                "note": "배뇨 증상이 없어도 상부 감염 가능"
+              }
+            ]
+          }
+        ],
+        "notes": []
       }
     },
     {
@@ -2022,6 +3370,117 @@
         "sourceIds": [
           "aci-scrotum"
         ]
+      },
+      "flow": {
+        "entry": "갑자기인가·한쪽인가? → 구토·배뇨통/발열·서혜 종괴 → 양측 고환 진찰",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "통증 발생 · 동반 증상"
+          }
+        ],
+        "sourceIds": [
+          "aci-scrotum"
+        ],
+        "stages": [
+          {
+            "id": "testicular-danger",
+            "question": "발생 속도·고환 위치·피부 위험",
+            "priority": "urgent",
+            "sourceIds": [
+              "aci-scrotum"
+            ],
+            "branches": [
+              {
+                "id": "torsion",
+                "when": "갑작스러운 편측 심한 통증/구토",
+                "check": "고위·가로 고환; Cremasteric↓/소실",
+                "consider": "고환염전 → 즉시 수술 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "고환염전"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Cremasteric reflex"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "위치 · 압통 · 피부"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-scrotum"
+                ]
+              },
+              {
+                "id": "hernia",
+                "when": "서혜/음낭 통증성 종괴+구토/폐색",
+                "check": "압통성 종괴·폐색/전신 악화",
+                "consider": "감돈/교액 탈장",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "감돈 탈장"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-scrotum"
+                ]
+              },
+              {
+                "id": "fournier",
+                "when": "소견보다 심한 통증·전신 악화",
+                "check": "피부 변색/괴사·염발음",
+                "consider": "Fournier 괴저",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "Fournier 괴저"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "위치 · 압통 · 피부"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-scrotum"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "scrotal-infection",
+            "question": "발열/요로증상이 동반되나?",
+            "priority": "standard",
+            "sourceIds": [
+              "aci-scrotum"
+            ],
+            "branches": [
+              {
+                "id": "epididymal",
+                "when": "서서히·배뇨통/발열",
+                "check": "부고환 Td·성접촉력·요검사",
+                "consider": "부고환염",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "부고환염"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "위치 · 압통 · 피부"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-scrotum"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": []
       }
     },
     {
@@ -2105,6 +3564,123 @@
         "sourceIds": [
           "sanjo"
         ]
+      },
+      "flow": {
+        "entry": "언제부터·외상/시술 후인가? → 통증 위치·부종 → Active/Passive ROM",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "발생 · 외상 · 시술력"
+          }
+        ],
+        "sourceIds": [
+          "sanjo",
+          "aci-msk"
+        ],
+        "stages": [
+          {
+            "id": "joint-urgent",
+            "question": "뜨겁고 붓거나 외상·신경 이상이 있나?",
+            "priority": "urgent",
+            "sourceIds": [
+              "sanjo",
+              "aci-msk",
+              "msd-joint-exam",
+              "tint-joints"
+            ],
+            "branches": [
+              {
+                "id": "joint-infection",
+                "when": "열감·부종·휴식통",
+                "check": "능동·수동 모두 통증 → 관절액 배양/분석",
+                "consider": "패혈성 관절염 우선",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "패혈성 관절염"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Tenderness · Swelling"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Active / Passive ROM"
+                  }
+                ],
+                "sourceIds": [
+                  "sanjo",
+                  "aci-msk",
+                  "msd-joint-exam"
+                ]
+              },
+              {
+                "id": "joint-crystals",
+                "when": "급성 재발·통풍/CPPD Hx",
+                "check": "관절액 결정 확인; 감염도 함께 평가",
+                "consider": "결정성 관절염",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "결정성 관절염"
+                  }
+                ],
+                "sourceIds": [
+                  "tint-joints",
+                  "sanjo",
+                  "msd-joint-exam"
+                ]
+              },
+              {
+                "id": "joint-trauma",
+                "when": "외상·상처·변형",
+                "check": "골성 압통·원위 Motor/Sensory·관류",
+                "consider": "골절·개방/신경 손상",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "골절·외상"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "M·S change · External wound"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-msk"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "joint-location",
+            "question": "통증이 관절선인가, 건/점액낭인가?",
+            "priority": "standard",
+            "sourceIds": [
+              "tint-joints",
+              "msd-joint-exam"
+            ],
+            "branches": [
+              {
+                "id": "joint-periarticular",
+                "when": "국소 건/점액낭 압통",
+                "check": "능동/저항 운동은 통증, 수동은 덜 아픔",
+                "consider": "관절주위 병변",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "관절주위 병변"
+                  }
+                ],
+                "sourceIds": [
+                  "tint-joints",
+                  "msd-joint-exam"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": []
       }
     },
     {
@@ -2196,6 +3772,141 @@
         "text": "CES 의심 시 정상 단순 X-ray로 배제하지 않음; 긴급 MRI·전문의 평가 판단.",
         "sourceIds": [
           "aci-back"
+        ]
+      },
+      "flow": {
+        "entry": "언제부터·다리로 방사? → 배뇨/배변·회음부 변화 → 시술·발열·외상/암 Hx",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "시술 · 침 치료 Hx"
+          },
+          {
+            "kind": "hx",
+            "key": "배뇨/배변 · 회음부 변화"
+          }
+        ],
+        "sourceIds": [
+          "aci-back"
+        ],
+        "stages": [
+          {
+            "id": "back-urgent",
+            "question": "새 신경/괄약근 변화 또는 위험 병력이 있나?",
+            "priority": "urgent",
+            "sourceIds": [
+              "aci-back"
+            ],
+            "branches": [
+              {
+                "id": "back-ces",
+                "when": "배뇨/배변 변화·회음부 저림",
+                "check": "회음부 감각·양측/진행성 하지 근력저하",
+                "consider": "CES → 긴급 MRI 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "Cauda equina"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "하지 Motor · Sensory"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "회음부 감각"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-back"
+                ]
+              },
+              {
+                "id": "back-infection",
+                "when": "시술/침·항응고·발열/면역저하",
+                "check": "신경 이상·진행하는 통증",
+                "consider": "척추 감염·혈종",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "척추 감염·혈종"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-back"
+                ]
+              },
+              {
+                "id": "back-fracture",
+                "when": "외상/골다공증·암 Hx",
+                "check": "국소 골성 압통·지속/야간 통증",
+                "consider": "골절·종양",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "골절·종양"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-back"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "back-radicular",
+            "question": "자세/운동통인가, 익숙한 하지 방사통인가?",
+            "priority": "standard",
+            "sourceIds": [
+              "aci-back",
+              "msd-radiculopathy"
+            ],
+            "branches": [
+              {
+                "id": "back-radiculopathy",
+                "when": "하지 방사·분절성 이상",
+                "check": "SLR로 방사통 재현; crossed SLR은 더 특이적",
+                "consider": "신경근성 통증",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "근육성·신경근성"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "SLR"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-back",
+                  "msd-radiculopathy"
+                ]
+              },
+              {
+                "id": "back-muscular",
+                "when": "자세/운동에 따른 국소 통증",
+                "check": "위험 병력·신경 이상을 다시 대조",
+                "consider": "근육성 통증 가능",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "근육성·신경근성"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-back"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "text": "완전 요폐 전의 배뇨 변화도 CES 단서. 위험 소견 부재만으로 중증 병변 배제 불가.",
+            "sourceIds": [
+              "aci-back"
+            ]
+          }
         ]
       }
     },
@@ -2294,6 +4005,154 @@
           "msd-sjs",
           "idsa-skin"
         ]
+      },
+      "flow": {
+        "entry": "언제·얼마나 빨리 퍼졌나? → 새 약물/노출 → 가려움 vs 통증·호흡/실신",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "약물 · 노출 · 진행 속도"
+          },
+          {
+            "kind": "hx",
+            "key": "호흡곤란 · 실신 · 통증"
+          }
+        ],
+        "sourceIds": [
+          "msd-sjs",
+          "msd-anaphylaxis",
+          "idsa-skin"
+        ],
+        "stages": [
+          {
+            "id": "rash-urgent",
+            "question": "호흡·순환 이상 / 피부 통증·전신 악화?",
+            "priority": "urgent",
+            "sourceIds": [
+              "msd-anaphylaxis",
+              "msd-sjs",
+              "idsa-skin",
+              "nice-meningitis"
+            ],
+            "branches": [
+              {
+                "id": "rash-anaphylaxis",
+                "when": "급성 팽진/부종+호흡곤란·실신",
+                "check": "저혈압·stridor/wheeze → 기도/순환 우선",
+                "consider": "아나필락시스",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "아나필락시스"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "V/S · 기도/호흡"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-anaphylaxis"
+                ]
+              },
+              {
+                "id": "rash-sjs",
+                "when": "새 약물 뒤 통증성 발진",
+                "check": "점막 미란·수포/피부 박리",
+                "consider": "SJS/TEN",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "SJS/TEN"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "점막 · 수포 · 깊은 압통"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-sjs",
+                  "idsa-skin"
+                ]
+              },
+              {
+                "id": "rash-nsti",
+                "when": "겉보기보다 심한 통증·빠른 진행",
+                "check": "깊은 경결·염발음·전신 독성",
+                "consider": "NSTI → 긴급 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "봉와직염·NSTI"
+                  }
+                ],
+                "sourceIds": [
+                  "idsa-skin"
+                ]
+              },
+              {
+                "id": "rash-purpura",
+                "when": "발열·빠르게 퍼지는 자반",
+                "check": "눌러도 안 옅어짐·의식/순환 악화",
+                "consider": "수막구균 감염",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "자반·수막구균 감염"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Non-blanching rash"
+                  }
+                ],
+                "sourceIds": [
+                  "nice-meningitis"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "rash-local",
+            "question": "국소 열감/압통인가, 가려운 팽진인가?",
+            "priority": "standard",
+            "sourceIds": [
+              "idsa-skin",
+              "msd-anaphylaxis"
+            ],
+            "branches": [
+              {
+                "id": "rash-cellulitis",
+                "when": "국소 홍반·열감",
+                "check": "부종·압통; 통증/전신 상태의 진행 확인",
+                "consider": "봉와직염",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "봉와직염·NSTI"
+                  }
+                ],
+                "sourceIds": [
+                  "idsa-skin"
+                ]
+              },
+              {
+                "id": "rash-urticaria",
+                "when": "가려운 팽진",
+                "check": "호흡·순환·점막 증상 동반 여부",
+                "consider": "두드러기",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "두드러기"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-anaphylaxis"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": []
       }
     },
     {
@@ -3080,6 +4939,167 @@
         "sourceIds": [
           "nice-status"
         ]
+      },
+      "flow": {
+        "entry": "목격자: 전신/한쪽? 몇 분·반복? 회복? → 복약·Last alcohol",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "목격 양상 · Duration · Postictal"
+          },
+          {
+            "kind": "hx",
+            "key": "Antiepileptic medication / Last dose time"
+          }
+        ],
+        "sourceIds": [
+          "nice-epilepsy",
+          "nice-syncope",
+          "nice-status"
+        ],
+        "stages": [
+          {
+            "id": "seizure-active",
+            "question": "지금 경련 중이거나 회복이 안 되나?",
+            "priority": "urgent",
+            "sourceIds": [
+              "msd-seizures",
+              "nice-status",
+              "tint-seizures",
+              "nice-epilepsy"
+            ],
+            "branches": [
+              {
+                "id": "seizure-status",
+                "when": "≥5분 지속 / 사이 회복 없이 반복",
+                "check": "ABC·혈당·경련 지속시간",
+                "consider": "Status 즉시 대응",
+                "conceptRefs": [
+                  {
+                    "kind": "pex",
+                    "key": "의식 회복"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-seizures",
+                  "nice-status",
+                  "tint-seizures"
+                ]
+              },
+              {
+                "id": "seizure-nonconvulsive",
+                "when": "경련 멎어도 의식장애 지속",
+                "check": "회복 경과·혈당, 필요 시 EEG",
+                "consider": "비경련성 status·급성 원인",
+                "conceptRefs": [
+                  {
+                    "kind": "pex",
+                    "key": "의식 회복"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-seizures"
+                ]
+              },
+              {
+                "id": "seizure-focal",
+                "when": "첫 국소 발작 / 편측 약화·발열/두통",
+                "check": "국소 신경진찰·감염 단서",
+                "consider": "뇌 병변·감염 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "뇌 병변·감염"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "국소 신경 이상"
+                  }
+                ],
+                "sourceIds": [
+                  "tint-seizures",
+                  "msd-seizures",
+                  "nice-epilepsy"
+                ],
+                "note": "Todd paresis로 단정하지 않음"
+              }
+            ]
+          },
+          {
+            "id": "seizure-context",
+            "question": "회복 후: 전후 양상·유발 원인",
+            "priority": "standard",
+            "sourceIds": [
+              "nice-syncope",
+              "nice-epilepsy",
+              "tint-seizures",
+              "nice-status",
+              "msd-seizures"
+            ],
+            "branches": [
+              {
+                "id": "seizure-syncope",
+                "when": "전조·자세 연관, 빠른 회복",
+                "check": "목격 양상·회복기 혼돈, ECG",
+                "consider": "실신 가능",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "실신"
+                  },
+                  {
+                    "kind": "hx",
+                    "key": "목격 양상 · Duration · Postictal"
+                  }
+                ],
+                "sourceIds": [
+                  "nice-syncope",
+                  "nice-epilepsy"
+                ],
+                "note": "짧은 jerk만으로 뇌전증 확정 불가"
+              },
+              {
+                "id": "seizure-recurrence",
+                "when": "기존과 유사한 발작",
+                "check": "복약 누락·Last dose·수면 부족",
+                "consider": "기존 뇌전증 재발",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "기존 뇌전증"
+                  },
+                  {
+                    "kind": "hx",
+                    "key": "Antiepileptic medication / Last dose time"
+                  }
+                ],
+                "sourceIds": [
+                  "tint-seizures",
+                  "nice-status",
+                  "msd-seizures"
+                ]
+              },
+              {
+                "id": "seizure-provoked",
+                "when": "섭취 저하 / 약물·음주 중단",
+                "check": "혈당·전해질·중독/금단",
+                "consider": "유발성 발작",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "유발성 발작"
+                  }
+                ],
+                "sourceIds": [
+                  "tint-seizures",
+                  "nice-epilepsy",
+                  "nice-status"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": []
       }
     },
     {
@@ -3177,6 +5197,146 @@
           "aci-unconscious",
           "msd-coma"
         ]
+      },
+      "flow": {
+        "entry": "보호자: 마지막 정상은? 경련·외상·약물/음주·발열? → 의식·호흡",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "PI · Medical/Social Hx"
+          }
+        ],
+        "sourceIds": [
+          "msd-coma",
+          "aci-unconscious"
+        ],
+        "stages": [
+          {
+            "id": "mental-stabilize",
+            "question": "호흡·순환·혈당부터",
+            "priority": "urgent",
+            "sourceIds": [
+              "msd-coma",
+              "aci-unconscious",
+              "msd-reflexes"
+            ],
+            "branches": [
+              {
+                "id": "mental-abc",
+                "when": "호흡 저하 / 의식 저하",
+                "check": "ABC·SpO₂·혈당",
+                "consider": "가역 원인 교정·응급 안정화",
+                "conceptRefs": [
+                  {
+                    "kind": "pex",
+                    "key": "Respiration · Mental status"
+                  },
+                  {
+                    "kind": "differentials",
+                    "key": "대사·중독"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-coma",
+                  "aci-unconscious"
+                ]
+              },
+              {
+                "id": "mental-local",
+                "when": "편측 산대·무반응 / 운동반응 비대칭",
+                "check": "Pupil/light reflex·좌우 pain response",
+                "consider": "뇌혈관·구조 병변/탈출 경고",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "뇌혈관·구조 병변"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Pupil · Light reflex"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Pain response · Babinski"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-coma",
+                  "msd-reflexes"
+                ],
+                "note": "신전족저반사는 상위운동신경원 단서"
+              }
+            ]
+          },
+          {
+            "id": "mental-cause",
+            "question": "병력·동반 소견으로 이어가기",
+            "priority": "standard",
+            "sourceIds": [
+              "msd-coma",
+              "aci-unconscious",
+              "tint-seizures",
+              "msd-seizures"
+            ],
+            "branches": [
+              {
+                "id": "mental-toxic",
+                "when": "축동·호흡 저하 / 약물 노출",
+                "check": "약물·음주·전해질, 교뇌 소견",
+                "consider": "대사·중독; 교뇌 병변도 가능",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "대사·중독"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Pupil · Light reflex"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-coma",
+                  "aci-unconscious"
+                ]
+              },
+              {
+                "id": "mental-infection",
+                "when": "발열·순환 악화 / 경부강직",
+                "check": "감염 초점·Neck·의식",
+                "consider": "패혈증/CNS 감염",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "감염"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-coma",
+                  "aci-unconscious"
+                ]
+              },
+              {
+                "id": "mental-ictal",
+                "when": "목격 경련 뒤 회복 지연·변동",
+                "check": "발작 후 경과·지속 신경 이상",
+                "consider": "Postictal / 비경련성 status",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "발작 후·비경련성 status"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-coma",
+                  "tint-seizures",
+                  "msd-seizures"
+                ],
+                "note": "설명 안 되는 지속 의식 변화면 EEG 고려"
+              }
+            ]
+          }
+        ],
+        "notes": []
       }
     },
     {
@@ -3280,6 +5440,166 @@
         "sourceIds": [
           "aci-stroke"
         ]
+      },
+      "flow": {
+        "entry": "Last normal / First abnormal? → 갑작스러운 결손·기존 기능·항응고제",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "Last normal / First abnormal time"
+          },
+          {
+            "kind": "hx",
+            "key": "Medical Hx · 약물"
+          }
+        ],
+        "sourceIds": [
+          "aci-stroke"
+        ],
+        "stages": [
+          {
+            "id": "stroke-new-deficit",
+            "question": "새 국소 결손 → 혈당·뇌영상·Stroke 경로",
+            "priority": "urgent",
+            "sourceIds": [
+              "aci-stroke",
+              "msd-coma",
+              "msd-stroke-signs",
+              "grace3"
+            ],
+            "branches": [
+              {
+                "id": "stroke-face-motor",
+                "when": "편측 Face/Motor 이상",
+                "check": "이전 결손·좌우 strength",
+                "consider": "뇌졸중 의심; 허혈/출혈 감별",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "허혈성 뇌졸중"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Motor · Face"
+                  },
+                  {
+                    "kind": "differentials",
+                    "key": "뇌출혈"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-stroke",
+                  "msd-coma"
+                ]
+              },
+              {
+                "id": "stroke-language",
+                "when": "언어·발음 변화",
+                "check": "이해/명명/반복 장애 vs 발음만 어눌",
+                "consider": "Aphasia / Dysarthria 구분",
+                "conceptRefs": [
+                  {
+                    "kind": "pex",
+                    "key": "Aphasia / Dysarthria"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-stroke-signs"
+                ]
+              },
+              {
+                "id": "stroke-posterior",
+                "when": "복시·안구운동 이상 / 실조",
+                "check": "몸통·사지 coordination·의식",
+                "consider": "후순환 병변 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "pex",
+                    "key": "Eye · Cerebellar · Mentation"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-stroke",
+                  "grace3",
+                  "msd-stroke-signs"
+                ]
+              },
+              {
+                "id": "stroke-hemorrhage",
+                "when": "두통·구토·의식 저하 동반",
+                "check": "Pupil·신경진찰·뇌영상",
+                "consider": "뇌출혈/ICP 상승 고려",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "뇌출혈"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-stroke",
+                  "msd-coma",
+                  "msd-stroke-signs"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "stroke-resolved",
+            "question": "회복했거나 경련·저혈당 맥락?",
+            "priority": "standard",
+            "sourceIds": [
+              "aci-stroke",
+              "nice-epilepsy"
+            ],
+            "branches": [
+              {
+                "id": "stroke-tia",
+                "when": "국소 증상이 소실됨",
+                "check": "원래 증상·지속·마지막 정상",
+                "consider": "TIA 가능; 혈관성 위험 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "TIA"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-stroke"
+                ]
+              },
+              {
+                "id": "stroke-mimic",
+                "when": "저혈당 / 발작 후 결손",
+                "check": "혈당 교정 후 재진찰·발작 병력",
+                "consider": "Mimic도 고려; 뇌졸중 평가 병행",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "Stroke mimic"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-stroke",
+                  "nice-epilepsy"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "text": "기상 시 발견은 마지막 정상·첫 이상 시각을 따로 확인.",
+            "sourceIds": [
+              "aci-stroke"
+            ],
+            "conceptRefs": [
+              {
+                "kind": "hx",
+                "key": "Last normal / First abnormal time"
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -3382,6 +5702,187 @@
         "sourceIds": [
           "nice-self-harm"
         ]
+      },
+      "flow": {
+        "entry": "오늘 달라진 점? → 자살 생각·계획·시도 → 급성 변화·복약·물질",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "Suicidal idea · Plan · Attempt"
+          },
+          {
+            "kind": "hx",
+            "key": "급성 변화 · Drug compliance"
+          }
+        ],
+        "sourceIds": [
+          "nice-self-harm",
+          "nice-depression",
+          "aci-behaviour",
+          "nice-delirium",
+          "nice-bipolar"
+        ],
+        "stages": [
+          {
+            "id": "psychiatry-safety",
+            "question": "현재 안전과 신체 원인부터",
+            "priority": "urgent",
+            "sourceIds": [
+              "nice-self-harm",
+              "nice-depression",
+              "aci-behaviour",
+              "nice-delirium"
+            ],
+            "branches": [
+              {
+                "id": "psychiatry-suicide",
+                "when": "자해·자살 생각/계획/시도",
+                "check": "현재 의도·수단 접근·손상/복용",
+                "consider": "안전 확보·개별 위험 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "hx",
+                    "key": "Suicidal idea · Plan · Attempt"
+                  }
+                ],
+                "sourceIds": [
+                  "nice-self-harm",
+                  "nice-depression",
+                  "aci-behaviour"
+                ]
+              },
+              {
+                "id": "psychiatry-delirium",
+                "when": "수시간~수일 변화·주의력/각성 변동",
+                "check": "평소 대비·주의력·V/S·신경진찰",
+                "consider": "섬망/신체 원인 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "섬망"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "주의력 · 각성 변동"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "V/S · Neurologic exam"
+                  }
+                ],
+                "sourceIds": [
+                  "nice-delirium",
+                  "aci-behaviour"
+                ]
+              },
+              {
+                "id": "psychiatry-physical",
+                "when": "발열·저산소·국소 이상 / 물질 연관",
+                "check": "혈당·약물/음주·금단·외상",
+                "consider": "중독·금단/신체 질환",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "중독·금단/신체 질환"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "V/S · Neurologic exam"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-behaviour"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "psychiatry-pattern",
+            "question": "안정 뒤: 기분·수면·지각·기능",
+            "priority": "standard",
+            "sourceIds": [
+              "nice-depression",
+              "nice-bipolar",
+              "aci-behaviour",
+              "nice-delirium",
+              "nice-panic",
+              "nice-panic-flow"
+            ],
+            "branches": [
+              {
+                "id": "psychiatry-depression",
+                "when": "흥미/의욕·기운 저하",
+                "check": "수면·식욕·기능, 기분 상승 과거력",
+                "consider": "우울장애 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "우울장애"
+                  }
+                ],
+                "sourceIds": [
+                  "nice-depression"
+                ]
+              },
+              {
+                "id": "psychiatry-mania",
+                "when": "잠이 적어도 피곤하지 않음",
+                "check": "말/활동 증가·고양/과민·탈억제",
+                "consider": "조증 의심",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "조증"
+                  },
+                  {
+                    "kind": "hx",
+                    "key": "급성 변화 · Drug compliance"
+                  }
+                ],
+                "sourceIds": [
+                  "nice-bipolar",
+                  "aci-behaviour",
+                  "nice-delirium"
+                ]
+              },
+              {
+                "id": "psychiatry-panic",
+                "when": "급격한 공포+두근거림/호흡곤란",
+                "check": "신체 응급 감별·이전 발작",
+                "consider": "공황·불안 고려",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "공황·불안"
+                  }
+                ],
+                "sourceIds": [
+                  "nice-panic",
+                  "nice-panic-flow"
+                ],
+                "note": "공황 발작만으로 공황장애 확정 불가"
+              },
+              {
+                "id": "psychiatry-psychosis",
+                "when": "망상·환각·사고/행동 변화",
+                "check": "초발/재발·복약·주의력 변동",
+                "consider": "정신병적 상태 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "정신병적 상태"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-behaviour",
+                  "nice-delirium"
+                ],
+                "note": "환각만으로 정신과 질환 단정 불가"
+              }
+            ]
+          }
+        ],
+        "notes": []
       }
     },
     {
@@ -3476,6 +5977,127 @@
         "sourceIds": [
           "msd-pelvic"
         ]
+      },
+      "flow": {
+        "entry": "출혈량·분비물 변화? → LMP·Last coitus·통증 양상 → Previous gynecologic care",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "LMP · 출혈 · Last coitus"
+          },
+          {
+            "kind": "hx",
+            "key": "Discharge · OBGY Hx"
+          }
+        ],
+        "sourceIds": [
+          "msd-pelvic",
+          "cdc-pid"
+        ],
+        "stages": [
+          {
+            "id": "pregnancy-torsion",
+            "question": "임신 가능성·실신·급격한 편측 통증?",
+            "priority": "urgent",
+            "sourceIds": [
+              "msd-pelvic",
+              "cdc-pid"
+            ],
+            "branches": [
+              {
+                "id": "ectopic-loss",
+                "when": "임신 가능성+골반통/출혈",
+                "check": "임신 검사·V/S·복막자극·TVUS",
+                "consider": "자궁외임신·유산 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "자궁외임신·유산"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "V/S · 복막자극"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-pelvic"
+                ]
+              },
+              {
+                "id": "adnexal-torsion",
+                "when": "갑작스러운 편측 심한 통증+구토",
+                "check": "부속기 Td(+)/종괴·초음파·산부 평가",
+                "consider": "난소염전",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "난소염전"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "CMT · Adnexal tenderness"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-pelvic",
+                  "cdc-pid"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "gynecologic-pattern",
+            "question": "출혈·분비물·주기와 진찰을 연결",
+            "priority": "standard",
+            "sourceIds": [
+              "cdc-pid",
+              "msd-pelvic"
+            ],
+            "branches": [
+              {
+                "id": "pelvic-infection",
+                "when": "하복부통+분비물·발열",
+                "check": "Speculum 분비물·CMT/자궁·부속기 Td(+)",
+                "consider": "PID 의심",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "PID"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "CMT · Adnexal tenderness"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Speculum"
+                  }
+                ],
+                "sourceIds": [
+                  "cdc-pid",
+                  "msd-pelvic"
+                ],
+                "note": "CMT 단독으로 원인 확정 불가"
+              },
+              {
+                "id": "rupture-cycle",
+                "when": "성교 뒤 급성 편측통 / 월경마다 반복",
+                "check": "출혈량·부속기 Td·TVUS",
+                "consider": "낭종 파열 / 월경통 지지",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "낭종 파열·월경통"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-pelvic"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": []
       }
     },
     {
@@ -3576,6 +6198,136 @@
         "sourceIds": [
           "msd-pregnancy-bleeding"
         ]
+      },
+      "flow": {
+        "entry": "정확한 주수·진통 주기/지속? → 출혈/물 같은 유출 → Op Hx·동반 증상",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "Gestational week/day · 진통"
+          },
+          {
+            "kind": "hx",
+            "key": "Bleeding · Discharge · Op Hx"
+          }
+        ],
+        "sourceIds": [
+          "nice-preterm",
+          "msd-pregnancy-bleeding"
+        ],
+        "stages": [
+          {
+            "id": "obstetric-danger",
+            "question": "출혈·지속 복통·두통/시각 이상?",
+            "priority": "urgent",
+            "sourceIds": [
+              "msd-pelvic",
+              "msd-pregnancy-bleeding",
+              "nice-pregnancy-htn"
+            ],
+            "branches": [
+              {
+                "id": "early-pregnancy",
+                "when": "초기 임신+통증/출혈",
+                "check": "V/S·임신 위치/TVUS",
+                "consider": "자궁외임신·유산",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "초기 임신 응급"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-pelvic"
+                ]
+              },
+              {
+                "id": "placental-bleeding",
+                "when": "임신 후반 출혈",
+                "check": "자궁 Td(+)/지속통·저혈압·태아 상태",
+                "consider": "무통: 전치태반 / 통증: 태반조기박리",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "전치태반·태반조기박리"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "자궁 압통 · V/S"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-pregnancy-bleeding"
+                ],
+                "note": "외부 출혈이 적어도 박리 가능"
+              },
+              {
+                "id": "hypertensive",
+                "when": "≥20주 새 고혈압+두통/시각·RUQ 증상",
+                "check": "BP·clonus(+)·신경 증상; 경련 여부",
+                "consider": "전자간증 / 경련이면 자간증 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "전자간증·자간증"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "BP · 신경 증상"
+                  }
+                ],
+                "sourceIds": [
+                  "nice-pregnancy-htn"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "labor-membranes",
+            "question": "규칙적 수축인가, 물 같은 유출인가?",
+            "priority": "standard",
+            "sourceIds": [
+              "nice-preterm"
+            ],
+            "branches": [
+              {
+                "id": "labor",
+                "when": "규칙적 수축",
+                "check": "경부 변화·주수<37주 여부",
+                "consider": "진통 / 조기진통 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "진통·조기진통"
+                  }
+                ],
+                "sourceIds": [
+                  "nice-preterm"
+                ]
+              },
+              {
+                "id": "membrane",
+                "when": "지속/반복 물 같은 유출",
+                "check": "Speculum pooling(+); 안 보이면 추가 검사",
+                "consider": "양막파수; <37주 PPROM",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "양막파수"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Speculum pooling"
+                  }
+                ],
+                "sourceIds": [
+                  "nice-preterm"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": []
       }
     },
     {
@@ -3693,6 +6445,163 @@
           "rch-infant",
           "rch-dehydration"
         ]
+      },
+      "flow": {
+        "entry": "몇 개월·미숙/출생 문제? → 평소 대비 수유·활동·소변·반응",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "Age · Birth/Maternal Hx"
+          },
+          {
+            "kind": "hx",
+            "key": "Feeding · Activity · Urination"
+          }
+        ],
+        "sourceIds": [
+          "rch-infant",
+          "rch-dehydration"
+        ],
+        "stages": [
+          {
+            "id": "peds-common-unwell",
+            "question": "반응·호흡·관류가 나쁘나?",
+            "priority": "urgent",
+            "sourceIds": [
+              "rch-infant",
+              "rch-dehydration",
+              "nice-meningitis",
+              "rch-abd"
+            ],
+            "branches": [
+              {
+                "id": "peds-common-infection",
+                "when": "처짐·수유 저하 / 무호흡",
+                "check": "체온·CRT·감염 단서",
+                "consider": "중증 감염 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "중증 감염"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-infant",
+                  "rch-dehydration"
+                ]
+              },
+              {
+                "id": "peds-common-cns",
+                "when": "경부강직 / 대천문 팽창",
+                "check": "의식·반응·발열",
+                "consider": "CNS 감염 경고",
+                "conceptRefs": [
+                  {
+                    "kind": "pex",
+                    "key": "Neck · Fontanelle"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-infant",
+                  "nice-meningitis"
+                ],
+                "note": "영아는 강직·고열 없이도 가능"
+              },
+              {
+                "id": "peds-common-heart",
+                "when": "청색증 / 수유 중 발한",
+                "check": "대퇴맥박 약화·Heart·관류",
+                "consider": "심장 응급 고려",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "영아의 기타 응급"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Heart · Abdomen"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-infant",
+                  "rch-abd"
+                ]
+              },
+              {
+                "id": "peds-common-other",
+                "when": "담즙성 구토 / 경련",
+                "check": "복부팽만·guarding / 혈당",
+                "consider": "외과·대사 응급",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "영아의 기타 응급"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Heart · Abdomen"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-infant",
+                  "rch-abd"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "peds-common-exam",
+            "question": "소견별로 이어보기",
+            "priority": "standard",
+            "sourceIds": [
+              "rch-dehydration",
+              "rch-cough",
+              "rch-infant"
+            ],
+            "branches": [
+              {
+                "id": "peds-common-hydration",
+                "when": "섭취·소변 감소",
+                "check": "건조 점막·CRT 지연·차가운 사지",
+                "consider": "탈수; 의식/관류 저하면 중증",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "탈수"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Tongue · 관류"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-dehydration"
+                ]
+              },
+              {
+                "id": "peds-common-respiratory",
+                "when": "호흡 노력 / 비정상 청진",
+                "check": "stridor / wheeze / crackle·저산소",
+                "consider": "상기도 / 기도 협착 / 폐 병변",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "호흡기 질환"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Lung sound · 호흡 노력"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-cough",
+                  "rch-infant"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": []
       }
     },
     {
@@ -3807,6 +6716,185 @@
         "text": "교정연령 ≤28일 발열은 신속 평가. 해열제 반응으로 중증 감염을 배제하지 않음.",
         "sourceIds": [
           "rch-fever"
+        ]
+      },
+      "flow": {
+        "entry": "Tmax·언제부터? → 교정연령·접종 → 반응·수유·소변",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "Age · Vaccination"
+          },
+          {
+            "kind": "hx",
+            "key": "Appearance · Feeding/Urination"
+          }
+        ],
+        "sourceIds": [
+          "rch-fever",
+          "rch-infant"
+        ],
+        "stages": [
+          {
+            "id": "peds-fever-risk",
+            "question": "영아 또는 아파 보이나?",
+            "priority": "urgent",
+            "sourceIds": [
+              "rch-fever",
+              "rch-infant",
+              "nice-meningitis"
+            ],
+            "branches": [
+              {
+                "id": "peds-fever-neonate",
+                "when": "교정연령 ≤28일 발열",
+                "check": "관류·반응·감염 평가",
+                "consider": "즉시 신생아 발열 경로",
+                "conceptRefs": [
+                  {
+                    "kind": "hx",
+                    "key": "Age · Vaccination"
+                  },
+                  {
+                    "kind": "differentials",
+                    "key": "패혈증·CNS 감염"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-fever",
+                  "rch-infant"
+                ],
+                "note": "28일 초과~3개월 미만도 낮은 문턱으로 평가"
+              },
+              {
+                "id": "peds-fever-sepsis",
+                "when": "처짐·반응 저하·경부강직/대천문 팽창",
+                "check": "CRT 지연·비창백성 자반",
+                "consider": "패혈증/CNS 감염 경고",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "패혈증·CNS 감염"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Neck · 의식/반응"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "CRT · Non-blanching rash"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-fever",
+                  "rch-infant",
+                  "nice-meningitis"
+                ],
+                "note": "영아의 강직 부재로 배제 불가"
+              }
+            ]
+          },
+          {
+            "id": "peds-fever-focus",
+            "question": "기침·귀/목·발열 초점은?",
+            "priority": "standard",
+            "sourceIds": [
+              "rch-fever",
+              "rch-cough",
+              "rch-infant",
+              "rch-otitis",
+              "msd-throat"
+            ],
+            "branches": [
+              {
+                "id": "peds-fever-lung",
+                "when": "기침·호흡 증상",
+                "check": "빈호흡·retraction·crackle",
+                "consider": "호흡기 감염/폐렴 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "호흡기 감염"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Lung · Retraction"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-fever",
+                  "rch-cough",
+                  "rch-infant"
+                ]
+              },
+              {
+                "id": "peds-fever-ent",
+                "when": "귀통증 / 편측 목 팽윤",
+                "check": "TM 팽륜·삼출 / uvula 편위·trismus",
+                "consider": "AOM / 편도주위 농양 단서",
+                "conceptRefs": [
+                  {
+                    "kind": "pex",
+                    "key": "TM · Uvula"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-otitis",
+                  "msd-throat"
+                ],
+                "note": "붉은 고막만으로 AOM 확정 불가"
+              },
+              {
+                "id": "peds-fever-uti",
+                "when": "뚜렷한 초점 없음",
+                "check": "소변 검사·전신 상태",
+                "consider": "UTI 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "UTI"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-fever"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "peds-fever-persistent",
+            "question": "지속 발열·점막/피부 변화?",
+            "priority": "standard",
+            "sourceIds": [
+              "rch-kawasaki"
+            ],
+            "branches": [
+              {
+                "id": "peds-fever-kawasaki",
+                "when": "발열 지속 + 결막·구강·사지 변화",
+                "check": "발진·경부LN, 순차 출현 이력",
+                "consider": "가와사키병/불완전형 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "가와사키병"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-kawasaki"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "text": "≥5일 발열은 평가 계기; 전형적 특징이면 4일부터도 판단 가능.",
+            "sourceIds": [
+              "rch-fever",
+              "rch-kawasaki"
+            ]
+          }
         ]
       }
     },
@@ -3928,6 +7016,164 @@
         "sourceIds": [
           "rch-vomiting"
         ]
+      },
+      "flow": {
+        "entry": "구토 색·분출성·횟수? → 수유·소변·설사·두통·연령",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "Emesis color · Pattern"
+          },
+          {
+            "kind": "hx",
+            "key": "Feeding · Urination · Headache"
+          }
+        ],
+        "sourceIds": [
+          "rch-vomiting",
+          "rch-dehydration"
+        ],
+        "stages": [
+          {
+            "id": "peds-vomit-risk",
+            "question": "위험 구토·전신 악화?",
+            "priority": "urgent",
+            "sourceIds": [
+              "rch-vomiting",
+              "rch-abd",
+              "rch-dehydration",
+              "nice-meningitis"
+            ],
+            "branches": [
+              {
+                "id": "peds-vomit-obstruction",
+                "when": "녹색 담즙성 구토",
+                "check": "팽만·guarding·복부 Td",
+                "consider": "폐색·염전 우선 / 외과 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "장폐색·염전"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "복부팽만 · Guarding"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-vomiting",
+                  "rch-abd"
+                ],
+                "note": "장음만으로 폐색 배제 불가"
+              },
+              {
+                "id": "peds-vomit-hydration",
+                "when": "처짐·소변 감소",
+                "check": "건조 점막·CRT·의식",
+                "consider": "탈수/전신 악화 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "pex",
+                    "key": "Tongue · 관류/의식"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-dehydration"
+                ]
+              },
+              {
+                "id": "peds-vomit-cns",
+                "when": "아침 구토+두통 / 발열·강직",
+                "check": "Neuro·반응·대천문 팽창",
+                "consider": "ICP 상승/CNS 감염",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "CNS 원인"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Neuro · Fontanelle"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-vomiting",
+                  "nice-meningitis"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "peds-vomit-pattern",
+            "question": "연령·발작 양상·설사 연결",
+            "priority": "standard",
+            "sourceIds": [
+              "rch-intussusception",
+              "rch-vomiting",
+              "rch-infant",
+              "rch-pyloric",
+              "rch-ge"
+            ],
+            "branches": [
+              {
+                "id": "peds-vomit-intussusception",
+                "when": "간헐적 통증·창백·처짐",
+                "check": "발작 사이 상태·구토, 필요 시 US",
+                "consider": "장중첩증 고려",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "장중첩증"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-intussusception"
+                ],
+                "note": "혈변은 늦거나 없을 수 있음"
+              },
+              {
+                "id": "peds-vomit-pyloric",
+                "when": "어린 영아·진행성 비담즙성 분출",
+                "check": "수유 직후·체중·Pyloric olive",
+                "consider": "유문협착 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "유문협착"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Pyloric olive"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-vomiting",
+                  "rch-infant",
+                  "rch-pyloric"
+                ],
+                "note": "종괴 미촉지로 배제 불가"
+              },
+              {
+                "id": "peds-vomit-ge",
+                "when": "구토+묽은 설사",
+                "check": "탈수·국소 압통·위험 단서",
+                "consider": "위장염 가능",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "위장염"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-vomiting",
+                  "rch-ge"
+                ],
+                "note": "설사 없으면 다른 원인도 평가"
+              }
+            ]
+          }
+        ],
+        "notes": []
       }
     },
     {
@@ -4013,6 +7259,131 @@
         "sourceIds": [
           "rch-intussusception",
           "rch-ge"
+        ]
+      },
+      "flow": {
+        "entry": "횟수·혈액/점액·색? → 통증 양상·섭취·손실·마지막 소변",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "Stool · 통증 양상"
+          },
+          {
+            "kind": "hx",
+            "key": "Diet · Feeding/Urination"
+          }
+        ],
+        "sourceIds": [
+          "rch-ge",
+          "rch-intussusception",
+          "rch-dehydration"
+        ],
+        "stages": [
+          {
+            "id": "peds-diarrhea-risk",
+            "question": "처짐·관류 저하 / 국소 복통?",
+            "priority": "urgent",
+            "sourceIds": [
+              "rch-dehydration",
+              "rch-intussusception",
+              "rch-ge",
+              "rch-abd"
+            ],
+            "branches": [
+              {
+                "id": "peds-diarrhea-hydration",
+                "when": "섭취·소변 감소 / 손실 많음",
+                "check": "건조 점막·CRT 지연·저혈압/의식",
+                "consider": "탈수·쇼크 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "pex",
+                    "key": "Tongue · 관류"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-dehydration"
+                ]
+              },
+              {
+                "id": "peds-diarrhea-surgical",
+                "when": "간헐적 통증·창백/처짐",
+                "check": "복부 mass·guarding, 필요 시 US",
+                "consider": "장중첩증 등 외과 원인",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "장중첩증 등 외과 원인"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "복부 압통 · Guarding"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-intussusception",
+                  "rch-ge",
+                  "rch-abd"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "peds-diarrhea-stool",
+            "question": "변 양상과 전신 상태 연결",
+            "priority": "standard",
+            "sourceIds": [
+              "rch-ge"
+            ],
+            "branches": [
+              {
+                "id": "peds-diarrhea-inflammation",
+                "when": "혈액/점액+발열·복통",
+                "check": "전신 악화·복부 압통",
+                "consider": "침습성 장감염/장 염증",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "침습성 장감염"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-ge"
+                ]
+              },
+              {
+                "id": "peds-diarrhea-ge",
+                "when": "급성 묽은 변±구토",
+                "check": "복부 국소 소견·수분 섭취",
+                "consider": "위장염 가능",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "위장염"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-ge"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "text": "국소 Td·guarding·팽만이면 장염 외 원인 재평가.",
+            "sourceIds": [
+              "rch-ge",
+              "rch-abd",
+              "rch-intussusception"
+            ],
+            "conceptRefs": [
+              {
+                "kind": "pex",
+                "key": "복부 압통 · Guarding"
+              }
+            ]
+          }
         ]
       }
     },
@@ -4111,6 +7482,151 @@
         "sourceIds": [
           "rch-fb"
         ]
+      },
+      "flow": {
+        "entry": "Barking·쉰 목소리? 갑자기/choking? → 연령·atopy·호흡 노력",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "Sound · Hoarseness · Atopy"
+          },
+          {
+            "kind": "hx",
+            "key": "급작스러운 시작 · Choking"
+          }
+        ],
+        "sourceIds": [
+          "rch-cough",
+          "rch-fb"
+        ],
+        "stages": [
+          {
+            "id": "peds-cough-severity",
+            "question": "호흡 중증도·Air entry",
+            "priority": "urgent",
+            "sourceIds": [
+              "rch-fb",
+              "rch-infant",
+              "rch-asthma"
+            ],
+            "branches": [
+              {
+                "id": "peds-cough-failure",
+                "when": "심한 retraction·저산소 / 처짐",
+                "check": "Air entry·SpO₂·의식",
+                "consider": "호흡부전 위험",
+                "conceptRefs": [
+                  {
+                    "kind": "pex",
+                    "key": "호흡 노력 · Air entry"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-fb",
+                  "rch-infant"
+                ]
+              },
+              {
+                "id": "peds-cough-silent",
+                "when": "아파 보이며 호흡음 미약·wheeze 없음",
+                "check": "Silent chest·호흡 노력",
+                "consider": "중증 기도폐쇄 경고",
+                "conceptRefs": [
+                  {
+                    "kind": "pex",
+                    "key": "Silent chest"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-asthma"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "peds-cough-character",
+            "question": "소리·시작 상황 → 청진",
+            "priority": "standard",
+            "sourceIds": [
+              "rch-cough",
+              "rch-infant",
+              "rch-asthma",
+              "rch-fb"
+            ],
+            "branches": [
+              {
+                "id": "peds-cough-croup",
+                "when": "Barking cough·쉰 목소리",
+                "check": "Stridor; 안정 시에도 들리나?",
+                "consider": "Croup / 상기도 협착",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "Croup"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Stridor · Wheeze · Crackle"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-cough",
+                  "rch-infant"
+                ],
+                "note": "안정 시 stridor는 위험 단서"
+              },
+              {
+                "id": "peds-cough-wheeze",
+                "when": "반복 wheeze·atopy / 어린 영아",
+                "check": "호흡 노력·양측 Air entry",
+                "consider": "천식 / 세기관지염",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "천식·세기관지염"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-cough",
+                  "rch-infant",
+                  "rch-asthma"
+                ],
+                "note": "12개월 미만 wheeze는 세기관지염 맥락"
+              },
+              {
+                "id": "peds-cough-pneumonia",
+                "when": "발열·기침",
+                "check": "빈호흡·국소 crackle/호흡음 변화",
+                "consider": "폐렴 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "폐렴"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-cough"
+                ]
+              },
+              {
+                "id": "peds-cough-foreign-body",
+                "when": "갑작스러운 choking·편측 소견",
+                "check": "편측 wheeze·호흡음 감소",
+                "consider": "기도 이물 의심",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "기도 이물"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-fb"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": []
       }
     },
     {
@@ -4226,6 +7742,173 @@
           "msd-appendicitis",
           "tint-appendix-signs"
         ]
+      },
+      "flow": {
+        "entry": "어디가 아프고 지속/간헐적? → 배변·구토·소변·연령",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "Location · Intermittent/Steady"
+          },
+          {
+            "kind": "hx",
+            "key": "Bowel · Vomiting · Urination"
+          }
+        ],
+        "sourceIds": [
+          "rch-abd",
+          "rch-intussusception"
+        ],
+        "stages": [
+          {
+            "id": "peds-abd-risk",
+            "question": "팽만·복막자극·생식기 통증?",
+            "priority": "urgent",
+            "sourceIds": [
+              "rch-abd",
+              "msd-appendicitis",
+              "rch-intussusception"
+            ],
+            "branches": [
+              {
+                "id": "peds-abd-appendix",
+                "when": "움직이기 싫음 / RLQ Td·rTd",
+                "check": "Guarding·통증 이동·반복 진찰",
+                "consider": "충수염/복막자극 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "충수염"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "RLQ tenderness · rTd"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-abd",
+                  "msd-appendicitis"
+                ]
+              },
+              {
+                "id": "peds-abd-intussusception",
+                "when": "간헐적 심한 통증·창백·처짐",
+                "check": "발작 사이 상태·구토·US",
+                "consider": "장중첩증 의심",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "장중첩증"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-intussusception"
+                ],
+                "note": "발작 사이 멀쩡하거나 혈변 없어도 가능"
+              },
+              {
+                "id": "peds-abd-genital",
+                "when": "고환/서혜 통증·종괴",
+                "check": "Genital·Hernia 진찰",
+                "consider": "염전/감돈 응급",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "복부 밖 원인"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Genital · Hernia · Lung"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-abd"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "peds-abd-directed",
+            "question": "유발 소견·배변·복부 밖 원인",
+            "priority": "standard",
+            "sourceIds": [
+              "msd-appendicitis",
+              "rch-abd",
+              "tint-appendix-signs",
+              "rch-ge"
+            ],
+            "branches": [
+              {
+                "id": "peds-abd-rovsing",
+                "when": "충수염 의심 경과",
+                "check": "LLQ 압박→RLQ 통증(Rovsing)",
+                "consider": "충수/복막자극 단서",
+                "conceptRefs": [
+                  {
+                    "kind": "pex",
+                    "key": "Rovsing"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-appendicitis",
+                  "rch-abd",
+                  "tint-appendix-signs"
+                ]
+              },
+              {
+                "id": "peds-abd-hip",
+                "when": "고관절 유발 통증",
+                "check": "우측 신전(Psoas) / 굴곡 뒤 내회전(Obturator)",
+                "consider": "충수 주위 자극",
+                "conceptRefs": [
+                  {
+                    "kind": "pex",
+                    "key": "Psoas · Obturator"
+                  }
+                ],
+                "sourceIds": [
+                  "tint-appendix-signs"
+                ]
+              },
+              {
+                "id": "peds-abd-ge",
+                "when": "설사·구토 / 배변 정체",
+                "check": "국소 복막자극·탈수·경과",
+                "consider": "위장염 / 변비 고려",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "위장염·변비"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-abd",
+                  "rch-ge"
+                ]
+              },
+              {
+                "id": "peds-abd-extra",
+                "when": "기침·발열 / 배뇨 증상",
+                "check": "국소 폐 소견 / 소변 검사",
+                "consider": "폐렴성 복통 / UTI",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "복부 밖 원인"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Genital · Hernia · Lung"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-abd"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": []
       }
     },
     {
@@ -4315,6 +7998,164 @@
         "text": "경련이 5분 이상 지속되면 응급 대응. 발열이 있다는 이유만으로 열성경련으로 단정하지 않음.",
         "sourceIds": [
           "rch-febrile-seizure"
+        ]
+      },
+      "flow": {
+        "entry": "LOC·한쪽/EBD·몇 분? → 발열·연령·과거 발작·회복/재발",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "Age · Fever · Previous seizure"
+          },
+          {
+            "kind": "hx",
+            "key": "Eyeball deviation · LOC"
+          }
+        ],
+        "sourceIds": [
+          "rch-febrile-seizure"
+        ],
+        "stages": [
+          {
+            "id": "peds-seizure-risk",
+            "question": "현재 경련 / 회복 지연·감염 단서?",
+            "priority": "urgent",
+            "sourceIds": [
+              "rch-febrile-seizure",
+              "nice-status",
+              "msd-seizures",
+              "rch-infant",
+              "nice-meningitis"
+            ],
+            "branches": [
+              {
+                "id": "peds-seizure-status",
+                "when": "≥5분 지속 / 사이 회복 없이 반복",
+                "check": "ABC·혈당·경련 시간",
+                "consider": "Status 응급 대응",
+                "conceptRefs": [
+                  {
+                    "kind": "pex",
+                    "key": "발작 후 신경 상태"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-febrile-seizure",
+                  "nice-status",
+                  "msd-seizures"
+                ]
+              },
+              {
+                "id": "peds-seizure-cns",
+                "when": "반응 불량·강직 / 대천문 팽창",
+                "check": "감염 초점·Neuro·회복 >1시간",
+                "consider": "CNS 감염 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "CNS 감염"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Neck · Fontanelle · 반응"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-febrile-seizure",
+                  "rch-infant",
+                  "nice-meningitis"
+                ],
+                "note": "영아는 강직 없어도 가능"
+              },
+              {
+                "id": "peds-seizure-metabolic",
+                "when": "섭취 저하 / 어린 영아·기저 문제",
+                "check": "혈당·전해질·대사 맥락",
+                "consider": "유발성 경련",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "유발성 경련"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-febrile-seizure",
+                  "rch-infant"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "peds-seizure-classify",
+            "question": "발열·국소성·회복·재발로 연결",
+            "priority": "standard",
+            "sourceIds": [
+              "rch-febrile-seizure",
+              "msd-seizures"
+            ],
+            "branches": [
+              {
+                "id": "peds-seizure-simple",
+                "when": "발열 연관 발작",
+                "check": "전신·<15분·1시간 내 회복·같은 질병 중 재발 없음",
+                "consider": "단순 열성경련 양상",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "단순 열성경련"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-febrile-seizure"
+                ],
+                "note": "CNS 감염·대사 원인·무열 발작력 없는 맥락"
+              },
+              {
+                "id": "peds-seizure-complex",
+                "when": "국소성 / 오래감·재발 / 회복 지연",
+                "check": "기저 신경 상태·이전 경련",
+                "consider": "복잡 양상: 추가 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "pex",
+                    "key": "발작 후 신경 상태"
+                  },
+                  {
+                    "kind": "hx",
+                    "key": "Eyeball deviation · LOC"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-febrile-seizure"
+                ],
+                "note": "단순형 조건 중 하나라도 안 맞으면 재평가"
+              },
+              {
+                "id": "peds-seizure-epilepsy",
+                "when": "무열 발작 / 과거 유사 발작",
+                "check": "국소 신경 이상·Family Hx / Personal Hx",
+                "consider": "뇌전증·기타 발작",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "뇌전증·기타 발작"
+                  }
+                ],
+                "sourceIds": [
+                  "rch-febrile-seizure",
+                  "msd-seizures"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "text": "열성경련은 보통 6개월~6세. 범위 밖에서는 다른 원인 우선 평가.",
+            "sourceIds": [
+              "rch-febrile-seizure"
+            ]
+          }
         ]
       }
     },
@@ -4458,6 +8299,246 @@
         "sourceIds": [
           "aci-eye"
         ]
+      },
+      "flow": {
+        "entry": "언제·Pain/Photophobia/Vision? → 외상·렌즈·OT HX → 양안 시력/시야·동공",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "Pain · Photophobia · Vision"
+          },
+          {
+            "kind": "hx",
+            "key": "OT HX · 외상/렌즈"
+          }
+        ],
+        "sourceIds": [
+          "aci-eye",
+          "tint-eye"
+        ],
+        "stages": [
+          {
+            "id": "eye-exposure",
+            "question": "화학물질 또는 고속/관통 기전인가?",
+            "priority": "urgent",
+            "sourceIds": [
+              "aci-eye",
+              "tint-eye"
+            ],
+            "branches": [
+              {
+                "id": "eye-chemical",
+                "when": "산/알칼리 노출",
+                "check": "즉시 세척; 시력검사 때문에 지연하지 않음",
+                "consider": "화학손상",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "화학손상·관통상"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-eye",
+                  "tint-eye"
+                ]
+              },
+              {
+                "id": "eye-penetration",
+                "when": "고속 이물·관통 기전",
+                "check": "안구 압박·이물 제거 금지 → 신속한 안과 평가",
+                "consider": "관통상 의심",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "화학손상·관통상"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-eye",
+                  "tint-eye"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "eye-threat",
+            "question": "새 시력 저하 / 심한 안통·발열이 있나?",
+            "priority": "urgent",
+            "sourceIds": [
+              "msd-retina",
+              "msd-retinal-artery",
+              "aci-eye",
+              "msd-glaucoma",
+              "msd-eye-exam",
+              "msd-eye-pain"
+            ],
+            "branches": [
+              {
+                "id": "eye-artery",
+                "when": "갑작스러운 무통성 단안 시력 저하",
+                "check": "RAPD → 망막/시신경 이상; 안저 평가",
+                "consider": "망막동맥폐색 → 뇌졸중 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "망막박리·동맥폐색"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Visual acuity/field"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Pupil · Light reflex"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-retina",
+                  "msd-retinal-artery",
+                  "aci-eye",
+                  "msd-glaucoma",
+                  "msd-eye-exam"
+                ]
+              },
+              {
+                "id": "eye-retina",
+                "when": "광시증·비문 증가·커튼 시야",
+                "check": "시야 결손 → 신속한 안저 진찰",
+                "consider": "망막박리",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "망막박리·동맥폐색"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-retina",
+                  "msd-retinal-artery"
+                ]
+              },
+              {
+                "id": "eye-glaucoma",
+                "when": "심한 안통·두통/구토",
+                "check": "고정 중간산대·각막 혼탁·안압 상승",
+                "consider": "폐쇄각녹내장",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "급성 폐쇄각녹내장"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-glaucoma"
+                ]
+              },
+              {
+                "id": "eye-orbit",
+                "when": "발열·안구운동통 / 외상 후 복시",
+                "check": "돌출·EOM 제한 → 안와 감염 / 외상 후 포착",
+                "consider": "안와 감염·외상성 병변",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "안와 감염·안내염"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "EOM · Proptosis"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-eye-pain",
+                  "aci-eye"
+                ]
+              },
+              {
+                "id": "eye-endophthalmitis",
+                "when": "수술/외상 뒤 심한 안통·시력 저하",
+                "check": "심한 충혈·전방 염증/축농",
+                "consider": "안내염",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "안와 감염·안내염"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-eye-pain"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "eye-surface",
+            "question": "이물감·광과민인가, 분비물 위주인가?",
+            "priority": "standard",
+            "sourceIds": [
+              "tint-eye",
+              "msd-eye-pain",
+              "msd-eye-exam"
+            ],
+            "branches": [
+              {
+                "id": "eye-cornea",
+                "when": "외상/렌즈·이물감",
+                "check": "Fluorescein 국소 염색=상피 결손; 수지상=HSV",
+                "consider": "각막 손상·각막염",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "각막 손상·각막염"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Fluorescein"
+                  }
+                ],
+                "sourceIds": [
+                  "tint-eye",
+                  "msd-eye-pain",
+                  "msd-eye-exam"
+                ],
+                "note": "렌즈+각막 혼탁/침윤·시력 저하는 신속한 안과 평가"
+              },
+              {
+                "id": "eye-uveitis",
+                "when": "깊은 안통·광과민",
+                "check": "섬모체 충혈·전방 cells/flare",
+                "consider": "포도막염",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "포도막염"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Ciliary flush · Photophobia"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-eye-pain"
+                ],
+                "note": "광과민은 각막 병변에서도 가능"
+              },
+              {
+                "id": "eye-conjunctiva",
+                "when": "충혈·분비물 위주",
+                "check": "시력·동공·EOM 유지; 각막 병변 대조",
+                "consider": "결막염 가능",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "결막염"
+                  }
+                ],
+                "sourceIds": [
+                  "tint-eye"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": []
       }
     },
     {
@@ -4546,6 +8627,131 @@
         "sourceIds": [
           "msd-throat"
         ]
+      },
+      "flow": {
+        "entry": "섭취 직후 시작? → 침 삼킴·호흡 → 편측 통증·목소리·목 부종",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "섭취 상황 · 삼킴/호흡"
+          }
+        ],
+        "sourceIds": [
+          "msd-throat",
+          "msd-fb"
+        ],
+        "stages": [
+          {
+            "id": "throat-urgent",
+            "question": "분비물 처리·기도 위험이 있나?",
+            "priority": "urgent",
+            "sourceIds": [
+              "msd-throat"
+            ],
+            "branches": [
+              {
+                "id": "throat-airway",
+                "when": "침 못 삼킴·stridor / 심한 연하통",
+                "check": "기도 우선; 인두가 멀쩡해도 후두개염 가능",
+                "consider": "후두개염·상기도 폐쇄",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "후두개염"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Drooling · Stridor"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-throat"
+                ]
+              },
+              {
+                "id": "throat-deep",
+                "when": "목 부종·경부 운동 제한",
+                "check": "인두 뒤 팽윤·전신 악화",
+                "consider": "심부 경부 감염",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "심부 경부 감염"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-throat"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "throat-pattern",
+            "question": "섭취 관련 이물감인가, 국소 감염 양상인가?",
+            "priority": "standard",
+            "sourceIds": [
+              "msd-fb",
+              "msd-throat"
+            ],
+            "branches": [
+              {
+                "id": "throat-foreign",
+                "when": "섭취 직후 이물감·연하곤란",
+                "check": "이물 가시성·분비물 처리; 안 보여도 깊은 이물 가능",
+                "consider": "인두·식도 이물",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "인두·식도 이물"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Visible foreign body"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-fb"
+                ],
+                "note": "날카로운 물체·배터리·완전 폐쇄는 긴급 평가"
+              },
+              {
+                "id": "throat-abscess",
+                "when": "편측 통증·먹먹한 목소리",
+                "check": "Uvula deviation·Trismus",
+                "consider": "편도주위농양",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "편도주위농양"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Uvula deviation · Trismus"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-throat"
+                ]
+              },
+              {
+                "id": "throat-pharyngitis",
+                "when": "URI·인두통·발열",
+                "check": "발적/삼출; 기도 위험·국소 팽윤 대조",
+                "consider": "편도·인두염",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "편도·인두염"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-throat"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": []
       }
     },
     {
@@ -4637,6 +8843,129 @@
           "msd-ear",
           "aao-hearing"
         ]
+      },
+      "flow": {
+        "entry": "언제부터·Hearing loss? → URI·물/외상 → 외이도·TM·음차",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "Hearing loss · Onset"
+          },
+          {
+            "kind": "hx",
+            "key": "URI · Water/Trauma"
+          }
+        ],
+        "sourceIds": [
+          "aao-hearing",
+          "msd-ear"
+        ],
+        "stages": [
+          {
+            "id": "ear-urgent",
+            "question": "갑작스러운 난청 또는 귀 뒤 부종인가?",
+            "priority": "urgent",
+            "sourceIds": [
+              "aao-hearing",
+              "msd-hearing-exam",
+              "msd-ear"
+            ],
+            "branches": [
+              {
+                "id": "ear-ssnhl",
+                "when": "급성 청력 저하·이경 정상도 가능",
+                "check": "건측 Weber·AC>BC → 청력검사/ENT 평가",
+                "consider": "돌발성 감각신경성 난청",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "돌발성 감각신경성 난청"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Weber · Rinne"
+                  }
+                ],
+                "sourceIds": [
+                  "aao-hearing",
+                  "msd-hearing-exam"
+                ]
+              },
+              {
+                "id": "ear-mastoid",
+                "when": "귀 뒤 발적·부종/압통",
+                "check": "Mastoid 부종·귓바퀴 돌출",
+                "consider": "유양돌기염",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "유양돌기염"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "TM · Mastoid"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-ear"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "ear-local",
+            "question": "외이도를 만질 때 아픈가, URI 뒤 귀통증인가?",
+            "priority": "standard",
+            "sourceIds": [
+              "msd-ear"
+            ],
+            "branches": [
+              {
+                "id": "ear-external",
+                "when": "물 노출·귓바퀴/Tragus 통증",
+                "check": "외이도 발적·부종/분비물",
+                "consider": "외이도염",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "외이도염"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Tragus · 외이도"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-ear"
+                ]
+              },
+              {
+                "id": "ear-middle",
+                "when": "URI 뒤 통증·먹먹함",
+                "check": "TM 팽륜·중이 삼출 → 전음성 단서",
+                "consider": "중이염",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "중이염"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-ear"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "text": "전음성은 환측 Weber·BC>AC. 음차 결과만으로 급성 난청 평가를 끝내지 않음.",
+            "sourceIds": [
+              "msd-hearing-exam",
+              "aao-hearing"
+            ]
+          }
+        ]
       }
     },
     {
@@ -4725,6 +9054,144 @@
         "sourceIds": [
           "msd-epistaxis"
         ]
+      },
+      "flow": {
+        "entry": "언제·어느 쪽 먼저·지금도 출혈? → 양/재발·외상 → Warfarin/Aspirin",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "Side · Amount · Warfarin/Aspirin"
+          }
+        ],
+        "sourceIds": [
+          "tint-nose",
+          "msd-epistaxis"
+        ],
+        "stages": [
+          {
+            "id": "nose-urgent",
+            "question": "순환 악화 / 외상 후 비중격 부종인가?",
+            "priority": "urgent",
+            "sourceIds": [
+              "msd-epistaxis",
+              "msd-nasal-fracture"
+            ],
+            "branches": [
+              {
+                "id": "nose-heavy",
+                "when": "지속 다량 출혈·삼킨 피",
+                "check": "BP/Pulse·관류·인두 출혈 → 지혈/순환 평가 병행",
+                "consider": "중증 비출혈·후방 가능",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "후방 출혈"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "BP · Pulse · 관류"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-epistaxis"
+                ]
+              },
+              {
+                "id": "nose-septum",
+                "when": "외상 뒤 코막힘",
+                "check": "비중격 자주색 팽윤 → 신속한 ENT 평가",
+                "consider": "비중격 혈종",
+                "conceptRefs": [
+                  {
+                    "kind": "pex",
+                    "key": "외상 후 비중격 팽윤"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-nasal-fracture"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "nose-focus",
+            "question": "출혈점이 앞쪽에 보이나?",
+            "priority": "standard",
+            "sourceIds": [
+              "tint-nose",
+              "msd-epistaxis"
+            ],
+            "branches": [
+              {
+                "id": "nose-anterior",
+                "when": "앞쪽 출혈점이 보임",
+                "check": "비중격 앞쪽 위치·현재 출혈",
+                "consider": "전방 출혈",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "전방 출혈"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "출혈점 · Posterior drainage"
+                  }
+                ],
+                "sourceIds": [
+                  "tint-nose",
+                  "msd-epistaxis"
+                ]
+              },
+              {
+                "id": "nose-posterior",
+                "when": "출혈점 불명·인두 유출 지속",
+                "check": "비강/인두 함께 확인; 후방 유출만으로 위치 확정 불가",
+                "consider": "후방 출혈 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "후방 출혈"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-epistaxis"
+                ]
+              },
+              {
+                "id": "nose-coagulopathy",
+                "when": "항혈전제·쉽게 멍듦/다른 출혈",
+                "check": "약물·응고장애 Hx; 중증/반복이면 CBC·응고검사",
+                "consider": "약물·응고장애",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "약물·응고장애"
+                  }
+                ],
+                "sourceIds": [
+                  "tint-nose",
+                  "msd-epistaxis"
+                ]
+              },
+              {
+                "id": "nose-lesion",
+                "when": "반복 편측 출혈·코막힘",
+                "check": "외상/이물·비강 종괴 관찰",
+                "consider": "국소 병변",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "국소 병변"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-epistaxis"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": []
       }
     },
     {
@@ -4807,6 +9274,138 @@
         "sourceIds": [
           "tint-dental"
         ]
+      },
+      "flow": {
+        "entry": "어느 치아·온도/저작통인가, 외상인가? → 삼킴·입벌림 → 구강/교합",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "Dental pain · Injury"
+          }
+        ],
+        "sourceIds": [
+          "aci-dental",
+          "tint-dental"
+        ],
+        "stages": [
+          {
+            "id": "dental-urgent",
+            "question": "삼킴/호흡 곤란·구강저 부종이 있나?",
+            "priority": "urgent",
+            "sourceIds": [
+              "tint-dental",
+              "msd-dental-exam"
+            ],
+            "branches": [
+              {
+                "id": "dental-deep",
+                "when": "연하곤란·Trismus·혀 상승",
+                "check": "구강저 경결·분비물 처리/기도",
+                "consider": "심부 치성 감염·Ludwig angina",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "심부 치성 감염"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "구강저 · Tongue · Trismus"
+                  }
+                ],
+                "sourceIds": [
+                  "tint-dental",
+                  "msd-dental-exam"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dental-local",
+            "question": "치아 통증 양상 또는 외상 구조는?",
+            "priority": "standard",
+            "sourceIds": [
+              "tint-dental",
+              "aci-dental",
+              "msd-dental-exam"
+            ],
+            "branches": [
+              {
+                "id": "dental-pulp",
+                "when": "온도 자극 뒤 지속 통증",
+                "check": "해당 치아 확인·치과 평가",
+                "consider": "치수염",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "치수염·치근단 감염"
+                  }
+                ],
+                "sourceIds": [
+                  "tint-dental",
+                  "aci-dental",
+                  "msd-dental-exam"
+                ]
+              },
+              {
+                "id": "dental-apical",
+                "when": "저작통·국소 부종",
+                "check": "타진통=치근단 염증; 파동성 부종=농양 단서",
+                "consider": "치근단 감염/농양",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "치수염·치근단 감염"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Tooth percussion · Fluctuance"
+                  }
+                ],
+                "sourceIds": [
+                  "tint-dental",
+                  "aci-dental",
+                  "msd-dental-exam"
+                ]
+              },
+              {
+                "id": "dental-injury",
+                "when": "파절·탈구·입술/혀 열상",
+                "check": "관통·파편/소실 치아·동요도",
+                "consider": "치아·연조직 외상",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "치아·연조직 외상"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Wound · Tooth · 교합"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-dental"
+                ],
+                "note": "소실 치아/파편은 흡인·연조직 매몰도 확인"
+              },
+              {
+                "id": "dental-jaw",
+                "when": "외상 뒤 물리는 느낌 변화",
+                "check": "Malocclusion·변형·국소 골성 압통",
+                "consider": "턱 골절",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "턱 골절"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-dental"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": []
       }
     },
     {
@@ -4937,6 +9536,164 @@
           "tint-tendon",
           "tint-wound"
         ]
+      },
+      "flow": {
+        "entry": "언제·무엇에/어떻게 다쳤나? → LOC·음주 → 흉복부 통증·상처·원위 변화",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "Mechanism · LOC · Alcohol"
+          },
+          {
+            "kind": "hx",
+            "key": "Object · Tetanus vaccination Hx"
+          }
+        ],
+        "sourceIds": [
+          "aci-trauma",
+          "tint-tendon"
+        ],
+        "stages": [
+          {
+            "id": "trauma-threat",
+            "question": "숨은 전신 손상 또는 사지 위협인가?",
+            "priority": "urgent",
+            "sourceIds": [
+              "aci-trauma",
+              "boa-compartment",
+              "msd-compartment",
+              "aci-msk",
+              "tint-wound",
+              "msd-fractures",
+              "tint-tendon"
+            ],
+            "branches": [
+              {
+                "id": "trauma-trunk",
+                "when": "고위험 기전·흉복부/골반 통증·쇼크",
+                "check": "ABCDE 후 경추 정중 압통·흉복부/골반 진찰",
+                "consider": "숨은 흉복부·골반/경추 손상",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "숨은 흉복부·골반 손상"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "C-spine · Pelvis · Trunk"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-trauma"
+                ]
+              },
+              {
+                "id": "trauma-compartment",
+                "when": "손상보다 심한 통증·긴장성 부종",
+                "check": "수동 신장통·연속 진찰; 맥박 있어도 가능",
+                "consider": "구획증후군",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "구획증후군"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Passive stretch · Compartment"
+                  }
+                ],
+                "sourceIds": [
+                  "boa-compartment",
+                  "msd-compartment"
+                ]
+              },
+              {
+                "id": "trauma-open",
+                "when": "변형·골성 압통+근처 상처",
+                "check": "상처 완전 노출; 뼈 안 보여도 개방성 의심",
+                "consider": "골절·탈구/개방성 골절",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "골절·탈구"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Depth · Structure · Open wound"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-msk",
+                  "aci-trauma",
+                  "tint-wound",
+                  "msd-fractures"
+                ]
+              },
+              {
+                "id": "trauma-neurovascular",
+                "when": "심부 열상·Motor/Sensory/관류 변화",
+                "check": "마취 전 원위 감각·개별 건 기능·맥박/CRT",
+                "consider": "건·신경·혈관 손상",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "건·신경·혈관 손상"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Distal motor/sensory · 관류"
+                  }
+                ],
+                "sourceIds": [
+                  "tint-wound",
+                  "tint-tendon"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "trauma-wound",
+            "question": "국소 상처의 깊이·오염/이물은?",
+            "priority": "standard",
+            "sourceIds": [
+              "tint-wound",
+              "tint-tendon"
+            ],
+            "branches": [
+              {
+                "id": "trauma-foreign",
+                "when": "유리/금속·관통 상처",
+                "check": "Depth·노출 구조·잔류 이물; 필요 영상",
+                "consider": "이물·깊은 구조 손상",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "잔류 이물"
+                  }
+                ],
+                "sourceIds": [
+                  "tint-wound",
+                  "tint-tendon"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "text": "Tetanus vaccination Hx·오염 기전 확인. 음주/협조 불가·작은 상처도 진찰 한계가 있음.",
+            "sourceIds": [
+              "tint-tendon",
+              "aci-trauma"
+            ],
+            "conceptRefs": [
+              {
+                "kind": "hx",
+                "key": "Object · Tetanus vaccination Hx"
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -5030,6 +9787,130 @@
         "sourceIds": [
           "nice-head-injury"
         ]
+      },
+      "flow": {
+        "entry": "기전·LOC/기억장애·구토·두통 악화? → 나이/항응고 → GCS·동공·사지",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "LOC · Headache · Vomiting"
+          },
+          {
+            "kind": "hx",
+            "key": "기전 · 항응고제"
+          }
+        ],
+        "sourceIds": [
+          "nice-head-injury"
+        ],
+        "stages": [
+          {
+            "id": "head-threat",
+            "question": "의식/신경 악화 또는 골절·경추 단서인가?",
+            "priority": "urgent",
+            "sourceIds": [
+              "nice-head-injury",
+              "msd-coma",
+              "aci-trauma"
+            ],
+            "branches": [
+              {
+                "id": "head-bleed",
+                "when": "의식 악화·심한 두통/지속 구토",
+                "check": "GCS 추세·새 동공 비대칭·편측 Motor 저하",
+                "consider": "두개내 출혈 → 신속 CT 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "두개내 출혈"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Mental status · Pupil"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Limb motor"
+                  }
+                ],
+                "sourceIds": [
+                  "nice-head-injury",
+                  "msd-coma"
+                ]
+              },
+              {
+                "id": "head-skull",
+                "when": "함몰·CSF leak·안와/유양부 멍",
+                "check": "Battle sign/Raccoon eyes → 정상 GCS여도 CT 기준",
+                "consider": "두개골/두개저 골절",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "두개골 골절"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Battle sign · Raccoon eyes · CSF leak"
+                  }
+                ],
+                "sourceIds": [
+                  "nice-head-injury"
+                ]
+              },
+              {
+                "id": "head-neck",
+                "when": "목 통증·위험 기전·사지 신경 이상",
+                "check": "경추 정중 압통·신경 진찰·보호/영상 기준",
+                "consider": "동반 경추 손상",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "동반 경추 손상"
+                  }
+                ],
+                "sourceIds": [
+                  "nice-head-injury",
+                  "aci-trauma"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "head-concussion",
+            "question": "출혈 위험 평가 후 외상성 혼돈/기억장애인가?",
+            "priority": "standard",
+            "sourceIds": [
+              "tint-head-injury",
+              "nice-head-injury"
+            ],
+            "branches": [
+              {
+                "id": "head-mild",
+                "when": "외상 후 혼돈·기억장애",
+                "check": "LOC 없이도 가능; 증상·경과·CT 위험 기준 대조",
+                "consider": "뇌진탕 가능",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "뇌진탕"
+                  }
+                ],
+                "sourceIds": [
+                  "tint-head-injury",
+                  "nice-head-injury"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "text": "영상 필요성은 나이·LOC/기억·기전·항응고/항혈소판 기준까지 적용; 음주 탓으로 단정 금지.",
+            "sourceIds": [
+              "nice-head-injury"
+            ]
+          }
+        ]
       }
     },
     {
@@ -5106,6 +9987,110 @@
         "sourceIds": [
           "aci-burn",
           "cdc-co"
+        ]
+      },
+      "flow": {
+        "entry": "밀폐 공간·연기 노출 시간? → 기침/호흡곤란·목소리·두통/실신",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "노출 공간/시간 · Symptoms"
+          }
+        ],
+        "sourceIds": [
+          "aci-burn",
+          "cdc-co"
+        ],
+        "stages": [
+          {
+            "id": "burn-threat",
+            "question": "진행하는 기도/호흡 또는 전신 독성인가?",
+            "priority": "urgent",
+            "sourceIds": [
+              "aci-burn",
+              "msd-smoke",
+              "cdc-co"
+            ],
+            "branches": [
+              {
+                "id": "burn-upper",
+                "when": "쉰 목소리·stridor·얼굴/목 화상",
+                "check": "구강 부종·기도 평가; 그을음은 노출 단서",
+                "consider": "상기도 열 손상",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "상기도 열 손상"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Soot · Voice · Stridor"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-burn",
+                  "msd-smoke"
+                ]
+              },
+              {
+                "id": "burn-lower",
+                "when": "연기 뒤 기침·호흡곤란",
+                "check": "Wheeze·호흡 노력/저산소 → 하기도 평가",
+                "consider": "하기도 흡입 손상",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "하기도 흡입 손상"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Lung sound · 호흡 노력"
+                  }
+                ],
+                "sourceIds": [
+                  "aci-burn"
+                ]
+              },
+              {
+                "id": "burn-co",
+                "when": "밀폐 노출·두통/어지럼·혼돈/실신",
+                "check": "혈액 COHb·신경/심장 증상; 노출 종료 시각 확인",
+                "consider": "CO 중독",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "CO 중독"
+                  }
+                ],
+                "sourceIds": [
+                  "cdc-co"
+                ]
+              },
+              {
+                "id": "burn-cyanide",
+                "when": "화재 뒤 심한 의식/순환 악화",
+                "check": "젖산·고음이온차 산증; CO만으로 설명되는지",
+                "consider": "Cyanide 중독",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "Cyanide 중독"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-smoke"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "text": "초기 호흡 진찰/흉부 영상이 정상이어도 흡입 손상은 뒤늦게 나타날 수 있음.",
+            "sourceIds": [
+              "msd-smoke"
+            ]
+          }
         ]
       }
     },
@@ -5212,6 +10197,204 @@
         "sourceIds": [
           "tint-toxicology",
           "atlas-apap"
+        ]
+      },
+      "flow": {
+        "entry": "무엇·얼마나·언제·동시 복용? → 사고/자해·현재 계획 → 의식·호흡·V/S",
+        "conceptRefs": [
+          {
+            "kind": "hx",
+            "key": "Drug · Dose/Time · Co-ingestion"
+          },
+          {
+            "kind": "hx",
+            "key": "Intent · Plan"
+          }
+        ],
+        "sourceIds": [
+          "tint-toxicology",
+          "nice-self-harm"
+        ],
+        "stages": [
+          {
+            "id": "poison-urgent",
+            "question": "의식·호흡/순환 악화 또는 특징적 toxidrome?",
+            "priority": "urgent",
+            "sourceIds": [
+              "tint-toxicology",
+              "msd-cholinergic",
+              "msd-serotonin",
+              "cdc-co"
+            ],
+            "branches": [
+              {
+                "id": "poison-opioid",
+                "when": "의식·호흡 저하",
+                "check": "축동은 opioid 단서 → 기도/환기 우선",
+                "consider": "Opioid·진정제",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "Opioid·진정제"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Mental · Respiration · Pupil"
+                  }
+                ],
+                "sourceIds": [
+                  "tint-toxicology"
+                ]
+              },
+              {
+                "id": "poison-cholinergic",
+                "when": "축동·침/기관지 분비·설사",
+                "check": "근섬유다발수축·근력/호흡 저하",
+                "consider": "콜린성",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "콜린성"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "분비물 · Reflex/Clonus"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-cholinergic",
+                  "msd-serotonin"
+                ]
+              },
+              {
+                "id": "poison-serotonin",
+                "when": "관련 약물 뒤 초조·발한/고체온",
+                "check": "Clonus·Hyperreflexia → 신경근 과활성",
+                "consider": "Serotonin syndrome",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "Serotonin syndrome"
+                  }
+                ],
+                "sourceIds": [
+                  "msd-serotonin"
+                ]
+              },
+              {
+                "id": "poison-co",
+                "when": "연소 노출·여러 명 동시 두통/혼돈",
+                "check": "혈액 COHb; 일반 SpO₂ 정상으로 배제 불가",
+                "consider": "CO 중독",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "CO 중독"
+                  }
+                ],
+                "sourceIds": [
+                  "cdc-co"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "poison-skin",
+            "question": "산동·초조 환자의 피부는 건조한가, 젖었나?",
+            "priority": "standard",
+            "sourceIds": [
+              "tint-toxicology"
+            ],
+            "branches": [
+              {
+                "id": "poison-anticholinergic",
+                "when": "산동·건조·섬망",
+                "check": "고체온·요폐/장음 감소",
+                "consider": "항콜린성",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "항콜린성"
+                  },
+                  {
+                    "kind": "pex",
+                    "key": "Skin · Temperature · V/S"
+                  }
+                ],
+                "sourceIds": [
+                  "tint-toxicology"
+                ]
+              },
+              {
+                "id": "poison-sympathetic",
+                "when": "산동·발한·초조",
+                "check": "빈맥/고혈압·체온·심장 증상",
+                "consider": "교감신경성",
+                "conceptRefs": [
+                  {
+                    "kind": "differentials",
+                    "key": "교감신경성"
+                  }
+                ],
+                "sourceIds": [
+                  "tint-toxicology"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "poison-history",
+            "question": "겉보기 안정이어도 물질/시각·자해 위험은?",
+            "priority": "standard",
+            "sourceIds": [
+              "tint-toxicology",
+              "atlas-apap",
+              "apap-consensus-2023",
+              "nice-self-harm"
+            ],
+            "branches": [
+              {
+                "id": "poison-apap",
+                "when": "Acetaminophen 급성 복용(<24h)·시작 시각 명확",
+                "check": "첫 복용 후 4–24h 농도 → nomogram; 조기 농도는 배제용 아님",
+                "consider": "지연 간독성 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "hx",
+                    "key": "Drug · Dose/Time · Co-ingestion"
+                  }
+                ],
+                "sourceIds": [
+                  "tint-toxicology",
+                  "atlas-apap",
+                  "apap-consensus-2023"
+                ]
+              },
+              {
+                "id": "poison-self-harm",
+                "when": "고의 복용·현재 자해 계획",
+                "check": "즉시 안전 확보·신체 진료와 심리사회 평가 병행",
+                "consider": "재자해 위험·정신과 평가",
+                "conceptRefs": [
+                  {
+                    "kind": "hx",
+                    "key": "Intent · Plan"
+                  }
+                ],
+                "sourceIds": [
+                  "nice-self-harm"
+                ]
+              }
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "text": "시각 불명·>24h 반복 복용은 별도 경로; 서방형/흡수 지연은 재측정 판단",
+            "sourceIds": [
+              "apap-consensus-2023"
+            ]
+          }
         ]
       }
     },

@@ -202,9 +202,9 @@ require("common-shortcut" not in app_source and "#common" not in app_source, "Re
 require("catalog-tools" not in app_source and '${matching.length}' not in app_source, "Home catalog count is still rendered")
 require(all(token in app_source for token in ("orderedHomeGroups", "home-group-title", "home-group-single")), "Home groups are not rendered")
 require('serviceWorker.register("./sw.js")' in app_source, "Service worker is not registered")
-for asset in ("./styles.css?v=24", "./app.js?v=40", "./data/chief-complaints.json?v=24", "./data/cc-concepts.json?v=5"):
+for asset in ("./styles.css?v=24", "./app.js?v=41", "./data/chief-complaints.json?v=24", "./data/cc-concepts.json?v=6"):
     require(asset in service_worker_source, f"Offline cache asset is stale: {asset}")
-require('./styles.css?v=24' in index_source and './app.js?v=40' in index_source, "HTML asset versions do not match offline cache")
+require('./styles.css?v=24' in index_source and './app.js?v=41' in index_source, "HTML asset versions do not match offline cache")
 for sid in ("np-ex1", "np-template", "np-ex2", "np-ex3", "np-response"):
     require(sections[sid]["kind"] == "example", f"Example placed in main checklist: {sid}")
 for source in sources.values():

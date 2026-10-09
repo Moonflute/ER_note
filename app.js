@@ -310,7 +310,7 @@
 
   async function loadConcepts() {
     try {
-      const response = await fetch("./data/cc-concepts.json?v=5");
+      const response = await fetch("./data/cc-concepts.json?v=6");
       if (!response.ok) throw new Error("개념 자료를 불러오지 못했습니다.");
       const data = await response.json();
       state.concepts = new Map(data.complaints.map((concept) => [concept.complaintId, concept]));
